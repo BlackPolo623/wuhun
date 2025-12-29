@@ -1,3 +1,4 @@
+# === 你現有的 ===
 /geodata.rar
 /system541.rar
 /world_drop_config.sql
@@ -11,3 +12,43 @@
 /.idea/
 /dist/game/log/
 /dist/login/log/
+
+# === 建議新增 ===
+
+# 日誌檔案
+*.log
+*.log.*
+*.lck
+
+# Java 編譯檔
+*.class
+*.jar
+out/
+target/
+
+# 壓縮檔
+*.rar
+*.zip
+*.7z
+
+# IDE 設定
+*.iml
+.idea/workspace.xml
+.idea/shelf/
+.vscode/
+
+# 系統檔案
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 臨時檔案
+*~
+*.tmp
+*.bak
+*.swp
+
+# 資料庫備份
+*.sql.bak
+*.db
+*.sqlite
