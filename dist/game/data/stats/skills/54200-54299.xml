@@ -1,0 +1,2037 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="54200" toLevel="1" name="騎乘榮光勝者">
+		
+		<icon>icon.warhorse_vehicle</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<excludedFromCheck>true</excludedFromCheck>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>206</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>206</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54201" toLevel="1" name="騎乘白色羽翼">
+		
+		<icon>icon.skill8605</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<excludedFromCheck>true</excludedFromCheck>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>204</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>204</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54202" toLevel="1" name="騎乘閃耀淑女">
+		
+		<icon>icon.skill8607</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<excludedFromCheck>true</excludedFromCheck>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>207</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>207</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54203" toLevel="1" name="沉默騎乘">
+		
+		<icon>icon.skill0221</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>SILENT_RIDE</abnormalType>
+		<abnormalVisualEffect>STEALTH</abnormalVisualEffect>
+		<effectPoint>1</effectPoint>
+		<reuseDelay>45000</reuseDelay>
+		<effects>
+			<effect name="SilentMove">
+				<chance>100</chance>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54204" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>RANKER_DECO_HUMAN</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>385</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Transformation">
+				<transformationId>385</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54205" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill1926</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>RANKER_DECO_KAMAEL</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Transformation">
+				<transformationId>386</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54206" toLevel="2" name="真死亡騎士：大師">
+		
+		
+		<icon>
+			<value level="1">icon.death_knight_transform</value>
+			<value level="2">icon.s_death_knight_transform_new</value>
+		</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
+		<abnormalVisualEffect>
+			<value level="1">JDK_BODY_FIRE_1</value>
+			<value level="2">JDK_BODY_FIRE_2</value>
+		</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic> 
+		<itemConsumeCount>
+			<value level="1">50</value>
+			<value level="2">60</value>
+		</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<magicLevel>76</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack" fromLevel="2" toLevel="2">
+				<amount>
+					<value level="2">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower" fromLevel="2" toLevel="2">
+				<amount>
+					<value level="2">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower" fromLevel="2" toLevel="2">
+				<amount>
+					<value level="2">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate" fromLevel="2" toLevel="2">
+				<amount>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>40</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait" fromLevel="2" toLevel="2">
+				<PULL>40</PULL>
+				<IMPRISON>30</IMPRISON>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">250</value>
+					<value level="2">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<BLUNT>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</BLUNT>
+				<ANCIENTSWORD>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</ANCIENTSWORD>
+				<RAPIER>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</RAPIER>
+				<PISTOLS>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</PISTOLS>
+				<SWORD>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</SWORD>
+				<DUAL>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</DUAL>
+				<BOW>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</BOW>
+				<POLE>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</POLE>
+				<DAGGER>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</DAGGER>
+				<DUALFIST>
+					<value level="1">8</value>
+					<value level="2">10</value>
+				</DUALFIST>
+				<PULL>
+					<value level="1">0</value>
+					<value level="2">20</value>
+				</PULL>
+				<IMPRISON>
+					<value level="1">0</value>
+					<value level="2">20</value>
+				</IMPRISON>
+			</effect>
+			<effect name="HealEffect">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>20</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt" fromLevel="2" toLevel="2">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>50</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<skillId>47536</skillId> 
+				<skillLevel>1</skillLevel>
+				<allowSkillAttack>true</allowSkillAttack>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt" fromLevel="2" toLevel="2">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>50</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<skillId>47536</skillId> 
+				<skillLevel>1</skillLevel>
+				<allowSkillAttack>true</allowSkillAttack>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54207" toLevel="1" name="騎乘夢魘">
+		
+		<icon>icon.riding_knightmare</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1000</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>208</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54208" toLevel="1" name="勇士優惠">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54209" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalVisualEffect>RANKER_DECO_ORC</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54210" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalVisualEffect>RANKER_DECO_ELF</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54211" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalVisualEffect>RANKER_DECO_DARKELF</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54212" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalVisualEffect>RANKER_DECO_DWARF</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54213" toLevel="1" name="騎乘米德埃維寇">
+		
+		<icon>icon.etc_dwarf_craft_vehicle</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1000</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>209</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>209</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54214" toLevel="1" name="龍狂戰士變身">
+		
+		<icon>icon.bm2018_dragon_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>RANDOM_TRANSFORMATION_SCROLL</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_R</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54215" toLevel="1" name="聖癒祭司變身">
+		
+		<icon>icon.bm2018_healer_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>RANDOM_TRANSFORMATION_SCROLL</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_W</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54216" toLevel="1" name="鯊魚變身">
+		
+		<icon>icon.shark_suit</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>RANDOM_TRANSFORMATION_SCROLL</abnormalType>
+		<abnormalVisualEffect>BLUE_DYNASTY</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54217" toLevel="1" name="熊貓變身">
+		
+		<icon>icon.sayha2017_panda</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>RANDOM_TRANSFORMATION_SCROLL</abnormalType>
+		<abnormalVisualEffect>RUDOLPH</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54218" toLevel="1" name="貓咪變身">
+		
+		<icon>icon.sayha2017_cat</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>RANDOM_TRANSFORMATION_SCROLL</abnormalType>
+		<abnormalVisualEffect>CHANGESHAPE_TRANSFORM_8</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54219" toLevel="1" name="熊熊變身">
+		
+		<icon>icon.gomdori_chest_change</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>RANDOM_TRANSFORMATION_SCROLL</abnormalType>
+		<abnormalVisualEffect>CHANGESHAPE_TRANSFORM_6</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54220" toLevel="1" name="龍狂戰士變身">
+		
+		<icon>icon.bm2018_dragon_i01</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54221" toLevel="1" name="野性惡狼變身">
+		
+		<icon>icon.bm2018_barbarian_i01</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54222" toLevel="1" name="白色情人節變身">
+		
+		<icon>icon.whiteday_suit</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54223" toLevel="1" name="戰鬥貓變身">
+		
+		<icon>icon.cat_the_cat_change_0</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54224" toLevel="1" name="韓服變身">
+		
+		<icon>icon.ev_kr_traditional_dress</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54225" toLevel="1" name="騎乘元素麟紅龍">
+		
+		<icon>icon.etc_lind_vehicle</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<excludedFromCheck>true</excludedFromCheck>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>220</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>220</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54226" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalVisualEffect>RANKER_DECO_SYLPH</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54227" toLevel="1" name="騎乘黑飛龍">
+		
+		<icon>icon.s_wyvern_black</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<excludedFromCheck>true</excludedFromCheck>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> 
+		<effects>
+			<effect name="Ride">
+				<npcId>15977</npcId> 
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54228" toLevel="1" name="愛斯基摩人變身">
+		
+		<icon>icon.eskimo_suit</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54229" toLevel="1" name="聖誕老人變身">
+		
+		<icon>icon.armor_ev_santas_clothes</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54230" toLevel="1" name="城堡守護者變身">
+		
+		<icon>icon.lionelhunter_dress</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM_SPECIAL</abnormalType>
+		<abnormalVisualEffect>UNKNOWN_548</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic> 
+		<itemConsumeCount>20</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>45</magicLevel>
+		<reuseDelay>600000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54231</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54231" toLevel="1" name="屠龍者變身">
+		
+		<icon>icon.dragon_slayer_suit</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>S_DRAGON_SLAYER</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic> 
+		<itemConsumeCount>20</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>82</magicLevel>
+		<reuseDelay>600000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54230</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54232" toLevel="1" name="腦袋清醒Lv1">
+		
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54233" toLevel="1" name="腦袋清醒Lv1">
+		
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54234" toLevel="1" name="腦袋清醒Lv1">
+		
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54235" toLevel="1" name="腦袋清醒Lv2">
+		
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54236" toLevel="1" name="腦袋清醒Lv2">
+		
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54237" toLevel="1" name="腦袋清醒Lv2">
+		
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54238" toLevel="1" name="泳裝變身">
+		
+		<icon>BranchSys3.icon1.g_co_swimsuit_event_02</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54239" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalVisualEffect>VANGUARD_RANKER</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54240" toLevel="1" name="騎乘紅飛龍">
+		
+		<icon>icon.s_wyvern_red</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<excludedFromCheck>true</excludedFromCheck>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> 
+		<effects>
+			<effect name="Ride">
+				<npcId>15979</npcId> 
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54241" toLevel="1" name="迷宮團服">
+		
+		<icon>icon.prison_uniform</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalVisualEffect>CHANGESHAPE_NINJA_BLACK</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="BlockEscape" />
+		</effects>
+	</skill>
+	<skill id="54242" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalVisualEffect>ASN_SHOULDER_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54243" toLevel="1" name="暗殺者的秘錄-第1章">
+		
+		<icon>icon.etc_piece_of_paper_gray_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalVisualEffect>H_ASN_SECRET_BOOKA_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>7200000</reuseDelay>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54244</skillId> 
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54245</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MaxHp">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54244" toLevel="1" name="暗殺者的秘錄-第2章">
+		
+		<icon>icon.etc_piece_of_paper_black_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalVisualEffect>H_ASN_SECRET_BOOKB_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>7200000</reuseDelay>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54243</skillId> 
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54245</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MaxHp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54245" toLevel="1" name="暗殺者的秘錄-第3章">
+		
+		<icon>icon.etc_piece_of_paper_white_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalVisualEffect>H_ASN_SECRET_BOOKC_AVE</abnormalVisualEffect>
+		<castRange>-1</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54243</skillId> 
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54244</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MaxHp">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54246" toLevel="1" name="銀狼搭乘">
+		
+		<icon>icon.s_assassin_riding_wolf</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<castRange>-1</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>224</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>224</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54247" toLevel="1" name="騎乘影飛龍">
+		
+		<icon>icon.shadow_wyvern</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<excludedFromCheck>true</excludedFromCheck>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> 
+		<effects>
+			<effect name="Ride">
+				<npcId>15996</npcId> 
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54248" toLevel="1" name="腦袋清醒(限時)">
+		
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="54249" toLevel="1" name="腦袋清醒Lv2">
+		
+		<icon>Icon.ev_2020_summer1</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="54250" toLevel="1" name="不良西瓜副作用">
+		
+		<icon>icon.skill1627</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic>
+		<reuseDelay>300000</reuseDelay>
+	</skill>
+	<skill id="54251" toLevel="1" name="微小的光之加護">
+		
+		<icon>icon.s_highelf_lv_reward1</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>PROTECTION_OF_LIGHT</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>7200000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54252" toLevel="1" name="光之加護">
+		
+		<icon>icon.s_highelf_lv_reward2</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>PROTECTION_OF_LIGHT</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>20</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>7200000</reuseDelay>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54102</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54253" toLevel="1" name="巨大的光之加護">
+		
+		<icon>icon.s_highelf_lv_reward3</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>PROTECTION_OF_LIGHT</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>20</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54102</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54254" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalVisualEffect>RANKER_DECO_MHIGHELF</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54255" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalVisualEffect>RANKER_DECO_FHIGHELF</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54256" toLevel="1" name="騎乘獨角獸">
+		
+		<icon>icon.s_highelf_unicon_riding</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1000</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>228</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>228</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54257" toLevel="1" name="城堡守護者氣息">
+		
+		<icon>icon.lionelhunter_dress</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic>
+		<reuseDelay>600000</reuseDelay>
+	</skill>
+	<skill id="54258" toLevel="1" name="狂暴大雪紛飛Lv1">
+		
+		<icon>icon.skill6302</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="54259" toLevel="1" name="狂暴大雪紛飛Lv2">
+		
+		<icon>icon.skill6302</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="54260" toLevel="1" name="腫脹的腦袋">
+		
+		<icon>icon.skill1627</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="54261" toLevel="1" name="龍狂戰士變身">
+		
+		<icon>icon.bm2018_dragon_i01</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="54262" toLevel="1" name="聖癒祭司變身">
+		
+		<icon>icon.bm2018_healer_i01</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="54263" toLevel="1" name="戰鬥貓變身">
+		
+		<icon>icon.cat_the_cat_change_0</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="54264" toLevel="1" name="熊熊變身">
+		
+		<icon>icon.gomdori_chest_change</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54265" toLevel="1" name="誘惑泳衣變身">
+		
+		<icon>BranchSys3.icon1.g_co_swimsuit_event_02</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>5</isMagic>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="54266" toLevel="1" name="鯊魚變身">
+		
+		<icon>icon.shark_suit</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>5</isMagic>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="54267" toLevel="1" name="魅惑泳衣變身">
+		
+		<icon>BranchSys3.icon1.g_co_swimsuit_event_02</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>5</isMagic>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="54268" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="54269" toLevel="1" name="鑽研玫瑰魔法-初級">
+		
+		<icon>icon.s_rose_lv_reward1</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>7200000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54270" toLevel="1" name="鑽研玫瑰魔法-中級">
+		
+		<icon>icon.s_rose_lv_reward2</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>7200000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54271" toLevel="1" name="鑽研玫瑰魔法-高級">
+		
+		<icon>icon.s_rose_lv_reward3</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>3600000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54272" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54273" toLevel="1" name="勇士變身">
+		
+		<icon>icon.skill5661</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="54274" toLevel="1" name="騎乘艦馬">
+		<!-- Allows to mount Kagami. -->
+		<icon>icon.s_umemaru_mount</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<excludedFromCheck>true</excludedFromCheck>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>264</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>264</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54275" toLevel="1" name="離開艦馬">
+		<!-- Dismounts from a ridable mount. -->
+		<icon>icon.s_umemaru_dismount</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>10</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2500</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>TRANSFORM,-1;SPECIAL_RIDE,1</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54276" toLevel="1" name="騎乘狀態">
+		
+		<icon>icon.s_umemaru_riding</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="54277" toLevel="1" name="艦馬疾衝">
+		<!-- Speed +100 -->
+		<icon>icon.s_umemaru_gallop</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>SPECIAL_RIDE</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>45000</reuseDelay>
+		<effects>
+			<effect name="Speed">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="54278" toLevel="1" name="艦馬潛行">
+		
+		<icon>icon.s_umemaru_stealth</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>45000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+</list>

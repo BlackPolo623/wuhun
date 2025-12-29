@@ -1,0 +1,1349 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="16100" toLevel="1" name="展示">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
+		<effectPoint>100</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>10000</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+	</skill>
+	<skill id="16101" toLevel="1" name="塔武提">
+		
+		<icon>icon.skillboss</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="BlockAbnormalSlot">
+				<slot>SPEED_DOWN</slot>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="16102" toLevel="1" name="黑暗風暴">
+		
+		<icon>icon.skill1167</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-264</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic>
+	</skill>
+	<skill id="16103" toLevel="6" name="死亡索道">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<coolTime>1000</coolTime>
+		<effectPoint>
+			<value level="1">-150</value>
+			<value level="2">-200</value>
+			<value level="3">-150</value>
+			<value level="4">-150</value>
+			<value level="5">-150</value>
+			<value level="6">-150</value>
+		</effectPoint>
+		<hitTime>2000</hitTime>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">65</value>
+			<value level="3">80</value>
+			<value level="4">95</value>
+			<value level="5">110</value>
+			<value level="6">125</value>
+		</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16104" toLevel="7" name="致命侵襲">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<coolTime>800</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1000</hitTime>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">65</value>
+			<value level="3">80</value>
+			<value level="4">95</value>
+			<value level="5">110</value>
+			<value level="6">125</value>
+			<value level="7">140</value>
+		</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16106" toLevel="2" name="連鎖破擊">
+		
+		<icon>icon.skill10015</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<coolTime>1000</coolTime>
+		<effectPoint>
+			<value level="1">-150</value>
+			<value level="2">-200</value>
+		</effectPoint>
+		<hitTime>2000</hitTime>
+		<isDebuff>true</isDebuff>
+		<mpConsume>
+			<value level="1">50</value>
+			<value level="2">65</value>
+		</mpConsume>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16107" toLevel="3" name="致命痛擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<coolTime>700</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>830</hitTime>
+		<mpConsume>32</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16108" toLevel="7" name="血之燃燒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>
+			<value level="1">-300</value>
+			<value level="2">-400</value>
+			<value level="3">-700</value>
+			<value level="4">-700</value>
+			<value level="5">-700</value>
+			<value level="6">-700</value>
+			<value level="7">-700</value>
+		</effectPoint>
+		<hitTime>
+			<value level="1">1500</value>
+			<value level="2">1500</value>
+			<value level="3">1500</value>
+			<value level="4">1500</value>
+			<value level="5">1500</value>
+			<value level="6">1500</value>
+			<value level="7">3000</value>
+		</hitTime>
+		<isMagic>
+			<value level="1">1</value>
+			<value level="2">1</value>
+			<value level="3">1</value>
+			<value level="4">1</value>
+			<value level="5">1</value>
+			<value level="6">1</value>
+			<value level="7">0</value>
+		</isMagic>
+		<mpConsume>72</mpConsume>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16109" toLevel="1" name="猛烈上升">
+		
+		<icon>icon.m_class_heavy</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<effectPoint>650</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>10</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="16110" toLevel="1" name="光之提昇">
+		
+		<icon>icon.m_class_light</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<effectPoint>650</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>10</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="TwoHandedSwordBonus">
+				<pAtkAmount>1</pAtkAmount>
+				<pAtkMode>PER</pAtkMode>
+			</effect>
+			<effect name="TwoHandedBluntBonus">
+				<pAtkAmount>1</pAtkAmount>
+				<pAtkMode>PER</pAtkMode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>CROSSBOW</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>RAPIER</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>DUAL</item>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>ANCIENTSWORD</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>BOW</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="16111" toLevel="1" name="長袍提昇">
+		
+		<icon>icon.m_class_robe</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<effectPoint>650</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>10</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="16112" toLevel="1" name="速度提升">
+		
+		<icon>icon.m_mystery_brain</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<effectPoint>650</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>10</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="16113" toLevel="1" name="不幸-出血">
+		
+		<icon>icon.m_mystery_blood</icon>
+		<operateType>A2</operateType>
+		<targetType>NONE</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>BLEEDING</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectScope>NONE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<subordinationAbnormalType>BLEEDING</subordinationAbnormalType>
+		<trait>INFECTION</trait>
+		<effects>
+			<effect name="DamOverTime">
+				<power>128</power>
+				<ticks>3</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="16114" toLevel="5" name="死之詛咒">
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>1300</castRange>
+		<effectPoint>-10000</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>47</mpConsume>
+		<mpInitialConsume>12</mpInitialConsume>
+	</skill>
+	<skill id="16116" toLevel="2" name="自我毀滅">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>500</hitTime>
+		<isMagic>1</isMagic>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16117" toLevel="1" name="傷害增強階段1">
+		
+		<icon>icon.skill6367_1</icon>
+		<operateType>A2</operateType>
+		<effectPoint>650</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="16118" toLevel="1" name="傷害增強階段2">
+		
+		<icon>icon.skill6367_2</icon>
+		<operateType>A2</operateType>
+		<effectPoint>650</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="16119" toLevel="1" name="閃焰之線">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>450</castRange>
+		<coolTime>300</coolTime>
+		<effectPoint>-700</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>72</mpConsume>
+		<mpInitialConsume>18</mpInitialConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16121" toLevel="5" name="沉睡之雲">
+		
+		<icon>icon.skill1072</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>30</abnormalTime>
+		<castRange>600</castRange>
+		<effectPoint>-700</effectPoint>
+		<hitTime>3000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<mpConsume>
+			<value level="1">86</value>
+			<value level="2">98</value>
+			<value level="3">110</value>
+			<value level="4">123</value>
+			<value level="5">128</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">21</value>
+			<value level="2">24</value>
+			<value level="3">28</value>
+			<value level="4">31</value>
+			<value level="5">32</value>
+		</mpInitialConsume>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16122" toLevel="1" name="閃焰氣息">
+		
+		<icon>icon.skill4452</icon>
+		<operateType>A2</operateType>
+		<castRange>450</castRange>
+		<coolTime>300</coolTime>
+		<effectPoint>-700</effectPoint>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<mpConsume>40</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16123" toLevel="1" name="閃焰爆發">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>450</castRange>
+		<coolTime>300</coolTime>
+		<effectPoint>-700</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>72</mpConsume>
+		<mpInitialConsume>18</mpInitialConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16124" toLevel="1" name="閃焰生命">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<coolTime>300</coolTime>
+		<effectPoint>1300</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>72</mpConsume>
+		<mpInitialConsume>18</mpInitialConsume>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16125" toLevel="1" name="爆炎劍舞">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<coolTime>800</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1000</hitTime>
+		<mpConsume>20</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16126" toLevel="1" name="爆炎破壞者">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>100</castRange>
+		<coolTime>800</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1000</hitTime>
+		<mpConsume>25</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16127" toLevel="1" name="火焰阻斷">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>-700</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>40</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16128" toLevel="1" name="火焰沼澤">
+		
+		<icon>icon.skill4279_new</icon>
+		<operateType>A2</operateType>
+		<castRange>450</castRange>
+		<coolTime>300</coolTime>
+		<effectPoint>-700</effectPoint>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<mpConsume>65</mpConsume>
+		<mpInitialConsume>16</mpInitialConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16129" toLevel="5" name="沙漠乾渴">
+		
+		
+		
+		
+		
+		<icon>
+			<value level="1">icon.desert_thirst_Lv1</value>
+			<value level="2">icon.desert_thirst_Lv2</value>
+			<value level="3">icon.desert_thirst_Lv3</value>
+			<value level="4">icon.desert_thirst_Lv4</value>
+			<value level="5">icon.desert_thirst_Lv5</value>
+		</icon>
+		<operateType>A2</operateType>
+		<castRange>1300</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<mpConsume>10</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16130" toLevel="1" name="綠洲的氣息">
+		
+		<icon>icon.oasis_feel</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>15</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<castRange>1300</castRange>
+		<effectPoint>650</effectPoint>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<mpConsume>10</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+		<effects>
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-25</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="16131" toLevel="1" name="乾渴消除">
+		
+		<icon>icon.release_thirst</icon>
+		<operateType>A2</operateType>
+		<castRange>1300</castRange>
+		<effectPoint>650</effectPoint>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<mpConsume>10</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16132" toLevel="1" name="綠洲幻影">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>5000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>89</mpConsume>
+		<reuseDelay>15000</reuseDelay>
+	</skill>
+	<skill id="16133" toLevel="1" name="水霧之墓">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>5000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>89</mpConsume>
+		<reuseDelay>15000</reuseDelay>
+	</skill>
+	<skill id="16134" toLevel="1" name="末日悲鳴者">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>3000</hitTime>
+		<mpConsume>45</mpConsume>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16135" toLevel="1" name="研究開始">
+		
+		<icon>icon.etc_deco_star_i00</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="16136" toLevel="1" name="2倍獎勵">
+		
+		<icon>icon.etc_deco_star_i00</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="16137" toLevel="1" name="4倍獎勵">
+		
+		<icon>icon.etc_deco_star_i00</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="16138" toLevel="1" name="8倍獎勵">
+		
+		<icon>icon.etc_deco_star_i00</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="16139" toLevel="1" name="16倍獎勵">
+		
+		<icon>icon.etc_deco_star_i00</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="16140" toLevel="1" name="32倍獎勵">
+		
+		<icon>icon.etc_deco_star_i00</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="16141" toLevel="1" name="研究成功">
+		
+		<icon>icon.etc_deco_star_i00</icon>
+		<operateType>A2</operateType>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="16142" toLevel="1" name="研究成功">
+		
+		<icon>icon.etc_deco_star_i00</icon>
+		<operateType>A2</operateType>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="16143" toLevel="1" name="研究成功">
+		
+		<icon>icon.etc_deco_star_i00</icon>
+		<operateType>A2</operateType>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="16144" toLevel="1" name="研究成功">
+		
+		<icon>icon.etc_deco_star_i00</icon>
+		<operateType>A2</operateType>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="16145" toLevel="1" name="研究成功">
+		
+		<icon>icon.etc_deco_star_i00</icon>
+		<operateType>A2</operateType>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="16146" toLevel="1" name="研究失敗">
+		
+		<icon>icon.etc_deco_star_i00</icon>
+		<operateType>A2</operateType>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="16147" toLevel="7" name="致命震波">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<coolTime>570</coolTime>
+		<effectPoint>-1578</effectPoint>
+		<hitTime>
+			<value level="1">1200</value>
+			<value level="2">1200</value>
+			<value level="3">1200</value>
+			<value level="4">3000</value>
+			<value level="5">1200</value>
+			<value level="6">1200</value>
+			<value level="7">1200</value>
+		</hitTime>
+		<mpConsume>
+			<value level="1">69</value>
+			<value level="2">70</value>
+			<value level="3">70</value>
+			<value level="4">71</value>
+			<value level="5">72</value>
+			<value level="6">73</value>
+			<value level="7">74</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">17</value>
+			<value level="2">17</value>
+			<value level="3">18</value>
+			<value level="4">18</value>
+			<value level="5">18</value>
+			<value level="6">18</value>
+			<value level="7">18</value>
+		</mpInitialConsume>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16148" toLevel="5" name="恐懼">
+		
+		<icon>icon.skill1092</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<activateRate>90</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>400</affectRange>
+		<affectScope>RANGE</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>180</attributeValue>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>600</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-150</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>4000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<mpConsume>
+			<value level="1">65</value>
+			<value level="2">67</value>
+			<value level="3">70</value>
+			<value level="4">72</value>
+			<value level="5">75</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">16</value>
+			<value level="2">17</value>
+			<value level="3">17</value>
+			<value level="4">18</value>
+			<value level="5">19</value>
+		</mpInitialConsume>
+		<reuseDelay>5000</reuseDelay>
+		<trait>FEAR</trait>
+		<effects>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+		</effects>
+	</skill>
+	<skill id="16149" toLevel="5" name="致命施毒">
+		
+		<icon>icon.skill4035</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>
+			<value level="1">5</value>
+			<value level="2">5</value>
+			<value level="3">6</value>
+			<value level="4">6</value>
+			<value level="5">6</value>
+		</abnormalLevel>
+		<abnormalTime>9</abnormalTime>
+		<abnormalType>POISON</abnormalType>
+		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
+		<activateRate>
+			<value level="1">15</value>
+			<value level="2">15</value>
+			<value level="3">12</value>
+			<value level="4">12</value>
+			<value level="5">12</value>
+		</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>-150</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">46</value>
+			<value level="2">49</value>
+			<value level="3">52</value>
+			<value level="4">55</value>
+			<value level="5">58</value>
+			<value level="6">61</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">64</value>
+			<value level="2">70</value>
+			<value level="3">80</value>
+			<value level="4">86</value>
+			<value level="5">96</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">16</value>
+			<value level="2">18</value>
+			<value level="3">20</value>
+			<value level="4">22</value>
+			<value level="5">24</value>
+		</mpInitialConsume>
+		<reuseDelay>5000</reuseDelay>
+		<subordinationAbnormalType>POISON</subordinationAbnormalType>
+		<trait>INFECTION</trait>
+		<effects>
+			<effect name="DamOverTime">
+				<power>
+					<value level="1">191</value>
+					<value level="2">191</value>
+					<value level="3">291</value>
+					<value level="4">291</value>
+					<value level="5">291</value>
+				</power>
+				<ticks>3</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="16150" toLevel="5" name="緩速">
+		
+		<icon>icon.skill1160</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<activateRate>70</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>600</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-100</effectPoint>
+		<effectRange>1000</effectRange>
+		<hitTime>2000</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>40</magicLevel>
+		<trait>SUPPRESSION</trait>
+		<effects>
+			<effect name="Speed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="16151" toLevel="7" name="精神裂刺">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-105</value>
+			<value level="3">-110</value>
+			<value level="4">-115</value>
+			<value level="5">-115</value>
+			<value level="6">-120</value>
+			<value level="7">-125</value>
+		</effectPoint>
+		<hitTime>1200</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>
+			<value level="1">24</value>
+			<value level="2">29</value>
+			<value level="3">34</value>
+			<value level="4">38</value>
+			<value level="5">43</value>
+			<value level="6">43</value>
+			<value level="7">48</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">6</value>
+			<value level="2">7</value>
+			<value level="3">8</value>
+			<value level="4">10</value>
+			<value level="5">11</value>
+			<value level="6">11</value>
+			<value level="7">12</value>
+		</mpInitialConsume>
+	</skill>
+	<skill id="16152" toLevel="7" name="火炎裂刺">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-105</value>
+			<value level="3">-110</value>
+			<value level="4">-115</value>
+			<value level="5">-115</value>
+			<value level="6">-120</value>
+			<value level="7">-125</value>
+		</effectPoint>
+		<hitTime>1200</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>
+			<value level="1">24</value>
+			<value level="2">29</value>
+			<value level="3">34</value>
+			<value level="4">38</value>
+			<value level="5">43</value>
+			<value level="6">43</value>
+			<value level="7">48</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">6</value>
+			<value level="2">7</value>
+			<value level="3">8</value>
+			<value level="4">10</value>
+			<value level="5">11</value>
+			<value level="6">11</value>
+			<value level="7">12</value>
+		</mpInitialConsume>
+	</skill>
+	<skill id="16155" toLevel="1" name="魅惑肯佩希茲">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>5000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>89</mpConsume>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16156" toLevel="7" name="團體緩速下減">
+		
+		<icon>icon.skill1206</icon>
+		<operateType>A2</operateType>
+		<castRange>40</castRange>
+		<coolTime>570</coolTime>
+		<effectPoint>-1578</effectPoint>
+		<hitTime>1200</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<mpConsume>75</mpConsume>
+		<mpInitialConsume>19</mpInitialConsume>
+		<reuseDelay>6000</reuseDelay>
+	</skill>
+	<skill id="16157" toLevel="5" name="血墳">
+		
+		<icon>icon.skill0096</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>
+			<value level="1">4</value>
+			<value level="2">5</value>
+			<value level="3">5</value>
+			<value level="4">6</value>
+			<value level="5">7</value>
+		</abnormalLevel>
+		<abnormalTime>9</abnormalTime>
+		<abnormalType>BLEEDING</abnormalType>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>
+			<value level="1">2</value>
+			<value level="2">4</value>
+			<value level="3">4</value>
+			<value level="4">4</value>
+			<value level="5">4</value>
+		</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">46</value>
+			<value level="2">52</value>
+			<value level="3">58</value>
+			<value level="4">62</value>
+			<value level="5">66</value>
+		</magicLevel>
+		<subordinationAbnormalType>BLEEDING</subordinationAbnormalType>
+		<effects>
+			<effect name="DamOverTime">
+				<power>
+					<value level="1">218</value>
+					<value level="2">266</value>
+					<value level="3">266</value>
+					<value level="4">307</value>
+					<value level="5">307</value>
+				</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="16158" toLevel="1" name="巴列斯火山">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-709</effectPoint>
+		<hitTime>1200</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>41</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="16159" toLevel="1" name="巴列斯之火">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>41</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16160" toLevel="1" name="巴列斯火焰">
+		
+		<icon>icon.skill1101</icon>
+		<operateType>A2</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<mpConsume>77</mpConsume>
+		<mpInitialConsume>19</mpInitialConsume>
+		<reuseDelay>6000</reuseDelay>
+	</skill>
+	<skill id="16161" toLevel="1" name="達里昂出血">
+		
+		<icon>icon.skill0096</icon>
+		<operateType>A2</operateType>
+		<targetType>NONE</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>60</abnormalTime>
+		<abnormalType>BLEEDING</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectScope>NONE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<subordinationAbnormalType>BLEEDING</subordinationAbnormalType>
+		<trait>INFECTION</trait>
+		<effects>
+			<effect name="DamOverTime">
+				<power>128</power>
+				<ticks>3</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="16162" toLevel="1" name="巴列斯流星雨">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>77</mpConsume>
+		<mpInitialConsume>19</mpInitialConsume>
+		<reuseDelay>6000</reuseDelay>
+	</skill>
+	<skill id="16163" toLevel="1" name="達里昂劍刃風暴">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>77</mpConsume>
+		<mpInitialConsume>19</mpInitialConsume>
+		<reuseDelay>6000</reuseDelay>
+	</skill>
+	<skill id="16164" toLevel="1" name="火之刃">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<coolTime>570</coolTime>
+		<effectPoint>-1578</effectPoint>
+		<hitTime>1200</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>81</mpConsume>
+		<mpInitialConsume>20</mpInitialConsume>
+		<reuseDelay>6000</reuseDelay>
+	</skill>
+	<skill id="16165" toLevel="1" name="黑暗之刃">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>800</coolTime>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>77</mpConsume>
+		<mpInitialConsume>19</mpInitialConsume>
+		<reuseDelay>6000</reuseDelay>
+	</skill>
+	<skill id="16166" toLevel="3" name="死亡逃脫">
+		
+		
+		
+		<icon>icon.skill0078</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>180</abnormalTime>
+		<effectPoint>204</effectPoint>
+		<hitTime>1500</hitTime>
+		<mpConsume>10</mpConsume>
+		<reuseDelay>
+			<value level="1">5000</value>
+			<value level="2">120000</value>
+			<value level="3">120000</value>
+		</reuseDelay>
+	</skill>
+	<skill id="16167" toLevel="2" name="物理迴避增加2">
+		
+		
+		<icon>icon.skill0078</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16168" toLevel="1" name="瀕死">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<coolTime>700</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>830</hitTime>
+		<mpConsume>10</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16171" toLevel="1" name="召喚猛毒地帶">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-707</effectPoint>
+		<hitTime>300</hitTime>
+		<isDebuff>true</isDebuff>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="16172" toLevel="1" name="中毒狀態">
+		
+		<icon>icon.skill1167</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-707</effectPoint>
+		<isDebuff>true</isDebuff>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16173" toLevel="1" name="無敵">
+		
+		<icon>icon.skill1418</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="16174" toLevel="1" name="成長藥草">
+		
+		<icon>BranchSys2.icon.g_giant_gem</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+		<hitTime>100</hitTime>
+		<isMagic>4</isMagic>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="16175" toLevel="1" name="強力成長藥草">
+		
+		<icon>BranchSys2.icon.g_dawn_gem</icon>
+		<operateType>P</operateType>
+		<effectPoint>100</effectPoint>
+		<hitTime>100</hitTime>
+		<isMagic>4</isMagic>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="16176" toLevel="1" name="超強力成長藥草">
+		
+		<icon>icon.etc_str_symbol_i01</icon>
+		<operateType>P</operateType>
+		<effectPoint>100</effectPoint>
+		<hitTime>100</hitTime>
+		<isMagic>4</isMagic>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="16177" toLevel="5" name="擊倒攻擊耐性">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16178" toLevel="1" name="黎歐納怒雷之矛">
+		
+		<icon>icon.skll10321</icon>
+		<operateType>A2</operateType>
+		<castRange>900</castRange>
+		<effectPoint>500</effectPoint>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+		<mpConsume>10</mpConsume>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16179" toLevel="1" name="巴列斯">
+		
+		<icon>icon.skillboss</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16180" toLevel="1" name="達里昂">
+		
+		<icon>icon.skillboss</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16181" toLevel="10" name="特殊裝甲">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16183" toLevel="1" name="技能反射屏障">
+		
+		<icon>icon.skill1062</icon>
+		<operateType>A2</operateType>
+		<effectPoint>100</effectPoint>
+		<hitTime>5000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16184" toLevel="1" name="石化復仇">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16185" toLevel="1" name="劍氣暴風">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>1500</hitTime>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16186" toLevel="1" name="攔腰切割">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>1500</hitTime>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16187" toLevel="1" name="正面突破">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1500</hitTime>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16188" toLevel="1" name="漆黑">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16189" toLevel="1" name="使徒的一擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16190" toLevel="1" name="憤怒充能">
+		
+		<icon>icon.skill0110</icon>
+		<operateType>A2</operateType>
+		<castRange>300</castRange>
+		<effectPoint>100</effectPoint>
+		<hitTime>1500</hitTime>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16191" toLevel="1" name="修羅場">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>1500</hitTime>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16192" toLevel="1" name="邪惡不滅">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16193" toLevel="1" name="狂氣盤踞">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16194" toLevel="1" name="寂靜黃泉路">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>1000</castRange>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>10000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16195" toLevel="1" name="夭亡勸誘">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>1000</castRange>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>5000</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16196" toLevel="1" name="血滴迸飛">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16197" toLevel="1" name="死於非命">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>1500</hitTime>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16198" toLevel="1" name="苦痛延續">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-1500</effectPoint>
+		<hitTime>1500</hitTime>
+		<mpConsume>1</mpConsume>
+	</skill>
+	<skill id="16199" toLevel="1" name="吶喊地獄">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<mpConsume>1</mpConsume>
+	</skill>
+</list>

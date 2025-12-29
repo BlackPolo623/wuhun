@@ -1,0 +1,4664 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="20600" level="40" type="Monster" name="卡魯食人妖">
+		<parameters>
+			<param name="MoveAroundSocial" value="124" />
+			<param name="MoveAroundSocial1" value="124" />
+			<param name="MoveAroundSocial2" value="124" />
+			<param name="DaggerBackAttack" value="1" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4073" level="4" />
+		</parameters>
+		<race>GIANT</race>
+		<sex>MALE</sex>
+		<equipment rhand="88" /> 
+		<acquire exp="14" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1019.59695680077" hpRegen="4.5" mp="478.8" mpRegen="1.8" />
+			<attack physical="176.36077" magical="120.43155" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="156.55035" magical="114.55675" />
+			<speed>
+				<walk ground="55" />
+				<run ground="174" />
+			</speed>
+			<hitTime>280</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="11" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4073" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450" />
+		<collision>
+			<radius normal="17" />
+			<height normal="35" />
+		</collision>
+	</npc>
+	<npc id="20601" level="41" type="Monster" name="塔林獸人">
+		<parameters>
+			<param name="MoveAroundSocial" value="35" />
+			<param name="MoveAroundSocial1" value="35" />
+			<param name="MoveAroundSocial2" value="35" />
+			<param name="MaxRoarCount" value="3" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="Fury" id="4317" level="1" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="2" /> 
+		<acquire exp="15" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1063.54199060681" hpRegen="5.5" mp="504.8" mpRegen="2.1" />
+			<attack physical="187.11878" magical="127.77787" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="160.69002" magical="117.58598" />
+			<speed>
+				<walk ground="80" />
+				<run ground="174" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4317" level="1" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>ORC</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="9" />
+			<height normal="21.5" />
+		</collision>
+	</npc>
+	<npc id="20602" level="42" type="Monster" name="塔林獸人弓箭手">
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4040" level="4" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="14" /> 
+		<acquire exp="16" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1108.45623972656" hpRegen="5.5" mp="531" mpRegen="2.1" />
+			<attack physical="198.34591" magical="135.44454" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="164.88513" magical="120.65578" />
+			<speed>
+				<walk ground="45" />
+				<run ground="174" />
+			</speed>
+			<hitTime>960</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4040" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="ARCHER" clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>ORC</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="11" />
+			<height normal="21.5" />
+		</collision>
+	</npc>
+	<npc id="20603" level="43" type="Monster" name="可洛比">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+		</parameters>
+		<race>BUG</race>
+		<sex>MALE</sex>
+		<acquire exp="16" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1154.31374327461" hpRegen="5.5" mp="557.4" mpRegen="2.1" />
+			<attack physical="210.04832" magical="143.43577" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="169.13417" magical="123.76505" />
+			<speed>
+				<walk ground="72" />
+				<run ground="174" />
+			</speed>
+			<hitTime>260</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="12" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="10" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true" />
+		<collision>
+			<radius normal="26" />
+			<height normal="25.5" />
+		</collision>
+	</npc>
+	<npc id="20604" level="44" type="Monster" name="拉金">
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4073" level="4" />
+		</parameters>
+		<race>GIANT</race>
+		<sex>MALE</sex>
+		<equipment rhand="89" /> 
+		<acquire exp="17" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1201.08570061422" hpRegen="5.5" mp="584" mpRegen="2.1" />
+			<attack physical="222.23112" magical="151.75505" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="173.43552" magical="126.91259" />
+			<speed>
+				<walk ground="45" />
+				<run ground="174" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="11" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4073" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450" />
+		<collision>
+			<radius normal="17" grown="20" />
+			<height normal="39" grown="48" />
+		</collision>
+	</npc>
+	<npc id="20605" level="45" type="Monster" name="奇異的飛龍">
+		<parameters>
+			<param name="MoveAroundSocial" value="60" />
+			<param name="MoveAroundSocial1" value="60" />
+			<param name="MoveAroundSocial2" value="60" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="DDMagic" id="4078" level="4" />
+		</parameters>
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<acquire exp="18" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1248.74044783714" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
+			<attack physical="234.89829" magical="160.40508" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="177.78746" magical="130.09715" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<hitTime>840</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="10" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4071" level="5" /> 
+			<skill id="4078" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="30" />
+			<height normal="100" />
+		</collision>
+	</npc>
+	<npc id="20606" level="27" type="Monster" name="庫倫地靈">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4032" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="6" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="543.437297370415" hpRegen="3.5" mp="286.92" mpRegen="1.5" />
+			<attack physical="74.99121" magical="51.20928" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="108.28767" magical="79.24022" />
+			<speed>
+				<walk ground="47" />
+				<run ground="110" />
+			</speed>
+			<hitTime>540</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4032" level="2" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>KOBOLD</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="10" />
+			<height normal="15" />
+		</collision>
+	</npc>
+	<npc id="20607" level="28" type="Monster" name="庫倫地靈戰士">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4073" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="7" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="573.624217856864" hpRegen="3.5" mp="300.96" mpRegen="1.5" />
+			<attack physical="80.54056" magical="54.99876" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="111.61368" magical="81.67405" />
+			<speed>
+				<walk ground="47" />
+				<run ground="110" />
+			</speed>
+			<hitTime>540</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4073" level="2" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>KOBOLD</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="10" />
+			<height normal="15" />
+		</collision>
+	</npc>
+	<npc id="20608" level="29" type="Monster" name="巴丁">
+		<parameters>
+			<param name="MoveAroundSocial" value="157" />
+			<param name="MoveAroundSocial1" value="157" />
+			<param name="MoveAroundSocial2" value="157" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="14" /> 
+		<acquire exp="7" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="604.883087573501" hpRegen="3.5" mp="315.12" mpRegen="1.5" />
+			<attack physical="86.42002" magical="59.01367" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="115.00598" magical="84.15638" />
+			<speed>
+				<walk ground="40" />
+				<run ground="140" />
+			</speed>
+			<hitTime>800</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4274" level="1" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai type="ARCHER" aggroRange="450" clanHelpRange="400" isAggressive="true">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="11" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="20609" level="30" type="Monster" name="火蜥蜴拉金">
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic1" id="4100" level="3" />
+			<skill name="DDMagic2" id="4001" level="3" />
+			<skill name="DeBuff" id="4104" level="3" />
+		</parameters>
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="8" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="637.219604833719" hpRegen="3.5" mp="329.4" mpRegen="1.5" />
+			<attack physical="92.64226" magical="63.26266" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="118.46427" magical="86.68702" />
+			<speed>
+				<walk ground="64" />
+				<run ground="96" />
+			</speed>
+			<hitTime>200</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4001" level="3" /> 
+			<skill id="4100" level="3" /> 
+			<skill id="4104" level="3" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>ELEMENTAL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="16" />
+			<height normal="6.8" />
+		</collision>
+	</npc>
+	<npc id="20610" level="31" type="Monster" name="火焰觀察者">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<skill name="CheckMagic1" id="4046" level="3" />
+			<skill name="CheckMagic" id="4098" level="3" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4002" level="3" />
+			<skill name="SleepMagic" id="4046" level="3" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="8" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="670.637516093159" hpRegen="4.5" mp="343.8" mpRegen="1.8" />
+			<attack physical="99.21986" magical="67.7543" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="121.98819" magical="89.26566" />
+			<speed>
+				<walk ground="90" />
+				<run ground="90" />
+			</speed>
+			<hitTime>300</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4002" level="3" /> 
+			<skill id="4046" level="3" /> 
+			<skill id="4098" level="3" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>ELEMENTAL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="21" />
+			<height normal="43" />
+		</collision>
+	</npc>
+	<npc id="20611" level="32" type="Monster" name="德雷巴奴康菲">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4002" level="3" />
+			<skill name="DeBuff" id="4098" level="3" />
+			<skill name="HoldMagic" id="4047" level="3" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="9" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="705.138521256333" hpRegen="4.5" mp="358.32" mpRegen="1.8" />
+			<attack physical="106.16525" magical="72.49711" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="125.57727" magical="91.89199" />
+			<speed>
+				<walk ground="80" />
+				<run ground="80" />
+			</speed>
+			<hitTime>350</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4002" level="3" /> 
+			<skill id="4047" level="3" /> 
+			<skill id="4098" level="3" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>DEMONIC</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="14" />
+			<height normal="36" />
+		</collision>
+	</npc>
+	<npc id="20612" level="33" type="Monster" name="火蜥蜴羅溫">
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic1" id="4100" level="3" />
+			<skill name="DDMagic2" id="4001" level="3" />
+			<skill name="DeBuff" id="4035" level="3" />
+		</parameters>
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="9" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="740.722181648393" hpRegen="4.5" mp="372.96" mpRegen="1.8" />
+			<attack physical="113.49065" magical="77.49941" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="129.23095" magical="94.5656" />
+			<speed>
+				<walk ground="64" />
+				<run ground="96" />
+			</speed>
+			<hitTime>200</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4001" level="3" /> 
+			<skill id="4035" level="3" /> 
+			<skill id="4100" level="3" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>ELEMENTAL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="16" />
+			<height normal="6.8" />
+		</collision>
+	</npc>
+	<npc id="20613" level="27" type="Monster" name="拉菲蜥蜴人">
+		<parameters>
+			<param name="MoveAroundSocial" value="58" />
+			<param name="MoveAroundSocial1" value="58" />
+			<param name="MoveAroundSocial2" value="58" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4067" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="291" /> 
+		<acquire exp="6" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="543.437297370415" hpRegen="3.5" mp="286.92" mpRegen="1.5" />
+			<attack physical="74.99121" magical="51.20928" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="108.28767" magical="79.24022" />
+			<speed>
+				<walk ground="43" />
+				<run ground="130" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4067" level="2" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>LIZARDMAN</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="10" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="20614" level="28" type="Monster" name="拉菲蜥蜴人巡守">
+		<parameters>
+			<param name="MoveAroundSocial" value="139" />
+			<param name="MoveAroundSocial1" value="35" />
+			<param name="MoveAroundSocial2" value="139" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="2507" /> 
+		<acquire exp="7" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="573.624217856864" hpRegen="3.5" mp="300.96" mpRegen="1.5" />
+			<attack physical="80.54056" magical="54.99876" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="111.61368" magical="81.67405" />
+			<speed>
+				<walk ground="43" />
+				<run ground="130" />
+			</speed>
+			<hitTime>720</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="9" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>LIZARDMAN</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="10" grown="12" />
+			<height normal="22" grown="27" />
+		</collision>
+	</npc>
+	<npc id="20615" level="29" type="Monster" name="瑞特摩">
+		<parameters>
+			<param name="MoveAroundSocial" value="110" />
+			<param name="MoveAroundSocial1" value="110" />
+			<param name="MoveAroundSocial2" value="110" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4073" level="2" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="73" /> 
+		<acquire exp="7" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="604.883087573501" hpRegen="3.5" mp="315.12" mpRegen="1.5" />
+			<attack physical="86.42002" magical="59.01367" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="115.00598" magical="84.15638" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+			<hitTime>300</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4073" level="2" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai aggroRange="450" clanHelpRange="400" isAggressive="true">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="27" grown="34" />
+		</collision>
+	</npc>
+	<npc id="20616" level="30" type="Monster" name="水精拉金">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagicSlow" id="4247" level="3" />
+		</parameters>
+		<race>ELEMENTAL</race>
+		<sex>FEMALE</sex>
+		<acquire exp="8" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="637.219604833719" hpRegen="3.5" mp="329.4" mpRegen="1.5" />
+			<attack physical="92.64226" magical="63.26266" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="118.46427" magical="86.68702" />
+			<speed>
+				<walk ground="60" />
+				<run ground="60" />
+			</speed>
+			<hitTime>350</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="18" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4071" level="5" /> 
+			<skill id="4284" level="5" /> 
+			<skill id="4247" level="3" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>ELEMENTAL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="12" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="20617" level="31" type="Monster" name="水之觀察者">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<skill name="CheckMagic" id="4088" level="3" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4066" level="3" />
+			<skill name="SleepMagic" id="4046" level="3" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="8" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="670.637516093159" hpRegen="4.5" mp="343.8" mpRegen="1.8" />
+			<attack physical="99.21986" magical="67.7543" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="121.98819" magical="89.26566" />
+			<speed>
+				<walk ground="90" />
+				<run ground="90" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4046" level="3" /> 
+			<skill id="4066" level="3" /> 
+			<skill id="4088" level="3" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai clanHelpRange="400" aggroRange="450">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="20" grown="24" />
+		</collision>
+	</npc>
+	<npc id="20618" level="32" type="Monster" name="魅魔卡尼">
+		<parameters>
+			<param name="MoveAroundSocial" value="110" />
+			<param name="MoveAroundSocial1" value="110" />
+			<param name="MoveAroundSocial2" value="110" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic1" id="4001" level="3" />
+			<skill name="DDMagic2" id="4066" level="3" />
+			<skill name="DeBuff" id="4088" level="3" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<acquire exp="9" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="705.138521256333" hpRegen="4.5" mp="358.32" mpRegen="1.8" />
+			<attack physical="106.16525" magical="72.49711" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="125.57727" magical="91.89199" />
+			<speed>
+				<walk ground="60" />
+				<run ground="100" />
+			</speed>
+			<hitTime>840</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4001" level="3" /> 
+			<skill id="4066" level="3" /> 
+			<skill id="4088" level="3" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>DEMONIC</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="10" />
+			<height normal="36" />
+		</collision>
+	</npc>
+	<npc id="20619" level="33" type="Monster" name="水精羅溫">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_LongRangeDDMagic" id="4151" level="3" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="3" />
+		</parameters>
+		<race>ELEMENTAL</race>
+		<sex>FEMALE</sex>
+		<acquire exp="9" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="740.722181648393" hpRegen="4.5" mp="372.96" mpRegen="1.8" />
+			<attack physical="113.49065" magical="77.49941" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="129.23095" magical="94.5656" />
+			<speed>
+				<walk ground="60" />
+				<run ground="60" />
+			</speed>
+			<hitTime>350</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4151" level="3" /> 
+			<skill id="4160" level="3" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>ELEMENTAL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="12" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="20620" level="85" type="Monster" name="洞穴獸" element="EARTH">
+		<parameters>
+			<param name="MoveAroundSocial" value="135" />
+			<param name="MoveAroundSocial1" value="135" />
+			<param name="MoveAroundSocial2" value="135" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="Buff" id="4028" level="3" /> 
+		</parameters>
+		<race>GIANT</race>
+		<sex>MALE</sex>
+		<acquire exp="4053" sp="41" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="107872.1" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="22469.69025" magical="11507.9146875" random="10" critical="4" accuracy="25" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1172.1935736" magical="857.760775194025" />
+			<speed>
+				<walk ground="55" />
+				<run ground="174" />
+			</speed>
+			<hitTime>610</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="35" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="11" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="16" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="13" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48047" level="1" /> 
+			<skill id="4071" level="2" /> 
+			<skill id="5601" level="1" /> 
+			<skill id="5599" level="10" /> 
+			<skill id="48083" level="1" /> 
+			<skill id="4028" level="3" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="500" /></npc>
+	<npc id="20621" level="85" type="Monster" name="死亡波動" element="EARTH">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="AttackLowLevel" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic1" id="4100" level="6" /> 
+			<skill name="DDMagic2" id="4039" level="6" /> 
+			<skill name="DeBuff" id="4117" level="6" /> 
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="3168" sp="32" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="64723.42" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="22469.69025" magical="11507.9146875" random="10" critical="4" accuracy="25" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1172.1935736" magical="857.760775194025" />
+			<speed>
+				<walk ground="25" />
+				<run ground="174" />
+			</speed>
+			<hitTime>100</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="22" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="19" /> 
+			<skill id="4411" level="19" /> 
+			<skill id="4412" level="14" /> 
+			<skill id="4413" level="14" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48047" level="1" /> 
+			<skill id="4071" level="2" /> 
+			<skill id="5601" level="1" /> 
+			<skill id="5599" level="10" /> 
+			<skill id="48083" level="1" /> 
+			<skill id="4039" level="6" /> 
+			<skill id="4100" level="6" /> 
+			<skill id="4117" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="500">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai></npc>
+	<npc id="20622" level="85" type="Monster" name="瑪魯克士兵" element="EARTH">
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4067" level="6" /> 
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="221" />
+		<acquire exp="3385" sp="34" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="86297.47" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="22469.69025" magical="11507.9146875" random="5" critical="8" accuracy="25" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="1172.1935736" magical="857.760775194025" />
+			<speed>
+				<walk ground="80" />
+				<run ground="174" />
+			</speed>
+			<hitTime>520</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="28.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="17" /> 
+			<skill id="4411" level="18" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="13" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="48047" level="1" /> 
+			<skill id="4071" level="2" /> 
+			<skill id="5601" level="1" /> 
+			<skill id="5599" level="10" /> 
+			<skill id="48083" level="1" /> 
+			<skill id="4067" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="500">
+			<clanList>
+				<clan>MALRUK</clan>
+			</clanList>
+		</ai></npc>
+	<npc id="20623" level="85" type="Monster" name="波倫多" element="EARTH">
+		<parameters>
+			<param name="MoveAroundSocial" value="139" />
+			<param name="MoveAroundSocial1" value="35" />
+			<param name="MoveAroundSocial2" value="139" />
+			<param name="AttackLowLevel" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<skill name="PhysicalSpecial" id="4124" level="6" /> 
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="2507" />
+		<acquire exp="2984" sp="30" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="43148.73" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="22469.69025" magical="11507.9146875" random="5" critical="8" accuracy="25" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="1172.1935736" magical="857.760775194025" />
+			<speed>
+				<walk ground="43" />
+				<run ground="174" />
+			</speed>
+			<hitTime>720</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="10" />
+			<height normal="22" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="16" /> 
+			<skill id="4412" level="14" /> 
+			<skill id="4413" level="14" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="48047" level="1" /> 
+			<skill id="4071" level="2" /> 
+			<skill id="5601" level="1" /> 
+			<skill id="5599" level="10" /> 
+			<skill id="48083" level="1" /> 
+			<skill id="4124" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="500">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai></npc>
+	<npc id="20624" level="85" type="Monster" name="洞穴咆哮者" element="EARTH">
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="SetHateGroup" value="ATTACKER_GROUP" />
+			<param name="SetHateGroupRatio" value="30" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="Buff" id="4074" level="2" /> 
+		</parameters>
+		<race>GIANT</race>
+		<sex>MALE</sex>
+		<acquire exp="4053" sp="41" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="107872.1" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="22469.69025" magical="11507.9146875" random="10" critical="4" accuracy="25" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1172.1935736" magical="857.760775194025" />
+			<speed>
+				<walk ground="45" />
+				<run ground="174" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="17" />
+			<height normal="39" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="11" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="16" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="13" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48047" level="1" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5601" level="1" /> 
+			<skill id="5599" level="10" /> 
+			<skill id="48083" level="1" /> 
+			<skill id="4074" level="2" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="500" /></npc>
+	<npc id="20625" level="85" type="Monster" name="瑪魯克騎士" element="EARTH">
+		<parameters>
+			<param name="MoveAroundSocial" value="215" />
+			<param name="MoveAroundSocial1" value="215" />
+			<param name="MoveAroundSocial2" value="215" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4073" level="6" /> 
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="78" />
+		<acquire exp="3451" sp="34" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="86297.47" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="22469.69025" magical="11507.9146875" random="10" critical="4" accuracy="25" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1172.1935736" magical="857.760775194025" />
+			<speed>
+				<walk ground="40" />
+				<run ground="174" />
+			</speed>
+			<hitTime>170</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="10" />
+			<height normal="25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="17" /> 
+			<skill id="4411" level="18" /> 
+			<skill id="4412" level="14" /> 
+			<skill id="4413" level="14" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48047" level="1" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5601" level="1" /> 
+			<skill id="5599" level="10" /> 
+			<skill id="48083" level="1" /> 
+			<skill id="4073" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="500">
+			<clanList>
+				<clan>MALRUK</clan>
+			</clanList>
+		</ai></npc>
+	<npc id="20626" level="85" type="Monster" name="瑪魯克狂戰士" element="EARTH">
+		<parameters>
+			<param name="MoveAroundSocial" value="74" />
+			<param name="MoveAroundSocial1" value="74" />
+			<param name="MoveAroundSocial2" value="74" />
+			<param name="SetHateGroup" value="ATTACKER_GROUP" />
+			<param name="SetHateGroupRatio" value="35" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4032" level="6" /> 
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="77" />
+		<acquire exp="3385" sp="34" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="86297.47" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="22469.69025" magical="11507.9146875" random="10" critical="4" accuracy="25" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1172.1935736" magical="857.760775194025" />
+			<speed>
+				<walk ground="27" />
+				<run ground="174" />
+			</speed>
+			<hitTime>710</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="29" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="17" /> 
+			<skill id="4411" level="18" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="13" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48047" level="1" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5601" level="1" /> 
+			<skill id="5599" level="10" /> 
+			<skill id="48083" level="1" /> 
+			<skill id="4032" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>4</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="500">
+			<clanList>
+				<clan>MALRUK</clan>
+			</clanList>
+		</ai></npc>
+	<npc id="20627" level="85" type="Monster" name="瑪魯克王" element="EARTH">
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="AttackLowLevel" value="1" />
+			<skill name="CheckMagic" id="4098" level="6" /> 
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4002" level="6" /> 
+			<skill name="SleepMagic" id="4046" level="6" /> 
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="1472" />
+		<acquire exp="3168" sp="32" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="64723.42" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="22469.69025" magical="11507.9146875" random="10" critical="4" accuracy="25" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1172.1935736" magical="857.760775194025" />
+			<speed>
+				<walk ground="100" />
+				<run ground="174" />
+			</speed>
+			<hitTime>450</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="45" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="19" /> 
+			<skill id="4411" level="19" /> 
+			<skill id="4412" level="14" /> 
+			<skill id="4413" level="14" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48047" level="1" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5601" level="1" /> 
+			<skill id="5599" level="10" /> 
+			<skill id="48083" level="1" /> 
+			<skill id="4002" level="6" /> 
+			<skill id="4046" level="6" /> 
+			<skill id="4098" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>5</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="500">
+			<clanList>
+				<clan>MALRUK</clan>
+			</clanList>
+		</ai></npc>
+	<npc id="20628" level="85" type="Monster" name="黎瑪卡霖尼司" element="EARTH">
+		<parameters>
+			<param name="MoveAroundSocial" value="60" />
+			<param name="MoveAroundSocial1" value="60" />
+			<param name="MoveAroundSocial2" value="60" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4002" level="6" /> 
+			<skill name="DeBuff" id="4117" level="6" /> 
+			<skill name="HoldMagic" id="4047" level="6" /> 
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<acquire exp="3385" sp="34" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="86297.47" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="22469.69025" magical="11507.9146875" random="10" critical="4" accuracy="25" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1172.1935736" magical="857.760775194025" />
+			<speed>
+				<walk ground="45" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="41" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="17" /> 
+			<skill id="4411" level="17" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="13" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48047" level="1" /> 
+			<skill id="4071" level="2" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="4" /> 
+			<skill id="5599" level="10" /> 
+			<skill id="48083" level="1" /> 
+			<skill id="4002" level="6" /> 
+			<skill id="4047" level="6" /> 
+			<skill id="4117" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>5</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="500">
+			<clanList>
+				<clan>MALRUK</clan>
+			</clanList>
+		</ai></npc>
+	<npc id="20629" level="85" type="Monster" name="卡拉克" element="EARTH">
+		<parameters>
+			<param name="MoveAroundSocial" value="140" />
+			<param name="MoveAroundSocial1" value="140" />
+			<param name="MoveAroundSocial2" value="140" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfBuff" id="4091" level="1" /> 
+			<skill name="SelfRangeDDMagic" id="4072" level="7" /> 
+			<skill name="PhysicalSpecial" id="4032" level="7" /> 
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="4053" sp="41" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="107872.1" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="22469.69025" magical="11507.9146875" random="10" critical="4" accuracy="25" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1172.1935736" magical="857.760775194025" />
+			<speed>
+				<walk ground="37" />
+				<run ground="174" />
+			</speed>
+			<hitTime>450</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="71.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="16" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="13" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48047" level="1" /> 
+			<skill id="4071" level="2" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="4" /> 
+			<skill id="5599" level="10" /> 
+			<skill id="48083" level="1" /> 
+			<skill id="4032" level="7" /> 
+			<skill id="4072" level="7" /> 
+			<skill id="4091" level="1" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>5</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="500">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai></npc>
+	<npc id="20630" level="45" type="Monster" name="泰可獸人">
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="127" /> 
+		<acquire exp="18" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1248.74044783714" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
+			<attack physical="234.89829" magical="160.40508" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="177.78746" magical="130.09715" />
+			<speed>
+				<walk ground="45" />
+				<run ground="174" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4276" level="1" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="12" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<npc id="20631" level="46" type="Monster" name="泰可獸人弓手">
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4040" level="4" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="14" /> 
+		<acquire exp="19" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1297.24344275991" hpRegen="5.5" mp="637.8" mpRegen="2.1" />
+			<attack physical="248.0526" magical="169.38777" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="182.18816" magical="133.31739" />
+			<speed>
+				<walk ground="45" />
+				<run ground="174" />
+			</speed>
+			<hitTime>910</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="10" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4276" level="1" /> 
+			<skill id="4040" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="ARCHER" clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>ORC</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="12" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="20632" level="47" type="Monster" name="泰可獸人戰士">
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="RandomAggressive" value="20" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4032" level="4" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="75" /> 
+		<acquire exp="20" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1346.55725878612" hpRegen="5.5" mp="665" mpRegen="2.1" />
+			<attack physical="261.69549" magical="178.7041" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="186.63569" magical="136.5719" />
+			<speed>
+				<walk ground="36" />
+				<run ground="174" />
+			</speed>
+			<hitTime>540</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4276" level="1" /> 
+			<skill id="4032" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="400" isAggressive="true">
+			<clanList>
+				<clan>ORC</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="12" grown="14" />
+			<height normal="24" grown="28.8" />
+		</collision>
+	</npc>
+	<npc id="20633" level="48" type="Monster" name="泰可獸人咒術士">
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="75" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="W_LongRangeDDMagic" id="4157" level="4" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="4" />
+			<skill name="MagicHeal" id="4065" level="4" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="9" /> 
+		<acquire exp="21" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1396.64158795631" hpRegen="5.5" mp="692.4" mpRegen="2.1" />
+			<attack physical="275.82705" magical="188.35412" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="191.12803" magical="139.8592" />
+			<speed>
+				<walk ground="10" />
+				<run ground="174" />
+			</speed>
+			<hitTime>340</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="10" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4276" level="3" /> 
+			<skill id="4065" level="4" /> 
+			<skill id="4157" level="4" /> 
+			<skill id="4160" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>ORC</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="10" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="20634" level="49" type="Monster" name="泰可獸人團長">
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4032" level="4" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="75" />
+		<acquire exp="22" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1447.45325347694" hpRegen="5.5" mp="720" mpRegen="2.1" />
+			<attack physical="290.44588" magical="198.33688" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="195.66302" magical="143.17771" />
+			<speed>
+				<walk ground="36" />
+				<run ground="174" />
+			</speed>
+			<hitTime>540</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="10" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4276" level="2" /> 
+			<skill id="4032" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>ORC</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="12" grown="14" />
+			<height normal="24" grown="28.8" />
+		</collision>
+	</npc>
+	<npc id="20635" level="47" type="Monster" name="卡嵐可因">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="DDMagic" id="4039" level="4" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="20" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1346.55725878612" hpRegen="5.5" mp="665" mpRegen="2.1" />
+			<attack physical="261.69549" magical="178.7041" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="186.63569" magical="136.5719" />
+			<speed>
+				<walk ground="90" />
+				<run ground="174" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4276" level="1" /> 
+			<skill id="4039" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+	</npc>
+	<npc id="20636" level="46" type="Monster" name="鏡之森林亡靈">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="19" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1297.24344275991" hpRegen="5.5" mp="637.8" mpRegen="2.1" />
+			<attack physical="248.0526" magical="169.38777" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="182.18816" magical="133.31739" />
+			<speed>
+				<walk ground="80" />
+				<run ground="174" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4093" level="1" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="200" isAggressive="true">
+			<clanList>
+				<clan>MIRRORFOREST</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="9" />
+			<height normal="16.5" />
+		</collision>
+	</npc>
+	<npc id="20637" level="47" type="Monster" name="鏡之森林亡靈">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="20" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1346.55725878612" hpRegen="5.5" mp="665" mpRegen="2.1" />
+			<attack physical="261.69549" magical="178.7041" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="186.63569" magical="136.5719" />
+			<speed>
+				<walk ground="80" />
+				<run ground="174" />
+			</speed>
+			<hitTime>410</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4093" level="1" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="200" isAggressive="true">
+			<clanList>
+				<clan>MIRRORFOREST</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="7" />
+			<height normal="21" />
+		</collision>
+	</npc>
+	<npc id="20638" level="48" type="Monster" name="鏡之森林亡靈">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="21" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1396.64158795631" hpRegen="5.5" mp="692.4" mpRegen="2.1" />
+			<attack physical="275.82705" magical="188.35412" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="191.12803" magical="139.8592" />
+			<speed>
+				<walk ground="80" />
+				<run ground="174" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4093" level="1" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="200" isAggressive="true">
+			<clanList>
+				<clan>MIRRORFOREST</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="8" />
+			<height normal="22" />
+		</collision>
+	</npc>
+	<npc id="20639" level="49" type="Monster" name="鏡子">
+		<parameters>
+			<param name="MoveAroundSocial" value="60" />
+			<param name="MoveAroundSocial1" value="60" />
+			<param name="MoveAroundSocial2" value="60" />
+			<skill name="CheckMagic" id="4046" level="4" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="DDMagic" id="4039" level="4" />
+			<skill name="SleepMagic" id="4046" level="4" />
+		</parameters>
+		<race>FAIRY</race>
+		<sex>MALE</sex>
+		<acquire exp="22" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1447.45325347694" hpRegen="5.5" mp="720" mpRegen="2.1" />
+			<attack physical="290.44588" magical="198.33688" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="195.66302" magical="143.17771" />
+			<speed>
+				<walk ground="80" />
+				<run ground="174" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="13" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="10" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4379" level="3" /> 
+			<skill id="4435" level="3" /> 
+			<skill id="4039" level="4" /> 
+			<skill id="4046" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="26" />
+			<height normal="52" />
+		</collision>
+	</npc>
+	<npc id="20640" level="50" type="Monster" name="哈里特蜥蜴人">
+		<parameters>
+			<param name="MoveAroundSocial" value="60" />
+			<param name="MoveAroundSocial1" value="60" />
+			<param name="MoveAroundSocial2" value="60" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="88" lhand="945" /> 
+		<acquire exp="23" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1498.94623198693" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
+			<attack physical="305.54906" magical="208.6504" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="200.23844" magical="146.5258" />
+			<speed>
+				<walk ground="37" />
+				<run ground="174" />
+			</speed>
+			<hitTime>280</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>LIZARDMAN</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="11" />
+			<height normal="32" />
+		</collision>
+	</npc>
+	<npc id="20641" level="51" type="Monster" name="哈里特蜥蜴人士兵">
+		<parameters>
+			<param name="MoveAroundSocial" value="60" />
+			<param name="MoveAroundSocial1" value="60" />
+			<param name="MoveAroundSocial2" value="60" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4032" level="5" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="70" /> 
+		<acquire exp="24" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1551.07168578515" hpRegen="6.5" mp="775.8" mpRegen="2.4" />
+			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="204.85194" magical="149.90176" />
+			<speed>
+				<walk ground="37" />
+				<run ground="174" />
+			</speed>
+			<hitTime>280</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4032" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>LIZARDMAN</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="11" />
+			<height normal="32" />
+		</collision>
+	</npc>
+	<npc id="20642" level="52" type="Monster" name="哈里特蜥蜴人弓箭手">
+		<parameters>
+			<param name="MoveAroundSocial" value="125" />
+			<param name="MoveAroundSocial1" value="125" />
+			<param name="MoveAroundSocial2" value="125" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="Buff" id="4096" level="3" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="14" /> 
+		<acquire exp="25" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1603.77800520503" hpRegen="6.5" mp="804" mpRegen="2.4" />
+			<attack physical="337.18867" magical="230.25615" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="209.50106" magical="153.30378" />
+			<speed>
+				<walk ground="37" />
+				<run ground="174" />
+			</speed>
+			<hitTime>930</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="10" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="9" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4085" level="1" /> 
+			<skill id="4096" level="3" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="ARCHER" aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>LIZARDMAN</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="11" />
+			<height normal="30" />
+		</collision>
+	</npc>
+	<npc id="20643" level="53" type="Monster" name="哈里特蜥蜴人戰士">
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="Buff" id="4030" level="3" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="291" /> 
+		<acquire exp="26" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1657.01086128246" hpRegen="6.5" mp="832.4" mpRegen="2.4" />
+			<attack physical="353.71092" magical="241.5387" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="214.18326" magical="156.73001" />
+			<speed>
+				<walk ground="40" />
+				<run ground="174" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4030" level="3" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="400" aggroRange="450">
+			<clanList>
+				<clan>LIZARDMAN</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="13" />
+			<height normal="35" />
+		</collision>
+	</npc>
+	<npc id="20644" level="54" type="Monster" name="哈里特蜥蜴人咒術士">
+		<parameters>
+			<param name="MoveAroundSocial" value="110" />
+			<param name="MoveAroundSocial1" value="110" />
+			<param name="MoveAroundSocial2" value="110" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="W_LongRangeDDMagic" id="4155" level="5" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="5" />
+			<skill name="DeBuff" id="4076" level="3" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="9" /> 
+		<acquire exp="27" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1710.71326882197" hpRegen="6.5" mp="861" mpRegen="2.4" />
+			<attack physical="370.68904" magical="253.13256" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="218.89589" magical="160.17851" />
+			<speed>
+				<walk ground="43" />
+				<run ground="174" />
+			</speed>
+			<hitTime>630</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4076" level="3" /> 
+			<skill id="4155" level="5" /> 
+			<skill id="4160" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>LIZARDMAN</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="13" />
+			<height normal="35" />
+		</collision>
+	</npc>
+	<npc id="20645" level="55" type="Monster" name="哈里特蜥蜴人族長">
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4067" level="5" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="221" /> 
+		<acquire exp="28" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1764.82565992283" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
+			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="223.6362" magical="163.64727" />
+			<speed>
+				<walk ground="53" />
+				<run ground="174" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="10" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4085" level="1" /> 
+			<skill id="4086" level="1" /> 
+			<skill id="4067" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>LIZARDMAN</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="20" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="20646" level="76" type="Monster" name="哈朗卡">
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="30" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DeBuff" id="4088" level="5" /> 
+		</parameters>
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<acquire exp="52" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3787.3176" hpRegen="10.2" mp="2311.2" mpRegen="3.6" />
+			<attack physical="1319.072" magical="675.568" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="388.54" magical="213.24" />
+			<speed>
+				<walk ground="30" />
+				<run ground="170" />
+			</speed>
+			<hitTime>490</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="3" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4389" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4088" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>BEAST</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="19.8" />
+			<height normal="27.8" />
+		</collision>
+	</npc>
+	<npc id="20647" level="76" type="Monster" name="英葛則">
+		<parameters>
+			<param name="MoveAroundSocial" value="40" />
+			<param name="MoveAroundSocial1" value="40" />
+			<param name="MoveAroundSocial2" value="40" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4001" level="6" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="52" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3787.3176" hpRegen="10.2" mp="2311.2" mpRegen="3.6" />
+			<attack physical="1319.072" magical="675.568" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="388.54" magical="213.24" />
+			<speed>
+				<walk ground="40" />
+				<run ground="110" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4276" level="2" /> 
+			<skill id="4389" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4001" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>BEAST</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="20" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<npc id="20648" level="77" type="Monster" name="巴藍伍德">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SetHateGroup" value="attacker_group" />
+			<param name="SetHateGroupRatio" value="35" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4034" level="6" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="53" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3845.9432" hpRegen="10.2" mp="2361" mpRegen="3.6" />
+			<attack physical="1370.304" magical="701.808" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="393.92" magical="216.192" />
+			<speed>
+				<walk ground="25" />
+				<run ground="140" />
+			</speed>
+			<hitTime>100</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4389" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4034" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>BEAST</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="13" />
+			<height normal="22" />
+		</collision>
+	</npc>
+	<npc id="20649" level="77" type="Monster" name="罕羅特">
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DeBuff" id="4035" level="6" />
+		</parameters>
+		<race>BUG</race>
+		<sex>MALE</sex>
+		<acquire exp="53" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3845.9432" hpRegen="10.2" mp="2361" mpRegen="3.6" />
+			<attack physical="1370.304" magical="701.808" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="393.92" magical="216.192" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+			<hitTime>650</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="12" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="10" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="13" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4389" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4035" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>BEAST</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="27" />
+			<height normal="25.5" />
+		</collision>
+	</npc>
+	<npc id="20650" level="78" type="Monster" name="科蘭洛特">
+		<parameters>
+			<param name="MoveAroundSocial" value="60" />
+			<param name="MoveAroundSocial1" value="60" />
+			<param name="MoveAroundSocial2" value="60" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4073" level="6" />
+		</parameters>
+		<race>ANIMAL</race>
+		<sex>MALE</sex>
+		<acquire exp="53" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3902.7736" hpRegen="10.2" mp="2411.1" mpRegen="3.6" />
+			<attack physical="1424.8" magical="729.712" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="399.24" magical="219.108" />
+			<speed>
+				<walk ground="37" />
+				<run ground="170" />
+			</speed>
+			<hitTime>450</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="13" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4276" level="2" /> 
+			<skill id="4389" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4073" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>BEAST</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="19" />
+			<height normal="36" />
+		</collision>
+	</npc>
+	<npc id="20651" level="77" type="Monster" name="甘麟" title="Scout">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="53" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6409.898" hpRegen="17" mp="2361" mpRegen="6" />
+			<attack physical="13703.05" magical="7018.05" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="945.4197024" magical="518.8628232" />
+			<speed>
+				<walk ground="80" />
+				<run ground="170" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="9" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4389" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4287" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="400" isAggressive="false">
+			<clanList>
+				<clan>GIANT</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="13.2" />
+			<height normal="39" />
+		</collision>
+	</npc>
+	<npc id="20652" level="77" type="Monster" name="雷歐古" title="Scout">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DeBuff" id="4037" level="2" /> 
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="53" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6409.898" hpRegen="17" mp="2361" mpRegen="6" />
+			<attack physical="13703.05" magical="7018.05" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="945.4197024" magical="518.8628232" />
+			<speed>
+				<walk ground="80" />
+				<run ground="170" />
+			</speed>
+			<hitTime>720</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="9" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4389" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4037" level="2" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="400">
+			<clanList>
+				<clan>GIANT</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="18" />
+			<height normal="42.6" />
+		</collision>
+	</npc>
+	<npc id="20653" level="76" type="Monster" name="退化的下巨人突擊兵">
+		<parameters>
+			<param name="MoveAroundSocial" value="170" />
+			<param name="MoveAroundSocial1" value="170" />
+			<param name="MoveAroundSocial2" value="170" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+		</parameters>
+		<race>GIANT</race>
+		<sex>MALE</sex>
+		<equipment rhand="3937" /> 
+		<acquire exp="52" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6312.196" hpRegen="17" mp="2311.2" mpRegen="6" />
+			<attack physical="13190.75" magical="6755.68" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="932.499504" magical="511.7720184" />
+			<speed>
+				<walk ground="15" />
+				<run ground="220" />
+			</speed>
+			<hitTime>580</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="11" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="5549" level="1" /> 
+			<skill id="4389" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4287" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>GIANT</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="25" />
+			<height normal="44" />
+		</collision>
+	</npc>
+	<npc id="20654" level="76" type="Monster" name="退化的下巨人士兵">
+		<parameters>
+			<param name="MoveAroundSocial" value="170" />
+			<param name="MoveAroundSocial1" value="170" />
+			<param name="MoveAroundSocial2" value="170" />
+			<param name="SetHateGroup" value="ATTACKER_GROUP" />
+			<param name="SetHateGroupRatio" value="35" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4073" level="6" /> 
+		</parameters>
+		<race>GIANT</race>
+		<sex>MALE</sex>
+		<equipment rhand="3937" /> 
+		<acquire exp="52" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6312.196" hpRegen="17" mp="2311.2" mpRegen="6" />
+			<attack physical="13190.75" magical="6755.68" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="932.499504" magical="511.7720184" />
+			<speed>
+				<walk ground="15" />
+				<run ground="140" />
+			</speed>
+			<hitTime>580</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="11" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4389" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4073" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>GIANT</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="25" />
+			<height normal="44" />
+		</collision>
+	</npc>
+	<npc id="20655" level="76" type="Monster" name="下巨人弓箭手">
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+		</parameters>
+		<race>GIANT</race>
+		<sex>MALE</sex>
+		<equipment rhand="15304" />
+		<acquire exp="52" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6312.196" hpRegen="17" mp="2311.2" mpRegen="6" />
+			<attack physical="13190.75" magical="6755.68" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="932.499504" magical="511.7720184" />
+			<speed>
+				<walk ground="55" />
+				<run ground="190" />
+			</speed>
+			<hitTime>400</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="11" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="9" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4086" level="1" /> 
+			<skill id="4389" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4287" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="300">
+			<clanList>
+				<clan>GIANT</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="24" />
+			<height normal="42.5" />
+		</collision>
+	</npc>
+	<npc id="20656" level="77" type="Monster" name="退化的下巨人戰士">
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<skill name="DDMagic" id="4105" level="6" /> 
+		</parameters>
+		<race>GIANT</race>
+		<sex>MALE</sex>
+		<equipment rhand="3937" /> 
+		<acquire exp="53" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6409.898" hpRegen="17" mp="2361" mpRegen="6" />
+			<attack physical="13703.05" magical="7018.05" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="945.4197024" magical="518.8628232" />
+			<speed>
+				<walk ground="15" />
+				<run ground="180" />
+			</speed>
+			<hitTime>580</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="11" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4389" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4105" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
+		<ai aggroRange="500" clanHelpRange="300">
+			<clanList>
+				<clan>GIANT</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="25" />
+			<height normal="44" />
+		</collision>
+	</npc>
+	<npc id="20657" level="77" type="Monster" name="退化的下巨人魔法師">
+		<parameters>
+			<param name="MoveAroundSocial" value="110" />
+			<param name="MoveAroundSocial1" value="110" />
+			<param name="MoveAroundSocial2" value="110" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<skill name="W_LongRangeDDMagic" id="4156" level="6" /> 
+			<skill name="W_ShortRangeDDMagic" id="4160" level="6" /> 
+			<skill name="MagicHeal" id="4065" level="6" /> 
+		</parameters>
+		<race>GIANT</race>
+		<sex>MALE</sex>
+		<equipment rhand="3938" /> 
+		<acquire exp="53" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6409.898" hpRegen="17" mp="2361" mpRegen="6" />
+			<attack physical="13703.05" magical="7018.05" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="945.4197024" magical="518.8628232" />
+			<speed>
+				<walk ground="15" />
+				<run ground="180" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="11" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4389" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4065" level="6" /> 
+			<skill id="4156" level="6" /> 
+			<skill id="4160" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai type="MAGE" aggroRange="500" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>GIANT</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="50" />
+			<height normal="44" />
+		</collision>
+	</npc>
+	<npc id="20658" level="78" type="Monster" name="退化的下巨人長老">
+		<parameters>
+			<param name="MoveAroundSocial" value="110" />
+			<param name="MoveAroundSocial1" value="110" />
+			<param name="MoveAroundSocial2" value="110" />
+			<skill name="CheckMagic" id="4036" level="6" /> 
+			<skill name="CheckMagic1" id="4046" level="6" /> 
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4066" level="6" /> 
+			<skill name="SleepMagic" id="4046" level="6" /> 
+		</parameters>
+		<race>GIANT</race>
+		<sex>MALE</sex>
+		<equipment rhand="3938" /> 
+		<acquire exp="53" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6504.63" hpRegen="17" mp="2411.1" mpRegen="6" />
+			<attack physical="14248.01" magical="7297.16" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="958.1777568" magical="525.8646792" />
+			<speed>
+				<walk ground="30" />
+				<run ground="140" />
+			</speed>
+			<hitTime>560</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="11" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="14" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4276" level="2" /> 
+			<skill id="4389" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4036" level="6" /> 
+			<skill id="4046" level="6" /> 
+			<skill id="4066" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai type="MAGE" aggroRange="500" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>GIANT</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="50" />
+			<height normal="44" />
+		</collision>
+	</npc>
+	<npc id="20659" level="65" type="Monster" name="墓地流浪者" element="WATER">
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="DDMagicSlow" id="4248" level="4" /> 
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="99" sp="1" attributeExp="24" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6126.3675" hpRegen="7.5" mp="1658.63075984861" mpRegen="2.7" />
+			<attack physical="624.93199" magical="426.74754" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="281.55251" magical="206.02791" />
+			<speed>
+				<walk ground="15" />
+				<run ground="15" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="15" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="19" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48045" level="1" /> 
+			<skill id="5620" level="3" /> 
+			<skill id="4248" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450" />
+		<collision>
+			<radius normal="13" />
+			<height normal="21" />
+		</collision>
+	</npc>
+	<npc id="20660" level="65" type="Monster" name="貪慾弓箭手" element="WATER">
+		<parameters>
+			<param name="MoveAroundSocial" value="157" />
+			<param name="MoveAroundSocial1" value="157" />
+			<param name="MoveAroundSocial2" value="157" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4120" level="4" /> 
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="14" /> 
+		<acquire exp="99" sp="1" attributeExp="24" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6126.3675" hpRegen="7.5" mp="1658.63075984861" mpRegen="2.7" />
+			<attack physical="624.93199" magical="426.74754" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="281.55251" magical="206.02791" />
+			<speed>
+				<walk ground="40" />
+				<run ground="174" />
+			</speed>
+			<hitTime>800</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="15" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="48045" level="1" /> 
+			<skill id="5620" level="3" /> 
+			<skill id="4120" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="ARCHER" aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="11" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="20661" level="66" type="Monster" name="哈塔勒鼠人盜賊" element="WATER">
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4067" level="4" /> 
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="946" /> 
+		<acquire exp="73" sp="1" attributeExp="26" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3155.063" hpRegen="7.5" mp="1708.38968264407" mpRegen="2.7" />
+			<attack physical="646.17968" magical="441.25696" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="286.3615" magical="209.54692" />
+			<speed>
+				<walk ground="80" />
+				<run ground="174" />
+			</speed>
+			<hitTime>610</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="15" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="48045" level="1" /> 
+			<skill id="5620" level="3" /> 
+			<skill id="4067" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>HATAR</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="14" />
+			<height normal="25" />
+		</collision>
+	</npc>
+	<npc id="20662" level="66" type="Monster" name="哈塔勒鼠人頭目" element="WATER">
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4067" level="4" /> 
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="221" /> 
+		<acquire exp="102" sp="1" attributeExp="26" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6310.1588" hpRegen="7.5" mp="1708.38968264407" mpRegen="2.7" />
+			<attack physical="646.17968" magical="441.25696" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="286.3615" magical="209.54692" />
+			<speed>
+				<walk ground="80" />
+				<run ground="174" />
+			</speed>
+			<hitTime>610</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="15" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="48045" level="1" /> 
+			<skill id="5620" level="3" /> 
+			<skill id="4067" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>HATAR</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="14" />
+			<height normal="25" />
+		</collision>
+	</npc>
+	<npc id="20663" level="67" type="Monster" name="哈塔勒海尼西" element="WATER">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="HoldMagic" id="4047" level="4" /> 
+		</parameters>
+		<race>BEAST</race>
+		<sex>FEMALE</sex>
+		<acquire exp="107" sp="1" attributeExp="28" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6499.4633" hpRegen="7.5" mp="1759.6413731234" mpRegen="2.7" />
+			<attack physical="667.50361" magical="455.81844" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="291.15063" magical="213.05139" />
+			<speed>
+				<walk ground="50" />
+				<run ground="174" />
+			</speed>
+			<hitTime>520</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="3" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="15" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48045" level="1" /> 
+			<skill id="5620" level="3" /> 
+			<skill id="4047" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>HATAR</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="10" />
+			<height normal="25" />
+		</collision>
+	</npc>
+	<npc id="20664" level="67" type="Monster" name="帝萊普" element="WATER">
+		<parameters>
+			<param name="MoveAroundSocial" value="40" />
+			<param name="MoveAroundSocial1" value="40" />
+			<param name="MoveAroundSocial2" value="40" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="DDMagic" id="4039" level="5" /> 
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="107" sp="1" attributeExp="29" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6499.4633" hpRegen="7.5" mp="1759.6413731234" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<hitTime>410</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="15" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48045" level="1" /> 
+			<skill id="5620" level="3" /> 
+			<skill id="4039" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="30" />
+		</collision>
+	</npc>
+	<npc id="20665" level="68" type="Monster" name="上級泰可獸人" element="WATER">
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4032" level="5" /> 
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="69" /> 
+		<acquire exp="113" sp="1" attributeExp="31" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6694.4471" hpRegen="8.5" mp="1812.4306143171" mpRegen="3" />
+			<attack physical="710.2185" magical="484.98717" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="300.65359" magical="220.00525" />
+			<speed>
+				<walk ground="45" />
+				<run ground="174" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="15" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48045" level="1" /> 
+			<skill id="5620" level="3" /> 
+			<skill id="4032" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>ORC</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="12" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<npc id="20666" level="46" type="Monster" name="泰可獸人監視兵" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4073" level="5" /> 
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="72" /> 
+		<acquire exp="36" sp="1" attributeExp="8" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2354.585" hpRegen="6.5" mp="641.725953343023" mpRegen="2.4" />
+			<attack physical="337.18867" magical="230.25615" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="209.50106" magical="153.30378" />
+			<speed>
+				<walk ground="45" />
+				<run ground="174" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="1" /> 
+			<skill id="4073" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="0" isAggressive="false">
+			<clanList>
+				<clan>ORC</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="12" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<npc id="20667" level="68" type="Monster" name="帕克蘭" title="Zombie Lord" element="WATER">
+		<parameters>
+			<param name="MoveAroundSocial" value="60" />
+			<param name="MoveAroundSocial1" value="60" />
+			<param name="MoveAroundSocial2" value="60" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4073" level="5" /> 
+		</parameters>
+		<race>ANIMAL</race>
+		<sex>MALE</sex>
+		<acquire exp="452" sp="4" attributeExp="32" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="26777.85" hpRegen="8.5" mp="1812.4306143171" mpRegen="3" />
+			<attack physical="731.52506" magical="499.53679" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="305.35947" magical="223.44881" />
+			<speed>
+				<walk ground="37" />
+				<run ground="174" />
+			</speed>
+			<hitTime>450</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="15" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48045" level="1" /> 
+			<skill id="4085" level="1" /> 
+			<skill id="4086" level="1" /> 
+			<skill id="5620" level="3" /> 
+			<skill id="4073" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450" />
+		<collision>
+			<radius normal="22.8" />
+			<height normal="43.8" />
+		</collision>
+	</npc>
+	<npc id="20668" level="46" type="Monster" name="墳墓守護者" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4078" level="5" /> 
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="36" sp="1" attributeExp="9" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2354.585" hpRegen="6.5" mp="641.725953343023" mpRegen="2.4" />
+			<attack physical="370.68904" magical="253.13256" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="218.89589" magical="160.17851" />
+			<speed>
+				<walk ground="140" />
+				<run ground="174" />
+			</speed>
+			<hitTime>370</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="10" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="1" /> 
+			<skill id="4078" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<collision>
+			<radius normal="16" />
+			<height normal="50" />
+		</collision>
+	</npc>
+	<npc id="20669" level="47" type="Monster" name="泰可獸人補給官" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4073" level="5" /> 
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="75" /> 
+		<acquire exp="38" sp="1" attributeExp="10" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2416.015" hpRegen="6.5" mp="667.394991476744" mpRegen="2.4" />
+			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="223.6362" magical="163.64727" />
+			<speed>
+				<walk ground="36" />
+				<run ground="174" />
+			</speed>
+			<hitTime>540</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="1" /> 
+			<skill id="4073" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="500" clanHelpRange="300">
+			<clanList>
+				<clan>ORC</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="12" grown="14" />
+			<height normal="24" grown="28.8" />
+		</collision>
+	</npc>
+	<npc id="20670" level="61" type="Monster" name="赤色飛龍">
+		<parameters>
+			<param name="MoveAroundSocial" value="60" />
+			<param name="MoveAroundSocial1" value="60" />
+			<param name="MoveAroundSocial2" value="60" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4100" level="6" />
+		</parameters>
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<acquire exp="34" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2303.91896794328" hpRegen="7.5" mp="1066.8" mpRegen="2.7" />
+			<attack physical="501.08068" magical="342.17315" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="252.49346" magical="184.76376" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<hitTime>840</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="10" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4071" level="5" /> 
+			<skill id="4100" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true" />
+		<collision>
+			<radius normal="30" />
+			<height normal="100" />
+		</collision>
+	</npc>
+	<npc id="20671" level="62" type="Monster" name="卡地烏斯">
+		<parameters>
+			<param name="MoveAroundSocial" value="82" />
+			<param name="MoveAroundSocial1" value="82" />
+			<param name="MoveAroundSocial2" value="82" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DeBuff" id="4098" level="6" />
+		</parameters>
+		<race>BUG</race>
+		<sex>MALE</sex>
+		<acquire exp="35" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2364.5484144681" hpRegen="7.5" mp="1097" mpRegen="2.7" />
+			<attack physical="521.12391" magical="355.86007" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="257.34267" magical="188.3122" />
+			<speed>
+				<walk ground="25" />
+				<run ground="174" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="12" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4098" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="35" />
+			<height normal="35" />
+		</collision>
+	</npc>
+	<npc id="20672" level="63" type="Monster" name="德立貝茲">
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<skill name="CheckMagic" id="4098" level="6" />
+			<skill name="CheckMagic1" id="4046" level="6" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4039" level="6" />
+			<skill name="SleepMagic" id="4046" level="6" />
+		</parameters>
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<equipment rhand="127" /> 
+		<acquire exp="36" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2425.01583915772" hpRegen="7.5" mp="1127.4" mpRegen="2.7" />
+			<attack physical="541.44774" magical="369.73862" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="262.19426" magical="191.86238" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="3" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="10" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4039" level="6" /> 
+			<skill id="4046" level="6" /> 
+			<skill id="4098" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="17" />
+			<height normal="46" />
+		</collision>
+	</npc>
+	<npc id="20673" level="64" type="Monster" name="帕力巴提">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SleepMagic" id="4046" level="6" />
+		</parameters>
+		<race>BEAST</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="73" /> 
+		<acquire exp="37" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2485.23565427798" hpRegen="7.5" mp="1158" mpRegen="2.7" />
+			<attack physical="562.02275" magical="383.78868" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="267.04468" magical="195.41171" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="3" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="10" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4046" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true" />
+		<collision>
+			<radius normal="25" />
+			<height normal="65" />
+		</collision>
+	</npc>
+	<npc id="20674" level="54" type="Monster" name="末日騎士" element="EARTH">
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfRangeDDMagic" id="4101" level="6" /> 
+			<skill name="SelfBuff" id="4090" level="1" /> 
+			<skill name="PhysicalSpecial" id="4073" level="6" /> 
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="1472" /> 
+		<acquire exp="54" sp="1" attributeExp="18" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3512.744" hpRegen="7.5" mp="878.24627858708" mpRegen="2.7" />
+			<attack physical="582.81759" magical="397.98887" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="271.89033" magical="198.95754" />
+			<speed>
+				<walk ground="100" />
+				<run ground="174" />
+			</speed>
+			<hitTime>450</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48047" level="1" /> 
+			<skill id="5620" level="2" /> 
+			<skill id="4073" level="6" /> 
+			<skill id="4090" level="1" /> 
+			<skill id="4101" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<collision>
+			<radius normal="15" />
+			<height normal="45" />
+		</collision>
+	</npc>
+	<npc id="20675" level="47" type="Monster" name="泰稜" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="82" />
+			<param name="MoveAroundSocial1" value="82" />
+			<param name="MoveAroundSocial2" value="82" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="38" sp="1" attributeExp="8" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2416.015" hpRegen="5.5" mp="667.394991476744" mpRegen="2.1" />
+			<attack physical="305.54906" magical="208.6504" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="200.23844" magical="146.5258" />
+			<speed>
+				<walk ground="25" />
+				<run ground="174" />
+			</speed>
+			<hitTime>100</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="10" /> 
+			<skill id="4411" level="10" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="1" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="13" />
+			<height normal="22" />
+		</collision>
+	</npc>
+	<npc id="20676" level="65" type="Monster" name="沼澤審判官" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="82" />
+			<param name="MoveAroundSocial1" value="82" />
+			<param name="MoveAroundSocial2" value="82" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DeBuff" id="4098" level="6" />
+		</parameters>
+		<race>PLANT</race>
+		<sex>MALE</sex>
+		<acquire exp="38" sp="1" attributeExp="22" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2545.12085076661" hpRegen="7.5" mp="1188.8" mpRegen="2.7" />
+			<attack physical="582.81759" magical="397.98887" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="271.89033" magical="198.95754" />
+			<speed>
+				<walk ground="55" />
+				<run ground="174" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="5" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="4277" level="5" /> 
+			<skill id="4116" level="6" /> 
+			<skill id="4071" level="4" /> 
+			<skill id="4098" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="35" grown="42" />
+			<height normal="80" grown="96" />
+		</collision>
+	</npc>
+	<npc id="20677" level="66" type="Monster" name="吐爾奔" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="82" />
+			<param name="MoveAroundSocial1" value="82" />
+			<param name="MoveAroundSocial2" value="82" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DeBuff" id="4098" level="6" />
+		</parameters>
+		<race>ANIMAL</race>
+		<sex>MALE</sex>
+		<acquire exp="39" sp="1" attributeExp="23" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2604.58319525608" hpRegen="7.5" mp="1219.8" mpRegen="2.7" />
+			<attack physical="603.79903" magical="412.31647" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="276.72752" magical="202.49719" />
+			<speed>
+				<walk ground="60" />
+				<run ground="174" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="4116" level="6" /> 
+			<skill id="4071" level="4" /> 
+			<skill id="4098" level="6" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="10" />
+			<height normal="33.5" />
+		</collision>
+	</npc>
+	<npc id="20678" level="48" type="Monster" name="不死的刑罰" element="FIRE">
+		<parameters>
+			<param name="MoveAroundSocial" value="82" />
+			<param name="MoveAroundSocial1" value="82" />
+			<param name="MoveAroundSocial2" value="82" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="40" sp="1" attributeExp="9" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2477.445" hpRegen="6.5" mp="694.090791135814" mpRegen="2.4" />
+			<attack physical="353.71092" magical="241.5387" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="214.18326" magical="156.73001" />
+			<speed>
+				<walk ground="15" />
+				<run ground="174" />
+			</speed>
+			<hitTime>450</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="1" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="0" isAggressive="false">
+			<clanList>
+				<clan>ALL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="30" grown="15.5" />
+			<height normal="40" grown="48.5" />
+		</collision>
+	</npc>
+	<npc id="20679" level="67" type="Monster" name="瑪許追蹤者">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="DeBuff" id="4102" level="1" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="41" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2663.53343531415" hpRegen="7.5" mp="1251" mpRegen="2.7" />
+			<attack physical="624.93199" magical="426.74754" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="281.55251" magical="206.02791" />
+			<speed>
+				<walk ground="140" />
+				<run ground="174" />
+			</speed>
+			<hitTime>370</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4102" level="1" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450" />
+		<collision>
+			<radius normal="16" />
+			<height normal="50" />
+		</collision>
+	</npc>
+	<npc id="20680" level="68" type="Monster" name="瑪許飛龍">
+		<parameters>
+			<param name="MoveAroundSocial" value="60" />
+			<param name="MoveAroundSocial1" value="60" />
+			<param name="MoveAroundSocial2" value="60" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="DDMagic" id="4100" level="5" />
+		</parameters>
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<acquire exp="42" sp="1" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2721.88151228667" hpRegen="7.5" mp="1282.4" mpRegen="2.7" />
+			<attack physical="646.17968" magical="441.25696" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="286.3615" magical="209.54692" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<hitTime>840</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="10" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="10" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4100" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="300" isAggressive="true" />
+		<collision>
+			<radius normal="30" />
+			<height normal="100" />
+		</collision>
+	</npc>
+	<npc id="20681" level="59" type="Monster" name="巴諾爾賽勒諾斯" element="WIND">
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="50" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="DaggerBackAttack" value="1" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="Buff" id="4029" level="3" /> 
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="88" /> 
+		<acquire exp="67" sp="1" attributeExp="16" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="4273.79" hpRegen="6.5" mp="1068.52088386497" mpRegen="2.4" />
+			<attack physical="481.34551" magical="328.69659" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="247.65008" magical="181.21958" />
+			<speed>
+				<walk ground="34" />
+				<run ground="174" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="14" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="48046" level="1" /> 
+			<skill id="5620" level="2" /> 
+			<skill id="4029" level="3" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>SILENOS</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="13" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<npc id="20682" level="60" type="Monster" name="巴諾爾賽勒諾斯士兵" element="WIND">
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="50" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="Buff" id="4099" level="2" /> 
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="158" lhand="18" /> 
+		<acquire exp="70" sp="1" attributeExp="17" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="4889.2173" hpRegen="7.5" mp="1430.7494634952" mpRegen="2.7" />
+			<attack physical="501.08068" magical="342.17315" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="252.49346" magical="184.76376" />
+			<speed>
+				<walk ground="34" />
+				<run ground="174" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="14" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="48046" level="1" /> 
+			<skill id="5620" level="2" /> 
+			<skill id="4099" level="2" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<collision>
+			<radius normal="13" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<npc id="20683" level="60" type="Monster" name="巴諾爾賽勒諾斯巡守" element="WIND">
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="50" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4032" level="4" /> 
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="5" /> 
+		<acquire exp="70" sp="1" attributeExp="18" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="4889.2173" hpRegen="7.5" mp="1430.7494634952" mpRegen="2.7" />
+			<attack physical="521.12391" magical="355.86007" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="257.34267" magical="188.3122" />
+			<speed>
+				<walk ground="34" />
+				<run ground="174" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="13" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="48046" level="1" /> 
+			<skill id="5620" level="2" /> 
+			<skill id="4032" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="450" clanHelpRange="400" isAggressive="true">
+			<clanList>
+				<clan>SILENOS</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="13" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<npc id="20684" level="61" type="Monster" name="巴諾爾賽勒諾斯戰士" element="WIND">
+		<parameters>
+			<param name="MoveAroundSocial" value="60" />
+			<param name="MoveAroundSocial1" value="50" />
+			<param name="MoveAroundSocial2" value="60" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4073" level="4" /> 
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="160" /> 
+		<acquire exp="73" sp="1" attributeExp="19" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5084.7852" hpRegen="7.5" mp="1473.67194740005" mpRegen="2.7" />
+			<attack physical="541.44774" magical="369.73862" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="262.19426" magical="191.86238" />
+			<speed>
+				<walk ground="36" />
+				<run ground="174" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="14" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="48046" level="1" /> 
+			<skill id="5620" level="2" /> 
+			<skill id="4073" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<collision>
+			<radius normal="13" />
+			<height normal="31" />
+		</collision>
+	</npc>
+	<npc id="20685" level="61" type="Monster" name="巴諾爾賽勒諾斯咒術士" element="WIND">
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="60" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="W_LongRangeDDMagic" id="4155" level="4" /> 
+			<skill name="W_ShortRangeDDMagic" id="4160" level="4" /> 
+			<skill name="DeBuff" id="4076" level="3" /> 
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="9" /> 
+		<acquire exp="73" sp="1" attributeExp="20" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5084.7852" hpRegen="7.5" mp="1473.67194740005" mpRegen="2.7" />
+			<attack physical="562.02275" magical="383.78868" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="267.04468" magical="195.41171" />
+			<speed>
+				<walk ground="29" />
+				<run ground="174" />
+			</speed>
+			<hitTime>220</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="14" /> 
+			<skill id="4412" level="10" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="48046" level="1" /> 
+			<skill id="5620" level="2" /> 
+			<skill id="4076" level="3" /> 
+			<skill id="4155" level="4" /> 
+			<skill id="4160" level="4" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<collision>
+			<radius normal="13" />
+			<height normal="32" />
+		</collision>
+	</npc>
+	<npc id="20686" level="62" type="Monster" name="巴諾爾賽勒諾斯族長" title="Tribe Keeper" element="WIND">
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="60" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="MagicHeal" id="4065" level="5" /> 
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="75" /> 
+		<acquire exp="310" sp="3" attributeExp="21" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="21152.53" hpRegen="7.5" mp="1517.88210582205" mpRegen="2.7" />
+			<attack physical="582.81759" magical="397.98887" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="271.89033" magical="198.95754" />
+			<speed>
+				<walk ground="27" />
+				<run ground="174" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="14" /> 
+			<skill id="4412" level="12" /> 
+			<skill id="4413" level="12" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48046" level="1" /> 
+			<skill id="5620" level="2" /> 
+			<skill id="4065" level="5" /> 
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<collision>
+			<radius normal="13" />
+			<height normal="31.5" />
+		</collision>
+	</npc>
+</list>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event name="Leona's Dungeon Event" active="25 10 2023-01 11 2023" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/eventConfig.xsd">
+	<spawnlist>
+		<add npc="15985" x="83590" y="149364" z="-3392" heading="32767" /> <!-- Giran -->
+		<add npc="15985" x="147784" y="25626" z="-2014" heading="23153" /> <!-- Aden -->
+	</spawnlist>
+	<messages>
+		<add type="onEnd" text="Leona's Dungeon: Event end!" />
+		<add type="onEnter" text="Leona's Dungeon: Event ongoing!" />
+	</messages>
+</event>

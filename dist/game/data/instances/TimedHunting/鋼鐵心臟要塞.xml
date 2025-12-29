@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="1032" name="Ironheart Fortress" maxWorlds="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<!-- Ironheart Fortress -->
+	<time empty="-1" />
+	<locations>
+		<enter type="FIXED">
+			<location x="180182" y="75498" z="-13768" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="Level">
+			<param name="min" value="90" />
+			<param name="max" value="99" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<spawnlist>
+		<!-- NPC -->
+		<group name="Npc">
+			<npc id="34543" x="180189" y="75205" z="-13796" heading="17127" /> <!-- Toma - Master -->
+			<npc id="19274" x="180122" y="75201" z="-13796" heading="9914" /> <!-- Copter - Iron Heart -->
+		</group>
+		<!-- MOB -->
+		<group name="IronHeartFortress_Monsters_01">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="180420" y="91679" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_02">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="179943" y="91681" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_03">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="179914" y="92507" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_04">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="178907" y="91420" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_05">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="178734" y="92161" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_06">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="180484" y="92598" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_07">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="179276" y="92118" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_08">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="178740" y="92662" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_09">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="179118" y="93238" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_10">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="178760" y="93862" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_11">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="179442" y="94038" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_12">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="179873" y="93574" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_13">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="180464" y="93521" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_14">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="180865" y="93968" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_15">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="181549" y="93787" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_16">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="181217" y="93299" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_17">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="181661" y="92692" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_18">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="181118" y="92214" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_19">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="181691" y="92388" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_20">
+			<territories>
+				<territory shape="Cylinder" minZ="-14225" maxZ="-14175" rad="200">
+					<node x="181566" y="91519" />
+				</territory>
+			</territories>
+			<npc id="23120" count="1" respawnTime="20sec" /> <!-- Dual Weapon Golem -->
+			<npc id="22217" count="3" respawnTime="20sec" /> <!-- Dwarven Mage -->
+			<npc id="22218" count="3" respawnTime="20sec" /> <!-- Dwarven Berserker -->
+		</group>
+		<group name="IronHeartFortress_Monsters_21">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="181204" y="87771" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_22">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="181704" y="87387" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_23">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="181270" y="86688" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_24">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="181888" y="86308" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_25">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="181202" y="85904" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_26">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="181734" y="85197" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_27">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="180910" y="84814" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_28">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="181655" y="84371" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_29">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="180900" y="84113" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_30">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="179490" y="84124" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_31">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="178852" y="84322" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_32">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="179397" y="84864" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_33">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="178677" y="85262" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_34">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="179305" y="85745" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_35">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="178562" y="86482" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_36">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="178609" y="87295" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_37">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="179287" y="87423" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_38">
+			<territories>
+				<territory shape="Cylinder" minZ="-14200" maxZ="-14150" rad="200">
+					<node x="179167" y="87862" />
+				</territory>
+			</territories>
+			<npc id="23122" count="1" respawnTime="20sec" /> <!-- First Weapon Golem -->
+			<npc id="22215" count="3" respawnTime="20sec" /> <!-- Dwarven Soldier -->
+			<npc id="22216" count="3" respawnTime="20sec" /> <!-- Dwarven Hunter -->
+		</group>
+		<group name="IronHeartFortress_Monsters_39">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="178265" y="77128" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_40">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="182165" y="77023" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_41">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="179426" y="77683" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_42">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="178931" y="78089" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_43">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="178345" y="78643" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_44">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="181036" y="77634" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_45">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="181469" y="78150" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_46">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="181881" y="78562" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_47">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="179987" y="77638" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_48">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="180170" y="78138" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_49">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="180553" y="78749" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_50">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="179889" y="78825" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_51">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="180163" y="79319" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_52">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="179769" y="79845" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_53">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="180218" y="80063" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_54">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="180755" y="80598" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_55">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="180302" y="81043" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_56">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="179696" y="80812" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_57">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="179213" y="79545" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_58">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="179161" y="78965" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_59">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="178552" y="79433" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_60">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="178785" y="80281" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_61">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="178243" y="80661" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_62">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="178604" y="81338" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_63">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="179422" y="81473" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_64">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="180836" y="81576" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_65">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="181456" y="81314" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_66">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="181227" y="80309" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_67">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="180903" y="79497" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_68">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="181644" y="79314" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_69">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="181974" y="80638" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_70">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="178218" y="77847" />
+				</territory>
+			</territories>
+			<npc id="23121" count="1" respawnTime="20sec" /> <!-- Jackhammer Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Monsters_71">
+			<territories>
+				<territory shape="Cylinder" minZ="-13950" maxZ="-13900" rad="200">
+					<node x="182235" y="77802" />
+				</territory>
+			</territories>
+			<npc id="23119" count="1" respawnTime="20sec" /> <!-- Crushing Golem -->
+			<npc id="22213" count="3" respawnTime="20sec" /> <!-- Artisan -->
+			<npc id="22214" count="3" respawnTime="20sec" /> <!-- Scavenger -->
+		</group>
+		<group name="IronHeartFortress_Cannons">
+			<npc id="19275" x="178886" y="91342" z="-14206" heading="57114" /> <!-- Todd's Canon - Iron Heart -->
+			<npc id="19275" x="181467" y="91359" z="-14206" heading="40898" /> <!-- Todd's Canon - Iron Heart -->
+		</group>
+	</spawnlist>
+</instance>

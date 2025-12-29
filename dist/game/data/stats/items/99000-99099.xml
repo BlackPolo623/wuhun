@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="99000" name="etc測試道具1" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="BranchSys3.icon1.g_luckygame_card_trade_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="99001" name="etc測試道具2" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_exchange_ticket_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="99002" name="龍之寶箱(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_dragon_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="97178" min="1" max="1" chance="3.225806" name="英雄魔法書交換券" /> 
+			<item id="96613" min="1" max="1" chance="3.225806" name="魔法書-死之擴展" /> 
+			<item id="97133" min="1" max="1" chance="3.225806" name="冰凍君主武器交換券" /> 
+			<item id="97132" min="1" max="1" chance="3.225806" name="守護防具交換券" /> 
+			<item id="97131" min="1" max="1" chance="3.225806" name="首領武器交換券" /> 
+			<item id="98300" min="1" max="1" chance="3.225806" name="特殊防具禮盒" /> 
+			<item id="49683" min="1" max="1" chance="3.225806" name="巴溫護身符" /> 
+			<item id="90992" min="1" max="1" chance="3.225806" name="安塔瑞斯耳環" /> 
+			<item id="91550" min="1" max="1" chance="3.225806" name="芙琳泰沙項鍊" /> 
+			<item id="49580" min="1" max="1" chance="3.225806" name="巴溫戒指" /> 
+			<item id="96600" min="1" max="1" chance="3.225806" name="巴列斯戒指" /> 
+			<item id="90763" min="1" max="1" chance="3.225806" name="札肯耳環" /> 
+			<item id="6660" min="1" max="1" chance="3.225806" name="巨蟻女王戒指" /> 
+			<item id="6661" min="1" max="1" chance="3.225806" name="奧爾芬耳環" /> 
+			<item id="6662" min="1" max="1" chance="3.225806" name="核心戒指" /> 
+			<item id="94385" min="1" max="1" chance="3.225806" name="祝福的稀有飾品強化卷軸" /> 
+			<item id="94383" min="1" max="1" chance="3.225806" name="稀有飾品強化卷軸" /> 
+			<item id="98997" min="1" max="1" chance="3.225806" name="龍之腰帶500個/組" /> 
+			<item id="98998" min="1" max="1" chance="3.225806" name="龍之腰帶1000個/組" /> 
+			<item id="98593" min="1" max="1" chance="3.225806" name="貝尼勒護身符碎片500個/組" /> 
+			<item id="97801" min="1" max="1" chance="3.225806" name="染料強化劑100個/組" /> 
+			<item id="94328" min="1" max="1" chance="3.225806" name="萬用靈藥粉末" /> 
+			<item id="96901" min="1" max="1" chance="3.225806" name="亞丁搜魂石Lv1-防具" /> 
+			<item id="98999" min="1" max="1" chance="3.225806" name="Lv3手鐲&amp;胸針交換券" /> 
+			<item id="91076" min="5" max="5" chance="3.225806" name="貝尼勒護身符碎片" /> 
+			<item id="97788" min="1" max="1" chance="3.225806" name="特殊裝備精煉石" /> 
+			<item id="92314" min="10" max="10" chance="3.225806" name="奇岩印記" /> 
+			<item id="92314" min="5" max="5" chance="3.225806" name="奇岩印記" /> 
+			<item id="92314" min="2" max="2" chance="3.225806" name="奇岩印記" /> 
+			<item id="92314" min="1" max="1" chance="3.225806" name="奇岩印記" /> 
+			<item id="91864" min="2" max="2" chance="3.225806" name="龍之腰帶禮盒" /> 
+		</capsuled_items>
+	</item>
+	<item id="99026" name="新年感謝晶體(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_11th_event_group" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+	</item>
+	<item id="99027" name="Daily Present - VIP 8" type="EtcItem">
+		
+		<set name="icon" val="BranchIcon.Icon.etc_vip_present_i06" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="3" />
+		<set name="extractableCountMax" val="3" />
+		<capsuled_items>
+			<item id="91689" min="1" max="1" chance="100" name="祝福的返回卷軸" /> 
+			<item id="3936" min="1" max="1" chance="100" name="祝福的復活卷軸" /> 
+			<item id="29652" min="3" max="3" chance="100" name="未供給-強力體力治癒藥水" /> 
+		</capsuled_items>
+	</item>
+	<item id="99028" name="Daily Present - VIP 9" type="EtcItem">
+		
+		<set name="icon" val="BranchIcon.Icon.etc_vip_present_i06" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="3" />
+		<set name="extractableCountMax" val="3" />
+		<capsuled_items>
+			<item id="91689" min="1" max="1" chance="100" name="祝福的返回卷軸" /> 
+			<item id="3936" min="1" max="1" chance="100" name="祝福的復活卷軸" /> 
+			<item id="29652" min="3" max="3" chance="100" name="未供給-強力體力治癒藥水" /> 
+		</capsuled_items>
+	</item>
+	<item id="99029" name="Daily Present - VIP 10" type="EtcItem">
+		
+		<set name="icon" val="BranchIcon.Icon.etc_vip_present_i06" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="3" />
+		<set name="extractableCountMax" val="3" />
+		<capsuled_items>
+			<item id="91689" min="1" max="1" chance="100" name="祝福的返回卷軸" /> 
+			<item id="3936" min="1" max="1" chance="100" name="祝福的復活卷軸" /> 
+			<item id="29652" min="3" max="3" chance="100" name="未供給-強力體力治癒藥水" /> 
+		</capsuled_items>
+	</item>
+</list>

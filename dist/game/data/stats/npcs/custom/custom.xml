@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
+	<npc id="50007" displayId="30144" name="Andromeda" usingServerSideName="true" title="Wedding Manager" usingServerSideTitle="true" type="Folk">
+		<race>DARK_ELF</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="206" /> <!-- Demon's Staff -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" undying="true" />
+		<exCrtEffect>true</exCrtEffect>
+		<collision>
+			<radius normal="8" />
+			<height normal="26" />
+		</collision>
+	</npc>
+	<npc id="900100" displayId="22228" level="1" usingServerSideName="true" name="Elpy" type="EventMonster">
+		<race>ANIMAL</race>
+		<sex>MALE</sex>
+		<stats>
+			<vitals hp="39.74519" hpRegen="2" mp="40.0" mpRegen="0.9" />
+			<attack physical="8.47458" magical="5.78704" random="30" critical="4" accuracy="95.25" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="44.44444" magical="32.52252" />
+			<speed>
+				<walk ground="50" />
+				<run ground="80" />
+			</speed>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="5" />
+			<height normal="4.5" />
+		</collision>
+	</npc>
+	<npc id="900101" displayId="32365" name="Snowden" usingServerSideName="true" title="Event Manager">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900102" displayId="13098" level="80" name="Event Treasure Chest" type="Monster">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats>
+			<vitals hp="2880.37628" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="894.75854" magical="611.00409" random="30" critical="4" accuracy="95.25" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" />
+			<speed>
+				<walk ground="80" />
+				<run ground="1" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="8.5" />
+			<height normal="8.5" />
+		</collision>
+	</npc>
+	<npc id="900103" displayId="32365" name="Start" usingServerSideName="true" title="Event Manager">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900104" displayId="32365" name="Finish" usingServerSideName="true" title="Event Manager">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900000" displayId="34632" name="杏一郎" usingServerSideName="true" title="武士村村長" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900001" displayId="34632" name="無限成長" usingServerSideName="true" title="無限成長" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900002" displayId="34632" name="裝備轉生" usingServerSideName="true" title="裝備轉生" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900003" displayId="34632" name="稱號融合" usingServerSideName="true" title="稱號融合" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900004" displayId="34632" name="武魂共通修練入口" usingServerSideName="true" title="武魂共通修練場" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900005" displayId="34632" name="武魂商會差使" usingServerSideName="true" title="武魂商會" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900006" displayId="34632" name="武魂商會會長" usingServerSideName="true" title="武魂商會" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900007" displayId="34632" name="傑西" usingServerSideName="true" title="血盟商店管理員" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900008" displayId="34632" name="每日獎勵" usingServerSideName="true" title="武魂VIP特殊服務人員" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900010" displayId="34632" name="傳送師" usingServerSideName="true" title="武魂世界嚮導" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900011" displayId="34612" name="活動管理員" usingServerSideName="true" title="活動獎勵領取處" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900012" displayId="34612" name="推廣管理員" usingServerSideName="true" title="推廣獎勵領取處" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900013" displayId="34632" name="魂環使者" usingServerSideName="true" title="魂環能力加成" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900014" displayId="21922" name="輪迴使者" usingServerSideName="true" title="雙職業獲得" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+	<npc id="900015" displayId="18576" name="冰凍君主的反叛者" usingServerSideName="true" title="冰凍武器製作" usingServerSideTitle="true">
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats>
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="5" />
+			<height normal="12.5" />
+		</collision>
+	</npc>
+</list>

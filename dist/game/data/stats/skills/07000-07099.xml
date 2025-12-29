@@ -1,0 +1,2248 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="7000" toLevel="1" name="NPC Default">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectRange>0</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7001" toLevel="1" name="良性狀態無效化">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>400</castRange>
+		<effectPoint>100</effectPoint>
+		<effectRange>900</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<effects>
+			<effect name="DispelByCategory">
+				<slot>BUFF</slot>
+				<rate>100</rate>
+				<max>20</max>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7002" toLevel="1" name="惡性魔法無效化">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>400</castRange>
+		<effectPoint>100</effectPoint>
+		<effectRange>900</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<effects>
+			<effect name="DispelByCategory">
+				<slot>DEBUFF</slot>
+				<rate>100</rate>
+				<max>20</max>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7003" toLevel="1" name="大規模無效化">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>400</castRange>
+		<effectPoint>100</effectPoint>
+		<effectRange>900</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<effects>
+			<effect name="DispelByCategory">
+				<slot>BUFF</slot>
+				<rate>100</rate>
+				<max>20</max>
+			</effect>
+			<effect name="DispelByCategory">
+				<slot>DEBUFF</slot>
+				<rate>100</rate>
+				<max>20</max>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7004" toLevel="2" name="石化無效化">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>566</effectPoint>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>60</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>TURN_STONE,2</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7005" toLevel="4" name="Greater Chant of Vampire">
+		
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VAMPIRIC_ATTACK</abnormalType>
+		<affectObject>FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>PARTY</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>400</castRange>
+		<effectPoint>655</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>2500</hitTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>74</magicLevel>
+		<mpConsume>217</mpConsume>
+		<mpInitialConsume>55</mpInitialConsume>
+		<reuseDelay>20000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="TargetMyPledge" />
+		</conditions>
+		<effects>
+			<effect name="VampiricAttack">
+				<amount>9</amount>
+				<chance>80</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7006" toLevel="13" name="The Love of Pa'agrio">
+		
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>6</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<abnormalType>LIFE_FORCE_OTHERS</abnormalType>
+		<affectObject>FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>PLEDGE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>400</castRange>
+		<effectPoint>655</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>2500</hitTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<mpConsume>272</mpConsume>
+		<reuseDelay>20000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="TargetMyPledge" />
+		</conditions>
+	</skill>
+	<skill id="7007" toLevel="4" name="Greater Seal of Flame">
+		
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>8</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<abnormalType>DOT_ATTR</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<activateRate>35</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>PLEDGE</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<basicProperty>MAGIC</basicProperty> 
+		<castRange>400</castRange>
+		<effectPoint>-409</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>4000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>74</magicLevel>
+		<mpConsume>153</mpConsume>
+		<reuseDelay>20000</reuseDelay>
+	</skill>
+	<skill id="7008" toLevel="1" name="祝福的羽毛">
+		
+		<icon>icon.blessed_feather_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>9</abnormalLevel>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>PUBLIC_SLOT</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<basicProperty>NONE</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-2</magicLevel>
+		<specialLevel>-2</specialLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+	</skill>
+	<skill id="7009" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7010" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7011" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7012" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7013" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7014" toLevel="1" name="Test - P. Critical Damage Increase">
+		
+		<operateType>T</operateType>
+		<targetType>SELF</targetType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+	</skill>
+	<skill id="7015" toLevel="1" name="Test - P. Critical Damage Weakness">
+		
+		<operateType>T</operateType>
+		<targetType>SELF</targetType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+	</skill>
+	<skill id="7016" toLevel="1" name="Test - P. Critical Damage Boost">
+		
+		<operateType>T</operateType>
+		<targetType>SELF</targetType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+	</skill>
+	<skill id="7017" toLevel="1" name="Test - P. Critical Damage Weakness">
+		
+		<operateType>T</operateType>
+		<targetType>SELF</targetType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+	</skill>
+	<skill id="7018" toLevel="1" name="Test - P. Critical Rate Boost">
+		
+		<operateType>T</operateType>
+		<targetType>SELF</targetType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+	</skill>
+	<skill id="7019" toLevel="1" name="Test - P. Critical Rate Weakness">
+		
+		<operateType>T</operateType>
+		<targetType>SELF</targetType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+	</skill>
+	<skill id="7020" toLevel="1" name="Test - P. Critical Rate Boost">
+		
+		<operateType>T</operateType>
+		<targetType>SELF</targetType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+	</skill>
+	<skill id="7021" toLevel="1" name="Test - P. Critical Rate Weakness">
+		
+		<operateType>T</operateType>
+		<targetType>SELF</targetType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+	</skill>
+	<skill id="7022" toLevel="1" name="Test - Find Hidden Door">
+		
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectLimit>6-12</affectLimit>
+		<affectObject>HIDDEN_PLACE</affectObject>
+		<affectRange>1000</affectRange>
+		<affectScope>STATIC_OBJECT_SCOPE</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<hitTime>1000</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+	</skill>
+	<skill id="7023" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7024" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7025" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7026" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7027" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7028" toLevel="1" name="固定NPC">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<effects>
+			<effect name="DefenceTrait">
+				<DERANGEMENT>100</DERANGEMENT>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7029" toLevel="8" name="超級加速">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill7029</icon>
+		<operateType>T</operateType>
+		<targetType>NONE</targetType>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MpConsumePerLevel">
+				<power>0.0001</power>
+				<ticks>5</ticks>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">999900</value>
+					<value level="4">999999</value> 
+					<value level="5">999999</value>  
+					<value level="6">999999</value>  
+					<value level="7">999999</value>  
+					<value level="8">999999</value>  
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">200</value>
+					<value level="3">200</value>
+					<value level="4">300</value> 
+					<value level="5">300</value>  
+					<value level="6">300</value>  
+					<value level="7">300</value>  
+					<value level="8">300</value>  
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">200</value>
+					<value level="3">200</value>
+					<value level="4">300</value> 
+					<value level="5">300</value>  
+					<value level="6">300</value>  
+					<value level="7">300</value>  
+					<value level="8">300</value>  
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">200</value>
+					<value level="3">200</value>
+					<value level="4">300</value> 
+					<value level="5">300</value>  
+					<value level="6">300</value>  
+					<value level="7">300</value>  
+					<value level="8">300</value>  
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">100</value>
+					<value level="5">100</value> 
+					<value level="6">100</value> 
+					<value level="7">100</value> 
+					<value level="8">100</value> 
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">100</value>
+					<value level="5">100</value> 
+					<value level="6">100</value> 
+					<value level="7">100</value> 
+					<value level="8">100</value> 
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">100</value>
+					<value level="5">100</value> 
+					<value level="6">100</value> 
+					<value level="7">100</value> 
+					<value level="8">100</value> 
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">-99</value>
+					<value level="2">-99</value>
+					<value level="3">-99</value>
+					<value level="4">-99</value> 
+					<value level="5">-99</value>  
+					<value level="6">-99</value>  
+					<value level="7">-99</value>  
+					<value level="8">-99</value>  
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">-99</value>
+					<value level="2">-99</value>
+					<value level="3">-99</value>
+					<value level="4">-99</value> 
+					<value level="5">-99</value>  
+					<value level="6">-99</value>  
+					<value level="7">-99</value>  
+					<value level="8">-99</value>  
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicalAttack"> 
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">999900</value>
+					<value level="4">999999</value>
+					<value level="5">999999</value> 
+					<value level="6">999999</value> 
+					<value level="7">999999</value> 
+					<value level="8">999999</value> 
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7030" toLevel="1" name="Summon King Bugbear">
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<itemConsumeCount>8</itemConsumeCount>
+		<itemConsumeId>1458</itemConsumeId>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<mpConsume>3</mpConsume>
+		<reuseDelay>4500</reuseDelay>
+		<effects>
+			<effect name="Summon">
+				<npcId>20150</npcId> 
+				<lifeTime>1200</lifeTime>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7031" toLevel="1" name="Summon Skeleton Royal Guard">
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<itemConsumeCount>8</itemConsumeCount>
+		<itemConsumeId>1458</itemConsumeId>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<mpConsume>3</mpConsume>
+		<reuseDelay>4500</reuseDelay>
+	</skill>
+	<skill id="7032" toLevel="1" name="Summon Hunter Gargoyle">
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<itemConsumeCount>8</itemConsumeCount>
+		<itemConsumeId>1458</itemConsumeId>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<mpConsume>3</mpConsume>
+		<reuseDelay>4500</reuseDelay>
+		<effects>
+			<effect name="Summon">
+				<npcId>20241</npcId> 
+				<lifeTime>1200</lifeTime>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7033" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7034" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7035" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7036" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7037" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7038" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7039" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7040" toLevel="1" name="not_used">
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="7041" toLevel="3" name="GM的祝福-弱點偵測">
+		
+		
+		
+		<icon>icon.skill1077</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CRITICAL_PROB_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>52</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7042" toLevel="3" name="GM的祝福-死之呢喃">
+		
+		
+		
+		<icon>icon.skill1242</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CRITICAL_DMG_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>56</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7043" toLevel="3" name="GM的祝福-速度激發">
+		
+		
+		
+		<icon>icon.skill1086</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>52</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>33</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7044" toLevel="3" name="GM的祝福-導引">
+		
+		
+		
+		<icon>icon.skill1240</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>HIT_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>56</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7045" toLevel="3" name="GM的祝福-神佑之體">
+		
+		
+		
+		<icon>icon.skill1045</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>7</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MAX_HP_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>72</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="MaxHp">
+				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7046" toLevel="3" name="GM的祝福-神佑之魂">
+		
+		
+		
+		<icon>icon.skill1048</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>7</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MAX_MP_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>70</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="MaxMp">
+				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7047" toLevel="3" name="GM的祝福-敏捷術">
+		
+		
+		
+		<icon>icon.skill1087</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>AVOID_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>52</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7048" toLevel="3" name="GM的祝福-靈活思緒">
+		
+		
+		
+		<icon>icon.skill1085</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CASTING_TIME_DOWN</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>48</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7049" toLevel="3" name="GM的祝福-減輕負重">
+		
+		
+		
+		<icon>icon.skill1257</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>DECREASE_WEIGHT_PENALTY</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>52</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="WeightPenalty">
+				<amount>9000</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7050" toLevel="3" name="GM的祝福-力量強化">
+		
+		
+		
+		<icon>icon.skill1068</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>PA_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>40</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7051" toLevel="3" name="GM的祝福-保護盾">
+		
+		
+		
+		<icon>icon.skill1040</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>PD_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>44</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7052" toLevel="3" name="GM的祝福-魔法屏障">
+		
+		
+		
+		<icon>icon.skill1036</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MD_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>52</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7053" toLevel="3" name="GM的祝福-吸血怒擊">
+		
+		
+		
+		<icon>icon.skill1268</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>VAMPIRIC_ATTACK</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>72</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="VampiricAttack">
+				<amount>9</amount>
+				<chance>80</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7054" toLevel="3" name="GM的祝福-魔力催化">
+		
+		
+		
+		<icon>icon.skill1059</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MA_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>52</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="MagicalAttack">
+				<amount>75</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7055" toLevel="3" name="GM的祝福-風之疾走">
+		
+		
+		
+		<icon>icon.skill1204</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>SPEED_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>30</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7056" toLevel="3" name="GM的祝福-狂戰士魂">
+		
+		
+		
+		<icon>icon.skill1062</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BERSERKER</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>52</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>16</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-16</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7057" toLevel="3" name="GM的祝福-高級力量強化">
+		
+		
+		
+		<icon>icon.skill1388</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>PA_UP2</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>74</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7058" toLevel="3" name="GM的祝福-高級保護盾">
+		
+		
+		
+		<icon>icon.skill1389</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>PD_UP2</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>74</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7059" toLevel="3" name="GM的祝福-野性魔力">
+		
+		
+		
+		<icon>icon.skill1303</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MAGIC_CRITICAL_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>70</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7060" toLevel="3" name="GM的祝福-澄澈思緒">
+		
+		
+		
+		<icon>icon.skill1397</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CHEAP_MAGIC</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>74</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-20</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7061" toLevel="3" name="GM的祝福-水之預言">
+		
+		
+		
+		<icon>icon.skill1355</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>78</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7062" toLevel="3" name="GM的祝福-火之預言">
+		
+		
+		
+		<icon>icon.skill1356</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>78</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7063" toLevel="3" name="GM的祝福-風之預言">
+		
+		
+		
+		<icon>icon.skill1357</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>78</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="VampiricAttack">
+				<amount>5</amount>
+				<chance>80</chance>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7064" toLevel="3" name="GM的祝福-勝利">
+		
+		
+		
+		<icon>icon.skill5074</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>78</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>PER</mode>
+				<heal>true</heal>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-10</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7065" toLevel="1" name="測試用突擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>DA1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectRange>600</effectRange>
+		<hitTime>800</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>75</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<nextAction>ATTACK</nextAction>
+		<targetConditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</targetConditions>
+	</skill>
+	<skill id="7066" toLevel="1" name="測試用衝擊突擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>DA2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>9</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>50</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectRange>600</effectRange>
+		<hitTime>800</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>75</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<nextAction>ATTACK</nextAction>
+		<trait>SHOCK</trait>
+		<targetConditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</targetConditions>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>35016</allowedSkills>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7067" toLevel="1" name="測試用範圍 突擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>DA2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<abnormalType>BLEEDING</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectRange>600</effectRange>
+		<hitTime>800</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>2</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>75</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<nextAction>ATTACK</nextAction>
+		<subordinationAbnormalType>BLEEDING</subordinationAbnormalType>
+		<trait>INFECTION</trait>
+		<targetConditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</targetConditions>
+	</skill>
+	<skill id="7068" toLevel="1" name="測試用異常狀態-偷竊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
+		<coolTime>200</coolTime>
+		<effectRange>1100</effectRange>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>75</magicLevel>
+		<mpConsume>80</mpConsume>
+		<mpInitialConsume>20</mpInitialConsume>
+		<nextAction>ATTACK</nextAction>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</conditions>
+	</skill>
+	<skill id="7069" toLevel="1" name="測試用異常狀態-DD">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
+		<coolTime>200</coolTime>
+		<effectRange>1100</effectRange>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>75</magicLevel>
+		<mpConsume>80</mpConsume>
+		<mpInitialConsume>20</mpInitialConsume>
+		<nextAction>ATTACK</nextAction>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</conditions>
+	</skill>
+	<skill id="7070" toLevel="1" name="測試用- 食魂 被動">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>75</magicLevel>
+	</skill>
+	<skill id="7071" toLevel="1" name="測試用- 靈魂轉移">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>900</hitTime>
+		<hpConsume>20</hpConsume>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>75</magicLevel>
+		<mpConsume>5</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<targetConditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</targetConditions>
+	</skill>
+	<skill id="7075" toLevel="1" name="測試用- 距離DD">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<castRange>600</castRange>
+		<effectPoint>-1</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>17</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>6000</reuseDelay>
+	</skill>
+	<skill id="7076" toLevel="1" name="測試用- 延遲 Debuff">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>8</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<abnormalType>BLEEDING</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>40</castRange>
+		<coolTime>720</coolTime>
+		<effectPoint>-1</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1080</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>2</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>70</magicLevel>
+		<mpConsume>30</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<subordinationAbnormalType>BLEEDING</subordinationAbnormalType>
+		<trait>INFECTION</trait>
+	</skill>
+	<skill id="7077" toLevel="1" name="測試用- 延遲 Debuff-呼喊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>70</magicLevel>
+		<trait>SHOCK</trait>
+	</skill>
+	<skill id="7079" toLevel="1" name="測試用- 隊伍傷害吸收">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>PUBLIC_SLOT</abnormalType>
+		<affectObject>FRIEND</affectObject>
+		<affectRange>1000</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitTime>2500</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>75</magicLevel>
+		<mpConsume>100</mpConsume>
+		<specialLevel>-1</specialLevel>
+	</skill>
+	<skill id="7080" toLevel="1" name="測試用-一般攻擊禁止">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>40</abnormalTime>
+		<abnormalType>PUBLIC_SLOT</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>-1</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>2500</hitTime>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>70</magicLevel>
+		<mpConsume>30</mpConsume>
+	</skill>
+	<skill id="7081" toLevel="1" name="效果測試用-朝地射擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>5-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>RANGE</affectScope>
+		<castRange>500</castRange>
+		<coolTime>800</coolTime>
+		<effectPoint>-1</effectPoint>
+		<effectRange>1000</effectRange>
+		<hitTime>3200</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>75</magicLevel>
+		<mpConsume>30</mpConsume>
+		<reuseDelay>25000</reuseDelay>
+	</skill>
+	<skill id="7082" toLevel="1" name="效果測試用- 連鎖閃電">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>5-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>RANGE</affectScope>
+		<attributeType>WATER</attributeType>
+		<attributeValue>20</attributeValue>
+		<castRange>500</castRange>
+		<effectPoint>-1</effectPoint>
+		<effectRange>1000</effectRange>
+		<hitTime>5000</hitTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>75</magicLevel>
+		<mpConsume>80</mpConsume>
+		<mpInitialConsume>20</mpInitialConsume>
+		<reuseDelay>20000</reuseDelay>
+	</skill>
+	<skill id="7083" toLevel="1" name="測試用- 陷阱技能">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectLimit>6-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<effectPoint>-1</effectPoint>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>38</magicLevel>
+	</skill>
+	<skill id="7084" toLevel="1" name="測試用- 陷阱技能">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>CA1</operateType>
+		<targetType>SELF</targetType>
+		<affectLimit>6-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>20</attributeValue>
+		<channelingStart>1</channelingStart>
+		<channelingTickInterval>0</channelingTickInterval>
+		<effectPoint>-1</effectPoint>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>38</magicLevel>
+	</skill>
+	<skill id="7085" toLevel="1" name="自爆_測試">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>50</attributeValue>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<mpConsume>68</mpConsume>
+		<mpInitialConsume>17</mpInitialConsume>
+	</skill>
+	<skill id="7086" toLevel="1" name="最終態勢_測試">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>-100</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+	</skill>
+	<skill id="7087" toLevel="1" name="連鎖魔法-黑暗爆裂_測試">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>600</affectRange>
+		<affectScope>RANGE</affectScope>
+		<attributeType>DARK</attributeType>
+		<attributeValue>50</attributeValue>
+		<castRange>500</castRange>
+		<effectPoint>-1063</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<mpConsume>68</mpConsume>
+		<mpInitialConsume>17</mpInitialConsume>
+	</skill>
+	<skill id="7088" toLevel="3" name="GM的祝福-提升戰鬥">
+		
+		
+		
+		<icon>icon.skill1499</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>IMPROVE_PA_PD_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>70</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>PA_UP,9;PD_UP,9</dispel>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>PA_UP;PD_UP</slot>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7089" toLevel="3" name="GM的祝福-提升魔法">
+		
+		
+		
+		<icon>icon.skill1500</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>IMPROVE_MA_MD_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>74</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>MA_UP,9;MD_UP,9</dispel>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>MA_UP;MD_UP</slot>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>75</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7090" toLevel="3" name="GM的祝福-提升狀態">
+		
+		
+		
+		<icon>icon.skill1501</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>IMPROVE_HP_MP_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>72</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>MAX_HP_UP,9;MAX_MP_UP,9</dispel>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>MAX_HP_UP;MAX_MP_UP</slot>
+			</effect>
+			<effect name="MaxMp">
+				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7091" toLevel="3" name="GM的祝福-提升致命攻擊">
+		
+		
+		
+		<icon>icon.skill1502</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>IMPROVE_CRT_RATE_DMG_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>74</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9</dispel>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>CRITICAL_PROB_UP;CRITICAL_DMG_UP</slot>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7092" toLevel="3" name="GM的祝福-提升盾防禦">
+		
+		
+		
+		<icon>icon.skill1503</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>IMPROVE_SHIELD_RATE_DEFENCE_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>70</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>SHIELD_PROB_UP,9;SHIELD_DEFENCE_UP,9</dispel>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>SHIELD_PROB_UP;SHIELD_DEFENCE_UP</slot>
+			</effect>
+			<effect name="ShieldDefenceRate">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7093" toLevel="3" name="GM的祝福-提升行動力">
+		
+		
+		
+		<icon>icon.skill1504</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>IMPROVE_SPEED_AVOID_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>72</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>SPEED_UP,9;AVOID_UP,9</dispel>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>SPEED_UP;AVOID_UP</slot>
+			</effect>
+			<effect name="Speed">
+				<amount>33</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7094" toLevel="3" name="GM的祝福-尖銳之刃">
+		
+		
+		
+		<icon>icon.skill0825</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>DWARF_ATTACK_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>49</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>5</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>DUAL</item>
+					<item>ANCIENTSWORD</item>
+					<item>RAPIER</item>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>DUAL</item>
+					<item>ANCIENTSWORD</item>
+					<item>RAPIER</item>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+					<item>POLE</item>
+					<item>DUALFIST</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7095" toLevel="3" name="GM的祝福-表層硬化">
+		
+		
+		
+		<icon>icon.skill0828</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>DWARF_DEFENCE_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>46</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7096" toLevel="3" name="GM的祝福-火龍的祝福">
+		
+		
+		
+		<icon>icon.bm_blessing_dragon</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>PRESERVE_ABNORMAL</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<canBeDispelled>false</canBeDispelled>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="NoblesseBless" />
+		</effects>
+	</skill>
+	<skill id="7097" toLevel="1" name="透明解除">
+		<icon>icon.skill01702</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectObject>FRIEND</affectObject>
+		<affectRange>2000</affectRange>
+		<affectScope>PARTY</affectScope>
+		<effectPoint>709</effectPoint>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>DANCE_OF_SHADOW,-1;STEALTH,-1</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7098" toLevel="1" name="Clan-exclusive Pet Heal">
+		
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>-700</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<mpConsume>5</mpConsume>
+		<effects>
+			<effect name="Heal">
+				<power>3000</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="7099" toLevel="1" name="Clan-exclusive Pet Fear">
+		
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>-700</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<mpConsume>5</mpConsume>
+		<trait>FEAR</trait>
+		<effects>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+		</effects>
+	</skill>
+</list>

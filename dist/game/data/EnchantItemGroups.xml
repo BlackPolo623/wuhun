@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/EnchantItemGroups.xsd">
+	<!-- Weapon - chances of enchant -->
+	<enchantRateGroup name="FIGHTER_WEAPON_GROUP">
+		<current enchant="0-2" chance="100" />
+		<current enchant="3-9" chance="66" />
+		<current enchant="10-19" chance="33" />
+		<current enchant="20-29" chance="10" />
+	</enchantRateGroup>
+	<enchantRateGroup name="MAGE_WEAPON_GROUP">
+		<current enchant="0-2" chance="100" />
+		<current enchant="3-9" chance="66" />
+		<current enchant="10-19" chance="33" />
+		<current enchant="20-29" chance="10" />
+	</enchantRateGroup>
+	<enchantRateGroup name="WEAPON_OF_IMMORTALITY"> <!-- Death Knight's Flame Sword -->
+		<current enchant="0-2" chance="100" />
+		<current enchant="3-9" chance="66" />
+		<current enchant="10-19" chance="33" />
+		<current enchant="20-29" chance="10" />
+	</enchantRateGroup>
+	<enchantRateGroup name="ADEN_WEAPON_GROUP">
+		<current enchant="0-2" chance="100" />
+		<current enchant="3-9" chance="66" />
+		<current enchant="10-19" chance="33" />
+		<current enchant="20-29" chance="10" />
+	</enchantRateGroup>
+	<!-- Armor - chances of enchant -->
+	<enchantRateGroup name="ARMOR_GROUP"> <!-- Shield, Sigil, Helmet, Armor upper body, Full armor, Armor lower body, Boots, Gloves -->
+		<current enchant="0-3" chance="100" />
+		<current enchant="4" chance="70" />
+		<current enchant="5" chance="50" />
+		<current enchant="6" chance="40" />
+		<current enchant="7" chance="30" />
+		<current enchant="8" chance="20" />
+		<current enchant="9" chance="20" />
+	</enchantRateGroup>
+	<!-- Armor - chances of enchant -->
+	<enchantRateGroup name="FULL_ARMOR_GROUP"> <!-- Shield, Sigil, Helmet, Armor upper body, Full armor, Armor lower body, Boots, Gloves -->
+		<current enchant="0-3" chance="100" />
+		<current enchant="4" chance="70" />
+		<current enchant="5" chance="50" />
+		<current enchant="6" chance="40" />
+		<current enchant="7" chance="30" />
+		<current enchant="8" chance="20" />
+		<current enchant="9" chance="20" />
+	</enchantRateGroup>
+	<!-- Accessories - chances of enchant -->
+	<enchantRateGroup name="D_C_B_A_ACCESSORIES"> <!-- D, C, B, A grades accessories -->
+		<current enchant="0-3" chance="100" />
+		<current enchant="4" chance="20" />
+		<current enchant="5" chance="10" />
+		<current enchant="6" chance="10" />
+		<current enchant="7" chance="8" />
+		<current enchant="8" chance="5" />
+		<current enchant="9" chance="2" />
+	</enchantRateGroup>
+	<enchantRateGroup name="RARE_ACCESSORIES"> <!-- Rare Accessories -->
+		<current enchant="0" chance="100" />
+		<current enchant="1" chance="50" />
+		<current enchant="2" chance="40" />
+		<current enchant="3" chance="30" />
+		<current enchant="4" chance="20" />
+		<current enchant="5" chance="8" />
+	</enchantRateGroup>
+	<enchantRateGroup name="HELLBOUND_RING"> <!-- Hellbound Ring -->
+		<current enchant="0" chance="100" />
+		<current enchant="1" chance="90" />
+		<current enchant="2" chance="80" />
+		<current enchant="3" chance="60" />
+		<current enchant="4" chance="50" />
+		<current enchant="5" chance="40" />
+		<current enchant="6" chance="30" />
+		<current enchant="7" chance="20" />
+		<current enchant="8" chance="10" />
+		<current enchant="9" chance="5" />
+	</enchantRateGroup>
+	<enchantRateGroup name="INSOLENCE_RING"> <!-- Ring of Insolence -->
+		<current enchant="0" chance="100" />
+		<current enchant="1" chance="90" />
+		<current enchant="2" chance="80" />
+		<current enchant="3" chance="60" />
+		<current enchant="4" chance="50" />
+		<current enchant="5" chance="40" />
+		<current enchant="6" chance="30" />
+		<current enchant="7" chance="20" />
+		<current enchant="8" chance="10" />
+		<current enchant="9" chance="5" />
+	</enchantRateGroup>
+	<enchantRateGroup name="DV_EARRING"> <!-- Dragon Valley's Earring -->
+		<current enchant="0" chance="100" />
+		<current enchant="1" chance="90" />
+		<current enchant="2" chance="80" />
+		<current enchant="3" chance="60" />
+		<current enchant="4" chance="50" />
+		<current enchant="5" chance="40" />
+		<current enchant="6" chance="30" />
+		<current enchant="7" chance="20" />
+		<current enchant="8" chance="10" />
+		<current enchant="9" chance="5" />
+	</enchantRateGroup>
+	<enchantRateGroup name="SPIRITS_NECK"> <!-- Necklace of Spirits -->
+		<current enchant="0" chance="100" />
+		<current enchant="1" chance="90" />
+		<current enchant="2" chance="80" />
+		<current enchant="3" chance="60" />
+		<current enchant="4" chance="50" />
+		<current enchant="5" chance="40" />
+		<current enchant="6" chance="30" />
+		<current enchant="7" chance="20" />
+		<current enchant="8" chance="10" />
+		<current enchant="9" chance="5" />
+	</enchantRateGroup>
+	<!-- Talismans - chances of enchant -->
+	<enchantRateGroup name="TALISMAN_ADEN"> <!-- Talisman of Aden -->
+		<current enchant="0" chance="100" />
+		<current enchant="1" chance="80" />
+		<current enchant="2" chance="70" />
+		<current enchant="3" chance="60" />
+		<current enchant="4" chance="40" />
+		<current enchant="5" chance="30" />
+		<current enchant="6" chance="24" />
+		<current enchant="7" chance="16" />
+		<current enchant="8" chance="10" />
+		<current enchant="9" chance="10" />
+	</enchantRateGroup>
+	<enchantRateGroup name="TALISMAN_EVA"> <!-- Talisman of Eva -->
+		<current enchant="0" chance="60" />
+		<current enchant="1" chance="50" />
+		<current enchant="2" chance="40" />
+		<current enchant="3" chance="35" />
+		<current enchant="4" chance="30" />
+		<current enchant="5" chance="28" />
+		<current enchant="6" chance="26" />
+		<current enchant="7" chance="24" />
+		<current enchant="8" chance="22" />
+		<current enchant="9" chance="20" />
+	</enchantRateGroup>
+	<enchantRateGroup name="TALISMAN_SPEED"> <!-- Talisman of Speed -->
+		<current enchant="0" chance="60" />
+		<current enchant="1" chance="50" />
+		<current enchant="2" chance="45" />
+		<current enchant="3" chance="40" />
+		<current enchant="4" chance="35" />
+		<current enchant="5" chance="30" />
+		<current enchant="6" chance="25" />
+		<current enchant="7" chance="20" />
+		<current enchant="8" chance="10" />
+		<current enchant="9" chance="5" />
+	</enchantRateGroup>
+	<enchantRateGroup name="TALISMAN_AUTHORITY"> <!-- Talisman of Authority -->
+		<current enchant="0" chance="60" />
+		<current enchant="1" chance="50" />
+		<current enchant="2" chance="40" />
+		<current enchant="3" chance="35" />
+		<current enchant="4" chance="30" />
+		<current enchant="5" chance="28" />
+		<current enchant="6" chance="26" />
+		<current enchant="7" chance="24" />
+		<current enchant="8" chance="22" />
+		<current enchant="9" chance="20" />
+	</enchantRateGroup>
+	<enchantRateGroup name="TALISMAN_BAIUM"> <!-- Talisman of Baium -->
+		<current enchant="0" chance="90" />
+		<current enchant="1" chance="80" />
+		<current enchant="2" chance="70" />
+		<current enchant="3" chance="30" />
+		<current enchant="4" chance="5" />
+		<current enchant="5" chance="20" />
+		<current enchant="6" chance="20" />
+		<current enchant="7" chance="20" />
+		<current enchant="8" chance="20" />
+		<current enchant="9" chance="20" />
+	</enchantRateGroup>
+	<!-- Other - chances of enchant -->
+	<enchantRateGroup name="ADVENTURERS_EQUIPMENT"> <!-- Adventurer's Cloak, Adventurer's Belt, Adventurer's Sheep Hat, Adventurer's Talisman -->
+		<current enchant="0" chance="100" />
+	</enchantRateGroup>
+	<enchantRateGroup name="DRAGON_BELT"> <!-- Dragon Belt, Blessed Dragon Belt -->
+		<current enchant="0" chance="60" />
+		<current enchant="1" chance="50" />
+		<current enchant="2" chance="40" />
+		<current enchant="3" chance="35" />
+		<current enchant="4" chance="30" />
+		<current enchant="5" chance="28" />
+		<current enchant="6" chance="26" />
+		<current enchant="7" chance="24" />
+		<current enchant="8" chance="22" />
+		<current enchant="9" chance="20" />
+	</enchantRateGroup>
+	<enchantRateGroup name="CIRCLET_HERO"> <!-- Circlet of Hero -->
+		<current enchant="0" chance="60" />
+		<current enchant="1" chance="50" />
+		<current enchant="2" chance="40" />
+		<current enchant="3" chance="35" />
+		<current enchant="4" chance="30" />
+		<current enchant="5" chance="28" />
+		<current enchant="6" chance="26" />
+		<current enchant="7" chance="24" />
+		<current enchant="8" chance="22" />
+		<current enchant="9" chance="20" />
+	</enchantRateGroup>
+	<enchantRateGroup name="SAYHA_CLOAKS"> <!-- Sayha's Cloaks -->
+		<current enchant="0" chance="95" />
+		<current enchant="1" chance="85" />
+		<current enchant="2" chance="75" />
+		<current enchant="3" chance="60" />
+		<current enchant="4" chance="55" />
+		<current enchant="5" chance="40" />
+		<current enchant="6" chance="30" />
+		<current enchant="7" chance="20" />
+		<current enchant="8" chance="10" />
+		<current enchant="9" chance="1" />
+	</enchantRateGroup>
+	<enchantRateGroup name="SPECIAL_SAYHA_CLOAKS"> <!-- Special Sayha's Cloaks -->
+		<current enchant="0" chance="70" />
+		<current enchant="1" chance="60" />
+		<current enchant="2" chance="50" />
+		<current enchant="3" chance="40" />
+		<current enchant="4" chance="30" />
+		<current enchant="5" chance="20" />
+		<current enchant="6" chance="10" />
+		<current enchant="7" chance="5" />
+		<current enchant="8" chance="3" />
+		<current enchant="9" chance="1" />
+	</enchantRateGroup>
+	<enchantRateGroup name="CLOAK_PROTECTION"> <!-- Cloak of protection -->
+		<current enchant="0" chance="85" />
+		<current enchant="1" chance="80" />
+		<current enchant="2" chance="75" />
+		<current enchant="3" chance="60" />
+		<current enchant="4" chance="50" />
+		<current enchant="5" chance="40" />
+		<current enchant="6" chance="30" />
+		<current enchant="7" chance="20" />
+		<current enchant="8" chance="15" />
+		<current enchant="9" chance="7" />
+	</enchantRateGroup>
+	<enchantRateGroup name="HEAVENLY_CLOAK">
+		<current enchant="0" chance="50" />
+		<current enchant="1" chance="40" />
+		<current enchant="2" chance="30" />
+		<current enchant="3" chance="20" />
+		<current enchant="4" chance="10" />
+		<current enchant="5" chance="0.0005" />
+	</enchantRateGroup>
+	<enchantRateGroup name="CLAN_CLOAK"> <!-- Clan Cloak -->
+		<current enchant="0" chance="85" />
+		<current enchant="1" chance="80" />
+		<current enchant="2" chance="75" />
+		<current enchant="3" chance="60" />
+		<current enchant="4" chance="50" />
+		<current enchant="5" chance="40" />
+		<current enchant="6" chance="30" />
+		<current enchant="7" chance="20" />
+		<current enchant="8" chance="15" />
+		<current enchant="9" chance="7" />
+	</enchantRateGroup>
+	<enchantRateGroup name="CLAN_CIRCLET"> <!-- Clan Circlet -->
+		<current enchant="0" chance="85" />
+		<current enchant="1" chance="80" />
+		<current enchant="2" chance="75" />
+		<current enchant="3" chance="60" />
+		<current enchant="4" chance="50" />
+		<current enchant="5" chance="40" />
+		<current enchant="6" chance="30" />
+		<current enchant="7" chance="20" />
+		<current enchant="8" chance="15" />
+		<current enchant="9" chance="7" />
+	</enchantRateGroup>
+	<enchantRateGroup name="SPIRITS_AGATHION"> <!-- Spirits Agathion -->
+		<current enchant="0" chance="100" />
+		<current enchant="1" chance="100" />
+		<current enchant="2" chance="100" />
+		<current enchant="3" chance="65" />
+		<current enchant="4" chance="50" />
+		<current enchant="5" chance="35" />
+		<current enchant="6" chance="24" />
+		<current enchant="7" chance="18" />
+		<current enchant="8" chance="14" />
+		<current enchant="9" chance="8" />
+	</enchantRateGroup>
+	<enchantRateGroup name="SPIRITS_AGATHION2"> <!-- Agathion Valakas - sutvarkyti šansai -->
+		<current enchant="0" chance="50" />
+		<current enchant="1" chance="30" />
+		<current enchant="2" chance="20" />
+		<current enchant="3" chance="10" />
+		<current enchant="4" chance="3" />
+	</enchantRateGroup>
+	<enchantRateGroup name="AGATHIONS">
+		<current enchant="0" chance="1" />
+		<current enchant="1" chance="1" />
+		<current enchant="2" chance="1" />
+		<current enchant="3" chance="1" />
+		<current enchant="4" chance="0.5" />
+		<current enchant="5" chance="0.0001" />
+	</enchantRateGroup>
+	<enchantRateGroup name="GRAN_KAIN_PENDANT">
+		<current enchant="0" chance="50" />
+		<current enchant="1" chance="30" />
+		<current enchant="2" chance="20" />
+		<current enchant="3" chance="10" />
+		<current enchant="4" chance="3" />
+		<current enchant="5" chance="0.0001" />
+	</enchantRateGroup>
+	<enchantRateGroup name="DRAGON_PENDANT_S"> <!-- DRAGON_PENDANT -->
+		<current enchant="0" chance="80" />
+		<current enchant="1" chance="65" />
+		<current enchant="2" chance="55" />
+		<current enchant="3" chance="40" />
+		<current enchant="4" chance="30" />
+	</enchantRateGroup>
+	<enchantRateGroup name="MASK"> <!-- Piercing Mask and Phantom Mask -->
+		<current enchant="0" chance="60" />
+		<current enchant="1" chance="50" />
+		<current enchant="2" chance="40" />
+		<current enchant="3" chance="35" />
+		<current enchant="4" chance="30" />
+		<current enchant="5" chance="28" />
+		<current enchant="6" chance="26" />
+		<current enchant="7" chance="24" />
+		<current enchant="8" chance="22" />
+		<current enchant="9" chance="20" />
+	</enchantRateGroup>
+	<enchantRateGroup name="TRAN_STONE"> <!-- Transcendent -->
+		<current enchant="8" chance="1.5" />
+		<current enchant="9" chance="0.75" />
+	</enchantRateGroup>
+	<!-- Default scrolls enchanting route line -->
+	<enchantScrollGroup id="0">
+		<!-- Weapon -->
+		<enchantRate group="DRAGON_PENDANT_S">
+			<item itemId="100963" /> <!-- Eva's Earring (MP Recovery) - Sealed -->
+			<item itemId="100964" /> <!-- Shillien's Earring (HP Drain) - Sealed -->
+			<item itemId="100965" /> <!-- Sayha's Ring (Atk. Spd.) - Sealed -->
+			<item itemId="100966" /> <!-- Pa'agrio's Ring (P./ M. Atk.) - Sealed -->
+			<item itemId="100967" /> <!-- Einhasad's Necklace (Cooldown) - Sealed -->
+		</enchantRate>
+		<enchantRate group="FIGHTER_WEAPON_GROUP">
+			<item slot="rhand" magicWeapon="false" /> <!-- Right hand: Weapons, Non magic weapon -->
+			<item slot="lrhand" magicWeapon="false" /> <!-- Two hands: Weapons, Non magic weapon -->
+		</enchantRate>
+		<enchantRate group="MAGE_WEAPON_GROUP">
+			<item slot="rhand" magicWeapon="true" /> <!-- Right hand: Weapons, Magic weapon -->
+			<item slot="lrhand" magicWeapon="true" /> <!-- Two hands: Weapons, Magic weapon -->
+		</enchantRate>
+		<!-- Armor -->
+		<enchantRate group="ARMOR_GROUP">
+			<item slot="lhand" /> <!-- Left hand: Shields, Sigils -->
+			<item slot="head" /> <!-- Head: Helmet -->
+			<item slot="chest" /> <!-- Chest: Armor upper body. -->
+			<item slot="legs" /> <!-- Legs: Armor lower body. -->
+			<item slot="feet" /> <!-- Feet: Boots -->
+			<item slot="gloves" /> <!-- Gloves: Gloves -->
+		</enchantRate>
+		<enchantRate group="FULL_ARMOR_GROUP">
+			<item slot="fullarmor" /> <!-- Full Armor: Full armor pants are included. -->
+		</enchantRate>
+		<!-- Accessories -->
+		<enchantRate group="D_C_B_A_ACCESSORIES">
+			<item slot="neck" /> <!-- Neck: Necklaces -->
+			<item slot="rear;lear" /> <!-- Right ear, Left ear: Earrings -->
+			<item slot="rfinger;lfinger" /> <!-- Right finger, Left finger: Rings -->
+		</enchantRate>
+		<!-- Talismans -->
+		<enchantRate group="TALISMAN_ADEN">
+			<item itemId="91745" /> <!-- Talisman of Aden - Sealed -->
+			<item itemId="98709" /> <!-- Blessed Talisman of Aden - Sealed -->
+			<item itemId="104065" /> <!-- Dragon Pendant Lv. 4 -->
+		</enchantRate>
+		<enchantRate group="TALISMAN_EVA">
+			<item itemId="92018" /> <!-- Talisman of Eva - Sealed -->
+			<item itemId="97559" /> <!-- Blessed Talisman of Eva - Sealed -->
+		</enchantRate>
+		<enchantRate group="TALISMAN_SPEED">
+			<item itemId="92403" /> <!-- Talisman of Speed - Sealed -->
+			<item itemId="97558" /> <!-- Blessed Talisman of Speed - Sealed -->
+		</enchantRate>
+		<enchantRate group="TALISMAN_AUTHORITY">
+			<item itemId="91061" /> <!-- Talisman of Authority - Sealed -->
+			<item itemId="98610" /> <!-- Blessed Talisman of Authority - Sealed -->
+		</enchantRate>
+		<enchantRate group="TALISMAN_BAIUM">
+			<item itemId="49683" /> <!-- Talisman of Baium -->
+			<item itemId="94119" /> <!-- Talisman of Baium - Sealed -->
+		</enchantRate>
+		<enchantRate group="DRAGON_PENDANT">
+			<item itemId="91247" /> <!-- Dragon Pendant Lv. 4 -->
+		</enchantRate>
+		<!-- Other -->
+		<enchantRate group="ADVENTURERS_EQUIPMENT">
+			<item itemId="91937" /> <!-- Adventurer's Talisman - Sealed -->
+			<item itemId="93041" /> <!-- Adventurer's Cloak - Sealed -->
+			<item itemId="93042" /> <!-- Adventurer's Belt - Sealed -->
+			<item itemId="93044" /> <!-- Adventurer's Sheep Hat - Sealed -->
+		</enchantRate>
+		<enchantRate group="DRAGON_BELT">
+			<item itemId="91862" /> <!-- Dragon Belt - Sealed -->
+			<item itemId="94621" /> <!-- Blessed Dragon Belt - Sealed -->
+		</enchantRate>
+		<enchantRate group="CIRCLET_HERO">
+			<item itemId="94166" /> <!-- Circlet of Hero - Sealed -->
+			<item itemId="98205" /> <!-- Blessed Circlet of Hero - Sealed -->
+		</enchantRate>
+		<enchantRate group="SAYHA_CLOAKS">
+			<item itemId="91210" /> <!-- Sayha's Black Cloak -->
+			<item itemId="91211" /> <!-- Sayha's White Cloak -->
+			<item itemId="91212" /> <!-- Sayha's Red Cloak -->
+		</enchantRate>
+		<enchantRate group="SPECIAL_SAYHA_CLOAKS">
+			<item itemId="91719" /> <!-- Sayha's Special Black Cloak -->
+			<item itemId="91720" /> <!-- Sayha's Special White Cloak -->
+			<item itemId="91721" /> <!-- Sayha's Special Red Cloak -->
+		</enchantRate>
+		<enchantRate group="CLOAK_PROTECTION">
+			<item itemId="93301" /> <!-- Cloak of Protection - Sealed -->
+		</enchantRate>
+		<enchantRate group="HEAVENLY_CLOAK">
+			<item itemId="97452" /> <!-- Heavenly Cloak - Sealed -->
+		</enchantRate>
+		<enchantRate group="GRAN_KAIN_PENDANT">
+			<item itemId="98782" /> <!-- Gran Kain's Pendant - Sealed -->
+		</enchantRate>
+		<enchantRate group="CLAN_CLOAK">
+			<item itemId="95636" /> <!-- Clan Cloak - Sealed -->
+		</enchantRate>
+		<enchantRate group="CLAN_CIRCLET">
+			<item itemId="95637" /> <!-- Clan Circlet - Sealed -->
+		</enchantRate>
+		<enchantRate group="SPIRITS_AGATHION">
+			<item itemId="93128" /> <!-- Agathion Ignis - Sealed -->
+			<item itemId="93129" /> <!-- Agathion Nebula - Sealed -->
+			<item itemId="93130" /> <!-- Agathion Procella - Sealed -->
+			<item itemId="93131" /> <!-- Agathion Petram - Sealed -->
+			<item itemId="93132" /> <!-- Agathion Joy - Sealed -->
+			<item itemId="98235" /> <!-- Agathion Dragon Egg - Sealed -->
+			<item itemId="104416" /> <!-- Phantom Mask - Sealed -->
+			<item itemId="104417" /> <!-- Phantom Mask - Sealed -->
+			<item itemId="104418" /> <!-- Phantom Mask - Sealed -->
+			<item itemId="104419" /> <!-- Phantom Mask - Sealed -->
+		</enchantRate>
+		<enchantRate group="SPIRITS_AGATHION2">
+			<item itemId="98236" /> <!-- Agathion Valakas - Sealed -->
+		</enchantRate>
+		<enchantRate group="AGATHIONS">
+			<item slot="agathion" /> <!-- Agathion: agathion -->
+		</enchantRate>
+		<enchantRate group="MASK">
+			<item itemId="97259" /> <!-- Piercing Mask - Sealed -->
+			<item itemId="100545" /> <!-- Phantom Mask - Sealed -->
+			<item itemId="100547" /> <!-- Heavenly Talisman - Sealed -->
+		</enchantRate>
+	</enchantScrollGroup>
+	<!-- Aden weapons scrolls enchanting route line -->
+	<enchantScrollGroup id="1">
+		<enchantRate group="ADEN_WEAPON_GROUP">
+			<item slot="rhand" /> <!-- Right hand: Weapons -->
+			<item slot="lrhand" /> <!-- Two hands: Weapons -->
+		</enchantRate>
+	</enchantScrollGroup>
+	<!-- Death Knight's Flame Sword scrolls enchanting route line -->
+	<enchantScrollGroup id="2">
+		<enchantRate group="WEAPON_OF_IMMORTALITY">
+			<item itemId="93864" /> <!-- Death Knight's Flame Sword -->
+			<item itemId="96927" /> <!-- Axe of Immortality -->
+			<item itemId="96928" /> <!-- Ancient Sword of Immortality -->
+			<item itemId="96929" /> <!-- Magic Blunt Weapon of Immortality -->
+			<item itemId="96930" /> <!-- Flame Fists of Immortality -->
+			<item itemId="96931" /> <!-- Pistols of Immortality -->
+			<item itemId="96932" /> <!-- Rapier of Immortality -->
+			<item itemId="96933" /> <!-- Staff of Immortality -->
+			<item itemId="96935" /> <!-- Dagger of Immortality -->
+			<item itemId="96938" /> <!-- Two-handed Sword of Immortality -->
+			<item itemId="96939" /> <!-- Spear of Immortality -->
+			<item itemId="96940" /> <!-- Bow of Immortality -->
+			<item itemId="97088" /> <!-- Sword of Immortality -->
+			<item itemId="97089" /> <!-- Dual Swords of Immortality -->
+    <item itemId="103833" /> <!-- Agathion Ignis - Sealed -->
+    <item itemId="103834" /> <!-- Agathion Nebula - Sealed -->
+    <item itemId="103835" /> <!-- Agathion Procella - Sealed -->
+    <item itemId="103836" /> <!-- Agathion Petram - Sealed -->
+    <item itemId="103837" />
+    <item itemId="103838" />
+    <item itemId="103839" />
+    <item itemId="103840" />
+    <item itemId="103841" />
+    <item itemId="103842" />
+    <item itemId="103843" />
+    <item itemId="103844" />
+    <item itemId="103845" />
+    <item itemId="103846" />
+    <item itemId="103847" />
+    <item itemId="103848" />
+    <item itemId="103849" />
+    <item itemId="103850" />
+    <item itemId="103851" />
+    <item itemId="103852" />
+    <item itemId="103853" />
+    <item itemId="103854" />
+    <item itemId="103855" />
+    <item itemId="103856" />
+    <item itemId="103857" />
+    <item itemId="103858" />
+    <item itemId="103859" />
+    <item itemId="103860" />
+    <item itemId="103861" />
+    <item itemId="103862" />
+    <item itemId="103863" />
+    <item itemId="103864" />
+    <item itemId="103865" />
+    <item itemId="103866" />
+    <item itemId="103867" />
+    <item itemId="103868" />
+    <item itemId="103869" />
+    <item itemId="103870" />
+    <item itemId="103871" />
+    <item itemId="103872" />
+    <item itemId="103873" />
+    <item itemId="103874" />
+    <item itemId="103875" />
+    <item itemId="103876" />
+    <item itemId="103877" />
+    <item itemId="103878" />
+    <item itemId="103879" />
+    <item itemId="103880" />
+    <item itemId="103881" />
+    <item itemId="103882" />
+    <item itemId="103883" />
+    <item itemId="103884" />
+    <item itemId="103885" />
+    <item itemId="103886" />
+    <item itemId="103887" />
+    <item itemId="103888" />
+		</enchantRate>
+	</enchantScrollGroup>
+	<!-- Rare Accessories scrolls enchanting route line -->
+	<enchantScrollGroup id="3">
+		<enchantRate group="RARE_ACCESSORIES">
+			<item itemId="90992" /> <!-- Antharas' Earring -->
+			<item itemId="91952" /> <!-- Ring of Insolence -->
+			<item itemId="95718" /> <!-- Ring of Insolence - Sealed -->
+			<item itemId="96600" /> <!-- Beleth's Ring -->
+			<item itemId="97074" /> <!-- Beleth's Ring - Sealed -->
+			<item itemId="49580" /> <!-- Baium's Ring -->
+			<item itemId="49581" /> <!-- Baium's Ring Lv. 2 -->
+			<item itemId="49582" /> <!-- Baium's Ring Lv. 3 -->
+			<item itemId="90994" /> <!-- Damaged Baium's Ring -->
+			<item itemId="91381" /> <!-- Baium's Ring Lv. 4 -->
+			<item itemId="95330" /> <!-- Baium's Ring - Sealed -->
+			<item itemId="90763" /> <!-- Zaken's Earring -->
+			<item itemId="95331" /> <!-- Zaken's Earring - Sealed -->
+			<item itemId="91382" /> <!-- Zaken's Earring Lv. 4 -->
+			<item itemId="91006" /> <!-- Damaged Zaken's Earring -->
+			<item itemId="90765" /> <!-- Zaken's Earring Lv. 3 -->
+			<item itemId="90764" /> <!-- Zaken's Earring Lv. 2 -->
+			<item itemId="95327" /> <!-- Queen Ant's Ring - Sealed -->
+			<item itemId="6660" /> <!-- Queen Ant's Ring -->
+			<item itemId="91378" /> <!-- Queen Ant's Ring Lv. 4 -->
+			<item itemId="49577" /> <!-- Queen Ant's Ring Lv. 3 -->
+			<item itemId="49574" /> <!-- Queen Ant's Ring Lv. 2 -->
+			<item itemId="6661" /> <!-- Orfen's Earring -->
+			<item itemId="49575" /> <!-- Orfen's Earring Lv. 2 -->
+			<item itemId="49578" /> <!-- Orfen's Earring Lv. 3 -->
+			<item itemId="91379" /> <!-- Orfen's Earring Lv. 4 -->
+			<item itemId="95328" /> <!-- Orfen's Earring - Sealed -->
+			<item itemId="92328" /> <!-- Orfen's Earring Lv. 1 - Sealed -->
+			<item itemId="6662" /> <!-- Core's Ring -->
+			<item itemId="49576" /> <!-- Core's Ring Lv. 2 -->
+			<item itemId="49579" /> <!-- Core's Ring Lv. 3 -->
+			<item itemId="91380" /> <!-- Core's Ring Lv. 4 -->
+			<item itemId="95329" /> <!-- Core's Ring - Sealed -->
+			<item itemId="91550" /> <!-- Frintezza's Necklace -->
+			<item itemId="91551" /> <!-- Frintezza's Necklace Lv. 2 -->
+			<item itemId="91552" /> <!-- Frintezza's Necklace Lv. 3 -->
+			<item itemId="91553" /> <!-- Frintezza's Necklace Lv. 4 -->
+			<item itemId="95333" /> <!-- Frintezza's Necklace - Sealed -->
+			<item itemId="893" /> <!-- Majestic Ring -->
+			<item itemId="95394" /> <!-- Majestic Ring - Sealed -->
+			<item itemId="902" /> <!-- Phoenix Ring -->
+			<item itemId="95396" /> <!-- Phoenix Ring - Sealed -->
+			<item itemId="862" /> <!-- Majestic Earring -->
+			<item itemId="95425" /> <!-- Majestic Earring - Sealed -->
+			<item itemId="871" /> <!-- Phoenix Earring -->
+			<item itemId="95381" /> <!-- Phoenix Earring - Sealed -->
+			<item itemId="924" /> <!-- Majestic Necklace -->
+			<item itemId="95429" /> <!-- Majestic Necklace - Sealed -->
+			<item itemId="95409" /> <!-- Phoenix Necklace - Sealed -->
+			<item itemId="933" /> <!-- Phoenix Necklace -->
+			<item itemId="95332" /> <!-- Antharas' Earring - Sealed -->
+			<item itemId="91117" /> <!-- Nebula's Necklace -->
+			<item itemId="91119" /> <!-- Ignis' Necklace -->
+			<item itemId="91121" /> <!-- Procella's Necklace -->
+			<item itemId="91123" /> <!-- Petram's Necklace -->
+			<item itemId="98932" /> <!-- Aztacan's Earring -->
+			<item itemId="98933" /> <!-- Aztacan's Earring - Sealed -->
+			<item itemId="100370" /> <!-- Ferion's Necklace -->
+			<item itemId="100371" /> <!-- Ferion's Necklace - Sealed -->
+			<item itemId="100963" /> <!-- Eva's Earring (MP Recovery) - Sealed -->
+			<item itemId="100964" /> <!-- Shillien's Earring (HP Drain) - Sealed -->
+			<item itemId="100965" /> <!-- Sayha's Ring (Atk. Spd.) - Sealed -->
+			<item itemId="100966" /> <!-- Pa'agrio's Ring (P./ M. Atk.) - Sealed -->
+			<item itemId="100967" /> <!-- Einhasad's Necklace (Cooldown) - Sealed -->
+			<item itemId="105397" /> <!-- Einhasad's Necklace (Cooldown) - Sealed -->
+			<item itemId="105398" /> <!-- Einhasad's Necklace (Cooldown) - Sealed -->
+			<item itemId="105399" /> <!-- Einhasad's Necklace (Cooldown) - Sealed -->
+			<item itemId="105400" /> <!-- Einhasad's Necklace (Cooldown) - Sealed -->
+			<item itemId="105689" /> <!-- Einhasad's Necklace (Cooldown) - Sealed -->
+			<item itemId="104582" /> <!-- Einhasad's Necklace (Cooldown) - Sealed -->
+			<item itemId="98827" /> <!-- Einhasad's Necklace (Cooldown) - Sealed -->
+			<item itemId="103992"/>
+			</enchantRate>
+		<enchantRate group="HELLBOUND_RING">
+			<item itemId="94718" /> <!-- Hellbound Ring -->
+		</enchantRate>
+		<enchantRate group="INSOLENCE_RING">
+			<item itemId="91952" /> <!-- Ring of Insolence -->
+			<item itemId="95718" /> <!-- Ring of Insolence - Sealed -->
+		</enchantRate>
+		<enchantRate group="DV_EARRING">
+			<item itemId="91953" /> <!-- Dragon Valley's Earring -->
+			<item itemId="95719" /> <!-- Dragon Valley's Earring - Sealed -->
+		</enchantRate>
+		<enchantRate group="SPIRITS_NECK">
+			<item itemId="94682" /> <!-- Necklace of Spirits -->
+		</enchantRate>
+		<enchantRate group="PET">
+			<item itemId="94642" /> <!-- Guardian Earring -->
+			<item itemId="94643" /> <!-- Guardian Ring -->
+			<item itemId="98991" /> <!-- Guardian Earring - Sealed -->
+			<item itemId="98992" /> <!-- Guardian Ring - Sealed -->
+		</enchantRate>
+		<enchantRate group="DRAGON_PENDANT_S">
+			<item itemId="100963" /> <!-- Eva's Earring (MP Recovery) - Sealed -->
+			<item itemId="100964" /> <!-- Shillien's Earring (HP Drain) - Sealed -->
+			<item itemId="100965" /> <!-- Sayha's Ring (Atk. Spd.) - Sealed -->
+			<item itemId="100966" /> <!-- Pa'agrio's Ring (P./ M. Atk.) - Sealed -->
+			<item itemId="100967" /> <!-- Einhasad's Necklace (Cooldown) - Sealed -->
+		</enchantRate>
+	</enchantScrollGroup>
+	<!-- Transcendence Stones -->
+	<enchantScrollGroup id="4">
+		<enchantRate group="TRAN_STONE">
+			<item itemId="94166" /> <!-- Circlet of Hero - Sealed -->
+			<item itemId="98205" /> <!-- Blessed Circlet of Hero - Sealed -->
+			<item itemId="97259" /> <!-- Piercing Mask - Sealed -->
+			<item itemId="93301" /> <!-- Cloak of Protection - Sealed -->
+			<item itemId="91862" /> <!-- Dragon Belt - Sealed -->
+			<item itemId="94621" /> <!-- Blessed Dragon Belt - Sealed -->
+			<item itemId="93128" /> <!-- Agathion Ignis - Sealed -->
+			<item itemId="93129" /> <!-- Agathion Nebula - Sealed -->
+			<item itemId="93130" /> <!-- Agathion Procella - Sealed -->
+			<item itemId="93131" /> <!-- Agathion Petram - Sealed -->
+			<item itemId="93132" /> <!-- Agathion Joy - Sealed -->
+			<item itemId="91745" /> <!-- Talisman of Aden - Sealed -->
+			<item itemId="98709" /> <!-- Blessed Talisman of Aden - Sealed -->
+			<item itemId="92403" /> <!-- Talisman of Speed - Sealed -->
+			<item itemId="97558" /> <!-- Blessed Talisman of Speed - Sealed -->
+			<item itemId="91061" /> <!-- Talisman of Authority - Sealed -->
+			<item itemId="98610" /> <!-- Blessed Talisman of Authority - Sealed -->
+			<item itemId="92018" /> <!-- Talisman of Eva - Sealed -->
+			<item itemId="97559" /> <!-- Blessed Talisman of Eva - Sealed -->
+			<item itemId="98235" /> <!-- Agathion Dragon Egg - Sealed -->
+		</enchantRate>
+	</enchantScrollGroup>
+</list>

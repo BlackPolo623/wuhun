@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="46642" name="雷德證書" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.event_mahum_memo" />
+		<set name="material" val="LEATHER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="46644" name="紅色天秤補給品Lv1" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.event_mahum_coinbox" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="LEATHER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49488" min="1" max="1" chance="20" name="勇士最上級HP恢復劑" /> 
+			<item id="49487" min="1" max="1" chance="20" name="靈魂彈交換券-帳號共享" /> 
+			<item id="49490" min="1" max="1" chance="20" name="釣魚套組" /> 
+			<item id="1458" min="1" max="1" chance="20" name="結晶-D級" /> 
+			<item id="91226" min="1" max="1" chance="20" name="雷德的武器交換券" /> 
+		</capsuled_items>
+	</item>
+	<item id="46645" name="紅色天秤補給品Lv2" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.event_mahum_coinbox" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="LEATHER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49488" min="2" max="2" chance="16.66667" name="勇士最上級HP恢復劑" /> 
+			<item id="49487" min="1" max="1" chance="16.66667" name="靈魂彈交換券-帳號共享" /> 
+			<item id="49490" min="1" max="1" chance="16.66667" name="釣魚套組" /> 
+			<item id="49533" min="1" max="1" chance="16.66667" name="勇士HP藥水" /> 
+			<item id="1459" min="5" max="5" chance="16.66667" name="結晶-C級" /> 
+			<item id="91226" min="1" max="1" chance="16.66667" name="雷德的武器交換券" /> 
+		</capsuled_items>
+	</item>
+	<item id="46646" name="紅色天秤補給品Lv3" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.event_mahum_coinbox" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="LEATHER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49488" min="3" max="3" chance="14.28571" name="勇士最上級HP恢復劑" /> 
+			<item id="49487" min="1" max="1" chance="14.28571" name="靈魂彈交換券-帳號共享" /> 
+			<item id="49490" min="1" max="1" chance="14.28571" name="釣魚套組" /> 
+			<item id="49533" min="1" max="1" chance="14.28571" name="勇士HP藥水" /> 
+			<item id="49108" min="1" max="1" chance="14.28571" name="美容禮盒" /> 
+			<item id="1460" min="5" max="5" chance="14.28571" name="結晶-B級" /> 
+			<item id="91226" min="1" max="1" chance="14.28571" name="雷德的武器交換券" /> 
+		</capsuled_items>
+	</item>
+	<item id="46647" name="紅色天秤補給品Lv4" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.event_mahum_coinbox" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="LEATHER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49488" min="4" max="4" chance="12.5" name="勇士最上級HP恢復劑" /> 
+			<item id="49487" min="1" max="1" chance="12.5" name="靈魂彈交換券-帳號共享" /> 
+			<item id="49490" min="1" max="1" chance="12.5" name="釣魚套組" /> 
+			<item id="49533" min="1" max="1" chance="12.5" name="勇士HP藥水" /> 
+			<item id="49108" min="1" max="1" chance="12.5" name="美容禮盒" /> 
+			<item id="49110" min="1" max="1" chance="12.5" name="高級染藥禮盒" /> 
+			<item id="1461" min="2" max="2" chance="12.5" name="結晶-A級" /> 
+			<item id="91226" min="1" max="1" chance="12.5" name="雷德的武器交換券" /> 
+		</capsuled_items>
+	</item>
+</list>

@@ -1,0 +1,1871 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="19000" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="5760" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="270" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="19001" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="5760" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="270" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="19002" level="80" type="Teleporter" name="據點移動裝置" title="Status">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5760" hpRegen="10.2" mp="1674" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="1" />
+				<run ground="270" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="50" />
+			<height normal="70" />
+		</collision>
+	</npc>
+	<npc id="19003" level="85" type="Folk" name="傷害測試">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="35738" hpRegen="10.5" mp="11928" mpRegen="3.6" />
+			<speed>
+				<walk ground="64" />
+				<run ground="150" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="16" />
+		</collision>
+	</npc>
+	<!-- NPC 19004 (傷害機器) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 19005 (必倫的手下) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 19006 (必倫的手下) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 19007 (必倫的手下) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 19008 (黃金豬豬) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 19009 (黃金丹帝) 已被提取至 RaidBosses.xml -->
+	<npc id="19010" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="5760" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="270" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="19011" level="80" type="Monster" name="不良西瓜">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="256" sp="3" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3160" hpRegen="10.2" mp="300.96" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="100" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="28.75" />
+		</collision>
+	</npc>
+	<npc id="19012" level="80" type="Monster" name="優良的西瓜">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="1536" sp="15" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2531" hpRegen="10.2" mp="300.96" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="100" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="47.8" />
+		</collision>
+	</npc>
+	<npc id="19013" level="80" type="Monster" name="優良的西瓜王" title="Incredibly Sweet">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="4608" sp="46" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3160" hpRegen="10.2" mp="300.96" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="100" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="48" />
+			<height normal="98.6" />
+		</collision>
+	</npc>
+	<npc id="19014" level="80" type="Monster" name="黃金西瓜" title="XP Keeper">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="35200" sp="352" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6320" hpRegen="10.2" mp="300.96" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="100" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="46" />
+			<height normal="53" />
+		</collision>
+	</npc>
+	<!-- NPC 19015 (大葫蘆王) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 19016 (覆雪大葫蘆) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 19017 (黃金大葫蘆) 已被提取至 RaidBosses.xml -->
+	<npc id="19018" level="80" type="Folk" name="">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5760" hpRegen="10.2" mp="1674" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="1" />
+				<run ground="270" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="19019" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="5760" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="270" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="19020" level="80" type="Monster" name="不良西瓜">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="8.22785" hpRegen="10.2" mp="40" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="270" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="35.1" />
+		</collision>
+	</npc>
+	<npc id="19021" level="85" type="Folk" name="遊戲管理員分身體" title="Customer Support">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="35738" hpRegen="10.5" mp="11928" mpRegen="3.6" />
+			<speed>
+				<walk ground="20" />
+				<run ground="150" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="10" />
+			<height normal="24" />
+		</collision>
+	</npc>
+	<npc id="19022" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3676" hpRegen="10.5" mp="2023" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="75" />
+			<height normal="55" />
+		</collision>
+	</npc>
+	<npc id="19023" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="5760" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="270" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="19024" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="25.5" />
+			<height normal="181.5" />
+		</collision>
+	</npc>
+	<npc id="19025" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="27" />
+			<height normal="75" />
+		</collision>
+	</npc>
+	<npc id="19026" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="5760" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="270" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="19027" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="5760" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="270" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="19028" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="5760" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="270" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="17" />
+			<height normal="120" />
+		</collision>
+	</npc>
+	<npc id="19029" level="90" type="Monster" name="神之火焰" title="Flame of Desire's Bearer">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="104430300" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="30" />
+				<run ground="270" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" grown="20" />
+			<height normal="32" grown="39" />
+		</collision>
+	</npc>
+	<npc id="19030" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="5760" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="270" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="19031" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="5760" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="270" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="19032" level="80" type="Monster" name="守護天使">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<acquire exp="10880" sp="109" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="8760.12658" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="30" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" grown="16" />
+			<height normal="36.5" grown="42.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19033" level="80" type="Monster" name="守護者大天使">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="6718" /> 
+		<acquire exp="11603" sp="116" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="12000" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="38.5" grown="46.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19034" level="80" type="Monster" name="守護傳令天使">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="6717" /> 
+		<acquire exp="11981" sp="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="11679.74684" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="110" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8" grown="9" />
+			<height normal="30" grown="36.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19035" level="80" type="Monster" name="守護傳令引導者">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<acquire exp="12333" sp="123" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="20000" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="110" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="33" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19036" level="80" type="Monster" name="傲慢的傳令天使">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<acquire exp="12659" sp="127" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="11679.74684" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="30" />
+				<run ground="100" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" grown="16" />
+			<height normal="36.5" grown="42.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19037" level="80" type="Monster" name="傲慢的傳令族長">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<acquire exp="12960" sp="130" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="24000" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="30" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" grown="16" />
+			<height normal="36.5" grown="42.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19038" level="80" type="Monster" name="傲慢的傳令引導者">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="91986" /> 
+		<acquire exp="13235" sp="132" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="26279.74684" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="30" />
+				<run ground="131" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="47" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19039" level="80" type="Monster" name="傲慢的傳令戰士">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<acquire exp="13485" sp="135" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="28000" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="33" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19040" level="80" type="Monster" name="守護天使祭司">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="6718" /> 
+		<acquire exp="13709" sp="137" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="21900" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="38.5" grown="46.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19041" level="80" type="Monster" name="傳令司令官">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<acquire exp="13907" sp="139" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="28000" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="30" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" grown="16" />
+			<height normal="36.5" grown="42.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19042" level="80" type="Monster" name="傳令偵查者">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="91986" /> 
+		<acquire exp="14080" sp="141" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="24820.25316" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="30" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="47" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19043" level="80" type="Monster" name="傳令審判者">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<acquire exp="14592" sp="146" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="36000" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="33" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19044" level="80" type="Monster" name="封印天使">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="6717" /> 
+		<acquire exp="15104" sp="151" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="27739.87342" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8" grown="9" />
+			<height normal="30" grown="36.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19045" level="80" type="Monster" name="封印守護天使">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<acquire exp="15616" sp="156" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44000" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="33" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19046" level="80" type="Monster" name="封印大天使">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<acquire exp="16128" sp="161" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="39420.25316" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="33" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19047" level="80" type="Monster" name="塔之守護大天使">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<acquire exp="16640" sp="166" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="46000" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="33" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19048" level="80" type="Monster" name="塔之守護弓手">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> 
+		<acquire exp="17152" sp="172" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="35039.87342" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="30" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="47" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19049" level="80" type="Monster" name="塔之守護戰士">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="6717" /> 
+		<acquire exp="17664" sp="177" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="52000" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="15" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8" grown="9" />
+			<height normal="30" grown="36.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19050" level="80" type="Monster" name="塔之守護咒術士">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="6718" /> 
+		<acquire exp="18176" sp="182" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="40879.74684" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="185" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="38.5" grown="46.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19051" level="80" type="Monster" name="塔之守護傳令">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="91986" /> 
+		<acquire exp="18688" sp="187" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="52000" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="30" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="47" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19052" level="80" type="Monster" name="神聖傳令師">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="19200" sp="192" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="45260.12658" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="37.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19053" level="80" type="Monster" name="神聖弓兵">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> 
+		<acquire exp="19712" sp="197" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="56000" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15.3" />
+			<height normal="40.35" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19054" level="80" type="Monster" name="神聖法師">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="20224" sp="202" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="51100" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" />
+			<height normal="35.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19055" level="80" type="Monster" name="神聖親衛隊騎士">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="20736" sp="207" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="60000" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="37.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19056" level="80" type="Monster" name="天宮觀察者">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="21248" sp="212" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="51100" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="35" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.4" />
+			<height normal="39.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19057" level="80" type="Monster" name="天宮射手">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> 
+		<acquire exp="21760" sp="218" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="64000" hpRegen="10.2" mp="1743" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15.6" />
+			<height normal="56.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4071" level="3" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 19058 (佩利昂) 已被提取至 RaidBosses.xml -->
+	<npc id="19059" level="85" type="Monster" name="佩利昂親衛隊" element="WIND">
+		<race>GIANT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="50000" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4452.5043" magical="3040.48329" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1996.20366" magical="1460.73522" />
+			<speed>
+				<walk ground="55" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21.6" />
+			<height normal="55.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="11" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="19060" level="80" type="Monster" name="白天燈">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5833.5443" hpRegen="10.2" mp="2512.2" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="35" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="7" />
+			<height normal="60" />
+		</collision>
+	</npc>
+	<npc id="19061" level="85" type="Folk" name="透明">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="30" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="13" />
+			<height normal="19.5" />
+		</collision>
+	</npc>
+	<npc id="19062" level="85" type="Folk" name="發芽的世界樹">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="17.5" />
+			<height normal="76.1" />
+		</collision>
+	</npc>
+	<npc id="19063" level="85" type="Folk" name="發芽的世界樹" title="Imbued with Water Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="17.5" />
+			<height normal="76.1" />
+		</collision>
+	</npc>
+	<npc id="19064" level="85" type="Folk" name="發芽的世界樹" title="Imbued with Earth Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="17.5" />
+			<height normal="76.1" />
+		</collision>
+	</npc>
+	<npc id="19065" level="85" type="Folk" name="發芽的世界樹" title="Imbued with Light Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="17.5" />
+			<height normal="76.1" />
+		</collision>
+	</npc>
+	<npc id="19066" level="85" type="Folk" name="小世界樹" title="Imbued with Water Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="28" />
+			<height normal="110" />
+		</collision>
+	</npc>
+	<npc id="19067" level="85" type="Folk" name="小世界樹" title="Imbued with Earth Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="28" />
+			<height normal="110" />
+		</collision>
+	</npc>
+	<npc id="19068" level="85" type="Folk" name="小世界樹" title="Imbued with Light Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="28" />
+			<height normal="110" />
+		</collision>
+	</npc>
+	<npc id="19069" level="85" type="Folk" name="脆弱的世界樹" title="Imbued with Water Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="80" />
+			<height normal="237.1" />
+		</collision>
+	</npc>
+	<npc id="19070" level="85" type="Folk" name="脆弱的世界樹" title="Imbued with Earth Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="80" />
+			<height normal="237.1" />
+		</collision>
+	</npc>
+	<npc id="19071" level="85" type="Folk" name="脆弱的世界樹" title="Imbued with Light Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="80" />
+			<height normal="237.1" />
+		</collision>
+	</npc>
+	<npc id="19072" level="85" type="Folk" name="成長的世界樹" title="Imbued with Water Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="120" />
+			<height normal="340" />
+		</collision>
+	</npc>
+	<npc id="19073" level="85" type="Folk" name="成長的世界樹" title="Imbued with Earth Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="120" />
+			<height normal="340" />
+		</collision>
+	</npc>
+	<npc id="19074" level="85" type="Folk" name="成長的世界樹" title="Imbued with Light Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="120" />
+			<height normal="340" />
+		</collision>
+	</npc>
+	<npc id="19075" level="85" type="Folk" name="成熟的世界樹" title="Imbued with Water Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="270" />
+			<height normal="853.1" />
+		</collision>
+	</npc>
+	<npc id="19076" level="85" type="Folk" name="成熟的世界樹" title="Imbued with Earth Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="270" />
+			<height normal="853.1" />
+		</collision>
+	</npc>
+	<npc id="19077" level="85" type="Folk" name="成熟的世界樹" title="Imbued with Light Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="270" />
+			<height normal="853.1" />
+		</collision>
+	</npc>
+	<npc id="19078" level="85" type="Folk" name="完成的世界樹" title="Imbued with Water Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="320" />
+			<height normal="1220" />
+		</collision>
+	</npc>
+	<npc id="19079" level="85" type="Folk" name="完成的世界樹" title="Imbued with Earth Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="320" />
+			<height normal="1220" />
+		</collision>
+	</npc>
+	<npc id="19080" level="85" type="Folk" name="完成的世界樹" title="Imbued with Light Energy">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="320" />
+			<height normal="1220" />
+		</collision>
+	</npc>
+	<npc id="19081" level="80" type="Monster" name="森林守望者">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="5184" sp="52" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="37522.1519" hpRegen="10.2" mp="2584.09268001591" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="12" />
+				<run ground="24" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20.7" />
+			<height normal="80.7" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="48587" level="4" /> 
+			<skill id="4116" level="4" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19082" level="80" type="Monster" name="陰影森林的搜索兵">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="5184" sp="52" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="37522.1519" hpRegen="10.2" mp="2584.09268001591" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="52.5" />
+			<height normal="71.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="48046" level="1" /> 
+			<skill id="5620" level="6" /> 
+		</skillList>
+	</npc>
+	<npc id="19083" level="80" type="Monster" name="陰影森林的戰士">
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<acquire exp="12960" sp="130" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="7504.43038" hpRegen="10.2" mp="2584.09268001591" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="36" />
+				<run ground="200" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="51" />
+			<height normal="61.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="3" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 19084 (迪凱) 已被提取至 RaidBosses.xml -->
+	<npc id="19085" level="85" type="Folk" name="對話用藍樹">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="270" />
+			<height normal="853.1" />
+		</collision>
+	</npc>
+	<npc id="19086" level="85" type="Folk" name="對話用綠樹">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="320" />
+			<height normal="1220" />
+		</collision>
+	</npc>
+	<npc id="19087" level="85" type="Folk" name="對話用黃樹">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="320" />
+			<height normal="1220" />
+		</collision>
+	</npc>
+	<npc id="19088" level="85" type="Folk" name="完成的世界樹">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="3342" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="320" />
+			<height normal="1220" />
+		</collision>
+	</npc>
+	<!-- NPC 19089 (烏德拉克) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 19090 (烏德拉克) 已被提取至 RaidBosses.xml -->
+	<npc id="19091" level="80" type="Monster" name="世界樹幼苗">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="253.4" hpRegen="10.2" mp="40" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="50" />
+				<run ground="270" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="36" />
+			<height normal="157.5" />
+		</collision>
+	</npc>
+	<npc id="19092" level="80" type="Monster" name="拉比" title="Mother Tree Keeper">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1582.5" hpRegen="10.2" mp="40" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="270" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="45" />
+		</collision>
+	</npc>
+	<npc id="19093" level="80" type="Monster" name="殘暴的幼苗破壞者">
+		<race>PLANT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="158228" hpRegen="10.2" mp="1507.8" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="30" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="36" />
+			<height normal="50" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="5" /> 
+		</skillList>
+	</npc>
+	<npc id="19094" level="80" type="Monster" name="殘暴的幼苗破壞者">
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="158228" hpRegen="10.2" mp="1507.8" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="30.8" />
+			<height normal="42.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="19095" level="80" type="Monster" name="殘暴的幼苗破壞者">
+		<race>PLANT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="158228" hpRegen="10.2" mp="1507.8" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="42" />
+			<height normal="32" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="5" /> 
+		</skillList>
+	</npc>
+	<npc id="19096" level="85" type="Folk" name="古代精靈哨兵" title="Thankful">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="2499" /> 
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="1582" hpRegen="10.5" mp="40" mpRegen="3.6" />
+			<speed>
+				<walk ground="60" />
+				<run ground="270" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="22" />
+			<height normal="49" />
+		</collision>
+	</npc>
+	<npc id="19097" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="5760" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="270" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="19098" level="85" type="Folk" name="">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="5760" hpRegen="10.5" mp="1674" mpRegen="3.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="270" />
+			</speed>
+			<attack physical="1950.2231755595" magical="1331.5869440987" critical="4" attackSpeed="253" range="40" />
+			<defence physical="405.85106382979" magical="297.0297029703" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="0.1" />
+			<height normal="0.1" />
+		</collision>
+	</npc>
+	<npc id="19099" level="76" type="Monster" name="親衛隊長" title="Bubbling">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="2462" sp="25" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="48529.74684" hpRegen="10.2" mp="2101.10382264543" mpRegen="3.6" />
+			<attack physical="1319.072" magical="675.568" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="388.54" magical="213.24" />
+			<speed>
+				<walk ground="60" />
+				<run ground="24" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="54" />
+			<height normal="50.1" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="5620" level="3" /> 
+		</skillList>
+	</npc>
+</list>

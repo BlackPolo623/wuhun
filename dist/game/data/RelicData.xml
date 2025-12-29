@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/RelicData.xsd">
+	<relicSummonCategoryData> <!-- Only 2 Categories can be active (Client Limitation) -->
+		<summonCategory id="1" priceId="91663" amount="200" summonCount="1" active="true" />
+		<summonCategory id="2" priceId="91663" amount="2000" summonCount="11" active="true" />
+		<summonCategory id="3" priceId="57" amount="3000000" summonCount="1" active="false" />
+		<summonCategory id="4" priceId="57" amount="30000000" summonCount="11" active="false" />
+	</relicSummonCategoryData>
+	
+	<relicEnchantData>
+		<enchantFee feeItemId="57" feeCount="200000000" />
+		<enchantData chancePerIngredients="10, 20, 30, 50" />
+	</relicEnchantData>
+	
+	<relicCombineData>
+		<combineCategory grade="COMMON" feeItemId="57" feeCount="100000" />
+		<combineCategory grade="ENHANCED" feeItemId="57" feeCount="500000" />
+		<combineCategory grade="SUPERIOR" feeItemId="57" feeCount="1000000" />
+		<combineCategory grade="RARE" feeItemId="57" feeCount="1000000" />
+		<combineCategory grade="HEROIC" feeItemId="57" feeCount="10000000" />
+		<combineCategory grade="LEGENDARY" feeItemId="57" feeCount="100000000" />
+	</relicCombineData>
+	
+	<relic id="1" grade="COMMON" summonChance="660000000" baseRelicId="1" compoundChanceModifier="0.65000" compoundUpGradeChanceModifier="1.08333"> <!-- Common Princess Molrang Doll -->
+		<relicStat enchantLevel="0" skillId="50702" skillLevel="1" combatPower="0" /> <!-- Princess Molrang Doll Lv. 1 -->
+	</relic>
+	<relic id="2" grade="ENHANCED" summonChance="396000000" baseRelicId="1" compoundChanceModifier="0.35000" compoundUpGradeChanceModifier="0.58333"> <!-- Enhanced Princess Molrang Doll -->
+		<relicStat enchantLevel="0" skillId="50702" skillLevel="2" combatPower="1" /> <!-- Princess Molrang Doll Lv. 2 -->
+	</relic>
+	<relic id="133" grade="SUPERIOR" summonChance="33250000" baseRelicId="1" compoundChanceModifier="0.07500" compoundUpGradeChanceModifier="0.12500"> <!-- Superior Princess Molrang Doll -->
+		<relicStat enchantLevel="0" skillId="50702" skillLevel="3" combatPower="2" /> <!-- Princess Molrang Doll Lv. 3 -->
+	</relic>
+	<relic id="3" grade="COMMON" summonChance="660000000" baseRelicId="3" compoundChanceModifier="0.65000" compoundUpGradeChanceModifier="1.08333"> <!-- Common Deiman Doll -->
+		<relicStat enchantLevel="0" skillId="50703" skillLevel="1" combatPower="0" /> <!-- Deiman Doll Lv. 1 -->
+	</relic>
+	<relic id="4" grade="ENHANCED" summonChance="396000000" baseRelicId="3" compoundChanceModifier="0.35000" compoundUpGradeChanceModifier="0.58333"> <!-- Enhanced Deiman Doll -->
+		<relicStat enchantLevel="0" skillId="50703" skillLevel="2" combatPower="1" /> <!-- Deiman Doll Lv. 2 -->
+	</relic>
+	<relic id="5" grade="COMMON" summonChance="660000000" baseRelicId="5" compoundChanceModifier="0.65000" compoundUpGradeChanceModifier="1.08333"> <!-- Common Satina Doll -->
+		<relicStat enchantLevel="0" skillId="50704" skillLevel="1" combatPower="0" /> <!-- Satina Doll Lv. 1 -->
+	</relic>
+	<relic id="6" grade="ENHANCED" summonChance="396000000" baseRelicId="5" compoundChanceModifier="0.35000" compoundUpGradeChanceModifier="0.58333"> <!-- Enhanced Satina Doll -->
+		<relicStat enchantLevel="0" skillId="50704" skillLevel="2" combatPower="1" /> <!-- Satina Doll Lv. 2 -->
+	</relic>
+	<relic id="7" grade="COMMON" summonChance="660000000" baseRelicId="7" compoundChanceModifier="0.65000" compoundUpGradeChanceModifier="1.08333"> <!-- Common Ryuminir Doll -->
+		<relicStat enchantLevel="0" skillId="50705" skillLevel="1" combatPower="0" /> <!-- Ryuminir Doll Lv. 1 -->
+	</relic>
+	<relic id="8" grade="ENHANCED" summonChance="396000000" baseRelicId="7" compoundChanceModifier="0.35000" compoundUpGradeChanceModifier="0.58333"> <!-- Enhanced Ryuminir Doll -->
+		<relicStat enchantLevel="0" skillId="50705" skillLevel="2" combatPower="1" /> <!-- Ryuminir Doll Lv. 2 -->
+	</relic>
+	<relic id="9" grade="COMMON" summonChance="660000000" baseRelicId="9" compoundChanceModifier="0.65000" compoundUpGradeChanceModifier="1.08333"> <!-- Common Aizen Kelsour Doll -->
+		<relicStat enchantLevel="0" skillId="50706" skillLevel="1" combatPower="0" /> <!-- Aizen Kelsour Doll Lv. 1 -->
+	</relic>
+	<relic id="10" grade="ENHANCED" summonChance="396000000" baseRelicId="9" compoundChanceModifier="0.35000" compoundUpGradeChanceModifier="0.58333"> <!-- Enhanced Aizen Kelsour Doll -->
+		<relicStat enchantLevel="0" skillId="50706" skillLevel="2" combatPower="1" /> <!-- Aizen Kelsour Doll Lv. 2 -->
+	</relic>
+	<relic id="11" grade="COMMON" summonChance="420000000" baseRelicId="11" compoundChanceModifier="0.75000" compoundUpGradeChanceModifier="1.25000"> <!-- Common King Ignis Doll -->
+		<relicStat enchantLevel="0" skillId="50707" skillLevel="1" combatPower="0" /> <!-- King Ignis Doll Lv. 1 -->
+	</relic>
+	<relic id="12" grade="ENHANCED" summonChance="252000000" baseRelicId="11" compoundChanceModifier="0.40000" compoundUpGradeChanceModifier="0.66667"> <!-- Enhanced King Ignis Doll -->
+		<relicStat enchantLevel="0" skillId="50707" skillLevel="2" combatPower="1" /> <!-- King Ignis Doll Lv. 2 -->
+	</relic>
+	<relic id="13" grade="SUPERIOR" summonChance="33250000" baseRelicId="11" compoundChanceModifier="0.07500" compoundUpGradeChanceModifier="0.12500"> <!-- Superior King Ignis Doll -->
+		<relicStat enchantLevel="0" skillId="50707" skillLevel="3" combatPower="2" /> <!-- King Ignis Doll Lv. 3 -->
+	</relic>
+	<relic id="14" grade="RARE" summonChance="5273400" baseRelicId="11" compoundChanceModifier="0.00950" compoundUpGradeChanceModifier="0.01583"> <!-- Rare King Ignis Doll -->
+		<relicStat enchantLevel="0" skillId="50707" skillLevel="4" combatPower="5" /> <!-- King Ignis Doll Lv. 4 -->
+	</relic>
+	<relic id="15" grade="COMMON" summonChance="420000000" baseRelicId="15" compoundChanceModifier="0.75000" compoundUpGradeChanceModifier="1.25000"> <!-- Common Queen Nebula Doll -->
+		<relicStat enchantLevel="0" skillId="50708" skillLevel="1" combatPower="0" /> <!-- Queen Nebula Doll Lv. 1 -->
+	</relic>
+	<relic id="16" grade="ENHANCED" summonChance="252000000" baseRelicId="15" compoundChanceModifier="0.40000" compoundUpGradeChanceModifier="0.66667"> <!-- Enhanced Queen Nebula Doll -->
+		<relicStat enchantLevel="0" skillId="50708" skillLevel="2" combatPower="1" /> <!-- Queen Nebula Doll Lv. 2 -->
+	</relic>
+	<relic id="17" grade="SUPERIOR" summonChance="33250000" baseRelicId="15" compoundChanceModifier="0.07500" compoundUpGradeChanceModifier="0.12500"> <!-- Superior Queen Nebula Doll -->
+		<relicStat enchantLevel="0" skillId="50708" skillLevel="3" combatPower="2" /> <!-- Queen Nebula Doll Lv. 3 -->
+	</relic>
+	<relic id="18" grade="RARE" summonChance="5273400" baseRelicId="15" compoundChanceModifier="0.00950" compoundUpGradeChanceModifier="0.01583"> <!-- Rare Queen Nebula Doll -->
+		<relicStat enchantLevel="0" skillId="50708" skillLevel="4" combatPower="5" /> <!-- Queen Nebula Doll Lv. 4 -->
+	</relic>
+	<relic id="19" grade="COMMON" summonChance="420000000" baseRelicId="19" compoundChanceModifier="0.75000" compoundUpGradeChanceModifier="1.25000"> <!-- Common King Procella Doll -->
+		<relicStat enchantLevel="0" skillId="50709" skillLevel="1" combatPower="0" /> <!-- King Procella Doll Lv. 1 -->
+	</relic>
+	<relic id="20" grade="ENHANCED" summonChance="252000000" baseRelicId="19" compoundChanceModifier="0.40000" compoundUpGradeChanceModifier="0.66667"> <!-- Enhanced King Procella Doll -->
+		<relicStat enchantLevel="0" skillId="50709" skillLevel="2" combatPower="1" /> <!-- King Procella Doll Lv. 2 -->
+	</relic>
+	<relic id="21" grade="SUPERIOR" summonChance="33250000" baseRelicId="19" compoundChanceModifier="0.07500" compoundUpGradeChanceModifier="0.12500"> <!-- Superior King Procella Doll -->
+		<relicStat enchantLevel="0" skillId="50709" skillLevel="3" combatPower="2" /> <!-- King Procella Doll Lv. 3 -->
+	</relic>
+	<relic id="22" grade="RARE" summonChance="5273400" baseRelicId="19" compoundChanceModifier="0.00950" compoundUpGradeChanceModifier="0.01583"> <!-- Rare King Procella Doll -->
+		<relicStat enchantLevel="0" skillId="50709" skillLevel="4" combatPower="5" /> <!-- King Procella Doll Lv. 4 -->
+	</relic>
+	<relic id="23" grade="COMMON" summonChance="420000000" baseRelicId="23" compoundChanceModifier="0.75000" compoundUpGradeChanceModifier="1.25000"> <!-- Common King Petram Doll -->
+		<relicStat enchantLevel="0" skillId="50710" skillLevel="1" combatPower="0" /> <!-- King Petram Doll Lv. 1 -->
+	</relic>
+	<relic id="24" grade="ENHANCED" summonChance="252000000" baseRelicId="23" compoundChanceModifier="0.40000" compoundUpGradeChanceModifier="0.66667"> <!-- Enhanced King Petram Doll -->
+		<relicStat enchantLevel="0" skillId="50710" skillLevel="2" combatPower="1" /> <!-- King Petram Doll Lv. 2 -->
+	</relic>
+	<relic id="25" grade="SUPERIOR" summonChance="33250000" baseRelicId="23" compoundChanceModifier="0.07500" compoundUpGradeChanceModifier="0.12500"> <!-- Superior King Petram Doll -->
+		<relicStat enchantLevel="0" skillId="50710" skillLevel="3" combatPower="2" /> <!-- King Petram Doll Lv. 3 -->
+	</relic>
+	<relic id="26" grade="RARE" summonChance="5273400" baseRelicId="23" compoundChanceModifier="0.00950" compoundUpGradeChanceModifier="0.01583"> <!-- Rare King Petram Doll -->
+		<relicStat enchantLevel="0" skillId="50710" skillLevel="4" combatPower="5" /> <!-- King Petram Doll Lv. 4 -->
+	</relic>
+	<relic id="27" grade="COMMON" summonChance="420000000" baseRelicId="27" compoundChanceModifier="0.75000" compoundUpGradeChanceModifier="1.25000"> <!-- Common Tiron Doll -->
+		<relicStat enchantLevel="0" skillId="50711" skillLevel="1" combatPower="0" /> <!-- Tiron Doll Lv. 1 -->
+	</relic>
+	<relic id="28" grade="ENHANCED" summonChance="252000000" baseRelicId="27" compoundChanceModifier="0.40000" compoundUpGradeChanceModifier="0.66667"> <!-- Enhanced Tiron Doll -->
+		<relicStat enchantLevel="0" skillId="50711" skillLevel="2" combatPower="1" /> <!-- Tiron Doll Lv. 2 -->
+	</relic>
+	<relic id="29" grade="SUPERIOR" summonChance="33250000" baseRelicId="27" compoundChanceModifier="0.07500" compoundUpGradeChanceModifier="0.12500"> <!-- Superior Tiron Doll -->
+		<relicStat enchantLevel="0" skillId="50711" skillLevel="3" combatPower="2" /> <!-- Tiron Doll Lv. 3 -->
+	</relic>
+	<relic id="30" grade="RARE" summonChance="5273400" baseRelicId="27" compoundChanceModifier="0.00950" compoundUpGradeChanceModifier="0.01583"> <!-- Rare Tiron Doll -->
+		<relicStat enchantLevel="0" skillId="50711" skillLevel="4" combatPower="5" /> <!-- Tiron Doll Lv. 4 -->
+	</relic>
+	<relic id="31" grade="COMMON" summonChance="70000000" baseRelicId="31" compoundChanceModifier="0.95000" compoundUpGradeChanceModifier="1.58333"> <!-- Common Scarlet van Halisha Doll -->
+		<relicStat enchantLevel="0" skillId="50712" skillLevel="1" combatPower="0" /> <!-- Scarlet van Halisha Doll Lv. 1 -->
+	</relic>
+	<relic id="32" grade="ENHANCED" summonChance="43200000" baseRelicId="31" compoundChanceModifier="0.45000" compoundUpGradeChanceModifier="0.75000"> <!-- Enhanced Scarlet van Halisha Doll -->
+		<relicStat enchantLevel="0" skillId="50712" skillLevel="2" combatPower="1" /> <!-- Scarlet van Halisha Doll Lv. 2 -->
+	</relic>
+	<relic id="33" grade="SUPERIOR" summonChance="20125000" baseRelicId="31" compoundChanceModifier="0.08000" compoundUpGradeChanceModifier="0.13333"> <!-- Superior Scarlet van Halisha Doll -->
+		<relicStat enchantLevel="0" skillId="50712" skillLevel="3" combatPower="2" /> <!-- Scarlet van Halisha Doll Lv. 3 -->
+	</relic>
+	<relic id="34" grade="RARE" summonChance="2726000" baseRelicId="31" compoundChanceModifier="0.01000" compoundUpGradeChanceModifier="0.01667"> <!-- Rare Scarlet van Halisha Doll -->
+		<relicStat enchantLevel="0" skillId="50712" skillLevel="4" combatPower="5" /> <!-- Scarlet van Halisha Doll Lv. 4 -->
+	</relic>
+	<relic id="35" grade="HEROIC" summonChance="330000" baseRelicId="31" compoundChanceModifier="0.00035" compoundUpGradeChanceModifier="0.00058"> <!-- Heroic Scarlet van Halisha Doll -->
+		<relicStat enchantLevel="0" skillId="50712" skillLevel="5" combatPower="10" /> <!-- Scarlet van Halisha Doll Lv. 5 -->
+	</relic>
+	<relic id="36" grade="LEGENDARY" summonChance="1" baseRelicId="31" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Scarlet van Halisha Doll -->
+		<relicStat enchantLevel="0" skillId="50712" skillLevel="6" combatPower="32" /> <!-- Scarlet van Halisha Doll Lv. 6 -->
+	</relic>
+	<relic id="37" grade="COMMON" summonChance="70000000" baseRelicId="37" compoundChanceModifier="0.95000" compoundUpGradeChanceModifier="1.58333"> <!-- Common Anakim Doll -->
+		<relicStat enchantLevel="0" skillId="50713" skillLevel="1" combatPower="0" /> <!-- Anakim Doll Lv. 1 -->
+	</relic>
+	<relic id="38" grade="ENHANCED" summonChance="43200000" baseRelicId="37" compoundChanceModifier="0.45000" compoundUpGradeChanceModifier="0.75000"> <!-- Enhanced Anakim Doll -->
+		<relicStat enchantLevel="0" skillId="50713" skillLevel="2" combatPower="1" /> <!-- Anakim Doll Lv. 2 -->
+	</relic>
+	<relic id="39" grade="SUPERIOR" summonChance="20125000" baseRelicId="37" compoundChanceModifier="0.08000" compoundUpGradeChanceModifier="0.13333"> <!-- Superior Anakim Doll -->
+		<relicStat enchantLevel="0" skillId="50713" skillLevel="3" combatPower="2" /> <!-- Anakim Doll Lv. 3 -->
+	</relic>
+	<relic id="40" grade="RARE" summonChance="2726000" baseRelicId="37" compoundChanceModifier="0.01000" compoundUpGradeChanceModifier="0.01667"> <!-- Rare Anakim Doll -->
+		<relicStat enchantLevel="0" skillId="50713" skillLevel="4" combatPower="5" /> <!-- Anakim Doll Lv. 4 -->
+	</relic>
+	<relic id="41" grade="HEROIC" summonChance="330000" baseRelicId="37" compoundChanceModifier="0.00035" compoundUpGradeChanceModifier="0.00058"> <!-- Heroic Anakim Doll -->
+		<relicStat enchantLevel="0" skillId="50713" skillLevel="5" combatPower="10" /> <!-- Anakim Doll Lv. 5 -->
+	</relic>
+	<relic id="42" grade="LEGENDARY" summonChance="1" baseRelicId="37" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Anakim Doll -->
+		<relicStat enchantLevel="0" skillId="50713" skillLevel="6" combatPower="32" /> <!-- Anakim Doll Lv. 6 -->
+	</relic>
+	<relic id="43" grade="COMMON" summonChance="70000000" baseRelicId="43" compoundChanceModifier="0.95000" compoundUpGradeChanceModifier="1.58333"> <!-- Common Lilith Doll -->
+		<relicStat enchantLevel="0" skillId="50714" skillLevel="1" combatPower="0" /> <!-- Lilith Doll Lv. 1 -->
+	</relic>
+	<relic id="44" grade="ENHANCED" summonChance="43200000" baseRelicId="43" compoundChanceModifier="0.45000" compoundUpGradeChanceModifier="0.75000"> <!-- Enhanced Lilith Doll -->
+		<relicStat enchantLevel="0" skillId="50714" skillLevel="2" combatPower="1" /> <!-- Lilith Doll Lv. 2 -->
+	</relic>
+	<relic id="45" grade="SUPERIOR" summonChance="20125000" baseRelicId="43" compoundChanceModifier="0.08000" compoundUpGradeChanceModifier="0.13333"> <!-- Superior Lilith Doll -->
+		<relicStat enchantLevel="0" skillId="50714" skillLevel="3" combatPower="2" /> <!-- Lilith Doll Lv. 3 -->
+	</relic>
+	<relic id="46" grade="RARE" summonChance="2726000" baseRelicId="43" compoundChanceModifier="0.01000" compoundUpGradeChanceModifier="0.01667"> <!-- Rare Lilith Doll -->
+		<relicStat enchantLevel="0" skillId="50714" skillLevel="4" combatPower="5" /> <!-- Lilith Doll Lv. 4 -->
+	</relic>
+	<relic id="47" grade="HEROIC" summonChance="330000" baseRelicId="43" compoundChanceModifier="0.00035" compoundUpGradeChanceModifier="0.00058"> <!-- Heroic Lilith Doll -->
+		<relicStat enchantLevel="0" skillId="50714" skillLevel="5" combatPower="10" /> <!-- Lilith Doll Lv. 5 -->
+	</relic>
+	<relic id="48" grade="LEGENDARY" summonChance="1" baseRelicId="43" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Lilith Doll -->
+		<relicStat enchantLevel="0" skillId="50714" skillLevel="6" combatPower="32" /> <!-- Lilith Doll Lv. 6 -->
+	</relic>
+	<relic id="49" grade="COMMON" summonChance="70000000" baseRelicId="49" compoundChanceModifier="0.95000" compoundUpGradeChanceModifier="1.58333"> <!-- Common Queen Ant Doll -->
+		<relicStat enchantLevel="0" skillId="39303" skillLevel="1" combatPower="0" /> <!-- Queen Ant Doll Lv. 1 -->
+	</relic>
+	<relic id="50" grade="ENHANCED" summonChance="43200000" baseRelicId="49" compoundChanceModifier="0.45000" compoundUpGradeChanceModifier="0.75000"> <!-- Enhanced Queen Ant Doll -->
+		<relicStat enchantLevel="0" skillId="39303" skillLevel="2" combatPower="1" /> <!-- Queen Ant Doll Lv. 2 -->
+	</relic>
+	<relic id="51" grade="SUPERIOR" summonChance="20125000" baseRelicId="49" compoundChanceModifier="0.08000" compoundUpGradeChanceModifier="0.13333"> <!-- Superior Queen Ant Doll -->
+		<relicStat enchantLevel="0" skillId="39303" skillLevel="3" combatPower="2" /> <!-- Queen Ant Doll Lv. 3 -->
+	</relic>
+	<relic id="52" grade="RARE" summonChance="2726000" baseRelicId="49" compoundChanceModifier="0.01000" compoundUpGradeChanceModifier="0.01667"> <!-- Rare Queen Ant Doll -->
+		<relicStat enchantLevel="0" skillId="39303" skillLevel="4" combatPower="5" /> <!-- Queen Ant Doll Lv. 4 -->
+	</relic>
+	<relic id="53" grade="HEROIC" summonChance="330000" baseRelicId="49" compoundChanceModifier="0.00035" compoundUpGradeChanceModifier="0.00058"> <!-- Heroic Queen Ant Doll -->
+		<relicStat enchantLevel="0" skillId="39303" skillLevel="5" combatPower="10" /> <!-- Queen Ant Doll Lv. 5 -->
+	</relic>
+	<relic id="54" grade="LEGENDARY" summonChance="1" baseRelicId="49" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Queen Ant Doll -->
+		<relicStat enchantLevel="0" skillId="39303" skillLevel="6" combatPower="32" /> <!-- Queen Ant Doll Lv. 6 -->
+	</relic>
+	<relic id="55" grade="COMMON" summonChance="70000000" baseRelicId="55" compoundChanceModifier="0.95000" compoundUpGradeChanceModifier="1.58333"> <!-- Common Orfen Doll -->
+		<relicStat enchantLevel="0" skillId="39304" skillLevel="1" combatPower="0" /> <!-- Orfen Doll Lv. 1 -->
+	</relic>
+	<relic id="56" grade="ENHANCED" summonChance="43200000" baseRelicId="55" compoundChanceModifier="0.45000" compoundUpGradeChanceModifier="0.75000"> <!-- Enhanced Orfen Doll -->
+		<relicStat enchantLevel="0" skillId="39304" skillLevel="2" combatPower="1" /> <!-- Orfen Doll Lv. 2 -->
+	</relic>
+	<relic id="57" grade="SUPERIOR" summonChance="20125000" baseRelicId="55" compoundChanceModifier="0.08000" compoundUpGradeChanceModifier="0.13333"> <!-- Superior Orfen Doll -->
+		<relicStat enchantLevel="0" skillId="39304" skillLevel="3" combatPower="2" /> <!-- Orfen Doll Lv. 3 -->
+	</relic>
+	<relic id="58" grade="RARE" summonChance="2726000" baseRelicId="55" compoundChanceModifier="0.01000" compoundUpGradeChanceModifier="0.01667"> <!-- Rare Orfen Doll -->
+		<relicStat enchantLevel="0" skillId="39304" skillLevel="4" combatPower="5" /> <!-- Orfen Doll Lv. 4 -->
+	</relic>
+	<relic id="59" grade="HEROIC" summonChance="330000" baseRelicId="55" compoundChanceModifier="0.00035" compoundUpGradeChanceModifier="0.00058"> <!-- Heroic Orfen Doll -->
+		<relicStat enchantLevel="0" skillId="39304" skillLevel="5" combatPower="10" /> <!-- Orfen Doll Lv. 5 -->
+	</relic>
+	<relic id="60" grade="LEGENDARY" summonChance="1" baseRelicId="55" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Orfen Doll -->
+		<relicStat enchantLevel="0" skillId="39304" skillLevel="6" combatPower="32" /> <!-- Orfen Doll Lv. 6 -->
+	</relic>
+	<relic id="61" grade="COMMON" summonChance="70000000" baseRelicId="61" compoundChanceModifier="0.95000" compoundUpGradeChanceModifier="1.58333"> <!-- Common Core Doll -->
+		<relicStat enchantLevel="0" skillId="50464" skillLevel="1" combatPower="0" /> <!-- Core Doll Lv. 1 -->
+	</relic>
+	<relic id="62" grade="ENHANCED" summonChance="43200000" baseRelicId="61" compoundChanceModifier="0.45000" compoundUpGradeChanceModifier="0.75000"> <!-- Enhanced Core Doll -->
+		<relicStat enchantLevel="0" skillId="50464" skillLevel="2" combatPower="1" /> <!-- Core Doll Lv. 2 -->
+	</relic>
+	<relic id="63" grade="SUPERIOR" summonChance="20125000" baseRelicId="61" compoundChanceModifier="0.08000" compoundUpGradeChanceModifier="0.13333"> <!-- Superior Core Doll -->
+		<relicStat enchantLevel="0" skillId="50464" skillLevel="3" combatPower="2" /> <!-- Core Doll Lv. 3 -->
+	</relic>
+	<relic id="64" grade="RARE" summonChance="2726000" baseRelicId="61" compoundChanceModifier="0.01000" compoundUpGradeChanceModifier="0.01667"> <!-- Rare Core Doll -->
+		<relicStat enchantLevel="0" skillId="50464" skillLevel="4" combatPower="5" /> <!-- Core Doll Lv. 4 -->
+	</relic>
+	<relic id="65" grade="HEROIC" summonChance="330000" baseRelicId="61" compoundChanceModifier="0.00035" compoundUpGradeChanceModifier="0.00058"> <!-- Heroic Core Doll -->
+		<relicStat enchantLevel="0" skillId="50464" skillLevel="5" combatPower="10" /> <!-- Core Doll Lv. 5 -->
+	</relic>
+	<relic id="66" grade="LEGENDARY" summonChance="1" baseRelicId="61" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Core Doll -->
+		<relicStat enchantLevel="0" skillId="50464" skillLevel="6" combatPower="32" /> <!-- Core Doll Lv. 6 -->
+	</relic>
+	<relic id="67" grade="COMMON" summonChance="30000000" baseRelicId="67" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000"> <!-- Common Zaken Doll -->
+		<relicStat enchantLevel="0" skillId="50463" skillLevel="1" combatPower="0" /> <!-- Zaken Doll Lv. 1 -->
+	</relic>
+	<relic id="68" grade="ENHANCED" summonChance="11250000" baseRelicId="67" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333"> <!-- Enhanced Zaken Doll -->
+		<relicStat enchantLevel="0" skillId="50463" skillLevel="2" combatPower="1" /> <!-- Zaken Doll Lv. 2 -->
+	</relic>
+	<relic id="69" grade="SUPERIOR" summonChance="3587500" baseRelicId="67" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167"> <!-- Superior Zaken Doll -->
+		<relicStat enchantLevel="0" skillId="50463" skillLevel="3" combatPower="2" /> <!-- Zaken Doll Lv. 3 -->
+	</relic>
+	<relic id="70" grade="RARE" summonChance="517000" baseRelicId="67" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500"> <!-- Rare Zaken Doll -->
+		<relicStat enchantLevel="0" skillId="50463" skillLevel="4" combatPower="5" /> <!-- Zaken Doll Lv. 4 -->
+	</relic>
+	<relic id="71" grade="HEROIC" summonChance="118500" baseRelicId="67" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067"> <!-- Heroic Zaken Doll -->
+		<relicStat enchantLevel="0" skillId="50463" skillLevel="5" combatPower="10" /> <!-- Zaken Doll Lv. 5 -->
+	</relic>
+	<relic id="72" grade="LEGENDARY" summonChance="1" baseRelicId="67" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Zaken Doll -->
+		<relicStat enchantLevel="0" skillId="50463" skillLevel="6" combatPower="32" /> <!-- Zaken Doll Lv. 6 -->
+	</relic>
+	<relic id="73" grade="COMMON" summonChance="30000000" baseRelicId="73" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000"> <!-- Common Frintezza Doll -->
+		<relicStat enchantLevel="0" skillId="51297" skillLevel="1" combatPower="0" /> <!-- Frintezza Doll Lv. 1 -->
+	</relic>
+	<relic id="74" grade="ENHANCED" summonChance="11250000" baseRelicId="73" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333"> <!-- Enhanced Frintezza Doll -->
+		<relicStat enchantLevel="0" skillId="51297" skillLevel="2" combatPower="1" /> <!-- Frintezza Doll Lv. 2 -->
+	</relic>
+	<relic id="75" grade="SUPERIOR" summonChance="3587500" baseRelicId="73" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167"> <!-- Superior Frintezza Doll -->
+		<relicStat enchantLevel="0" skillId="51297" skillLevel="3" combatPower="2" /> <!-- Frintezza Doll Lv. 3 -->
+	</relic>
+	<relic id="76" grade="RARE" summonChance="517000" baseRelicId="73" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500"> <!-- Rare Frintezza Doll -->
+		<relicStat enchantLevel="0" skillId="51297" skillLevel="4" combatPower="5" /> <!-- Frintezza Doll Lv. 4 -->
+	</relic>
+	<relic id="77" grade="HEROIC" summonChance="118500" baseRelicId="73" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067"> <!-- Heroic Frintezza Doll -->
+		<relicStat enchantLevel="0" skillId="51297" skillLevel="5" combatPower="10" /> <!-- Frintezza Doll Lv. 5 -->
+	</relic>
+	<relic id="78" grade="LEGENDARY" summonChance="1" baseRelicId="73" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Frintezza Doll -->
+		<relicStat enchantLevel="0" skillId="51297" skillLevel="6" combatPower="32" /> <!-- Frintezza Doll Lv. 6 -->
+	</relic>
+	<relic id="79" grade="COMMON" summonChance="30000000" baseRelicId="79" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000"> <!-- Common Baium Doll -->
+		<relicStat enchantLevel="0" skillId="39302" skillLevel="1" combatPower="0" /> <!-- Baium Doll Lv. 1 -->
+	</relic>
+	<relic id="80" grade="ENHANCED" summonChance="11250000" baseRelicId="79" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333"> <!-- Enhanced Baium Doll -->
+		<relicStat enchantLevel="0" skillId="39302" skillLevel="2" combatPower="1" /> <!-- Baium Doll Lv. 2 -->
+	</relic>
+	<relic id="81" grade="SUPERIOR" summonChance="3587500" baseRelicId="79" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167"> <!-- Superior Baium Doll -->
+		<relicStat enchantLevel="0" skillId="39302" skillLevel="3" combatPower="2" /> <!-- Baium Doll Lv. 3 -->
+	</relic>
+	<relic id="82" grade="RARE" summonChance="517000" baseRelicId="79" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500"> <!-- Rare Baium Doll -->
+		<relicStat enchantLevel="0" skillId="39302" skillLevel="4" combatPower="5" /> <!-- Baium Doll Lv. 4 -->
+	</relic>
+	<relic id="83" grade="HEROIC" summonChance="118500" baseRelicId="79" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067"> <!-- Heroic Baium Doll -->
+		<relicStat enchantLevel="0" skillId="39302" skillLevel="5" combatPower="10" /> <!-- Baium Doll Lv. 5 -->
+	</relic>
+	<relic id="84" grade="LEGENDARY" summonChance="1" baseRelicId="79" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Baium Doll -->
+		<relicStat enchantLevel="0" skillId="39302" skillLevel="6" combatPower="32" /> <!-- Baium Doll Lv. 6 -->
+	</relic>
+	<relic id="121" grade="COMMON" summonChance="30000000" baseRelicId="121" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000"> <!-- Common Vulcan Doll -->
+		<relicStat enchantLevel="0" skillId="50727" skillLevel="1" combatPower="0" /> <!-- Vulcan Doll Lv. 1 -->
+	</relic>
+	<relic id="122" grade="ENHANCED" summonChance="11250000" baseRelicId="121" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333"> <!-- Enhanced Vulcan Doll -->
+		<relicStat enchantLevel="0" skillId="50727" skillLevel="2" combatPower="1" /> <!-- Vulcan Doll Lv. 2 -->
+	</relic>
+	<relic id="123" grade="SUPERIOR" summonChance="3587500" baseRelicId="121" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167"> <!-- Superior Vulcan Doll -->
+		<relicStat enchantLevel="0" skillId="50727" skillLevel="3" combatPower="2" /> <!-- Vulcan Doll Lv. 3 -->
+	</relic>
+	<relic id="124" grade="RARE" summonChance="517000" baseRelicId="121" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500"> <!-- Rare Vulcan Doll -->
+		<relicStat enchantLevel="0" skillId="50727" skillLevel="4" combatPower="5" /> <!-- Vulcan Doll Lv. 4 -->
+	</relic>
+	<relic id="125" grade="HEROIC" summonChance="118500" baseRelicId="121" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067"> <!-- Heroic Vulcan Doll -->
+		<relicStat enchantLevel="0" skillId="50727" skillLevel="5" combatPower="10" /> <!-- Vulcan Doll Lv. 5 -->
+	</relic>
+	<relic id="126" grade="LEGENDARY" summonChance="1" baseRelicId="121" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Vulcan Doll -->
+		<relicStat enchantLevel="0" skillId="50727" skillLevel="6" combatPower="32" /> <!-- Vulcan Doll Lv. 6 -->
+	</relic>
+	<relic id="127" grade="COMMON" summonChance="30000000" baseRelicId="127" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000"> <!-- Common Aztacan Doll -->
+		<relicStat enchantLevel="0" skillId="50777" skillLevel="1" combatPower="0" /> <!-- Aztacan Doll Lv. 1 -->
+	</relic>
+	<relic id="128" grade="ENHANCED" summonChance="11250000" baseRelicId="127" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333"> <!-- Enhanced Aztacan Doll -->
+		<relicStat enchantLevel="0" skillId="50777" skillLevel="2" combatPower="1" /> <!-- Aztacan Doll Lv. 2 -->
+	</relic>
+	<relic id="129" grade="SUPERIOR" summonChance="3587500" baseRelicId="127" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167"> <!-- Superior Aztacan Doll -->
+		<relicStat enchantLevel="0" skillId="50777" skillLevel="3" combatPower="2" /> <!-- Aztacan Doll Lv. 3 -->
+	</relic>
+	<relic id="130" grade="RARE" summonChance="517000" baseRelicId="127" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500"> <!-- Rare Aztacan Doll -->
+		<relicStat enchantLevel="0" skillId="50777" skillLevel="4" combatPower="5" /> <!-- Aztacan Doll Lv. 4 -->
+	</relic>
+	<relic id="131" grade="HEROIC" summonChance="118500" baseRelicId="127" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067"> <!-- Heroic Aztacan Doll -->
+		<relicStat enchantLevel="0" skillId="50777" skillLevel="5" combatPower="10" /> <!-- Aztacan Doll Lv. 5 -->
+	</relic>
+	<relic id="132" grade="LEGENDARY" summonChance="1" baseRelicId="127" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Aztacan Doll -->
+		<relicStat enchantLevel="0" skillId="50777" skillLevel="6" combatPower="32" /> <!-- Aztacan Doll Lv. 6 -->
+	</relic>
+	<relic id="85" grade="COMMON" summonChance="30000000" baseRelicId="85" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000"> <!-- Common Antharas Doll -->
+		<relicStat enchantLevel="0" skillId="50554" skillLevel="1" combatPower="0" /> <!-- Antharas Doll Lv. 1 -->
+	</relic>
+	<relic id="86" grade="ENHANCED" summonChance="11250000" baseRelicId="85" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333"> <!-- Enhanced Antharas Doll -->
+		<relicStat enchantLevel="0" skillId="50554" skillLevel="2" combatPower="1" /> <!-- Antharas Doll Lv. 2 -->
+	</relic>
+	<relic id="87" grade="SUPERIOR" summonChance="3587500" baseRelicId="85" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167"> <!-- Superior Antharas Doll -->
+		<relicStat enchantLevel="0" skillId="50554" skillLevel="3" combatPower="2" /> <!-- Antharas Doll Lv. 3 -->
+	</relic>
+	<relic id="88" grade="RARE" summonChance="517000" baseRelicId="85" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500"> <!-- Rare Antharas Doll -->
+		<relicStat enchantLevel="0" skillId="50554" skillLevel="4" combatPower="5" /> <!-- Antharas Doll Lv. 4 -->
+	</relic>
+	<relic id="89" grade="HEROIC" summonChance="118500" baseRelicId="85" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067"> <!-- Heroic Antharas Doll -->
+		<relicStat enchantLevel="0" skillId="50554" skillLevel="5" combatPower="10" /> <!-- Antharas Doll Lv. 5 -->
+	</relic>
+	<relic id="90" grade="LEGENDARY" summonChance="1" baseRelicId="85" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Antharas Doll -->
+		<relicStat enchantLevel="0" skillId="50554" skillLevel="6" combatPower="32" /> <!-- Antharas Doll Lv. 6 -->
+	</relic>
+	<relic id="91" grade="ENHANCED" summonChance="11250000" baseRelicId="91" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333"> <!-- Enhanced Glakias Doll -->
+		<relicStat enchantLevel="0" skillId="50579" skillLevel="1" combatPower="1" /> <!-- Glakias Doll Lv. 1 -->
+	</relic>
+	<relic id="92" grade="SUPERIOR" summonChance="3587500" baseRelicId="91" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167"> <!-- Superior Glakias Doll -->
+		<relicStat enchantLevel="0" skillId="50579" skillLevel="2" combatPower="2" /> <!-- Glakias Doll Lv. 2 -->
+	</relic>
+	<relic id="93" grade="RARE" summonChance="517000" baseRelicId="91" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500"> <!-- Rare Glakias Doll -->
+		<relicStat enchantLevel="0" skillId="50579" skillLevel="3" combatPower="5" /> <!-- Glakias Doll Lv. 3 -->
+	</relic>
+	<relic id="94" grade="HEROIC" summonChance="118500" baseRelicId="91" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067"> <!-- Heroic Glakias Doll -->
+		<relicStat enchantLevel="0" skillId="50579" skillLevel="4" combatPower="10" /> <!-- Glakias Doll Lv. 4 -->
+	</relic>
+	<relic id="95" grade="LEGENDARY" summonChance="1" baseRelicId="91" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Glakias Doll -->
+		<relicStat enchantLevel="0" skillId="50579" skillLevel="5" combatPower="32" /> <!-- Glakias Doll Lv. 5 -->
+	</relic>
+	<relic id="96" grade="MYTHIC" summonChance="1" baseRelicId="91" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Mythic Glakias Doll -->
+		<relicStat enchantLevel="0" skillId="50579" skillLevel="6" combatPower="72" /> <!-- Glakias Doll Lv. 6 -->
+		<relicStat enchantLevel="1" skillId="50579" skillLevel="7" combatPower="72" /> <!-- +1 Glakias Doll -->
+		<relicStat enchantLevel="2" skillId="50579" skillLevel="8" combatPower="72" /> <!-- +2 Glakias Doll -->
+		<relicStat enchantLevel="3" skillId="50579" skillLevel="9" combatPower="72" /> <!-- +3 Glakias Doll -->
+	</relic>
+	<relic id="97" grade="ENHANCED" summonChance="11250000" baseRelicId="97" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333"> <!-- Enhanced Behemoth Doll -->
+		<relicStat enchantLevel="0" skillId="50578" skillLevel="1" combatPower="1" /> <!-- Behemoth Doll Lv. 1 -->
+	</relic>
+	<relic id="98" grade="SUPERIOR" summonChance="3587500" baseRelicId="97" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167"> <!-- Superior Behemoth Doll -->
+		<relicStat enchantLevel="0" skillId="50578" skillLevel="2" combatPower="2" /> <!-- Behemoth Doll Lv. 2 -->
+	</relic>
+	<relic id="99" grade="RARE" summonChance="517000" baseRelicId="97" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500"> <!-- Rare Behemoth Doll -->
+		<relicStat enchantLevel="0" skillId="50578" skillLevel="3" combatPower="5" /> <!-- Behemoth Doll Lv. 3 -->
+	</relic>
+	<relic id="100" grade="HEROIC" summonChance="118500" baseRelicId="97" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067"> <!-- Heroic Behemoth Doll -->
+		<relicStat enchantLevel="0" skillId="50578" skillLevel="4" combatPower="10" /> <!-- Behemoth Doll Lv. 4 -->
+	</relic>
+	<relic id="101" grade="LEGENDARY" summonChance="1" baseRelicId="97" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Behemoth Doll -->
+		<relicStat enchantLevel="0" skillId="50578" skillLevel="5" combatPower="32" /> <!-- Behemoth Doll Lv. 5 -->
+	</relic>
+	<relic id="102" grade="MYTHIC" summonChance="1" baseRelicId="97" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Mythic Behemoth Doll -->
+		<relicStat enchantLevel="0" skillId="50578" skillLevel="6" combatPower="72" /> <!-- Behemoth Doll Lv. 6 -->
+		<relicStat enchantLevel="1" skillId="50578" skillLevel="7" combatPower="72" /> <!-- +1 Behemoth Doll -->
+		<relicStat enchantLevel="2" skillId="50578" skillLevel="8" combatPower="72" /> <!-- +2 Behemoth Doll -->
+		<relicStat enchantLevel="3" skillId="50578" skillLevel="9" combatPower="72" /> <!-- +3 Behemoth Doll -->
+	</relic>
+	<relic id="103" grade="ENHANCED" summonChance="3600000" baseRelicId="103" compoundChanceModifier="0.55000" compoundUpGradeChanceModifier="0.91667"> <!-- Enhanced Andreas van Halter Doll -->
+		<relicStat enchantLevel="0" skillId="50627" skillLevel="1" combatPower="1" /> <!-- Andreas van Halter Doll Lv. 1 -->
+	</relic>
+	<relic id="104" grade="SUPERIOR" summonChance="350000" baseRelicId="103" compoundChanceModifier="0.09000" compoundUpGradeChanceModifier="0.15000"> <!-- Superior Andreas van Halter Doll -->
+		<relicStat enchantLevel="0" skillId="50627" skillLevel="2" combatPower="2" /> <!-- Andreas van Halter Doll Lv. 2 -->
+	</relic>
+	<relic id="105" grade="RARE" summonChance="47000" baseRelicId="103" compoundChanceModifier="0.02000" compoundUpGradeChanceModifier="0.03333"> <!-- Rare Andreas van Halter Doll -->
+		<relicStat enchantLevel="0" skillId="50627" skillLevel="3" combatPower="5" /> <!-- Andreas van Halter Doll Lv. 3 -->
+	</relic>
+	<relic id="106" grade="HEROIC" summonChance="24000" baseRelicId="103" compoundChanceModifier="0.00045" compoundUpGradeChanceModifier="0.00075"> <!-- Heroic Andreas van Halter Doll -->
+		<relicStat enchantLevel="0" skillId="50627" skillLevel="4" combatPower="10" /> <!-- Andreas van Halter Doll Lv. 4 -->
+	</relic>
+	<relic id="107" grade="LEGENDARY" summonChance="1" baseRelicId="103" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Andreas van Halter Doll -->
+		<relicStat enchantLevel="0" skillId="50627" skillLevel="5" combatPower="32" /> <!-- Andreas van Halter Doll Lv. 5 -->
+	</relic>
+	<relic id="108" grade="MYTHIC" summonChance="1" baseRelicId="103" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Mythic Andreas van Halter Doll -->
+		<relicStat enchantLevel="0" skillId="50627" skillLevel="6" combatPower="72" /> <!-- Andreas van Halter Doll Lv. 6 -->
+		<relicStat enchantLevel="1" skillId="50627" skillLevel="7" combatPower="72" /> <!-- +1 Andreas van Halter Doll -->
+		<relicStat enchantLevel="2" skillId="50627" skillLevel="8" combatPower="72" /> <!-- +2 Andreas van Halter Doll -->
+		<relicStat enchantLevel="3" skillId="50627" skillLevel="9" combatPower="72" /> <!-- +3 Andreas van Halter Doll -->
+	</relic>
+	<relic id="109" grade="ENHANCED" summonChance="3600000" baseRelicId="109" compoundChanceModifier="0.55000" compoundUpGradeChanceModifier="0.91667"> <!-- Enhanced Kelbim Doll -->
+		<relicStat enchantLevel="0" skillId="50688" skillLevel="1" combatPower="1" /> <!-- Kelbim Doll Lv. 1 -->
+	</relic>
+	<relic id="110" grade="SUPERIOR" summonChance="350000" baseRelicId="109" compoundChanceModifier="0.09000" compoundUpGradeChanceModifier="0.15000"> <!-- Superior Kelbim Doll -->
+		<relicStat enchantLevel="0" skillId="50688" skillLevel="2" combatPower="2" /> <!-- Kelbim Doll Lv. 2 -->
+	</relic>
+	<relic id="111" grade="RARE" summonChance="47000" baseRelicId="109" compoundChanceModifier="0.02000" compoundUpGradeChanceModifier="0.03333"> <!-- Rare Kelbim Doll -->
+		<relicStat enchantLevel="0" skillId="50688" skillLevel="3" combatPower="5" /> <!-- Kelbim Doll Lv. 3 -->
+	</relic>
+	<relic id="112" grade="HEROIC" summonChance="24000" baseRelicId="109" compoundChanceModifier="0.00045" compoundUpGradeChanceModifier="0.00075"> <!-- Heroic Kelbim Doll -->
+		<relicStat enchantLevel="0" skillId="50688" skillLevel="4" combatPower="10" /> <!-- Kelbim Doll Lv. 4 -->
+	</relic>
+	<relic id="113" grade="LEGENDARY" summonChance="1" baseRelicId="109" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Kelbim Doll -->
+		<relicStat enchantLevel="0" skillId="50688" skillLevel="5" combatPower="32" /> <!-- Kelbim Doll Lv. 5 -->
+	</relic>
+	<relic id="114" grade="MYTHIC" summonChance="1" baseRelicId="109" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Mythic Kelbim Doll -->
+		<relicStat enchantLevel="0" skillId="50688" skillLevel="6" combatPower="72" /> <!-- Kelbim Doll Lv. 6 -->
+		<relicStat enchantLevel="1" skillId="50688" skillLevel="7" combatPower="72" /> <!-- +1 Kelbim Doll -->
+		<relicStat enchantLevel="2" skillId="50688" skillLevel="8" combatPower="72" /> <!-- +2 Kelbim Doll -->
+		<relicStat enchantLevel="3" skillId="50688" skillLevel="9" combatPower="72" /> <!-- +3 Kelbim Doll -->
+	</relic>
+	<relic id="115" grade="ENHANCED" summonChance="3600000" baseRelicId="115" compoundChanceModifier="0.55000" compoundUpGradeChanceModifier="0.91667"> <!-- Enhanced Ferion Doll -->
+		<relicStat enchantLevel="0" skillId="50715" skillLevel="1" combatPower="1" /> <!-- Ferion Doll Lv. 1 -->
+	</relic>
+	<relic id="116" grade="SUPERIOR" summonChance="350000" baseRelicId="115" compoundChanceModifier="0.09000" compoundUpGradeChanceModifier="0.15000"> <!-- Superior Ferion Doll -->
+		<relicStat enchantLevel="0" skillId="50715" skillLevel="2" combatPower="2" /> <!-- Ferion Doll Lv. 2 -->
+	</relic>
+	<relic id="117" grade="RARE" summonChance="47000" baseRelicId="115" compoundChanceModifier="0.02000" compoundUpGradeChanceModifier="0.03333"> <!-- Rare Ferion Doll -->
+		<relicStat enchantLevel="0" skillId="50715" skillLevel="3" combatPower="5" /> <!-- Ferion Doll Lv. 3 -->
+	</relic>
+	<relic id="118" grade="HEROIC" summonChance="24000" baseRelicId="115" compoundChanceModifier="0.00045" compoundUpGradeChanceModifier="0.00075"> <!-- Heroic Ferion Doll -->
+		<relicStat enchantLevel="0" skillId="50715" skillLevel="4" combatPower="10" /> <!-- Ferion Doll Lv. 4 -->
+	</relic>
+	<relic id="119" grade="LEGENDARY" summonChance="1" baseRelicId="115" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Ferion Doll -->
+		<relicStat enchantLevel="0" skillId="50715" skillLevel="5" combatPower="32" /> <!-- Ferion Doll Lv. 5 -->
+	</relic>
+	<relic id="120" grade="MYTHIC" summonChance="1" baseRelicId="115" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Mythic Ferion Doll -->
+		<relicStat enchantLevel="0" skillId="50715" skillLevel="6" combatPower="72" /> <!-- Ferion Doll Lv. 6 -->
+		<relicStat enchantLevel="1" skillId="50715" skillLevel="7" combatPower="72" /> <!-- +1 Ferion Doll -->
+		<relicStat enchantLevel="2" skillId="50715" skillLevel="8" combatPower="72" /> <!-- +2 Ferion Doll -->
+		<relicStat enchantLevel="3" skillId="50715" skillLevel="9" combatPower="72" /> <!-- +3 Ferion Doll -->
+	</relic>
+	<relic id="134" grade="COMMON" summonChance="30000000" baseRelicId="134" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000"> <!-- Common Anais Doll -->
+		<relicStat enchantLevel="0" skillId="50791" skillLevel="1" combatPower="0" /> <!-- Anais Doll Lv. 1 -->
+	</relic>
+	<relic id="135" grade="ENHANCED" summonChance="11250000" baseRelicId="134" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333"> <!-- Enhanced Anais Doll -->
+		<relicStat enchantLevel="0" skillId="50791" skillLevel="2" combatPower="1" /> <!-- Anais Doll Lv. 2 -->
+	</relic>
+	<relic id="136" grade="SUPERIOR" summonChance="3587500" baseRelicId="134" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167"> <!-- Superior Anais Doll -->
+		<relicStat enchantLevel="0" skillId="50791" skillLevel="3" combatPower="2" /> <!-- Anais Doll Lv. 3 -->
+	</relic>
+	<relic id="137" grade="RARE" summonChance="517000" baseRelicId="134" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500"> <!-- Rare Anais Doll -->
+		<relicStat enchantLevel="0" skillId="50791" skillLevel="4" combatPower="5" /> <!-- Anais Doll Lv. 4 -->
+	</relic>
+	<relic id="138" grade="HEROIC" summonChance="118500" baseRelicId="134" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067"> <!-- Heroic Anais Doll -->
+		<relicStat enchantLevel="0" skillId="50791" skillLevel="5" combatPower="10" /> <!-- Anais Doll Lv. 5 -->
+	</relic>
+	<relic id="139" grade="LEGENDARY" summonChance="1" baseRelicId="134" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Anais Doll -->
+		<relicStat enchantLevel="0" skillId="50791" skillLevel="6" combatPower="32" /> <!-- Anais Doll Lv. 6 -->
+	</relic>
+	<relic id="140" grade="COMMON" summonChance="30000000" baseRelicId="140" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000"> <!-- Common Galaxia Doll -->
+		<relicStat enchantLevel="0" skillId="50792" skillLevel="1" combatPower="0" /> <!-- Galaxia Doll Lv. 1 -->
+	</relic>
+	<relic id="141" grade="ENHANCED" summonChance="11250000" baseRelicId="140" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333"> <!-- Enhanced Galaxia Doll -->
+		<relicStat enchantLevel="0" skillId="50792" skillLevel="2" combatPower="1" /> <!-- Galaxia Doll Lv. 2 -->
+	</relic>
+	<relic id="142" grade="SUPERIOR" summonChance="3587500" baseRelicId="140" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167"> <!-- Superior Galaxia Doll -->
+		<relicStat enchantLevel="0" skillId="50792" skillLevel="3" combatPower="2" /> <!-- Galaxia Doll Lv. 3 -->
+	</relic>
+	<relic id="143" grade="RARE" summonChance="517000" baseRelicId="140" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500"> <!-- Rare Galaxia Doll -->
+		<relicStat enchantLevel="0" skillId="50792" skillLevel="4" combatPower="5" /> <!-- Galaxia Doll Lv. 4 -->
+	</relic>
+	<relic id="144" grade="HEROIC" summonChance="118500" baseRelicId="140" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067"> <!-- Heroic Galaxia Doll -->
+		<relicStat enchantLevel="0" skillId="50792" skillLevel="5" combatPower="10" /> <!-- Galaxia Doll Lv. 5 -->
+	</relic>
+	<relic id="145" grade="LEGENDARY" summonChance="1" baseRelicId="140" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Galaxia Doll -->
+		<relicStat enchantLevel="0" skillId="50792" skillLevel="6" combatPower="32" /> <!-- Galaxia Doll Lv. 6 -->
+	</relic>
+	<relic id="146" grade="COMMON" summonChance="30000000" baseRelicId="146" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000"> <!-- Common Juriel Doll -->
+		<relicStat enchantLevel="0" skillId="50793" skillLevel="1" combatPower="0" /> <!-- Juriel Doll Lv. 1 -->
+	</relic>
+	<relic id="147" grade="ENHANCED" summonChance="11250000" baseRelicId="146" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333"> <!-- Enhanced Juriel Doll -->
+		<relicStat enchantLevel="0" skillId="50793" skillLevel="2" combatPower="1" /> <!-- Juriel Doll Lv. 2 -->
+	</relic>
+	<relic id="148" grade="SUPERIOR" summonChance="3587500" baseRelicId="146" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167"> <!-- Superior Juriel Doll -->
+		<relicStat enchantLevel="0" skillId="50793" skillLevel="3" combatPower="2" /> <!-- Juriel Doll Lv. 3 -->
+	</relic>
+	<relic id="149" grade="RARE" summonChance="517000" baseRelicId="146" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500"> <!-- Rare Juriel Doll -->
+		<relicStat enchantLevel="0" skillId="50793" skillLevel="4" combatPower="5" /> <!-- Juriel Doll Lv. 4 -->
+	</relic>
+	<relic id="150" grade="HEROIC" summonChance="118500" baseRelicId="146" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067"> <!-- Heroic Juriel Doll -->
+		<relicStat enchantLevel="0" skillId="50793" skillLevel="5" combatPower="10" /> <!-- Juriel Doll Lv. 5 -->
+	</relic>
+	<relic id="151" grade="LEGENDARY" summonChance="1" baseRelicId="146" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Juriel Doll -->
+		<relicStat enchantLevel="0" skillId="50793" skillLevel="6" combatPower="32" /> <!-- Juriel Doll Lv. 6 -->
+	</relic>
+	<relic id="152" grade="COMMON" summonChance="30000000" baseRelicId="152" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000"> <!-- Common Phiriel Doll -->
+		<relicStat enchantLevel="0" skillId="50794" skillLevel="1" combatPower="0" /> <!-- Phiriel Doll Lv. 1 -->
+	</relic>
+	<relic id="153" grade="ENHANCED" summonChance="11250000" baseRelicId="152" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333"> <!-- Enhanced Phiriel Doll -->
+		<relicStat enchantLevel="0" skillId="50794" skillLevel="2" combatPower="1" /> <!-- Phiriel Doll Lv. 2 -->
+	</relic>
+	<relic id="154" grade="SUPERIOR" summonChance="3587500" baseRelicId="152" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167"> <!-- Superior Phiriel Doll -->
+		<relicStat enchantLevel="0" skillId="50794" skillLevel="3" combatPower="2" /> <!-- Phiriel Doll Lv. 3 -->
+	</relic>
+	<relic id="155" grade="RARE" summonChance="517000" baseRelicId="152" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500"> <!-- Rare Phiriel Doll -->
+		<relicStat enchantLevel="0" skillId="50794" skillLevel="4" combatPower="5" /> <!-- Phiriel Doll Lv. 4 -->
+	</relic>
+	<relic id="156" grade="HEROIC" summonChance="118500" baseRelicId="152" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067"> <!-- Heroic Phiriel Doll -->
+		<relicStat enchantLevel="0" skillId="50794" skillLevel="5" combatPower="10" /> <!-- Phiriel Doll Lv. 5 -->
+	</relic>
+	<relic id="157" grade="LEGENDARY" summonChance="1" baseRelicId="152" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000"> <!-- Legendary Phiriel Doll -->
+		<relicStat enchantLevel="0" skillId="50794" skillLevel="6" combatPower="32" /> <!-- Phiriel Doll Lv. 6 -->
+	</relic>
+
+	<!-- 闇鴉武士版本新人偶 -->
+
+	<!-- Item 104941 - Relic ID 200-205 -->
+	<relic id="200" grade="COMMON" summonChance="30000000" baseRelicId="200" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000">
+		<relicStat enchantLevel="0" skillId="50967" skillLevel="1" combatPower="0" />
+	</relic>
+	<relic id="201" grade="ENHANCED" summonChance="11250000" baseRelicId="200" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333">
+		<relicStat enchantLevel="0" skillId="50967" skillLevel="2" combatPower="1" />
+	</relic>
+	<relic id="202" grade="SUPERIOR" summonChance="3587500" baseRelicId="200" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167">
+		<relicStat enchantLevel="0" skillId="50967" skillLevel="3" combatPower="2" />
+	</relic>
+	<relic id="203" grade="RARE" summonChance="517000" baseRelicId="200" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500">
+		<relicStat enchantLevel="0" skillId="50967" skillLevel="4" combatPower="5" />
+	</relic>
+	<relic id="204" grade="HEROIC" summonChance="118500" baseRelicId="200" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067">
+		<relicStat enchantLevel="0" skillId="50967" skillLevel="5" combatPower="10" />
+	</relic>
+	<relic id="205" grade="LEGENDARY" summonChance="1" baseRelicId="200" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000">
+		<relicStat enchantLevel="0" skillId="50967" skillLevel="6" combatPower="32" />
+	</relic>
+
+	<!-- Item 105287 - Relic ID 158-163 -->
+	<relic id="158" grade="COMMON" summonChance="30000000" baseRelicId="158" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000">
+		<relicStat enchantLevel="0" skillId="50976" skillLevel="1" combatPower="0" />
+	</relic>
+	<relic id="159" grade="ENHANCED" summonChance="11250000" baseRelicId="158" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333">
+		<relicStat enchantLevel="0" skillId="50976" skillLevel="2" combatPower="1" />
+	</relic>
+	<relic id="160" grade="SUPERIOR" summonChance="3587500" baseRelicId="158" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167">
+		<relicStat enchantLevel="0" skillId="50976" skillLevel="3" combatPower="2" />
+	</relic>
+	<relic id="161" grade="RARE" summonChance="517000" baseRelicId="158" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500">
+		<relicStat enchantLevel="0" skillId="50976" skillLevel="4" combatPower="5" />
+	</relic>
+	<relic id="162" grade="HEROIC" summonChance="118500" baseRelicId="158" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067">
+		<relicStat enchantLevel="0" skillId="50976" skillLevel="5" combatPower="10" />
+	</relic>
+	<relic id="163" grade="LEGENDARY" summonChance="1" baseRelicId="158" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000">
+		<relicStat enchantLevel="0" skillId="50976" skillLevel="6" combatPower="32" />
+	</relic>
+
+	<!-- Item 105288 - Relic ID 164-169 -->
+	<relic id="164" grade="COMMON" summonChance="30000000" baseRelicId="164" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000">
+		<relicStat enchantLevel="0" skillId="50970" skillLevel="1" combatPower="0" />
+	</relic>
+	<relic id="165" grade="ENHANCED" summonChance="11250000" baseRelicId="164" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333">
+		<relicStat enchantLevel="0" skillId="50970" skillLevel="2" combatPower="1" />
+	</relic>
+	<relic id="166" grade="SUPERIOR" summonChance="3587500" baseRelicId="164" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167">
+		<relicStat enchantLevel="0" skillId="50970" skillLevel="3" combatPower="2" />
+	</relic>
+	<relic id="167" grade="RARE" summonChance="517000" baseRelicId="164" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500">
+		<relicStat enchantLevel="0" skillId="50970" skillLevel="4" combatPower="5" />
+	</relic>
+	<relic id="168" grade="HEROIC" summonChance="118500" baseRelicId="164" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067">
+		<relicStat enchantLevel="0" skillId="50970" skillLevel="5" combatPower="10" />
+	</relic>
+	<relic id="169" grade="LEGENDARY" summonChance="1" baseRelicId="164" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000">
+		<relicStat enchantLevel="0" skillId="50970" skillLevel="6" combatPower="32" />
+	</relic>
+
+	<!-- Item 105402 - Relic ID 170-175 -->
+	<relic id="170" grade="COMMON" summonChance="30000000" baseRelicId="170" compoundChanceModifier="1.50000" compoundUpGradeChanceModifier="2.50000">
+		<relicStat enchantLevel="0" skillId="50971" skillLevel="1" combatPower="0" />
+	</relic>
+	<relic id="171" grade="ENHANCED" summonChance="11250000" baseRelicId="170" compoundChanceModifier="0.50000" compoundUpGradeChanceModifier="0.83333">
+		<relicStat enchantLevel="0" skillId="50971" skillLevel="2" combatPower="1" />
+	</relic>
+	<relic id="172" grade="SUPERIOR" summonChance="3587500" baseRelicId="170" compoundChanceModifier="0.08500" compoundUpGradeChanceModifier="0.14167">
+		<relicStat enchantLevel="0" skillId="50971" skillLevel="3" combatPower="2" />
+	</relic>
+	<relic id="173" grade="RARE" summonChance="517000" baseRelicId="170" compoundChanceModifier="0.01500" compoundUpGradeChanceModifier="0.02500">
+		<relicStat enchantLevel="0" skillId="50971" skillLevel="4" combatPower="5" />
+	</relic>
+	<relic id="174" grade="HEROIC" summonChance="118500" baseRelicId="170" compoundChanceModifier="0.00040" compoundUpGradeChanceModifier="0.00067">
+		<relicStat enchantLevel="0" skillId="50971" skillLevel="5" combatPower="10" />
+	</relic>
+	<relic id="175" grade="LEGENDARY" summonChance="1" baseRelicId="170" compoundChanceModifier="3.30000" compoundUpGradeChanceModifier="5.50000">
+		<relicStat enchantLevel="0" skillId="50971" skillLevel="6" combatPower="32" />
+	</relic>
+</list>

@@ -1,0 +1,1411 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="40100" toLevel="1" name="紫弧-2獎">
+		<icon>icon.etc_holy_grail_i01</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91669</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>300000</xp>
+				<sp>8100</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40101" toLevel="1" name="藍弧-3獎">
+		<icon>icon.etc_holy_grail_i02</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91670</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>100000</xp>
+				<sp>2700</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40102" toLevel="1" name="綠弧-4獎">
+		<icon>icon.etc_holy_grail_i03</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91671</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>50000</xp>
+				<sp>1350</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40103" toLevel="1" name="恩寵星星糖">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91795</itemConsumeId> 
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="CanUseVitalityIncreaseItem">
+				<amount>35000</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="SayhaGraceSupport" />
+			<effect name="VitalityPointUp">
+				<value>140000</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40104" toLevel="1" name="沙哈的暴風">
+		
+		<icon>icon.bm_sayha_storm</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BR_EVENT_BUF6</abnormalType>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93073</itemConsumeId> 
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<conditions>
+			<condition name="HasVitalityPoints">
+				<amount>35000</amount>
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>51437</skillId> 
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54068</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>200</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>200</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40105" toLevel="1" name="藍弧-3獎">
+		<icon>icon.etc_holy_grail_i02</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40106" toLevel="1" name="戰鬥的卷軸-活動">
+		
+		<icon>icon.ev_charge_scroll</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<canBeDispelled>false</canBeDispelled>
+		<hitTime>0</hitTime>
+		<isMagic>1</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91780</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>350</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40107" toLevel="1" name="超越副本入場券">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93145</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>86400</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpNotInstantzone" />
+			<condition name="CanAddMaxEntranceInzone">
+				<instanceId>208;209;210;211;212;213;215;215</instanceId>
+				<amount>1</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="ResetInstanceEntry">
+				<instanceId>208;209;210;211;212;213;215</instanceId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40108" toLevel="1" name="超越副本入場券-活動">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93146</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>86400</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpNotInstantzone" />
+			<condition name="CanAddMaxEntranceInzone">
+				<instanceId>208;209;210;211;212;213;215</instanceId>
+				<amount>1</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="ResetInstanceEntry">
+				<instanceId>208;209;210;211;212;213;215</instanceId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40109" toLevel="1" name="祝福的武器強化卷軸-A級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="40110" toLevel="1" name="祝福的防具強化卷軸-A級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="40111" toLevel="1" name="詛咒的武器強化卷軸-A級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="40112" toLevel="1" name="詛咒的防具強化卷軸-A級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="40113" toLevel="1" name="恩寵餅乾">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93274</itemConsumeId>
+		<reuseDelay>300</reuseDelay>
+		<conditions>
+			<condition name="CanUseVitalityIncreaseItem">
+				<amount>35000</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="SayhaGraceSupport" />
+			<effect name="VitalityPointUp">
+				<value>35000</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40114" toLevel="1" name="守護斗篷強化卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40115" toLevel="1" name="返回卷軸-軍需官 麻德豪瑞">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>0</hitTime>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93319</itemConsumeId> 
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>46075</x>
+				<y>152578</y>
+				<z>-2752</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40116" toLevel="1" name="權能護身符強化卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="40117" toLevel="1" name="迪藤思召喚">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40118" toLevel="1" name="安塔瑞斯洞窟內部特殊移動卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40119" toLevel="7" name="安塔瑞斯洞窟內部特殊移動卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40120" toLevel="1" name="土瑞克獸人兵營特殊移動卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>0</hitTime>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93335</itemConsumeId> 
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-93255</x>
+				<y>109021</y>
+				<z>-3696</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40121" toLevel="1" name="上級紅弧">
+		<icon>icon.etc_holy_grail_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93338</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>12000000</xp>
+				<sp>324000</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40122" toLevel="1" name="上級紫弧">
+		<icon>icon.etc_holy_grail_i01</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93339</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>3600000</xp>
+				<sp>97200</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40123" toLevel="1" name="上級藍弧">
+		<icon>icon.etc_holy_grail_i02</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93340</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>1200000</xp>
+				<sp>32400</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40124" toLevel="1" name="上級綠弧">
+		<icon>icon.etc_holy_grail_i03</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93341</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>600000</xp>
+				<sp>16200</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40125" toLevel="1" name="活化上級紅弧">
+		<icon>icon.etc_holy_grail_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93342</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>12000000</xp>
+				<sp>324000</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40126" toLevel="1" name="活化上級紫弧">
+		<icon>icon.etc_holy_grail_i01</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93343</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>3600000</xp>
+				<sp>97200</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40127" toLevel="1" name="活化上級藍弧">
+		<icon>icon.etc_holy_grail_i02</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93344</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>1200000</xp>
+				<sp>32400</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40128" toLevel="1" name="活化上級綠弧">
+		<icon>icon.etc_holy_grail_i03</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93345</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>600000</xp>
+				<sp>16200</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40129" toLevel="1" name="武器強化輔助石-A級-活動">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40130" toLevel="1" name="防具強化輔助石-A級-活動">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40131" toLevel="1" name="殷海薩祝福卷軸-活動">
+		
+		<icon>icon.exp_bottle_scroll</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>GIRAN_SEAL</abnormalType>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93370</itemConsumeId>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>50</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>50</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40132" toLevel="1" name="祝福的武器強化輔助石-A級-活動">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40133" toLevel="1" name="祝福的防具強化輔助石-A級-活動">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40134" toLevel="1" name="測試-金幣增加1">
+		
+		<icon>icon.skill1551</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40135" toLevel="1" name="測試-金幣增加2">
+		
+		<icon>icon.buff_inc_adena</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40136" toLevel="1" name="要塞返回卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40137" toLevel="1" name="高級要塞返回卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40138" toLevel="1" name="魔法油燈加速藥水-活動">
+		
+		<icon>icon.etc_recall_potion2</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MAGIC_LAMP_RATE</abnormalType>
+		<isMagic>4</isMagic>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>40057</skillId> 
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54069</skillId> 
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54051</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="MagicLampExpRate">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40139" toLevel="1" name="魔法書-騎乘飛龍">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93485</itemConsumeId> 
+		<effects>
+			<effect name="SetSkill">
+				<skillId>40140</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40140" toLevel="1" name="騎乘飛龍">
+		
+		<icon>icon.skill0327</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<excludedFromCheck>true</excludedFromCheck>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> 
+		<effects>
+			<effect name="Ride">
+				<npcId>15955</npcId> 
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40141" toLevel="1" name="戰場的卷軸">
+		
+		<icon>icon.etc_ssq_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>0</hitTime>
+		<isMagic>1</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91975</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="MaxHp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40142" toLevel="1" name="鯨魚">
+		<icon>icon.fish_huge_i15</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40143" toLevel="3" name="高級SP卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40144" toLevel="1" name="20 SP卷軸">
+		<icon>icon.etc_sp_scroll1_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40145" toLevel="1" name="返回卷軸-古魯丁港口">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49503</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-91191</x>
+				<y>150344</y>
+				<z>-3624</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40146" toLevel="3" name="鮮魚湯-吸血怒擊">
+		
+		
+		
+		<icon>icon.fish_stew_buff</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>26</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VAMPIRIC_ATTACK</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>1000</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49463</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="VampiricAttack">
+				<amount>6</amount>
+				<chance>80</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40147" toLevel="3" name="鮮魚湯-魔力催化">
+		
+		
+		
+		<icon>icon.fish_stew_buff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40148" toLevel="1" name="鮮魚湯-高級力量強化">
+		
+		<icon>icon.fish_stew_buff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40149" toLevel="1" name="鮮魚湯-高級保護盾">
+		
+		<icon>icon.fish_stew_buff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40150" toLevel="1" name="鮮魚湯-野性魔力">
+		
+		<icon>icon.fish_stew_buff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40151" toLevel="2" name="鮮魚湯-狂戰士魂">
+		
+		
+		<icon>icon.fish_stew_buff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40152" toLevel="3" name="鮮魚湯-減輕負重">
+		
+		
+		
+		<icon>icon.fish_stew_buff</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40153" toLevel="2" name="鮮魚湯-公會會員的報恩">
+		
+		
+		<icon>icon.ev_invasion_buff_box</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<reuseDelay>60000</reuseDelay>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40154" toLevel="25" name="圓月的祝福-活動">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>BranchSys2.icon.g_illumination_yellow</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40155" toLevel="1" name="圓月的祝福-獎勵">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40156" toLevel="1" name="蜂蜜松糕-活動">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40157" toLevel="1" name="黃豆松糕-活動">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40158" toLevel="1" name="芝麻松糕-活動">
+		
+		<icon>icon.ev_sesame_songpyeon_00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40159" toLevel="1" name="中秋感謝信-活動">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40160" toLevel="1" name="裝備外型復原卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="40161" toLevel="1" name="測試光束武器加工石-單手刀劍">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="40162" toLevel="1" name="光束武器加工石">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="40163" toLevel="1" name="黑暗刺客套裝加工石">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="40164" toLevel="3" name="魔法書-榮光之能Lv3">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>
+			<value level="1">94046</value> 
+			<value level="2">95890</value> 
+			<value level="3">95891</value> 
+		</itemConsumeId>
+		<effects>
+			<effect name="SetSkill">
+				<skillId>45361</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40165" toLevel="1" name="鱷魚島時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93704</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>60</minLevel>
+				<maxLevel>999</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="AddHuntingTime">
+				<zoneId>11</zoneId>
+				<time>3600000</time>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40166" toLevel="1" name="中級HP藥水-活動">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40167" toLevel="1" name="Spellbook: Glorious Warrior's Ability Lv. 4">
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>98834</itemConsumeId> 
+		<effects>
+			<effect name="SetSkill">
+				<skillId>45361</skillId> 
+				<skillLevel>4</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40168" toLevel="1" name="Spellbook: Glorious Warrior's Ability Lv. 5">
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>98835</itemConsumeId> 
+		<effects>
+			<effect name="SetSkill">
+				<skillId>45361</skillId> 
+				<skillLevel>5</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40169" toLevel="1" name="Spellbook: Glorious Warrior's Ability Lv. 6">
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>98836</itemConsumeId> 
+		<effects>
+			<effect name="SetSkill">
+				<skillId>45361</skillId> 
+				<skillLevel>6</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40170" toLevel="1" name="科學怪人面具">
+		
+		<icon>BranchSys.icon.br_frankenstein_mask_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>EXP_SPECIAL</abnormalType>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93747</itemConsumeId> 
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40171" toLevel="1" name="驚聲尖叫面具">
+		
+		<icon>icon.ev_scream_mask_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>EXP_SPECIAL</abnormalType>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93748</itemConsumeId> 
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40172" toLevel="1" name="憤怒精靈面具">
+		
+		<icon>icon.ev_doccabi_mask_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>EXP_SPECIAL</abnormalType>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93749</itemConsumeId> 
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40173" toLevel="1" name="不朽骸骨面具">
+		
+		<icon>icon.ev_mummy_mask_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>EXP_SPECIAL</abnormalType>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93750</itemConsumeId> 
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40174" toLevel="1" name="X235行星面具">
+		
+		<icon>icon.ev_alien_mask_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>EXP_SPECIAL</abnormalType>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93751</itemConsumeId> 
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40175" toLevel="1" name="黃金傑克南瓜面具">
+		
+		<icon>icon.ev_golden_jack0_mask_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>EXP_SPECIAL</abnormalType>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93752</itemConsumeId> 
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40176" toLevel="25" name="南瓜幽靈的大糖果-活動">
+		
+		<icon>icon.ev_jack_ghost_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40177" toLevel="1" name="南瓜幽靈的大糖果-獎勵">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40178" toLevel="1" name="萬聖夜面具">
+		
+		<icon>icon.ev_golden_jack0_mask_i00</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>EXP_SPECIAL</abnormalType>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93849</itemConsumeId> 
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="TriggerSkill">
+				<skillId>55000</skillId> 
+				<skillLevel>1</skillLevel>
+				<targetType>SELF</targetType>
+				<chance>80</chance>
+			</effect>
+			<effect name="TriggerSkill">
+				<skillId>55000</skillId> 
+				<skillLevel>3</skillLevel>
+				<targetType>SELF</targetType>
+				<chance>20</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40179" toLevel="1" name="萬聖夜糖果-活動">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>0</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93755</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="12.5">
+						<item id="93756" count="1000" /> 
+					</item>
+					<item chance="12.5">
+						<item id="93756" count="500" /> 
+					</item>
+					<item chance="12.5">
+						<item id="93756" count="300" /> 
+					</item>
+					<item chance="12.5">
+						<item id="93756" count="100" /> 
+					</item>
+					<item chance="12.5">
+						<item id="93756" count="50" /> 
+					</item>
+					<item chance="12.5">
+						<item id="93756" count="30" /> 
+					</item>
+					<item chance="12.5">
+						<item id="93756" count="10" /> 
+					</item>
+					<item chance="12.5">
+						<item id="93849" count="3" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40180" toLevel="1" name="恩寵餅乾-活動">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93848</itemConsumeId>
+		<reuseDelay>300</reuseDelay>
+		<conditions>
+			<condition name="CanUseVitalityIncreaseItem">
+				<amount>35000</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="SayhaGraceSupport" />
+			<effect name="VitalityPointUp">
+				<value>35000</value>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40181" toLevel="1" name="安塔瑞斯洞窟時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93903</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>80</minLevel>
+				<maxLevel>999</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="AddHuntingTime">
+				<zoneId>12</zoneId>
+				<time>3600000</time>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40182" toLevel="1" name="幸運活力卡片">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40183" toLevel="1" name="幸運活力-STR/INT+1">
+		
+		<icon>icon.card_devil_black</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40184" toLevel="1" name="幸運活力-DEX/WIT+1">
+		
+		<icon>icon.card_devil_black</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40185" toLevel="1" name="幸運活力-CON/MEN+1">
+		
+		<icon>icon.card_devil_black</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40186" toLevel="1" name="幸運活力-EXP">
+		
+		<icon>icon.card_devil_black</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40187" toLevel="1" name="幸運活力-所有能力+1">
+		
+		<icon>icon.card_dragon_gold</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40188" toLevel="1" name="幸運活力-EXP/所有能力+1">
+		
+		<icon>icon.card_hero_red</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40189" toLevel="1" name="幸運活力-EXP/所有能力+2">
+		
+		<icon>icon.card_hidden</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40190" toLevel="1" name="安塔瑞斯洞窟時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93904</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>80</minLevel>
+				<maxLevel>999</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="AddHuntingTime">
+				<zoneId>12</zoneId>
+				<time>3600000</time>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40191" toLevel="6" name="收穫的基礎-6階段">
+		
+		
+		
+		
+		
+		
+		<icon>icon.etc_ssq_scroll_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40192" toLevel="1" name="特殊武器強化卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="40193" toLevel="1" name="死亡騎士火焰劍強化卷軸-不使用">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="40194" toLevel="1" name="超越副本入場券">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93948</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>86400</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpNotInstantzone" />
+			<condition name="CanAddMaxEntranceInzone">
+				<instanceId>208;209;210;211;212;213;215</instanceId>
+				<amount>1</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="ResetInstanceEntry">
+				<instanceId>208;209;210;211;212;213;215</instanceId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40195" toLevel="1" name="超越副本入場券-活動">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93949</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>86400</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpNotInstantzone" />
+			<condition name="CanAddMaxEntranceInzone">
+				<instanceId>208;209;210;211;212;213;215</instanceId>
+				<amount>1</amount>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="ResetInstanceEntry">
+				<instanceId>208;209;210;211;212;213;215</instanceId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40196" toLevel="1" name="返回-古代遺址">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40197" toLevel="5" name="試練者標章">
+		
+		
+		
+		
+		
+		<icon>icon.skill30530</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40198" toLevel="1" name="星之氣息">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40199" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+</list>

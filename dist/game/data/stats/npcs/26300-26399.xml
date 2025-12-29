@@ -1,0 +1,476 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="26300" level="87" type="RaidBoss" name="艾伊巴勒" title="Storm Rage">
+		
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="211200000" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="1112" magical="7592" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="6208" magical="3424" />
+			<speed>
+				<walk ground="100" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="25.5" />
+			<height normal="70.1" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="4416" level="6" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="98201" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="100">
+					<item id="103911" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="100">
+					<item id="102389" min="1" max="1" chance="12.5" /> 
+					<item id="102390" min="1" max="1" chance="12.5" /> 
+					<item id="102391" min="1" max="1" chance="12.5" /> 
+					<item id="102392" min="1" max="1" chance="12.5" /> 
+					<item id="102393" min="1" max="1" chance="12.5" /> 
+					<item id="102394" min="1" max="1" chance="12.5" /> 
+					<item id="102395" min="1" max="1" chance="12.5" /> 
+					<item id="102396" min="1" max="1" chance="12.5" /> 
+				</group>
+				<group chance="30">
+					<item id="98039" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="2">
+					<item id="103912" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="2.2">
+					<item id="91944" min="1" max="1" chance="2.14" /> 
+					<item id="91945" min="1" max="1" chance="2.15" /> 
+					<item id="92401" min="1" max="1" chance="3.11" /> 
+					<item id="93631" min="1" max="1" chance="2.06" /> 
+					<item id="93869" min="1" max="1" chance="2.01" /> 
+					<item id="93870" min="1" max="1" chance="1.98" /> 
+					<item id="94137" min="1" max="1" chance="2.06" /> 
+					<item id="94324" min="1" max="1" chance="2.01" /> 
+					<item id="94325" min="1" max="1" chance="2.01" /> 
+					<item id="94326" min="1" max="1" chance="2.14" /> 
+					<item id="94327" min="1" max="1" chance="2.14" /> 
+					<item id="94500" min="1" max="1" chance="2.02" /> 
+					<item id="94501" min="1" max="1" chance="2.02" /> 
+					<item id="94505" min="1" max="1" chance="1.97" /> 
+					<item id="94507" min="1" max="1" chance="1.97" /> 
+					<item id="94670" min="1" max="1" chance="2" /> 
+					<item id="94674" min="1" max="1" chance="1.97" /> 
+					<item id="95348" min="1" max="1" chance="2.01" /> 
+					<item id="95349" min="1" max="1" chance="2.14" /> 
+					<item id="95350" min="1" max="1" chance="2.11" /> 
+					<item id="95352" min="1" max="1" chance="2.11" /> 
+					<item id="95365" min="1" max="1" chance="2.11" /> 
+					<item id="95856" min="1" max="1" chance="1.99" /> 
+					<item id="95862" min="1" max="1" chance="2.04" /> 
+					<item id="95863" min="1" max="1" chance="2.04" /> 
+					<item id="96037" min="1" max="1" chance="1.99" /> 
+					<item id="96040" min="1" max="1" chance="1.96" /> 
+					<item id="96043" min="1" max="1" chance="1.98" /> 
+					<item id="96283" min="1" max="1" chance="1.99" /> 
+					<item id="96285" min="1" max="1" chance="1.98" /> 
+					<item id="96665" min="1" max="1" chance="2.02" /> 
+					<item id="96667" min="1" max="1" chance="1.96" /> 
+					<item id="96668" min="1" max="1" chance="1.96" /> 
+					<item id="96669" min="1" max="1" chance="1.98" /> 
+					<item id="96874" min="1" max="1" chance="2.03" /> 
+					<item id="96875" min="1" max="1" chance="2.08" /> 
+					<item id="97037" min="1" max="1" chance="1.97" /> 
+					<item id="97038" min="1" max="1" chance="1.95" /> 
+					<item id="97102" min="1" max="1" chance="2.1" /> 
+					<item id="97185" min="1" max="1" chance="1.96" /> 
+					<item id="97186" min="1" max="1" chance="1.95" /> 
+					<item id="97187" min="1" max="1" chance="1.95" /> 
+					<item id="97319" min="1" max="1" chance="1.96" /> 
+					<item id="97324" min="1" max="1" chance="1.96" /> 
+					<item id="97455" min="1" max="1" chance="1.96" /> 
+					<item id="97838" min="1" max="1" chance="1.96" /> 
+					<item id="98446" min="1" max="1" chance="1.98" /> 
+					<item id="98483" min="1" max="1" chance="2.11" /> 
+					<item id="100704" min="1" max="1" chance="1.95" /> 
+				</group>
+				<group chance="0.1">
+					<item id="93103" min="1" max="1" chance="9.34" /> 
+					<item id="93387" min="1" max="1" chance="9.67" /> 
+					<item id="94498" min="1" max="1" chance="9.2" /> 
+					<item id="94508" min="1" max="1" chance="8.9" /> 
+					<item id="94668" min="1" max="1" chance="9.07" /> 
+					<item id="94673" min="1" max="1" chance="8.87" /> 
+					<item id="94861" min="1" max="1" chance="9.04" /> 
+					<item id="94862" min="1" max="1" chance="8.79" /> 
+					<item id="94863" min="1" max="1" chance="8.94" /> 
+					<item id="95346" min="1" max="1" chance="9.16" /> 
+					<item id="95347" min="1" max="1" chance="9.02" /> 
+				</group>
+				<group chance="20">
+					<item id="94383" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="10">
+					<item id="103761" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="1">
+					<item id="103937" min="1" max="1" chance="100" /> 
+				</group>
+			</drop>
+			<fortune>
+				<item id="101965" min="1" max="1" chance="1" /> 
+				<item id="101965" min="1" max="1" chance="1" /> 
+				<item id="101965" min="1" max="1" chance="1" /> 
+			</fortune>
+		</dropLists>
+	</npc>
+	<npc id="26301" level="87" type="RaidBoss" name="莢希勒" title="Plague Foreteller">
+		
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="105600000" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="1112" magical="7592" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="6208" magical="3424" />
+			<speed>
+				<walk ground="60" />
+				<run ground="64" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="51" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="4416" level="6" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="103973" min="1" max="1" chance="12.5" /> 
+					<item id="103974" min="1" max="1" chance="12.5" /> 
+					<item id="103975" min="1" max="1" chance="12.5" /> 
+					<item id="103976" min="1" max="1" chance="12.5" /> 
+					<item id="103977" min="1" max="1" chance="12.5" /> 
+					<item id="103978" min="1" max="1" chance="12.5" /> 
+					<item id="103979" min="1" max="1" chance="12.5" /> 
+					<item id="103980" min="1" max="1" chance="12.5" /> 
+				</group>
+				<group chance="5">
+					<item id="98039" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="2.2">
+					<item id="91944" min="1" max="1" chance="2.14" /> 
+					<item id="91945" min="1" max="1" chance="2.15" /> 
+					<item id="92401" min="1" max="1" chance="3.11" /> 
+					<item id="93631" min="1" max="1" chance="2.06" /> 
+					<item id="93869" min="1" max="1" chance="2.01" /> 
+					<item id="93870" min="1" max="1" chance="1.98" /> 
+					<item id="94137" min="1" max="1" chance="2.06" /> 
+					<item id="94324" min="1" max="1" chance="2.01" /> 
+					<item id="94325" min="1" max="1" chance="2.01" /> 
+					<item id="94326" min="1" max="1" chance="2.14" /> 
+					<item id="94327" min="1" max="1" chance="2.14" /> 
+					<item id="94500" min="1" max="1" chance="2.02" /> 
+					<item id="94501" min="1" max="1" chance="2.02" /> 
+					<item id="94505" min="1" max="1" chance="1.97" /> 
+					<item id="94507" min="1" max="1" chance="1.97" /> 
+					<item id="94670" min="1" max="1" chance="2" /> 
+					<item id="94674" min="1" max="1" chance="1.97" /> 
+					<item id="95348" min="1" max="1" chance="2.01" /> 
+					<item id="95349" min="1" max="1" chance="2.14" /> 
+					<item id="95350" min="1" max="1" chance="2.11" /> 
+					<item id="95352" min="1" max="1" chance="2.11" /> 
+					<item id="95365" min="1" max="1" chance="2.11" /> 
+					<item id="95856" min="1" max="1" chance="1.99" /> 
+					<item id="95862" min="1" max="1" chance="2.04" /> 
+					<item id="95863" min="1" max="1" chance="2.04" /> 
+					<item id="96037" min="1" max="1" chance="1.99" /> 
+					<item id="96040" min="1" max="1" chance="1.96" /> 
+					<item id="96043" min="1" max="1" chance="1.98" /> 
+					<item id="96283" min="1" max="1" chance="1.99" /> 
+					<item id="96285" min="1" max="1" chance="1.98" /> 
+					<item id="96665" min="1" max="1" chance="2.02" /> 
+					<item id="96667" min="1" max="1" chance="1.96" /> 
+					<item id="96668" min="1" max="1" chance="1.96" /> 
+					<item id="96669" min="1" max="1" chance="1.98" /> 
+					<item id="96874" min="1" max="1" chance="2.03" /> 
+					<item id="96875" min="1" max="1" chance="2.08" /> 
+					<item id="97037" min="1" max="1" chance="1.97" /> 
+					<item id="97038" min="1" max="1" chance="1.95" /> 
+					<item id="97102" min="1" max="1" chance="2.1" /> 
+					<item id="97185" min="1" max="1" chance="1.96" /> 
+					<item id="97186" min="1" max="1" chance="1.95" /> 
+					<item id="97187" min="1" max="1" chance="1.95" /> 
+					<item id="97319" min="1" max="1" chance="1.96" /> 
+					<item id="97324" min="1" max="1" chance="1.96" /> 
+					<item id="97455" min="1" max="1" chance="1.96" /> 
+					<item id="97838" min="1" max="1" chance="1.96" /> 
+					<item id="98446" min="1" max="1" chance="1.98" /> 
+					<item id="98483" min="1" max="1" chance="2.11" /> 
+					<item id="100704" min="1" max="1" chance="1.95" /> 
+				</group>
+				<group chance="1">
+					<item id="103761" min="1" max="1" chance="100" /> 
+				</group>
+			</drop>
+			<fortune>
+				<item id="101965" min="1" max="1" chance="1" /> 
+				<item id="101965" min="1" max="1" chance="1" /> 
+				<item id="101965" min="1" max="1" chance="1" /> 
+			</fortune>
+		</dropLists>
+	</npc>
+	<npc id="26302" level="87" type="RaidBoss" name="拉席特" title="Sand Hurricane">
+		
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="211200000" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="1112" magical="7592" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="6208" magical="3424" />
+			<speed>
+				<walk ground="75" />
+				<run ground="210" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="60" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="4416" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="98201" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="100">
+					<item id="103911" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="100">
+					<item id="102389" min="1" max="1" chance="12.5" /> 
+					<item id="102390" min="1" max="1" chance="12.5" /> 
+					<item id="102391" min="1" max="1" chance="12.5" /> 
+					<item id="102392" min="1" max="1" chance="12.5" /> 
+					<item id="102393" min="1" max="1" chance="12.5" /> 
+					<item id="102394" min="1" max="1" chance="12.5" /> 
+					<item id="102395" min="1" max="1" chance="12.5" /> 
+					<item id="102396" min="1" max="1" chance="12.5" /> 
+				</group>
+				<group chance="30">
+					<item id="98039" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="2">
+					<item id="103912" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="2.2">
+					<item id="91944" min="1" max="1" chance="2.14" /> 
+					<item id="91945" min="1" max="1" chance="2.15" /> 
+					<item id="92401" min="1" max="1" chance="3.11" /> 
+					<item id="93631" min="1" max="1" chance="2.06" /> 
+					<item id="93869" min="1" max="1" chance="2.01" /> 
+					<item id="93870" min="1" max="1" chance="1.98" /> 
+					<item id="94137" min="1" max="1" chance="2.06" /> 
+					<item id="94324" min="1" max="1" chance="2.01" /> 
+					<item id="94325" min="1" max="1" chance="2.01" /> 
+					<item id="94326" min="1" max="1" chance="2.14" /> 
+					<item id="94327" min="1" max="1" chance="2.14" /> 
+					<item id="94500" min="1" max="1" chance="2.02" /> 
+					<item id="94501" min="1" max="1" chance="2.02" /> 
+					<item id="94505" min="1" max="1" chance="1.97" /> 
+					<item id="94507" min="1" max="1" chance="1.97" /> 
+					<item id="94670" min="1" max="1" chance="2" /> 
+					<item id="94674" min="1" max="1" chance="1.97" /> 
+					<item id="95348" min="1" max="1" chance="2.01" /> 
+					<item id="95349" min="1" max="1" chance="2.14" /> 
+					<item id="95350" min="1" max="1" chance="2.11" /> 
+					<item id="95352" min="1" max="1" chance="2.11" /> 
+					<item id="95365" min="1" max="1" chance="2.11" /> 
+					<item id="95856" min="1" max="1" chance="1.99" /> 
+					<item id="95862" min="1" max="1" chance="2.04" /> 
+					<item id="95863" min="1" max="1" chance="2.04" /> 
+					<item id="96037" min="1" max="1" chance="1.99" /> 
+					<item id="96040" min="1" max="1" chance="1.96" /> 
+					<item id="96043" min="1" max="1" chance="1.98" /> 
+					<item id="96283" min="1" max="1" chance="1.99" /> 
+					<item id="96285" min="1" max="1" chance="1.98" /> 
+					<item id="96665" min="1" max="1" chance="2.02" /> 
+					<item id="96667" min="1" max="1" chance="1.96" /> 
+					<item id="96668" min="1" max="1" chance="1.96" /> 
+					<item id="96669" min="1" max="1" chance="1.98" /> 
+					<item id="96874" min="1" max="1" chance="2.03" /> 
+					<item id="96875" min="1" max="1" chance="2.08" /> 
+					<item id="97037" min="1" max="1" chance="1.97" /> 
+					<item id="97038" min="1" max="1" chance="1.95" /> 
+					<item id="97102" min="1" max="1" chance="2.1" /> 
+					<item id="97185" min="1" max="1" chance="1.96" /> 
+					<item id="97186" min="1" max="1" chance="1.95" /> 
+					<item id="97187" min="1" max="1" chance="1.95" /> 
+					<item id="97319" min="1" max="1" chance="1.96" /> 
+					<item id="97324" min="1" max="1" chance="1.96" /> 
+					<item id="97455" min="1" max="1" chance="1.96" /> 
+					<item id="97838" min="1" max="1" chance="1.96" /> 
+					<item id="98446" min="1" max="1" chance="1.98" /> 
+					<item id="98483" min="1" max="1" chance="2.11" /> 
+					<item id="100704" min="1" max="1" chance="1.95" /> 
+				</group>
+				<group chance="0.1">
+					<item id="93103" min="1" max="1" chance="9.34" /> 
+					<item id="93387" min="1" max="1" chance="9.67" /> 
+					<item id="94498" min="1" max="1" chance="9.2" /> 
+					<item id="94508" min="1" max="1" chance="8.9" /> 
+					<item id="94668" min="1" max="1" chance="9.07" /> 
+					<item id="94673" min="1" max="1" chance="8.87" /> 
+					<item id="94861" min="1" max="1" chance="9.04" /> 
+					<item id="94862" min="1" max="1" chance="8.79" /> 
+					<item id="94863" min="1" max="1" chance="8.94" /> 
+					<item id="95346" min="1" max="1" chance="9.16" /> 
+					<item id="95347" min="1" max="1" chance="9.02" /> 
+				</group>
+				<group chance="20">
+					<item id="94383" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="10">
+					<item id="103761" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="1">
+					<item id="103937" min="1" max="1" chance="100" /> 
+				</group>
+			</drop>
+			<fortune>
+				<item id="101965" min="1" max="1" chance="1" /> 
+				<item id="101965" min="1" max="1" chance="1" /> 
+				<item id="101965" min="1" max="1" chance="1" /> 
+			</fortune>
+		</dropLists>
+	</npc>
+	<npc id="26303" level="87" type="RaidBoss" name="庫魯薩" title="Condemned of Blood">
+		
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="82622" /> 
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="158400000" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="1112" magical="7592" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="6208" magical="3424" />
+			<speed>
+				<walk ground="85" />
+				<run ground="234" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="29.9" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="4416" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="103973" min="1" max="1" chance="12.5" /> 
+					<item id="103974" min="1" max="1" chance="12.5" /> 
+					<item id="103975" min="1" max="1" chance="12.5" /> 
+					<item id="103976" min="1" max="1" chance="12.5" /> 
+					<item id="103977" min="1" max="1" chance="12.5" /> 
+					<item id="103978" min="1" max="1" chance="12.5" /> 
+					<item id="103979" min="1" max="1" chance="12.5" /> 
+					<item id="103980" min="1" max="1" chance="12.5" /> 
+				</group>
+				<group chance="10">
+					<item id="98039" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="2">
+					<item id="102208" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="2.2">
+					<item id="91944" min="1" max="1" chance="2.14" /> 
+					<item id="91945" min="1" max="1" chance="2.15" /> 
+					<item id="92401" min="1" max="1" chance="3.11" /> 
+					<item id="93631" min="1" max="1" chance="2.06" /> 
+					<item id="93869" min="1" max="1" chance="2.01" /> 
+					<item id="93870" min="1" max="1" chance="1.98" /> 
+					<item id="94137" min="1" max="1" chance="2.06" /> 
+					<item id="94324" min="1" max="1" chance="2.01" /> 
+					<item id="94325" min="1" max="1" chance="2.01" /> 
+					<item id="94326" min="1" max="1" chance="2.14" /> 
+					<item id="94327" min="1" max="1" chance="2.14" /> 
+					<item id="94500" min="1" max="1" chance="2.02" /> 
+					<item id="94501" min="1" max="1" chance="2.02" /> 
+					<item id="94505" min="1" max="1" chance="1.97" /> 
+					<item id="94507" min="1" max="1" chance="1.97" /> 
+					<item id="94670" min="1" max="1" chance="2" /> 
+					<item id="94674" min="1" max="1" chance="1.97" /> 
+					<item id="95348" min="1" max="1" chance="2.01" /> 
+					<item id="95349" min="1" max="1" chance="2.14" /> 
+					<item id="95350" min="1" max="1" chance="2.11" /> 
+					<item id="95352" min="1" max="1" chance="2.11" /> 
+					<item id="95365" min="1" max="1" chance="2.11" /> 
+					<item id="95856" min="1" max="1" chance="1.99" /> 
+					<item id="95862" min="1" max="1" chance="2.04" /> 
+					<item id="95863" min="1" max="1" chance="2.04" /> 
+					<item id="96037" min="1" max="1" chance="1.99" /> 
+					<item id="96040" min="1" max="1" chance="1.96" /> 
+					<item id="96043" min="1" max="1" chance="1.98" /> 
+					<item id="96283" min="1" max="1" chance="1.99" /> 
+					<item id="96285" min="1" max="1" chance="1.98" /> 
+					<item id="96665" min="1" max="1" chance="2.02" /> 
+					<item id="96667" min="1" max="1" chance="1.96" /> 
+					<item id="96668" min="1" max="1" chance="1.96" /> 
+					<item id="96669" min="1" max="1" chance="1.98" /> 
+					<item id="96874" min="1" max="1" chance="2.03" /> 
+					<item id="96875" min="1" max="1" chance="2.08" /> 
+					<item id="97037" min="1" max="1" chance="1.97" /> 
+					<item id="97038" min="1" max="1" chance="1.95" /> 
+					<item id="97102" min="1" max="1" chance="2.1" /> 
+					<item id="97185" min="1" max="1" chance="1.96" /> 
+					<item id="97186" min="1" max="1" chance="1.95" /> 
+					<item id="97187" min="1" max="1" chance="1.95" /> 
+					<item id="97319" min="1" max="1" chance="1.96" /> 
+					<item id="97324" min="1" max="1" chance="1.96" /> 
+					<item id="97455" min="1" max="1" chance="1.96" /> 
+					<item id="97838" min="1" max="1" chance="1.96" /> 
+					<item id="98446" min="1" max="1" chance="1.98" /> 
+					<item id="98483" min="1" max="1" chance="2.11" /> 
+					<item id="100704" min="1" max="1" chance="1.95" /> 
+				</group>
+				<group chance="0.1">
+					<item id="93103" min="1" max="1" chance="9.34" /> 
+					<item id="93387" min="1" max="1" chance="9.67" /> 
+					<item id="94498" min="1" max="1" chance="9.2" /> 
+					<item id="94508" min="1" max="1" chance="8.9" /> 
+					<item id="94668" min="1" max="1" chance="9.07" /> 
+					<item id="94673" min="1" max="1" chance="8.87" /> 
+					<item id="94861" min="1" max="1" chance="9.04" /> 
+					<item id="94862" min="1" max="1" chance="8.79" /> 
+					<item id="94863" min="1" max="1" chance="8.94" /> 
+					<item id="95346" min="1" max="1" chance="9.16" /> 
+					<item id="95347" min="1" max="1" chance="9.02" /> 
+				</group>
+				<group chance="2">
+					<item id="103761" min="1" max="1" chance="100" /> 
+				</group>
+			</drop>
+			<fortune>
+				<item id="101965" min="1" max="1" chance="1" /> 
+				<item id="101965" min="1" max="1" chance="1" /> 
+				<item id="101965" min="1" max="1" chance="1" /> 
+			</fortune>
+		</dropLists>
+	</npc>
+</list>

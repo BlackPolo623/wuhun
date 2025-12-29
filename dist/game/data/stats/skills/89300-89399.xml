@@ -1,0 +1,620 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="89301" toLevel="2" name="光輝變身：獵犬">
+		
+		<icon>icon.s_shine_transform_hound</icon>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>900000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>50</hpConsume>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>760</effectPoint>
+		<mpConsume>150</mpConsume>
+		<abnormalTime>300</abnormalTime>
+		<itemConsumeCount>100</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<abnormalType>KAMAEL_TRANSFORM</abnormalType>
+		<abnormalVisualEffect>
+			<value level="1">KAMAEL_WHITE_TRANSFORM</value>
+			<value level="2">KAMAEL_WHITE_TRANSFORM_2;LONG_RAPIER_WHITE_AVE;WHITE_STANCE_AVE</value>
+		</abnormalVisualEffect>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">280</value>
+					<value level="2">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>
+					<value level="1">130</value>
+					<value level="2">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">40</value>
+					<value level="2">150</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">40</value>
+					<value level="2">150</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">150</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">40</value>
+					<value level="2">150</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>RAPIER</item>
+				</weaponType>
+			</effect>
+			<effect name="MaxHp" fromLevel="2" toLevel="2">
+				<amount>20</amount>
+				<mode>PER</mode>
+				<heal>true</heal>
+			</effect>
+			<effect name="PhysicalSkillPower" fromLevel="2" toLevel="2">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+
+			<effect name="MagicalSkillPower" fromLevel="2" toLevel="2">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>			
+			<effect name="MagicCriticalDamage" fromLevel="2" toLevel="2">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>	
+			<effect name="PhysicalSkillCriticalDamage" fromLevel="2" toLevel="2">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>	
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>			
+
+			<effect name="DefenceMagicCriticalRate">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillBySkillDamage">
+				<attackSkillId>47738</attackSkillId> 
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>89333</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>			
+			<effect name="TriggerSkillBySkillDamage">
+				<attackSkillId>47739</attackSkillId> 
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>89333</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>	
+			<effect name="TriggerSkillBySkillDamage">
+				<attackSkillId>45161</attackSkillId> 
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>89333</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>	
+			<effect name="TriggerSkillBySkillDamage">
+				<attackSkillId>45162</attackSkillId> 
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>89333</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>	
+			
+			
+			
+			</effects>
+		</skill>
+	<skill id="89302" toLevel="2" name="暗影變身：獵犬">
+		
+		<icon>icon.s_shadow_transform_hound</icon>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>900000</reuseDelay>
+		<effectPoint>1</effectPoint>
+		<hpConsume>50</hpConsume>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<effectPoint>760</effectPoint>
+		<mpConsume>150</mpConsume>
+		<abnormalTime>300</abnormalTime>
+		<itemConsumeCount>100</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<abnormalType>KAMAEL_TRANSFORM</abnormalType>
+		<abnormalVisualEffect>
+			<value level="1">KAMAEL_BLACK_TRANSFORM</value>
+			<value level="2">KAMAEL_BLACK_TRANSFORM_2</value>
+		</abnormalVisualEffect>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">280</value>
+					<value level="2">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>
+					<value level="1">130</value>
+					<value level="2">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">40</value>
+					<value level="2">150</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">40</value>
+					<value level="2">150</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">150</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">40</value>
+					<value level="2">150</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackRange">
+				<amount>60</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>RAPIER</item>
+				</weaponType>
+			</effect>
+			<effect name="MaxHp" fromLevel="2" toLevel="2">
+				<amount>20</amount>
+				<mode>PER</mode>
+				<heal>true</heal>
+			</effect>
+			<effect name="PhysicalSkillPower" fromLevel="2" toLevel="2">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+
+			<effect name="MagicalSkillPower" fromLevel="2" toLevel="2">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>			
+			<effect name="MagicCriticalDamage" fromLevel="2" toLevel="2">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>	
+			<effect name="PhysicalSkillCriticalDamage" fromLevel="2" toLevel="2">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>	
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>			
+
+			<effect name="DefenceMagicCriticalRate">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="TriggerSkillBySkillDamage">
+				<attackSkillId>47738</attackSkillId> 
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>89333</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>			
+			<effect name="TriggerSkillBySkillDamage">
+				<attackSkillId>47739</attackSkillId> 
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>89333</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>	
+			<effect name="TriggerSkillBySkillDamage">
+				<attackSkillId>45161</attackSkillId> 
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>89333</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>	
+			<effect name="TriggerSkillBySkillDamage">
+				<attackSkillId>45162</attackSkillId> 
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>89333</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>	
+			
+			
+			
+			</effects>
+		
+	</skill>
+	<skill id="89309" toLevel="1" name="共振颶風">
+		
+		<icon>icon.s_resonance_tempest</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-2500</effectPoint>
+	</skill>
+	<skill id="89310" toLevel="2" name="未使用-閃耀之翼：獵犬">
+		
+		<icon>icon.s_shine_transform_hound</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="89311" toLevel="2" name="未使用-暗影之翼：獵犬">
+		
+		<icon>icon.s_shadow_transform_hound</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="89313" toLevel="2" name="未使用-閃耀魂魄物理攻擊：獵犬">
+		
+		<icon>icon.s_shine_soul_p_attack_hound</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>760</effectPoint>
+		<hpConsume>50</hpConsume>
+	</skill>
+	<skill id="89314" toLevel="2" name="未使用-暗影魂魄魔法攻擊：獵犬">
+		
+		<icon>s_shadow_soul_m_attack_hound</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<reuseDelay>60000</reuseDelay>
+		<effectPoint>760</effectPoint>
+		<mpConsume>50</mpConsume>
+	</skill>
+	<skill id="89315" toLevel="2" name="未使用-展示閃耀魂魄物理攻擊-吸收">
+		<icon>icon.s_shine_soul_p_attack_hound</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-1000</effectPoint>
+	</skill>
+	<skill id="89316" toLevel="2" name="未使用-閃耀物理廣域邏輯">
+		<operateType>A1</operateType>
+		<effectPoint>-9999</effectPoint>
+	</skill>
+	<skill id="89317" toLevel="2" name="未使用-閃耀魂魄物理攻擊：獵犬">
+		<icon>icon.s_shine_soul_p_attack_hound</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>-9999</effectPoint>
+	</skill>
+	<skill id="89318" toLevel="2" name="未使用-展示閃耀物理-廣域">
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+	</skill>
+	<skill id="89319" toLevel="2" name="未使用-展示暗影魂魄魔法攻擊：獵犬-吸收">
+		<icon>s_shadow_soul_m_attack_hound</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-1000</effectPoint>
+	</skill>
+	<skill id="89320" toLevel="2" name="未使用-暗影物理廣域邏輯">
+		<operateType>A1</operateType>
+		<effectPoint>-9999</effectPoint>
+	</skill>
+	<skill id="89321" toLevel="2" name="未使用-暗影魂魄物理攻擊：獵犬">
+		<icon>s_shadow_soul_m_attack_hound</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<reuseDelay>3000</reuseDelay>
+		<effectPoint>-9999</effectPoint>
+	</skill>
+	<skill id="89322" toLevel="2" name="未使用-暗影物理-廣域邏輯">
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+	</skill>
+	<skill id="89323" toLevel="1" name="雷歐波爾德">
+		
+		<icon>icon.s_leopold</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalTime>8</abnormalTime>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>-1485</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>20</lvlBonusRate>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="MagicalSkillPower">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="89333" toLevel="1" name="變身 攻擊">
+		
+		<icon>icon.skill11361</icon>
+		<operateType>A2</operateType>
+		<castRange>700</castRange>
+		<effectPoint>-750</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isMagic>0</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>250</power>
+			</effect>		
+		</effects>
+
+	</skill>
+	<skill id="89334" toLevel="2" name="閃耀奧祕：獵犬">
+		
+		<icon>icon.s_shine_soul_p_attack_hound</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			
+		</effects>
+	</skill>
+	<skill id="89335" toLevel="2" name="暗影奧祕：獵犬">
+		
+		<icon>icon.s_shadow_soul_m_attack_hound</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicalAttack">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="89336" toLevel="1" name="獵犬訓練">
+		
+		<icon>icon.skill30516</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicalAttack">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="89337" toLevel="10" name="靈魂驅逐">
+		<icon>icon.skill0479</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-500</value>
+			<value level="3">-590</value>
+			<value level="4">-670</value>
+			<value level="5">-740</value>
+			<value level="6">-760</value>
+			<value level="7">-800</value>
+			<value level="8">-850</value>
+			<value level="9">-880</value>
+			<value level="10">-900</value>
+		</effectPoint>
+	</skill>
+	<skill id="89338" toLevel="10" name="靈魂驅逐：遠程">
+		
+		<icon>icon.skill0479</icon>
+		<castRange>700</castRange>
+		<hitTime>800</hitTime>
+		<coolTime>200</coolTime>
+		<reuseDelay>3000</reuseDelay>
+		<operateType>DA1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>200</coolTime>
+		<effectPoint>-300</effectPoint>
+		<effectRange>600</effectRange>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>40</magicLevel>
+		<mpConsume>35</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<reuseDelay>3000</reuseDelay>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</conditions>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-500</value>
+			<value level="3">-590</value>
+			<value level="4">-670</value>
+			<value level="5">-740</value>
+			<value level="6">-760</value>
+			<value level="7">-800</value>
+			<value level="8">-850</value>
+			<value level="9">-880</value>
+			<value level="10">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">35</value>
+			<value level="2">35</value>
+			<value level="3">38</value>
+			<value level="4">41</value>
+			<value level="5">44</value>
+			<value level="6">46</value>
+			<value level="7">48</value>
+			<value level="8">50</value>
+			<value level="9">52</value>
+			<value level="10">55</value>
+		</mpConsume>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">3200</value>
+					<value level="2">3631</value>
+					<value level="3">4140</value>
+					<value level="4">4719</value>
+					<value level="5">5357</value>
+					<value level="6">6013</value>
+					<value level="7">6704</value>
+					<value level="8">7437</value>
+					<value level="9">8205</value>
+					<value level="10">9000</value>
+				</power>
+			</effect>
+		</effects>	
+	</skill>
+	<skill id="89339" toLevel="10" name="靈魂驅逐：遠程">
+		<icon>icon.skill0479</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-500</value>
+			<value level="3">-590</value>
+			<value level="4">-670</value>
+			<value level="5">-740</value>
+			<value level="6">-760</value>
+			<value level="7">-800</value>
+			<value level="8">-850</value>
+			<value level="9">-880</value>
+			<value level="10">-900</value>
+		</effectPoint>
+	</skill>
+</list>

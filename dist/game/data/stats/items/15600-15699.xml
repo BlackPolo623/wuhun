@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="15601" name="未供給-博佩斯靴" additionalName="Not used" type="Armor">
+		
+		<set name="icon" val="icon.armor_t94_b_i03" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="0" />
+		<set name="price" val="20900" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="pDef">19</stat>
+		</stats>
+	</item>
+	<item id="15623" name="經驗值" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_exp_point_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+	</item>
+	<item id="15624" name="技能點數" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_sp_point_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+	</item>
+	<item id="15625" name="給予報酬時決定" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_question_mark_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+	</item>
+	<item id="15626" name="活力點數" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_vitality_point_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+	</item>
+	<item id="15627" name="血盟聲望" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_bloodpledge_point_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_stackable" val="true" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_clan_depositable" val="true" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="99998" level="1" /> 
+		</skills>
+	</item>
+	<item id="15628" name="賭博報酬" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_quest_game_reward_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+	</item>
+	<item id="15629" name="隨機報酬" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_quest_random_reward_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+	</item>
+	<item id="15630" name="結算報酬" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_quest_account_reward_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+	</item>
+	<item id="15631" name="追加報酬" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_quest_add_reward_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+	</item>
+	<item id="15632" name="獲得副職業權限" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_quest_subclass_reward_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+	</item>
+	<item id="15633" name="PK次數下降" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_quest_pkcount_reward_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+	</item>
+</list>

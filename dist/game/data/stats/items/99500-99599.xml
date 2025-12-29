@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="99504" name="天堂斗篷" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.nobless_cloak_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="back" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="weight" val="0" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<stats>
+			<stat type="pDef">30</stat>
+		</stats>
+		<skills>
+			<skill id="50620" level="1" /> 
+			<skill id="50620" level="2" type="ON_ENCHANT" type_value="1" /> 
+			<skill id="50620" level="3" type="ON_ENCHANT" type_value="2" /> 
+			<skill id="50620" level="4" type="ON_ENCHANT" type_value="3" /> 
+			<skill id="50620" level="5" type="ON_ENCHANT" type_value="4" /> 
+			<skill id="50620" level="6" type="ON_ENCHANT" type_value="5" /> 
+			<skill id="50620" level="7" type="ON_ENCHANT" type_value="6" /> 
+			<skill id="50620" level="8" type="ON_ENCHANT" type_value="7" /> 
+			<skill id="50620" level="9" type="ON_ENCHANT" type_value="8" /> 
+		</skills>
+	</item>
+</list>

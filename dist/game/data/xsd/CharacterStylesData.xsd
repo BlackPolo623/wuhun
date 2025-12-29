@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="category">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="style">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="cost">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="item">
+														<xs:complexType>
+															<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+															<xs:attribute name="count" type="xs:unsignedByte" use="required" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<!-- style 的屬性 -->
+									<xs:attribute name="styleId" type="xs:unsignedByte" use="required" />
+									<xs:attribute name="name" type="xs:string" use="required" />
+									<xs:attribute name="shiftWeaponId" type="xs:unsignedInt" use="optional" />
+									<xs:attribute name="shiftArmorId" type="xs:unsignedInt" use="optional" />  <!-- ★ 新增 -->
+									<xs:attribute name="skillId" type="xs:unsignedInt" use="optional" />
+									<xs:attribute name="skillLevel" type="xs:unsignedInt" use="optional" />
+									<xs:attribute name="weaponType" use="optional">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="DAGGER" />
+												<xs:enumeration value="SWORD" />
+												<xs:enumeration value="BLUNT" />
+												<xs:enumeration value="DUALFIST" />
+												<xs:enumeration value="POLE" />
+												<xs:enumeration value="BOW" />
+												<xs:enumeration value="DUAL" />
+												<xs:enumeration value="PISTOLS" />
+												<xs:enumeration value="RAPIER" />
+												<xs:enumeration value="ANCIENTSWORD" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" type="xs:string" use="required" />
+						<xs:attribute name="type" type="xs:string" use="required" />
+						<xs:attribute name="swapCostId" type="xs:string" use="required" />
+						<xs:attribute name="swapCostCount" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

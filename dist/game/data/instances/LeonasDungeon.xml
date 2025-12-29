@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="236" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+	<time duration="30" empty="3000000" />
+	<removeBuffs type="ALL" />
+	<locations>
+		<enter type="FIXED">
+			<location x="-49354" y="-245545" z="-7859" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="Party" />
+		<condition type="CommandChannel">
+			<param name="html" value="no-cc.htm" />
+		</condition>
+		<condition type="CommandChannelLeader" />
+		<condition type="GroupMin">
+			<param name="limit" value="2" />
+		</condition>
+		<condition type="GroupMax">
+			<param name="limit" value="40" />
+		</condition>
+		<condition type="Level">
+			<param name="min" value="76" />
+			<param name="max" value="999" />
+		</condition>
+		<condition type="Distance" />
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="MONDAY" hour="6" minute="30" />
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group name="leona" spawnByDefault="true">
+			<npc id="34357" x="-49138" y="-245746" z="-7858" heading="945" /> <!-- Leona Blackbird -->
+		</group>
+		<group name="MOBS_1" spawnByDefault="false">
+			<npc id="22535" x="-49011" y="-247025" z="-7860" heading="54241" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-48893" y="-246992" z="-7860" heading="52717" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22535" x="-48626" y="-247353" z="-7860" heading="59250" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-48769" y="-247638" z="-7860" heading="35728" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22535" x="-48882" y="-247663" z="-7860" heading="34507" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-49340" y="-247621" z="-7860" heading="28476" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22535" x="-49393" y="-247598" z="-7860" heading="28476" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22535" x="-49601" y="-247508" z="-7863" heading="15075" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22535" x="-49631" y="-247161" z="-7859" heading="18091" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22535" x="-49418" y="-247102" z="-7860" heading="63813" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-48909" y="-247233" z="-7861" heading="62174" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22535" x="-48799" y="-247270" z="-7861" heading="62174" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22535" x="-48453" y="-247476" z="-7858" heading="59017" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-48362" y="-247589" z="-7860" heading="33993" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-48437" y="-247674" z="-7860" heading="25828" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-47948" y="-245520" z="-7858" heading="10668" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-47772" y="-245035" z="-7858" heading="9772" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-47604" y="-245336" z="-7858" heading="43846" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-47756" y="-245810" z="-7855" heading="40205" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-47928" y="-245450" z="-7857" heading="16802" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-47870" y="-245368" z="-7857" heading="55971" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-47888" y="-243996" z="-7860" heading="33793" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-48020" y="-243912" z="-7858" heading="38021" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-47759" y="-243829" z="-7857" heading="2693" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-47759" y="-243829" z="-7857" heading="2693" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-47683" y="-243670" z="-7858" heading="11733" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-47683" y="-243670" z="-7858" heading="52379" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22536" x="-46623" y="-244027" z="-7861" heading="29537" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-46863" y="-243972" z="-7862" heading="30863" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-46750" y="-243765" z="-7858" heading="9507" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22535" x="-46896" y="-243730" z="-7863" heading="27353" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-46600" y="-243928" z="-7858" heading="59414" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-46727" y="-243992" z="-7858" heading="37636" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-50721" y="-245641" z="-7860" heading="18988" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-50583" y="-245644" z="-7858" heading="4242" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-50365" y="-245590" z="-7860" heading="50400" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-50358" y="-245648" z="-7860" heading="50400" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-50467" y="-245978" z="-7860" heading="42347" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-50641" y="-245882" z="-7860" heading="27104" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-51602" y="-245891" z="-7857" heading="52100" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-51730" y="-246164" z="-7856" heading="25730" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22535" x="-51900" y="-246029" z="-7859" heading="25730" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-51924" y="-245680" z="-7856" heading="16073" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22535" x="-51919" y="-245506" z="-7856" heading="16073" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22535" x="-51561" y="-245163" z="-7858" heading="58902" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-51549" y="-245315" z="-7858" heading="43866" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-51726" y="-245593" z="-7856" heading="42616" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22536" x="-51905" y="-245227" z="-7858" heading="27120" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-51863" y="-245271" z="-7861" heading="56946" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22536" x="-51784" y="-245195" z="-7856" heading="61748" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22535" x="-51797" y="-245195" z="-7856" heading="22124" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22535" x="-53016" y="-246057" z="-7855" heading="33413" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-52997" y="-246001" z="-7855" heading="13054" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-52977" y="-245939" z="-7855" heading="13054" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-53056" y="-245856" z="-7860" heading="20649" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-53056" y="-245856" z="-7860" heading="20649" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-53056" y="-245856" z="-7860" heading="20649" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-49697" y="-244124" z="-7857" heading="31480" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-49712" y="-244123" z="-7856" heading="31480" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-49672" y="-244050" z="-7856" heading="11155" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-49643" y="-243980" z="-7858" heading="12287" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-49519" y="-243987" z="-7858" heading="64947" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22535" x="-49338" y="-243921" z="-7856" heading="5602" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-49225" y="-244131" z="-7856" heading="52680" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-49364" y="-244280" z="-7861" heading="38443" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-49364" y="-244280" z="-7858" heading="38443" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-49268" y="-244272" z="-7858" heading="867" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-49132" y="-244202" z="-7856" heading="3475" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-49066" y="-243941" z="-7858" heading="36007" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-49251" y="-243958" z="-7858" heading="33723" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-49251" y="-243958" z="-7858" heading="33723" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-51064" y="-244129" z="-7857" heading="65135" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-51064" y="-244129" z="-7857" heading="65135" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-51064" y="-244129" z="-7857" heading="65135" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-51074" y="-242669" z="-7861" heading="12126" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-50988" y="-242390" z="-7861" heading="13275" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22535" x="-50977" y="-242156" z="-7858" heading="15931" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-51024" y="-241803" z="-7858" heading="21798" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-51055" y="-241751" z="-7858" heading="21798" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-50816" y="-241556" z="-7860" heading="1154" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-50696" y="-241755" z="-7861" heading="54795" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-50680" y="-241826" z="-7860" heading="50462" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-50669" y="-242304" z="-7863" heading="48393" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-50703" y="-242592" z="-7863" heading="47913" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-50797" y="-242906" z="-7863" heading="45696" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-49377" y="-242080" z="-7856" heading="6181" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-49377" y="-242080" z="-7856" heading="6181" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-49377" y="-242080" z="-7856" heading="6181" respawnTime="10sec" /> <!-- Lith Prefect -->
+			<npc id="22535" x="-49344" y="-242310" z="-7856" heading="50627" respawnTime="10sec" /> <!-- Lith Guard -->
+			<npc id="22536" x="-49334" y="-242382" z="-7856" heading="50627" respawnTime="10sec" /> <!-- Lith Medium -->
+			<npc id="22537" x="-49322" y="-242624" z="-7856" heading="49668" respawnTime="10sec" /> <!-- Lith Prefect -->
+		</group>
+		<group name="MOBS_2" spawnByDefault="false">
+			<npc id="22530" x="-49011" y="-247025" z="-7860" heading="54241" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-48893" y="-246992" z="-7860" heading="52717" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22530" x="-48626" y="-247353" z="-7860" heading="59250" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-48769" y="-247638" z="-7860" heading="35728" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22530" x="-48882" y="-247663" z="-7860" heading="34507" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-49340" y="-247621" z="-7860" heading="28476" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22530" x="-49393" y="-247598" z="-7860" heading="28476" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22530" x="-49601" y="-247508" z="-7863" heading="15075" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22530" x="-49631" y="-247161" z="-7859" heading="18091" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22530" x="-49418" y="-247102" z="-7860" heading="63813" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-48909" y="-247233" z="-7861" heading="62174" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22530" x="-48799" y="-247270" z="-7861" heading="62174" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22530" x="-48453" y="-247476" z="-7858" heading="59017" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-48362" y="-247589" z="-7860" heading="33993" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-48437" y="-247674" z="-7860" heading="25828" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-47948" y="-245520" z="-7858" heading="10668" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-47772" y="-245035" z="-7858" heading="9772" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-47604" y="-245336" z="-7858" heading="43846" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-47756" y="-245810" z="-7855" heading="40205" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-47928" y="-245450" z="-7857" heading="16802" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-47870" y="-245368" z="-7857" heading="55971" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-47888" y="-243996" z="-7860" heading="33793" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-48020" y="-243912" z="-7858" heading="38021" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-47759" y="-243829" z="-7857" heading="2693" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-47759" y="-243829" z="-7857" heading="2693" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-47683" y="-243670" z="-7858" heading="11733" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-47683" y="-243670" z="-7858" heading="52379" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22529" x="-46623" y="-244027" z="-7861" heading="29537" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-46863" y="-243972" z="-7862" heading="30863" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-46750" y="-243765" z="-7858" heading="9507" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22530" x="-46896" y="-243730" z="-7863" heading="27353" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-46600" y="-243928" z="-7858" heading="59414" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-46727" y="-243992" z="-7858" heading="37636" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-50721" y="-245641" z="-7860" heading="18988" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-50583" y="-245644" z="-7858" heading="4242" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-50365" y="-245590" z="-7860" heading="50400" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-50358" y="-245648" z="-7860" heading="50400" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-50467" y="-245978" z="-7860" heading="42347" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-50641" y="-245882" z="-7860" heading="27104" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-51602" y="-245891" z="-7857" heading="52100" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-51730" y="-246164" z="-7856" heading="25730" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22530" x="-51900" y="-246029" z="-7859" heading="25730" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-51924" y="-245680" z="-7856" heading="16073" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22530" x="-51919" y="-245506" z="-7856" heading="16073" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22530" x="-51561" y="-245163" z="-7858" heading="58902" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-51549" y="-245315" z="-7858" heading="43866" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-51726" y="-245593" z="-7856" heading="42616" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22529" x="-51905" y="-245227" z="-7858" heading="27120" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-51863" y="-245271" z="-7861" heading="56946" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22529" x="-51784" y="-245195" z="-7856" heading="61748" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22530" x="-51797" y="-245195" z="-7856" heading="22124" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22530" x="-53016" y="-246057" z="-7855" heading="33413" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-52997" y="-246001" z="-7855" heading="13054" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-52977" y="-245939" z="-7855" heading="13054" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-53056" y="-245856" z="-7860" heading="20649" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-53056" y="-245856" z="-7860" heading="20649" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-53056" y="-245856" z="-7860" heading="20649" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-49697" y="-244124" z="-7857" heading="31480" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-49712" y="-244123" z="-7856" heading="31480" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-49672" y="-244050" z="-7856" heading="11155" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-49643" y="-243980" z="-7858" heading="12287" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-49519" y="-243987" z="-7858" heading="64947" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22530" x="-49338" y="-243921" z="-7856" heading="5602" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-49225" y="-244131" z="-7856" heading="52680" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-49364" y="-244280" z="-7861" heading="38443" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-49364" y="-244280" z="-7858" heading="38443" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-49268" y="-244272" z="-7858" heading="867" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-49132" y="-244202" z="-7856" heading="3475" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-49066" y="-243941" z="-7858" heading="36007" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-49251" y="-243958" z="-7858" heading="33723" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-49251" y="-243958" z="-7858" heading="33723" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-51064" y="-244129" z="-7857" heading="65135" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-51064" y="-244129" z="-7857" heading="65135" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-51064" y="-244129" z="-7857" heading="65135" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-51074" y="-242669" z="-7861" heading="12126" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-50988" y="-242390" z="-7861" heading="13275" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22530" x="-50977" y="-242156" z="-7858" heading="15931" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-51024" y="-241803" z="-7858" heading="21798" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-51055" y="-241751" z="-7858" heading="21798" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-50816" y="-241556" z="-7860" heading="1154" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-50696" y="-241755" z="-7861" heading="54795" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-50680" y="-241826" z="-7860" heading="50462" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-50669" y="-242304" z="-7863" heading="48393" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-50703" y="-242592" z="-7863" heading="47913" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-50797" y="-242906" z="-7863" heading="45696" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-49377" y="-242080" z="-7856" heading="6181" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-49377" y="-242080" z="-7856" heading="6181" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-49377" y="-242080" z="-7856" heading="6181" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+			<npc id="22530" x="-49344" y="-242310" z="-7856" heading="50627" respawnTime="10sec" /> <!-- Nephilim Cardinal -->
+			<npc id="22529" x="-49334" y="-242382" z="-7856" heading="50627" respawnTime="10sec" /> <!-- Nephilim Guardsman -->
+			<npc id="22531" x="-49322" y="-242624" z="-7856" heading="49668" respawnTime="10sec" /> <!-- Nephilim Battlemaster -->
+		</group>
+		<group name="MOBS_3" spawnByDefault="false">
+			<npc id="22538" x="-49011" y="-247025" z="-7860" heading="54241" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-48893" y="-246992" z="-7860" heading="52717" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22538" x="-48626" y="-247353" z="-7860" heading="59250" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-48769" y="-247638" z="-7860" heading="35728" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22538" x="-48882" y="-247663" z="-7860" heading="34507" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-49340" y="-247621" z="-7860" heading="28476" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22538" x="-49393" y="-247598" z="-7860" heading="28476" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22538" x="-49601" y="-247508" z="-7863" heading="15075" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22538" x="-49631" y="-247161" z="-7859" heading="18091" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22538" x="-49418" y="-247102" z="-7860" heading="63813" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-48909" y="-247233" z="-7861" heading="62174" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22538" x="-48799" y="-247270" z="-7861" heading="62174" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22538" x="-48453" y="-247476" z="-7858" heading="59017" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-48362" y="-247589" z="-7860" heading="33993" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-48437" y="-247674" z="-7860" heading="25828" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-47948" y="-245520" z="-7858" heading="10668" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-47772" y="-245035" z="-7858" heading="9772" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-47604" y="-245336" z="-7858" heading="43846" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-47756" y="-245810" z="-7855" heading="40205" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-47928" y="-245450" z="-7857" heading="16802" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-47870" y="-245368" z="-7857" heading="55971" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-47888" y="-243996" z="-7860" heading="33793" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-48020" y="-243912" z="-7858" heading="38021" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-47759" y="-243829" z="-7857" heading="2693" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-47759" y="-243829" z="-7857" heading="2693" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-47683" y="-243670" z="-7858" heading="11733" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-47683" y="-243670" z="-7858" heading="52379" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22539" x="-46623" y="-244027" z="-7861" heading="29537" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-46863" y="-243972" z="-7862" heading="30863" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-46750" y="-243765" z="-7858" heading="9507" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22538" x="-46896" y="-243730" z="-7863" heading="27353" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-46600" y="-243928" z="-7858" heading="59414" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-46727" y="-243992" z="-7858" heading="37636" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-50721" y="-245641" z="-7860" heading="18988" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-50583" y="-245644" z="-7858" heading="4242" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-50365" y="-245590" z="-7860" heading="50400" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-50358" y="-245648" z="-7860" heading="50400" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-50467" y="-245978" z="-7860" heading="42347" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-50641" y="-245882" z="-7860" heading="27104" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-51602" y="-245891" z="-7857" heading="52100" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-51730" y="-246164" z="-7856" heading="25730" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22538" x="-51900" y="-246029" z="-7859" heading="25730" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-51924" y="-245680" z="-7856" heading="16073" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22538" x="-51919" y="-245506" z="-7856" heading="16073" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22538" x="-51561" y="-245163" z="-7858" heading="58902" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-51549" y="-245315" z="-7858" heading="43866" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-51726" y="-245593" z="-7856" heading="42616" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22539" x="-51905" y="-245227" z="-7858" heading="27120" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-51863" y="-245271" z="-7861" heading="56946" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22539" x="-51784" y="-245195" z="-7856" heading="61748" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22538" x="-51797" y="-245195" z="-7856" heading="22124" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22538" x="-53016" y="-246057" z="-7855" heading="33413" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-52997" y="-246001" z="-7855" heading="13054" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-52977" y="-245939" z="-7855" heading="13054" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-53056" y="-245856" z="-7860" heading="20649" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-53056" y="-245856" z="-7860" heading="20649" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-53056" y="-245856" z="-7860" heading="20649" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-49697" y="-244124" z="-7857" heading="31480" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-49712" y="-244123" z="-7856" heading="31480" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-49672" y="-244050" z="-7856" heading="11155" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-49643" y="-243980" z="-7858" heading="12287" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-49519" y="-243987" z="-7858" heading="64947" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22538" x="-49338" y="-243921" z="-7856" heading="5602" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-49225" y="-244131" z="-7856" heading="52680" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-49364" y="-244280" z="-7861" heading="38443" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-49364" y="-244280" z="-7858" heading="38443" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-49268" y="-244272" z="-7858" heading="867" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-49132" y="-244202" z="-7856" heading="3475" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-49066" y="-243941" z="-7858" heading="36007" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-49251" y="-243958" z="-7858" heading="33723" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-49251" y="-243958" z="-7858" heading="33723" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-51064" y="-244129" z="-7857" heading="65135" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-51064" y="-244129" z="-7857" heading="65135" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-51064" y="-244129" z="-7857" heading="65135" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-51074" y="-242669" z="-7861" heading="12126" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-50988" y="-242390" z="-7861" heading="13275" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22538" x="-50977" y="-242156" z="-7858" heading="15931" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-51024" y="-241803" z="-7858" heading="21798" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-51055" y="-241751" z="-7858" heading="21798" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-50816" y="-241556" z="-7860" heading="1154" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-50696" y="-241755" z="-7861" heading="54795" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-50680" y="-241826" z="-7860" heading="50462" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-50669" y="-242304" z="-7863" heading="48393" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-50703" y="-242592" z="-7863" heading="47913" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-50797" y="-242906" z="-7863" heading="45696" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-49377" y="-242080" z="-7856" heading="6181" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-49377" y="-242080" z="-7856" heading="6181" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-49377" y="-242080" z="-7856" heading="6181" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+			<npc id="22538" x="-49344" y="-242310" z="-7856" heading="50627" respawnTime="10sec" /> <!-- Lilim's Guardian -->
+			<npc id="22539" x="-49334" y="-242382" z="-7856" heading="50627" respawnTime="10sec" /> <!-- Lilim's Assassin -->
+			<npc id="22540" x="-49322" y="-242624" z="-7856" heading="49668" respawnTime="10sec" /> <!-- Lilim's Soldier -->
+		</group>
+	</spawnlist>
+</instance>

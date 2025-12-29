@@ -1,0 +1,3751 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="88001" toLevel="8" name="闇突襲">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_darkness_rush2</icon>
+		<operateType>DA1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>6-6</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>150</affectRange>
+		<affectScope>RANGE</affectScope>
+		<castRange>700</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-6650</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitTime>1000</hitTime>
+		<mpConsume>
+			<value level="1">75</value>
+			<value level="2">78</value>
+			<value level="3">80</value>
+			<value level="4">82</value>
+			<value level="5">85</value>
+			<value level="6">87</value>
+			<value level="7">88</value>
+			<value level="8">89</value>
+		</mpConsume>
+		<reuseDelay>3000</reuseDelay>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">4300</value>
+					<value level="2">4472</value>
+					<value level="3">4651</value>
+					<value level="4">4790</value>
+					<value level="5">4934</value>
+					<value level="6">5033</value>
+					<value level="7">5083</value>
+					<value level="8">5134</value>
+				</power>
+				<criticalChance>15</criticalChance>
+				<pDefMod>0.85</pDefMod>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>88073</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88002" toLevel="1" name="席琳Assist-展示1">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+	</skill>
+	<skill id="88003" toLevel="1" name="席琳Assist-展示2">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+	</skill>
+	<skill id="88004" toLevel="1" name="席琳Assist-展示3">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+	</skill>
+	<skill id="88005" toLevel="1" name="席琳Assist-展示4">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+	</skill>
+	<skill id="88006" toLevel="1" name="極限防禦：庇護-展示1">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="88007" toLevel="1" name="極限防禦：庇護-展示2">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="88008" toLevel="1" name="極限防禦：庇護-展示3">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="88009" toLevel="13" name="騎襲">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_knight_assault_eva2</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>250</castRange>
+		<coolTime>400</coolTime>
+		<effectPoint>
+			<value level="1">-3800</value>
+			<value level="2">-3900</value>
+			<value level="3">-4000</value>
+			<value level="4">-4100</value>
+			<value level="5">-4200</value>
+			<value level="6">-4300</value>
+			<value level="7">-4400</value>
+			<value level="8">-4500</value>
+			<value level="9">-4550</value>
+			<value level="10">-4600</value>
+			<value level="11">-4650</value>
+			<value level="12">-4700</value>
+			<value level="13">-4750</value>
+		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">63</value>
+			<value level="2">64</value>
+			<value level="3">66</value>
+			<value level="4">67</value>
+			<value level="5">69</value>
+			<value level="6">70</value>
+			<value level="7">72</value>
+			<value level="8">73</value>
+			<value level="9">75</value>
+			<value level="10">76</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+			<value level="13">79</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>88048</skillId> 
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
+			</effect>
+		</selfEffects>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">4907</value>
+					<value level="2">5046</value>
+					<value level="3">5186</value>
+					<value level="4">5327</value>
+					<value level="5">5468</value>
+					<value level="6">5608</value>
+					<value level="7">5749</value>
+					<value level="8">5891</value>
+					<value level="9">6067</value>
+					<value level="10">6249</value>
+					<value level="11">6436</value>
+					<value level="12">6629</value>
+					<value level="13">6827</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>88048</skillId> 
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="88010" toLevel="13" name="騎襲">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_knight_assault_shilen2</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>250</castRange>
+		<coolTime>400</coolTime>
+		<effectPoint>
+			<value level="1">-3800</value>
+			<value level="2">-3900</value>
+			<value level="3">-4000</value>
+			<value level="4">-4100</value>
+			<value level="5">-4200</value>
+			<value level="6">-4300</value>
+			<value level="7">-4400</value>
+			<value level="8">-4500</value>
+			<value level="9">-4550</value>
+			<value level="10">-4600</value>
+			<value level="11">-4650</value>
+			<value level="12">-4700</value>
+			<value level="13">-4750</value>
+		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">63</value>
+			<value level="2">64</value>
+			<value level="3">66</value>
+			<value level="4">67</value>
+			<value level="5">69</value>
+			<value level="6">70</value>
+			<value level="7">72</value>
+			<value level="8">73</value>
+			<value level="9">75</value>
+			<value level="10">76</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+			<value level="13">79</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>88059</skillId> 
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
+			</effect>
+		</selfEffects>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">7107</value>
+					<value level="2">7246</value>
+					<value level="3">7386</value>
+					<value level="4">7527</value>
+					<value level="5">7668</value>
+					<value level="6">7808</value>
+					<value level="7">7949</value>
+					<value level="8">8091</value>
+					<value level="9">8267</value>
+					<value level="10">8449</value>
+					<value level="11">8636</value>
+					<value level="12">8829</value>
+					<value level="13">9027</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>88059</skillId> 
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="88011" toLevel="1" name="判責：大師">
+		
+		<icon>icon.s_condemn_master</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>CONDEMNATION_MASTER</abnormalType>
+		<activateRate>100</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<effectRange>900</effectRange>
+	</skill>
+	<skill id="88012" toLevel="1" name="末世">
+		
+		<icon>icon.s_debuff_apocalypse</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalTime>3</abnormalTime>
+		<abnormalVisualEffect>H_R_APOCALYPSE_AVE</abnormalVisualEffect>
+		<activateRate>50</activateRate>
+		<affectLimit>12-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>500</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-1980</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitTime>500</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>0</isMagic>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>76</magicLevel>
+		<mpConsume>300</mpConsume>
+		<reuseDelay>3000</reuseDelay>
+		<trait>ANOMALY</trait>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>CONDEMNATION_MASTER</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>10000</power>
+				<pDefMod>0.8</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>88029</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>88030</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88013" toLevel="1" name="極星爆">
+		<icon>icon.s_super_nova</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>-1</castRange>
+		<effectPoint>-760</effectPoint>
+		<hitTime>0</hitTime>
+		<isMagic>0</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>EVA_WATER_STIGMA</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>10000</power>
+				<pDefMod>0.85</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88014" toLevel="1" name="極星爆">
+		<icon>icon.s_super_nova</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>-1</castRange>
+		<effectPoint>-760</effectPoint>
+		<hitTime>0</hitTime>
+		<isMagic>0</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>EVA_WATER_STIGMA</type>
+				<level>1</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>EVA_WATER_STIGMA</type>
+				<level>2</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalDamage">
+				<pAtkMod>3.5</pAtkMod>
+				<pDefMod>0.85</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88015" toLevel="1" name="極星爆">
+		<icon>icon.s_super_nova</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>-1</castRange>
+		<effectPoint>-760</effectPoint>
+		<hitTime>0</hitTime>
+		<isMagic>0</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>EVA_WATER_STIGMA</type>
+				<level>2</level>
+				<hasAbnormal>true</hasAbnormal>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalDamage">
+				<pAtkMod>5.0</pAtkMod>
+				<pDefMod>0.8</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88016" toLevel="1" name="沿懼">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectLimit>5-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>700</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-900</effectPoint>
+		<effects>
+			<effect name="CallSkill">
+				<skillId>87975</skillId> 
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>2</skillLevelScaleTo>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88017" toLevel="3" name="水擊波">
+		
+		
+		
+		<icon>icon.s_evas_tempest</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLevel>
+		<abnormalTime>1</abnormalTime>
+		<activateRate>80</activateRate>
+		<affectLimit>10-0</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>700</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-8500</value>
+			<value level="2">-8700</value>
+			<value level="3">-9000</value>
+		</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>0</isMagic>
+		<itemConsumeCount>10</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId>
+		<lvlBonusRate>30</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">78</value>
+			<value level="2">81</value>
+			<value level="3">84</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">135</value>
+			<value level="2">139</value>
+			<value level="3">145</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">25</value>
+			<value level="2">25</value>
+			<value level="3">26</value>
+		</mpInitialConsume>
+		<reuseDelay>35000</reuseDelay>
+		<trait>PULL</trait>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">2000</value>
+					<value level="2">2800</value>
+					<value level="3">3350</value>
+				</power>
+				<pDefMod>0.85</pDefMod>
+				<criticalChance>10</criticalChance>
+			</effect>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>35016</allowedSkills>
+			</effect>
+			<effect name="GetAgro" />
+		</effects>
+	</skill>
+	<skill id="88018" toLevel="8" name="聖水旋襲">
+		
+		<icon>icon.s_aquatic_spin_rush</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>40</castRange>
+		<effectPoint>
+			<value level="1">-7600</value>
+			<value level="2">-7900</value>
+			<value level="3">-8200</value>
+			<value level="4">-8400</value>
+			<value level="5">-8600</value>
+			<value level="6">-8800</value>
+			<value level="7">-8900</value>
+			<value level="8">-9000</value>
+		</effectPoint>
+		<effectRange>400</effectRange>
+		<isDebuff>true</isDebuff>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>3</lvlBonusRate>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88019" toLevel="1" name="觸發極星爆">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="88020" toLevel="1" name="觸發涌浪">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="88021" toLevel="13" name="騎襲：強化">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_knight_assault_eva2</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>250</castRange>
+		<coolTime>400</coolTime>
+		<effectPoint>
+			<value level="1">-3800</value>
+			<value level="2">-3900</value>
+			<value level="3">-4000</value>
+			<value level="4">-4100</value>
+			<value level="5">-4200</value>
+			<value level="6">-4300</value>
+			<value level="7">-4400</value>
+			<value level="8">-4500</value>
+			<value level="9">-4550</value>
+			<value level="10">-4600</value>
+			<value level="11">-4650</value>
+			<value level="12">-4700</value>
+			<value level="13">-4750</value>
+		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">63</value>
+			<value level="2">64</value>
+			<value level="3">66</value>
+			<value level="4">67</value>
+			<value level="5">69</value>
+			<value level="6">70</value>
+			<value level="7">72</value>
+			<value level="8">73</value>
+			<value level="9">75</value>
+			<value level="10">76</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+			<value level="13">79</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>88048</skillId> 
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
+			</effect>
+		</selfEffects>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">4907</value>
+					<value level="2">5046</value>
+					<value level="3">5186</value>
+					<value level="4">5327</value>
+					<value level="5">5468</value>
+					<value level="6">5608</value>
+					<value level="7">5749</value>
+					<value level="8">5891</value>
+					<value level="9">6067</value>
+					<value level="10">6249</value>
+					<value level="11">6436</value>
+					<value level="12">6629</value>
+					<value level="13">6827</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+				<repeatCount>2</repeatCount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88022" toLevel="9" name="伊娃狂暴：強化">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill10103_2</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>12-0</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>900</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-7600</value>
+			<value level="2">-8400</value>
+			<value level="3">-8800</value>
+			<value level="4">-9000</value>
+			<value level="5">-9100</value>
+			<value level="6">-9200</value>
+			<value level="7">-9300</value>
+			<value level="8">-9400</value>
+			<value level="9">-9500</value>
+		</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">95</value>
+			<value level="2">101</value>
+			<value level="3">105</value>
+			<value level="4">107</value>
+			<value level="5">109</value>
+			<value level="6">110</value>
+			<value level="7">111</value>
+			<value level="8">112</value>
+			<value level="9">113</value>
+		</mpConsume>
+		<reuseDelay>20000</reuseDelay>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">6480</value>
+					<value level="2">6804</value>
+					<value level="3">6940</value>
+					<value level="4">7079</value>
+					<value level="5">7291</value>
+					<value level="6">7510</value>
+					<value level="7">7735</value>
+					<value level="8">7967</value>
+					<value level="9">8206</value>
+				</power>
+				<criticalChance>15</criticalChance>
+				<pDefMod>0.85</pDefMod>
+			</effect>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">6480</value>
+					<value level="2">6804</value>
+					<value level="3">6940</value>
+					<value level="4">7079</value>
+					<value level="5">7291</value>
+					<value level="6">7510</value>
+					<value level="7">7735</value>
+					<value level="8">7967</value>
+					<value level="9">8206</value>
+				</power>
+				<criticalChance>15</criticalChance>
+				<pDefMod>0.85</pDefMod>
+				<repeatCount>2</repeatCount>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>87975</skillId> 
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>2</skillLevelScaleTo>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88023" toLevel="8" name="聖水旋襲：強化">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_aquatic_spin_rush2</icon>
+		<operateType>DA1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>6-6</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>150</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>700</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-7600</value>
+			<value level="2">-7900</value>
+			<value level="3">-8200</value>
+			<value level="4">-8400</value>
+			<value level="5">-8600</value>
+			<value level="6">-8800</value>
+			<value level="7">-8900</value>
+			<value level="8">-9000</value>
+		</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">70</value>
+			<value level="2">73</value>
+			<value level="3">76</value>
+			<value level="4">78</value>
+			<value level="5">80</value>
+			<value level="6">82</value>
+			<value level="7">83</value>
+			<value level="8">84</value>
+		</mpConsume>
+		<reuseDelay>3000</reuseDelay>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">4300</value>
+					<value level="2">4472</value>
+					<value level="3">4651</value>
+					<value level="4">4790</value>
+					<value level="5">4934</value>
+					<value level="6">5033</value>
+					<value level="7">5083</value>
+					<value level="8">5134</value>
+				</power>
+				<criticalChance>15</criticalChance>
+				<pDefMod>0.85</pDefMod>
+			</effect>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">4300</value>
+					<value level="2">4472</value>
+					<value level="3">4651</value>
+					<value level="4">4790</value>
+					<value level="5">4934</value>
+					<value level="6">5033</value>
+					<value level="7">5083</value>
+					<value level="8">5134</value>
+				</power>
+				<criticalChance>15</criticalChance>
+				<pDefMod>0.85</pDefMod>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>88018</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">8</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88024" toLevel="1" name="極限防禦：庇護-展示">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="88026" toLevel="1" name="流暢">
+		
+		<icon>icon.s_vivace_muse</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>			
+			<effect name="MaxHp">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>1000</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>89023</existingSkillId> 
+				<replacementSkillId>89037</replacementSkillId> 
+			</effect>			
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>87101</existingSkillId> 
+				<replacementSkillId>45583</replacementSkillId> 
+			</effect>			
+			
+			
+			</effects>
+	</skill>
+	<skill id="88027" toLevel="1" name="召喚席林銅像">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="88028" toLevel="1" name="輕快">
+		
+		<icon>icon.s_vivace_dancer</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>			
+			<effect name="MaxHp">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>1000</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>89024</existingSkillId> 
+				<replacementSkillId>89039</replacementSkillId> 
+			</effect>			
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>87103</existingSkillId> 
+				<replacementSkillId>45586</replacementSkillId> 
+			</effect>			
+			
+			
+			</effects>
+	</skill>
+	<skill id="88029" toLevel="1" name="麻痺">
+		
+		<icon>icon.s_mez_shilen_paralyze</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>2</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<activateRate>50</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>-800</effectPoint>
+		<effectRange>1400</effectRange>
+		<hitTime>-1</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>90</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="88030" toLevel="1" name="麻痺">
+		
+		<icon>icon.s_mez_shilen_paralyze</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>2</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-850</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> 
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>90</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="AdditionalPotionHpPer">
+				<amount>-50</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88031" toLevel="1" name="雷之主">
+		
+		<icon>icon.s_owner_of_thunder</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait">
+				<PARALYZE>15</PARALYZE>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>10094</existingSkillId> 
+				<replacementSkillId>87995</replacementSkillId> 
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88032" toLevel="1" name="席琳詛咒-人類">
+		
+		<icon>icon.s_debuff_cos_human1</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>10</abnormalTime>
+		<activateRate>-1</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-400</effectPoint>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>85</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="BlockRush" />
+		</effects>
+	</skill>
+	<skill id="88033" toLevel="1" name="席琳詛咒-精靈">
+		
+		<icon>icon.s_debuff_cos_elf1</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>10</abnormalTime>
+		<activateRate>-1</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-400</effectPoint>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>85</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="MagicMpCost">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>2</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88034" toLevel="1" name="席琳詛咒-黑暗精靈">
+		
+		<icon>icon.s_debuff_cos_darkelf1</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>10</abnormalTime>
+		<activateRate>-1</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-400</effectPoint>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>85</magicLevel>
+		<trait>ANOMALY</trait>
+	</skill>
+	<skill id="88035" toLevel="1" name="席琳詛咒-半獸人">
+		
+		<icon>icon.s_debuff_cos_orc1</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>10</abnormalTime>
+		<activateRate>-1</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-400</effectPoint>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>85</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88036" toLevel="1" name="席琳詛咒-矮人">
+		
+		<icon>icon.s_debuff_cos_dwarf1</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>10</abnormalTime>
+		<activateRate>-1</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-400</effectPoint>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>85</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="MaxHp">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88037" toLevel="1" name="席琳詛咒-真闇天使">
+		
+		<icon>icon.s_debuff_cos_kamael1</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>10</abnormalTime>
+		<activateRate>-1</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-400</effectPoint>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>85</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="Reuse">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>2</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>200</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88038" toLevel="1" name="席琳詛咒-風靈">
+		
+		<icon>icon.s_debuff_cos_sylph1</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>10</abnormalTime>
+		<activateRate>-1</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-400</effectPoint>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>85</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88039" toLevel="1" name="席琳詛咒-古代精靈">
+		
+		<icon>icon.s_debuff_cos_highelf1</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>10</abnormalTime>
+		<activateRate>-1</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-400</effectPoint>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>85</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="HealEffect">
+				<amount>-70</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88040" toLevel="2" name="武士之力">
+		
+		
+		
+		
+		
+		<icon>icon.s_strength_of_knight_eva</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">3</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">5</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">8</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">8</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">13</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">10</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">18</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">100</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">100</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">100</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">100</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">500</value>
+					<value level="2">1500</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">2000</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">2500</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">3000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">800</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">1200</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>
+					<value level="1">88043</value> 
+					<value level="2">88043</value> 
+				</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+				<min>
+					<value level="1">2001</value>
+					<value level="2">2001</value>
+				</min>
+			</effect>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>
+					<value level="1">88042</value> 
+					<value level="2">88042</value> 
+				</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+				<min>
+					<value level="1">1001</value>
+					<value level="2">1001</value>
+				</min>
+				<max>
+					<value level="1">2000</value>
+					<value level="2">2000</value>
+				</max>
+			</effect>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>
+					<value level="1">88041</value> 
+					<value level="2">88041</value> 
+				</skillId>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+				<min>
+					<value level="1">1</value>
+					<value level="2">1</value>
+				</min>
+				<max>
+					<value level="1">1000</value>
+					<value level="2">1000</value>
+				</max>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88041" toLevel="2" name="武士之力Lv1">
+		
+		
+		<icon>icon.s_strength_of_knight_eva</icon>
+		<operateType>A5</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>STAT_SKILL_COMBAT</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<canBeDispelled>false</canBeDispelled>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">1000</value>
+					<value level="2">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88042" toLevel="2" name="武士之力Lv2">
+		
+		
+		<icon>icon.s_strength_of_knight_eva</icon>
+		<operateType>A5</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>STAT_SKILL_COMBAT</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<canBeDispelled>false</canBeDispelled>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">1500</value>
+					<value level="2">3000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AttackTrait" fromLevel="2" toLevel="2">
+				<PULL>15</PULL>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88043" toLevel="2" name="武士之力Lv3">
+		
+		
+		<icon>icon.s_strength_of_knight_eva</icon>
+		<operateType>A5</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>STAT_SKILL_COMBAT</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<canBeDispelled>false</canBeDispelled>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">2000</value>
+					<value level="2">4000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AttackTrait" fromLevel="2" toLevel="2">
+				<PULL>25</PULL>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88044" toLevel="2" name="武士之力">
+		
+		
+		
+		
+		
+		<icon>icon.s_strength_of_knight_shilen</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">3</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">5</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">8</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">8</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">13</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">5</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">10</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">18</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">30</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">100</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">100</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">100</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">100</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">500</value>
+					<value level="2">1500</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">2000</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">2500</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">3000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">800</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">1200</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>88045</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+				<min>1</min>
+				<max>999</max>
+			</effect>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>88046</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+				<min>1000</min>
+				<max>1999</max>
+			</effect>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>88047</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+				<min>2000</min>
+				<max>999999</max>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88045" toLevel="2" name="武士之力Lv1">
+		
+		
+		<icon>icon.s_strength_of_knight_shilen</icon>
+		<operateType>A5</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>STAT_SKILL_COMBAT</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<canBeDispelled>false</canBeDispelled>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">1000</value>
+					<value level="2">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88046" toLevel="2" name="武士之力Lv2">
+		
+		
+		<icon>icon.s_strength_of_knight_shilen</icon>
+		<operateType>A5</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>STAT_SKILL_COMBAT</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<canBeDispelled>false</canBeDispelled>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">1500</value>
+					<value level="2">3000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AttackTrait" fromLevel="2" toLevel="2">
+				<PARALYZE>15</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88047" toLevel="2" name="武士之力Lv3">
+		
+		
+		<icon>icon.s_strength_of_knight_shilen</icon>
+		<operateType>A5</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>STAT_SKILL_COMBAT</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<canBeDispelled>false</canBeDispelled>
+		<isMagic>5</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">2000</value>
+					<value level="2">4000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AttackTrait" fromLevel="2" toLevel="2">
+				<PARALYZE>25</PARALYZE>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88048" toLevel="3" name="聖水力3階段">
+		
+		
+		
+		<icon>icon.s_aquatic_power</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLevel>
+		<abnormalTime>8</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<isMagic>5</isMagic>
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">8</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">8</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower" fromLevel="3" toLevel="3">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88049" toLevel="13" name="精通騎士武器">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_templar_weapon_mastery</icon>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">10</value>
+					<value level="3">11</value>
+					<value level="4">11</value>
+					<value level="5">12</value>
+					<value level="6">13</value>
+					<value level="7">14</value>
+					<value level="8">15</value>
+					<value level="9">16</value>
+					<value level="10">17</value>
+					<value level="11">18</value>
+					<value level="12">19</value>
+					<value level="13">20</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">585</value>
+					<value level="2">600</value>
+					<value level="3">650</value>
+					<value level="4">700</value>
+					<value level="5">750</value>
+					<value level="6">800</value>
+					<value level="7">850</value>
+					<value level="8">1000</value>
+					<value level="9">1100</value>
+					<value level="10">1200</value>
+					<value level="11">1300</value>
+					<value level="12">1400</value>
+					<value level="13">1500</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">2</value>
+					<value level="9">2</value>
+					<value level="10">2</value>
+					<value level="11">3</value>
+					<value level="12">3</value>
+					<value level="13">3</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate" fromLevel="9" toLevel="13">
+				<amount>
+					<value level="9">2</value>
+					<value level="10">4</value>
+					<value level="11">6</value>
+					<value level="12">8</value>
+					<value level="13">10</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage" fromLevel="9" toLevel="13">
+				<amount>
+					<value level="9">2</value>
+					<value level="10">4</value>
+					<value level="11">6</value>
+					<value level="12">8</value>
+					<value level="13">10</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</effect>
+			<effect name="AttackTrait">
+				<SHOCK>15</SHOCK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88050" toLevel="13" name="精通騎士護甲">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_templar_armor_mastery</icon>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="EquipArmor">
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">320</value>
+					<value level="2">367</value>
+					<value level="3">414</value>
+					<value level="4">461</value>
+					<value level="5">508</value>
+					<value level="6">555</value>
+					<value level="7">602</value>
+					<value level="8">650</value>
+					<value level="9">700</value>
+					<value level="10">750</value>
+					<value level="11">800</value>
+					<value level="12">900</value>
+					<value level="13">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">122</value>
+					<value level="2">160</value>
+					<value level="3">184</value>
+					<value level="4">246</value>
+					<value level="5">308</value>
+					<value level="6">370</value>
+					<value level="7">432</value>
+					<value level="8">500</value>
+					<value level="9">550</value>
+					<value level="10">600</value>
+					<value level="11">650</value>
+					<value level="12">700</value>
+					<value level="13">750</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="ShieldDefenceRate">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">11</value>
+					<value level="4">12</value>
+					<value level="5">14</value>
+					<value level="6">16</value>
+					<value level="7">18</value>
+					<value level="8">20</value>
+					<value level="9">20</value>
+					<value level="10">20</value>
+					<value level="11">20</value>
+					<value level="12">20</value>
+					<value level="13">20</value>
+				</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>35</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>HEAVY</item>
+				</armorType>
+			</effect>
+			<effect name="DefenceTrait">
+				<BOW>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+					<value level="5">10</value>
+					<value level="6">10</value>
+					<value level="7">10</value>
+					<value level="8">10</value>
+					<value level="9">11</value>
+					<value level="10">12</value>
+					<value level="11">13</value>
+					<value level="12">14</value>
+					<value level="13">15</value>
+				</BOW>
+				<PISTOLS>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+					<value level="5">10</value>
+					<value level="6">10</value>
+					<value level="7">10</value>
+					<value level="8">10</value>
+					<value level="9">11</value>
+					<value level="10">12</value>
+					<value level="11">13</value>
+					<value level="12">14</value>
+					<value level="13">15</value>
+				</PISTOLS>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88051" toLevel="13" name="騎襲-超越">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_knight_assault_eva2</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>5-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>250</castRange>
+		<coolTime>400</coolTime>
+		<effectPoint>
+			<value level="1">-7600</value>
+			<value level="2">-7800</value>
+			<value level="3">-8000</value>
+			<value level="4">-8200</value>
+			<value level="5">-8400</value>
+			<value level="6">-8600</value>
+			<value level="7">-8800</value>
+			<value level="8">-9000</value>
+			<value level="9">-9100</value>
+			<value level="10">-9200</value>
+			<value level="11">-9300</value>
+			<value level="12">-9400</value>
+			<value level="13">-9500</value>
+		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">63</value>
+			<value level="2">64</value>
+			<value level="3">66</value>
+			<value level="4">67</value>
+			<value level="5">69</value>
+			<value level="6">70</value>
+			<value level="7">72</value>
+			<value level="8">73</value>
+			<value level="9">75</value>
+			<value level="10">76</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+			<value level="13">79</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>88048</skillId> 
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
+			</effect>
+		</selfEffects>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">4907</value>
+					<value level="2">5046</value>
+					<value level="3">5186</value>
+					<value level="4">5327</value>
+					<value level="5">5468</value>
+					<value level="6">5608</value>
+					<value level="7">5749</value>
+					<value level="8">5891</value>
+					<value level="9">6067</value>
+					<value level="10">6249</value>
+					<value level="11">6436</value>
+					<value level="12">6629</value>
+					<value level="13">6827</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88052" toLevel="13" name="騎襲-超越">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_knight_assault_shilen2</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>5-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>250</castRange>
+		<coolTime>400</coolTime>
+		<effectPoint>
+			<value level="1">-7600</value>
+			<value level="2">-7800</value>
+			<value level="3">-8000</value>
+			<value level="4">-8200</value>
+			<value level="5">-8400</value>
+			<value level="6">-8600</value>
+			<value level="7">-8800</value>
+			<value level="8">-9000</value>
+			<value level="9">-9100</value>
+			<value level="10">-9200</value>
+			<value level="11">-9300</value>
+			<value level="12">-9400</value>
+			<value level="13">-9500</value>
+		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">63</value>
+			<value level="2">64</value>
+			<value level="3">66</value>
+			<value level="4">67</value>
+			<value level="5">69</value>
+			<value level="6">70</value>
+			<value level="7">72</value>
+			<value level="8">73</value>
+			<value level="9">75</value>
+			<value level="10">76</value>
+			<value level="11">77</value>
+			<value level="12">78</value>
+			<value level="13">79</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>88059</skillId> 
+				<skillLevel>1</skillLevel>
+				<skillLevelScaleTo>3</skillLevelScaleTo>
+			</effect>
+		</selfEffects>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">7107</value>
+					<value level="2">7246</value>
+					<value level="3">7386</value>
+					<value level="4">7527</value>
+					<value level="5">7668</value>
+					<value level="6">7808</value>
+					<value level="7">7949</value>
+					<value level="8">8091</value>
+					<value level="9">8267</value>
+					<value level="10">8449</value>
+					<value level="11">8636</value>
+					<value level="12">8829</value>
+					<value level="13">9027</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88053" toLevel="2" name="管理武器裝備">
+		
+		
+		<icon>icon.s_perfect_shield_eva</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ShieldDefenceIgnoreRemoval">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88054" toLevel="7" name="投擲水盾">
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_shield_throwing_eva</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>6-0</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>600</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1580</value>
+			<value level="3">-1620</value>
+			<value level="4">-1660</value>
+			<value level="5">-1700</value>
+			<value level="6">-1740</value>
+			<value level="7">-1780</value>
+		</effectPoint>
+		<effectRange>800</effectRange>
+		<hitTime>800</hitTime>
+		<isMagic>0</isMagic>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">79</value>
+			<value level="3">81</value>
+			<value level="4">83</value>
+			<value level="5">85</value>
+			<value level="6">87</value>
+			<value level="7">89</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">66</value>
+			<value level="2">68</value>
+			<value level="3">69</value>
+			<value level="4">72</value>
+			<value level="5">73</value>
+			<value level="6">75</value>
+			<value level="7">76</value>
+		</mpConsume>
+		<reuseDelay>10000</reuseDelay>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">7751</value>
+					<value level="2">7961</value>
+					<value level="3">8173</value>
+					<value level="4">8377</value>
+					<value level="5">8596</value>
+					<value level="6">8809</value>
+					<value level="7">9021</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.8</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+		<pvpEffects>
+			<effect name="CallSkill">
+				<skillId>88063</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+				</skillLevel>
+			</effect>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="CallSkill">
+				<skillId>88064</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+				</skillLevel>
+			</effect>
+		</pveEffects>
+	</skill>
+	<skill id="88055" toLevel="2" name="管理武器裝備">
+		
+		
+		<icon>icon.s_perfect_shield_shilen</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ShieldDefenceIgnoreRemoval">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus" fromLevel="2" toLevel="2">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88056" toLevel="7" name="投擲暗盾">
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_shield_throwing_shilen2</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>6-6</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>600</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1580</value>
+			<value level="3">-1620</value>
+			<value level="4">-1660</value>
+			<value level="5">-1700</value>
+			<value level="6">-1740</value>
+			<value level="7">-1780</value>
+		</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitTime>800</hitTime>
+		<isMagic>0</isMagic>
+		<itemConsumeCount>3</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">79</value>
+			<value level="3">81</value>
+			<value level="4">83</value>
+			<value level="5">85</value>
+			<value level="6">87</value>
+			<value level="7">89</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">66</value>
+			<value level="2">68</value>
+			<value level="3">69</value>
+			<value level="4">72</value>
+			<value level="5">73</value>
+			<value level="6">75</value>
+			<value level="7">76</value>
+		</mpConsume>
+		<reuseDelay>10000</reuseDelay>
+		<conditions>
+			<condition name="EquipShield" />
+		</conditions>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">7751</value>
+					<value level="2">7961</value>
+					<value level="3">8173</value>
+					<value level="4">8377</value>
+					<value level="5">8596</value>
+					<value level="6">8809</value>
+					<value level="7">9021</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.8</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+		</effects>
+		<pvpEffects>
+			<effect name="CallSkill">
+				<skillId>88065</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+				</skillLevel>
+			</effect>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="CallSkill">
+				<skillId>88066</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+				</skillLevel>
+			</effect>
+		</pveEffects>
+	</skill>
+	<skill id="88057" toLevel="1" name="麻痺">
+		
+		<icon>icon.s_mez_shilen_paralyze</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-850</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> 
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>90</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="BlockActions" />
+			<effect name="Speed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88058" toLevel="1" name="極限防禦：庇護-展示">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="88059" toLevel="3" name="閃電力3階段">
+		
+		
+		
+		<icon>icon.s_lightning_power</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLevel>
+		<abnormalTime>8</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<isMagic>5</isMagic>
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">8</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">8</value>
+					<value level="3">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower" fromLevel="3" toLevel="3">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88060" toLevel="1" name="雷擊強化">
+		
+		<icon>icon.s_lightning_break_wave2</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>15</abnormalTime>
+		<abnormalVisualEffect>H_R_LIGHTNING_BREAK_WAVE_A_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<isMagic>5</isMagic>
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			
+		</effects>
+	</skill>
+	<skill id="88061" toLevel="1" name="極限防禦：庇護-3秒輔助魔法">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>3</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		
+	</skill>
+	<skill id="88062" toLevel="1" name="極限防禦：庇護-3秒輔助魔法">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>3</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="SkillEvasion">
+				<magicType>0</magicType>
+				<amount>50</amount>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>1</magicType>
+				<amount>50</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88063" toLevel="7" name="投擲水盾">
+		
+		<icon>icon.s_shield_throwing_eva</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>T_CRT_RATE_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1580</value>
+			<value level="3">-1620</value>
+			<value level="4">-1660</value>
+			<value level="5">-1700</value>
+			<value level="6">-1740</value>
+			<value level="7">-1780</value>
+		</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">79</value>
+			<value level="3">81</value>
+			<value level="4">83</value>
+			<value level="5">85</value>
+			<value level="6">87</value>
+			<value level="7">89</value>
+		</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88064" toLevel="7" name="投擲水盾">
+		
+		<icon>icon.s_shield_throwing_eva</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>PD_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1580</value>
+			<value level="3">-1620</value>
+			<value level="4">-1660</value>
+			<value level="5">-1700</value>
+			<value level="6">-1740</value>
+			<value level="7">-1780</value>
+		</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">79</value>
+			<value level="3">81</value>
+			<value level="4">83</value>
+			<value level="5">85</value>
+			<value level="6">87</value>
+			<value level="7">89</value>
+		</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>-25</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88065" toLevel="7" name="投擲暗盾">
+		
+		<icon>icon.s_shield_throwing_shilen2</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>T_CRT_RATE_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1580</value>
+			<value level="3">-1620</value>
+			<value level="4">-1660</value>
+			<value level="5">-1700</value>
+			<value level="6">-1740</value>
+			<value level="7">-1780</value>
+		</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">79</value>
+			<value level="3">81</value>
+			<value level="4">83</value>
+			<value level="5">85</value>
+			<value level="6">87</value>
+			<value level="7">89</value>
+		</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88066" toLevel="7" name="投擲暗盾">
+		
+		<icon>icon.s_shield_throwing_shilen2</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>PD_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>
+			<value level="1">-1520</value>
+			<value level="2">-1580</value>
+			<value level="3">-1620</value>
+			<value level="4">-1660</value>
+			<value level="5">-1700</value>
+			<value level="6">-1740</value>
+			<value level="7">-1780</value>
+		</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">79</value>
+			<value level="3">81</value>
+			<value level="4">83</value>
+			<value level="5">85</value>
+			<value level="6">87</value>
+			<value level="7">89</value>
+		</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>-25</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88067" toLevel="5" name="戰訓">
+		
+		
+		
+		
+		
+		<icon>icon.skill0985</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>1200</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitTime>1000</hitTime>
+		<itemConsumeCount>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">5</value>
+			<value level="5">10</value>
+		</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">62</value>
+			<value level="3">76</value>
+			<value level="4">80</value>
+			<value level="5">85</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">86</value>
+			<value level="2">89</value>
+			<value level="3">92</value>
+			<value level="4">95</value>
+			<value level="5">98</value>
+		</mpConsume>
+		<reuseDelay>10000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">60</value>
+					<value level="3">100</value>
+					<value level="4">200</value>
+					<value level="5">400</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">35</value>
+					<value level="4">60</value>
+					<value level="5">100</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">1</value>
+					<value level="5">2</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">1</value>
+					<value level="5">2</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88068" toLevel="10" name="和諧活力魔法-防禦">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.life_return</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>1200</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>1000</hitTime>
+		<itemConsumeCount>
+			<value level="1">5</value>
+			<value level="2">5</value>
+			<value level="3">5</value>
+			<value level="4">10</value>
+			<value level="5">10</value>
+			<value level="6">10</value>
+			<value level="7">10</value>
+			<value level="8">10</value>
+			<value level="9">10</value>
+			<value level="10">10</value>
+		</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">54</value>
+			<value level="3">64</value>
+			<value level="4">76</value>
+			<value level="5">82</value>
+			<value level="6">84</value>
+			<value level="7">86</value>
+			<value level="8">88</value>
+			<value level="9">89</value>
+			<value level="10">90</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+			<value level="4">60</value>
+			<value level="5">70</value>
+			<value level="6">80</value>
+			<value level="7">90</value>
+			<value level="8">100</value>
+			<value level="9">110</value>
+			<value level="10">120</value>
+		</mpConsume>
+		<reuseDelay>10000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+					<value level="3">200</value>
+					<value level="4">400</value>
+					<value level="5">500</value>
+					<value level="6">700</value>
+					<value level="7">1000</value>
+					<value level="8">1300</value>
+					<value level="9">1600</value>
+					<value level="10">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+					<value level="3">200</value>
+					<value level="4">400</value>
+					<value level="5">500</value>
+					<value level="6">700</value>
+					<value level="7">1000</value>
+					<value level="8">1300</value>
+					<value level="9">1600</value>
+					<value level="10">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+					<value level="3">200</value>
+					<value level="4">400</value>
+					<value level="5">500</value>
+					<value level="6">700</value>
+					<value level="7">1000</value>
+					<value level="8">1300</value>
+					<value level="9">1600</value>
+					<value level="10">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+					<value level="5">100</value>
+					<value level="6">150</value>
+					<value level="7">200</value>
+					<value level="8">300</value>
+					<value level="9">400</value>
+					<value level="10">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamageReceived" fromLevel="4" toLevel="10">
+				<attackerType>Creature</attackerType>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<skillId>47293</skillId> 
+				<skillLevel>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">3</value>
+					<value level="9">3</value>
+					<value level="10">5</value>
+				</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByKill">
+				<chance>100</chance>
+				<skillId>88070</skillId> 
+				<targetType>SELF</targetType>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88069" toLevel="10" name="和諧活力魔法-攻擊">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.life_steal</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>1200</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>1000</hitTime>
+		<itemConsumeCount>
+			<value level="1">5</value>
+			<value level="2">5</value>
+			<value level="3">5</value>
+			<value level="4">10</value>
+			<value level="5">10</value>
+			<value level="6">10</value>
+			<value level="7">10</value>
+			<value level="8">10</value>
+			<value level="9">10</value>
+			<value level="10">10</value>
+		</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">54</value>
+			<value level="3">64</value>
+			<value level="4">76</value>
+			<value level="5">82</value>
+			<value level="6">84</value>
+			<value level="7">86</value>
+			<value level="8">88</value>
+			<value level="9">89</value>
+			<value level="10">90</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+			<value level="4">60</value>
+			<value level="5">70</value>
+			<value level="6">80</value>
+			<value level="7">90</value>
+			<value level="8">100</value>
+			<value level="9">110</value>
+			<value level="10">120</value>
+		</mpConsume>
+		<reuseDelay>10000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+					<value level="3">200</value>
+					<value level="4">400</value>
+					<value level="5">500</value>
+					<value level="6">700</value>
+					<value level="7">1000</value>
+					<value level="8">1300</value>
+					<value level="9">1600</value>
+					<value level="10">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+					<value level="3">200</value>
+					<value level="4">400</value>
+					<value level="5">500</value>
+					<value level="6">700</value>
+					<value level="7">1000</value>
+					<value level="8">1300</value>
+					<value level="9">1600</value>
+					<value level="10">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+					<value level="3">200</value>
+					<value level="4">400</value>
+					<value level="5">500</value>
+					<value level="6">700</value>
+					<value level="7">1000</value>
+					<value level="8">1300</value>
+					<value level="9">1600</value>
+					<value level="10">2000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">50</value>
+					<value level="5">100</value>
+					<value level="6">150</value>
+					<value level="7">200</value>
+					<value level="8">300</value>
+					<value level="9">400</value>
+					<value level="10">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt" fromLevel="4" toLevel="10">
+				<attackerType>Creature</attackerType>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>47295</skillId> 
+				<skillLevel>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">3</value>
+					<value level="9">3</value>
+					<value level="10">4</value>
+				</skillLevel>
+				<allowSkillAttack>true</allowSkillAttack>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt" fromLevel="4" toLevel="10">
+				<attackerType>Creature</attackerType>
+				<chance>100</chance>
+				<targetType>SELF</targetType>
+				<minDamage>1</minDamage>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>47295</skillId> 
+				<skillLevel>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">3</value>
+					<value level="9">3</value>
+					<value level="10">4</value>
+				</skillLevel>
+				<allowSkillAttack>true</allowSkillAttack>
+			</effect>
+			<effect name="TriggerSkillByKill">
+				<chance>100</chance>
+				<skillId>88070</skillId> 
+				<targetType>SELF</targetType>
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">3</value>
+					<value level="9">4</value>
+					<value level="10">5</value>
+				</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88070" toLevel="5" name="和諧活力魔法-恢復MP">
+		<icon>icon.skill19169</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<reuseDelay>3000</reuseDelay>
+		<effects>
+			<effect name="Mp">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">30</value>
+					<value level="3">60</value>
+					<value level="4">90</value>
+					<value level="5">120</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88071" toLevel="1" name="水之主">
+		
+		<icon>icon.s_owner_of_water</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="AttackTrait">
+				<PULL>15</PULL>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>1898</existingSkillId> 
+				<replacementSkillId>87978</replacementSkillId> 
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>53003</existingSkillId> 
+				<replacementSkillId>88017</replacementSkillId> 
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88072" toLevel="1" name="席琳Assist">
+		<icon>icon.assist_of_shilen</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="88073" toLevel="8" name="麻痺">
+		
+		<icon>icon.s_mez_shilen_paralyze</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>2</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<activateRate>60</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<trait>PARALYZE</trait>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>461;35016;50196</allowedSkills> 
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88075" toLevel="1" name="涌浪">
+		<icon>icon.skill4280_new</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-760</effectPoint>
+	</skill>
+	<skill id="88076" toLevel="1" name="觸發涌浪">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="88077" toLevel="2" name="水屏障">
+		
+		<icon>icon.skill31167</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+	</skill>
+	<skill id="88078" toLevel="1" name="席林銅像-持續展示">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="88079" toLevel="1" name="席林銅像-技能">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>200</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="88080" toLevel="1" name="被動增加一般射程距離">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="88081" toLevel="1" name="致命穿刺">
+		<icon>icon.skill0321</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>SINGLE</affectScope>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-2000</effectPoint>
+		<effectPoint>-2000</effectPoint>
+		<effectRange>500</effectRange>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>EVA_SHELTER_ABSORB,30</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88082" toLevel="1" name="弱點穿破">
+		
+		
+		
+		
+		<icon>icon.s_find_weakness</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+				<value level="1">5</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">5</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">5</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+				<value level="1">0</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">3</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">6</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>
+				<value level="1">5</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>
+				<value level="1">5</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>
+				<value level="1">5</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>
+				<value level="1">5</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>
+				<value level="1">5</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>
+				<value level="1">5</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1001" fromSubLevel="1001">8</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1002" fromSubLevel="1002">13</value>
+				<value toLevel="1" fromLevel="1" toSubLevel="1003" fromSubLevel="1003">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88083" toLevel="1" name="破傷風">
+		
+		<icon>icon.s_assassin_combo_attack_debuff</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalTime>5</abnormalTime>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>200</coolTime>
+		<effectPoint>-999</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>0</isMagic>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">-5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">1</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<DAGGER>-5</DAGGER>
+				<DUALDAGGER>-5</DUALDAGGER>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88084" toLevel="1" name="暗殺">
+		
+		<icon>icon.s_assassinate</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>15</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<hitTime>100</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>88084</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88085" toLevel="1" name="暗殺">
+		<icon>icon.s_assassinate</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-999</effectPoint>
+		<effectPoint>-999</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitTime>0</hitTime>
+		<isMagic>0</isMagic>
+		<effects>
+			<effect name="PhysicalDamage">
+				<pAtkMod>2.0</pAtkMod>
+				<criticalChance>15</criticalChance>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.6</pDefMod>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88086" toLevel="1" name="暗殺">
+		<icon>icon.s_assassinate</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalTime>0</abnormalTime>
+		<affectLimit>3-3</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>100</affectRange>
+		<affectScope>RANGE</affectScope>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-999</effectPoint>
+		<effectPoint>-999</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitTime>0</hitTime>
+		<isMagic>0</isMagic>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>6500</power>
+				<criticalChance>15</criticalChance>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88087" toLevel="8" name="連擊-超越">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_assassin_triple_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>
+			<value level="1">-390</value>
+			<value level="2">-405</value>
+			<value level="3">-420</value>
+			<value level="4">-430</value>
+			<value level="5">-440</value>
+			<value level="6">-450</value>
+			<value level="7">-460</value>
+			<value level="8">-470</value>
+		</effectPoint>
+		<hitTime>2000</hitTime>
+		<mpConsume>
+			<value level="1">77</value>
+			<value level="2">87</value>
+			<value level="3">91</value>
+			<value level="4">93</value>
+			<value level="5">95</value>
+			<value level="6">97</value>
+			<value level="7">99</value>
+			<value level="8">101</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="88088" toLevel="9" name="未使用-衝擊之刃-超越">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill10318new</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-1700</value>
+			<value level="2">-1720</value>
+			<value level="3">-1740</value>
+			<value level="4">-1760</value>
+			<value level="5">-1780</value>
+			<value level="6">-1800</value>
+			<value level="7">-1820</value>
+			<value level="8">-1840</value>
+			<value level="9">-1860</value>
+		</effectPoint>
+		<hitTime>1900</hitTime>
+		<mpConsume>
+			<value level="1">67</value>
+			<value level="2">68</value>
+			<value level="3">69</value>
+			<value level="4">70</value>
+			<value level="5">71</value>
+			<value level="6">72</value>
+			<value level="7">73</value>
+			<value level="8">74</value>
+			<value level="9">75</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="88090" toLevel="10" name="三環連箭-超越">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_triple_shot</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-380</value>
+			<value level="2">-395</value>
+			<value level="3">-410</value>
+			<value level="4">-420</value>
+			<value level="5">-425</value>
+			<value level="6">-430</value>
+			<value level="7">-435</value>
+			<value level="8">-440</value>
+			<value level="9">-445</value>
+			<value level="10">-450</value>
+		</effectPoint>
+		<hitTime>2800</hitTime>
+		<mpConsume>
+			<value level="1">114</value>
+			<value level="2">118</value>
+			<value level="3">123</value>
+			<value level="4">126</value>
+			<value level="5">127</value>
+			<value level="6">129</value>
+			<value level="7">130</value>
+			<value level="8">132</value>
+			<value level="9">133</value>
+			<value level="10">135</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="88091" toLevel="15" name="靈之破擊-超越">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0496</icon>
+		<operateType>A1</operateType>
+		<castRange>60</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-120</value>
+			<value level="2">-170</value>
+			<value level="3">-220</value>
+			<value level="4">-270</value>
+			<value level="5">-320</value>
+			<value level="6">-370</value>
+			<value level="7">-395</value>
+			<value level="8">-420</value>
+			<value level="9">-445</value>
+			<value level="10">-470</value>
+			<value level="11">-475</value>
+			<value level="12">-480</value>
+			<value level="13">-485</value>
+			<value level="14">-490</value>
+			<value level="15">-495</value>
+		</effectPoint>
+		<hitTime>1300</hitTime>
+		<mpConsume>
+			<value level="1">18</value>
+			<value level="2">25</value>
+			<value level="3">33</value>
+			<value level="4">40</value>
+			<value level="5">48</value>
+			<value level="6">55</value>
+			<value level="7">59</value>
+			<value level="8">63</value>
+			<value level="9">66</value>
+			<value level="10">70</value>
+			<value level="11">72</value>
+			<value level="12">73</value>
+			<value level="13">74</value>
+			<value level="14">75</value>
+			<value level="15">76</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="88092" toLevel="8" name="多重射擊-超越">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill10260</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<coolTime>1000</coolTime>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-500</value>
+			<value level="3">-600</value>
+			<value level="4">-700</value>
+			<value level="5">-750</value>
+			<value level="6">-800</value>
+			<value level="7">-850</value>
+			<value level="8">-900</value>
+		</effectPoint>
+		<hitTime>3200</hitTime>
+		<mpConsume>
+			<value level="1">75</value>
+			<value level="2">93</value>
+			<value level="3">111</value>
+			<value level="4">129</value>
+			<value level="5">138</value>
+			<value level="6">147</value>
+			<value level="7">156</value>
+			<value level="8">165</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+</list>

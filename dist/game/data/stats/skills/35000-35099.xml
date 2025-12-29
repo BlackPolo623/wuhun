@@ -1,0 +1,2072 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="35000" toLevel="1" name="火龍祝福">
+		
+		<icon>icon.bm_blessing_dragon</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>PRESERVE_ABNORMAL</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<canBeDispelled>false</canBeDispelled>
+		<castRange>400</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<effects>
+			<effect name="NoblesseBless" />
+		</effects>
+	</skill>
+	<skill id="35001" toLevel="1" name="火龍加護">
+		
+		<icon>icon.bm_salvation_dragon</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>RESURRECTION_SPECIAL</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>400</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>3000</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>3600000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="ResurrectionSpecial">
+				<power>100</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35002" toLevel="1" name="地龍氣息">
+		
+		<icon>icon.bm_s_dragon_breath</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>-190</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>30</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>60000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35003" toLevel="1" name="地龍保護">
+		
+		<icon>icon.bm_dragon_defence</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<abnormalType>HERO_BUFF</abnormalType>
+		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>438</effectPoint>
+		<hitTime>1000</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>600000</reuseDelay>
+		<effects>
+			<effect name="BlockMove" />
+			<effect name="PhysicalDefence">
+				<amount>3600</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>3240</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-80</amount>
+				<slot>BUFF</slot>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35004" toLevel="1" name="地龍墜飾">
+		
+		<icon>icon.bm_pendant_pvp</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35005" toLevel="11" name="祝福的地龍墜飾">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.bm_pendant_pvp</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">13</value>
+					<value level="4">14</value>
+					<value level="5">15</value>
+					<value level="6">16</value>
+					<value level="7">17</value>
+					<value level="8">18</value>
+					<value level="9">20</value>
+					<value level="10">21</value>
+					<value level="11">24</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">100</value>
+					<value level="5">150</value>
+					<value level="6">200</value>
+					<value level="7">300</value>
+					<value level="8">400</value>
+					<value level="9">500</value>
+					<value level="10">500</value>
+					<value level="11">600</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">60</value>
+					<value level="7">90</value>
+					<value level="8">120</value>
+					<value level="9">150</value>
+					<value level="10">150</value>
+					<value level="11">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value fromLevel="1" toLevel="5">0</value>
+					<value level="6">200</value>
+					<value level="7">300</value>
+					<value level="8">400</value>
+					<value level="9">500</value>
+					<value level="10">500</value>
+					<value level="11">600</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>
+					<value fromLevel="1" toLevel="4">0</value>
+					<value level="5">3</value>
+					<value level="6">5</value>
+					<value level="7">10</value>
+					<value level="8">20</value>
+					<value level="9">20</value>
+					<value level="10">20</value>
+					<value level="11">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>
+					<value fromLevel="1" toLevel="4">0</value>
+					<value level="5">3</value>
+					<value level="6">5</value>
+					<value level="7">10</value>
+					<value level="8">20</value>
+					<value level="9">20</value>
+					<value level="10">20</value>
+					<value level="11">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>
+					<value fromLevel="1" toLevel="4">0</value>
+					<value level="5">3</value>
+					<value level="6">5</value>
+					<value level="7">10</value>
+					<value level="8">20</value>
+					<value level="9">20</value>
+					<value level="10">20</value>
+					<value level="11">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>
+					<value fromLevel="1" toLevel="4">0</value>
+					<value level="5">3</value>
+					<value level="6">5</value>
+					<value level="7">10</value>
+					<value level="8">20</value>
+					<value level="9">20</value>
+					<value level="10">20</value>
+					<value level="11">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>
+					<value fromLevel="1" toLevel="4">0</value>
+					<value level="5">3</value>
+					<value level="6">5</value>
+					<value level="7">10</value>
+					<value level="8">20</value>
+					<value level="9">20</value>
+					<value level="10">20</value>
+					<value level="11">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>
+					<value fromLevel="1" toLevel="4">0</value>
+					<value level="5">3</value>
+					<value level="6">5</value>
+					<value level="7">10</value>
+					<value level="8">20</value>
+					<value level="9">20</value>
+					<value level="10">20</value>
+					<value level="11">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DamageShieldResist">
+				<amount>
+					<value fromLevel="1" toLevel="10">0</value>
+					<value level="11">10</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35006" toLevel="1" name="火龍墜飾">
+		
+		<icon>icon.bm_pendant_pve</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>9</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35007" toLevel="11" name="祝福的火龍墜飾">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.bm_pendant_pve</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">13</value>
+					<value level="4">14</value>
+					<value level="5">15</value>
+					<value level="6">16</value>
+					<value level="7">17</value>
+					<value level="8">18</value>
+					<value level="9">20</value>
+					<value level="10">21</value>
+					<value level="11">24</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">2</value>
+					<value level="5">5</value>
+					<value level="6">10</value>
+					<value level="7">20</value>
+					<value level="8">25</value>
+					<value level="9">30</value>
+					<value level="10">30</value>
+					<value level="11">30</value> 
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value fromLevel="1" toLevel="3">0</value>
+					<value level="4">2</value>
+					<value level="5">5</value>
+					<value level="6">10</value>
+					<value level="7">20</value>
+					<value level="8">25</value>
+					<value level="9">30</value>
+					<value level="10">30</value>
+					<value level="11">30</value> 
+				</amount>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value fromLevel="1" toLevel="4">0</value>
+					<value level="5">10</value>
+					<value level="6">20</value>
+					<value level="7">30</value>
+					<value level="8">40</value>
+					<value level="9">50</value>
+					<value level="10">60</value>
+					<value level="11">80</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>
+					<value fromLevel="1" toLevel="4">0</value>
+					<value level="5">10</value>
+					<value level="6">20</value>
+					<value level="7">30</value>
+					<value level="8">40</value>
+					<value level="9">50</value>
+					<value level="10">60</value>
+					<value level="11">80</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value fromLevel="1" toLevel="7">0</value>
+					<value level="8">5</value>
+					<value level="9">5</value>
+					<value level="10">5</value>
+					<value level="11">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value fromLevel="1" toLevel="7">0</value>
+					<value level="8">5</value>
+					<value level="9">5</value>
+					<value level="10">5</value>
+					<value level="11">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DamageShieldResist">
+				<amount>
+					<value fromLevel="1" toLevel="10">0</value>
+					<value level="11">10</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35008" toLevel="1" name="火龍抗性">
+		
+		<icon>icon.bm_salvation_dragon</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>RESIST_DEBUFF_DISPEL</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>1</effectPoint>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>30000</reuseDelay>
+		<effects>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-50</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35009" toLevel="1" name="黑色面具之力">
+		
+		<icon>icon.accessory_jjoro_masj_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="35010" toLevel="1" name="時髦浪漫圓帽">
+		
+		<icon>icon.accessory_archer_hat2_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_NOT</targetType>
+		<abnormalLevel>7</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MAX_HP_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectRange>900</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>60</magicLevel>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MaxHp">
+				<amount>35</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35011" toLevel="1" name="時髦浪漫圓帽返回">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>7200000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Escape">
+				<escapeType>TOWN</escapeType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35012" toLevel="1" name="海賊王帽">
+		
+		<icon>BranchSys2.icon.zaken_hair_accessary</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="35013" toLevel="1" name="海賊王帽返回">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>7200000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Escape">
+				<escapeType>TOWN</escapeType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35014" toLevel="1" name="惡魔之環">
+		
+		<icon>icon.Accessary_demon_circlet_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>INT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35015" toLevel="1" name="惡魔之環返回">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>7200000</reuseDelay>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Escape">
+				<escapeType>TOWN</escapeType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35016" toLevel="1" name="核心祝福">
+		
+		<icon>icon.accessory_ring_of_core_i03</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<canCastWhileDisabled>true</canCastWhileDisabled>
+		<hitTime>200</hitTime>
+		<isMagic>1</isMagic>
+		<reuseDelay>120000</reuseDelay>
+		<conditions>
+			<condition name="NotFeared" />
+		</conditions>
+		<effects>
+			<effect name="DispelByCategory">
+				<slot>DEBUFF</slot>
+				<rate>100</rate>
+				<max>5</max>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35017" toLevel="6" name="未使用-傲慢護身符VI">
+		<icon>
+			<value level="1">icon.oman_tallisman_new_i02</value>
+			<value level="2">icon.oman_tallisman_new_i02</value>
+			<value level="3">icon.oman_tallisman_new_i02</value>
+			<value level="4">icon.oman_tallisman_new_i02</value>
+			<value level="5">icon.oman_tallisman_new_i02</value>
+			<value level="6">icon.oman_tallisman_new_i01</value>
+		</icon>
+		<operateType>P</operateType>
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>55</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">14</value>
+					<value level="2">27</value>
+					<value level="3">41</value>
+					<value level="4">68</value>
+					<value level="5">81</value>
+					<value level="6">95</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>
+					<value level="1">22</value>
+					<value level="2">44</value>
+					<value level="3">66</value>
+					<value level="4">109</value>
+					<value level="5">131</value>
+					<value level="6">153</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">2</value>
+					<value level="3">4</value>
+					<value level="4">6</value>
+					<value level="5">7</value>
+					<value level="6">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<BLUNT>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+				</BLUNT>
+				<SWORD>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+				</SWORD>
+				<DUAL>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+				</DUAL>
+				<BOW>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+				</BOW>
+				<POLE>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+				</POLE>
+				<DAGGER>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+				</DAGGER>
+				<DUALFIST>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+				</DUALFIST>
+				<DUALDAGGER>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">1</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">3</value>
+				</DUALDAGGER>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">1</value>
+				</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">1</value>
+				</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">1</value>
+				</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">1</value>
+				</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">1</value>
+				</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">1</value>
+				</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">10</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">10</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">-2</value>
+					<value level="6">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">-2</value>
+					<value level="6">-4</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35018" toLevel="1" name="未使用-傲慢護身符">
+		
+		<icon>icon.oman_tallisman_new_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>6</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>SEED_TALISMAN1</abnormalType>
+		<abnormalVisualEffect>SEED_TALISMAN5</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockActionUseSkill>true</blockActionUseSkill>
+		<buffProtectLevel>31</buffProtectLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>40</magicLevel>
+		<specialLevel>-2</specialLevel>
+	</skill>
+	<skill id="35019" toLevel="1" name="未使用-傲慢護身符卸除">
+		
+		<icon>icon.oman_tallisman_new_i01</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>40</magicLevel>
+		<trait>HOLD</trait>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>SEED_TALISMAN1,-1</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35020" toLevel="1" name="未使用-巴溫護身符">
+		
+		<icon>icon.baium_talisman_new</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>6</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>SEED_TALISMAN1</abnormalType>
+		<abnormalVisualEffect>SEED_TALISMAN4</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockActionUseSkill>true</blockActionUseSkill>
+		<buffProtectLevel>31</buffProtectLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>40</magicLevel>
+		<specialLevel>-2</specialLevel>
+	</skill>
+	<skill id="35021" toLevel="1" name="未使用-巴溫護身符卸除">
+		
+		<icon>icon.baium_talisman_new</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>40</magicLevel>
+		<trait>HOLD</trait>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>SEED_TALISMAN1,-1</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35022" toLevel="1" name="時髦銀圓帽">
+		
+		<icon>BranchSys2.icon2.pi_silverchaperon</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>INT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35023" toLevel="1" name="時髦銀圓帽返回">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>7200000</reuseDelay>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Escape">
+				<escapeType>TOWN</escapeType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35024" toLevel="21" name="未使用-次元護身符">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>
+			<value level="1">icon.magic_square_talisman_new</value>
+			<value level="2">icon.magic_square_talisman_new</value>
+			<value level="3">icon.magic_square_talisman_new</value>
+			<value level="4">icon.magic_square_talisman_new</value>
+			<value level="5">icon.magic_square_talisman_new</value>
+			<value level="6">icon.magic_square_talisman_new</value>
+			<value level="7">icon.magic_square_talisman_new</value>
+			<value level="8">icon.magic_square_talisman_new</value>
+			<value level="9">icon.magic_square_talisman_new</value>
+			<value level="10">icon.magic_square_talisman_new</value>
+			<value level="11">icon.bm_blessed_magic_square_talisman</value>
+			<value level="12">icon.bm_dimension_tallisman</value>
+			<value level="13">icon.bm_dimension_tallisman</value>
+			<value level="14">icon.bm_dimension_tallisman</value>
+			<value level="15">icon.bm_dimension_tallisman</value>
+			<value level="16">icon.bm_dimension_tallisman</value>
+			<value level="17">icon.bm_dimension_tallisman</value>
+			<value level="18">icon.bm_dimension_tallisman</value>
+			<value level="19">icon.bm_dimension_tallisman</value>
+			<value level="20">icon.bm_dimension_tallisman</value>
+			<value level="21">icon.bm_dimension_tallisman</value>
+		</icon>
+		<operateType>P</operateType>
+		<excludedFromCheck>true</excludedFromCheck>
+		<magicLevel>55</magicLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">14</value>
+					<value level="3">17</value>
+					<value level="4">19</value>
+					<value level="5">22</value>
+					<value level="6">24</value>
+					<value level="7">29</value>
+					<value level="8">34</value>
+					<value level="9">38</value>
+					<value level="10">43</value>
+					<value level="11">48</value>
+					<value level="12">48</value> 
+					<value level="13">48</value> 
+					<value level="14">48</value> 
+					<value level="15">48</value> 
+					<value level="16">48</value> 
+					<value level="17">48</value> 
+					<value level="18">48</value> 
+					<value level="19">48</value> 
+					<value level="20">48</value> 
+					<value level="21">48</value> 
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">12</value>
+					<value level="2">14</value>
+					<value level="3">17</value>
+					<value level="4">19</value>
+					<value level="5">22</value>
+					<value level="6">24</value>
+					<value level="7">29</value>
+					<value level="8">34</value>
+					<value level="9">38</value>
+					<value level="10">43</value>
+					<value level="11">48</value>
+					<value level="12">48</value> 
+					<value level="13">48</value> 
+					<value level="14">48</value> 
+					<value level="15">48</value> 
+					<value level="16">48</value> 
+					<value level="17">48</value> 
+					<value level="18">48</value> 
+					<value level="19">48</value> 
+					<value level="20">48</value> 
+					<value level="21">48</value> 
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">2</value>
+					<value level="8">2</value>
+					<value level="9">2</value>
+					<value level="10">2</value>
+					<value level="11">2</value>
+					<value level="12">2</value> 
+					<value level="13">2</value> 
+					<value level="14">2</value> 
+					<value level="15">2</value> 
+					<value level="16">2</value> 
+					<value level="17">2</value> 
+					<value level="18">2</value> 
+					<value level="19">2</value> 
+					<value level="20">2</value> 
+					<value level="21">2</value> 
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">1</value>
+					<value level="3">1</value>
+					<value level="4">1</value>
+					<value level="5">1</value>
+					<value level="6">2</value>
+					<value level="7">2</value>
+					<value level="8">2</value>
+					<value level="9">2</value>
+					<value level="10">2</value>
+					<value level="11">2</value>
+					<value level="12">2</value> 
+					<value level="13">2</value> 
+					<value level="14">2</value> 
+					<value level="15">2</value> 
+					<value level="16">2</value> 
+					<value level="17">2</value> 
+					<value level="18">2</value> 
+					<value level="19">2</value> 
+					<value level="20">2</value> 
+					<value level="21">2</value> 
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">80</value>
+					<value level="4">80</value>
+					<value level="5">120</value>
+					<value level="6">160</value>
+					<value level="7">160</value>
+					<value level="8">200</value>
+					<value level="9">240</value>
+					<value level="10">280</value>
+					<value level="11">320</value>
+					<value level="12">320</value> 
+					<value level="13">320</value> 
+					<value level="14">320</value> 
+					<value level="15">320</value> 
+					<value level="16">320</value> 
+					<value level="17">320</value> 
+					<value level="18">320</value> 
+					<value level="19">320</value> 
+					<value level="20">320</value> 
+					<value level="21">320</value> 
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">80</value>
+					<value level="4">80</value>
+					<value level="5">120</value>
+					<value level="6">160</value>
+					<value level="7">160</value>
+					<value level="8">200</value>
+					<value level="9">240</value>
+					<value level="10">280</value>
+					<value level="11">320</value>
+					<value level="12">320</value> 
+					<value level="13">320</value> 
+					<value level="14">320</value> 
+					<value level="15">320</value> 
+					<value level="16">320</value> 
+					<value level="17">320</value> 
+					<value level="18">320</value> 
+					<value level="19">320</value> 
+					<value level="20">320</value> 
+					<value level="21">320</value> 
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">80</value>
+					<value level="4">80</value>
+					<value level="5">120</value>
+					<value level="6">160</value>
+					<value level="7">160</value>
+					<value level="8">200</value>
+					<value level="9">240</value>
+					<value level="10">280</value>
+					<value level="11">320</value>
+					<value level="12">320</value> 
+					<value level="13">320</value> 
+					<value level="14">320</value> 
+					<value level="15">320</value> 
+					<value level="16">320</value> 
+					<value level="17">320</value> 
+					<value level="18">320</value> 
+					<value level="19">320</value> 
+					<value level="20">320</value> 
+					<value level="21">320</value> 
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">3</value>
+					<value level="4">3</value>
+					<value level="5">5</value>
+					<value level="6">5</value>
+					<value level="7">7</value>
+					<value level="8">7</value>
+					<value level="9">8</value>
+					<value level="10">8</value>
+					<value level="11">8</value>
+					<value level="12">8</value> 
+					<value level="13">8</value> 
+					<value level="14">8</value> 
+					<value level="15">8</value> 
+					<value level="16">8</value> 
+					<value level="17">8</value> 
+					<value level="18">8</value> 
+					<value level="19">8</value> 
+					<value level="20">8</value> 
+					<value level="21">8</value> 
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">15</value>
+					<value level="8">15</value>
+					<value level="9">15</value>
+					<value level="10">20</value>
+					<value level="11">30</value>
+					<value level="12">30</value> 
+					<value level="13">30</value> 
+					<value level="14">30</value> 
+					<value level="15">30</value> 
+					<value level="16">30</value> 
+					<value level="17">30</value> 
+					<value level="18">30</value> 
+					<value level="19">30</value> 
+					<value level="20">30</value> 
+					<value level="21">30</value> 
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">7</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">15</value>
+					<value level="8">15</value>
+					<value level="9">15</value>
+					<value level="10">20</value>
+					<value level="11">30</value>
+					<value level="12">30</value> 
+					<value level="13">30</value> 
+					<value level="14">30</value> 
+					<value level="15">30</value> 
+					<value level="16">30</value> 
+					<value level="17">30</value> 
+					<value level="18">30</value> 
+					<value level="19">30</value> 
+					<value level="20">30</value> 
+					<value level="21">30</value> 
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">3</value>
+					<value level="4">3</value>
+					<value level="5">4</value>
+					<value level="6">4</value>
+					<value level="7">5</value>
+					<value level="8">5</value>
+					<value level="9">5</value>
+					<value level="10">5</value>
+					<value level="11">5</value>
+					<value level="12">5</value> 
+					<value level="13">5</value> 
+					<value level="14">5</value> 
+					<value level="15">5</value> 
+					<value level="16">5</value> 
+					<value level="17">5</value> 
+					<value level="18">5</value> 
+					<value level="19">5</value> 
+					<value level="20">5</value> 
+					<value level="21">5</value> 
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">3</value>
+					<value level="4">3</value>
+					<value level="5">4</value>
+					<value level="6">4</value>
+					<value level="7">5</value>
+					<value level="8">5</value>
+					<value level="9">5</value>
+					<value level="10">5</value>
+					<value level="11">5</value>
+					<value level="12">5</value> 
+					<value level="13">5</value> 
+					<value level="14">5</value> 
+					<value level="15">5</value> 
+					<value level="16">5</value> 
+					<value level="17">5</value> 
+					<value level="18">5</value> 
+					<value level="19">5</value> 
+					<value level="20">5</value> 
+					<value level="21">5</value> 
+				</amount>
+			</effect>
+			<effect name="DamageShield">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">4</value>
+					<value level="10">6</value>
+					<value level="11">8</value>
+					<value level="12">8</value> 
+					<value level="13">8</value> 
+					<value level="14">8</value> 
+					<value level="15">8</value> 
+					<value level="16">8</value> 
+					<value level="17">8</value> 
+					<value level="18">8</value> 
+					<value level="19">8</value> 
+					<value level="20">8</value> 
+					<value level="21">8</value> 
+				</amount>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">4</value>
+					<value level="10">6</value>
+					<value level="11">8</value>
+					<value level="12">8</value> 
+					<value level="13">8</value> 
+					<value level="14">8</value> 
+					<value level="15">8</value> 
+					<value level="16">8</value> 
+					<value level="17">8</value> 
+					<value level="18">8</value> 
+					<value level="19">8</value> 
+					<value level="20">8</value> 
+					<value level="21">8</value> 
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectMagic">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">0</value>
+					<value level="8">0</value>
+					<value level="9">4</value>
+					<value level="10">6</value>
+					<value level="11">8</value>
+					<value level="12">8</value> 
+					<value level="13">8</value> 
+					<value level="14">8</value> 
+					<value level="15">8</value> 
+					<value level="16">8</value> 
+					<value level="17">8</value> 
+					<value level="18">8</value> 
+					<value level="19">8</value> 
+					<value level="20">8</value> 
+					<value level="21">8</value> 
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamageReceived">
+				<attackerType>Playable</attackerType>
+				<skillId>35027</skillId> 
+				<skillLevel>
+					<value level="1">0</value>
+					<value level="2">0</value>
+					<value level="3">0</value>
+					<value level="4">0</value>
+					<value level="5">0</value>
+					<value level="6">0</value>
+					<value level="7">1</value>
+					<value level="8">2</value>
+					<value level="9">2</value>
+					<value level="10">3</value>
+					<value level="11">4</value>
+					<value level="12">4</value> 
+					<value level="13">4</value> 
+					<value level="14">4</value> 
+					<value level="15">4</value> 
+					<value level="16">4</value> 
+					<value level="17">4</value> 
+					<value level="18">4</value> 
+					<value level="19">4</value> 
+					<value level="20">4</value> 
+					<value level="21">4</value> 
+				</skillLevel>
+				<minDamage>1</minDamage>
+				<chance>10</chance>
+				<targetType>SELF</targetType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35025" toLevel="1" name="未使用-結界淨化">
+		
+		<icon>icon.skill10036</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
+		<effectPoint>100</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic>
+		<reuseDelay>60000</reuseDelay>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>POISON,9</dispel>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>BLEEDING,9</dispel>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>DOT_MP,9</dispel>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>PARALYZE,1</dispel>
+			</effect>
+			<effect name="DispelBySlot">
+				<dispel>TURN_STONE,1</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35026" toLevel="1" name="未使用-結界祝福">
+		
+		<icon>icon.skill10034</icon>
+		<operateType>A1</operateType>
+		<coolTime>200</coolTime>
+		<effectPoint>100</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic> 
+		<reuseDelay>1200000</reuseDelay>
+	</skill>
+	<skill id="35027" toLevel="9" name="未使用-次元結界之力">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill10030</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<reuseDelay>30000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">5</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+					<value level="5">10</value> 
+					<value level="6">10</value> 
+					<value level="7">10</value> 
+					<value level="8">10</value> 
+					<value level="9">10</value> 
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">5</value>
+					<value level="3">7</value>
+					<value level="4">10</value>
+					<value level="5">10</value> 
+					<value level="6">10</value> 
+					<value level="7">10</value> 
+					<value level="8">10</value> 
+					<value level="9">10</value> 
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">30</value>
+					<value level="3">40</value>
+					<value level="4">40</value>
+					<value level="5">40</value> 
+					<value level="6">40</value> 
+					<value level="7">40</value> 
+					<value level="8">40</value> 
+					<value level="9">40</value> 
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">30</value>
+					<value level="3">40</value>
+					<value level="4">40</value>
+					<value level="5">40</value> 
+					<value level="6">40</value> 
+					<value level="7">40</value> 
+					<value level="8">40</value> 
+					<value level="9">40</value> 
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35028" toLevel="1" name="未使用-結界手鐲">
+		
+		<icon>icon.dimension_bracelet_i05</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="35029" toLevel="5" name="未使用-武器特技：決鬥意志-PVE">
+		
+		
+		
+		
+		
+		<icon>icon.skill3123</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="35030" toLevel="5" name="未使用-武器特技：決鬥護盾- PVP">
+		
+		
+		
+		
+		
+		<icon>icon.skill3123</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="35031" toLevel="5" name="未使用-武器特技：決鬥護盾- PVE">
+		
+		
+		
+		
+		
+		<icon>icon.skill3123</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="35032" toLevel="5" name="未使用-武器特技：推進">
+		
+		
+		
+		
+		
+		<icon>icon.skill3123</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="35033" toLevel="3" name="未使用-武器特技：攻擊加速">
+		
+		
+		
+		<icon>icon.skill3123</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">440</value>
+			<value level="2">481</value>
+			<value level="3">521</value>
+		</effectPoint>
+		<hitTime>4000</hitTime>
+		<mpConsume>38</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>300000</reuseDelay>
+	</skill>
+	<skill id="35034" toLevel="3" name="未使用-武器特技：快速施法">
+		
+		
+		
+		<icon>icon.skill3123</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">440</value>
+			<value level="2">481</value>
+			<value level="3">521</value>
+		</effectPoint>
+		<hitTime>4000</hitTime>
+		<mpConsume>38</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>300000</reuseDelay>
+	</skill>
+	<skill id="35035" toLevel="1" name="未使用-武器特技：淨罪">
+		
+		<icon>icon.skill3123</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<effectPoint>440</effectPoint>
+		<hitTime>4000</hitTime>
+		<mpConsume>38</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>300000</reuseDelay>
+	</skill>
+	<skill id="35036" toLevel="1" name="戰士護身符-攻擊型">
+		
+		<icon>icon.r90_sp_talisman_dr_mp_active</icon>
+		<operateType>P</operateType>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>1</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<effects>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35037" toLevel="1" name="戰士護身符-防禦型">
+		
+		<icon>icon.r99_talisman_pd_up_passive</icon>
+		<operateType>P</operateType>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>1</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<effects>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSuccessResistance">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-3</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+			<effect name="DefenceTrait">
+				<PULL>10</PULL>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35038" toLevel="1" name="勇士的護身符-攻擊型">
+		
+		<icon>icon.r90_sp_talisman_dr_hp_active</icon>
+		<operateType>P</operateType>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>1</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<effects>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35039" toLevel="1" name="勇士的護身符-防禦型">
+		
+		<icon>icon.r95_talisman_ca_down_active</icon>
+		<operateType>P</operateType>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>1</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<effects>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSuccessResistance">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-3</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35040" toLevel="1" name="未使用-腰帶">
+		
+		<icon>icon.belt_i00</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="EnlargeSlot">
+				<amount>2</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35041" toLevel="1" name="未使用-布腰帶">
+		
+		<icon>icon.belt_i01</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>2000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="EnlargeSlot">
+				<amount>2</amount>
+			</effect>
+			<effect name="HpRegen">
+				<amount>1.24</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.83</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>1.66</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35042" toLevel="1" name="未使用-皮腰帶">
+		
+		<icon>icon.belt_i02</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>3000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="EnlargeSlot">
+				<amount>3</amount>
+			</effect>
+			<effect name="HpRegen">
+				<amount>1.47</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>0.98</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>1.96</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35043" toLevel="1" name="未使用-鋼鐵腰帶">
+		
+		<icon>icon.belt_i03</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>4000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="EnlargeSlot">
+				<amount>4</amount>
+			</effect>
+			<effect name="HpRegen">
+				<amount>1.70</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.13</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>2.26</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35044" toLevel="1" name="未使用-米索莉腰帶">
+		
+		<icon>icon.belt_i04</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="EnlargeSlot">
+				<amount>5</amount>
+			</effect>
+			<effect name="HpRegen">
+				<amount>1.92</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.28</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>2.56</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35045" toLevel="1" name="未使用-決戰護身符-解放">
+		
+		<icon>icon.etc_talisman_i03</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>100</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<mpConsume>50</mpConsume>
+		<reuseDelay>600000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="DispelByCategory">
+				<slot>DEBUFF</slot>
+				<rate>100</rate>
+				<max>10</max>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35046" toLevel="1" name="地龍腰帶">
+		
+		<icon>icon.bm_antaras_belt</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>7000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="EnlargeSlot">
+				<amount>6</amount>
+			</effect>
+			<effect name="HpRegen">
+				<amount>2.31</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.54</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>3.07</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DamageShield">
+				<amount>6</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="35047" toLevel="1" name="火龍腰帶">
+		
+		<icon>icon.bm_vallakas_belt</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>7000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="EnlargeSlot">
+				<amount>6</amount>
+			</effect>
+			<effect name="HpRegen">
+				<amount>2.31</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>1.54</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CpRegen">
+				<amount>3.07</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DamageShield">
+				<amount>6</amount>
+			</effect>
+		</effects>
+	</skill>
+</list>

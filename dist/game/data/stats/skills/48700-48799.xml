@@ -1,0 +1,1727 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="48700" toLevel="1" name="帝雷歐的拘束加護">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalTime>0</abnormalTime>
+		<activateRate>-1</activateRate>
+		<affectObject>ALL</affectObject>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>500</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>98231</itemConsumeId>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>AIRBIND,-1</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48701" toLevel="2" name="對帝雷歐服從">
+		
+		<icon>icon.temple_sit_skill</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalTime>
+			<value level="1">10</value>
+			<value level="2">20</value>
+		</abnormalTime>
+		<abnormalVisualEffect>FORCE_SIT</abnormalVisualEffect>
+		<activateRate>-1</activateRate>
+		<affectLimit>0-0</affectLimit>
+		<affectRange>2000</affectRange>
+		<affectScope>RANGE</affectScope>
+		<castRange>99999</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>0</effectPoint>
+		<hitTime>0</hitTime>
+		<hpConsume>0</hpConsume>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>20000</reuseDelay>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48702" toLevel="1" name="帝雷歐的聲音">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalTime>0</abnormalTime>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>600</affectRange>
+		<affectScope>RANGE</affectScope>
+		<castRange>600</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1500</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>15000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>5000</power>
+				<powerModifier>100</powerModifier>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48703" toLevel="1" name="帝雷歐束縛">
+		
+		<icon>icon.skill4047</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalTime>5</abnormalTime>
+		<activateRate>70</activateRate>
+		<affectLimit>5-12</affectLimit>
+		<affectRange>600</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>600</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1500</hitTime>
+		<hpConsume>0</hpConsume>
+		<isDebuff>true</isDebuff>
+		<isMagic>0</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>2000</reuseDelay>
+		<trait>PARALYZE</trait>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48704" toLevel="1" name="瑪夏死亡之鐘">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>700</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="48705" toLevel="1" name="詭譎詛咒">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>700</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="48706" toLevel="1" name="隱藏">
+		
+		<icon>icon.skill0922</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>10</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>0</effectPoint>
+		<hitTime>0</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="48707" toLevel="1" name="帝雷歐恢復">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>0</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="48708" toLevel="1" name="寶拉的幸運-格鬥">
+		
+		<icon>icon.skill1499</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>14400</abnormalTime>
+		<castRange>900</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>0</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</skill>
+	<skill id="48709" toLevel="1" name="寶拉的幸運-魔法">
+		
+		<icon>icon.skill1500</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>14400</abnormalTime>
+		<castRange>900</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>0</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+		
+		
+		
+		
+		
+		
+		
+		
+	</skill>
+	<skill id="48710" toLevel="1" name="寶拉的幸運-狀態">
+		
+		<icon>icon.skill1501</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>14400</abnormalTime>
+		<castRange>900</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>0</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</skill>
+	<skill id="48711" toLevel="1" name="轉交信件">
+		
+		<icon>icon.per_controler_i00</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>10</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>0</effectPoint>
+		<hitTime>0</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48712" toLevel="1" name="基本範圍攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-900</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48713" toLevel="1" name="誘發麻痺-範圍攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-900</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48714" toLevel="1" name="誘發恐懼-範圍攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-900</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48715" toLevel="1" name="誘發束縛-範圍攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-900</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48716" toLevel="1" name="誘發緩速-範圍攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-900</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48717" toLevel="1" name="基本直線攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>80</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-900</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48718" toLevel="1" name="誘發麻痺-直線攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>80</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-900</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48719" toLevel="1" name="誘發恐懼-直線攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>80</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-900</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48720" toLevel="1" name="誘發束縛-直線攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>80</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-900</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48721" toLevel="1" name="誘發緩速-直線攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>80</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-900</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48722" toLevel="1" name="麻痺">
+		
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>7</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-400</effectPoint>
+		<hitTime>0</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48723" toLevel="1" name="恐懼">
+		
+		<icon>icon.skill1092</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>7</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-400</effectPoint>
+		<hitTime>0</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48724" toLevel="1" name="衝擊">
+		
+		<icon>icon.skill0100</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>7</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>-400</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>10</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48725" toLevel="1" name="緩速">
+		
+		<icon>icon.skill1160</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>7</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-400</effectPoint>
+		<hitTime>0</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48726" toLevel="1" name="麻痺">
+		
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>7</abnormalTime>
+		<castRange>80</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-400</effectPoint>
+		<hitTime>0</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48727" toLevel="1" name="恐懼">
+		
+		<icon>icon.skill1092</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>7</abnormalTime>
+		<castRange>80</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-400</effectPoint>
+		<hitTime>0</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48728" toLevel="1" name="衝擊">
+		
+		<icon>icon.skill0100</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>7</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>-400</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>10</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48729" toLevel="1" name="緩速">
+		
+		<icon>icon.skill1160</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>7</abnormalTime>
+		<castRange>80</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-400</effectPoint>
+		<hitTime>0</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>0</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48730" toLevel="1" name="石碑展示">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>3600</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>0</effectPoint>
+		<hitTime>2000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="48731" toLevel="1" name="關於擊倒拉卡勒的報答">
+		
+		<icon>icon.s_npc_ev_2022_newserver_bless</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>10800</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>0</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>4</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</skill>
+	<skill id="48732" toLevel="1" name="納提範圍擊倒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>0</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-700</effectPoint>
+		<hitTime>2000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>15000</reuseDelay>
+	</skill>
+	<skill id="48733" toLevel="1" name="恐懼">
+		
+		<icon>icon.skill1092</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>5</abnormalTime>
+		<castRange>700</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>-700</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>15000</reuseDelay>
+	</skill>
+	<skill id="48734" toLevel="1" name="首領強化">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<abnormalTime>60</abnormalTime>
+		<castRange>-1</castRange>
+		<coolTime>0</coolTime>
+		<effectPoint>0</effectPoint>
+		<hitTime>1000</hitTime>
+		<hpConsume>0</hpConsume>
+		<isMagic>1</isMagic>
+		<mpConsume>0</mpConsume>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="48735" toLevel="1" name="騎士團特別支援Lv.1">
+		
+		<icon>icon.ev22_trial_buff01</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48736" toLevel="1" name="騎士團特別支援Lv.2">
+		
+		<icon>icon.ev22_trial_buff02</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48737" toLevel="1" name="騎士團特別支援Lv.3">
+		
+		<icon>icon.ev22_trial_buff03</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48738" toLevel="1" name="騎士團特別支援Lv.4">
+		
+		<icon>icon.ev22_trial_buff04</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48739" toLevel="19" name="物理攻擊力/魔法攻擊力減少">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="48740" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48741" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<effects>
+			<effect name="MagicalAttack">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48742" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>24</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48743" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>24</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48744" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>11</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48745" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>21</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48746" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48747" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48748" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48749" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48750" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="MpVampiricAttack">
+				<amount>8</amount>
+				<chance>10</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48751" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="VampiricAttack">
+				<amount>8</amount>
+				<mode>PER</mode>
+				<chance>10</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48752" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48753" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48754" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="MaxHp">
+				<amount>33</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>33</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48755" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="Speed">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48756" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48757" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48758" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48759" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>10</amount>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>10</amount>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>10</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48760" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="AdditionalPotionHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48761" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48762" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<effects>
+			<effect name="MagicalAttack">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48763" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>24</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48764" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>24</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48765" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<effects>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>11</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48766" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<effects>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>21</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48767" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48768" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="ShotsBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48769" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48770" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48771" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="MpVampiricAttack">
+				<amount>8</amount>
+				<chance>10</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48772" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="VampiricAttack">
+				<amount>8</amount>
+				<mode>PER</mode>
+				<chance>10</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48773" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48774" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48775" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="MaxHp">
+				<amount>33</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>33</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48776" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="Speed">
+				<amount>12</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48777" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48778" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-300</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48779" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="DefenceCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48780" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>10</amount>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>10</amount>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>10</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48781" toLevel="1" name="教官的地圖">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>MENTORS_ADVICE</abnormalType>
+		<abnormalVisualEffect>H_DEBUFF_SELF_B_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="AdditionalPotionHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48782" toLevel="3" name="騎士團長凱高爾的支援Lv.3">
+		
+		
+		
+		<icon>
+			<value level="1">icon.s_npc_ev_221221_freya_skill1</value>
+			<value level="2">icon.s_npc_ev_221221_freya_skill2</value>
+			<value level="3">icon.s_npc_ev_221221_freya_skill3</value>
+		</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48783" toLevel="1" name="瀰漫芙蕾雅氣息的結晶">
+		
+		<icon>icon.s_npc_ev_freya_reward_buff</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48784" toLevel="1" name="瀰漫芙蕾雅氣息的結晶">
+		
+		<icon>icon.s_npc_ev_freya_reward_buff</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48785" toLevel="1" name="終極雪暴">
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-900</effectPoint>
+		<hitTime>7000</hitTime>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>7000</reuseDelay>
+	</skill>
+	<skill id="48786" toLevel="1" name="冰結">
+		
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-900</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="48787" toLevel="1" name="投擲紅蘿蔔">
+		
+		<icon>icon.ev_carrot</icon>
+		<operateType>A1</operateType>
+		<castRange>450</castRange>
+		<effectPoint>-10000</effectPoint>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="48788" toLevel="3" name="黑兔子的幸運Lv.3">
+		
+		
+		
+		<icon>
+			<value level="1">icon.s_npc_ev_2023_blackrabbit_gift1</value>
+			<value level="2">icon.s_npc_ev_2023_blackrabbit_gift2</value>
+			<value level="3">icon.s_npc_ev_2023_blackrabbit_gift3</value>
+		</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48789" toLevel="1" name="極限傷害">
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="48790" toLevel="3" name="GM的祝福-謎樣的祝福">
+		
+		<icon>icon.skill2513</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="48791" toLevel="1" name="墓地看守人擁有的能力">
+		
+		<icon>icon.skilltransform1</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+	</skill>
+	<skill id="48792" toLevel="1" name="坦達勒之擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1500</hitTime>
+	</skill>
+	<skill id="48793" toLevel="1" name="坦達勒魔法攻擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="48794" toLevel="2" name="坦達勒毒射">
+		
+		<icon>icon.skill4035</icon>
+		<operateType>A1</operateType>
+		<castRange>500</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>
+			<value level="1">1500</value>
+			<value level="2">1000</value>
+		</hitTime>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="48795" toLevel="1" name="坦達勒廣域施毒">
+		
+		<icon>icon.skill4035</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2000</hitTime>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="48796" toLevel="2" name="坦達勒施毒術範圍攻擊">
+		
+		<icon>icon.skill4035</icon>
+		<operateType>A1</operateType>
+		<castRange>200</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>4000</hitTime>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="48797" toLevel="1" name="坦達勒艾姿泰坎地區">
+		
+		<icon>icon.skill30852</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48798" toLevel="1" name="寵物協會的報答">
+		
+		<icon>icon.pet_town_buff_skill</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="48799" toLevel="1" name="艾依汝斯之魂">
+		
+		<icon>icon.skill30011</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<effectPoint>100</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+</list>

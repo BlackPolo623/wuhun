@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+<time duration="30" empty="0" />
+	<locations>
+		<enter type="FIXED">
+			<location x="68960" y="243667" z="-8728" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="Party" />
+		<condition type="GroupMin">
+			<param name="limit" value="2" /> <!-- 1 for tester only, change on live server -->
+		</condition>
+		<condition type="GroupMax">
+			<param name="limit" value="5" />
+		</condition>
+		<condition type="Level">
+			<param name="min" value="10" />
+			<param name="max" value="99" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_ENTER">
+		<reset day="MONDAY" hour="6" minute="30" />
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group name="Stage1" spawnByDefault="false">
+			<npc id="19109" x="71086" y="243195" z="-9179" heading="49035" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="71233" y="242807" z="-9180" heading="55405" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="71457" y="242740" z="-9179" heading="63390" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="71624" y="243023" z="-9180" heading="16383" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="71771" y="243076" z="-9179" heading="52494" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="72021" y="242652" z="-9179" heading="48412" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="72228" y="242615" z="-9182" heading="1260" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="72599" y="242467" z="-9179" heading="56888" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="72968" y="242443" z="-9182" heading="3605" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="73049" y="242800" z="-9182" heading="16893" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="73097" y="243165" z="-9179" heading="10951" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="73245" y="243423" z="-9179" heading="10951" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="73129" y="243663" z="-9179" heading="21063" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="73176" y="244019" z="-9179" heading="12382" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="72998" y="244262" z="-9179" heading="25902" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="72865" y="244365" z="-9179" heading="32645" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="72511" y="244326" z="-9182" heading="36991" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="72259" y="244590" z="-9182" heading="24333" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="71993" y="244616" z="-9179" heading="31730" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="71940" y="244621" z="-9179" heading="31730" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="71461" y="244773" z="-9179" heading="28803" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="71174" y="244576" z="-9182" heading="47732" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="70859" y="244381" z="-9182" heading="34038" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="70964" y="244027" z="-9182" heading="50449" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="71216" y="243618" z="-9180" heading="57464" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="71564" y="243531" z="-9180" heading="63738" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="71534" y="243283" z="-9179" heading="46839" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="71969" y="243659" z="-9182" heading="13506" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="72271" y="243763" z="-9179" heading="3477" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="72535" y="243966" z="-9179" heading="8317" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="72747" y="243856" z="-9179" heading="49065" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="72745" y="243614" z="-9179" heading="49065" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="72589" y="243397" z="-9179" heading="42659" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="72304" y="243081" z="-9179" heading="40804" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="71992" y="243016" z="-9180" heading="33519" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="71898" y="242870" z="-9179" heading="44531" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="71686" y="242439" z="-9179" heading="44349" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="71337" y="242268" z="-9182" heading="35419" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="70929" y="242143" z="-9180" heading="35864" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="70822" y="242406" z="-9179" heading="19261" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="70910" y="242713" z="-9179" heading="13459" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="70897" y="243166" z="-9179" heading="17419" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="70925" y="243618" z="-9179" heading="13046" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="71161" y="244209" z="-9179" heading="11767" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="71384" y="244351" z="-9179" heading="567" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="71623" y="244047" z="-9179" heading="48373" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="71759" y="244022" z="-9179" heading="4692" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="72239" y="244386" z="-9179" heading="7112" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="72549" y="244533" z="-9179" heading="3049" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="72778" y="244273" z="-9182" heading="53680" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="72621" y="243819" z="-9179" heading="41970" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="72003" y="243464" z="-9179" heading="31912" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="72335" y="243370" z="-9182" heading="62658" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="72221" y="243637" z="-9182" heading="21380" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="72223" y="243394" z="-9182" heading="49237" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="72775" y="242758" z="-9179" heading="57991" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="73106" y="242738" z="-9179" heading="2303" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="73017" y="242919" z="-9179" heading="21150" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="72708" y="242992" z="-9179" heading="30348" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19109" x="70757" y="243417" z="-9182" heading="64171" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="71007" y="243381" z="-9182" heading="64044" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19109" x="70940" y="243459" z="-9179" heading="23786" respawnTime="10sec" /> <!-- Slime -->
+			<npc id="19108" x="71309" y="243459" z="-9182" respawnTime="10sec" /> <!-- Troop Chief -->
+		</group>
+			<group name="Stage2" spawnByDefault="false">
+			<npc id="19111" x="72020" y="242581" z="-8427" heading="56943" respawnTime="10sec" /> <!-- Water Breath -->
+			<npc id="19108" x="71972" y="242480" z="-8425" heading="41797" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19111" x="71377" y="242154" z="-8426" heading="32855" respawnTime="10sec" /> <!-- Water Breath -->
+			<npc id="19110" x="71101" y="242498" z="-8425" heading="17287" respawnTime="10sec" /> <!-- Undine -->
+			<npc id="19111" x="70918" y="243033" z="-8425" heading="22833" respawnTime="10sec" /> <!-- Water Breath -->
+			<npc id="19108" x="70743" y="243522" z="-8428" heading="18795" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19111" x="70716" y="243733" z="-8425" heading="17664" respawnTime="10sec" /> <!-- Water Breath -->
+			<npc id="19110" x="70774" y="244244" z="-8425" heading="10054" respawnTime="10sec" /> <!-- Undine -->
+			<npc id="19111" x="70835" y="244332" z="-8425" heading="10054" respawnTime="10sec" /> <!-- Water Breath -->
+			<npc id="19110" x="71273" y="244587" z="-8426" heading="65472" respawnTime="10sec" /> <!-- Undine -->
+			<npc id="19108" x="71539" y="244586" z="-8425" heading="65472" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19111" x="71804" y="244214" z="-8425" heading="44834" respawnTime="10sec" /> <!-- Water Breath -->
+			<npc id="19110" x="71724" y="243704" z="-8425" heading="50255" respawnTime="10sec" /> <!-- Undine -->
+			<npc id="19111" x="71735" y="243598" z="-8425" heading="50255" respawnTime="10sec" /> <!-- Water Breath -->
+			<npc id="19108" x="71886" y="243122" z="-8425" heading="47034" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19111" x="71806" y="242757" z="-8425" heading="46823" respawnTime="10sec" /> <!-- Water Breath -->
+			<npc id="19108" x="71495" y="242436" z="-8425" heading="20931" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19111" x="71405" y="242629" z="-8425" heading="20931" respawnTime="10sec" /> <!-- Water Breath -->
+			<npc id="19110" x="71250" y="243133" z="-8425" heading="22732" respawnTime="10sec" /> <!-- Undine -->
+			<npc id="19108" x="71189" y="243221" z="-8425" heading="22732" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19110" x="71216" y="243701" z="-8425" heading="9675" respawnTime="10sec" /> <!-- Undine -->
+			<npc id="19111" x="71312" y="243829" z="-8425" heading="9675" respawnTime="10sec" /> <!-- Water Breath -->
+			<npc id="19108" x="71609" y="244270" z="-8425" heading="10429" respawnTime="10sec" /> <!-- Troop Chief -->
+			<npc id="19111" x="72039" y="243251" z="-8425" heading="347" respawnTime="10sec" /> <!-- Water Breath -->
+			<npc id="19111" x="71744" y="243321" z="-8425" heading="30337" respawnTime="10sec" /> <!-- Water Breath -->
+			<npc id="19110" x="71593" y="243373" z="-8425" heading="29269" respawnTime="10sec" /> <!-- Undine -->
+			<npc id="19111" x="71290" y="243396" z="-8425" heading="35114" respawnTime="10sec" /> <!-- Water Breath -->
+			<npc id="19110" x="71103" y="243455" z="-8425" heading="30212" respawnTime="10sec" /> <!-- Undine -->
+		</group>
+			<group name="ErosionPriest" spawnByDefault="false">
+           <npc id="19114" x="70743" y="242506" z="-6920" heading="49638" /> <!-- Erosion Priest -->
+			<npc id="19114" x="70773" y="242360" z="-6920" heading="51696" /> <!-- Erosion Priest -->
+			<npc id="19114" x="70879" y="242149" z="-6920" heading="55071" /> <!-- Erosion Priest -->
+			<npc id="19114" x="70958" y="242126" z="-6920" heading="1611" /> <!-- Erosion Priest -->
+			<npc id="19114" x="73319" y="242087" z="-6918" heading="26298" /> <!-- Erosion Priest -->
+			<npc id="19114" x="73226" y="242195" z="-6918" heading="23799" /> <!-- Erosion Priest -->
+			<npc id="19114" x="73349" y="242076" z="-6918" heading="24575" /> <!-- Erosion Priest -->
+			<npc id="19114" x="73264" y="242126" z="-6918" heading="27221" /> <!-- Erosion Priest -->
+		</group>			
+			<group name="Stage3" spawnByDefault="false">
+			<npc id="19112" x="72163" y="242514" z="-7654" heading="58441" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19113" x="72643" y="242323" z="-7651" heading="63670" respawnTime="10sec" /> <!-- Temple Wizard -->
+			<npc id="19112" x="72944" y="242782" z="-7651" heading="16307" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19113" x="73002" y="243309" z="-7651" heading="14532" respawnTime="10sec" /> <!-- Temple Wizard -->
+			<npc id="19112" x="73125" y="243826" z="-7651" heading="14813" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19113" x="73083" y="244348" z="-7651" heading="18799" respawnTime="10sec" /> <!-- Temple Wizard -->
+			<npc id="19112" x="72914" y="244694" z="-7654" heading="35635" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19113" x="72501" y="244648" z="-7651" heading="33721" respawnTime="10sec" /> <!-- Temple Wizard -->
+			<npc id="19112" x="72407" y="244389" z="-7651" heading="56508" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19113" x="72634" y="244010" z="-7653" heading="54451" respawnTime="10sec" /> <!-- Temple Wizard -->
+			<npc id="19112" x="72750" y="243820" z="-7651" heading="54894" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19112" x="72847" y="243371" z="-7651" heading="48603" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19113" x="72723" y="242922" z="-7651" heading="45246" respawnTime="10sec" /> <!-- Temple Wizard -->
+			<npc id="19112" x="72591" y="242630" z="-7652" heading="44639" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19113" x="72454" y="242301" z="-7652" heading="45101" respawnTime="10sec" /> <!-- Temple Wizard -->
+			<npc id="19112" x="72407" y="242552" z="-7651" heading="18068" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19112" x="72325" y="242947" z="-7651" heading="18752" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19113" x="72549" y="243342" z="-7651" heading="3895" respawnTime="10sec" /> <!-- Temple Wizard -->
+			<npc id="19112" x="72549" y="243342" z="-7651" heading="3895" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19113" x="72619" y="243744" z="-7653" heading="16484" respawnTime="10sec" /> <!-- Temple Wizard -->
+			<npc id="19112" x="72834" y="244208" z="-7651" heading="11710" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19113" x="73104" y="244665" z="-7651" heading="10209" respawnTime="10sec" /> <!-- Temple Wizard -->
+			<npc id="19112" x="72226" y="243784" z="-7651" heading="3738" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19113" x="72735" y="243941" z="-7651" heading="2869" respawnTime="10sec" /> <!-- Temple Wizard -->
+			<npc id="19112" x="72304" y="243605" z="-7651" heading="53457" respawnTime="10sec" /> <!-- Temple Guardian Warrior -->
+			<npc id="19113" x="72257" y="243234" z="-7651" heading="47266" respawnTime="10sec" /> <!-- Temple Wizard -->
+		</group>
+	</spawnlist>
+</instance>

@@ -1,0 +1,2830 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="22600" level="93" type="Monster" name="黑暗狂戰士" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<acquire exp="19756" sp="198" attributeExp="1330" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="111384.8" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4442" magical="3032" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3214" magical="1234" />
+			<speed>
+				<walk ground="60" />
+				<run ground="200" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="33" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="97830" min="1" max="1" chance="0.0007" /> <!-- Tower of Insolence's Time Stone -->
+				</group>
+				<group chance="70">
+					<item id="57" min="2356" max="2606" chance="100" /> <!-- Adena -->
+					<item id="94717" min="1" max="1" chance="0.1" />
+					<item id="91481" min="1" max="3" chance="1" />
+					<item id="97147" min="1" max="2" chance="1" />
+				</group>
+				<group chance="5">
+					<item id="95793" min="1" max="1" chance="15" /> <!--蒐魂石-->
+					<item id="96911" min="1" max="1" chance="15" /> <!--蒐魂石-->
+				</group>
+				<group chance="0.01">
+					<item id="91864" min="1" max="1" chance="20" />
+					<item id="93303" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22601" level="93" type="Monster" name="納比尼爾" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="22534" sp="225" attributeExp="1330" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="76290.9485954" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4442" magical="3032" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3214" magical="1234" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="44" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22602" level="94" type="Monster" name="神聖巡禮者" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="6717" /> 
+		<acquire exp="26091" sp="261" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="133661.4" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8.8" grown="9.9" />
+			<height normal="33.3" grown="40.45" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="97830" min="1" max="1" chance="0.0007" /> <!-- Tower of Insolence's Time Stone -->
+				</group>
+				<group chance="70">
+					<item id="57" min="2399" max="2654" chance="100" /> <!-- Adena -->
+					<item id="94717" min="1" max="1" chance="0.1" />
+					<item id="91481" min="1" max="3" chance="1" />
+					<item id="97147" min="1" max="2" chance="1" />
+				</group>
+				<group chance="5">
+					<item id="95793" min="1" max="1" chance="15" /> <!--蒐魂石-->
+					<item id="96911" min="1" max="1" chance="15" /> <!--蒐魂石-->
+				</group>
+				<group chance="0.01">
+					<item id="91864" min="1" max="1" chance="20" />
+					<item id="93303" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22603" level="94" type="Monster" name="神聖凝視者" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="21742" sp="217" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="91549.1383169" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="31.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="97830" min="1" max="1" chance="0.0007" /> <!-- Tower of Insolence's Time Stone -->
+				</group>
+				<group chance="70">
+					<item id="57" min="2399" max="2654" chance="100" /> <!-- Adena -->
+					<item id="94717" min="1" max="1" chance="0.1" />
+					<item id="91481" min="1" max="3" chance="1" />
+					<item id="97147" min="1" max="2" chance="1" />
+				</group>
+				<group chance="5">
+					<item id="95793" min="1" max="1" chance="15" /> <!--蒐魂石-->
+					<item id="96911" min="1" max="1" chance="15" /> <!--蒐魂石-->
+				</group>
+				<group chance="0.01">
+					<item id="91864" min="1" max="1" chance="20" />
+					<item id="93303" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22604" level="94" type="Monster" name="神聖弓手" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> 
+		<acquire exp="21742" sp="217" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="91549.1383169" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="35" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="97830" min="1" max="1" chance="0.0007" /> <!-- Tower of Insolence's Time Stone -->
+				</group>
+				<group chance="70">
+					<item id="57" min="2399" max="2654" chance="100" /> <!-- Adena -->
+					<item id="94717" min="1" max="1" chance="0.1" />
+					<item id="91481" min="1" max="3" chance="1" />
+					<item id="97147" min="1" max="2" chance="1" />
+				</group>
+				<group chance="5">
+					<item id="95793" min="1" max="1" chance="15" /> <!--蒐魂石-->
+					<item id="96911" min="1" max="1" chance="15" /> <!--蒐魂石-->
+				</group>
+				<group chance="0.01">
+					<item id="91864" min="1" max="1" chance="20" />
+					<item id="93303" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22605" level="94" type="Monster" name="姆里耳" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="29272" sp="293" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="91549.1383169" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="31.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22606" level="95" type="Monster" name="天堂戰士" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="37988" sp="380" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="160394.3" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="49" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="97830" min="1" max="1" chance="0.0007" /> <!-- Tower of Insolence's Time Stone -->
+				</group>
+				<group chance="70">
+					<item id="57" min="3018" max="3337" chance="100" /> <!-- Adena -->
+					<item id="94717" min="1" max="1" chance="0.1" />
+					<item id="91481" min="1" max="3" chance="1" />
+					<item id="97147" min="1" max="2" chance="1" />
+				</group>
+				<group chance="5">
+					<item id="95793" min="1" max="1" chance="15" /> <!--蒐魂石-->
+					<item id="96911" min="1" max="1" chance="15" /> <!--蒐魂石-->
+				</group>
+				<group chance="0.01">
+					<item id="91864" min="1" max="1" chance="20" />
+					<item id="93303" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22607" level="95" type="Monster" name="天堂巫女" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="31657" sp="317" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="109858.9659706" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="49" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="97830" min="1" max="1" chance="0.0007" /> <!-- Tower of Insolence's Time Stone -->
+				</group>
+				<group chance="70">
+					<item id="57" min="3018" max="3337" chance="100" /> <!-- Adena -->
+					<item id="94717" min="1" max="1" chance="0.1" />
+					<item id="91481" min="1" max="3" chance="1" />
+					<item id="97147" min="1" max="2" chance="1" />
+				</group>
+				<group chance="5">
+					<item id="95793" min="1" max="1" chance="15" /> <!--蒐魂石-->
+					<item id="96911" min="1" max="1" chance="15" /> <!--蒐魂石-->
+				</group>
+				<group chance="0.01">
+					<item id="91864" min="1" max="1" chance="20" />
+					<item id="93303" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22608" level="95" type="Monster" name="天堂弓手" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> 
+		<acquire exp="31657" sp="317" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="109858.9659706" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18.2" />
+			<height normal="46.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="97830" min="1" max="1" chance="0.0007" /> <!-- Tower of Insolence's Time Stone -->
+				</group>
+				<group chance="70">
+					<item id="57" min="3018" max="3337" chance="100" /> <!-- Adena -->
+					<item id="94717" min="1" max="1" chance="0.1" />
+					<item id="91481" min="1" max="3" chance="1" />
+					<item id="97147" min="1" max="2" chance="1" />
+				</group>
+				<group chance="5">
+					<item id="95793" min="1" max="1" chance="15" /> <!--蒐魂石-->
+					<item id="96911" min="1" max="1" chance="15" /> <!--蒐魂石-->
+				</group>
+				<group chance="0.01">
+					<item id="91864" min="1" max="1" chance="20" />
+					<item id="93303" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22609" level="95" type="Monster" name="亞勒海斯" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="41857" sp="418" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="109858.9659706" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="31.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22610" level="95" type="Monster" name="永生賢者" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="41857" sp="418" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="132929.1" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="35.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="97830" min="1" max="1" chance="0.0007" /> <!-- Tower of Insolence's Time Stone -->
+				</group>
+				<group chance="70">
+					<item id="57" min="3369" max="3727" chance="100" /> <!-- Adena -->
+					<item id="94717" min="1" max="1" chance="0.1" />
+					<item id="91481" min="1" max="3" chance="1" />
+					<item id="97147" min="1" max="2" chance="1" />
+				</group>
+				<group chance="5">
+					<item id="95793" min="1" max="1" chance="15" /> <!--蒐魂石-->
+					<item id="96911" min="1" max="1" chance="15" /> <!--蒐魂石-->
+				</group>
+				<group chance="0.01">
+					<item id="91864" min="1" max="1" chance="20" />
+					<item id="93303" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22611" level="95" type="Monster" name="永生護衛武士" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="41857" sp="418" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="132929.1" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="37.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="97830" min="1" max="1" chance="0.0007" /> <!-- Tower of Insolence's Time Stone -->
+				</group>
+				<group chance="70">
+					<item id="57" min="3369" max="3727" chance="100" /> <!-- Adena -->
+					<item id="94717" min="1" max="1" chance="0.1" />
+					<item id="91481" min="1" max="3" chance="1" />
+					<item id="97147" min="1" max="2" chance="1" />
+				</group>
+				<group chance="5">
+					<item id="95793" min="1" max="1" chance="15" /> <!--蒐魂石-->
+					<item id="96911" min="1" max="1" chance="15" /> <!--蒐魂石-->
+				</group>
+				<group chance="0.01">
+					<item id="91864" min="1" max="1" chance="20" />
+					<item id="93303" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22612" level="95" type="Monster" name="永生支配者" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="41857" sp="418" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="132929.1" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="44.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="97830" min="1" max="1" chance="0.0007" /> <!-- Tower of Insolence's Time Stone -->
+				</group>
+				<group chance="70">
+					<item id="57" min="3369" max="3727" chance="100" /> <!-- Adena -->
+					<item id="94717" min="1" max="1" chance="0.1" />
+					<item id="91481" min="1" max="3" chance="1" />
+					<item id="97147" min="1" max="2" chance="1" />
+				</group>
+				<group chance="5">
+					<item id="95793" min="1" max="1" chance="15" /> <!--蒐魂石-->
+					<item id="96911" min="1" max="1" chance="15" /> <!--蒐魂石-->
+				</group>
+				<group chance="0.01">
+					<item id="91864" min="1" max="1" chance="20" />
+					<item id="93303" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22613" level="95" type="Monster" name="迪拿米斯" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="41857" sp="418" attributeExp="2185" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="132929.1" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19.5" />
+			<height normal="48.35" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22614" level="95" type="Monster" name="亞蕊" title="Tower of Insolence's Keeper" element="WIND">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="97" /> 
+		<acquire exp="45125" sp="451" attributeExp="1359" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="52442.6524104131" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3768" magical="1360" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="63.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48046" level="1" /> 
+			<skill id="4086" level="1" /> 
+			<skill id="5599" level="11" /> 
+			<skill id="4286" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="70">
+					<item id="57" min="336900" max="372700" chance="100" /> <!-- Adena -->
+					<item id="94717" min="1" max="1" chance="0.1" />
+					<item id="91481" min="1" max="100" chance="1" />
+				</group>
+				<group chance="70">
+					<item id="95798" min="1" max="1" chance="15" /> <!--蒐魂石-->
+					<item id="96916" min="1" max="1" chance="15" /> <!--蒐魂石-->
+				</group>
+				<group chance="30">
+					<item id="91864" min="1" max="1" chance="20" />
+					<item id="93303" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22615" level="88" type="Monster" name="進化的姆爾" title="Tower of Insolence's Keeper" element="WIND">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="3872" sp="39" attributeExp="1258" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="14635.78182" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21.6" />
+			<height normal="42.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="48046" level="1" /> 
+			<skill id="4085" level="1" /> 
+			<skill id="4086" level="1" /> 
+			<skill id="5599" level="11" /> 
+			<skill id="4286" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="70">
+					<item id="57" min="336900" max="372700" chance="100" /> <!-- Adena -->
+					<item id="94717" min="1" max="1" chance="0.1" />
+					<item id="91481" min="1" max="100" chance="1" />
+				</group>
+				<group chance="70">
+					<item id="95798" min="1" max="1" chance="15" /> <!--蒐魂石-->
+					<item id="96916" min="1" max="1" chance="15" /> <!--蒐魂石-->
+				</group>
+				<group chance="30">
+					<item id="91864" min="1" max="1" chance="20" />
+					<item id="93303" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22616" level="90" type="Monster" name="進化的艾奇克" title="Tower of Insolence's Keeper" element="WIND">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<acquire exp="8100" sp="81" attributeExp="1800" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25290.63098496" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2383" magical="1045" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21.6" />
+			<height normal="53.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48046" level="1" /> 
+			<skill id="4085" level="1" /> 
+			<skill id="5599" level="11" /> 
+			<skill id="4286" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="70">
+					<item id="57" min="336900" max="372700" chance="100" /> <!-- Adena -->
+					<item id="94717" min="1" max="1" chance="0.1" />
+					<item id="91481" min="1" max="100" chance="1" />
+				</group>
+				<group chance="70">
+					<item id="95798" min="1" max="1" chance="15" /> <!--蒐魂石-->
+					<item id="96916" min="1" max="1" chance="15" /> <!--蒐魂石-->
+				</group>
+				<group chance="30">
+					<item id="91864" min="1" max="1" chance="20" />
+					<item id="93303" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22617" level="92" type="Monster" name="城堡親衛隊長" title="Kelbim's Legion" element="WATER">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="25573" sp="256" attributeExp="1012" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="127151.9" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="27" />
+			<height normal="45.75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22618" level="92" type="Monster" name="城堡親衛隊長" title="Kelbim's Legion" element="WATER">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="25573" sp="256" attributeExp="1012" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="127151.9" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="27.3" />
+			<height normal="69.15" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22619" level="92" type="Monster" name="城堡親衛隊長" title="Kelbim's Legion" element="WATER">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="25573" sp="256" attributeExp="1012" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="127151.9" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="31.2" />
+			<height normal="62" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22620" level="91" type="Monster" name="城堡親衛隊" element="WATER">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> 
+		<acquire exp="17281" sp="173" attributeExp="1001" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="105959.5" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="9" />
+			<height normal="35.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22621" level="91" type="Monster" name="城堡親衛隊" element="WATER">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="17281" sp="173" attributeExp="1001" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="105959.5" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="9" />
+			<height normal="35.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22622" level="91" type="Monster" name="城堡親衛隊" element="WATER">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="17281" sp="173" attributeExp="1001" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="105959.5" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" />
+			<height normal="34.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22623" level="91" type="Monster" name="城堡親衛隊" element="WATER">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="17281" sp="173" attributeExp="1001" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="105959.5" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="43.875" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22624" level="91" type="Monster" name="使魔" element="WATER">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="83762.66" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="80" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="46.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22625" level="94" type="Monster" name="突襲部隊軍官" title="Kelbim's Legion" element="WATER">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="24598" sp="246" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="36" />
+			<height normal="62" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22626" level="94" type="Monster" name="突襲部隊軍官" title="Kelbim's Legion" element="WATER">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="24598" sp="246" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="28" />
+			<height normal="59.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22627" level="94" type="Monster" name="鐵壁部隊軍官" title="Kelbim's Legion" element="WATER">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="24598" sp="246" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="50" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="42" />
+			<height normal="108" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22628" level="94" type="Monster" name="弓箭手隊員" title="Kelbim's Legion" element="WATER">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="24598" sp="246" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="60" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="43.2" />
+			<height normal="87" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+		</skillList>
+	</npc>
+	<npc id="22629" level="94" type="Monster" name="襲擊隊員" title="Kelbim's Legion" element="WATER">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="24598" sp="246" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="48" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+		</skillList>
+	</npc>
+	<npc id="22630" level="94" type="Monster" name="治癒隊員" title="Kelbim's Legion" element="WATER">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="24598" sp="246" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="48" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+		</skillList>
+	</npc>
+	<npc id="22631" level="94" type="Monster" name="隊員隊員" title="Kelbim's Legion" element="WATER">
+		<race>HUMAN</race>
+		<sex>MALE</sex>
+		<acquire exp="24598" sp="246" attributeExp="1880" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="72370.86032637" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3491" magical="1297" />
+			<speed>
+				<walk ground="40" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="47" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="14" /> 
+		</skillList>
+	</npc>
+	<npc id="22632" level="93" type="Monster" name="使魔" title="Summoner Commander" element="WATER">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="24077" sp="241" attributeExp="1860" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="60309.050271975" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4442" magical="3032" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3214" magical="1234" />
+			<speed>
+				<walk ground="80" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="63" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> 
+		</skillList>
+	</npc>
+	<npc id="22633" level="88" type="Monster" name="城堡精銳護衛兵" element="WATER">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="97301" /> 
+		<acquire exp="2303" sp="23" attributeExp="968" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="58867.08861" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="43.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22634" level="89" type="Monster" name="城堡精銳護衛兵" element="WATER">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="92404" lhand="94301" /> 
+		<acquire exp="3204" sp="32" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="136739.87342" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.4" />
+			<height normal="50.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22635" level="88" type="Monster" name="城堡精銳護衛兵" element="WATER">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="92421" /> 
+		<acquire exp="2303" sp="23" attributeExp="968" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="58867.08861" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15.4" />
+			<height normal="36.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22636" level="89" type="Monster" name="城堡精銳護衛兵" element="WATER">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="96268" /> 
+		<acquire exp="3204" sp="32" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="136739.87342" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19.6" />
+			<height normal="41.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22637" level="86" type="Monster" name="城堡外圍護衛兵" element="WATER">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8683" /> 
+		<acquire exp="1046" sp="10" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25129.74684" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="43.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22638" level="87" type="Monster" name="城堡外圍護衛兵" element="WATER">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8678" lhand="2498" /> 
+		<acquire exp="1699" sp="17" attributeExp="957" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="56867.72152" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.4" />
+			<height normal="50.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22639" level="86" type="Monster" name="城堡外圍護衛兵" element="WATER">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8687" /> 
+		<acquire exp="1046" sp="10" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25129.74684" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15.4" />
+			<height normal="36.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22640" level="87" type="Monster" name="城堡外圍護衛兵" element="WATER">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8688" /> 
+		<acquire exp="1699" sp="17" attributeExp="957" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="56867.72152" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19.6" />
+			<height normal="41.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22641" level="86" type="Monster" name="古代貴族的士兵" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="98218" /> 
+		<acquire exp="1150" sp="11" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25129.74684" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="33" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="13" />
+			<height normal="30.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22642" level="86" type="Monster" name="王室執政官" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="1150" sp="11" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25129.74684" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="38" />
+				<run ground="200" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="12" />
+			<height normal="22.3" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22643" level="86" type="Monster" name="被遺忘的犧牲者" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="98230" /> 
+		<acquire exp="1150" sp="11" attributeExp="946" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="25129.74684" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1275" magical="793" />
+			<speed>
+				<walk ground="36" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="10" />
+			<height normal="24.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22644" level="87" type="Monster" name="祭禮的犧牲者" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="1869" sp="19" attributeExp="957" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="85301.26582" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="30" />
+				<run ground="240" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="13.5" />
+			<height normal="40.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22645" level="88" type="Monster" name="神聖創造物" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="98230" /> 
+		<acquire exp="2533" sp="25" attributeExp="968" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="88300.63291" hpRegen="10.2" mp="2928.25" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="36" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="13.2" />
+			<height normal="30.12" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22646" level="87" type="Monster" name="儀式的祭物" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="1869" sp="19" attributeExp="957" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="85301.26582" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1552" magical="856" />
+			<speed>
+				<walk ground="38" />
+				<run ground="200" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="17" />
+			<height normal="22.3" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22647" level="89" type="Monster" name="帝雷歐的信徒" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="5286" sp="53" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="273479.11392" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="14.4" />
+			<height normal="39" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22648" level="89" type="Monster" name="帝雷歐的信徒" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="5286" sp="53" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="273479.11392" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="14.4" />
+			<height normal="31.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22649" level="89" type="Monster" name="帝雷歐的信徒" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="5286" sp="53" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="273479.11392" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="22" />
+			<height normal="37" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22650" level="89" type="Monster" name="帝雷歐的使徒" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="5286" sp="53" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="273479.11392" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="18" />
+			<height normal="34.8" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22651" level="89" type="Monster" name="帝雷歐的祭司" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8206" /> 
+		<acquire exp="5286" sp="53" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="273479.11392" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="80" />
+				<run ground="220" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="10.4" />
+			<height normal="25.73" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22652" level="91" type="Monster" name="帝雷歐的狂信者" element="FIRE">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="99" /> 
+		<acquire exp="19009" sp="190" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="96327.21519" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="46" />
+				<run ground="165" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="6.6" grown="7.8" />
+			<height normal="34.2" grown="42" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22653" level="91" type="Monster" name="帝雷歐的狂信者" element="FIRE">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="19009" sp="190" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="96327.21519" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="15" />
+				<run ground="185" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="9" />
+			<height normal="31.56" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22654" level="91" type="Monster" name="帝雷歐的狂信者" element="FIRE">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="6723" /> 
+		<acquire exp="19009" sp="190" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="96327.21519" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="43" />
+				<run ground="165" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="9" grown="10" />
+			<height normal="31.5" grown="38" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22655" level="91" type="Monster" name="痛苦的狂信者" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="946" /> 
+		<acquire exp="19009" sp="190" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="96327.21519" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="92" />
+				<run ground="200" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="21.6" />
+			<height normal="38.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22656" level="91" type="Monster" name="帝雷歐的上位祭司" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="19009" sp="190" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="96327.21519" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="80" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" randomWalk="false" />
+		<collision>
+			<radius normal="10.4" />
+			<height normal="25.73" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22657" level="89" type="Monster" name="祭司的護衛" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8207" lhand="8207" /> 
+		<acquire exp="5286" sp="53" attributeExp="979" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="205109.49367" hpRegen="10.2" mp="11928" mpRegen="3.6" />
+			<attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2106" magical="982" />
+			<speed>
+				<walk ground="58" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8.47" />
+			<height normal="31.54" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22658" level="91" type="Monster" name="祭司的護衛戰士" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8207" lhand="8207" /> 
+		<acquire exp="19009" sp="190" attributeExp="1301" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="96327.21519" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2660" magical="1108" />
+			<speed>
+				<walk ground="58" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8.47" />
+			<height normal="31.54" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22659" level="88" type="Monster" name="復活的神殿騎士" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="98219" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="29726.004" hpRegen="10.2" mp="11714.4" mpRegen="3.6" />
+			<attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1829" magical="919" />
+			<speed>
+				<walk ground="42" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.88" />
+			<height normal="41.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22660" level="92" type="Monster" name="神殿劍士" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="28131" sp="281" attributeExp="1316" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="115592.40506" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16" />
+			<height normal="32.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22661" level="92" type="Monster" name="神殿守護戰士" element="FIRE">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="98217" lhand="98216" /> 
+		<acquire exp="28131" sp="281" attributeExp="1316" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="115592.40506" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="53" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.4" />
+			<height normal="34.68" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22662" level="92" type="Monster" name="神殿狂戰士" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="28131" sp="281" attributeExp="1316" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="115592.40506" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2937" magical="1171" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" />
+			<height normal="45.96" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22663" level="80" type="Monster" name="哈勒非" element="WIND">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="676" sp="7" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="37522.1519" hpRegen="10.2" mp="2584.09268001591" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="51.6" />
+			<height normal="52.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="57" min="375" max="414" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.48">
+					<item id="92020" min="1" max="1" chance="20" />
+					<item id="93330" min="1" max="1" chance="20" />
+					<item id="93685" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22664" level="80" type="Monster" name="哈勒非鬥士" element="WIND">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="676" sp="7" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="37522.1519" hpRegen="10.2" mp="2584.09268001591" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="55.2" />
+			<height normal="60.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="57" min="375" max="414" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.48">
+					<item id="92020" min="1" max="1" chance="20" />
+					<item id="93330" min="1" max="1" chance="20" />
+					<item id="93685" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22665" level="80" type="Monster" name="哈勒巫師" element="WIND">
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<acquire exp="676" sp="7" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="37522.1519" hpRegen="10.2" mp="2584.09268001591" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20.4" />
+			<height normal="53.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="57" min="375" max="414" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.48">
+					<item id="92020" min="1" max="1" chance="20" />
+					<item id="93330" min="1" max="1" chance="20" />
+					<item id="93685" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22666" level="80" type="Monster" name="哈勒守護者" title="Bearer of Sacred Power" element="WIND">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="1502" sp="15" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="75044.93671" hpRegen="10.2" mp="2584.09268001591" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="55.2" />
+			<height normal="60.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="57" min="375" max="414" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.48">
+					<item id="92020" min="1" max="1" chance="20" />
+					<item id="93330" min="1" max="1" chance="20" />
+					<item id="93685" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22667" level="85" type="Monster" name="暗黑的黑魔法師" element="WIND">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="1619" sp="16" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="80844.93671" hpRegen="10.2" mp="2995.67164953085" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="47.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="57" min="375" max="414" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.48">
+					<item id="92020" min="1" max="1" chance="20" />
+					<item id="93330" min="1" max="1" chance="20" />
+					<item id="93685" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22668" level="85" type="Monster" name="暗黑的弓箭手" element="WIND">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> 
+		<acquire exp="1619" sp="9" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="80844.93671" hpRegen="10.2" mp="2995.67164953085" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="80" />
+				<run ground="155" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.3" />
+			<height normal="44.3" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="57" min="375" max="414" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.48">
+					<item id="92020" min="1" max="1" chance="20" />
+					<item id="93330" min="1" max="1" chance="20" />
+					<item id="93685" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22669" level="85" type="Monster" name="暗黑的偵查者" element="WIND">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="1619" sp="9" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="80844.93671" hpRegen="10.2" mp="2995.67164953085" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="48.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="57" min="375" max="414" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.48">
+					<item id="92020" min="1" max="1" chance="20" />
+					<item id="93330" min="1" max="1" chance="20" />
+					<item id="93685" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22670" level="85" type="Monster" name="暗黑的使徒" element="WIND">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="1619" sp="16" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="80844.93671" hpRegen="10.2" mp="2995.67164953085" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="80" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14.3" />
+			<height normal="44.3" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="57" min="375" max="414" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.48">
+					<item id="92020" min="1" max="1" chance="20" />
+					<item id="93330" min="1" max="1" chance="20" />
+					<item id="93685" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22671" level="85" type="Monster" name="暗黑的審判者" title="Bearer of Sacred Power" element="WIND">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="2429" sp="23" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="121267.08861" hpRegen="10.2" mp="2995.67164953085" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20.8" />
+			<height normal="52.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="57" min="375" max="414" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.48">
+					<item id="92020" min="1" max="1" chance="20" />
+					<item id="93330" min="1" max="1" chance="20" />
+					<item id="93685" min="1" max="1" chance="20" />
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="22672" level="85" type="Monster" name="哈里特蜥蜴人" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="88" lhand="945" /> 
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="37" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18.7" />
+			<height normal="56.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22673" level="85" type="Monster" name="哈里特蜥蜴人戰士" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="97" /> 
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="40" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.1" grown="37.4" />
+			<height normal="61.6" grown="73.84" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22674" level="85" type="Monster" name="哈里特蜥蜴人弓箭手" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="287" /> 
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="37" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18.7" />
+			<height normal="53.1" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22675" level="85" type="Monster" name="哈里特蜥蜴人族長" title="Invader of Anghel Waterfall" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8682" /> 
+		<acquire exp="8375" sp="84" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="517784.17722" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="53" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="34" grown="40.8" />
+			<height normal="70.1" grown="83.7" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22676" level="85" type="Monster" name="過去的騎士" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="131" lhand="103" /> 
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="40" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="53" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22677" level="85" type="Monster" name="戰爭的亡靈" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="299" /> 
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="50" />
+				<run ground="155" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" grown="24" />
+			<height normal="59" grown="69" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22678" level="85" type="Monster" name="虛無的侵略者" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="946" lhand="945" /> 
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="80" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22" />
+			<height normal="60" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22679" level="85" type="Monster" name="血的祭司" title="Invader of the Ancient Battleground" element="FIRE">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<acquire exp="8375" sp="84" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="517784.17722" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="80" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="30.8" />
+			<height normal="91.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22680" level="85" type="Monster" name="獨角獸" element="FIRE">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="46" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="23.8" />
+			<height normal="53.1" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22681" level="85" type="Monster" name="片奴" element="FIRE">
+		<race>FAIRY</race>
+		<sex>MALE</sex>
+		<equipment rhand="97" /> 
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="45" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18.2" />
+			<height normal="46.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="13" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22682" level="85" type="Monster" name="佛萊" element="FIRE">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="60" />
+				<run ground="80" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18.7" />
+			<height normal="61.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22683" level="85" type="Monster" name="提米克倫" title="Invader of the Enchanted Valley" element="FIRE">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="8375" sp="84" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="517784.17722" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="12" />
+				<run ground="12" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="32.2" />
+			<height normal="127.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22684" level="85" type="Monster" name="瑪那宣" element="FIRE">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="140" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="27.2" />
+			<height normal="87.1" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22685" level="85" type="Monster" name="附法鋼鐵高崙" element="FIRE">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="20" />
+				<run ground="60" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="30.6" />
+			<height normal="59.9" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22686" level="85" type="Monster" name="附法眼怪" element="FIRE">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="90" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="35.7" />
+			<height normal="75.2" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22687" level="85" type="Monster" name="附法翼魔" title="Invader of the Ivory Tower Crater" element="FIRE">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<acquire exp="8375" sp="84" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="517784.17722" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="100" />
+				<run ground="150" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="50" />
+			<height normal="133" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22688" level="85" type="Monster" name="坎查拉" element="FIRE">
+		<race>ANIMAL</race>
+		<sex>MALE</sex>
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="60" />
+				<run ground="100" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="70" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="4" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22689" level="85" type="Monster" name="哈梅瑟獸人步兵" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="233" lhand="110" /> 
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="45" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21.6" />
+			<height normal="54.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22690" level="85" type="Monster" name="哈梅瑟獸人王" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="75" lhand="103" /> 
+		<acquire exp="4188" sp="42" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="258893.03797" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="36" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21.6" grown="25.2" />
+			<height normal="45.6" grown="54.24" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22691" level="85" type="Monster" name="沼澤審判官" title="Invader of the Blazing Swamp" element="FIRE">
+		<race>PLANT</race>
+		<sex>MALE</sex>
+		<acquire exp="8375" sp="84" attributeExp="1216" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="517784.17722" hpRegen="10.2" mp="2770.2" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="55" />
+				<run ground="140" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="59.5" grown="71.4" />
+			<height normal="138.1" grown="165.3" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="5" /> 
+			<skill id="48044" level="1" /> 
+			<skill id="5620" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="22692" level="80" type="Monster" name="骷髏士兵" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="4668" sp="47" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="69620.1" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="34.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48539" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22693" level="80" type="Monster" name="骷髏槍兵" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="4668" sp="47" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="69620.1" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="35" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48539" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22694" level="80" type="Monster" name="骷髏弓箭手" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="4668" sp="47" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="69620.1" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="26.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48539" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22695" level="80" type="Monster" name="骷髏魔法師" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="4668" sp="47" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="69620.1" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="33.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48539" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22696" level="80" type="Monster" name="骷髏士兵" title="Elite" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="18670" sp="187" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="278480.37975" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="27" />
+			<height normal="53.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48539" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22697" level="80" type="Monster" name="骷髏槍兵" title="Elite" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="18670" sp="187" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="278480.37975" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="27" />
+			<height normal="54" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48539" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22698" level="80" type="Monster" name="骷髏弓箭手" title="Elite" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="18670" sp="187" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="278480.37975" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="41.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48539" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="22699" level="80" type="Monster" name="骷髏魔法師" title="Elite" element="FIRE">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="18670" sp="187" attributeExp="1144" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="278480.37975" hpRegen="10.2" mp="2365" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="130" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="51.75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="48539" level="1" /> 
+		</skillList>
+	</npc>
+</list>

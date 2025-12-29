@@ -1,0 +1,93 @@
+<html><head><title>%resource_name%</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+    <tr>
+        <td valign="top" align="center">
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td align=center width=280 height=40 background="L2UI_CT1.Windows_DF_TooltipBG">
+                        <font color="LEVEL" size="5"><b>%resource_name%</b></font>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td height=10></td>
+                </tr>
+                <tr>
+                    <td align=center><font color="00FF66">生活技能：%skill_name%</font></td>
+                </tr>
+                <tr>
+                    <td align=center><font color="FFD700">基礎經驗：%min_exp% ~ %max_exp%</font></td>
+                </tr>
+                <tr>
+                    <td height=10></td>
+                </tr>
+            </table>
+
+            <img src="L2UI.SquareGray" width="280" height="1"><br>
+
+            <!-- 狀態 -->
+            <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="3">
+                <tr bgcolor="222222">
+                    <td align="center" width="140"><font color="FFCC33">%skill_name%等級</font></td>
+                    <td align="center" width="140"><font color="FFFF00">Lv.%skill_level%</font></td>
+                </tr>
+                <tr bgcolor="222222">
+                    <td align="center"><font color="FFCC33">當前經驗</font></td>
+                    <td align="center"><font color="00FFFF">%current_exp% / %required_exp%</font></td>
+                </tr>
+                <tr bgcolor="222222">
+                    <td align="center"><font color="FFCC33">工具狀態</font></td>
+                    <td align="center">%tool_status%</td>
+                </tr>
+            </table>
+
+            <br>
+            <img src="L2UI.SquareGray" width="280" height="1"><br>
+
+            <!-- 獎勵列表 -->
+            <table width="280">
+                <tr>
+                    <td align=center><font color="FFD700">可能獲得的物品</font></td>
+                </tr>
+                <tr>
+                    <td height=5></td>
+                </tr>
+            </table>
+
+            <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="2">
+                <tr bgcolor="333333" height="20">
+                    <td align="center" width="140"><font color="FFCC33">物品名稱</font></td>
+                    <td align="center" width="70"><font color="FFCC33">機率</font></td>
+                    <td align="center" width="70"><font color="FFCC33">數量</font></td>
+                </tr>
+                %reward_list%
+            </table>
+
+            <br>
+            <img src="L2UI.SquareGray" width="280" height="1"><br>
+            <br>
+
+            <!-- 採集按鈕 -->
+            %collect_button%
+
+            <br>
+
+            <table width="280">
+                <tr>
+                    <td align=center><font color="808080" size="1">※ 每次採集獲得基礎經驗</font></td>
+                </tr>
+                <tr>
+                    <td align=center><font color="808080" size="1">※ 獲得物品可能給予額外經驗</font></td>
+                </tr>
+                <tr>
+                    <td align=center><font color="808080" size="1">※ 等級達到要求才能獲得對應物品</font></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

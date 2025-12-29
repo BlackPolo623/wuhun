@@ -1,0 +1,1287 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="51400" toLevel="1" name="紫弧-2獎">
+		<icon>icon.etc_holy_grail_i01</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91859</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>300000</xp>
+				<sp>8100</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51401" toLevel="1" name="藍弧-3獎">
+		<icon>icon.etc_holy_grail_i02</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91860</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>100000</xp>
+				<sp>2700</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51402" toLevel="1" name="綠弧-4獎">
+		<icon>icon.etc_holy_grail_i03</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91861</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="GiveExpAndSp">
+				<xp>50000</xp>
+				<sp>1350</sp>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51403" toLevel="1" name="幸運金幣禮盒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91672</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="18.8">
+						<item id="57" count="50000" /> 
+					</item>
+					<item chance="18.8">
+						<item id="57" count="100000" /> 
+					</item>
+					<item chance="18.8">
+						<item id="57" count="200000" /> 
+					</item>
+					<item chance="18.8">
+						<item id="57" count="400000" /> 
+					</item>
+					<item chance="18.8">
+						<item id="57" count="800000" /> 
+					</item>
+					<item chance="5.0">
+						<item id="57" count="1500000" /> 
+					</item>
+					<item chance="1.0">
+						<item id="57" count="2000000" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51404" toLevel="1" name="強化的長矛之力">
+		
+		<icon>icon.weapon_long_spear_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51405" toLevel="1" name="強化的彎刃大刀之力I">
+		
+		<icon>icon.weapon_falchion_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51406" toLevel="1" name="強化的彎刃大刀之力II">
+		
+		<icon>icon.weapon_falchion_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51407" toLevel="1" name="強化的鋼鎚之力">
+		
+		<icon>icon.weapon_iron_hammer_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51408" toLevel="1" name="強化的巫毒人偶之力">
+		
+		<icon>icon.weapon_voodoo_doll_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51409" toLevel="1" name="強化的魔鎚之力">
+		
+		<icon>icon.weapon_buzdygan_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51410" toLevel="1" name="強化的碎劍者之力">
+		
+		<icon>icon.weapon_sword_breaker_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51411" toLevel="1" name="強化的毒蛇之牙之力">
+		
+		<icon>icon.weapon_vipers_canine_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51412" toLevel="1" name="強化的合金弓之力">
+		
+		<icon>icon.weapon_composition_bow_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51413" toLevel="1" name="祝福的返回卷軸-活動">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91689</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Escape">
+				<escapeType>TOWN</escapeType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51414" toLevel="1" name="梅莉莎HP藥水-活動">
+		<icon>icon.etc_bm_hero_red_potion</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91690</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>400</reuseDelay>
+		<effects>
+			<effect name="HpCpHeal">
+				<power>1000</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51415" toLevel="1" name="梅莉莎MP恢復劑-活動">
+		<icon>icon.etc_bm_hero_red_potion</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91691</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>30000</reuseDelay>
+		<reuseDelayGroup>51415</reuseDelayGroup>
+		<effects>
+			<effect name="ManaHeal">
+				<power>1000</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51416" toLevel="2" name="豐饒的祝福-100%">
+		
+		
+		<icon>
+			<value level="1">icon.aden_bless_rune_i01</value>
+			<value level="2">icon.aden_bless_rune_i02</value>
+		</icon>
+		<operateType>P</operateType>
+		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="BonusDropRateLCoin">
+				<amount>100</amount>
+			</effect>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">10</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">10</value>
+				</amount>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>
+					<value level="1">-20</value>
+					<value level="2">-20</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51417" toLevel="1" name="豐沃寶箱">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91696</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="20.0">
+						<item id="38154" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51418" toLevel="1" name="+7 瑟魯基長劍">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51419" toLevel="1" name="+7 惡魔魔杖">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51420" toLevel="1" name="+7 底獄之鎚">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51421" toLevel="1" name="+7 水晶匕首">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51422" toLevel="1" name="+7 卓越弓">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51423" toLevel="1" name="+7 歐西斯戰斧">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51424" toLevel="1" name="+7 武士刀*武士刀">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51425" toLevel="1" name="+7 夜叉釘鎚">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51426" toLevel="1" name="+7 狂戰士之刃">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51427" toLevel="1" name="+7 巨型帕塔拳刃">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51428" toLevel="1" name="+4 C級最上級防具套裝禮盒">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51429" toLevel="1" name="+4 C級最上級防具套裝禮盒">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51430" toLevel="1" name="+4 C級最上級防具套裝禮盒">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51431" toLevel="1" name="沙哈寶物">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93873</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="8.211">
+						<item id="91028" count="10" /> 
+					</item>
+					<item chance="8.209">
+						<item id="10649" count="3" /> 
+					</item>
+					<item chance="8.209">
+						<item id="13016" count="3" /> 
+					</item>
+					<item chance="8.209">
+						<item id="92409" count="5" /> 
+					</item>
+					<item chance="8.209">
+						<item id="92410" count="5" /> 
+					</item>
+					<item chance="8.209">
+						<item id="49765" count="5" /> 
+					</item>
+					<item chance="8.209">
+						<item id="90143" count="5" /> 
+					</item>
+					<item chance="8.209">
+						<item id="90520" count="3" /> 
+					</item>
+					<item chance="8.209">
+						<item id="91282" count="3" /> 
+					</item>
+					<item chance="8.209">
+						<item id="91356" count="1" /> 
+					</item>
+					<item chance="8.209">
+						<item id="91634" count="1" /> 
+					</item>
+					<item chance="8.209">
+						<item id="93874" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="90963" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="91623" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="33810" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="33816" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="91470" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="91471" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="91717" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="91718" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="93737" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="93738" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="90998" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="90935" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="91124" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="91161" count="1" /> 
+					</item>
+					<item chance="0.01">
+						<item id="91075" count="1" /> 
+					</item>
+					<item chance="0.01">
+						<item id="49683" count="1" /> 
+					</item>
+					<item chance="0.01">
+						<item id="90822" count="1" /> 
+					</item>
+					<item chance="0.01">
+						<item id="90823" count="1" /> 
+					</item>
+					<item chance="0.01">
+						<item id="90824" count="1" /> 
+					</item>
+					<item chance="0.01">
+						<item id="91602" count="1" /> 
+					</item>
+					<item chance="0.01">
+						<item id="91626" count="1" /> 
+					</item>
+					<item chance="0.01">
+						<item id="92032" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="91172" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="91182" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="91601" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="94388" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="94393" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="94398" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="94403" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="94408" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="94413" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="94418" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51432" toLevel="1" name="閃耀的沙哈寶物">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51433" toLevel="1" name="上級安定的武器強化卷軸-S級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51434" toLevel="1" name="上級安定的防具強化卷軸-S級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51435" toLevel="1" name="沙哈憑證">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51436" toLevel="1" name="沙哈的暴風">
+		
+		<icon>icon.bm_sayha_storm</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BR_EVENT_BUF6</abnormalType>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93073</itemConsumeId> 
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<conditions>
+			<condition name="HasVitalityPoints">
+				<amount>35000</amount>
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>51437</skillId> 
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54068</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>200</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>200</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51437" toLevel="1" name="沙哈的暴風">
+		
+		<icon>icon.bm_sayha_storm</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BR_EVENT_BUF6</abnormalType>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91713</itemConsumeId> 
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<conditions>
+			<condition name="HasVitalityPoints">
+				<amount>35000</amount>
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>51436</skillId> 
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>54068</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>200</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>200</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51438" toLevel="1" name="沙哈的召喚魔杖">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic> 
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="51439" toLevel="1" name="沙哈的超越斗篷強化卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="51440" toLevel="6" name="沙哈普羅桀爾拉召喚">
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic> 
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="51441" toLevel="1" name="返回卷軸-荒廢的營區">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>0</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91725</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-46857</x>
+				<y>148096</y>
+				<z>-2968</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51442" toLevel="1" name="返回卷軸-風車的山坡">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="51443" toLevel="1" name="返回卷軸-悲哀廢墟">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>0</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91727</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-42307</x>
+				<y>120810</y>
+				<z>-3368</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51444" toLevel="1" name="強化的長矛禮盒">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51445" toLevel="1" name="強化的彎刃大刀禮盒">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51446" toLevel="1" name="強化的鋼鎚禮盒">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51447" toLevel="1" name="強化的巫毒人偶禮盒">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51448" toLevel="1" name="強化的魔鎚禮盒">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51449" toLevel="1" name="強化的碎劍者禮盒">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51450" toLevel="1" name="強化的毒蛇之牙禮盒">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51451" toLevel="1" name="強化的合金弓禮盒">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="51452" toLevel="1" name="返回卷軸-大神官 雷門德">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>0</hitTime>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91736</itemConsumeId> 
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-12828</x>
+				<y>121713</y>
+				<z>-2952</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51453" toLevel="1" name="豐饒的符咒">
+		
+		<icon>icon.bm_sayha_rune</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="51454" toLevel="1" name="祝福特殊禮盒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91740</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="80.0">
+						<item id="91641" count="3" /> 
+					</item>
+					<item chance="9.4485">
+						<item id="91663" count="30" /> 
+					</item>
+					<item chance="9.4485">
+						<item id="91663" count="50" /> 
+					</item>
+					<item chance="1.0">
+						<item id="91663" count="100" /> 
+					</item>
+					<item chance="0.1">
+						<item id="91663" count="1000" /> 
+					</item>
+					<item chance="0.001">
+						<item id="49683" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="90496" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="90497" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51455" toLevel="1" name="殷海薩的加護-活動">
+		
+		<icon>icon.bm_nebit_bonus_time_up</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>4</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount> 
+		<itemConsumeId>91741</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>100</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>100</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51456" toLevel="1" name="姜太公的禮盒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>91742</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="33.34">
+						<item id="38154" count="50" /> 
+					</item>
+					<item chance="33.33">
+						<item id="38154" count="100" /> 
+					</item>
+					<item chance="33.33">
+						<item id="90907" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51457" toLevel="1" name="冒險家之聖癒祭司變身卷軸">
+		
+		<icon>icon.bm2018_healer_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_W</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>0</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>0</hitTime>
+		<isMagic>4</isMagic> 
+		<itemConsumeId>1</itemConsumeId>
+		<itemConsumeId>91825</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>63</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>MY_PARTY</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51460</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>MY_PARTY</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51460</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51460</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51458" toLevel="1" name="冒險家之女武神變身卷軸">
+		
+		<icon>icon.bm2018_valkyrie_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>TRANS_DECO_W</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>0</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>0</hitTime>
+		<isMagic>4</isMagic> 
+		<itemConsumeId>1</itemConsumeId>
+		<itemConsumeId>91826</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>63</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>70</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-5</amount>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<magicType>0</magicType>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>false</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51463</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<magicType>0</magicType>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51463</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<magicType>1</magicType>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>false</allowSkillAttack>
+				<allowNormalAttack>true</allowNormalAttack>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51464</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<magicType>1</magicType>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51464</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51459" toLevel="1" name="冒險家之龍狂戰士變身卷軸">
+		
+		<icon>icon.bm2018_dragon_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>D_CHAOS_MATCH_DECO_SMALL</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>0</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>0</hitTime>
+		<isMagic>4</isMagic> 
+		<itemConsumeId>1</itemConsumeId>
+		<itemConsumeId>91827</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>135</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>150</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-10</amount>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51462</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>SELF</targetType>
+				<isCritical>true</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51462</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>20</chance>
+				<targetType>ENEMY</targetType>
+				<allowSkillAttack>true</allowSkillAttack>
+				<allowNormalAttack>false</allowNormalAttack>
+				<isCritical>false</isCritical>
+				<allowWeapons>ALL</allowWeapons>
+				<skillId>51462</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51460" toLevel="1" name="聖癒祭司-伊娃祝福">
+		
+		<icon>icon.skill1506</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectObject>FRIEND</affectObject>
+		<affectRange>1000</affectRange>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>20</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<effects>
+			<effect name="Heal">
+				<power>300</power>
+			</effect>
+			<effect name="ManaHeal">
+				<power>80</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51461" toLevel="1" name="女武神-麻痺">
+		
+		<icon>icon.skill1170</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>-5</effectPoint>
+		<effectRange>200</effectRange>
+		<isDebuff>true</isDebuff>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<lvlBonusRate>2</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51462" toLevel="1" name="狂戰士靈">
+		
+		<icon>icon.bm2018_dragon_i02</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<abnormalType>BERSERKER</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>20</effectPoint>
+		<isMagic>4</isMagic> 
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>300</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>135</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>135</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DamageShield">
+				<amount>15</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51463" toLevel="1" name="女武神-物理攻擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>900</castRange>
+		<effectPoint>-5</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>0</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>30000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>2000</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="51464" toLevel="1" name="女武神-魔法攻擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>900</castRange>
+		<effectPoint>-5</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>0</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>30000</reuseDelay>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>112</power>
+			</effect>
+		</effects>
+	</skill>
+</list>

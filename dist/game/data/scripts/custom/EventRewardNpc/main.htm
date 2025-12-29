@@ -1,0 +1,40 @@
+<html>
+<head><title>活動獎勵中心</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+    <tr>
+        <td valign="top" align="center">
+            <!-- Main Content -->
+            <table border=0 cellpadding=0 cellspacing=0 width="270">
+                <tr><td height="10"></td></tr>
+                <tr><td align="center" height="25"><font color="FFFF00">活動獎勵中心</font></td></tr>
+                <tr><td height="10"></td></tr>
+
+                <tr><td align="center"><font color="af9878">歡迎您，</font><font color="LEVEL">%player_name%</font></td></tr>
+                <tr><td align="center"><font color="ac9887">您有 </font><font color="00FF00">%available_count%</font><font color="ac9887"> 個活動獎勵可領取</font></td></tr>
+                <tr><td height="15"></td></tr>
+
+                <!-- 活動列表區域 -->
+                <tr><td align="center"><font color="FFAA00">【 可領取的活動 】</font></td></tr>
+                <tr><td height="10"></td></tr>
+            </table>
+
+            <!-- 動態生成的活動按鈕列表 -->
+            <table border=0 cellpadding=0 cellspacing=0 width="270">
+                %event_list%
+            </table>
+
+            <table border=0 cellpadding=0 cellspacing=0 width="270">
+                <tr><td height="10"></td></tr>
+                <tr><td align="center">
+                    <font color="808080">※ 每個活動只能領取一次</font>
+                </td></tr>
+                <tr><td align="center">
+                    <font color="808080">※ 領取後按鈕將自動消失</font>
+                </td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

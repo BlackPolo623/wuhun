@@ -1,0 +1,1616 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="92000" name="火精靈原石破片" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.elemental_fire_stone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AddSpiritExp" />
+	</item>
+	<item id="92001" name="風精靈原石破片" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.elemental_wind_stone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AddSpiritExp" />
+	</item>
+	<item id="92002" name="大地精靈原石破片" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.elemental_earth_stone_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AddSpiritExp" />
+	</item>
+	<item id="92003" name="特殊充能組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<conditions msgId="1902">
+			<player levelRange="1;75" />
+		</conditions>
+		<capsuled_items>
+			<item id="91910" min="10" max="10" chance="100" name="沙哈的祝福-75級以下" /> 
+			<item id="90907" min="30" max="30" chance="100" name="靈魂彈交換券" /> 
+			<item id="3031" min="500" max="500" chance="100" name="魔精石" /> 
+		</capsuled_items>
+	</item>
+	<item id="92004" name="道具清單擴充券" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_add_inventory_i00" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000000" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92005" name="道具清單擴充券Lv2" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ticket_i00" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000000" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92006" name="道具清單擴充券Lv3" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ticket_i00" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000000" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92007" name="上級道具清單擴充券" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_add_inventory_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92008" name="道具清單擴充券Lv5" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ticket_i00" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="92009" name="閃亮老舊可疑的石頭" type="EtcItem">
+		
+		<set name="icon" val="icon.destiny_stone" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="91032" min="1" max="1" chance="11.11111" name="火精靈進化石" /> 
+			<item id="91033" min="1" max="1" chance="11.11111" name="風精靈進化石" /> 
+			<item id="91031" min="1" max="1" chance="11.11111" name="水精靈進化石" /> 
+			<item id="91034" min="1" max="1" chance="11.11111" name="大地精靈進化石" /> 
+			<item id="91976" min="10" max="10" chance="11.11111" name="老舊可疑的石頭" /> 
+			<item id="91036" min="5" max="5" chance="11.11111" name="火精靈原石" /> 
+			<item id="91037" min="5" max="5" chance="11.11111" name="風精靈原石" /> 
+			<item id="91035" min="5" max="5" chance="11.11111" name="水精靈原石" /> 
+			<item id="91038" min="5" max="5" chance="11.11111" name="大地精靈原石" /> 
+		</capsuled_items>
+	</item>
+	<item id="92010" name="聖威長袍套裝" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_t85_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2409" min="1" max="1" chance="100" name="聖威長袍" /> 
+			<item id="90478" min="1" max="1" chance="100" name="聖威頭箍-長袍" /> 
+			<item id="5776" min="1" max="1" chance="100" name="聖威手套-長袍" /> 
+			<item id="5788" min="1" max="1" chance="100" name="聖威靴-長袍" /> 
+		</capsuled_items>
+	</item>
+	<item id="92011" name="聖威輕裝套裝" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_t84_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="5775" min="1" max="1" chance="100" name="聖威手套-輕裝" /> 
+			<item id="5787" min="1" max="1" chance="100" name="聖威靴-輕裝" /> 
+			<item id="90477" min="1" max="1" chance="100" name="聖威頭箍-輕裝" /> 
+			<item id="2395" min="1" max="1" chance="100" name="聖威皮甲" /> 
+		</capsuled_items>
+	</item>
+	<item id="92012" name="黑暗水晶長袍套裝" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_t76_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2407" min="1" max="1" chance="100" name="黑暗水晶長袍" /> 
+			<item id="5767" min="1" max="1" chance="100" name="黑暗水晶手套-長袍" /> 
+			<item id="5779" min="1" max="1" chance="100" name="黑暗水晶靴-長袍" /> 
+			<item id="90472" min="1" max="1" chance="100" name="黑暗水晶頭盔-長袍" /> 
+		</capsuled_items>
+	</item>
+	<item id="92013" name="黑暗水晶輕裝套裝" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_t75_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="5766" min="1" max="1" chance="100" name="黑暗水晶手套-輕裝" /> 
+			<item id="5778" min="1" max="1" chance="100" name="黑暗水晶靴-輕裝" /> 
+			<item id="90471" min="1" max="1" chance="100" name="黑暗水晶頭盔-輕裝" /> 
+			<item id="2385" min="1" max="1" chance="100" name="黑暗水晶皮甲" /> 
+			<item id="2389" min="1" max="1" chance="100" name="黑暗水晶皮脛甲" /> 
+		</capsuled_items>
+	</item>
+	<item id="92014" name="夢魘重裝套裝" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_t80_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="5771" min="1" max="1" chance="100" name="夢魘長手套-重裝" /> 
+			<item id="5783" min="1" max="1" chance="100" name="夢魘靴-重裝" /> 
+			<item id="90473" min="1" max="1" chance="100" name="夢魘頭盔-重裝" /> 
+			<item id="374" min="1" max="1" chance="100" name="夢魘盔甲" /> 
+		</capsuled_items>
+	</item>
+	<item id="92015" name="塔魯重裝套裝" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_t77_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2382" min="1" max="1" chance="100" name="塔魯金屬盔甲" /> 
+			<item id="5768" min="1" max="1" chance="100" name="塔魯手套-重裝" /> 
+			<item id="5780" min="1" max="1" chance="100" name="塔魯靴-重裝" /> 
+			<item id="90467" min="1" max="1" chance="100" name="塔魯帽-重裝" /> 
+		</capsuled_items>
+	</item>
+	<item id="92016" name="沙哈的祝福組(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_wind_potion_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91641" min="2" max="2" chance="100" name="沙哈的祝福" /> 
+		</capsuled_items>
+	</item>
+	<item id="92017" name="伊娃護身符強化卷軸" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_eva_talisman_scroll" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="ENCHT_AM" /> 
+		<set name="handler" val="EnchantScrolls" />
+		<skills>
+			<skill id="40056" level="1" /> 
+		</skills>
+	</item>
+	<item id="92018" name="伊娃護身符" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.bm_eva_talisman" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="bodypart" val="talisman" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50193" level="1" /> 
+			<skill id="50193" level="3" type="ON_ENCHANT" type_value="1" /> 
+			<skill id="50193" level="5" type="ON_ENCHANT" type_value="2" /> 
+			<skill id="50193" level="7" type="ON_ENCHANT" type_value="3" /> 
+			<skill id="50193" level="9" type="ON_ENCHANT" type_value="4" /> 
+			<skill id="50193" level="11" type="ON_ENCHANT" type_value="5" /> 
+			<skill id="50193" level="13" type="ON_ENCHANT" type_value="6" /> 
+			<skill id="50193" level="15" type="ON_ENCHANT" type_value="7" /> 
+			<skill id="50193" level="17" type="ON_ENCHANT" type_value="8" /> 
+			<skill id="50193" level="19" type="ON_ENCHANT" type_value="9" /> 
+			<skill id="50193" level="21" type="ON_ENCHANT" type_value="10" /> 
+		</skills>
+	</item>
+	<item id="92019" name="攻城支援禮盒" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_gold_relic_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="49487" min="20" max="20" chance="4.0" name="靈魂彈交換券-帳號共享" /> 
+			<item id="49674" min="5" max="5" chance="4.0" name="經驗值提升卷軸" /> 
+			<item id="49683" min="1" max="1" chance="4.0" name="巴溫護身符" /> 
+			<item id="90045" min="31" max="31" chance="4.0" name="魔力字板" /> 
+			<item id="91159" min="1" max="1" chance="4.0" name="壺精交換券" /> 
+			<item id="91213" min="1" max="1" chance="4.0" name="沙哈斗篷強化卷軸" /> 
+			<item id="91227" min="1" max="1" chance="4.0" name="沙哈斗篷交換券" /> 
+			<item id="91246" min="1" max="1" chance="4.0" name="龍之墜飾Lv3" /> 
+			<item id="91247" min="1" max="1" chance="4.0" name="龍之墜飾Lv4" /> 
+			<item id="91690" min="5" max="5" chance="4.0" name="特級HP藥水" /> 
+			<item id="91712" min="5" max="5" chance="4.0" name="沙哈的暴風(限時)" /> 
+			<item id="91767" min="1" max="1" chance="4.0" name="亞丁護身符強化組合包" /> 
+			<item id="91780" min="5" max="5" chance="4.0" name="老舊戰鬥的卷軸" /> 
+			<item id="91781" min="5" max="5" chance="4.0" name="老舊沙哈輔助魔法卷軸" /> 
+			<item id="91864" min="1" max="1" chance="4.0" name="龍之腰帶禮盒" /> 
+			<item id="92010" min="1" max="1" chance="4.0" name="聖威長袍套裝" /> 
+			<item id="92011" min="1" max="1" chance="4.0" name="聖威輕裝套裝" /> 
+			<item id="92012" min="1" max="1" chance="4.0" name="黑暗水晶長袍套裝" /> 
+			<item id="92013" min="1" max="1" chance="4.0" name="黑暗水晶輕裝套裝" /> 
+			<item id="92014" min="1" max="1" chance="4.0" name="夢魘重裝套裝" /> 
+			<item id="92015" min="1" max="1" chance="4.0" name="塔魯重裝套裝" /> 
+			<item id="92020" min="1" max="1" chance="4.0" name="伊娃護身符強化組合包" /> 
+			<item id="862" min="1" max="1" chance="4.0" name="聖威耳環" /> 
+			<item id="893" min="1" max="1" chance="4.0" name="聖威戒指" /> 
+			<item id="924" min="1" max="1" chance="4.0" name="聖威項鍊" /> 
+		</capsuled_items>
+	</item>
+	<item id="92020" name="伊娃護身符強化組合包" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_pirate_treasure_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="92018" min="1" max="1" chance="100" name="伊娃護身符" /> 
+			<item id="98611" min="10" max="10" chance="100" name="飾品強化卷軸" /> 
+		</capsuled_items>
+	</item>
+	<item id="92021" name="文字D" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_alphabet_d_i00" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="92022" name="文字P" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_alphabet_p_i00" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="92023" name="+9傲慢戒指禮盒" type="EtcItem">
+		
+		<set name="icon" val="icon.ring_of_oman" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91952" min="1" max="1" minEnchant="9" maxEnchant="9" chance="100" name="傲慢戒指" /> 
+		</capsuled_items>
+	</item>
+	<item id="92024" name="+9龍界耳環禮盒" type="EtcItem">
+		
+		<set name="icon" val="icon.accessary_catseye_earing_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="91953" min="1" max="1" minEnchant="9" maxEnchant="9" chance="100" name="龍界耳環" /> 
+		</capsuled_items>
+	</item>
+	<item id="92025" name="活動古文禮盒" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_treasure_box_i05" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90836" min="1" max="1" chance="100" name="勇士經驗值護符" /> 
+			<item id="91692" min="1" max="1" chance="100" name="豐饒的祝福-100%" /> 
+		</capsuled_items>
+	</item>
+	<item id="92026" name="聖威重裝套裝" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_t83_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2383" min="1" max="1" chance="100" name="聖威金屬盔甲" /> 
+			<item id="5774" min="1" max="1" chance="100" name="聖威手套-重裝" /> 
+			<item id="5786" min="1" max="1" chance="100" name="聖威靴-重裝" /> 
+			<item id="90476" min="1" max="1" chance="100" name="聖威頭箍-重裝" /> 
+		</capsuled_items>
+	</item>
+	<item id="92027" name="黑暗水晶重裝套裝" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_t74_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="365" min="1" max="1" chance="100" name="黑暗水晶胸甲" /> 
+			<item id="388" min="1" max="1" chance="100" name="黑暗水晶脛甲" /> 
+			<item id="5765" min="1" max="1" chance="100" name="黑暗水晶手套-重裝" /> 
+			<item id="5777" min="1" max="1" chance="100" name="黑暗水晶靴-重裝" /> 
+			<item id="90470" min="1" max="1" chance="100" name="黑暗水晶頭盔-重裝" /> 
+		</capsuled_items>
+	</item>
+	<item id="92028" name="塔魯輕裝套裝" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_t78_ul_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2393" min="1" max="1" chance="100" name="塔魯皮甲" /> 
+			<item id="5769" min="1" max="1" chance="100" name="塔魯手套-輕裝" /> 
+			<item id="5781" min="1" max="1" chance="100" name="塔魯靴-輕裝" /> 
+			<item id="90468" min="1" max="1" chance="100" name="塔魯帽-輕裝" /> 
+		</capsuled_items>
+	</item>
+	<item id="92029" name="塔魯長袍套裝" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_t79_u_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="10000" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="2400" min="1" max="1" chance="100" name="塔魯外衣" /> 
+			<item id="2405" min="1" max="1" chance="100" name="塔魯長襪" /> 
+			<item id="5770" min="1" max="1" chance="100" name="塔魯手套-長袍" /> 
+			<item id="5782" min="1" max="1" chance="100" name="塔魯靴-長袍" /> 
+			<item id="90469" min="1" max="1" chance="100" name="塔魯帽-長袍" /> 
+		</capsuled_items>
+	</item>
+	<item id="92030" name="勇士經驗值護符組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.skill19226" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90836" min="1" max="1" chance="100" name="勇士經驗值護符" /> 
+		</capsuled_items>
+	</item>
+	<item id="92031" name="護身符手鐲Lv5" type="Armor">
+		
+		<set name="icon" val="icon.dimension_bracelet_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="price" val="5400000" />
+		<set name="commissionItemType" val="BRACELET" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50192" level="5" /> 
+		</skills>
+	</item>
+	<item id="92032" name="護身符手鐲Lv6" type="Armor">
+		
+		<set name="icon" val="icon.dimension_bracelet_i05" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="price" val="5400000" />
+		<set name="commissionItemType" val="BRACELET" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50192" level="6" /> 
+		</skills>
+	</item>
+	<item id="92033" name="魔法火花" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_soul_of_shilen" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<conditions msgId="1902">
+			<player levelRange="1;75" />
+		</conditions>
+		<skills>
+			<skill id="40057" level="1" /> 
+		</skills>
+	</item>
+	<item id="92034" name="堅固寶石盒" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_2018_jewelbox_random" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92176" min="1" max="1" chance="14.2" name="琥珀Lv1寶石盒" /> 
+			<item id="92186" min="1" max="1" chance="14.2" name="貓眼石Lv1寶石盒" /> 
+			<item id="92196" min="1" max="1" chance="14.2" name="海藍寶石Lv1寶石盒" /> 
+			<item id="92206" min="1" max="1" chance="14.2" name="綠寶石Lv1寶石盒" /> 
+			<item id="92216" min="1" max="1" chance="14.2" name="綠寶石Lv1寶石盒" /> 
+			<item id="92226" min="1" max="1" chance="14.2" name="藍寶石Lv1寶石盒" /> 
+			<item id="92236" min="1" max="1" chance="14.2" name="海藍寶石Lv1寶石盒" /> 
+		</capsuled_items>
+	</item>
+	<item id="92035" name="閃亮寶石盒" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92036" min="1" max="1" chance="14.2" name="琥珀Lv1" /> 
+			<item id="92046" min="1" max="1" chance="14.2" name="貓眼石Lv1" /> 
+			<item id="92056" min="1" max="1" chance="14.2" name="珊瑚Lv1" /> 
+			<item id="92066" min="1" max="1" chance="14.2" name="瑪瑙Lv1" /> 
+			<item id="92076" min="1" max="1" chance="14.2" name="尖晶石Lv1" /> 
+			<item id="92086" min="1" max="1" chance="14.2" name="鋯石Lv1" /> 
+			<item id="92096" min="1" max="1" chance="14.2" name="月長石Lv1" /> 
+		</capsuled_items>
+	</item>
+	<item id="92036" name="琥珀Lv1" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50194" level="1" /> 
+		</skills>
+	</item>
+	<item id="92037" name="琥珀Lv2" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50194" level="2" /> 
+		</skills>
+	</item>
+	<item id="92038" name="琥珀Lv3" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50194" level="3" /> 
+		</skills>
+	</item>
+	<item id="92039" name="琥珀Lv4" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="4" /> 
+		</skills>
+	</item>
+	<item id="92040" name="琥珀Lv6" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="6" /> 
+			<skill id="50622" level="6" /> 
+		</skills>
+	</item>
+	<item id="92041" name="琥珀Lv7" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="7" /> 
+			<skill id="50622" level="7" /> 
+		</skills>
+	</item>
+	<item id="92042" name="琥珀Lv8" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_amber_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="8" /> 
+			<skill id="50622" level="8" /> 
+		</skills>
+	</item>
+	<item id="92043" name="琥珀Lv8" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="8" /> 
+		</skills>
+	</item>
+	<item id="92044" name="琥珀Lv9" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="9" /> 
+		</skills>
+	</item>
+	<item id="92045" name="琥珀Lv10" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50194" level="10" /> 
+		</skills>
+	</item>
+	<item id="92046" name="貓眼石Lv1" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50195" level="1" /> 
+		</skills>
+	</item>
+	<item id="92047" name="貓眼石Lv2" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50195" level="2" /> 
+		</skills>
+	</item>
+	<item id="92048" name="貓眼石Lv3" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50195" level="3" /> 
+		</skills>
+	</item>
+	<item id="92049" name="貓眼石Lv4" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50196" level="4" /> 
+			<skill id="50195" level="4" /> 
+		</skills>
+	</item>
+	<item id="92050" name="貓眼石Lv6" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50196" level="6" /> 
+			<skill id="50195" level="6" /> 
+		</skills>
+	</item>
+	<item id="92051" name="貓眼石Lv7" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50196" level="7" /> 
+			<skill id="50195" level="7" /> 
+		</skills>
+	</item>
+	<item id="92052" name="貓眼石Lv8" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_opal_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50196" level="8" /> 
+			<skill id="50195" level="8" /> 
+		</skills>
+	</item>
+	<item id="92053" name="貓眼石Lv8" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50196" level="8" /> 
+			<skill id="50195" level="8" /> 
+		</skills>
+	</item>
+	<item id="92054" name="貓眼石Lv9" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50196" level="9" /> 
+			<skill id="50195" level="9" /> 
+		</skills>
+	</item>
+	<item id="92055" name="貓眼石Lv10" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50196" level="10" /> 
+			<skill id="50195" level="10" /> 
+		</skills>
+	</item>
+	<item id="92056" name="珊瑚Lv1" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50197" level="1" /> 
+		</skills>
+	</item>
+	<item id="92057" name="珊瑚Lv2" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50197" level="2" /> 
+		</skills>
+	</item>
+	<item id="92058" name="珊瑚Lv3" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50197" level="3" /> 
+		</skills>
+	</item>
+	<item id="92059" name="珊瑚Lv4" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50197" level="4" /> 
+		</skills>
+	</item>
+	<item id="92060" name="珊瑚Lv6" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50197" level="6" /> 
+		</skills>
+	</item>
+	<item id="92061" name="珊瑚Lv7" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50197" level="7" /> 
+		</skills>
+	</item>
+	<item id="92062" name="珊瑚Lv8" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_coral_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50197" level="8" /> 
+		</skills>
+	</item>
+	<item id="92063" name="珊瑚Lv8" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50197" level="8" /> 
+		</skills>
+	</item>
+	<item id="92064" name="珊瑚Lv9" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50197" level="9" /> 
+		</skills>
+	</item>
+	<item id="92065" name="珊瑚Lv10" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50197" level="10" /> 
+		</skills>
+	</item>
+	<item id="92066" name="瑪瑙Lv1" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50204" level="1" /> 
+		</skills>
+	</item>
+	<item id="92067" name="瑪瑙Lv2" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50204" level="2" /> 
+		</skills>
+	</item>
+	<item id="92068" name="瑪瑙Lv3" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50204" level="3" /> 
+		</skills>
+	</item>
+	<item id="92069" name="瑪瑙Lv4" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50204" level="4" /> 
+		</skills>
+	</item>
+	<item id="92070" name="瑪瑙Lv6" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50204" level="6" /> 
+		</skills>
+	</item>
+	<item id="92071" name="瑪瑙Lv7" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50204" level="7" /> 
+		</skills>
+	</item>
+	<item id="92072" name="瑪瑙Lv8" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_onyx_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50204" level="8" /> 
+		</skills>
+	</item>
+	<item id="92073" name="瑪瑙Lv8" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50204" level="8" /> 
+		</skills>
+	</item>
+	<item id="92074" name="瑪瑙Lv9" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50204" level="9" /> 
+		</skills>
+	</item>
+	<item id="92075" name="瑪瑙Lv10" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50204" level="10" /> 
+		</skills>
+	</item>
+	<item id="92076" name="尖晶石Lv1" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50206" level="1" /> 
+		</skills>
+	</item>
+	<item id="92077" name="尖晶石Lv2" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50206" level="2" /> 
+		</skills>
+	</item>
+	<item id="92078" name="尖晶石Lv3" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50206" level="3" /> 
+		</skills>
+	</item>
+	<item id="92079" name="尖晶石Lv4" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50206" level="4" /> 
+		</skills>
+	</item>
+	<item id="92080" name="尖晶石Lv6" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50206" level="6" /> 
+		</skills>
+	</item>
+	<item id="92081" name="尖晶石Lv7" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50206" level="7" /> 
+		</skills>
+	</item>
+	<item id="92082" name="尖晶石Lv8" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_garnet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50206" level="8" /> 
+		</skills>
+	</item>
+	<item id="92083" name="尖晶石Lv8" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50206" level="8" /> 
+		</skills>
+	</item>
+	<item id="92084" name="尖晶石Lv9" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50206" level="9" /> 
+		</skills>
+	</item>
+	<item id="92085" name="尖晶石Lv10" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50206" level="10" /> 
+		</skills>
+	</item>
+	<item id="92086" name="鋯石Lv1" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50207" level="1" /> 
+		</skills>
+	</item>
+	<item id="92087" name="鋯石Lv2" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50207" level="2" /> 
+		</skills>
+	</item>
+	<item id="92088" name="鋯石Lv3" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50207" level="3" /> 
+		</skills>
+	</item>
+	<item id="92089" name="鋯石Lv4" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50207" level="4" /> 
+		</skills>
+	</item>
+	<item id="92090" name="鋯石Lv6" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50207" level="6" /> 
+		</skills>
+	</item>
+	<item id="92091" name="鋯石Lv7" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50207" level="7" /> 
+		</skills>
+	</item>
+	<item id="92092" name="鋯石Lv8" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_bloodstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50207" level="8" /> 
+		</skills>
+	</item>
+	<item id="92093" name="鋯石Lv8" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50207" level="8" /> 
+		</skills>
+	</item>
+	<item id="92094" name="鋯石Lv9" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50207" level="9" /> 
+		</skills>
+	</item>
+	<item id="92095" name="鋯石Lv10" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50207" level="10" /> 
+		</skills>
+	</item>
+	<item id="92096" name="月長石Lv1" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_moonstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50208" level="1" /> 
+		</skills>
+	</item>
+	<item id="92097" name="月長石Lv2" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_moonstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50208" level="2" /> 
+		</skills>
+	</item>
+	<item id="92098" name="月長石Lv3" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_moonstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="50208" level="3" /> 
+		</skills>
+	</item>
+	<item id="92099" name="月長石Lv4" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.etc_bm_jewel_moonstone_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<skills>
+			<skill id="50208" level="4" /> 
+		</skills>
+	</item>
+</list>

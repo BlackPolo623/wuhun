@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/AdenLaboratoryData.xsd">
+	<boss index="1" specialSlotsCount="4"> <!-- Queen Ant -->
+		<game type="NORMAL">
+		<!--
+		 - Success rate: 1.0 = 100% !!! Cannot be lower than 0.0000001% !!! Max 7 digits after the decimal
+		 - Index: slotID in the client.
+		 -->
+			<page index="1" cardCount="3" successRate="0.3" primarySkillId="85701">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="2" cardCount="8" successRate="0.125" primarySkillId="85702">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="3" cardCount="13" successRate="0.077" primarySkillId="85703">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="4" cardCount="18" successRate="0.056" primarySkillId="85704">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="6" cardCount="20" successRate="0.050" primarySkillId="85705">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="7" cardCount="22" successRate="0.045" primarySkillId="85706">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="8" cardCount="24" successRate="0.042" primarySkillId="85707">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="9" cardCount="26" successRate="0.038" primarySkillId="85708">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="11" cardCount="28" successRate="0.036" primarySkillId="85709">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="12" cardCount="30" successRate="0.033" primarySkillId="85710">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="13" cardCount="32" successRate="0.031" primarySkillId="85711">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="14" cardCount="34" successRate="0.029" primarySkillId="85712">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="15" cardCount="36" successRate="0.027" primarySkillId="85713">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="17" cardCount="36" successRate="0.025" primarySkillId="85714">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="18" cardCount="36" successRate="0.025" primarySkillId="85715">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="19" cardCount="36" successRate="0.025" primarySkillId="85716">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="20" cardCount="36" successRate="0.025" primarySkillId="85717">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="22" cardCount="36" successRate="0.023" primarySkillId="85718">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="23" cardCount="36" successRate="0.023" primarySkillId="85719">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<page index="24" cardCount="36" successRate="0.023" primarySkillId="85720">
+				<options>
+					<stage level="1" chance="1" primarySkillLevel="1" />
+				</options>
+			</page>
+			<!-- END. A total of 24 normal games. -->
+		</game>
+		<game type="SPECIAL"> <!-- `type` must always be in ALL-CAPS! -->
+			<page index="5" successRate="100" primarySkillId="85721">
+				<options maxLevel="20">
+					<!-- Each chance point = 0.01 in the client, so we multiply by 10000 before we send the server packet. -->
+					<stage level="01" chance="0.1000" primarySkillLevel="1" combatPower="1" /> <!-- 10% -->
+					<stage level="02" chance="0.1000" primarySkillLevel="2" combatPower="1" /> <!-- 10% -->
+					<stage level="03" chance="0.1000" primarySkillLevel="3" combatPower="1" /> <!-- 10% -->
+					<stage level="04" chance="0.1000" primarySkillLevel="4" combatPower="1" /> <!-- 10% -->
+					<stage level="05" chance="0.1000" primarySkillLevel="5" combatPower="1" /> <!-- 10% -->
+					<stage level="06" chance="0.1000" primarySkillLevel="6" combatPower="1" /> <!-- 10% -->
+					<stage level="07" chance="0.1000" primarySkillLevel="7" combatPower="1" /> <!-- 10% -->
+					<stage level="08" chance="0.0820" primarySkillLevel="8" combatPower="1" /> <!-- 8.2% -->
+					<stage level="09" chance="0.0820" primarySkillLevel="9" combatPower="1" /> <!-- 8.2% -->
+					<stage level="10" chance="0.0600" primarySkillLevel="10" combatPower="1" /> <!-- 6% -->
+					<stage level="11" chance="0.0300" primarySkillLevel="11" combatPower="1" /> <!-- 3% -->
+					<stage level="12" chance="0.0100" primarySkillLevel="12" combatPower="1" /> <!-- 0.1% -->
+					<stage level="13" chance="0.0100" primarySkillLevel="13" combatPower="1" /> <!-- 0.1% -->
+					<stage level="14" chance="0.0080" primarySkillLevel="14" combatPower="1" /> <!-- 0.8% -->
+					<stage level="15" chance="0.0070" primarySkillLevel="15" combatPower="1" /> <!-- 0.7% -->
+					<stage level="16" chance="0.0050" primarySkillLevel="16" combatPower="1" /> <!-- 0.5% -->
+					<stage level="17" chance="0.0025" primarySkillLevel="17" combatPower="1" /> <!-- 0.25% -->
+					<stage level="18" chance="0.0020" primarySkillLevel="18" combatPower="1" /> <!-- 0.2% -->
+					<stage level="19" chance="0.0010" primarySkillLevel="19" combatPower="1" /> <!-- 0.1% -->
+					<stage level="20" chance="0.0005" primarySkillLevel="20" combatPower="1" /> <!-- 0.05% -->
+				</options>
+			</page>
+			<page index="10" successRate="100" primarySkillId="85722">
+				<options maxLevel="50">
+					<!-- Each chance point = 0.01, so we multiply by 100 before we send the server packet. -->
+					<stage level="01" chance="0.0700" primarySkillLevel="1" combatPower="3" />
+					<stage level="02" chance="0.0600" primarySkillLevel="2" combatPower="3" /> <!-- 6.0% -->
+					<stage level="03" chance="0.0565" primarySkillLevel="3" combatPower="3" /> <!-- 5.65% -->
+					<stage level="04" chance="0.0500" primarySkillLevel="4" combatPower="3" /> <!-- 5.0% -->
+					<stage level="05" chance="0.0500" primarySkillLevel="5" combatPower="3" />
+					<stage level="06" chance="0.0400" primarySkillLevel="6" combatPower="3" /> <!-- 4.0% -->
+					<stage level="07" chance="0.0400" primarySkillLevel="7" combatPower="3" />
+					<stage level="08" chance="0.0400" primarySkillLevel="8" combatPower="3" />
+					<stage level="09" chance="0.0400" primarySkillLevel="9" combatPower="3" />
+					<!-- above should be 44.65% -->
+					<stage level="10" chance="0.0250" primarySkillLevel="10" combatPower="3" /> <!-- 2.5% -->
+					<stage level="11" chance="0.0250" primarySkillLevel="11" combatPower="3" />
+					<stage level="12" chance="0.0250" primarySkillLevel="12" combatPower="3" />
+					<stage level="13" chance="0.0250" primarySkillLevel="13" combatPower="3" />
+					<stage level="14" chance="0.0250" primarySkillLevel="14" combatPower="3" />
+					<stage level="15" chance="0.0225" primarySkillLevel="15" combatPower="3" /> <!-- 2.25% -->
+					<stage level="16" chance="0.0225" primarySkillLevel="16" combatPower="3" />
+					<stage level="17" chance="0.0225" primarySkillLevel="17" combatPower="3" />
+					<stage level="18" chance="0.0225" primarySkillLevel="18" combatPower="3" />
+					<stage level="19" chance="0.0225" primarySkillLevel="19" combatPower="3" />
+					<stage level="20" chance="0.0200" primarySkillLevel="20" combatPower="3" /> <!-- 2.0% -->
+					<stage level="21" chance="0.0200" primarySkillLevel="21" combatPower="3" />
+					<stage level="22" chance="0.0200" primarySkillLevel="22" combatPower="3" />
+					<stage level="23" chance="0.0200" primarySkillLevel="23" combatPower="3" />
+					<stage level="24" chance="0.0200" primarySkillLevel="24" combatPower="3" />
+					<stage level="25" chance="0.0140" primarySkillLevel="25" combatPower="3" /> <!-- 1.4% -->
+					<stage level="26" chance="0.0140" primarySkillLevel="26" combatPower="3" />
+					<stage level="27" chance="0.0140" primarySkillLevel="27" combatPower="3" />
+					<stage level="28" chance="0.0140" primarySkillLevel="28" combatPower="3" />
+					<stage level="29" chance="0.0140" primarySkillLevel="29" combatPower="3" />
+					<stage level="30" chance="0.0120" primarySkillLevel="30" combatPower="3" /> <!-- 1.2% -->
+					<stage level="31" chance="0.0120" primarySkillLevel="31" combatPower="3" />
+					<stage level="32" chance="0.0120" primarySkillLevel="32" combatPower="3" />
+					<stage level="33" chance="0.0120" primarySkillLevel="33" combatPower="3" />
+					<stage level="34" chance="0.0120" primarySkillLevel="34" combatPower="3" />
+					<stage level="35" chance="0.0100" primarySkillLevel="35" combatPower="3" /> <!-- 1% -->
+					<stage level="36" chance="0.0100" primarySkillLevel="36" combatPower="3" />
+					<stage level="37" chance="0.0100" primarySkillLevel="37" combatPower="3" />
+					<stage level="38" chance="0.0100" primarySkillLevel="38" combatPower="3" />
+					<stage level="39" chance="0.0100" primarySkillLevel="39" combatPower="3" />
+					<stage level="40" chance="0.0080" primarySkillLevel="40" combatPower="3" /> <!-- 0.8% -->
+					<stage level="41" chance="0.0070" primarySkillLevel="41" combatPower="3" /> <!-- 0.7% -->
+					<stage level="42" chance="0.0060" primarySkillLevel="42" combatPower="3" /> <!-- 0.6% -->
+					<stage level="43" chance="0.0050" primarySkillLevel="43" combatPower="3" /> <!-- 0.5% -->
+					<stage level="44" chance="0.0050" primarySkillLevel="44" combatPower="3" />
+					<stage level="45" chance="0.0015" primarySkillLevel="45" combatPower="3" /> <!-- 0.15% -->
+					<stage level="46" chance="0.0012" primarySkillLevel="46" combatPower="3" /> <!-- 0.12% -->
+					<stage level="47" chance="0.0010" primarySkillLevel="47" combatPower="3" /> <!-- 0.10% -->
+					<stage level="48" chance="0.0008" primarySkillLevel="48" combatPower="3" /> <!-- 0.08% -->
+					<stage level="49" chance="0.0004" primarySkillLevel="49" combatPower="3" /> <!-- 0.04% -->
+					<stage level="50" chance="0.0001" primarySkillLevel="50" combatPower="3" /> <!-- 0.01% -->
+				</options>
+			</page>
+			<page index="16" successRate="100" primarySkillId="85723">
+				<options maxLevel="50">
+					<!-- Each chance point = 0.01, so we multiply by 100 before we send the server packet. -->
+					<stage level="01" chance="0.0700" primarySkillLevel="1" combatPower="6" />
+					<stage level="02" chance="0.0600" primarySkillLevel="2" combatPower="6" /> <!-- 6.0% -->
+					<stage level="03" chance="0.0565" primarySkillLevel="3" combatPower="6" /> <!-- 5.65% -->
+					<stage level="04" chance="0.0500" primarySkillLevel="4" combatPower="6" /> <!-- 5.0% -->
+					<stage level="05" chance="0.0500" primarySkillLevel="5" combatPower="6" />
+					<stage level="06" chance="0.0400" primarySkillLevel="6" combatPower="6" /> <!-- 4.0% -->
+					<stage level="07" chance="0.0400" primarySkillLevel="7" combatPower="6" />
+					<stage level="08" chance="0.0400" primarySkillLevel="8" combatPower="6" />
+					<stage level="09" chance="0.0400" primarySkillLevel="9" combatPower="6" />
+					<stage level="10" chance="0.0250" primarySkillLevel="10" combatPower="6" /> <!-- 2.5% -->
+					<stage level="11" chance="0.0250" primarySkillLevel="11" combatPower="6" />
+					<stage level="12" chance="0.0250" primarySkillLevel="12" combatPower="6" />
+					<stage level="13" chance="0.0250" primarySkillLevel="13" combatPower="6" />
+					<stage level="14" chance="0.0250" primarySkillLevel="14" combatPower="6" />
+					<stage level="15" chance="0.0225" primarySkillLevel="15" combatPower="6" /> <!-- 2.25% -->
+					<stage level="16" chance="0.0225" primarySkillLevel="16" combatPower="6" />
+					<stage level="17" chance="0.0225" primarySkillLevel="17" combatPower="6" />
+					<stage level="18" chance="0.0225" primarySkillLevel="18" combatPower="6" />
+					<stage level="19" chance="0.0225" primarySkillLevel="19" combatPower="6" />
+					<stage level="20" chance="0.0200" primarySkillLevel="20" combatPower="6" /> <!-- 2.0% -->
+					<stage level="21" chance="0.0200" primarySkillLevel="21" combatPower="6" />
+					<stage level="22" chance="0.0200" primarySkillLevel="22" combatPower="6" />
+					<stage level="23" chance="0.0200" primarySkillLevel="23" combatPower="6" />
+					<stage level="24" chance="0.0200" primarySkillLevel="24" combatPower="6" />
+					<stage level="25" chance="0.0140" primarySkillLevel="25" combatPower="6" /> <!-- 1.4% -->
+					<stage level="26" chance="0.0140" primarySkillLevel="26" combatPower="6" />
+					<stage level="27" chance="0.0140" primarySkillLevel="27" combatPower="6" />
+					<stage level="28" chance="0.0140" primarySkillLevel="28" combatPower="6" />
+					<stage level="29" chance="0.0140" primarySkillLevel="29" combatPower="6" />
+					<stage level="30" chance="0.0120" primarySkillLevel="30" combatPower="6" /> <!-- 1.2% -->
+					<stage level="31" chance="0.0120" primarySkillLevel="31" combatPower="6" />
+					<stage level="32" chance="0.0120" primarySkillLevel="32" combatPower="6" />
+					<stage level="33" chance="0.0120" primarySkillLevel="33" combatPower="6" />
+					<stage level="34" chance="0.0120" primarySkillLevel="34" combatPower="6" />
+					<stage level="35" chance="0.0100" primarySkillLevel="35" combatPower="6" /> <!-- 1% -->
+					<stage level="36" chance="0.0100" primarySkillLevel="36" combatPower="6" />
+					<stage level="37" chance="0.0100" primarySkillLevel="37" combatPower="6" />
+					<stage level="38" chance="0.0100" primarySkillLevel="38" combatPower="6" />
+					<stage level="39" chance="0.0100" primarySkillLevel="39" combatPower="6" />
+					<stage level="40" chance="0.0080" primarySkillLevel="40" combatPower="6" /> <!-- 0.8% -->
+					<stage level="41" chance="0.0070" primarySkillLevel="41" combatPower="6" /> <!-- 0.7% -->
+					<stage level="42" chance="0.0060" primarySkillLevel="42" combatPower="6" /> <!-- 0.6% -->
+					<stage level="43" chance="0.0050" primarySkillLevel="43" combatPower="6" /> <!-- 0.5% -->
+					<stage level="44" chance="0.0050" primarySkillLevel="44" combatPower="6" />
+					<stage level="45" chance="0.0015" primarySkillLevel="45" combatPower="6" /> <!-- 0.15% -->
+					<stage level="46" chance="0.0012" primarySkillLevel="46" combatPower="6" /> <!-- 0.12% -->
+					<stage level="47" chance="0.0010" primarySkillLevel="47" combatPower="6" /> <!-- 0.10% -->
+					<stage level="48" chance="0.0008" primarySkillLevel="48" combatPower="6" /> <!-- 0.08% -->
+					<stage level="49" chance="0.0004" primarySkillLevel="49" combatPower="6" /> <!-- 0.04% -->
+					<stage level="50" chance="0.0001" primarySkillLevel="50" combatPower="6" /> <!-- 0.01% -->
+				</options>
+			</page>
+			<page index="21" successRate="100" primarySkillId="85724" secondarySkillId="85725">
+				<options maxLevel="50">
+					<!-- Each chance point = 0.01, so we multiply by 100 before we send the server packet. -->
+					<stage level="01" chance="0.0700" primarySkillLevel="1" secondarySkillLevel="1" combatPower="10" />
+					<stage level="02" chance="0.0600" primarySkillLevel="2" secondarySkillLevel="2" combatPower="10" /> <!-- 6.0% -->
+					<stage level="03" chance="0.0565" primarySkillLevel="3" secondarySkillLevel="3" combatPower="10" /> <!-- 5.65% -->
+					<stage level="04" chance="0.0500" primarySkillLevel="4" secondarySkillLevel="4" combatPower="10" /> <!-- 5.0% -->
+					<stage level="05" chance="0.0500" primarySkillLevel="5" secondarySkillLevel="5" combatPower="10" />
+					<stage level="06" chance="0.0400" primarySkillLevel="6" secondarySkillLevel="6" combatPower="10" /> <!-- 4.0% -->
+					<stage level="07" chance="0.0400" primarySkillLevel="7" secondarySkillLevel="7" combatPower="10" />
+					<stage level="08" chance="0.0400" primarySkillLevel="8" secondarySkillLevel="8" combatPower="10" />
+					<stage level="09" chance="0.0400" primarySkillLevel="9" secondarySkillLevel="9" combatPower="10" />
+					<stage level="10" chance="0.0250" primarySkillLevel="10" secondarySkillLevel="10" combatPower="10" /> <!-- 2.5% -->
+					<stage level="11" chance="0.0250" primarySkillLevel="11" secondarySkillLevel="11" combatPower="10" />
+					<stage level="12" chance="0.0250" primarySkillLevel="12" secondarySkillLevel="12" combatPower="10" />
+					<stage level="13" chance="0.0250" primarySkillLevel="13" secondarySkillLevel="13" combatPower="10" />
+					<stage level="14" chance="0.0250" primarySkillLevel="14" secondarySkillLevel="14" combatPower="10" />
+					<stage level="15" chance="0.0225" primarySkillLevel="15" secondarySkillLevel="15" combatPower="10" /> <!-- 2.25% -->
+					<stage level="16" chance="0.0225" primarySkillLevel="16" secondarySkillLevel="16" combatPower="10" />
+					<stage level="17" chance="0.0225" primarySkillLevel="17" secondarySkillLevel="17" combatPower="10" />
+					<stage level="18" chance="0.0225" primarySkillLevel="18" secondarySkillLevel="18" combatPower="10" />
+					<stage level="19" chance="0.0225" primarySkillLevel="19" secondarySkillLevel="19" combatPower="10" />
+					<stage level="20" chance="0.0200" primarySkillLevel="20" secondarySkillLevel="20" combatPower="10" /> <!-- 2.0% -->
+					<stage level="21" chance="0.0200" primarySkillLevel="21" secondarySkillLevel="21" combatPower="10" />
+					<stage level="22" chance="0.0200" primarySkillLevel="22" secondarySkillLevel="22" combatPower="10" />
+					<stage level="23" chance="0.0200" primarySkillLevel="23" secondarySkillLevel="23" combatPower="10" />
+					<stage level="24" chance="0.0200" primarySkillLevel="24" secondarySkillLevel="24" combatPower="10" />
+					<stage level="25" chance="0.0140" primarySkillLevel="25" secondarySkillLevel="25" combatPower="10" /> <!-- 1.4% -->
+					<stage level="26" chance="0.0140" primarySkillLevel="26" secondarySkillLevel="26" combatPower="10" />
+					<stage level="27" chance="0.0140" primarySkillLevel="27" secondarySkillLevel="27" combatPower="10" />
+					<stage level="28" chance="0.0140" primarySkillLevel="28" secondarySkillLevel="28" combatPower="10" />
+					<stage level="29" chance="0.0140" primarySkillLevel="29" secondarySkillLevel="29" combatPower="10" />
+					<stage level="30" chance="0.0120" primarySkillLevel="30" secondarySkillLevel="30" combatPower="10" /> <!-- 1.2% -->
+					<stage level="31" chance="0.0120" primarySkillLevel="31" secondarySkillLevel="31" combatPower="10" />
+					<stage level="32" chance="0.0120" primarySkillLevel="32" secondarySkillLevel="32" combatPower="10" />
+					<stage level="33" chance="0.0120" primarySkillLevel="33" secondarySkillLevel="33" combatPower="10" />
+					<stage level="34" chance="0.0120" primarySkillLevel="34" secondarySkillLevel="34" combatPower="10" />
+					<stage level="35" chance="0.0100" primarySkillLevel="35" secondarySkillLevel="35" combatPower="10" /> <!-- 1% -->
+					<stage level="36" chance="0.0100" primarySkillLevel="36" secondarySkillLevel="36" combatPower="10" />
+					<stage level="37" chance="0.0100" primarySkillLevel="37" secondarySkillLevel="37" combatPower="10" />
+					<stage level="38" chance="0.0100" primarySkillLevel="38" secondarySkillLevel="38" combatPower="10" />
+					<stage level="39" chance="0.0100" primarySkillLevel="39" secondarySkillLevel="39" combatPower="10" />
+					<stage level="40" chance="0.0080" primarySkillLevel="40" secondarySkillLevel="40" combatPower="10" /> <!-- 0.8% -->
+					<stage level="41" chance="0.0070" primarySkillLevel="41" secondarySkillLevel="41" combatPower="10" /> <!-- 0.7% -->
+					<stage level="42" chance="0.0060" primarySkillLevel="42" secondarySkillLevel="42" combatPower="10" /> <!-- 0.6% -->
+					<stage level="43" chance="0.0050" primarySkillLevel="43" secondarySkillLevel="43" combatPower="10" /> <!-- 0.5% -->
+					<stage level="44" chance="0.0050" primarySkillLevel="44" secondarySkillLevel="44" combatPower="10" />
+					<stage level="45" chance="0.0015" primarySkillLevel="45" secondarySkillLevel="45" combatPower="10" /> <!-- 0.15% -->
+					<stage level="46" chance="0.0012" primarySkillLevel="46" secondarySkillLevel="46" combatPower="10" /> <!-- 0.12% -->
+					<stage level="47" chance="0.0010" primarySkillLevel="47" secondarySkillLevel="47" combatPower="10" /> <!-- 0.10% -->
+					<stage level="48" chance="0.0008" primarySkillLevel="48" secondarySkillLevel="48" combatPower="10" /> <!-- 0.08% -->
+					<stage level="49" chance="0.0004" primarySkillLevel="49" secondarySkillLevel="49" combatPower="10" /> <!-- 0.04% -->
+					<stage level="50" chance="0.0001" primarySkillLevel="50" secondarySkillLevel="50" combatPower="10" /> <!-- 0.01% -->
+				</options>
+				<options maxLevel="50">
+					<!-- Each chance point = 0.01, so we multiply by 100 before we send the server packet. -->
+					<stage level="01" chance="0.0700" primarySkillLevel="1" secondarySkillLevel="1" combatPower="10" />
+					<stage level="02" chance="0.0600" primarySkillLevel="2" secondarySkillLevel="2" combatPower="10" /> <!-- 6.0% -->
+					<stage level="03" chance="0.0565" primarySkillLevel="3" secondarySkillLevel="3" combatPower="10" /> <!-- 5.65% -->
+					<stage level="04" chance="0.0500" primarySkillLevel="4" secondarySkillLevel="4" combatPower="10" /> <!-- 5.0% -->
+					<stage level="05" chance="0.0500" primarySkillLevel="5" secondarySkillLevel="5" combatPower="10" />
+					<stage level="06" chance="0.0400" primarySkillLevel="6" secondarySkillLevel="6" combatPower="10" /> <!-- 4.0% -->
+					<stage level="07" chance="0.0400" primarySkillLevel="7" secondarySkillLevel="7" combatPower="10" />
+					<stage level="08" chance="0.0400" primarySkillLevel="8" secondarySkillLevel="8" combatPower="10" />
+					<stage level="09" chance="0.0400" primarySkillLevel="9" secondarySkillLevel="9" combatPower="10" />
+					<stage level="10" chance="0.0250" primarySkillLevel="10" secondarySkillLevel="10" combatPower="10" /> <!-- 2.5% -->
+					<stage level="11" chance="0.0250" primarySkillLevel="11" secondarySkillLevel="11" combatPower="10" />
+					<stage level="12" chance="0.0250" primarySkillLevel="12" secondarySkillLevel="12" combatPower="10" />
+					<stage level="13" chance="0.0250" primarySkillLevel="13" secondarySkillLevel="13" combatPower="10" />
+					<stage level="14" chance="0.0250" primarySkillLevel="14" secondarySkillLevel="14" combatPower="10" />
+					<stage level="15" chance="0.0225" primarySkillLevel="15" secondarySkillLevel="15" combatPower="10" /> <!-- 2.25% -->
+					<stage level="16" chance="0.0225" primarySkillLevel="16" secondarySkillLevel="16" combatPower="10" />
+					<stage level="17" chance="0.0225" primarySkillLevel="17" secondarySkillLevel="17" combatPower="10" />
+					<stage level="18" chance="0.0225" primarySkillLevel="18" secondarySkillLevel="18" combatPower="10" />
+					<stage level="19" chance="0.0225" primarySkillLevel="19" secondarySkillLevel="19" combatPower="10" />
+					<stage level="20" chance="0.0200" primarySkillLevel="20" secondarySkillLevel="20" combatPower="10" /> <!-- 2.0% -->
+					<stage level="21" chance="0.0200" primarySkillLevel="21" secondarySkillLevel="21" combatPower="10" />
+					<stage level="22" chance="0.0200" primarySkillLevel="22" secondarySkillLevel="22" combatPower="10" />
+					<stage level="23" chance="0.0200" primarySkillLevel="23" secondarySkillLevel="23" combatPower="10" />
+					<stage level="24" chance="0.0200" primarySkillLevel="24" secondarySkillLevel="24" combatPower="10" />
+					<stage level="25" chance="0.0140" primarySkillLevel="25" secondarySkillLevel="25" combatPower="10" /> <!-- 1.4% -->
+					<stage level="26" chance="0.0140" primarySkillLevel="26" secondarySkillLevel="26" combatPower="10" />
+					<stage level="27" chance="0.0140" primarySkillLevel="27" secondarySkillLevel="27" combatPower="10" />
+					<stage level="28" chance="0.0140" primarySkillLevel="28" secondarySkillLevel="28" combatPower="10" />
+					<stage level="29" chance="0.0140" primarySkillLevel="29" secondarySkillLevel="29" combatPower="10" />
+					<stage level="30" chance="0.0120" primarySkillLevel="30" secondarySkillLevel="30" combatPower="10" /> <!-- 1.2% -->
+					<stage level="31" chance="0.0120" primarySkillLevel="31" secondarySkillLevel="31" combatPower="10" />
+					<stage level="32" chance="0.0120" primarySkillLevel="32" secondarySkillLevel="32" combatPower="10" />
+					<stage level="33" chance="0.0120" primarySkillLevel="33" secondarySkillLevel="33" combatPower="10" />
+					<stage level="34" chance="0.0120" primarySkillLevel="34" secondarySkillLevel="34" combatPower="10" />
+					<stage level="35" chance="0.0100" primarySkillLevel="35" secondarySkillLevel="35" combatPower="10" /> <!-- 1% -->
+					<stage level="36" chance="0.0100" primarySkillLevel="36" secondarySkillLevel="36" combatPower="10" />
+					<stage level="37" chance="0.0100" primarySkillLevel="37" secondarySkillLevel="37" combatPower="10" />
+					<stage level="38" chance="0.0100" primarySkillLevel="38" secondarySkillLevel="38" combatPower="10" />
+					<stage level="39" chance="0.0100" primarySkillLevel="39" secondarySkillLevel="39" combatPower="10" />
+					<stage level="40" chance="0.0080" primarySkillLevel="40" secondarySkillLevel="40" combatPower="10" /> <!-- 0.8% -->
+					<stage level="41" chance="0.0070" primarySkillLevel="41" secondarySkillLevel="41" combatPower="10" /> <!-- 0.7% -->
+					<stage level="42" chance="0.0060" primarySkillLevel="42" secondarySkillLevel="42" combatPower="10" /> <!-- 0.6% -->
+					<stage level="43" chance="0.0050" primarySkillLevel="43" secondarySkillLevel="43" combatPower="10" /> <!-- 0.5% -->
+					<stage level="44" chance="0.0050" primarySkillLevel="44" secondarySkillLevel="44" combatPower="10" />
+					<stage level="45" chance="0.0015" primarySkillLevel="45" secondarySkillLevel="45" combatPower="10" /> <!-- 0.15% -->
+					<stage level="46" chance="0.0012" primarySkillLevel="46" secondarySkillLevel="46" combatPower="10" /> <!-- 0.12% -->
+					<stage level="47" chance="0.0010" primarySkillLevel="47" secondarySkillLevel="47" combatPower="10" /> <!-- 0.10% -->
+					<stage level="48" chance="0.0008" primarySkillLevel="48" secondarySkillLevel="48" combatPower="10" /> <!-- 0.08% -->
+					<stage level="49" chance="0.0004" primarySkillLevel="49" secondarySkillLevel="49" combatPower="10" /> <!-- 0.04% -->
+					<stage level="50" chance="0.0001" primarySkillLevel="50" secondarySkillLevel="50" combatPower="10" /> <!-- 0.01% -->
+				</options>
+			</page>
+		</game>
+		<game type="INCREDIBLE"> <!-- must be in ALL-CAPS! -->
+			<page index="25" successRate="100" primarySkillId="85726"> <!-- Queen Ant's Transcendent Research: Base Effect -->
+				<options>
+					<stage level="1" chance="0.04" primarySkillLevel="1" combatPower="30" /> <!-- 4.0% (to be confirmed) -->
+					<stage level="2" chance="0.02" primarySkillLevel="2" combatPower="40" /> <!-- 2.0% (to be confirmed) -->
+					<stage level="3" chance="0.01" primarySkillLevel="3" combatPower="100" /> <!-- 1.0% (to be confirmed) -->
+				</options>
+			</page>
+		</game>
+	</boss>
+</list>

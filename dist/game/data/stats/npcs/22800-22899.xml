@@ -1,0 +1,2634 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+    <npc id="22800" level="91" type="Monster" name="里卡里亞" title="Guardian of the Invaded Lands" element="EARTH">
+        <parameters>
+            <minions name="Privates">
+                <npc id="22799" count="4" respawnTime="0" weightPoint="1"/>
+            </minions>
+        </parameters>
+        <race>FAIRY</race>
+        <sex>MALE</sex>
+        <acquire exp="9051" sp="90" attributeExp="1101"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="8476800" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2660" magical="1108"/>
+            <speed>
+                <walk ground="35"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="21"/>
+            <height normal="99"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="13"/>
+            <skill id="48047" level="1"/>
+        </skillList>
+        <ai aggroRange="450" clanHelpRange="300" isAggressive="false">
+            <clanList>
+                <clan>LYCARIA</clan>
+            </clanList>
+        </ai>
+        <dropLists>
+            <drop>
+                <item id="97440" min="1" max="30" chance="50"/> <!-- Blessed Augmenting Stone: Armor -->
+                <item id="97441" min="1" max="30" chance="50"/>
+                <item id="97443" min="1" max="30" chance="50"/>
+                <item id="97442" min="1" max="30" chance="50"/> <!-- Blessed Augmenting Stone: Accessory -->
+                <item id="97439" min="1" max="30" chance="50"/> <!-- Blessed Augmenting Stone: Weapon -->
+                <item id="97789" min="1" max="30" chance="50"/> <!-- Blessed Augmenting Stone: Special Equipment -->
+                <item id="98202" min="1" max="10" chance="50"/>
+                <item id="100722" min="1" max="30" chance="50"/>
+                <item id="100723" min="1" max="30" chance="50"/>
+                <item id="100725" min="1" max="30" chance="50"/>
+            </drop>
+        </dropLists>
+    </npc>
+    <npc id="22801" level="91" type="Monster" name="里安甚司使役魔" element="EARTH">
+        <race>FAIRY</race>
+        <sex>MALE</sex>
+        <acquire exp="9051" sp="90" attributeExp="1101"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="4238400" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2660" magical="1108"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="60"/>
+            <height normal="69"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="13"/>
+            <skill id="48047" level="1"/>
+        </skillList>
+        <ai aggroRange="450" clanHelpRange="300" isAggressive="false">
+            <clanList>
+                <clan>LYANSUS</clan>
+            </clanList>
+        </ai>
+    </npc>
+    <npc id="22802" level="92" type="Monster" name="里安甚司" title="Guardian of the Invaded Lands" element="EARTH">
+        <parameters>
+            <minions name="Privates">
+                <npc id="22801" count="4" respawnTime="0" weightPoint="1"/>
+            </minions>
+        </parameters>
+        <race>FAIRY</race>
+        <sex>MALE</sex>
+        <acquire exp="14879" sp="149" attributeExp="1316"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="10172160.12658" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2937" magical="1171"/>
+            <speed>
+                <walk ground="35"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="24.5"/>
+            <height normal="116"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="13"/>
+            <skill id="48047" level="1"/>
+        </skillList>
+        <ai aggroRange="450" clanHelpRange="300" isAggressive="false">
+            <clanList>
+                <clan>LYANSUS</clan>
+            </clanList>
+        </ai>
+        <dropLists>
+            <drop>
+                <item id="97440" min="1" max="30" chance="50"/> <!-- Blessed Augmenting Stone: Armor -->
+                <item id="97441" min="1" max="30" chance="50"/>
+                <item id="97443" min="1" max="30" chance="50"/>
+                <item id="97442" min="1" max="30" chance="50"/> <!-- Blessed Augmenting Stone: Accessory -->
+                <item id="97439" min="1" max="30" chance="50"/> <!-- Blessed Augmenting Stone: Weapon -->
+                <item id="97789" min="1" max="30" chance="50"/> <!-- Blessed Augmenting Stone: Special Equipment -->
+                <item id="98202" min="1" max="10" chance="50"/>
+                <item id="100722" min="1" max="30" chance="50"/>
+                <item id="100723" min="1" max="30" chance="50"/>
+                <item id="100725" min="1" max="30" chance="50"/>
+            </drop>
+        </dropLists>
+    </npc>
+    <npc id="22803" level="83" type="Monster" name="龍馬軍精銳騎兵隊長" title="Katuba's Soldier" element="WIND">
+        <race>DRAGON</race>
+        <sex>MALE</sex>
+        <acquire exp="3503" sp="35" attributeExp="822"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="89626.58228" hpRegen="10.2" mp="2666.1" mpRegen="3.6"/>
+            <attack physical="1759.08" magical="900.92" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="424.63" magical="233.046"/>
+            <speed>
+                <walk ground="60"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="50.4"/>
+            <height normal="72.6"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="10"/>
+            <skill id="48046" level="1"/>
+            <skill id="5620" level="3"/>
+        </skillList>
+    </npc>
+    <npc id="22804" level="83" type="Monster" name="龍馬軍精銳騎兵隊員" element="WIND">
+        <race>DRAGON</race>
+        <sex>MALE</sex>
+        <acquire exp="1055" sp="11" attributeExp="822"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="26887.97468" hpRegen="10.2" mp="2666.1" mpRegen="3.6"/>
+            <attack physical="1759.08" magical="900.92" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="424.63" magical="233.046"/>
+            <speed>
+                <walk ground="60"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="39.6"/>
+            <height normal="56.4"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="10"/>
+            <skill id="48046" level="1"/>
+            <skill id="5620" level="3"/>
+        </skillList>
+    </npc>
+    <npc id="22805" level="86" type="Monster" name="梅拉特蜥蜴人高等戰士" title="Kuroboros' Warrior" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <acquire exp="6102" sp="61" attributeExp="946"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="155841.77215" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1275" magical="793"/>
+            <speed>
+                <walk ground="58"/>
+                <run ground="130"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="34.5"/>
+            <height normal="57.75"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22806" level="86" type="Monster" name="梅拉特蜥蜴人預言者" title="Kuroboros' Priest" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <acquire exp="2319" sp="23" attributeExp="1118"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="38960.12658" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1275" magical="793"/>
+            <speed>
+                <walk ground="90"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="60"/>
+            <height normal="81.75"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22807" level="86" type="Monster" name="梅拉特蜥蜴人祈禱者" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <acquire exp="1647" sp="16" attributeExp="1118"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="28441.13924" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1275" magical="793"/>
+            <speed>
+                <walk ground="90"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="48"/>
+            <height normal="64.8"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22808" level="88" type="Monster" name="泰伊卡精銳游擊隊長" title="Camp Patrolman" element="FIRE">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="38430"/>
+        <acquire exp="4217" sp="42" attributeExp="871"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="61318.99" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3057" magical="2087" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW"
+                    range="1100" distance="10" width="0"/>
+            <defence physical="1829" magical="919"/>
+            <speed>
+                <walk ground="75"/>
+                <run ground="120"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="19.5"/>
+            <height normal="45.1"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22809" level="88" type="Monster" name="白沙獅" element="FIRE">
+        <race>BEAST</race>
+        <sex>MALE</sex>
+        <acquire exp="2490" sp="25" attributeExp="871"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="30659.6211911" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1829" magical="919"/>
+            <speed>
+                <walk ground="60"/>
+                <run ground="120"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="33.6"/>
+            <height normal="25.8"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="3"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22810" level="88" type="Monster" name="黑沙獅" element="FIRE">
+        <race>BEAST</race>
+        <sex>MALE</sex>
+        <acquire exp="2490" sp="25" attributeExp="871"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="30659.6211911" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1829" magical="919"/>
+            <speed>
+                <walk ground="95"/>
+                <run ground="120"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="33.6"/>
+            <height normal="25.8"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="3"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22811" level="88" type="Monster" name="勇猛的豺狼射手" element="FIRE">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="283"/>
+        <acquire exp="2319" sp="6" attributeExp="287"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="9198.10127" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3057" magical="2087" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW"
+                    range="1100" distance="10" width="0"/>
+            <defence physical="1829" magical="919"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="120"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="21"/>
+            <height normal="39"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22812" level="88" type="Monster" name="勇猛的豺狼戰士" element="FIRE">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="77"/>
+        <acquire exp="2319" sp="6" attributeExp="287"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="9198.10127" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1829" magical="919"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="120"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="20.25"/>
+            <height normal="39"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22813" level="88" type="Monster" name="勇猛的豺狼上級戰士" element="FIRE">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="68" lhand="19"/>
+        <acquire exp="4638" sp="12" attributeExp="575"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="18395.56962" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1829" magical="919"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="120"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="21"/>
+            <height normal="45.3"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22814" level="88" type="Monster" name="勇猛的豺狼軍官" element="FIRE">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="75"/>
+        <acquire exp="7028" sp="18" attributeExp="871"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="30659.6211911" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1829" magical="919"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="120"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="16.8" grown="19.2"/>
+            <height normal="33" grown="39"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22815" level="88" type="Monster" name="勇猛的豺狼高位軍官" element="FIRE">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="127" lhand="633"/>
+        <acquire exp="7028" sp="18" attributeExp="871"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="30659.6211911" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1829" magical="919"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="120"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="25.2"/>
+            <height normal="52.8"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22816" level="89" type="Monster" name="勇猛的豺狼幹部" element="FIRE">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="75"/>
+        <acquire exp="7188" sp="18" attributeExp="881"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="30659.49367" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2106" magical="982"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="190"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="21"/>
+            <height normal="43.5"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22817" level="90" type="Monster" name="奧耶豺狼特攻隊" element="FIRE">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="71"/>
+        <acquire exp="14701" sp="37" attributeExp="1782"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="61318.98734" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2383" magical="1045"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="30"/>
+            <height normal="57"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22818" level="91" type="Monster" name="賽爾豺狼親衛隊" element="FIRE">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <acquire exp="22544" sp="56" attributeExp="2703"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="91979.11392" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2660" magical="1108"/>
+            <speed>
+                <walk ground="60"/>
+                <run ground="174"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="34.8"/>
+            <height normal="45"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22819" level="83" type="Monster" name="兇殘的巨龍炸彈" element="WIND">
+        <race>DRAGON</race>
+        <sex>MALE</sex>
+        <acquire exp="808" sp="2" attributeExp="411"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="4500" hpRegen="10.2" mp="1" mpRegen="3.6"/>
+            <attack physical="1759.08" magical="900.92" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="424.63" magical="233.046"/>
+            <speed>
+                <walk ground="35"/>
+                <run ground="250"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="37"/>
+            <height normal="28"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="10"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22820" level="84" type="Monster" name="兇殘的雷亞龍" element="WIND">
+        <race>DRAGON</race>
+        <sex>MALE</sex>
+        <acquire exp="1656" sp="4" attributeExp="832"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="9000" hpRegen="10.2" mp="1" mpRegen="3.6"/>
+            <attack physical="1949.95411856464" magical="1331.56588332443" random="10" critical="4" accuracy="5"
+                    attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="405.66735" magical="296.84976"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="174"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="20"/>
+            <height normal="72"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="10"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22821" level="84" type="Monster" name="兇殘的塔拉斯克龍" element="WIND">
+        <race>DRAGON</race>
+        <sex>MALE</sex>
+        <acquire exp="1656" sp="4" attributeExp="832"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="9000" hpRegen="10.2" mp="1" mpRegen="3.6"/>
+            <attack physical="1949.95411856464" magical="1331.56588332443" random="10" critical="4" accuracy="5"
+                    attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="405.66735" magical="296.84976"/>
+            <speed>
+                <walk ground="55"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="47.25"/>
+            <height normal="39.75"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="10"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22822" level="84" type="Monster" name="兇殘的飛龍" element="WIND">
+        <race>DRAGON</race>
+        <sex>MALE</sex>
+        <acquire exp="1656" sp="4" attributeExp="832"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="9000" hpRegen="10.2" mp="1" mpRegen="3.6"/>
+            <attack physical="1949.95411856464" magical="1331.56588332443" random="10" critical="4" accuracy="5"
+                    attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="405.66735" magical="296.84976"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="190"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="30"/>
+            <height normal="100"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="10"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22823" level="85" type="Monster" name="兇殘的怪獸軍團" element="WIND">
+        <race>BEAST</race>
+        <sex>MALE</sex>
+        <equipment rhand="68"/>
+        <acquire exp="3391" sp="8" attributeExp="1683"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="18000" hpRegen="10.2" mp="1" mpRegen="3.6"/>
+            <attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5"
+                    attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="998.10183" magical="730.36761"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="174"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="25"/>
+            <height normal="65"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="3"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22824" level="85" type="Monster" name="兇殘的惡魔軍團" element="WIND">
+        <race>DEMONIC</race>
+        <sex>MALE</sex>
+        <equipment rhand="3939"/>
+        <acquire exp="3391" sp="8" attributeExp="1683"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="18000" hpRegen="10.2" mp="1" mpRegen="3.6"/>
+            <attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5"
+                    attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="998.10183" magical="730.36761"/>
+            <speed>
+                <walk ground="80"/>
+                <run ground="174"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="18"/>
+            <height normal="49"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="9"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22825" level="86" type="Monster" name="兇殘的不死生物親衛隊" element="WIND">
+        <race>UNDEAD</race>
+        <sex>MALE</sex>
+        <equipment rhand="1472"/>
+        <acquire exp="5207" sp="13" attributeExp="2554"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="27000" hpRegen="10.2" mp="1" mpRegen="3.6"/>
+            <attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1275" magical="793"/>
+            <speed>
+                <walk ground="100"/>
+                <run ground="190"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="15" grown="25"/>
+            <height normal="45" grown="52"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="1"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22826" level="86" type="Monster" name="憤怒的蜥蜴人戰士" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="8682"/>
+        <acquire exp="1481" sp="4" attributeExp="473"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="6818.07896" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1275" magical="793"/>
+            <speed>
+                <walk ground="53"/>
+                <run ground="120"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="20" grown="24"/>
+            <height normal="40" grown="48"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22827" level="86" type="Monster" name="憤怒的蜥蜴人狂戰士" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <acquire exp="8883" sp="22" attributeExp="2838"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="40908.47376" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1275" magical="793"/>
+            <speed>
+                <walk ground="58"/>
+                <run ground="150"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="28"/>
+            <height normal="37.5"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22828" level="86" type="Monster" name="憤怒的蜥蜴人弓箭手" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="15302"/>
+        <acquire exp="8883" sp="22" attributeExp="2838"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="40908.47376" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2503" magical="1709" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW"
+                    range="1100" distance="10" width="0"/>
+            <defence physical="1275" magical="793"/>
+            <speed>
+                <walk ground="40"/>
+                <run ground="120"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="20"/>
+            <height normal="40.25"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22829" level="86" type="Monster" name="憤怒的蜥蜴人元素使" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <acquire exp="5922" sp="15" attributeExp="1892"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="27272.31584" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1275" magical="793"/>
+            <speed>
+                <walk ground="75"/>
+                <run ground="150"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="29"/>
+            <height normal="44"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22830" level="87" type="Monster" name="憤怒的里多蜥蜴人戰士" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="93"/>
+        <acquire exp="3030" sp="8" attributeExp="957"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="13636.15792" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1552" magical="856"/>
+            <speed>
+                <walk ground="40"/>
+                <run ground="174"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="13" grown="22"/>
+            <height normal="35" grown="42.2"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22831" level="87" type="Monster" name="憤怒的里多蜥蜴人族長" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="221"/>
+        <acquire exp="6061" sp="15" attributeExp="1914"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="27272.31584" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1552" magical="856"/>
+            <speed>
+                <walk ground="53"/>
+                <run ground="174"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="20" grown="24"/>
+            <height normal="40" grown="48"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22832" level="87" type="Monster" name="憤怒的辛達蜥蜴人戰士" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="16"/>
+        <acquire exp="3030" sp="8" attributeExp="957"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="13636.15792" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1552" magical="856"/>
+            <speed>
+                <walk ground="40"/>
+                <run ground="140"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="13" grown="22"/>
+            <height normal="35" grown="42.2"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22833" level="87" type="Monster" name="憤怒的辛達蜥蜴人女族長" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="221"/>
+        <acquire exp="6061" sp="15" attributeExp="1914"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="27272.31584" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1552" magical="856"/>
+            <speed>
+                <walk ground="53"/>
+                <run ground="140"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="20" grown="24"/>
+            <height normal="40" grown="48"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22834" level="88" type="Monster" name="憤怒的哈里特蜥蜴人弓箭手" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="14"/>
+        <acquire exp="3100" sp="8" attributeExp="968"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="13636.15792" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3057" magical="2087" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW"
+                    range="1100" distance="10" width="0"/>
+            <defence physical="1829" magical="919"/>
+            <speed>
+                <walk ground="37"/>
+                <run ground="174"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="11"/>
+            <height normal="30"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22835" level="88" type="Monster" name="憤怒的哈里特蜥蜴人族長" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="221"/>
+        <acquire exp="6201" sp="15" attributeExp="1936"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="27272.31584" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1829" magical="919"/>
+            <speed>
+                <walk ground="53"/>
+                <run ground="174"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="20" grown="24"/>
+            <height normal="40" grown="48"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22836" level="89" type="Monster" name="憤怒的迪爾蜥蜴人遊俠" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <acquire exp="3171" sp="8" attributeExp="979"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="13636.15792" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2106" magical="982"/>
+            <speed>
+                <walk ground="40"/>
+                <run ground="120"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="20"/>
+            <height normal="40.25"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22837" level="89" type="Monster" name="憤怒的迪爾蜥蜴人鬥士" element="WATER">
+        <race>DRAGON</race>
+        <sex>MALE</sex>
+        <acquire exp="6343" sp="16" attributeExp="1958"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="27272.31584" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2106" magical="982"/>
+            <speed>
+                <walk ground="65"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="25"/>
+            <height normal="62"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="10"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22838" level="94" type="Monster" name="火山岩火蜥蜴" element="FIRE">
+        <race>ELEMENTAL</race>
+        <sex>MALE</sex>
+        <acquire exp="37733" sp="377" attributeExp="2068"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="132929.1" hpRegen="10.2" mp="11928" mpRegen="3.6"/>
+            <attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3491" magical="1297"/>
+            <speed>
+                <walk ground="39"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="20"/>
+            <height normal="25"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="7"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22839" level="94" type="Monster" name="岩漿撒魯斯" element="FIRE">
+        <race>ETC</race>
+        <sex>MALE</sex>
+        <acquire exp="37733" sp="377" attributeExp="2068"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="132929.1" hpRegen="10.2" mp="11928" mpRegen="3.6"/>
+            <attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3491" magical="1297"/>
+            <speed>
+                <walk ground="1"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="15"/>
+            <height normal="75"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="2"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22840" level="94" type="Monster" name="火山岩天蠍" element="FIRE">
+        <race>BUG</race>
+        <sex>MALE</sex>
+        <acquire exp="37733" sp="377" attributeExp="2068"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="132929.1" hpRegen="10.2" mp="11928" mpRegen="3.6"/>
+            <attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3491" magical="1297"/>
+            <speed>
+                <walk ground="37"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="24"/>
+            <height normal="52.8"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="12"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22841" level="94" type="Monster" name="火山岩犬" title="Elite" element="FIRE">
+        <race>DRAGON</race>
+        <sex>MALE</sex>
+        <acquire exp="44174" sp="442" attributeExp="2068"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="219717.7" hpRegen="10.2" mp="11928" mpRegen="3.6"/>
+            <attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3491" magical="1297"/>
+            <speed>
+                <walk ground="35"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="21"/>
+            <height normal="35"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="10"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22842" level="95" type="Monster" name="火山岩亞利曼那斯" element="FIRE">
+        <race>UNDEAD</race>
+        <sex>MALE</sex>
+        <equipment rhand="6722"/>
+        <acquire exp="48175" sp="482" attributeExp="2090"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="439436.1" hpRegen="10.2" mp="11928" mpRegen="3.6"/>
+            <attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3768" magical="1360"/>
+            <speed>
+                <walk ground="35"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="14"/>
+            <height normal="57.75"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="1"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22843" level="95" type="Monster" name="火山岩藤" element="FIRE">
+        <race>DEMONIC</race>
+        <sex>MALE</sex>
+        <acquire exp="48175" sp="482" attributeExp="2090"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="439436.1" hpRegen="10.2" mp="11928" mpRegen="3.6"/>
+            <attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3768" magical="1360"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="24" grown="29"/>
+            <height normal="40" grown="48"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="9"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22844" level="95" type="Monster" name="火山岩公爵" element="FIRE">
+        <race>DEMONIC</race>
+        <sex>MALE</sex>
+        <acquire exp="48175" sp="482" attributeExp="2090"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="439436.1" hpRegen="10.2" mp="11928" mpRegen="3.6"/>
+            <attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3768" magical="1360"/>
+            <speed>
+                <walk ground="80"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="20"/>
+            <height normal="39.5"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="9"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22845" level="95" type="Monster" name="火山岩" title="Elite" element="FIRE">
+        <race>ELEMENTAL</race>
+        <sex>MALE</sex>
+        <acquire exp="56398" sp="564" attributeExp="2090"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="769013.3" hpRegen="10.2" mp="11928" mpRegen="3.6"/>
+            <attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3768" magical="1360"/>
+            <speed>
+                <walk ground="110"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="36"/>
+            <height normal="55.5"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="7"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22846" level="85" type="Monster" name="復活的狂戰士" title="Heavenly Watcher" element="WIND">
+        <race>UNDEAD</race>
+        <sex>MALE</sex>
+        <acquire exp="1400" sp="5" attributeExp="1216"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="19636.07595" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5"
+                    attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="998.10183" magical="730.36761"/>
+            <speed>
+                <walk ground="84"/>
+                <run ground="250"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="20.8"/>
+            <height normal="60.2"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="1"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22847" level="85" type="Monster" name="復活的戰士" element="WIND">
+        <race>UNDEAD</race>
+        <sex>MALE</sex>
+        <acquire exp="1400" sp="5" attributeExp="842"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="13416.4557" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5"
+                    attackSpeed="253" type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="998.10183" magical="730.36761"/>
+            <speed>
+                <walk ground="60"/>
+                <run ground="165"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="26"/>
+            <height normal="48.35"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="1"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22848" level="86" type="Monster" name="腐敗賢者" title="Heavenly Watcher" element="WIND">
+        <race>UNDEAD</race>
+        <sex>MALE</sex>
+        <acquire exp="2238" sp="7" attributeExp="1230"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="31363.29114" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1275" magical="793"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="140"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="24.2"/>
+            <height normal="56.4"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="1"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22849" level="86" type="Monster" name="腐敗護衛兵" element="WIND">
+        <race>UNDEAD</race>
+        <sex>MALE</sex>
+        <acquire exp="2238" sp="7" attributeExp="946"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="21428.48101" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2503" magical="1709" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1275" magical="793"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="130"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="16.9"/>
+            <height normal="54.2"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="1"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22850" level="87" type="Monster" name="被洗腦的狂戰士" title="Heavenly Watcher" element="WIND">
+        <race>ETC</race>
+        <sex>MALE</sex>
+        <acquire exp="3085" sp="11" attributeExp="1244"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="41134.81013" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1552" magical="856"/>
+            <speed>
+                <walk ground="60"/>
+                <run ground="120"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="18"/>
+            <height normal="69"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="2"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22851" level="87" type="Monster" name="被洗腦的護衛兵" element="WIND">
+        <race>ETC</race>
+        <sex>MALE</sex>
+        <acquire exp="3085" sp="11" attributeExp="1053"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="28104.43038" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1552" magical="856"/>
+            <speed>
+                <walk ground="60"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="15"/>
+            <height normal="57"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="2"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22852" level="88" type="Monster" name="哈勒特高等戰士" title="Heavenly Watcher" element="WIND">
+        <race>UNDEAD</race>
+        <sex>MALE</sex>
+        <equipment rhand="124"/>
+        <acquire exp="4276" sp="18" attributeExp="1258"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="49362.02532" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1829" magical="919"/>
+            <speed>
+                <walk ground="90"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="37.8" grown="43.2"/>
+            <height normal="58.2" grown="70.8"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="1"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22853" level="88" type="Monster" name="哈勒特隨從騎士" element="WIND">
+        <race>UNDEAD</race>
+        <sex>MALE</sex>
+        <equipment rhand="124"/>
+        <acquire exp="4276" sp="18" attributeExp="871"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="33725.31646" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3057" magical="2087" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1829" magical="919"/>
+            <speed>
+                <walk ground="90"/>
+                <run ground="110"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="31.5" grown="36"/>
+            <height normal="48" grown="58.5"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="1"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22854" level="89" type="Monster" name="堅硬護甲野獸" title="Heavenly Watcher" element="WIND">
+        <race>BEAST</race>
+        <sex>MALE</sex>
+        <acquire exp="4790" sp="27" attributeExp="1273"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="59234.17722" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2106" magical="982"/>
+            <speed>
+                <walk ground="40"/>
+                <run ground="160"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="39.6"/>
+            <height normal="30.3"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="3"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22855" level="89" type="Monster" name="護甲野獸" element="WIND">
+        <race>BEAST</race>
+        <sex>MALE</sex>
+        <acquire exp="4790" sp="27" attributeExp="1077"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="40470.88608" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3334" magical="2276" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2106" magical="982"/>
+            <speed>
+                <walk ground="40"/>
+                <run ground="160"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="33"/>
+            <height normal="24.75"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="3"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22856" level="90" type="Monster" name="進化的堅硬護甲野獸" title="Heavenly Watcher" element="WIND">
+        <race>BEAST</race>
+        <sex>MALE</sex>
+        <acquire exp="4303" sp="37" attributeExp="1287"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="71081.64557" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2383" magical="1045"/>
+            <speed>
+                <walk ground="40"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="39.6"/>
+            <height normal="30.3"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="3"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22857" level="90" type="Monster" name="進化的護甲野獸" element="WIND">
+        <race>BEAST</race>
+        <sex>MALE</sex>
+        <acquire exp="5593" sp="37" attributeExp="891"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="48565.18987" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2383" magical="1045"/>
+            <speed>
+                <walk ground="40"/>
+                <run ground="160"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="33"/>
+            <height normal="24.75"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="3"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22858" level="91" type="Monster" name="天族監視者" title="Heavenly Watcher" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="6005" sp="52" attributeExp="1301"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="85297.46835" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2660" magical="1108"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="21.6"/>
+            <height normal="56.4"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22859" level="91" type="Monster" name="天族觀察者" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="6005" sp="52" attributeExp="1201"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="58277.8481" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2660" magical="1108"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="16.2"/>
+            <height normal="39.3"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22860" level="91" type="Monster" name="天族護衛騎士" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="6005" sp="52" attributeExp="1201"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="58277.8481" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2660" magical="1108"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="14.4"/>
+            <height normal="52.8"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22861" level="92" type="Monster" name="變異的傳令監視者" title="Heavenly Watcher" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="8107" sp="81" attributeExp="1316"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="102356.96203" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2937" magical="1171"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="150"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="21.6"/>
+            <height normal="56.4"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22862" level="92" type="Monster" name="變異的傳令觀察者" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="8107" sp="81" attributeExp="1316"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="69933.5443" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2937" magical="1171"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="16.2"/>
+            <height normal="39.3"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22863" level="92" type="Monster" name="變異的傳令護衛騎士" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="8107" sp="81" attributeExp="1316"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="69933.5443" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4165" magical="2843" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2937" magical="1171"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="14.4"/>
+            <height normal="52.8"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22864" level="93" type="Monster" name="黑暗監視者" title="Heavenly Watcher" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="11289" sp="113" attributeExp="1330"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="122828.48101" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4442" magical="3032" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3214" magical="1234"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="150"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="21.6"/>
+            <height normal="56.4"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22865" level="93" type="Monster" name="黑暗觀察者" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="11289" sp="113" attributeExp="1330"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="83920.25316" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4442" magical="3032" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3214" magical="1234"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="16.2"/>
+            <height normal="39.3"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22866" level="93" type="Monster" name="黑暗護衛騎士" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="11289" sp="113" attributeExp="1330"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="83920.25316" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4442" magical="3032" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3214" magical="1234"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="170"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="14.4"/>
+            <height normal="52.8"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22867" level="94" type="Monster" name="神聖戰士" title="Heavenly Watcher" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="14909" sp="149" attributeExp="1880"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="147394.3038" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3491" magical="1297"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="24"/>
+            <height normal="49"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22868" level="94" type="Monster" name="天堂巫女分身" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="14909" sp="149" attributeExp="1880"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="110774.68354" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3491" magical="1297"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="24"/>
+            <height normal="49"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22869" level="95" type="Monster" name="天堂護衛武士" title="Heavenly Watcher" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="18994" sp="190" attributeExp="2185"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="176872.78481" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3768" magical="1360"/>
+            <speed>
+                <walk ground="60"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="25.2"/>
+            <height normal="45.6"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22870" level="95" type="Monster" name="迪拿米斯的分身" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="18994" sp="190" attributeExp="2185"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="132929.11392" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3768" magical="1360"/>
+            <speed>
+                <walk ground="60"/>
+                <run ground="150"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="27"/>
+            <height normal="68.1"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22871" level="95" type="Monster" name="永生大天使" title="Heavenly Watcher" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <equipment rhand="97"/>
+        <acquire exp="25413" sp="254" attributeExp="2185"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="213895.56962" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3768" magical="1360"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="18"/>
+            <height normal="71.169"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22872" level="95" type="Monster" name="大天使的分身" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <equipment rhand="97"/>
+        <acquire exp="25413" sp="254" attributeExp="2185"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="160394.3038" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3768" magical="1360"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="12"/>
+            <height normal="46.446"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22873" level="93" type="Monster" name="幻影戰士 " element="FIRE">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="21623" sp="216" attributeExp="1023"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="152581.6" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3491" magical="1297"/>
+            <speed>
+                <walk ground="60"/>
+                <run ground="130"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="23.4"/>
+            <height normal="41.525"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+        <dropLists>
+            <drop>
+                <group chance="100">
+                    <item id="100542" min="1" max="1" chance="0.007"/> <!-- Celestial Tower's Time Stone -->
+                    <item id="94717" min="1" max="1" chance="0.1"/>
+                    <item id="101567" min="1" max="1" chance="0.1"/>
+                </group>
+                <group chance="70">
+                    <item id="57" min="2009" max="2221" chance="100"/> <!-- Adena -->
+                </group>
+                <group chance="0.001">
+                    <item id="94706" min="1" max="1" chance="100"/>
+                </group>
+            </drop>
+        </dropLists>
+    </npc>
+    <npc id="22874" level="93" type="Monster" name="幻影射手" element="FIRE">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <equipment rhand="15302"/>
+        <acquire exp="21623" sp="216" attributeExp="1023"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="152581.6" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4719" magical="3221" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW"
+                    range="1100" distance="10" width="0"/>
+            <defence physical="3491" magical="1297"/>
+            <speed>
+                <walk ground="60"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="16.8"/>
+            <height normal="61.4"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+        <dropLists>
+            <drop>
+                <group chance="100">
+                    <item id="100542" min="1" max="1" chance="0.007"/> <!-- Celestial Tower's Time Stone -->
+                    <item id="94717" min="1" max="1" chance="0.1"/>
+                    <item id="101567" min="1" max="1" chance="0.1"/>
+                </group>
+                <group chance="70">
+                    <item id="57" min="2009" max="2221" chance="100"/> <!-- Adena -->
+                </group>
+                <group chance="0.001">
+                    <item id="94706" min="1" max="1" chance="100"/>
+                </group>
+            </drop>
+        </dropLists>
+    </npc>
+    <npc id="22875" level="93" type="Monster" name="幻影祭司" element="FIRE">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="21623" sp="216" attributeExp="1023"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="152581.6" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3491" magical="1297"/>
+            <speed>
+                <walk ground="50"/>
+                <run ground="180"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="18"/>
+            <height normal="49.2"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+        <dropLists>
+            <drop>
+                <group chance="100">
+                    <item id="100542" min="1" max="1" chance="0.007"/> <!-- Celestial Tower's Time Stone -->
+                    <item id="94717" min="1" max="1" chance="0.1"/>
+                    <item id="101567" min="1" max="1" chance="0.1"/>
+                </group>
+                <group chance="70">
+                    <item id="57" min="2009" max="2221" chance="100"/> <!-- Adena -->
+                </group>
+                <group chance="0.001">
+                    <item id="94706" min="1" max="1" chance="100"/>
+                </group>
+            </drop>
+        </dropLists>
+    </npc>
+    <npc id="22876" level="93" type="Monster" name="幻影審判者" element="FIRE">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="25947" sp="259" attributeExp="1023"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="228872.8" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4719" magical="3221" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3491" magical="1297"/>
+            <speed>
+                <walk ground="40"/>
+                <run ground="130"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="23.4"/>
+            <height normal="58.1"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48044" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22877" level="87" type="Monster" name="闇影騎士士兵" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="2825" sp="28" attributeExp="1244"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="51099.36709" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1552" magical="856"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="10.4"/>
+            <height normal="24.625"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22878" level="87" type="Monster" name="闇影騎士鬥士" title="Illusory Servant" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="3391" sp="34" attributeExp="1244"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="51099.36709" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1552" magical="856"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="15.6"/>
+            <height normal="33.4"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22879" level="87" type="Monster" name="闇影騎士狂戰士" title="Illusory Knight" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="3956" sp="40" attributeExp="1244"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="51099.36709" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1552" magical="856"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="20.8"/>
+            <height normal="39.9"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22880" level="87" type="Monster" name="闇影騎士指揮官" title="Illusory Knight Captain" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="4521" sp="45" attributeExp="1244"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="51099.36709" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="2780" magical="1898" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1552" magical="856"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="19.5"/>
+            <height normal="39.9"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22881" level="91" type="Monster" name="闇影騎士士兵" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="13054" sp="131" attributeExp="1301"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="105959.49367" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2660" magical="1108"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="12.8"/>
+            <height normal="31"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22882" level="91" type="Monster" name="闇影騎士鬥士" title="Illusory Servant" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="15665" sp="157" attributeExp="1301"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="105959.49367" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2660" magical="1108"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="19.2"/>
+            <height normal="41.8"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22883" level="91" type="Monster" name="闇影騎士狂戰士" title="Illusory Knight" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="18276" sp="183" attributeExp="1301"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="105959.49367" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2660" magical="1108"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="25.6"/>
+            <height normal="49.8"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22884" level="91" type="Monster" name="闇影騎士指揮官" title="Illusory Knight Captain" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="20887" sp="209" attributeExp="1301"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="105959.49367" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="3888" magical="2654" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="2660" magical="1108"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="24"/>
+            <height normal="49.8"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22885" level="95" type="Monster" name="闇影騎士士兵" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="47485" sp="475" attributeExp="2185"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="219717.72152" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3768" magical="1360"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="15.2"/>
+            <height normal="37.375"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22886" level="95" type="Monster" name="闇影騎士鬥士" title="Illusory Servant" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="56982" sp="570" attributeExp="2185"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="219717.72152" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3768" magical="1360"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="22.8"/>
+            <height normal="50.2"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22887" level="95" type="Monster" name="闇影騎士狂戰士" title="Illusory Knight" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="66479" sp="665" attributeExp="2185"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="219717.72152" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3768" magical="1360"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="30.4"/>
+            <height normal="59.7"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22888" level="95" type="Monster" name="闇影騎士指揮官" title="Illusory Knight Captain" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="75976" sp="760" attributeExp="2185"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="219717.72152" hpRegen="10.2" mp="2770.2" mpRegen="3.6"/>
+            <attack physical="4996" magical="3410" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="3768" magical="1360"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="28.5"/>
+            <height normal="59.7"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22889" level="79" type="Monster" name="殘酷的史巴托" element="EARTH">
+        <race>UNDEAD</race>
+        <sex>MALE</sex>
+        <equipment rhand="79" lhand="945"/>
+        <acquire exp="554" sp="1" attributeExp="239"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="6579.74684" hpRegen="10.2" mp="2182.53" mpRegen="3.6"/>
+            <attack physical="1487.888" magical="762.024" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="404.48" magical="255.2862"/>
+            <speed>
+                <walk ground="60"/>
+                <run ground="250"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="16.5" grown="19.5"/>
+            <height normal="39" grown="48"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="1"/>
+            <skill id="48047" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22890" level="79" type="Monster" name="殘酷的亡刃" element="EARTH">
+        <race>UNDEAD</race>
+        <sex>MALE</sex>
+        <equipment rhand="1472"/>
+        <acquire exp="1108" sp="1" attributeExp="478"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="13159.49367" hpRegen="10.2" mp="2182.53" mpRegen="3.6"/>
+            <attack physical="1487.888" magical="762.024" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="404.48" magical="255.2862"/>
+            <speed>
+                <walk ground="100"/>
+                <run ground="250"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="15" grown="25"/>
+            <height normal="45" grown="52"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="1"/>
+            <skill id="48047" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22891" level="80" type="Monster" name="殘酷的死亡騎士" element="EARTH">
+        <race>UNDEAD</race>
+        <sex>MALE</sex>
+        <equipment rhand="75"/>
+        <acquire exp="1591" sp="2" attributeExp="968"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="26670.88608" hpRegen="10.2" mp="2227.484" mpRegen="3.6"/>
+            <attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="409.65" magical="258.5499"/>
+            <speed>
+                <walk ground="27"/>
+                <run ground="250"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="15.6" grown="18.85"/>
+            <height normal="38.6" grown="47.7"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="1"/>
+            <skill id="48047" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22892" level="80" type="Monster" name="殘酷的魅魔" element="EARTH">
+        <race>DEMONIC</race>
+        <sex>MALE</sex>
+        <acquire exp="1847" sp="2" attributeExp="1210"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="32898.73418" hpRegen="10.2" mp="2227.484" mpRegen="3.6"/>
+            <attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="409.65" magical="258.5499"/>
+            <speed>
+                <walk ground="60"/>
+                <run ground="250"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="15"/>
+            <height normal="55.5"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="9"/>
+            <skill id="48047" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22893" level="81" type="Monster" name="殘酷的女妖" element="EARTH">
+        <race>DEMONIC</race>
+        <sex>MALE</sex>
+        <equipment rhand="3939"/>
+        <acquire exp="2272" sp="3" attributeExp="1470"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="39477.8481" hpRegen="10.2" mp="2272.704" mpRegen="3.6"/>
+            <attack physical="1619.72" magical="829.544" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="414.73" magical="227.61"/>
+            <speed>
+                <walk ground="80"/>
+                <run ground="250"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="18"/>
+            <height normal="49"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="9"/>
+            <skill id="48047" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22894" level="76" type="Monster" name="兇殘的坦塔蜥蜴人 " element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <acquire exp="379" sp="1" attributeExp="171"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="4485.44304" hpRegen="10.2" mp="2295.93287680788" mpRegen="3.6"/>
+            <attack physical="1319.072" magical="675.568" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="388.54" magical="213.24"/>
+            <speed>
+                <walk ground="40"/>
+                <run ground="250"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="24"/>
+            <height normal="48.9"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22895" level="77" type="Monster" name="兇殘的坦塔蜥蜴人戰士" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <acquire exp="779" sp="1" attributeExp="347"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="8970.88608" hpRegen="10.2" mp="2364.81086311211" mpRegen="3.6"/>
+            <attack physical="1370.304" magical="701.808" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="393.92" magical="248.6208"/>
+            <speed>
+                <walk ground="58"/>
+                <run ground="250"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="29.9"/>
+            <height normal="49.65"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22896" level="78" type="Monster" name="兇殘的坦塔蜥蜴人巫醫" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <acquire exp="1119" sp="1" attributeExp="702"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="17941.77215" hpRegen="10.2" mp="2435.75518900548" mpRegen="3.6"/>
+            <attack physical="1424.8" magical="729.712" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="399.24" magical="251.9742"/>
+            <speed>
+                <walk ground="75"/>
+                <run ground="250"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="27.6"/>
+            <height normal="53.4"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22897" level="79" type="Monster" name="兇殘的坦塔蜥蜴人祈禱者 " element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <acquire exp="1333" sp="2" attributeExp="889"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="22427.21519" hpRegen="10.2" mp="2508.82784467564" mpRegen="3.6"/>
+            <attack physical="1487.888" magical="762.024" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="404.48" magical="255.2862"/>
+            <speed>
+                <walk ground="90"/>
+                <run ground="250"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="48"/>
+            <height normal="64.8"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22898" level="80" type="Monster" name="兇殘的坦塔蜥蜴人高等戰士" element="WATER">
+        <race>HUMANOID</race>
+        <sex>MALE</sex>
+        <acquire exp="1640" sp="2" attributeExp="1080"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="26912.65823" hpRegen="10.2" mp="2584.09268001591" mpRegen="3.6"/>
+            <attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="409.65" magical="258.5499"/>
+            <speed>
+                <walk ground="58"/>
+                <run ground="250"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="34.5"/>
+            <height normal="57.75"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="6"/>
+            <skill id="48045" level="1"/>
+        </skillList>
+    </npc>
+    <npc id="22899" level="80" type="Monster" name="闇影騎士士兵" element="WIND">
+        <race>DIVINE</race>
+        <sex>MALE</sex>
+        <acquire exp="1397" sp="14" attributeExp="1144"/>
+        <stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+            <vitals hp="66677.21519" hpRegen="10.2" mp="2227.484" mpRegen="3.6"/>
+            <attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253"
+                    type="SWORD" range="40" distance="80" width="120"/>
+            <defence physical="409.65" magical="258.5499"/>
+            <speed>
+                <walk ground="70"/>
+                <run ground="200"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="10.4"/>
+            <height normal="24.625"/>
+        </collision>
+        <skillList>
+            <skill id="4416" level="8"/>
+            <skill id="48046" level="1"/>
+            <skill id="5620" level="3"/>
+            <skill id="48587" level="3"/>
+        </skillList>
+    </npc>
+</list>

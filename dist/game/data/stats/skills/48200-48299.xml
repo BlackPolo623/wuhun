@@ -1,0 +1,1717 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="48200" toLevel="1" name="螞蟻預言">
+		
+		<icon>icon.skill3630</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>11700</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<canBeDispelled>false</canBeDispelled>
+		<castRange>300</castRange>
+		<effectRange>1500</effectRange>
+		<hitTime>0</hitTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<reuseDelay>100</reuseDelay>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalDamage">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<type>ENEMY_ALL</type>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<type>ENEMY_ALL</type>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<type>ENEMY_ALL</type>
+				<mode>PER</mode>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48201" toLevel="1" name="85級狩獵首領">
+		
+		<icon>icon.skillraid</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48202" toLevel="1" name="卡圖巴之擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48203" toLevel="1" name="卡圖巴衝擊">
+		
+		<icon>icon.skill0100</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>-100</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>10</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48204" toLevel="1" name="卡圖巴擊倒">
+		
+		<icon>icon.skill1896</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48205" toLevel="10" name="血之矛">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>150</castRange>
+		<effectPoint>-100</effectPoint>
+		<effectRange>460</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>90</magicLevel>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48206" toLevel="10" name="黑暗炸彈">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48207" toLevel="10" name="黑暗之擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48208" toLevel="10" name="吸收">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>700</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<magicLevel>73</magicLevel>
+		<effects>
+			<effect name="HpDrain">
+				<power>100</power>
+				<percentage>80</percentage>
+			</effect>
+			<effect name="MagicalDamageMp">
+				<power>246</power>
+				<critical>true</critical>
+				<criticalLimit>1450</criticalLimit>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48209" toLevel="10" name="風之靈魄">
+		
+		<icon>icon.skill1062</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48210" toLevel="3" name="視線追擊">
+		
+		
+		
+		<icon>icon.skill1204</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48211" toLevel="10" name="焰擲">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48212" toLevel="10" name="疾襲">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48213" toLevel="12" name="恐懼">
+		
+		<icon>icon.skill1092</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<activateRate>40</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>-700</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>90</magicLevel>
+		<mpConsume>
+			<value level="1">15</value>
+			<value level="2">20</value>
+			<value level="3">23</value>
+			<value level="4">27</value>
+			<value level="5">30</value>
+			<value level="6">35</value>
+			<value level="7">39</value>
+			<value level="8">44</value>
+			<value level="9">48</value>
+			<value level="10">52</value>
+			<value level="11">54</value>
+			<value level="12">55</value>
+		</mpConsume>
+		<reuseDelay>3000</reuseDelay>
+		<trait>DERANGEMENT</trait>
+		<effects>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+		</effects>
+	</skill>
+	<skill id="48214" toLevel="12" name="麻痺">
+		
+		<icon>icon.skill1613</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<activateRate>90</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>40</castRange>
+		<effectPoint>-230</effectPoint>
+		<effectRange>200</effectRange>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>50</magicLevel>
+		<trait>PARALYZE</trait>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48215" toLevel="1" name="85級狩獵首領">
+		
+		<icon>icon.skillraid</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48216" toLevel="1" name="德依曼攻擊">
+		
+		<icon>icon.skill0036</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>100</affectRange>
+		<affectScope>RANGE</affectScope>
+		<castRange>600</castRange>
+		<effectPoint>-700</effectPoint>
+		<effectRange>270</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1000</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>94</magicLevel>
+		<reuseDelay>0</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48217" toLevel="1" name="德依曼範圍擊倒">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>700</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<effectPoint>-700</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic> 
+		<magicLevel>73</magicLevel>
+		<effects>
+			<effect name="HpDrain">
+				<power>100</power>
+				<percentage>80</percentage>
+			</effect>
+			<effect name="MagicalDamageMp">
+				<power>246</power>
+				<critical>true</critical>
+				<criticalLimit>1450</criticalLimit>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48218" toLevel="1" name="首領廣域吸血">
+		
+		<icon>icon.skill0289</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>700</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<effectPoint>-700</effectPoint>
+		<hitTime>5000</hitTime>
+		<isMagic>1</isMagic> 
+		<magicLevel>73</magicLevel>
+		<effects>
+			<effect name="HpDrain">
+				<power>100</power>
+				<percentage>80</percentage>
+			</effect>
+			<effect name="MagicalDamageMp">
+				<power>246</power>
+				<critical>true</critical>
+				<criticalLimit>1450</criticalLimit>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48219" toLevel="1" name="衝擊">
+		
+		<icon>icon.skill0100</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>-700</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>10</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48220" toLevel="1" name="束縛">
+		
+		<icon>icon.skill4047</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>ROOT_MAGICALLY</abnormalType>
+		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>-700</effectPoint>
+		<effectRange>1500</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+		<lvlBonusRate>10</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<trait>HOLD</trait>
+		<effects>
+			<effect name="Root" />
+		</effects>
+	</skill>
+	<skill id="48221" toLevel="1" name="恐懼">
+		
+		<icon>icon.skill1092</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<activateRate>40</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>-700</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitTime>2000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>90</magicLevel>
+		<reuseDelay>0</reuseDelay>
+		<trait>DERANGEMENT</trait>
+		<effects>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+		</effects>
+	</skill>
+	<skill id="48222" toLevel="1" name="85級狩獵首領">
+		
+		<icon>icon.skillraid</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48223" toLevel="1" name="札德娜攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-700</effectPoint>
+	</skill>
+	<skill id="48224" toLevel="1" name="札德娜範圍攻擊">
+		<icon>icon.skill0289</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-700</effectPoint>
+	</skill>
+	<skill id="48225" toLevel="1" name="催眠">
+		
+		<icon>icon.skill4046</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>SLEEP</abnormalType>
+		<abnormalVisualEffect>SLEEP</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>-700</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitCancelTime>2</hitCancelTime>
+		<hitTime>2000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+		<lvlBonusRate>2</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<removedOnDamage>true</removedOnDamage>
+		<trait>SLEEP</trait>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48226" toLevel="1" name="沉默術">
+		
+		<icon>icon.skill1064</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-700</effectPoint>
+	</skill>
+	<skill id="48227" toLevel="1" name="麻痺">
+		
+		<icon>icon.skill1170</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<activateRate>90</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>-700</effectPoint>
+		<effectRange>200</effectRange>
+		<hitTime>2000</hitTime>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>50</magicLevel>
+		<trait>PARALYZE</trait>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48228" toLevel="10" name="吸血鬼抗性">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48229" toLevel="10" name="吸收抗性">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48230" toLevel="10" name="致命攻擊抗性">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48231" toLevel="1" name="巴列斯的詛咒">
+		
+		<icon>icon.skill0046</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<canBeDispelled>false</canBeDispelled>
+		<effectPoint>0</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>0</isMagic>
+		<trait>INFECTION</trait>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DamOverTime">
+				<power>123</power>
+				<ticks>3</ticks>
+			</effect>
+			<effect name="BlockSkill">
+				<magicTypes>1;2;3;4;5;22</magicTypes>
+			</effect>
+			<effect name="PhysicalDamageMute">
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48232" toLevel="1" name="奧爾芬的憤怒">
+		
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48233" toLevel="1" name="奧爾芬之預言">
+		
+		<icon>icon.skill6435</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48234" toLevel="1" name="核心離質">
+		
+		<icon>icon.skill10324</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48235" toLevel="1" name="核心之預言">
+		
+		<icon>icon.skill32633</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48236" toLevel="1" name="巴溫之預言">
+		
+		<icon>icon.skill10318</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48237" toLevel="1" name="核心離質">
+		
+		<icon>icon.skill10324</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48238" toLevel="1" name="巴溫攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48239" toLevel="1" name="巴溫掌風">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48240" toLevel="1" name="巴溫的禮物">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48241" toLevel="1" name="巴溫地震">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48242" toLevel="1" name="巴溫落雷">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48243" toLevel="1" name="巴溫麻痺">
+		
+		<icon>icon.skill1170</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<activateRate>90</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>-100</effectPoint>
+		<effectRange>200</effectRange>
+		<hitTime>3600</hitTime>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>50</magicLevel>
+		<trait>PARALYZE</trait>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48244" toLevel="1" name="擊倒">
+		
+		<icon>icon.skill0518</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-700</effectPoint>
+	</skill>
+	<skill id="48245" toLevel="1" name="麻痺">
+		
+		<icon>icon.skill0523</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<activateRate>90</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<effectPoint>-700</effectPoint>
+		<effectRange>200</effectRange>
+		<hitTime>3000</hitTime>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>50</magicLevel>
+		<trait>PARALYZE</trait>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48246" toLevel="1" name="恐懼">
+		
+		<icon>icon.skill1092</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<activateRate>140</activateRate>
+		<affectLimit>70-80</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>900</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<coolTime>0</coolTime>
+		<effectPoint>-700</effectPoint>
+		<hitTime>3000</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>90</magicLevel>
+		<reuseDelay>8000</reuseDelay>
+		<trait>DERANGEMENT</trait>
+		<effects>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+			<effect name="Speed">
+				<amount>-90</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48247" toLevel="1" name="冰凍麻痺">
+		<icon>icon.random_transform_00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48248" toLevel="1" name="冰凍麻痺">
+		
+		<icon>icon.skill6274</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>2</abnormalTime>
+		<abnormalType>FREEZING</abnormalType>
+		<abnormalVisualEffect>FREEZING</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-500</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<reuseDelay>1000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48249" toLevel="1" name="雷擊破">
+		
+		<icon>icon.skill1095</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>2</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-500</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<reuseDelay>1000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48250" toLevel="1" name="火焰纏繞">
+		
+		<icon>icon.skill0834</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>2</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>DOT_FIRE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-500</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<reuseDelay>1000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="BlockActions" />
+			<effect name="DamOverTime">
+				<canKill>true</canKill>
+				<power>60</power>
+				<ticks>1</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48251" toLevel="1" name="拳之衝擊">
+		
+		<icon>icon.armor_t96_g_i03</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-300</effectPoint>
+	</skill>
+	<skill id="48252" toLevel="1" name="寧靜之力">
+		
+		<icon>icon.armor_t94_g_i01</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-300</effectPoint>
+	</skill>
+	<skill id="48253" toLevel="1" name="地獄落雷">
+		
+		<icon>icon.hellbound_talisman_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>0</hitTime>
+		<isMagic>1</isMagic>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>1500</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48254" toLevel="1" name="巨蟻女王落岩">
+		
+		<icon>icon.skill4282_new</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>1800</castRange>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>0</hitTime>
+		<isMagic>1</isMagic>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>2000</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48255" toLevel="1" name="巴溫雷電彈">
+		
+		<icon>icon.skill1469</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>0</hitTime>
+		<isMagic>1</isMagic>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>1500</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48256" toLevel="1" name="札肯血牢">
+		
+		<icon>icon.skill32100</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>0</hitTime>
+		<isMagic>1</isMagic>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>1500</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48257" toLevel="1" name="奧爾芬毒颶">
+		
+		<icon>icon.skill6435</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>0</hitTime>
+		<isMagic>1</isMagic>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>1500</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48258" toLevel="1" name="核心離質休克">
+		
+		<icon>icon.skill32633</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>0</hitTime>
+		<isMagic>1</isMagic>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>1500</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48259" toLevel="1" name="龍之加護">
+		
+		<icon>icon.dragon_belt_grace</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48260" toLevel="40" name="減少物理技能致命攻擊被擊傷害">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48261" toLevel="40" name="減少魔法技能致命攻擊被擊傷害">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48262" toLevel="40" name="所有致命攻擊被擊傷害減少">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48263" toLevel="10" name="一般攻擊致命攻擊率增加">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48264" toLevel="10" name="物理技能致命攻擊率增加">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48265" toLevel="10" name="魔法技能致命攻擊率增加">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48266" toLevel="10" name="所有致命攻擊率增加">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48267" toLevel="10" name="一般攻擊致命攻擊被擊率減少">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48268" toLevel="10" name="物理技能致命攻擊被擊機率減少">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48269" toLevel="10" name="魔法技能致命攻擊被擊機率減少">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48270" toLevel="10" name="所有致命攻擊被擊率減少">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48271" toLevel="18" name="弱化抵抗增加">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48272" toLevel="40" name="增加物理防禦力">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">500</value>
+					<value level="2">1000</value>
+					<value level="3">1500</value>
+					<value level="4">2000</value>
+					<value level="5">2500</value>
+					<value level="6">3000</value>
+					<value level="7">3500</value>
+					<value level="8">4000</value>
+					<value level="9">4500</value>
+					<value level="10">5000</value>
+					<value level="11">5500</value>
+					<value level="12">6000</value>
+					<value level="13">6500</value>
+					<value level="14">7000</value>
+					<value level="15">7500</value>
+					<value level="16">8000</value>
+					<value level="17">8500</value>
+					<value level="18">9000</value>
+					<value level="19">9500</value>
+					<value level="20">10000</value>
+					<value level="21">10500</value>
+					<value level="22">11000</value>
+					<value level="23">11500</value>
+					<value level="24">12000</value>
+					<value level="25">12500</value>
+					<value level="26">13000</value>
+					<value level="27">13500</value>
+					<value level="28">14000</value>
+					<value level="29">14500</value>
+					<value level="30">15000</value>
+					<value level="31">15500</value>
+					<value level="32">16000</value>
+					<value level="33">16500</value>
+					<value level="34">17000</value>
+					<value level="35">17500</value>
+					<value level="36">18000</value>
+					<value level="37">18500</value>
+					<value level="38">19000</value>
+					<value level="39">19500</value>
+					<value level="40">20000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48273" toLevel="40" name="增加魔法防禦力">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">500</value>
+					<value level="2">1000</value>
+					<value level="3">1500</value>
+					<value level="4">2000</value>
+					<value level="5">2500</value>
+					<value level="6">3000</value>
+					<value level="7">3500</value>
+					<value level="8">4000</value>
+					<value level="9">4500</value>
+					<value level="10">5000</value>
+					<value level="11">5500</value>
+					<value level="12">6000</value>
+					<value level="13">6500</value>
+					<value level="14">7000</value>
+					<value level="15">7500</value>
+					<value level="16">8000</value>
+					<value level="17">8500</value>
+					<value level="18">9000</value>
+					<value level="19">9500</value>
+					<value level="20">10000</value>
+					<value level="21">10500</value>
+					<value level="22">11000</value>
+					<value level="23">11500</value>
+					<value level="24">12000</value>
+					<value level="25">12500</value>
+					<value level="26">13000</value>
+					<value level="27">13500</value>
+					<value level="28">14000</value>
+					<value level="29">14500</value>
+					<value level="30">15000</value>
+					<value level="31">15500</value>
+					<value level="32">16000</value>
+					<value level="33">16500</value>
+					<value level="34">17000</value>
+					<value level="35">17500</value>
+					<value level="36">18000</value>
+					<value level="37">18500</value>
+					<value level="38">19000</value>
+					<value level="39">19500</value>
+					<value level="40">20000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48274" toLevel="40" name="增加物理防禦力/魔法防禦力">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">500</value>
+					<value level="2">1000</value>
+					<value level="3">1500</value>
+					<value level="4">2000</value>
+					<value level="5">2500</value>
+					<value level="6">3000</value>
+					<value level="7">3500</value>
+					<value level="8">4000</value>
+					<value level="9">4500</value>
+					<value level="10">5000</value>
+					<value level="11">5500</value>
+					<value level="12">6000</value>
+					<value level="13">6500</value>
+					<value level="14">7000</value>
+					<value level="15">7500</value>
+					<value level="16">8000</value>
+					<value level="17">8500</value>
+					<value level="18">9000</value>
+					<value level="19">9500</value>
+					<value level="20">10000</value>
+					<value level="21">10500</value>
+					<value level="22">11000</value>
+					<value level="23">11500</value>
+					<value level="24">12000</value>
+					<value level="25">12500</value>
+					<value level="26">13000</value>
+					<value level="27">13500</value>
+					<value level="28">14000</value>
+					<value level="29">14500</value>
+					<value level="30">15000</value>
+					<value level="31">15500</value>
+					<value level="32">16000</value>
+					<value level="33">16500</value>
+					<value level="34">17000</value>
+					<value level="35">17500</value>
+					<value level="36">18000</value>
+					<value level="37">18500</value>
+					<value level="38">19000</value>
+					<value level="39">19500</value>
+					<value level="40">20000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">500</value>
+					<value level="2">1000</value>
+					<value level="3">1500</value>
+					<value level="4">2000</value>
+					<value level="5">2500</value>
+					<value level="6">3000</value>
+					<value level="7">3500</value>
+					<value level="8">4000</value>
+					<value level="9">4500</value>
+					<value level="10">5000</value>
+					<value level="11">5500</value>
+					<value level="12">6000</value>
+					<value level="13">6500</value>
+					<value level="14">7000</value>
+					<value level="15">7500</value>
+					<value level="16">8000</value>
+					<value level="17">8500</value>
+					<value level="18">9000</value>
+					<value level="19">9500</value>
+					<value level="20">10000</value>
+					<value level="21">10500</value>
+					<value level="22">11000</value>
+					<value level="23">11500</value>
+					<value level="24">12000</value>
+					<value level="25">12500</value>
+					<value level="26">13000</value>
+					<value level="27">13500</value>
+					<value level="28">14000</value>
+					<value level="29">14500</value>
+					<value level="30">15000</value>
+					<value level="31">15500</value>
+					<value level="32">16000</value>
+					<value level="33">16500</value>
+					<value level="34">17000</value>
+					<value level="35">17500</value>
+					<value level="36">18000</value>
+					<value level="37">18500</value>
+					<value level="38">19000</value>
+					<value level="39">19500</value>
+					<value level="40">20000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="48275" toLevel="6" name="中獎數字6">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>692</effectPoint>
+	</skill>
+	<skill id="48276" toLevel="6" name="10勝">
+		
+		
+		
+		
+		
+		
+		<icon>
+			<value level="1">icon.ev_sb_5_18th_lucky_win</value>
+			<value level="2">icon.ev_sb_6_18th_lucky_win</value>
+			<value level="3">icon.ev_sb_7_18th_lucky_win</value>
+			<value level="4">icon.ev_sb_8_18th_lucky_win</value>
+			<value level="5">icon.ev_sb_9_18th_lucky_win</value>
+			<value level="6">icon.ev_sb_10_18th_lucky_win</value>
+		</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48277" toLevel="1" name="狩獵展示效果">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48278" toLevel="20" name="一般攻擊致命攻擊率增加">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48279" toLevel="20" name="物理技能致命攻擊率增加">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48280" toLevel="20" name="魔法技能致命攻擊率增加">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48281" toLevel="20" name="所有致命攻擊率增加">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="48282" toLevel="5" name="火之射擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-900</effectPoint>
+	</skill>
+	<skill id="48283" toLevel="5" name="暴擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48284" toLevel="5" name="強力攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48285" toLevel="18" name="一擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-2</effectPoint>
+	</skill>
+	<skill id="48286" toLevel="5" name="昏迷之擊">
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">-1</value>
+			<value level="2">-100</value>
+			<value level="3">-100</value>
+			<value level="4">-100</value>
+			<value level="5">-100</value>
+		</effectPoint>
+	</skill>
+	<skill id="48287" toLevel="5" name="麻痺">
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48288" toLevel="5" name="恐懼">
+		<icon>icon.skill1092</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48289" toLevel="8" name="風之爆裂">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48290" toLevel="8" name="風漩術">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48291" toLevel="8" name="燃燒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48292" toLevel="8" name="精神燃燒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48293" toLevel="8" name="赤焰燃燒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48294" toLevel="1" name="麻痺">
+		
+		<icon>icon.skill1170</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<activateRate>90</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>-100</effectPoint>
+		<effectRange>200</effectRange>
+		<hitTime>2000</hitTime>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>50</magicLevel>
+		<trait>PARALYZE</trait>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48295" toLevel="1" name="恐懼">
+		
+		<icon>icon.skill1169</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="48296" toLevel="1" name="一擊">
+		
+		<icon>icon.skill1167</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>-100</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>10</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="48297" toLevel="1" name="移動速度增加">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48298" toLevel="1" name="攻擊力增加">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="48299" toLevel="1" name="物理防禦力增加">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+</list>

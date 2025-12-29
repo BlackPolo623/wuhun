@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="16400" toLevel="1" name="愛琵樂回復術">
+		
+		<icon>icon.skill11760</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>867</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="16401" toLevel="1" name="次元死亡之體">
+		
+		<icon>icon.skill0340</icon>
+		<operateType>A2</operateType>
+		<hitTime>2400</hitTime>
+		<isMagic>1</isMagic>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16402" toLevel="1" name="次元戰慄">
+		
+		<icon>icon.skill1169</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2400</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16403" toLevel="1" name="次元審判">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>6</isMagic>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16404" toLevel="1" name="次元廣域審判">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>6</isMagic>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16405" toLevel="1" name="次元群體審判">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>6</isMagic>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16406" toLevel="1" name="次元恐懼">
+		
+		<icon>icon.skill1169</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2400</hitTime>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16407" toLevel="1" name="次元返生禁制">
+		
+		<icon>icon.skill_resurrection</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16408" toLevel="3" name="陷阱恐懼">
+		
+		<icon>icon.skill1381</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16409" toLevel="3" name="陷阱束縛">
+		
+		<icon>icon.skill4047</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>GHOST_STUN</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>-100</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>0</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>2</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="16410" toLevel="3" name="陷阱空中束縛">
+		
+		<icon>icon.skill11050</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>FLOATING_ROOT</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<coolTime>0</coolTime>
+		<effectPoint>-100</effectPoint>
+		<effectRange>1000</effectRange>
+		<hitTime>0</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>2</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<trait>PARALYZE</trait>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="16411" toLevel="3" name="陷阱衝擊">
+		
+		<icon>icon.skill0100</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16412" toLevel="3" name="陷阱石化">
+		
+		<icon>icon.skill4111</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16413" toLevel="3" name="陷阱施毒">
+		
+		<icon>icon.skill4035</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16414" toLevel="1" name="安全區域-恢復">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16415" toLevel="4" name="次元闇之怨氣">
+		
+		
+		
+		
+		<icon>icon.skill1298</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="16416" toLevel="10" name="愚弄攻擊抗性">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0358</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16417" toLevel="10" name="風之衝擊攻擊抗性">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill4011</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16418" toLevel="10" name="魅惑攻擊抗性">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill5934</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16425" toLevel="1" name="聖誕外型變更">
+		
+		<icon>BranchSys.icon.br_xmas_present_fun_i00</icon>
+		<operateType>A2</operateType>
+		<effectPoint>100</effectPoint>
+		<hitTime>100</hitTime>
+	</skill>
+	<skill id="16426" toLevel="1" name="亞貝里烏斯斗篷-限時20日">
+		
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16427" toLevel="1" name="薩菲洛斯斗篷-限時20日">
+		
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16428" toLevel="1" name="凱修納格斗篷-限時20日">
+		
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16429" toLevel="1" name="克倫畢斯特斗篷-限時20日">
+		
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16430" toLevel="1" name="索特克里格斗篷-限時20日">
+		
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16431" toLevel="1" name="納比亞羅普斗篷-限時20日">
+		
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16432" toLevel="1" name="拉伊斯特斗篷-限時20日">
+		
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16433" toLevel="1" name="拉奇西斯斗篷-限時20日">
+		
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16434" toLevel="1" name="沙哈斗篷-限時20日">
+		
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16435" toLevel="1" name="沙哈斗篷-限時20日">
+		
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16437" toLevel="3" name="GM的祝福-GM的應援">
+		
+		
+		
+		<icon>icon.skill0919</icon>
+		<operateType>A1</operateType>
+		<castRange>1200</castRange>
+		<isMagic>4</isMagic>
+	</skill>
+</list>

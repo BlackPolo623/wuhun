@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="800" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+	<time duration="6000" empty="0" />
+	<locations>
+		<enter type="FIXED">
+			<location x="16356" y="49971" z="-12717" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="CommandChannel" />
+		<condition type="Distance" />
+	</conditions>	
+	<spawnlist>
+		<npc id="120000" x="11234" y="57456" z="-12612" heading="13456" respawnTime="10sec" />
+	</spawnlist>
+</instance>

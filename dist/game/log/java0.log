@@ -1,0 +1,437 @@
+2025.12.29 11:12:16,862	INFO	3	org.l2jmobius.commons.util.IXmlReader	Network Config: ipconfig.xml exists, using manual configuration...
+2025.12.29 11:12:16,965	INFO	3	org.l2jmobius.gameserver.config.ServerConfig	Loaded 6 Filter Words.
+2025.12.29 11:12:16,986	INFO	3	org.l2jmobius.gameserver.config.RatesConfig	金幣掉落區間 1: 等級1-10, 金幣200-400, 機率80.0%
+2025.12.29 11:12:16,986	INFO	3	org.l2jmobius.gameserver.config.RatesConfig	金幣掉落區間 2: 等級11-20, 金幣350-600, 機率80.0%
+2025.12.29 11:12:16,986	INFO	3	org.l2jmobius.gameserver.config.RatesConfig	金幣掉落區間 3: 等級21-30, 金幣550-900, 機率80.0%
+2025.12.29 11:12:16,986	INFO	3	org.l2jmobius.gameserver.config.RatesConfig	金幣掉落區間 4: 等級31-40, 金幣800-1300, 機率80.0%
+2025.12.29 11:12:16,986	INFO	3	org.l2jmobius.gameserver.config.RatesConfig	金幣掉落區間 5: 等級41-50, 金幣1200-1800, 機率80.0%
+2025.12.29 11:12:16,986	INFO	3	org.l2jmobius.gameserver.config.RatesConfig	金幣掉落區間 6: 等級51-60, 金幣1600-2400, 機率80.0%
+2025.12.29 11:12:16,986	INFO	3	org.l2jmobius.gameserver.config.RatesConfig	金幣掉落區間 7: 等級61-70, 金幣2200-3200, 機率80.0%
+2025.12.29 11:12:16,986	INFO	3	org.l2jmobius.gameserver.config.RatesConfig	金幣掉落區間 8: 等級71-80, 金幣3000-4500, 機率80.0%
+2025.12.29 11:12:16,986	INFO	3	org.l2jmobius.gameserver.config.RatesConfig	金幣掉落區間 9: 等級81-90, 金幣4200-6300, 機率80.0%
+2025.12.29 11:12:16,987	INFO	3	org.l2jmobius.gameserver.config.RatesConfig	金幣掉落區間 10: 等級91-99, 金幣6000-8600, 機率80.0%
+2025.12.29 11:12:16,987	WARNING	3	org.l2jmobius.commons.util.ConfigReader	Config 'AdenaDropRange.11' not found in file 'Rates.ini', using default: null.
+2025.12.29 11:12:17,004	WARNING	3	org.l2jmobius.commons.util.ConfigReader	Config 'bufftime' not found in file 'Custom.ini', using default: 14400.
+2025.12.29 11:12:17,004	INFO	3	org.l2jmobius.gameserver.GameServer	------------------------------------------------=[ Database ]
+2025.12.29 11:12:17,113	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: HikariCP pool initialized successfully.
+2025.12.29 11:12:17,113	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Testing database connections...
+2025.12.29 11:12:17,238	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1431710377 wrapping com.mysql.cj.jdbc.ConnectionImpl@52d645b1.
+2025.12.29 11:12:17,271	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@125644421 wrapping com.mysql.cj.jdbc.ConnectionImpl@4233e892.
+2025.12.29 11:12:17,304	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1493158871 wrapping com.mysql.cj.jdbc.ConnectionImpl@3ecd267f.
+2025.12.29 11:12:17,337	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1806880779 wrapping com.mysql.cj.jdbc.ConnectionImpl@555cf22.
+2025.12.29 11:12:17,371	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@446445803 wrapping com.mysql.cj.jdbc.ConnectionImpl@3c9bfddc.
+2025.12.29 11:12:17,404	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1280603381 wrapping com.mysql.cj.jdbc.ConnectionImpl@319bc845.
+2025.12.29 11:12:17,437	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1424108509 wrapping com.mysql.cj.jdbc.ConnectionImpl@2f4205be.
+2025.12.29 11:12:17,470	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1414013111 wrapping com.mysql.cj.jdbc.ConnectionImpl@3bd418e4.
+2025.12.29 11:12:17,503	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@778162712 wrapping com.mysql.cj.jdbc.ConnectionImpl@6b98a075.
+2025.12.29 11:12:17,536	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@548482954 wrapping com.mysql.cj.jdbc.ConnectionImpl@3569fc08.
+2025.12.29 11:12:17,569	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@777341499 wrapping com.mysql.cj.jdbc.ConnectionImpl@e84a8e1.
+2025.12.29 11:12:17,602	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@2101527076 wrapping com.mysql.cj.jdbc.ConnectionImpl@54a67a45.
+2025.12.29 11:12:17,635	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1378497201 wrapping com.mysql.cj.jdbc.ConnectionImpl@56aaaecd.
+2025.12.29 11:12:17,668	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1577167234 wrapping com.mysql.cj.jdbc.ConnectionImpl@35390ee3.
+2025.12.29 11:12:17,701	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1591916281 wrapping com.mysql.cj.jdbc.ConnectionImpl@5ddea849.
+2025.12.29 11:12:17,734	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1884231057 wrapping com.mysql.cj.jdbc.ConnectionImpl@23d1e5d0.
+2025.12.29 11:12:17,768	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@333793193 wrapping com.mysql.cj.jdbc.ConnectionImpl@58fb7731.
+2025.12.29 11:12:17,801	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@937277082 wrapping com.mysql.cj.jdbc.ConnectionImpl@3fb6cf60.
+2025.12.29 11:12:17,834	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@234740890 wrapping com.mysql.cj.jdbc.ConnectionImpl@349c1daf.
+2025.12.29 11:12:17,866	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1586151649 wrapping com.mysql.cj.jdbc.ConnectionImpl@4b9df8a.
+2025.12.29 11:12:17,898	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1767230265 wrapping com.mysql.cj.jdbc.ConnectionImpl@aafcffa.
+2025.12.29 11:12:17,930	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@727666004 wrapping com.mysql.cj.jdbc.ConnectionImpl@235a0c16.
+2025.12.29 11:12:17,962	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@414225167 wrapping com.mysql.cj.jdbc.ConnectionImpl@5f7b97da.
+2025.12.29 11:12:17,994	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@975033189 wrapping com.mysql.cj.jdbc.ConnectionImpl@6b7906b3.
+2025.12.29 11:12:18,026	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@628064884 wrapping com.mysql.cj.jdbc.ConnectionImpl@395b56bb.
+2025.12.29 11:12:18,059	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1389509050 wrapping com.mysql.cj.jdbc.ConnectionImpl@68044f4.
+2025.12.29 11:12:18,092	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1761217448 wrapping com.mysql.cj.jdbc.ConnectionImpl@315f43d5.
+2025.12.29 11:12:18,124	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@788905599 wrapping com.mysql.cj.jdbc.ConnectionImpl@6c5945a7.
+2025.12.29 11:12:18,156	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1544614339 wrapping com.mysql.cj.jdbc.ConnectionImpl@640f11a1.
+2025.12.29 11:12:18,188	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@2016828666 wrapping com.mysql.cj.jdbc.ConnectionImpl@7ac2e39b.
+2025.12.29 11:12:18,220	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1064154107 wrapping com.mysql.cj.jdbc.ConnectionImpl@64a8c844.
+2025.12.29 11:12:18,252	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@415565467 wrapping com.mysql.cj.jdbc.ConnectionImpl@52de51b6.
+2025.12.29 11:12:18,285	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1756207614 wrapping com.mysql.cj.jdbc.ConnectionImpl@3a0d172f.
+2025.12.29 11:12:18,317	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@2015301874 wrapping com.mysql.cj.jdbc.ConnectionImpl@485e36bc.
+2025.12.29 11:12:18,349	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@782228073 wrapping com.mysql.cj.jdbc.ConnectionImpl@2a79d4b1.
+2025.12.29 11:12:18,381	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@391506011 wrapping com.mysql.cj.jdbc.ConnectionImpl@17cdf2d0.
+2025.12.29 11:12:18,413	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@594651850 wrapping com.mysql.cj.jdbc.ConnectionImpl@736d6a5c.
+2025.12.29 11:12:18,445	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1677568775 wrapping com.mysql.cj.jdbc.ConnectionImpl@5b529706.
+2025.12.29 11:12:18,477	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1431556341 wrapping com.mysql.cj.jdbc.ConnectionImpl@7b5a12ae.
+2025.12.29 11:12:18,509	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@350069300 wrapping com.mysql.cj.jdbc.ConnectionImpl@1af687fe.
+2025.12.29 11:12:18,541	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1957078537 wrapping com.mysql.cj.jdbc.ConnectionImpl@3f390d63.
+2025.12.29 11:12:18,573	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@594858858 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a411614.
+2025.12.29 11:12:18,605	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@352776719 wrapping com.mysql.cj.jdbc.ConnectionImpl@54d18072.
+2025.12.29 11:12:18,638	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1112527632 wrapping com.mysql.cj.jdbc.ConnectionImpl@47a5b70d.
+2025.12.29 11:12:18,670	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@955324150 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a45193b.
+2025.12.29 11:12:18,702	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1852661033 wrapping com.mysql.cj.jdbc.ConnectionImpl@5286c33a.
+2025.12.29 11:12:18,735	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1814423236 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c530d1e.
+2025.12.29 11:12:18,767	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@207546206 wrapping com.mysql.cj.jdbc.ConnectionImpl@85e6769.
+2025.12.29 11:12:18,800	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@200404000 wrapping com.mysql.cj.jdbc.ConnectionImpl@48a12036.
+2025.12.29 11:12:18,833	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@191945292 wrapping com.mysql.cj.jdbc.ConnectionImpl@70efb718.
+2025.12.29 11:12:18,874	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1317375498 wrapping com.mysql.cj.jdbc.ConnectionImpl@4a11eb84.
+2025.12.29 11:12:18,902	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1316005672 wrapping com.mysql.cj.jdbc.ConnectionImpl@435fb7b5.
+2025.12.29 11:12:18,933	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1768882706 wrapping com.mysql.cj.jdbc.ConnectionImpl@b7838a9.
+2025.12.29 11:12:18,965	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@472991420 wrapping com.mysql.cj.jdbc.ConnectionImpl@5733f295.
+2025.12.29 11:12:18,997	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1202220987 wrapping com.mysql.cj.jdbc.ConnectionImpl@56c698e3.
+2025.12.29 11:12:19,030	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@425015667 wrapping com.mysql.cj.jdbc.ConnectionImpl@f478a81.
+2025.12.29 11:12:19,061	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@2145896000 wrapping com.mysql.cj.jdbc.ConnectionImpl@7bb6ab3a.
+2025.12.29 11:12:19,096	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@2095677157 wrapping com.mysql.cj.jdbc.ConnectionImpl@4c4748bf.
+2025.12.29 11:12:19,128	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1943855334 wrapping com.mysql.cj.jdbc.ConnectionImpl@32c8e539.
+2025.12.29 11:12:19,160	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@847320212 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a85c92.
+2025.12.29 11:12:19,193	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1406848276 wrapping com.mysql.cj.jdbc.ConnectionImpl@4795ded0.
+2025.12.29 11:12:19,225	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@785306763 wrapping com.mysql.cj.jdbc.ConnectionImpl@14d14731.
+2025.12.29 11:12:19,258	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1123236701 wrapping com.mysql.cj.jdbc.ConnectionImpl@47c4ecdc.
+2025.12.29 11:12:19,291	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@79161706 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c8504fd.
+2025.12.29 11:12:19,322	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1057468716 wrapping com.mysql.cj.jdbc.ConnectionImpl@6475472c.
+2025.12.29 11:12:19,354	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1888924788 wrapping com.mysql.cj.jdbc.ConnectionImpl@4bd1f8dd.
+2025.12.29 11:12:19,386	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1016633682 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e14c16d.
+2025.12.29 11:12:19,418	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1027319653 wrapping com.mysql.cj.jdbc.ConnectionImpl@784b990c.
+2025.12.29 11:12:19,450	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1561745898 wrapping com.mysql.cj.jdbc.ConnectionImpl@25bc0606.
+2025.12.29 11:12:19,482	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@424786033 wrapping com.mysql.cj.jdbc.ConnectionImpl@793138bd.
+2025.12.29 11:12:19,514	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@867093003 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c18016b.
+2025.12.29 11:12:19,547	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1470911015 wrapping com.mysql.cj.jdbc.ConnectionImpl@43aaf813.
+2025.12.29 11:12:19,579	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@244872973 wrapping com.mysql.cj.jdbc.ConnectionImpl@4ba302e0.
+2025.12.29 11:12:19,612	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@795748540 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae67cad.
+2025.12.29 11:12:19,643	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@837073696 wrapping com.mysql.cj.jdbc.ConnectionImpl@7c098bb3.
+2025.12.29 11:12:19,675	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1178290888 wrapping com.mysql.cj.jdbc.ConnectionImpl@18cebaa5.
+2025.12.29 11:12:19,707	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1660325375 wrapping com.mysql.cj.jdbc.ConnectionImpl@765f05af.
+2025.12.29 11:12:19,739	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@334593716 wrapping com.mysql.cj.jdbc.ConnectionImpl@f001896.
+2025.12.29 11:12:19,772	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1271041075 wrapping com.mysql.cj.jdbc.ConnectionImpl@1d0d6318.
+2025.12.29 11:12:19,804	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1544895390 wrapping com.mysql.cj.jdbc.ConnectionImpl@4409e975.
+2025.12.29 11:12:19,836	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1971991758 wrapping com.mysql.cj.jdbc.ConnectionImpl@2a7686a7.
+2025.12.29 11:12:19,868	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@201274566 wrapping com.mysql.cj.jdbc.ConnectionImpl@7ec3394b.
+2025.12.29 11:12:19,900	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@824881806 wrapping com.mysql.cj.jdbc.ConnectionImpl@1522d8a0.
+2025.12.29 11:12:19,932	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@611289995 wrapping com.mysql.cj.jdbc.ConnectionImpl@5644dc81.
+2025.12.29 11:12:19,964	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1129433283 wrapping com.mysql.cj.jdbc.ConnectionImpl@278bb07e.
+2025.12.29 11:12:19,996	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1810518740 wrapping com.mysql.cj.jdbc.ConnectionImpl@3381b4fc.
+2025.12.29 11:12:20,028	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1547883191 wrapping com.mysql.cj.jdbc.ConnectionImpl@11981797.
+2025.12.29 11:12:20,060	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1528769018 wrapping com.mysql.cj.jdbc.ConnectionImpl@625abb97.
+2025.12.29 11:12:20,092	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1089930529 wrapping com.mysql.cj.jdbc.ConnectionImpl@aeab9a1.
+2025.12.29 11:12:20,124	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1429483328 wrapping com.mysql.cj.jdbc.ConnectionImpl@774698ab.
+2025.12.29 11:12:20,156	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1927963027 wrapping com.mysql.cj.jdbc.ConnectionImpl@a4ca3f6.
+2025.12.29 11:12:20,188	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1167088639 wrapping com.mysql.cj.jdbc.ConnectionImpl@31aa3ca5.
+2025.12.29 11:12:20,220	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@191568263 wrapping com.mysql.cj.jdbc.ConnectionImpl@2a2c13a8.
+2025.12.29 11:12:20,252	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@751608431 wrapping com.mysql.cj.jdbc.ConnectionImpl@6b44435b.
+2025.12.29 11:12:20,284	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@893640573 wrapping com.mysql.cj.jdbc.ConnectionImpl@66b7550d.
+2025.12.29 11:12:20,316	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@893523498 wrapping com.mysql.cj.jdbc.ConnectionImpl@7c541c15.
+2025.12.29 11:12:20,348	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@1108517064 wrapping com.mysql.cj.jdbc.ConnectionImpl@698122b2.
+2025.12.29 11:12:20,379	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@992743048 wrapping com.mysql.cj.jdbc.ConnectionImpl@1e7aa82b.
+2025.12.29 11:12:20,411	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@203149502 wrapping com.mysql.cj.jdbc.ConnectionImpl@5bd82fed.
+2025.12.29 11:12:20,443	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Successfully opened connection HikariProxyConnection@476579021 wrapping com.mysql.cj.jdbc.ConnectionImpl@476b0ae6.
+2025.12.29 11:12:20,443	INFO	3	org.l2jmobius.commons.database.DatabaseFactory	Database: Initialized with a total of 100 connections.
+2025.12.29 11:12:20,449	INFO	3	org.l2jmobius.gameserver.GameServer	----------------------------------------------=[ ThreadPool ]
+2025.12.29 11:12:20,449	INFO	3	org.l2jmobius.commons.threads.ThreadPool	ThreadPool: Initializing.
+2025.12.29 11:12:20,450	INFO	3	org.l2jmobius.commons.threads.ThreadPool	...scheduled pool executor with 16 high priority threads.
+2025.12.29 11:12:20,453	INFO	3	org.l2jmobius.commons.threads.ThreadPool	...scheduled pool executor with 64 total threads.
+2025.12.29 11:12:20,453	INFO	3	org.l2jmobius.commons.threads.ThreadPool	...instant pool executor with 32 total threads.
+2025.12.29 11:12:20,454	INFO	3	org.l2jmobius.gameserver.GameServer	-----------------------------------------------=[ IdManager ]
+2025.12.29 11:12:20,508	INFO	3	org.l2jmobius.gameserver.managers.DatabaseIdManager	DatabaseIdManager: Cleaned 0 elements in 0 seconds.
+2025.12.29 11:12:20,511	INFO	3	org.l2jmobius.gameserver.managers.DatabaseIdManager	DatabaseIdManager: Updated character online status.
+2025.12.29 11:12:20,516	INFO	3	org.l2jmobius.gameserver.managers.DatabaseIdManager	DatabaseIdManager: Cleaned 0 expired timestamps.
+2025.12.29 11:12:20,532	INFO	3	org.l2jmobius.gameserver.managers.IdManager	IdManager: 102912 ids available.
+2025.12.29 11:12:20,532	INFO	3	org.l2jmobius.gameserver.GameServer	----------------------------------------=[ Scripting Engine ]
+2025.12.29 11:12:20,593	INFO	3	org.l2jmobius.gameserver.scripting.ScriptEngine	Loaded 921 files to exclude.
+2025.12.29 11:12:20,593	INFO	3	org.l2jmobius.gameserver.GameServer	---------------------------------------------------=[ World ]
+2025.12.29 11:12:20,665	INFO	3	org.l2jmobius.gameserver.managers.MapRegionManager	MapRegionManager: Loaded 60 map regions.
+2025.12.29 11:12:20,667	INFO	3	org.l2jmobius.gameserver.managers.ZoneManager	ZoneManager 19 by 18 Zone Region Grid set up.
+2025.12.29 11:12:20,892	INFO	3	org.l2jmobius.gameserver.managers.ZoneManager	ZoneManager: Loaded 35 zone classes and 2794 zones.
+2025.12.29 11:12:20,896	INFO	3	org.l2jmobius.gameserver.managers.ZoneManager	ZoneManager: Last static id 202209.
+2025.12.29 11:12:21,045	INFO	3	org.l2jmobius.gameserver.data.xml.DoorData	DoorData: Loaded 1257 doors.
+2025.12.29 11:12:21,050	INFO	3	FenceData	FenceData: Loaded 1 fences.
+2025.12.29 11:12:21,057	INFO	3	org.l2jmobius.gameserver.managers.GlobalVariablesManager	GlobalVariablesManager: Loaded 10 variables.
+2025.12.29 11:12:21,060	INFO	3	org.l2jmobius.gameserver.GameServer	----------------------------------------------------=[ Data ]
+2025.12.29 11:12:21,064	INFO	3	org.l2jmobius.gameserver.data.xml.ActionData	ActionData: Loaded 222 player actions.
+2025.12.29 11:12:21,070	INFO	3	org.l2jmobius.gameserver.data.xml.CategoryData	CategoryData: Loaded 44 categories.
+2025.12.29 11:12:21,075	INFO	3	org.l2jmobius.gameserver.data.xml.SecondaryAuthData	SecondaryAuthData: Loaded 328 forbidden passwords.
+2025.12.29 11:12:21,078	INFO	3	org.l2jmobius.gameserver.data.xml.SayuneData	SayuneData: Loaded 0 maps.
+2025.12.29 11:12:21,087	INFO	3	org.l2jmobius.gameserver.data.xml.ClanRewardData	ClanRewardData: Loaded 4 rewards for members online.
+2025.12.29 11:12:21,087	INFO	3	org.l2jmobius.gameserver.data.xml.ClanRewardData	ClanRewardData: Loaded 4 rewards for hunting monsters.
+2025.12.29 11:12:21,092	INFO	3	org.l2jmobius.gameserver.data.xml.MissionLevel	MissionLevel: Loaded 1 seasons.
+2025.12.29 11:12:21,554	INFO	3	handlers.DailyMissionMasterHandler	DailyMissionMasterHandler: Loaded 14 handlers.
+2025.12.29 11:12:21,565	INFO	3	org.l2jmobius.gameserver.data.xml.DailyMissionData	DailyMissionData: Loaded 76 one day rewards.
+2025.12.29 11:12:21,572	INFO	3	org.l2jmobius.gameserver.data.xml.ElementalSpiritData	ElementalSpiritData: Loaded 4 elemental spirit templates.
+2025.12.29 11:12:21,579	INFO	3	org.l2jmobius.gameserver.data.xml.SubjugationData	SubjugationData: Loaded 6 data.
+2025.12.29 11:12:21,582	INFO	3	org.l2jmobius.gameserver.data.xml.SubjugationGacha	SubjugationGacha: Loaded 6 data.
+2025.12.29 11:12:21,582	INFO	3	org.l2jmobius.gameserver.GameServer	-----------------------------------------=[ Aden Laboratory ]
+2025.12.29 11:12:21,595	INFO	3	org.l2jmobius.gameserver.data.xml.AdenLaboratoryData	AdenLaboratoryData: Loaded 1 boss and 27 stages.
+2025.12.29 11:12:21,660	INFO	3	org.l2jmobius.gameserver.GameServer	--------------------------------------------------=[ Skills ]
+2025.12.29 11:12:23,093	INFO	3	handlers.EffectMasterHandler	EffectMasterHandler: Loaded 457 effect handlers.
+2025.12.29 11:12:23,197	INFO	3	org.l2jmobius.gameserver.data.xml.TransformData	TransformData: Loaded 60 transform templates.
+2025.12.29 11:12:23,322	INFO	3	org.l2jmobius.gameserver.data.xml.SkillEnchantData	SkillEnchantData: Loaded 4 star levels.
+2025.12.29 11:12:23,322	INFO	3	org.l2jmobius.gameserver.data.xml.SkillEnchantData	SkillEnchantData: Loaded 5 enchant items.
+2025.12.29 11:12:23,322	INFO	3	org.l2jmobius.gameserver.data.xml.SkillEnchantData	SkillEnchantData: Loaded 99 skill enchants.
+2025.12.29 11:12:23,337	INFO	3	org.l2jmobius.gameserver.data.xml.EnchantSkillGroupsData	EnchantSkillGroupsData: Loaded 30 enchant routes, max enchant set to 30.
+2025.12.29 11:12:24,941	INFO	3	org.l2jmobius.gameserver.data.xml.SkillData	SkillData: Loaded 80203 Skills.
+2025.12.29 11:12:25,199	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 20212 Class skills for 147 class skill trees.
+2025.12.29 11:12:25,200	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 0 sub-class skills.
+2025.12.29 11:12:25,200	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 0 dual-class skills.
+2025.12.29 11:12:25,200	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 0 transfer skills for 0 transfer skill trees.
+2025.12.29 11:12:25,200	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 0 race skills for 0 race skill trees.
+2025.12.29 11:12:25,200	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 18 fishing skills, 8 Dwarven only fishing skills.
+2025.12.29 11:12:25,200	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 0 collect skills.
+2025.12.29 11:12:25,200	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 78 clan skills, 47 for clan and 31 residential.
+2025.12.29 11:12:25,200	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 18 sub-pledge skills.
+2025.12.29 11:12:25,201	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 0 transform skills.
+2025.12.29 11:12:25,201	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 1 noble skills.
+2025.12.29 11:12:25,201	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 1 hero skills.
+2025.12.29 11:12:25,201	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 34 game master skills.
+2025.12.29 11:12:25,201	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 1 game master aura skills.
+2025.12.29 11:12:25,201	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 0 ability skills.
+2025.12.29 11:12:25,201	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 0 alchemy skills.
+2025.12.29 11:12:25,201	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 0 class awaken save skills.
+2025.12.29 11:12:25,201	INFO	3	org.l2jmobius.gameserver.data.xml.SkillTreeData	SkillTreeData: Loaded 0 Revelation skills.
+2025.12.29 11:12:25,208	INFO	3	org.l2jmobius.gameserver.data.xml.PetSkillData	PetSkillData: Loaded 898 skills.
+2025.12.29 11:12:25,214	INFO	3	org.l2jmobius.gameserver.data.xml.PetAcquireList	PetAcquireList: Loaded 10 pet skills.
+2025.12.29 11:12:25,214	INFO	3	org.l2jmobius.gameserver.GameServer	---------------------------------------------------=[ Items ]
+2025.12.29 11:12:25,765	INFO	3	org.l2jmobius.gameserver.data.xml.ItemData	ItemData: Highest item id used: 110000
+2025.12.29 11:12:25,769	INFO	3	org.l2jmobius.gameserver.data.xml.ItemData	ItemData: Loaded 19166 etc items.
+2025.12.29 11:12:25,769	INFO	3	org.l2jmobius.gameserver.data.xml.ItemData	ItemData: Loaded 3416 armor items.
+2025.12.29 11:12:25,769	INFO	3	org.l2jmobius.gameserver.data.xml.ItemData	ItemData: Loaded 2582 weapon items.
+2025.12.29 11:12:25,769	INFO	3	org.l2jmobius.gameserver.data.xml.ItemData	ItemData: Loaded 25164 items in total.
+2025.12.29 11:12:25,774	INFO	3	org.l2jmobius.gameserver.data.xml.EnchantItemGroupsData	EnchantItemGroupsData: Loaded 33 item group templates.
+2025.12.29 11:12:25,774	INFO	3	org.l2jmobius.gameserver.data.xml.EnchantItemGroupsData	EnchantItemGroupsData: Loaded 5 scroll group templates.
+2025.12.29 11:12:25,778	INFO	3	org.l2jmobius.gameserver.data.xml.EnchantItemData	EnchantItemData: Loaded 137 enchant scrolls.
+2025.12.29 11:12:25,778	INFO	3	org.l2jmobius.gameserver.data.xml.EnchantItemData	EnchantItemData: Loaded 0 support items.
+2025.12.29 11:12:26,089	INFO	3	org.l2jmobius.gameserver.data.xml.OptionData	OptionData: Loaded 20909 options.
+2025.12.29 11:12:26,093	INFO	3	org.l2jmobius.gameserver.data.xml.EnchantItemOptionsData	EnchantItemOptionsData: Loaded 56 items and 598 options.
+2025.12.29 11:12:26,095	INFO	3	org.l2jmobius.gameserver.data.xml.EnchantChallengePointData	EnchantChallengePointData: Loaded 3 groups and 6 options.
+2025.12.29 11:12:26,097	INFO	3	org.l2jmobius.commons.util.IXmlReader	ElementalAttributeData: Loaded 0 elemental attribute items.
+2025.12.29 11:12:26,100	INFO	3	org.l2jmobius.gameserver.data.xml.ItemCrystallizationData	ItemCrystallizationData: Loaded 12 crystallization templates.
+2025.12.29 11:12:26,152	INFO	3	VariationData	VariationData: Loaded 34 item groups.
+2025.12.29 11:12:26,152	INFO	3	VariationData	VariationData: Loaded 37 variations.
+2025.12.29 11:12:26,153	INFO	3	VariationData	VariationData: Loaded 1617 fees.
+2025.12.29 11:12:26,171	INFO	3	org.l2jmobius.gameserver.data.xml.EnsoulData	EnsoulData: Loaded 265 fees.
+2025.12.29 11:12:26,171	INFO	3	org.l2jmobius.gameserver.data.xml.EnsoulData	EnsoulData: Loaded 965 options.
+2025.12.29 11:12:26,171	INFO	3	org.l2jmobius.gameserver.data.xml.EnsoulData	EnsoulData: Loaded 265 stones.
+2025.12.29 11:12:26,173	INFO	3	org.l2jmobius.gameserver.data.xml.EnchantItemHPBonusData	EnchantItemHPBonusData: Loaded 11 enchant HP bonuses.
+2025.12.29 11:12:26,206	WARNING	3	org.l2jmobius.gameserver.data.xml.BuyListData	Buy price 50 is less than sell price 200 for ItemID:3031 of buylist 3008101.
+2025.12.29 11:12:26,463	INFO	3	org.l2jmobius.gameserver.data.xml.BuyListData	BuyListData: Loaded 458 buyLists.
+2025.12.29 11:12:26,997	INFO	3	org.l2jmobius.gameserver.data.xml.MultisellData	MultisellData: Loaded 816 multisell lists.
+2025.12.29 11:12:27,015	INFO	3	org.l2jmobius.gameserver.data.xml.CombinationItemsData	CombinationItemsData: Loaded 1891 combinations.
+2025.12.29 11:12:27,018	INFO	3	org.l2jmobius.gameserver.data.xml.EquipmentUpgradeData	EquipmentUpgradeData: Loaded 74 upgrade equipment data.
+2025.12.29 11:12:27,040	INFO	3	org.l2jmobius.gameserver.data.xml.EquipmentUpgradeNormalData	EquipmentUpgradeNormalData: Loaded 1140 upgrade-normal equipment data. Adena commission is 100.
+2025.12.29 11:12:27,045	INFO	3	org.l2jmobius.gameserver.data.xml.AgathionData	AgathionData: Loaded 60 agathion data.
+2025.12.29 11:12:27,047	INFO	3	org.l2jmobius.gameserver.data.xml.RaidTeleportListData	RaidTeleportListData: Loaded 47 teleports.
+2025.12.29 11:12:27,059	INFO	3	org.l2jmobius.gameserver.data.xml.RecipeData	RecipeData: Loaded 594 recipes.
+2025.12.29 11:12:27,070	INFO	3	org.l2jmobius.gameserver.data.xml.ArmorSetData	ArmorSetData: Loaded 51 armor sets.
+2025.12.29 11:12:27,072	INFO	3	org.l2jmobius.gameserver.data.xml.FishingData	FishingData: Loaded 2 bait and 2 rod data.
+2025.12.29 11:12:27,082	INFO	3	org.l2jmobius.gameserver.data.xml.HennaData	HennaData: Loaded 578 henna data.
+2025.12.29 11:12:27,090	INFO	3	org.l2jmobius.gameserver.data.xml.HennaCombinationData	HennaCombinationData: Loaded 721 henna combinations.
+2025.12.29 11:12:27,093	INFO	3	org.l2jmobius.gameserver.data.xml.HennaPatternPotentialData	HennaPatternPotentialData: Loaded 1 dye pattern fee data.
+2025.12.29 11:12:27,095	INFO	3	org.l2jmobius.gameserver.data.xml.PrimeShopData	PrimeShopData: System is disabled.
+2025.12.29 11:12:27,098	INFO	3	org.l2jmobius.gameserver.data.xml.LimitShopData	LimitShopData: Loaded 101 items.
+2025.12.29 11:12:27,100	INFO	3	org.l2jmobius.gameserver.data.xml.LimitShopData	LimitShopCraftData: System is disabled.
+2025.12.29 11:12:27,101	INFO	3	org.l2jmobius.gameserver.data.xml.LimitShopClanData	LimitShopClanData: System is disabled.
+2025.12.29 11:12:27,105	INFO	3	org.l2jmobius.gameserver.data.xml.CollectionData	CollectionData: Loaded 528 collections.
+2025.12.29 11:12:27,111	INFO	3	org.l2jmobius.gameserver.data.xml.RelicData	RelicData: Loaded 181 relics.
+2025.12.29 11:12:27,112	INFO	3	org.l2jmobius.gameserver.data.xml.RelicCollectionData	RelicCollectionData: Loaded 90 relic collections.
+2025.12.29 11:12:27,120	INFO	3	org.l2jmobius.gameserver.data.xml.RelicCouponData	RelicCouponData: Loaded 230 relic coupon data.
+2025.12.29 11:12:27,123	INFO	3	org.l2jmobius.gameserver.data.xml.RaidDropAnnounceData	RaidDropAnnounceData: Loaded 258 raid drop announce data.
+2025.12.29 11:12:27,125	INFO	3	org.l2jmobius.gameserver.data.xml.AppearanceItemData	AppearanceItemData: Loaded 2 stones.
+2025.12.29 11:12:27,136	INFO	3	org.l2jmobius.gameserver.managers.PrivateStoreHistoryManager	PrivateStoreHistoryManager: Loaded 0 items history.
+2025.12.29 11:12:27,139	INFO	3	org.l2jmobius.commons.util.IXmlReader	LuckyGameData: Loaded 2 lucky game data.
+2025.12.29 11:12:27,141	INFO	3	org.l2jmobius.gameserver.data.xml.MableGameData	MableGameData: Disabled
+2025.12.29 11:12:27,141	INFO	3	org.l2jmobius.gameserver.data.xml.AttendanceRewardData	AttendanceRewardData: Disabled.
+2025.12.29 11:12:27,143	INFO	3	org.l2jmobius.gameserver.data.xml.MagicLampData	MagicLampData: Loaded 20 magic lamps exp types.
+2025.12.29 11:12:27,149	INFO	3	org.l2jmobius.commons.util.IXmlReader	RandomCraftData: Loaded 1931 extraction data.
+2025.12.29 11:12:27,153	INFO	3	org.l2jmobius.commons.util.IXmlReader	RandomCraftData: Loaded 922 rewards.
+2025.12.29 11:12:27,157	INFO	3	org.l2jmobius.gameserver.data.xml.VipData	VipData: Loaded 11 vips.
+2025.12.29 11:12:27,157	INFO	3	org.l2jmobius.gameserver.GameServer	----------------------------------------------=[ Characters ]
+2025.12.29 11:12:27,160	INFO	3	org.l2jmobius.gameserver.data.xml.ClassListData	ClassListData: Loaded 147 class data.
+2025.12.29 11:12:27,162	INFO	3	org.l2jmobius.gameserver.data.xml.InitialEquipmentData	InitialEquipmentData: Loaded 22 initial equipment data.
+2025.12.29 11:12:27,165	INFO	3	org.l2jmobius.gameserver.data.xml.InitialShortcutData	InitialShortcutData: Loaded 6 initial global shortcut data.
+2025.12.29 11:12:27,165	INFO	3	org.l2jmobius.gameserver.data.xml.InitialShortcutData	InitialShortcutData: Loaded 6 initial shortcut data.
+2025.12.29 11:12:27,165	INFO	3	org.l2jmobius.gameserver.data.xml.InitialShortcutData	InitialShortcutData: Loaded 1 macro presets.
+2025.12.29 11:12:27,167	INFO	3	org.l2jmobius.gameserver.data.xml.ExperienceData	ExperienceData: Loaded 100 levels.
+2025.12.29 11:12:27,167	INFO	3	org.l2jmobius.gameserver.data.xml.ExperienceData	ExperienceData: Max Player Level is 99.
+2025.12.29 11:12:27,167	INFO	3	org.l2jmobius.gameserver.data.xml.ExperienceData	ExperienceData: Max Pet Level is 99.
+2025.12.29 11:12:27,168	INFO	3	org.l2jmobius.gameserver.data.xml.ExperienceLossData	ExperienceLossData: Loaded 99 levels.
+2025.12.29 11:12:27,170	INFO	3	org.l2jmobius.gameserver.data.xml.KarmaLossData	KarmaLossData: Loaded 99 modifiers.
+2025.12.29 11:12:27,171	INFO	3	org.l2jmobius.gameserver.data.xml.HitConditionBonusData	HitConditionBonusData: Loaded hit condition bonuses.
+2025.12.29 11:12:27,352	INFO	3	org.l2jmobius.gameserver.data.xml.PlayerTemplateData	PlayerTemplateData: Loaded 147 player templates.
+2025.12.29 11:12:27,352	INFO	3	org.l2jmobius.gameserver.data.xml.PlayerTemplateData	PlayerTemplateData: Loaded 87318 level up gain records.
+2025.12.29 11:12:27,354	INFO	3	org.l2jmobius.gameserver.data.sql.CharInfoTable	CharInfoTable: Loaded 0 char names.
+2025.12.29 11:12:27,359	INFO	3	org.l2jmobius.gameserver.data.sql.PartyMatchingHistoryTable	PartyMatchingHistoryTable: Loaded 0 party matching history data.
+2025.12.29 11:12:27,364	INFO	3	org.l2jmobius.gameserver.data.xml.AdminData	AdminData: Loaded 10 access levels.
+2025.12.29 11:12:27,366	INFO	3	org.l2jmobius.gameserver.data.xml.AdminData	AdminData: Loaded 469 access commands.
+2025.12.29 11:12:27,539	INFO	3	org.l2jmobius.gameserver.data.xml.PetDataTable	PetDataTable: Loaded 54 pets.
+2025.12.29 11:12:27,541	INFO	3	org.l2jmobius.gameserver.data.xml.PetTypeData	PetTypeData: Loaded 323 pet types.
+2025.12.29 11:12:27,544	INFO	3	org.l2jmobius.gameserver.data.xml.PetExtractData	PetExtractData: Loaded 7 pet extraction data.
+2025.12.29 11:12:27,566	INFO	3	org.l2jmobius.gameserver.data.xml.CubicData	CubicData: Loaded 24 cubics.
+2025.12.29 11:12:27,580	INFO	3	org.l2jmobius.commons.util.IXmlReader	CharacterStylesData: Loaded 4 Character Styles.
+2025.12.29 11:12:27,580	INFO	3	org.l2jmobius.commons.util.IXmlReader	CharacterStylesData:   APPEARANCE_WEAPON -> 129 styles.
+2025.12.29 11:12:27,580	INFO	3	org.l2jmobius.commons.util.IXmlReader	CharacterStylesData:   APPEARANCE_ARMOR -> 5 styles.
+2025.12.29 11:12:27,580	INFO	3	org.l2jmobius.commons.util.IXmlReader	CharacterStylesData:   KILL_EFFECT -> 12 styles.
+2025.12.29 11:12:27,580	INFO	3	org.l2jmobius.commons.util.IXmlReader	CharacterStylesData:   CHAT_BACKGROUND -> 4 styles.
+2025.12.29 11:12:27,580	INFO	3	org.l2jmobius.commons.util.IXmlReader	CharacterStylesData: Cached 129 Weapon Styles.
+2025.12.29 11:12:27,581	INFO	3	org.l2jmobius.commons.util.IXmlReader	CharacterStylesData: Cached 12 Kill Effect Styles.
+2025.12.29 11:12:27,583	INFO	3	org.l2jmobius.gameserver.data.xml.WuxianData	無限成長系統: 已載入 0 筆人物加成數據.
+2025.12.29 11:12:27,583	INFO	3	org.l2jmobius.gameserver.GameServer	---------------------------------------------------=[ Clans ]
+2025.12.29 11:12:27,584	INFO	3	org.l2jmobius.gameserver.data.xml.ClanLevelData	ClanLevelData: Loaded 15 clan level data.
+2025.12.29 11:12:27,590	INFO	3	org.l2jmobius.gameserver.communitybbs.Manager.ForumsBBSManager	ForumsBBSManager: Loaded 4 forums. Last forum id used: 4
+2025.12.29 11:12:27,590	INFO	3	org.l2jmobius.gameserver.data.sql.ClanTable	ClanTable: Restored 0 clans from the database.
+2025.12.29 11:12:27,594	INFO	3	org.l2jmobius.gameserver.data.xml.ResidenceFunctionsData	ResidenceFunctionsData: Loaded 8 functions.
+2025.12.29 11:12:27,649	INFO	3	org.l2jmobius.gameserver.data.xml.ClanHallData	ClanHallData: Succesfully loaded 46 clan halls.
+2025.12.29 11:12:27,650	INFO	3	org.l2jmobius.gameserver.managers.ClanHallAuctionManager	ClanHallAuctionManager: Clan Hall Auction has started!
+2025.12.29 11:12:27,662	INFO	3	org.l2jmobius.gameserver.managers.ClanEntryManager	ClanEntryManager: Loaded 0 clan entries.
+2025.12.29 11:12:27,663	INFO	3	org.l2jmobius.gameserver.managers.ClanEntryManager	ClanEntryManager: Loaded 0 players in waiting list.
+2025.12.29 11:12:27,664	INFO	3	org.l2jmobius.gameserver.managers.ClanEntryManager	ClanEntryManager: Loaded 0 player applications.
+2025.12.29 11:12:27,664	INFO	3	org.l2jmobius.gameserver.GameServer	-------------------------------------------------=[ Geodata ]
+2025.12.29 11:12:27,669	INFO	3	org.l2jmobius.gameserver.geoengine.GeoEngine	GeoEngine: Loaded 0 regions.
+2025.12.29 11:12:27,669	INFO	3	org.l2jmobius.gameserver.geoengine.GeoEngine	GeoEngine: Pathfinding is disabled.
+2025.12.29 11:12:27,669	INFO	3	org.l2jmobius.gameserver.GameServer	----------------------------------------------------=[ NPCs ]
+2025.12.29 11:12:28,338	INFO	3	org.l2jmobius.gameserver.data.xml.NpcData	NpcData: Loaded 9723 NPCs.
+2025.12.29 11:12:28,359	INFO	3	org.l2jmobius.gameserver.data.xml.NpcData	NpcData: Loaded 99 custom NPCs.
+2025.12.29 11:12:28,638	INFO	3	org.l2jmobius.gameserver.data.xml.SpawnData	SpawnData: Loaded 45815 spawns
+2025.12.29 11:12:28,640	INFO	3	org.l2jmobius.gameserver.managers.WalkingManager	WalkingManager: Loaded 1 walking routes.
+2025.12.29 11:12:28,646	INFO	3	org.l2jmobius.gameserver.data.xml.StaticObjectData	StaticObjectData: Loaded 86 static object templates.
+2025.12.29 11:12:28,646	INFO	3	org.l2jmobius.gameserver.managers.ItemAuctionManager	ItemAuctionManager: Disabled.
+2025.12.29 11:12:28,668	INFO	3	org.l2jmobius.gameserver.managers.InstanceManager	InstanceManager: Loaded 117 instance names.
+2025.12.29 11:12:28,706	WARNING	3	org.l2jmobius.gameserver.managers.InstanceManager	InstanceManager: Instance template with ID 229 already exists
+2025.12.29 11:12:28,708	WARNING	3	org.l2jmobius.gameserver.managers.InstanceManager	InstanceManager: Instance template with ID 1032 already exists
+2025.12.29 11:12:28,716	INFO	3	org.l2jmobius.gameserver.managers.InstanceManager	InstanceManager: Loaded 26 instance templates.
+2025.12.29 11:12:28,716	INFO	3	org.l2jmobius.gameserver.managers.InstanceManager	InstanceManager: Loaded instance reenter times for 0 players.
+2025.12.29 11:12:28,719	INFO	3	org.l2jmobius.gameserver.managers.CastleManager	CastleManager: Loaded 2 castles.
+2025.12.29 11:12:28,724	INFO	3	org.l2jmobius.gameserver.data.SchemeBufferTable	SchemeBufferTable: Loaded 0 players schemes and 60 available buffs.
+2025.12.29 11:12:28,728	INFO	3	org.l2jmobius.gameserver.managers.GrandBossManager	GrandBossManager: 巨蟻女王(29001) status is 0
+2025.12.29 11:12:28,728	INFO	3	org.l2jmobius.gameserver.managers.GrandBossManager	GrandBossManager: 核心(29006) status is 0
+2025.12.29 11:12:28,728	INFO	3	org.l2jmobius.gameserver.managers.GrandBossManager	GrandBossManager: 奧爾芬(29014) status is 0
+2025.12.29 11:12:28,728	INFO	3	org.l2jmobius.gameserver.managers.GrandBossManager	GrandBossManager: 巴溫(29020) status is 0
+2025.12.29 11:12:28,728	INFO	3	org.l2jmobius.gameserver.managers.GrandBossManager	GrandBossManager: 札肯(29022) status is 0
+2025.12.29 11:12:28,728	INFO	3	org.l2jmobius.gameserver.managers.GrandBossManager	GrandBossManager: Loaded 5 instances.
+2025.12.29 11:12:28,731	INFO	3	org.l2jmobius.gameserver.GameServer	------------------------------------------------=[ Instance ]
+2025.12.29 11:12:28,731	INFO	3	org.l2jmobius.gameserver.GameServer	------------------------------------------------=[ Olympiad ]
+2025.12.29 11:12:28,734	INFO	3	org.l2jmobius.gameserver.model.olympiad.Olympiad	Disabled.
+2025.12.29 11:12:28,735	INFO	3	org.l2jmobius.gameserver.GameServer	---------------------------------------------------=[ Cache ]
+2025.12.29 11:12:28,735	INFO	3	org.l2jmobius.gameserver.cache.HtmCache	Cache[HTML]: Running lazy cache.
+2025.12.29 11:12:28,737	INFO	3	org.l2jmobius.gameserver.data.sql.CrestTable	CrestTable: Loaded 0 Crests.
+2025.12.29 11:12:28,740	INFO	3	org.l2jmobius.gameserver.data.xml.TeleportListData	TeleportListData: Loaded 215 teleports.
+2025.12.29 11:12:28,740	INFO	3	org.l2jmobius.gameserver.managers.SharedTeleportManager	SharedTeleportManager: initialized.
+2025.12.29 11:12:31,010	INFO	3	org.l2jmobius.gameserver.data.xml.TeleporterData	TeleporterData: Loaded 112 npc teleporters.
+2025.12.29 11:12:31,012	INFO	3	org.l2jmobius.gameserver.data.xml.TimedHuntingZoneData	TimedHuntingZoneData: Loaded 6 timed hunting zones.
+2025.12.29 11:12:31,016	INFO	3	org.l2jmobius.gameserver.data.BotReportTable	BotReportTable: Loaded 0 bot reports
+2025.12.29 11:12:31,018	INFO	3	org.l2jmobius.gameserver.GameServer	-------------------------------------------------=[ Scripts ]
+2025.12.29 11:12:31,033	INFO	3	org.l2jmobius.gameserver.data.xml.NewQuestData	NewQuestData: Loaded 387 new quest data.
+2025.12.29 11:12:31,037	INFO	3	org.l2jmobius.gameserver.managers.AirShipManager	AirShipManager: Loaded 0 private airships
+2025.12.29 11:12:31,041	INFO	3	org.l2jmobius.gameserver.data.xml.ShuttleData	ShuttleData: Loaded 3 shuttles.
+2025.12.29 11:12:31,042	INFO	3	org.l2jmobius.gameserver.GameServer	GameServer: Loading server scripts:
+2025.12.29 11:12:32,009	INFO	3	handlers.MasterHandler	Loading Handlers...
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	ActionHandler: Loaded 10 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	ActionShiftHandler: Loaded 6 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	AdminCommandHandler: Loaded 465 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	BypassHandler: Loaded 33 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	ChatHandler: Loaded 15 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	CommunityBoardHandler: Loaded 24 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	ItemHandler: Loaded 41 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	PunishmentHandler: Loaded 3 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	UserCommandHandler: Loaded 16 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	VoicedCommandHandler: Loaded 22 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	TargetHandler: Loaded 24 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	AffectObjectHandler: Loaded 11 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	AffectScopeHandler: Loaded 19 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	PlayerActionHandler: Loaded 24 handlers.
+2025.12.29 11:12:32,052	INFO	3	handlers.MasterHandler	Handlers Loaded...
+2025.12.29 11:12:34,310	INFO	3	ai.areas.FairyInvadedLands.FairyInvadedLands	精靈入侵領地: 設定的檢查時間點 - 06:00, 12:00, 18:00, 00:00
+2025.12.29 11:12:34,310	INFO	3	ai.areas.FairyInvadedLands.FairyInvadedLands	精靈入侵領地: 每 60 秒檢查一次時間
+2025.12.29 11:12:34,434	INFO	3	org.l2jmobius.gameserver.managers.GrandBossManager	GrandBossManager: Updated 札肯(29022) status to 0.
+2025.12.29 11:12:34,451	INFO	3	ai.others.ClassMaster.ClassMaster	ClassMaster: Loaded 3 class change options.
+2025.12.29 11:12:34,504	INFO	3	custom.RunMerchant.RunMerchant	[RunMerchant] 當前實例已設為主實例
+2025.12.29 11:12:34,509	INFO	3	custom.RunMerchant.RunMerchant	[RunMerchant] 已加載城市倍率
+2025.12.29 11:12:34,509	INFO	3	custom.RunMerchant.RunMerchant	[RunMerchant] 設定刷新間隔: 3600000 毫秒 = 60 分鐘
+2025.12.29 11:12:34,509	INFO	3	custom.RunMerchant.RunMerchant	[RunMerchant] 新的刷新任務已啟動
+2025.12.29 11:12:34,509	INFO	3	custom.RunMerchant.RunMerchant	[RunMerchant] 跑商系統已啟動
+2025.12.29 11:12:34,514	SEVERE	3	org.l2jmobius.gameserver.model.script.Quest	Transmog: Found addStartNpc for non existing NPC: 9000009!
+2025.12.29 11:12:34,514	SEVERE	3	org.l2jmobius.gameserver.model.script.Quest	Transmog: Found addTalkId for non existing NPC: 9000009!
+2025.12.29 11:12:34,514	SEVERE	3	org.l2jmobius.gameserver.model.script.Quest	Transmog: Found addFirstTalkId for non existing NPC: 9000009!
+2025.12.29 11:12:34,523	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Balthus Festival has passed... Ignored 
+2025.12.29 11:12:34,531	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Battle With Keber has passed... Ignored 
+2025.12.29 11:12:34,534	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Black Coupon has passed... Ignored 
+2025.12.29 11:12:34,535	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Blossom Festival has passed... Ignored 
+2025.12.29 11:12:34,537	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Chef Monkey Event has passed... Ignored 
+2025.12.29 11:12:34,540	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Cross Event has passed... Ignored 
+2025.12.29 11:12:34,542	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event DefeatTheQueen has passed... Ignored 
+2025.12.29 11:12:34,544	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Eve the Fortune Teller has passed... Ignored 
+2025.12.29 11:12:34,545	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Blossom Festival has passed... Ignored 
+2025.12.29 11:12:34,555	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event 聖誕老人的到來！ active till Wed Jan 07 00:00:00 CST 2026
+2025.12.29 11:12:34,555	SEVERE	3	org.l2jmobius.gameserver.model.script.Quest	GlobalDrop: Found addStartNpc for non existing NPC: 4306!
+2025.12.29 11:12:34,555	SEVERE	3	org.l2jmobius.gameserver.model.script.Quest	GlobalDrop: Found addFirstTalkId for non existing NPC: 4306!
+2025.12.29 11:12:34,555	SEVERE	3	org.l2jmobius.gameserver.model.script.Quest	GlobalDrop: Found addTalkId for non existing NPC: 4306!
+2025.12.29 11:12:34,557	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Golden Wheel has passed... Ignored 
+2025.12.29 11:12:34,560	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Holiday out of Schedule has passed... Ignored 
+2025.12.29 11:12:34,561	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event LegendOfTheWaterTemple has passed... Ignored 
+2025.12.29 11:12:34,563	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Leona's Dungeon Event has passed... Ignored 
+2025.12.29 11:12:34,565	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Letter Collector has passed... Ignored 
+2025.12.29 11:12:34,567	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Merry Squashmas Event has passed... Ignored 
+2025.12.29 11:12:34,569	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Secret Shop has passed... Ignored 
+2025.12.29 11:12:34,571	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Squash Event has passed... Ignored 
+2025.12.29 11:12:34,573	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event The Power Of Love has passed... Ignored 
+2025.12.29 11:12:34,574	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Total Recall has passed... Ignored 
+2025.12.29 11:12:34,576	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Unique Gacha has passed... Ignored 
+2025.12.29 11:12:34,579	INFO	3	org.l2jmobius.gameserver.model.script.Quest	Event Watermelon Ninja has passed... Ignored 
+2025.12.29 11:12:34,819	INFO	3	org.l2jmobius.gameserver.data.xml.SpawnData	SpawnData: Initializing spawns...
+2025.12.29 11:12:36,496	INFO	3	org.l2jmobius.gameserver.managers.DatabaseSpawnManager	DatabaseSpawnManager: Loaded 35 instances.
+2025.12.29 11:12:36,496	INFO	3	org.l2jmobius.gameserver.managers.DatabaseSpawnManager	DatabaseSpawnManager: Scheduled 0 instances.
+2025.12.29 11:12:37,336	INFO	3	org.l2jmobius.gameserver.data.xml.SpawnData	SpawnData: All spawns has been initialized!
+2025.12.29 11:12:37,337	INFO	3	org.l2jmobius.gameserver.GameServer	---------------------------------------------------=[ Siege ]
+2025.12.29 11:12:37,343	INFO	3	org.l2jmobius.gameserver.data.xml.SiegeScheduleData	SiegeScheduleData: Loaded 2 siege schedulers.
+2025.12.29 11:12:37,348	INFO	3	org.l2jmobius.gameserver.model.siege.Siege	Siege of 奇岩: Sun Jan 11 20:00:00 CST 2026
+2025.12.29 11:12:37,349	INFO	3	org.l2jmobius.gameserver.model.siege.Siege	Siege of 高達特: Sun Jan 11 20:00:00 CST 2026
+2025.12.29 11:12:37,356	INFO	3	org.l2jmobius.gameserver.managers.FortManager	FortManager: Loaded 1 fortress.
+2025.12.29 11:12:37,366	INFO	3	org.l2jmobius.gameserver.managers.CastleManorManager	CastleManorManager: Manor system is deactivated.
+2025.12.29 11:12:37,371	INFO	3	org.l2jmobius.gameserver.managers.SiegeGuardManager	SiegeGuardManager: Loaded 0 siege guards tickets.
+2025.12.29 11:12:37,371	INFO	3	org.l2jmobius.gameserver.managers.ScriptManager	ScriptManager: Loaded 300 quests.
+2025.12.29 11:12:37,371	INFO	3	org.l2jmobius.gameserver.managers.ScriptManager	ScriptManager: Loaded 241 scripts.
+2025.12.29 11:12:37,374	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	DailyResetManager: Daily task will run now.
+2025.12.29 11:12:37,374	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	Starting reset of daily tasks...
+2025.12.29 11:12:37,374	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	Daily vitality added successfully.
+2025.12.29 11:12:37,375	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	Daily clan bonuses have been reset.
+2025.12.29 11:12:37,376	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	Daily clan donation points have been reset.
+2025.12.29 11:12:37,376	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	Daily Henna Count have been reset.
+2025.12.29 11:12:37,376	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	Daily Pouch Extract Count have been reset.
+2025.12.29 11:12:37,376	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	Daily skill reuse cleaned.
+2025.12.29 11:12:37,378	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	Daily item reuse cleaned.
+2025.12.29 11:12:37,378	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	PrimeShopData have been reset.
+2025.12.29 11:12:37,378	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	每日限購商店重置完成：離線 0 筆，在線 0 筆，共 0 筆。
+2025.12.29 11:12:37,378	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	Daily world chat points have been reset.
+2025.12.29 11:12:37,379	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	Special Hunting Zones have been reset.
+2025.12.29 11:12:37,379	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	MorgosMilitaryBase have been reset.
+2025.12.29 11:12:37,382	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	Attendance Rewards have been reset.
+2025.12.29 11:12:37,384	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	Daily payment resurrection count for player have been reset.
+2025.12.29 11:12:37,384	INFO	3	org.l2jmobius.gameserver.managers.DailyResetManager	Daily tasks reset completed.
+2025.12.29 11:12:37,388	INFO	3	org.l2jmobius.gameserver.managers.MailManager	MailManager: Loaded 0 messages.
+2025.12.29 11:12:37,390	INFO	3	org.l2jmobius.gameserver.managers.PunishmentManager	PunishmentManager: Loaded 0 active and 0 expired punishments.
+2025.12.29 11:12:37,395	INFO	3	org.l2jmobius.gameserver.GameServer	IdManager: Free ObjectID's remaining: 1878973043
+2025.12.29 11:12:37,396	INFO	3	org.l2jmobius.gameserver.data.sql.OfflineTraderTable	OfflineTraderTable: Loading offline traders...
+2025.12.29 11:12:37,396	INFO	3	org.l2jmobius.gameserver.data.sql.OfflineTraderTable	OfflineTraderTable: Loaded 0 offline traders.
+2025.12.29 11:12:37,397	INFO	181	org.l2jmobius.commons.util.DeadlockWatcher	DeadlockWatcher: Thread started.
+2025.12.29 11:12:39,088	INFO	3	org.l2jmobius.gameserver.GameServer	GameServer: Started, using 1444 of 6144 MB total memory.
+2025.12.29 11:12:39,088	INFO	3	org.l2jmobius.gameserver.GameServer	GameServer: Maximum number of connected players is 2000.
+2025.12.29 11:12:39,088	INFO	3	org.l2jmobius.gameserver.GameServer	GameServer: Server loaded in 22 seconds.
+2025.12.29 11:12:39,099	INFO	188	org.l2jmobius.gameserver.LoginServerThread	LoginServerThread: Connecting to login on 127.0.0.1:9015
+2025.12.29 11:12:39,128	INFO	188	org.l2jmobius.gameserver.LoginServerThread	LoginServerThread: Registered on login as Server 112: Server #112
+2025.12.29 11:23:23,066	WARNING	59	org.l2jmobius.gameserver.Shutdown	Server scheduled restart issued shutdown command. Shutdown in 1 seconds!
+2025.12.29 11:23:24,068	WARNING	204	org.l2jmobius.gameserver.Shutdown	GM shutdown countdown is over. shutting down NOW!
+2025.12.29 11:23:24,069	INFO	204	org.l2jmobius.gameserver.Shutdown	All players disconnected and saved(0ms).
+2025.12.29 11:23:24,069	INFO	204	org.l2jmobius.gameserver.Shutdown	Black Coupon Manager: Destroyed items saved(1ms).
+2025.12.29 11:23:24,069	INFO	204	org.l2jmobius.gameserver.Shutdown	Game Time Task Manager: Thread interruped(0ms).
+2025.12.29 11:23:24,069	INFO	204	org.l2jmobius.commons.threads.ThreadPool	ThreadPool: Shutting down all thread pools.
+2025.12.29 11:23:24,072	INFO	204	org.l2jmobius.gameserver.Shutdown	Thread Pool Manager: Manager has been shut down(3ms).
+2025.12.29 11:23:24,072	INFO	204	org.l2jmobius.gameserver.Shutdown	Login Server Thread: Thread interruped(0ms).
+2025.12.29 11:23:24,072	INFO	204	org.l2jmobius.gameserver.Shutdown	GM shutdown received. Shutting down NOW!
+2025.12.29 11:23:24,076	INFO	204	org.l2jmobius.gameserver.Shutdown	RaidBossSpawnManager: All raidboss info saved(4ms).
+2025.12.29 11:23:24,076	INFO	204	org.l2jmobius.gameserver.Shutdown	GrandBossManager: All Grand Boss info saved(0ms).
+2025.12.29 11:23:24,076	INFO	204	org.l2jmobius.gameserver.Shutdown	Item Auction Manager: All tasks stopped(0ms).
+2025.12.29 11:23:24,080	INFO	204	org.l2jmobius.gameserver.Shutdown	Olympiad System: Data saved(4ms).
+2025.12.29 11:23:24,081	INFO	204	org.l2jmobius.gameserver.Shutdown	Hero System: Data saved(1ms).
+2025.12.29 11:23:24,081	INFO	204	org.l2jmobius.gameserver.Shutdown	Clan System: Data saved(0ms).
+2025.12.29 11:23:24,094	INFO	204	org.l2jmobius.gameserver.Shutdown	Revenge History Manager: Data saved(13ms).
+2025.12.29 11:23:24,094	INFO	204	org.l2jmobius.gameserver.Shutdown	Cursed Weapons Manager: Data saved(0ms).
+2025.12.29 11:23:24,097	INFO	204	org.l2jmobius.gameserver.Shutdown	Castle Manor Manager: Data saved(3ms).
+2025.12.29 11:23:24,097	INFO	204	org.l2jmobius.gameserver.Shutdown	Script Manager: Data saved(0ms).
+2025.12.29 11:23:24,104	INFO	204	org.l2jmobius.gameserver.managers.GlobalVariablesManager	GlobalVariablesManager: Stored 10 variables.
+2025.12.29 11:23:24,104	INFO	204	org.l2jmobius.gameserver.Shutdown	Global Variables Manager: Variables saved(7ms).
+2025.12.29 11:23:24,104	INFO	204	org.l2jmobius.gameserver.Shutdown	Party Matching History Table: Data saved(0ms).
+2025.12.29 11:23:24,110	INFO	204	org.l2jmobius.gameserver.Shutdown	SchemeBufferTable data has been saved.
+2025.12.29 11:23:24,110	INFO	204	org.l2jmobius.gameserver.Shutdown	World Exchange Manager: Data saved(6ms).
+2025.12.29 11:23:24,111	INFO	204	org.l2jmobius.gameserver.Shutdown	Bot Report Table: Successfully saved reports to database!
+2025.12.29 11:23:24,881	WARNING	188	org.l2jmobius.gameserver.LoginServerThread	LoginServerThread: LoginServer not available, trying to reconnect...
+2025.12.29 11:23:29,114	INFO	204	org.l2jmobius.commons.database.DatabaseFactory	Database: HikariCP pool closed successfully.
+2025.12.29 11:23:29,114	INFO	204	org.l2jmobius.gameserver.Shutdown	Database Factory: Database connection has been shut down(1ms).
+2025.12.29 11:23:29,114	INFO	204	org.l2jmobius.gameserver.Shutdown	The server has been successfully shut down in 5seconds.

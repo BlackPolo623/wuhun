@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/skills.xsd">
+	<skill id="102000" toLevel="1" name="限傷">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="GetDamageLimit">
+				<amount>1000</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="102001" toLevel="1" name="雙防100%">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="102002" toLevel="1" name="反射100%傷害">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DamageShield">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

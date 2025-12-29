@@ -1,0 +1,536 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<!-- NPC 25735 (超巨大黃金豬) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25736 (超巨大黃金豬) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25737 (超巨大黃金豬) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25738 (巨蟻女王的祭司 得倫) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25739 (巴溫的祭司 天使) 已被提取至 RaidBosses.xml -->
+	<npc id="25740" level="85" type="Monster" name="天使刀刃" title="Raid Minion">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="120" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="160460.3" hpRegen="10.2" mp="71253" mpRegen="3.6" />
+			<attack physical="3105.728" magical="1590.608" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8" />
+			<height normal="30" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+		</skillList>
+	</npc>
+	<npc id="25741" level="85" type="Monster" name="天使魔杖" title="Raid Minion">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="206" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="160460.3" hpRegen="10.2" mp="71253" mpRegen="3.6" />
+			<attack physical="3105.728" magical="1590.608" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="38.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4414" level="3" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 25742 (核心的祭司 狄卡勒) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25743 (奧爾芬的祭司 王 伊波斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25744 (殭屍之王 都勒寇) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25745 (伊布獸人 塔勒培) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25746 (瑪基寇斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25747 (拉爾豺狼 拉帝溫) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25748 (拉爾豺狼 修比勒柴溫) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25749 (泰伊卡王 培倫) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25750 (泰伊卡巫醫 馬勒卡) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25751 (泰伊卡優勝者 賽頓) 已被提取至 RaidBosses.xml -->
+	<npc id="25752" level="60" type="Monster" name="泰伊卡戰士" title="Raid Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="38434" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="46851.2" hpRegen="6.5" mp="33506" mpRegen="2.4" />
+			<attack physical="962.69102" magical="657.39318" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="495.30016" magical="362.43916" />
+			<speed>
+				<walk ground="40" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="27.4" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4414" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="25753" level="60" type="Monster" name="泰伊卡弓手" title="Raid Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="38430" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="46851.2" hpRegen="6.5" mp="33506" mpRegen="2.4" />
+			<attack physical="962.69102" magical="657.39318" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="495.30016" magical="362.43916" />
+			<speed>
+				<walk ground="75" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="26.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4414" level="3" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 25754 (熾炎石巨人) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25755 (火焰蜥蜴) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25756 (火焰德雷巴奴) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25757 (可洛斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25758 (惡魔 卡弗利爾) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25759 (惡魔 傑勒可) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25760 (惡魔 哈勒戴姆) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25761 (惡魔 賽伯斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25762 (惡魔 比督凱爾) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25763 (血之魔女 魯密拉) 已被提取至 RaidBosses.xml -->
+	<npc id="25764" level="80" type="Monster" name="惡魔收藏家" title="Raid Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="99633.6" hpRegen="8.5" mp="71253" mpRegen="3" />
+			<attack physical="1589.41802" magical="1085.36648" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="638.49246" magical="467.22106" />
+			<speed>
+				<walk ground="110" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="40" />
+			<height normal="23" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4414" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="25765" level="80" type="Monster" name="惡魔的侍從" title="Raid Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="15302" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="99633.6" hpRegen="8.5" mp="71253" mpRegen="3" />
+			<attack physical="1589.41802" magical="1085.36648" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="638.49246" magical="467.22106" />
+			<speed>
+				<walk ground="45" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="26" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4414" level="3" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 25766 (怪獸 米諾勒塔) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25767 (怪獸 弗列勒斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25768 (道拉卡巫斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25769 (凱勒帕奧斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25770 (彌力諾奧斯) 已被提取至 RaidBosses.xml -->
+	<npc id="25771" level="70" type="Monster" name="肯塔洛斯投擲兵" title="Raid Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="38446" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="62353.5" hpRegen="7.5" mp="44592" mpRegen="2.7" />
+			<attack physical="1377.72746" magical="940.80926" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="591.83194" magical="433.07694" />
+			<speed>
+				<walk ground="40" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="34.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4414" level="3" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 25772 (伊布獸人 傑塔) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25773 (伊布獸人 塔弗利司) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25774 (伊布獸人 羅伏拉斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25775 (伊布獸人 戴弗列克爾) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25776 (伊布獸人 圖拉浩特) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25777 (伊布獸人 圖拉克提恩) 已被提取至 RaidBosses.xml -->
+	<npc id="25778" level="80" type="Monster" name="伊布獸人弓箭手" title="Raid Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="288" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="99633.6" hpRegen="10.2" mp="71253" mpRegen="3.6" />
+			<attack physical="3105.728" magical="1590.608" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="819.3" magical="517.0998" />
+			<speed>
+				<walk ground="45" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="27" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 25779 (凱利歐斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25780 (巴爾德巴斯昂) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25781 (巴爾德莫尼) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25782 (霸主 武斯肯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25783 (巴托斯 埃博肯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25784 (克夏那 達屋蒙) 已被提取至 RaidBosses.xml -->
+	<npc id="25785" level="80" type="Monster" name="退化的下巨人戰士" title="Raid Minion">
+		<race>GIANT</race>
+		<sex>MALE</sex>
+		<equipment rhand="3937" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="99633.6" hpRegen="8.5" mp="71253" mpRegen="3" />
+			<attack physical="1589.41802" magical="1085.36648" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="638.49246" magical="467.22106" />
+			<speed>
+				<walk ground="15" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="31.5" />
+			<height normal="69" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="11" /> 
+			<skill id="4414" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="25786" level="80" type="Monster" name="退化的下巨人勇士" title="Raid Minion">
+		<race>GIANT</race>
+		<sex>MALE</sex>
+		<equipment rhand="4028" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="99633.6" hpRegen="8.5" mp="71253" mpRegen="3" />
+			<attack physical="1589.41802" magical="1085.36648" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="638.49246" magical="467.22106" />
+			<speed>
+				<walk ground="15" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="45" />
+			<height normal="66" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="11" /> 
+			<skill id="4414" level="3" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 25787 (死亡騎士) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25788 (死亡騎士) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25789 (死亡騎士) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25790 (死亡騎士) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25791 (死亡騎士) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25792 (死亡騎士) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25793 (超巨大黃金豬) 已被提取至 RaidBosses.xml -->
+	<npc id="25794" level="62" type="Monster" name="庫提斯" title="Kutus' Nemesis">
+		<race>HUMANOID</race>
+		<equipment rhand="77" />
+		<mpReward value="20" type="PER" ticks="10" affects="PARTY" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="774441.8" hpRegen="1079.97583140151" mp="352019" mpRegen="5.4" />
+			<attack physical="6424" magical="3232" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="772" magical="376" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>630</hitTime>
+			<abnormalResist physical="230" magical="230" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="43.5" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="50028" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="14765" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>CLAN_ARENA</clan>
+			</clanList>
+		</ai>
+	</npc>
+	<npc id="25795" level="64" type="Monster" name="卡蘭" title="Korim's Messenger">
+		<race>HUMANOID</race>
+		<equipment rhand="160" />
+		<mpReward value="20" type="PER" ticks="10" affects="PARTY" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="853822.0845" hpRegen="1118.36289877863" mp="373457" mpRegen="5.4" />
+			<attack physical="7082.46" magical="3563.28" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="867.4192" magical="422.4736" />
+			<speed>
+				<walk ground="36" />
+				<run ground="170" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="230" magical="230" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15.6" />
+			<height normal="37.8" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="50028" level="2" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="14765" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>CLAN_ARENA</clan>
+			</clanList>
+		</ai>
+	</npc>
+	<npc id="25796" level="66" type="Monster" name="巴吐" title="Kelbar's Leader">
+		<race>HUMANOID</race>
+		<equipment rhand="75" />
+		<mpReward value="20" type="PER" ticks="10" affects="PARTY" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="986164.5075975" hpRegen="1151.90540931605" mp="396201" mpRegen="5.4" />
+			<attack physical="7808.41215" magical="3928.5162" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="974.63221312" magical="474.69133696" />
+			<speed>
+				<walk ground="45" />
+				<run ground="170" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="230" magical="230" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="47" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="50028" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="14765" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>CLAN_ARENA</clan>
+			</clanList>
+		</ai>
+	</npc>
+	<npc id="25797" level="68" type="Monster" name="貝尼勒" title="Kraven's Best Friend">
+		<race>UNDEAD</race>
+		<equipment rhand="76" />
+		<mpReward value="20" type="PER" ticks="10" affects="PARTY" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="1193259.05419298" hpRegen="1181.28501318891" mp="420329" mpRegen="5.4" />
+			<attack physical="8608.774395375" magical="4331.1891105" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1095.09675466163" magical="533.363186208256" />
+			<speed>
+				<walk ground="27" />
+				<run ground="170" />
+			</speed>
+			<hitTime>710</hitTime>
+			<abnormalResist physical="230" magical="230" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="47.5" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="50028" level="4" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="14765" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>CLAN_ARENA</clan>
+			</clanList>
+		</ai>
+	</npc>
+	<npc id="25798" level="70" type="Monster" name="奧耶" title="Blue Flag Chieftain">
+		<race>HUMANOID</race>
+		<equipment rhand="2503" />
+		<mpReward value="20" type="PER" ticks="10" affects="PARTY" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="1443843.4555735" hpRegen="1207.39267133816" mp="445927" mpRegen="5.4" />
+			<attack physical="6643.82163963066" magical="3342.59519602838" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="1230.45071353781" magical="599.286876023597" />
+			<speed>
+				<walk ground="70" />
+				<run ground="170" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="230" magical="230" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="45" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="50028" level="5" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="14765" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>CLAN_ARENA</clan>
+			</clanList>
+		</ai>
+	</npc>
+	<npc id="25799" level="72" type="Monster" name="塔蘭卡" title="Kandra's Adept">
+		<race>HUMANOID</race>
+		<equipment rhand="2502" />
+		<mpReward value="20" type="PER" ticks="10" affects="PARTY" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="1747050.58124394" hpRegen="1231.25747352404" mp="482270" mpRegen="6" />
+			<attack physical="10464.0190824183" magical="5264.58743374469" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1382.53442173108" magical="673.358733900113" />
+			<speed>
+				<walk ground="27" />
+				<run ground="170" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="230" magical="230" />
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15.6" />
+			<height normal="38.4" />
+		</collision>
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="50028" level="6" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="14765" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="5238" level="1" /> 
+		</skillList>
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>CLAN_ARENA</clan>
+			</clanList>
+		</ai>
+	</npc>
+</list>

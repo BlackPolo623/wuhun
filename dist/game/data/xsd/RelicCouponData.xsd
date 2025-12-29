@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="coupon">
+					<xs:complexType>
+						<xs:sequence minOccurs="0">
+							<xs:element minOccurs="0" name="chanceRollGroups">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" name="chanceRoll">
+											<xs:complexType>
+												<xs:attribute name="dollId" type="xs:unsignedByte" use="required" />
+												<xs:attribute name="chance" type="xs:unsignedByte" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="chanceGroups">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" maxOccurs="unbounded" name="group">
+											<xs:complexType>
+												<xs:attribute name="grade" use="required">
+												    <xs:simpleType>
+												        <xs:restriction base="xs:string">
+												            <xs:enumeration value="COMMON" />
+												            <xs:enumeration value="ENHANCED" />
+												            <xs:enumeration value="SUPERIOR" />
+												            <xs:enumeration value="RARE" />
+												            <xs:enumeration value="HEROIC" />
+												            <xs:enumeration value="LEGENDARY" />
+												            <xs:enumeration value="MYTHIC" />
+												        </xs:restriction>
+												    </xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="chance" type="xs:unsignedByte" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" maxOccurs="unbounded" name="chanceGroups">
+											<xs:complexType>
+												<xs:attribute name="grade" type="xs:string" use="required" />
+												<xs:attribute name="chance" type="xs:unsignedByte" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="disabledDolls">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" maxOccurs="unbounded" name="dsabled">
+											<xs:complexType>
+												<xs:attribute name="id" type="xs:unsignedByte" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" maxOccurs="unbounded" name="disabled">
+											<xs:complexType>
+												<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="itemId" type="xs:unsignedInt" use="required" />
+						<xs:attribute name="relicId" type="xs:unsignedInt" use="optional" />
+						<xs:attribute name="summonCount" type="xs:unsignedInt" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

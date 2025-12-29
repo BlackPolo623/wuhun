@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="1020" name="Kelbim's Fortress" maxWorlds="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<!-- Kelbim's Fortress -->
+	<time empty="-1" />
+	<locations>
+		<enter type="FIXED">
+			<location x="-46496" y="49824" z="-2381" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="Level">
+			<param name="min" value="85" />
+			<param name="max" value="99" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<doorlist>
+		<!-- Kelbim Enterace -->
+		<door id="18190002">
+			<openStatus default="close" />
+		</door>
+		<!-- Kelbim Enterace -->
+		<door id="18190004">
+			<openStatus default="close" />
+		</door>
+		<door id="18190006">
+			<openStatus default="close" />
+		</door>
+		<door id="18190008">
+			<openStatus default="close" />
+		</door>
+		<!-- to dark forest -->
+		<door id="18190010">
+			<openStatus default="close" />
+		</door>
+		<!-- to dark forest -->
+		<door id="18190012">
+			<openStatus default="close" />
+		</door>
+	</doorlist>
+	<spawnlist>
+		<group name="DEFAULT_NPC" spawnByDefault="true">
+			<npc id="34377" x="-46824" y="49784" z="-2383" heading="843" respawnTime="60sec" /> <!-- Monin -->
+			<npc id="18828" x="-46696" y="50072" z="-2361" heading="57840" respawnTime="60sec" /> <!-- Castle Teleport Device -->
+			<npc id="18829" x="-55064" y="56152" z="-1925" heading="45116" respawnTime="60sec" /> <!-- Castle Teleport Device -->
+		</group>
+		<group name="KELBIM_01" spawnByDefault="false">
+			<npc id="29206" x="-55041" y="53953" z="-2072" /> <!-- Kelbim -->
+		</group>
+		<group name="KELBIM_01_GUARD_01" spawnByDefault="false">
+			<npc id="18853" x="-55041" y="53953" z="-2072" /> <!-- Vanguard Commander -->
+		</group>
+		<group name="KELBIM_01_GUARD_02" spawnByDefault="false">
+			<npc id="18854" x="-55041" y="53953" z="-2072" /> <!-- Summoner Commander -->
+		</group>
+		<group name="KELBIM_01_GUARD_03" spawnByDefault="false">
+			<npc id="18855" x="-55041" y="53953" z="-2072" /> <!-- Wizard Commander -->
+		</group>
+		<group name="KELBIM_01_GUARD_04" spawnByDefault="false">
+			<npc id="18856" x="-55041" y="53953" z="-2072" /> <!-- Assaulter Commander -->
+		</group>
+		<group name="KELBIM_01_GUARD_05" spawnByDefault="false">
+			<npc id="18857" x="-55041" y="53953" z="-2072" /> <!-- Shooter Commander -->
+		</group>
+		<group name="KELBIM_01_GUARD_06" spawnByDefault="false">
+			<npc id="18858" x="-55041" y="53953" z="-2072" /> <!-- Warrior Commander -->
+		</group>
+		<group name="KELBIM_01_GUARD_07" spawnByDefault="false">
+			<npc id="18859" x="-55041" y="53953" z="-2072" /> <!-- Healer Commander -->
+		</group>
+
+		<group name="KELBIM_02" spawnByDefault="false">
+			<npc id="29205" x="-56213" y="60580" z="-267" /> <!-- Enraged Kelbim -->
+		</group>
+		<group name="KELBIM_02_GUARD_01" spawnByDefault="false">
+			<npc id="18853" x="-56213" y="60580" z="-267" /> <!-- Vanguard Commander -->
+		</group>
+		<group name="KELBIM_02_GUARD_02" spawnByDefault="false">
+			<npc id="18854" x="-56213" y="60580" z="-267" /> <!-- Summoner Commander -->
+		</group>
+		<group name="KELBIM_02_GUARD_03" spawnByDefault="false">
+			<npc id="18855" x="-56213" y="60580" z="-267" /> <!-- Wizard Commander -->
+		</group>
+		<group name="KELBIM_02_GUARD_04" spawnByDefault="false">
+			<npc id="18856" x="-56213" y="60580" z="-267" /> <!-- Assaulter Commander -->
+		</group>
+		<group name="KELBIM_02_GUARD_05" spawnByDefault="false">
+			<npc id="18857" x="-56213" y="60580" z="-267" /> <!-- Shooter Commander -->
+		</group>
+		<group name="KELBIM_02_GUARD_06" spawnByDefault="false">
+			<npc id="18858" x="-56213" y="60580" z="-267" /> <!-- Warrior Commander -->
+		</group>
+		<group name="KELBIM_02_GUARD_07" spawnByDefault="false">
+			<npc id="18859" x="-56213" y="60580" z="-267" /> <!-- Healer Commander -->
+		</group>
+		<group name="PortSpot_01" spawnByDefault="false">
+			<npc id="22637" x="-46648" y="49064" z="-2409" heading="38604" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-46760" y="48808" z="-2409" heading="43245" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-47112" y="49016" z="-2409" heading="29078" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-46680" y="48456" z="-2409" heading="52210" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-46648" y="48024" z="-2409" heading="45881" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-46392" y="48104" z="-2409" heading="12737" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-46202" y="48735" z="-2409" heading="11178" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-44760" y="50056" z="-2226" heading="59881" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44808" y="49688" z="-2285" heading="43647" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44659" y="49726" z="-2256" heading="62647" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-44305" y="49454" z="-2189" heading="54368" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44008" y="49192" z="-2123" heading="4974" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43687" y="49293" z="-2084" heading="5775" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-43288" y="49504" z="-2057" heading="7160" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-43026" y="49877" z="-2051" heading="10906" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-43016" y="50126" z="-2051" heading="16328" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43152" y="50337" z="-2051" heading="24696" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-43348" y="50461" z="-2062" heading="29422" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43560" y="50680" z="-2081" heading="22832" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-43861" y="50523" z="-2118" heading="39613" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-44160" y="50269" z="-2163" heading="40296" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44352" y="50333" z="-2182" heading="28887" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44536" y="50408" z="-2201" heading="28887" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-44476" y="50067" z="-2208" heading="50897" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44179" y="49812" z="-2175" heading="61145" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-43971" y="49717" z="-2143" heading="60871" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-43709" y="49673" z="-2103" heading="64155" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-43613" y="49035" z="-2072" heading="59832" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45592" y="47816" z="-2370" heading="46392" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45880" y="48120" z="-2404" heading="24346" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-46072" y="48248" z="-2409" heading="15528" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-46168" y="47672" z="-2394" heading="44714" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45785" y="47658" z="-2376" heading="64340" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-44968" y="47208" z="-2157" heading="50100" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44711" y="47136" z="-2105" heading="2244" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44488" y="47304" z="-2105" heading="3394" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-44808" y="47720" z="-2192" heading="35113" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45050" y="48032" z="-2264" heading="22150" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45307" y="48337" z="-2325" heading="26771" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-43736" y="48408" z="-2070" heading="3800" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43672" y="48152" z="-2060" heading="48262" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-43689" y="47769" z="-2056" heading="47643" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-43640" y="47433" z="-2048" heading="52021" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43228" y="47489" z="-2045" heading="2439" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-42837" y="47727" z="-2046" heading="1408" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-42439" y="47945" z="-2046" heading="5583" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-41921" y="48371" z="-2046" heading="12841" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-41560" y="48712" z="-2050" heading="7034" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-41499" y="48929" z="-2050" heading="10569" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-41311" y="49264" z="-2047" heading="11313" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-41299" y="49528" z="-2045" heading="16486" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-41409" y="49801" z="-2044" heading="22653" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-41697" y="49973" z="-2044" heading="28354" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-41870" y="49720" z="-2046" heading="46775" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-41816" y="49459" z="-2046" heading="51915" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-41940" y="49196" z="-2046" heading="37327" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-42278" y="49162" z="-2041" heading="32831" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-42605" y="48983" z="-2040" heading="39241" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-42781" y="48738" z="-2042" heading="43919" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43163" y="48693" z="-2046" heading="32115" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-43070" y="48223" z="-2051" heading="55961" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-42949" y="48190" z="-2052" heading="5326" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-42710" y="48313" z="-2052" heading="4867" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-42397" y="48644" z="-2052" heading="9370" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-42164" y="48754" z="-2051" heading="2639" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-42216" y="49320" z="-2050" heading="27590" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-45432" y="50152" z="-2253" heading="5895" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45320" y="50328" z="-2206" heading="10755" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45213" y="50285" z="-2196" heading="62007" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-45033" y="50453" z="-2168" heading="8620" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44955" y="50742" z="-2133" heading="14284" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45077" y="51033" z="-2104" heading="23655" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44720" y="50948" z="-2121" heading="57940" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44765" y="51117" z="-2102" heading="17080" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44861" y="51305" z="-2092" heading="25767" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-44936" y="51368" z="-2097" heading="25767" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45336" y="51448" z="-2175" heading="34903" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44712" y="49463" z="-2255" heading="53685" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44571" y="49191" z="-2243" heading="54423" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-44356" y="48854" z="-2191" heading="51517" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-44124" y="48822" z="-2137" heading="463" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44020" y="49072" z="-2123" heading="18354" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+		</group>
+		<group name="2_Floor" spawnByDefault="false">
+			<npc id="22637" x="-43480" y="45016" z="-1463" heading="2454" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43173" y="45190" z="-1463" heading="9753" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-42975" y="45096" z="-1463" heading="54256" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-42600" y="44792" z="-1461" heading="59402" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-42599" y="45046" z="-1463" heading="19450" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-42584" y="45239" z="-1463" heading="15516" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-42858" y="45554" z="-1463" heading="30228" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43126" y="45703" z="-1463" heading="20884" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-42801" y="45912" z="-1463" heading="77" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-42165" y="45370" z="-1460" heading="55525" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-42080" y="45091" z="-1460" heading="47787" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-41981" y="44512" z="-1452" heading="46886" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-41972" y="43746" z="-1411" heading="49744" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-41707" y="43442" z="-1412" heading="58129" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-41450" y="43475" z="-1436" heading="14671" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-41344" y="44052" z="-1451" heading="15802" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-41563" y="44119" z="-1453" heading="39917" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-41855" y="44146" z="-1441" heading="30664" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-41892" y="44154" z="-1439" heading="33978" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-41799" y="44768" z="-1442" heading="12945" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44344" y="44552" z="-1457" heading="53038" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44742" y="44617" z="-1518" heading="29346" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-45244" y="45072" z="-1529" heading="26051" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45416" y="45256" z="-1526" heading="22101" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45080" y="45000" z="-1544" heading="53909" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45661" y="44873" z="-1545" heading="34858" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-46061" y="44429" z="-1549" heading="42582" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45605" y="43655" z="-1496" heading="56754" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-45175" y="43678" z="-1470" heading="65148" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45492" y="43299" z="-1464" heading="40848" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45780" y="43326" z="-1479" heading="29721" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-46077" y="43398" z="-1495" heading="30555" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-46789" y="43505" z="-1537" heading="30260" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-47175" y="43255" z="-1549" heading="38921" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-47342" y="43056" z="-1564" heading="44231" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-47304" y="42824" z="-1596" heading="56970" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-46488" y="42616" z="-1565" heading="2950" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-46684" y="41911" z="-1531" heading="40371" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-47050" y="41375" z="-1530" heading="42624" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-47074" y="40929" z="-1529" heading="50202" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-47160" y="41032" z="-1531" heading="18205" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-46839" y="41075" z="-1522" heading="4482" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-46232" y="40600" z="-1504" heading="46143" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-46142" y="40350" z="-1461" heading="52630" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45917" y="40099" z="-1425" heading="57917" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45591" y="40059" z="-1425" heading="557" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-45339" y="40198" z="-1439" heading="8042" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45199" y="40425" z="-1456" heading="11116" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45014" y="40844" z="-1453" heading="11278" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-45111" y="41119" z="-1472" heading="20899" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45451" y="41317" z="-1499" heading="32160" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45751" y="41362" z="-1510" heading="29705" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-46079" y="41119" z="-1520" heading="44291" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45991" y="40834" z="-1502" heading="55992" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45739" y="40681" z="-1495" heading="62081" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-45367" y="40724" z="-1509" heading="2253" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45567" y="40967" z="-1522" heading="25973" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-46044" y="41333" z="-1521" heading="20956" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-46076" y="41676" z="-1521" heading="10007" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-46202" y="41894" z="-1521" heading="24978" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45624" y="44456" z="-1551" heading="22581" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-44408" y="44824" z="-1482" heading="2115" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44856" y="44216" z="-1508" heading="41701" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+		</group>
+		<group name="PortSpot_02" spawnByDefault="false">
+			<npc id="22637" x="-46648" y="49064" z="-2409" heading="38604" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-46760" y="48808" z="-2409" heading="43245" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-47112" y="49016" z="-2409" heading="29078" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-46680" y="48456" z="-2409" heading="52210" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-46648" y="48024" z="-2409" heading="45881" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-46392" y="48104" z="-2409" heading="12737" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-46202" y="48735" z="-2409" heading="11178" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-44760" y="50056" z="-2226" heading="59881" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44808" y="49688" z="-2285" heading="43647" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44659" y="49726" z="-2256" heading="62647" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-44305" y="49454" z="-2189" heading="54368" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44008" y="49192" z="-2123" heading="4974" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43687" y="49293" z="-2084" heading="5775" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-43288" y="49504" z="-2057" heading="7160" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-43026" y="49877" z="-2051" heading="10906" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-43016" y="50126" z="-2051" heading="16328" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43152" y="50337" z="-2051" heading="24696" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-43348" y="50461" z="-2062" heading="29422" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43560" y="50680" z="-2081" heading="22832" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-43861" y="50523" z="-2118" heading="39613" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-44160" y="50269" z="-2163" heading="40296" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44352" y="50333" z="-2182" heading="28887" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44536" y="50408" z="-2201" heading="28887" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-44476" y="50067" z="-2208" heading="50897" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44179" y="49812" z="-2175" heading="61145" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-43971" y="49717" z="-2143" heading="60871" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-43709" y="49673" z="-2103" heading="64155" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-43613" y="49035" z="-2072" heading="59832" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45592" y="47816" z="-2370" heading="46392" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45880" y="48120" z="-2404" heading="24346" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-46072" y="48248" z="-2409" heading="15528" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-46168" y="47672" z="-2394" heading="44714" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45785" y="47658" z="-2376" heading="64340" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-44968" y="47208" z="-2157" heading="50100" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44711" y="47136" z="-2105" heading="2244" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44488" y="47304" z="-2105" heading="3394" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-44808" y="47720" z="-2192" heading="35113" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45050" y="48032" z="-2264" heading="22150" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45307" y="48337" z="-2325" heading="26771" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-43736" y="48408" z="-2070" heading="3800" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43672" y="48152" z="-2060" heading="48262" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-43689" y="47769" z="-2056" heading="47643" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-43640" y="47433" z="-2048" heading="52021" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43228" y="47489" z="-2045" heading="2439" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-42837" y="47727" z="-2046" heading="1408" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-42439" y="47945" z="-2046" heading="5583" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-41921" y="48371" z="-2046" heading="12841" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-41560" y="48712" z="-2050" heading="7034" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-41499" y="48929" z="-2050" heading="10569" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-41311" y="49264" z="-2047" heading="11313" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-41299" y="49528" z="-2045" heading="16486" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-41409" y="49801" z="-2044" heading="22653" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-41697" y="49973" z="-2044" heading="28354" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-41870" y="49720" z="-2046" heading="46775" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-41816" y="49459" z="-2046" heading="51915" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-41940" y="49196" z="-2046" heading="37327" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-42278" y="49162" z="-2041" heading="32831" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-42605" y="48983" z="-2040" heading="39241" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-42781" y="48738" z="-2042" heading="43919" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-43163" y="48693" z="-2046" heading="32115" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-43070" y="48223" z="-2051" heading="55961" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-42949" y="48190" z="-2052" heading="5326" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-42710" y="48313" z="-2052" heading="4867" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-42397" y="48644" z="-2052" heading="9370" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-42164" y="48754" z="-2051" heading="2639" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-42216" y="49320" z="-2050" heading="27590" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-45432" y="50152" z="-2253" heading="5895" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45320" y="50328" z="-2206" heading="10755" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45213" y="50285" z="-2196" heading="62007" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-45033" y="50453" z="-2168" heading="8620" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44955" y="50742" z="-2133" heading="14284" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-45077" y="51033" z="-2104" heading="23655" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44720" y="50948" z="-2121" heading="57940" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44765" y="51117" z="-2102" heading="17080" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44861" y="51305" z="-2092" heading="25767" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-44936" y="51368" z="-2097" heading="25767" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-45336" y="51448" z="-2175" heading="34903" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22639" x="-44712" y="49463" z="-2255" heading="53685" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44571" y="49191" z="-2243" heading="54423" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22640" x="-44356" y="48854" z="-2191" heading="51517" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22637" x="-44124" y="48822" z="-2137" heading="463" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+			<npc id="22638" x="-44020" y="49072" z="-2123" heading="18354" respawnTime="20sec" /> <!-- Outer Castle's Guardian -->
+		</group>
+		<group name="2_Floor_elite" spawnByDefault="false">
+			<npc id="22633" x="-48056" y="44360" z="-1571" heading="49221" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-47976" y="44248" z="-1562" heading="55243" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-47976" y="44072" z="-1553" heading="48918" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-48040" y="44232" z="-1561" heading="26931" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-48199" y="43931" z="-1554" heading="46485" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-48385" y="43554" z="-1552" heading="46421" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-48729" y="43397" z="-1553" heading="34002" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-48168" y="43720" z="-1552" heading="24703" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-48378" y="43826" z="-1553" heading="32124" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-48807" y="43867" z="-1553" heading="33237" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-49142" y="43783" z="-1538" heading="28554" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-49273" y="44068" z="-1541" heading="18510" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-49215" y="44354" z="-1548" heading="12989" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-48895" y="44477" z="-1550" heading="64310" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-48792" y="44152" z="-1553" heading="47663" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-49192" y="45720" z="-1620" heading="16724" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-49204" y="46098" z="-1617" heading="14884" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-49482" y="46708" z="-1604" heading="26808" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-49813" y="46876" z="-1603" heading="30794" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-50072" y="46942" z="-1608" heading="29781" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-50334" y="46953" z="-1612" heading="34273" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-50409" y="46790" z="-1623" heading="49315" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-50428" y="46445" z="-1643" heading="48489" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-50159" y="46287" z="-1632" heading="1450" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-50029" y="46437" z="-1617" heading="12090" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-49886" y="46521" z="-1603" heading="1379" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-49804" y="46175" z="-1599" heading="45876" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-49877" y="46004" z="-1613" heading="39589" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-50038" y="45846" z="-1634" heading="42985" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-49912" y="45617" z="-1643" heading="59229" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-49628" y="45565" z="-1626" heading="58592" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-49459" y="46013" z="-1600" heading="18149" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-47738" y="46236" z="-1576" heading="3563" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-47704" y="46516" z="-1560" heading="16613" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-47576" y="46920" z="-1529" heading="12915" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-47355" y="46990" z="-1540" heading="63043" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-47058" y="46912" z="-1544" heading="62798" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-47067" y="46628" z="-1540" heading="41647" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-47186" y="46431" z="-1539" heading="43855" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-47256" y="46174" z="-1540" heading="47280" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-47229" y="45796" z="-1533" heading="50877" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-47099" y="45479" z="-1518" heading="54211" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-46945" y="45312" z="-1510" heading="57815" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-46669" y="45277" z="-1518" heading="2137" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-46360" y="45570" z="-1545" heading="10955" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-46342" y="45871" z="-1548" heading="16622" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-46511" y="45954" z="-1548" heading="35627" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-46676" y="45810" z="-1549" heading="42208" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-46984" y="45688" z="-1540" heading="31522" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-46860" y="46038" z="-1539" heading="10159" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-46502" y="46534" z="-1552" heading="68" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-49128" y="47864" z="-1767" heading="30960" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-48966" y="48223" z="-1700" heading="8866" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-48699" y="48354" z="-1636" heading="4182" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-48557" y="48450" z="-1599" heading="15557" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-48609" y="48684" z="-1590" heading="30071" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-48891" y="48860" z="-1609" heading="24414" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-49253" y="49201" z="-1619" heading="24922" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-49442" y="48980" z="-1665" heading="44564" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-49522" y="48558" z="-1705" heading="48126" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-49389" y="48320" z="-1722" heading="58081" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-49105" y="48503" z="-1687" heading="14149" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-49128" y="48712" z="-1667" heading="25692" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+		</group>
+		<group name="3_Floor_elite" spawnByDefault="false">
+			<npc id="22634" x="-54376" y="46808" z="-1564" heading="14357" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-54801" y="47178" z="-1589" heading="26784" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-54803" y="46823" z="-1572" heading="53566" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-55225" y="46647" z="-1614" heading="36982" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-55217" y="46174" z="-1588" heading="53865" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-55090" y="46060" z="-1569" heading="64184" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-54976" y="46043" z="-1559" heading="64184" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-54786" y="46059" z="-1543" heading="1455" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-56118" y="45758" z="-1636" heading="44123" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-56150" y="45389" z="-1654" heading="50081" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-56291" y="45193" z="-1658" heading="35961" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-56561" y="45057" z="-1659" heading="39335" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-56814" y="45018" z="-1659" heading="32491" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-56834" y="45187" z="-1659" heading="8909" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-56553" y="45503" z="-1659" heading="8655" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-57035" y="45866" z="-1660" heading="32822" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-57160" y="45652" z="-1661" heading="44222" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-57350" y="45319" z="-1661" heading="43707" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-57326" y="45090" z="-1666" heading="55129" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-59260" y="46529" z="-1671" heading="45897" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-59258" y="46149" z="-1652" heading="50093" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-59459" y="45667" z="-1645" heading="42486" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-59743" y="45494" z="-1645" heading="35195" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-59876" y="45291" z="-1645" heading="45913" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-59695" y="44987" z="-1645" heading="59560" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-59522" y="44693" z="-1625" heading="53979" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-59281" y="44397" z="-1601" heading="56932" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-59127" y="44226" z="-1586" heading="56932" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-58816" y="44258" z="-1574" heading="8910" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-58760" y="44584" z="-1573" heading="16383" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-58987" y="44616" z="-1604" heading="32983" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-59191" y="44708" z="-1632" heading="27584" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-59074" y="45055" z="-1621" heading="8960" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-59068" y="45299" z="-1623" heading="18613" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-59267" y="45435" z="-1635" heading="29052" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-59157" y="45797" z="-1627" heading="11178" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-59169" y="45979" z="-1629" heading="21614" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-59517" y="46637" z="-1643" heading="21991" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-59266" y="46532" z="-1643" heading="61062" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-59152" y="46265" z="-1643" heading="53295" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-57915" y="51333" z="-2171" heading="22610" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-54832" y="49003" z="-2171" heading="10474" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-56294" y="45913" z="-1678" heading="52713" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-56208" y="45343" z="-1672" heading="50625" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-55754" y="45797" z="-1641" heading="9122" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-54774" y="46207" z="-1548" heading="986" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-54527" y="46435" z="-1546" heading="8432" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-57612" y="51003" z="-2174" heading="49514" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-54856" y="49384" z="-2167" heading="890" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-54536" y="49848" z="-2167" heading="37778" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-54273" y="49905" z="-2167" heading="2363" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-54008" y="49912" z="-2167" heading="64881" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-53991" y="49760" z="-2163" heading="48247" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-54164" y="49773" z="-2167" heading="39110" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-54499" y="49609" z="-2167" heading="32943" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-54842" y="49577" z="-2167" heading="34160" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-54837" y="49001" z="-2167" heading="52820" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-54743" y="48790" z="-2161" heading="54466" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-54981" y="48734" z="-2166" heading="26664" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-55173" y="49079" z="-2167" heading="17251" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-55249" y="49409" z="-2167" heading="15242" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-55160" y="49567" z="-2167" heading="8191" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-55008" y="49783" z="-2167" heading="12446" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-57554" y="50539" z="-2174" heading="36683" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-57767" y="50383" z="-2174" heading="41362" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-57909" y="50203" z="-2174" heading="42471" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-57829" y="50492" z="-2174" heading="13802" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-57623" y="50856" z="-2174" heading="10814" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-57569" y="51070" z="-2174" heading="17145" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-57659" y="51317" z="-2169" heading="21420" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-57823" y="51397" z="-2164" heading="29536" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-58184" y="51416" z="-2174" heading="59814" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-57495" y="51299" z="-2174" heading="53339" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-58289" y="50211" z="-2170" heading="37456" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-58647" y="50200" z="-2166" heading="34259" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-58952" y="50344" z="-2146" heading="27604" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-58473" y="49883" z="-2096" heading="57006" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-58484" y="49703" z="-2053" heading="46086" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-58476" y="49447" z="-2024" heading="51815" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-58331" y="49179" z="-2002" heading="54995" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-58315" y="49030" z="-1999" heading="40997" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-58450" y="48893" z="-1999" heading="38935" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-58717" y="48628" z="-1999" heading="42797" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-58885" y="48552" z="-1999" heading="35945" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-58920" y="48664" z="-2002" heading="6966" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-59357" y="48531" z="-2002" heading="37419" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-59575" y="48806" z="-2002" heading="22125" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-59349" y="48659" z="-2001" heading="58548" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-59217" y="48260" z="-2001" heading="51181" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-59048" y="48232" z="-2001" heading="2184" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-58547" y="48405" z="-2009" heading="4410" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-56168" y="50584" z="-2207" heading="32384" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-56159" y="50177" z="-2191" heading="64232" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-55905" y="50636" z="-2209" heading="18014" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-56008" y="50824" z="-2214" heading="22777" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-56205" y="50744" z="-2206" heading="36999" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-54998" y="50579" z="-2210" heading="2992" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-54954" y="50620" z="-2212" heading="21844" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22635" x="-54885" y="50620" z="-2211" heading="59573" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-54793" y="50433" z="-2199" heading="51173" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22633" x="-54903" y="50394" z="-2198" heading="35590" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22636" x="-56280" y="50456" z="-2188" heading="11316" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+			<npc id="22634" x="-56427" y="50680" z="-2186" heading="22573" respawnTime="20sec" /> <!-- Elite Fortress Keeper -->
+		</group>
+		<group name="hottime_mobs" spawnByDefault="true">
+			<npc id="22620" x="-46594" y="48408" z="-2403" heading="48591" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-46320" y="48549" z="-2406" heading="10696" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-46483" y="48601" z="-2403" heading="29546" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-46467" y="48481" z="-2403" heading="50534" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-46269" y="48378" z="-2403" heading="8026" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-46079" y="48139" z="-2403" heading="41309" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-46299" y="48075" z="-2403" heading="36950" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-45273" y="47690" z="-2277" heading="57964" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-44972" y="47662" z="-2210" heading="1078" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-44897" y="47834" z="-2209" heading="12095" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-44741" y="47680" z="-2175" heading="57411" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-44846" y="47463" z="-2169" heading="44451" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-45062" y="47508" z="-2210" heading="29062" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-45113" y="48057" z="-2276" heading="17988" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-45220" y="49526" z="-2343" heading="60855" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-45220" y="49526" z="-2343" heading="60855" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-45092" y="49310" z="-2382" heading="21592" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-44908" y="49443" z="-2336" heading="45422" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-44865" y="49597" z="-2307" heading="13543" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-45021" y="49730" z="-2288" heading="25404" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-46317" y="48366" z="-2403" heading="36298" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-44980" y="49826" z="-2265" heading="5473" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-44180" y="50022" z="-2172" heading="12796" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-43971" y="49942" z="-2139" heading="61722" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-44117" y="49648" z="-2162" heading="44344" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-44373" y="49742" z="-2203" heading="33600" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-43851" y="49457" z="-2109" heading="1060" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-44162" y="49432" z="-2161" heading="33360" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-43998" y="49266" z="-2118" heading="53662" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-41947" y="48686" z="-2044" heading="2665" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-42163" y="48985" z="-2044" heading="25105" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-42352" y="48715" z="-2044" heading="42751" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-42150" y="48483" z="-2044" heading="57248" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-42434" y="48355" z="-2044" heading="37184" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-42601" y="48553" z="-2044" heading="24159" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-43547" y="48133" z="-2052" heading="18076" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-43192" y="47715" z="-2048" heading="55204" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-43211" y="47970" z="-2047" heading="17184" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-42870" y="47843" z="-2044" heading="5173" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-43268" y="48426" z="-2052" heading="19815" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-43054" y="48217" z="-2050" heading="57467" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-43526" y="47698" z="-2046" heading="41875" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-44094" y="43018" z="-1384" heading="23814" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-44403" y="43125" z="-1384" heading="25950" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-44291" y="42743" z="-1385" heading="52764" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-43935" y="42664" z="-1384" heading="6639" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-43746" y="42885" z="-1384" heading="9641" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-43755" y="43156" z="-1384" heading="16730" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-43923" y="43335" z="-1384" heading="24245" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-44217" y="43358" z="-1384" heading="31953" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-44114" y="42845" z="-1384" heading="56843" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-44071" y="43243" z="-1384" heading="15261" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-44363" y="43049" z="-1384" heading="48330" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-44465" y="42817" z="-1384" heading="44831" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-44276" y="42589" z="-1391" heading="40034" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-44563" y="42571" z="-1413" heading="42907" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-43854" y="43433" z="-1408" heading="10549" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-44079" y="43558" z="-1410" heading="38057" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22617" x="-44059" y="45144" z="-1469" heading="8881" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22620" x="-43932" y="45751" z="-1529" heading="9663" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-44033" y="45468" z="-1497" heading="43862" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-43768" y="45411" z="-1462" heading="63295" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-43679" y="45627" z="-1465" heading="12307" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-43647" y="45245" z="-1457" heading="50084" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-43417" y="45472" z="-1458" heading="11237" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-43809" y="45042" z="-1457" heading="44755" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-43351" y="45103" z="-1457" heading="52636" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-42148" y="44964" z="-1451" heading="15036" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-42512" y="44873" z="-1457" heading="38440" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-42487" y="45226" z="-1460" heading="27006" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-42071" y="45332" z="-1454" heading="64529" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-41659" y="44770" z="-1443" heading="57828" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-41923" y="44619" z="-1444" heading="36197" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-42314" y="44606" z="-1440" heading="30022" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22617" x="-41845" y="45099" z="-1446" heading="2661" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22623" x="-42024" y="44779" z="-1452" heading="45103" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-46246" y="42616" z="-1528" heading="56684" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-46681" y="42759" z="-1571" heading="32104" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-46932" y="42237" z="-1585" heading="45942" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-46482" y="42154" z="-1529" heading="62558" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-47024" y="42627" z="-1614" heading="27931" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-46616" y="42461" z="-1576" heading="61661" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-46355" y="43008" z="-1525" heading="13285" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-46758" y="43055" z="-1555" heading="32052" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22617" x="-46099" y="42851" z="-1509" heading="35423" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22623" x="-46777" y="41861" z="-1514" heading="49082" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-48372" y="43667" z="-1547" heading="39276" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-48829" y="43718" z="-1549" heading="31589" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-48991" y="44176" z="-1549" heading="23615" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-48825" y="44439" z="-1548" heading="64884" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-48383" y="44218" z="-1561" heading="58930" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-48047" y="44268" z="-1561" heading="60988" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-48148" y="43927" z="-1546" heading="46148" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-49182" y="43970" z="-1538" heading="43257" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22617" x="-49027" y="44285" z="-1546" heading="11535" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22620" x="-49393" y="46359" z="-1600" heading="18291" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-49778" y="46655" z="-1593" heading="29039" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-50274" y="46549" z="-1636" heading="38452" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-50300" y="46136" z="-1651" heading="46844" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-50049" y="45710" z="-1648" heading="53346" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-49860" y="45881" z="-1620" heading="7688" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-49548" y="45869" z="-1596" heading="59946" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-49812" y="46321" z="-1593" heading="29489" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22618" x="-49912" y="46157" z="-1606" heading="43948" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22620" x="-47175" y="45689" z="-1535" heading="63494" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-46698" y="45759" z="-1548" heading="1519" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-47021" y="45986" z="-1529" heading="29657" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-46752" y="46193" z="-1535" heading="6507" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-47006" y="46521" z="-1534" heading="24372" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-47400" y="46449" z="-1549" heading="36137" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-47444" y="46036" z="-1549" heading="3868" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22618" x="-47253" y="46706" z="-1537" heading="19038" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22620" x="-48761" y="48243" z="-1660" heading="10863" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-48790" y="48762" z="-1599" heading="17562" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-49017" y="48543" z="-1668" heading="45252" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-49220" y="48810" z="-1657" heading="20664" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-49079" y="49117" z="-1605" heading="10450" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-49345" y="48303" z="-1719" heading="44914" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22618" x="-49532" y="48625" z="-1705" heading="21367" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22618" x="-48587" y="48495" z="-1591" heading="64532" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22623" x="-49133" y="47958" z="-1750" heading="43728" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-54718" y="47068" z="-1573" heading="31682" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-55113" y="46605" z="-1582" heading="42979" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-54761" y="46614" z="-1558" heading="4475" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-54394" y="46798" z="-1555" heading="5134" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-54012" y="46818" z="-1571" heading="57947" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-54232" y="46412" z="-1560" heading="40896" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22618" x="-54643" y="46211" z="-1538" heading="38008" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22623" x="-55027" y="46160" z="-1556" heading="37744" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-54904" y="45824" z="-1535" heading="49828" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-55868" y="45370" z="-1638" heading="59421" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-56213" y="45309" z="-1662" heading="32715" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-56316" y="45640" z="-1666" heading="12368" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-56530" y="45152" z="-1665" heading="44944" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-56626" y="45434" z="-1663" heading="22931" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-56019" y="45689" z="-1659" heading="5157" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-56111" y="45870" z="-1674" heading="11485" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22619" x="-56592" y="45826" z="-1662" heading="38046" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22623" x="-56894" y="45551" z="-1662" heading="40819" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-57461" y="51006" z="-2168" heading="39228" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-57626" y="50625" z="-2171" heading="42208" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-57427" y="50181" z="-2168" heading="57638" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-57091" y="50312" z="-2167" heading="10353" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-56983" y="50643" z="-2167" heading="15943" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-57351" y="50576" z="-2171" heading="35133" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22619" x="-57157" y="50929" z="-2169" heading="9555" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22623" x="-57193" y="50639" z="-2168" heading="48239" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-56748" y="50719" z="-2168" heading="54848" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-56180" y="49468" z="-2184" heading="50820" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-55893" y="49192" z="-2187" heading="60808" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-55650" y="49374" z="-2186" heading="14948" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-55828" y="49672" z="-2188" heading="30956" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-56041" y="49941" z="-2189" heading="17729" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-55680" y="49940" z="-2198" heading="59066" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22619" x="-55473" y="49651" z="-2183" heading="53235" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22623" x="-55416" y="49308" z="-2165" heading="45860" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-56512" y="49840" z="-2170" heading="29195" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-54367" y="49872" z="-2161" heading="64527" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-54109" y="50086" z="-2161" heading="6641" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-54453" y="50166" z="-2163" heading="39179" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-54709" y="50026" z="-2163" heading="31656" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-54869" y="50328" z="-2187" heading="11712" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-54599" y="50613" z="-2192" heading="3927" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-54215" y="50560" z="-2172" heading="56462" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-54596" y="50328" z="-2169" heading="39805" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22619" x="-54086" y="50315" z="-2165" heading="2217" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22620" x="-54664" y="52189" z="-2157" heading="56765" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22620" x="-54651" y="51883" z="-2157" heading="49603" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-54897" y="51622" z="-2157" heading="40104" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-55187" y="51651" z="-2157" heading="31728" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-55419" y="51868" z="-2157" heading="24924" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-55415" y="52160" z="-2157" heading="16241" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22619" x="-55199" y="52394" z="-2157" heading="10300" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22619" x="-54932" y="52385" z="-2157" heading="65184" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+			<npc id="22623" x="-55113" y="51966" z="-2157" heading="37718" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-54968" y="52134" z="-2157" heading="47769" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22623" x="-54911" y="51930" z="-2157" heading="20693" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-55669" y="52352" z="-2177" heading="32007" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-55752" y="51847" z="-2187" heading="49562" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-55477" y="51629" z="-2184" heading="58537" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22621" x="-54618" y="51692" z="-2181" heading="65227" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-54343" y="52067" z="-2184" heading="28380" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22622" x="-54325" y="52407" z="-2184" heading="15832" respawnTime="60sec" /> <!-- Fortress Praetorian -->
+			<npc id="22619" x="-55037" y="52027" z="-2157" heading="2645" respawnTime="60sec" /> <!-- Fortress Guard Leader -->
+		</group>
+	</spawnlist>
+</instance>

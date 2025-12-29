@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="229" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<time duration="15" empty="300000" />
+	<locations>
+		<enter type="FIXED">
+			<location x="-86177" y="-113990" z="-10614" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="Level">
+			<param name="min" value="40" />
+			<param name="max" value="99" />
+		</condition>
+		<condition type="Reenter" />
+	</conditions>
+	<reenter apply="ON_FINISH">
+		<reset day="MONDAY" hour="6" minute="30" />
+		<reset day="TUESDAY" hour="6" minute="30" />
+		<reset day="WEDNESDAY" hour="6" minute="30" />
+		<reset day="THURSDAY" hour="6" minute="30" />
+		<reset day="FRIDAY" hour="6" minute="30" />
+		<reset day="SATURDAY" hour="6" minute="30" />
+		<reset day="SUNDAY" hour="6" minute="30" />
+	</reenter>
+	<spawnlist>
+		<group name="monsters_40_49" spawnByDefault="false">
+			<npc id="22107" x="-86703" y="-114271" z="-10613" heading="4890" /> <!-- Rotting Tree -->
+			<npc id="22107" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Rotting Tree -->
+			<npc id="22107" x="-85886" y="-114530" z="-10613" heading="20894" /> <!-- Rotting Tree -->
+			<npc id="22109" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Dire Wyrm -->
+			<npc id="22108" x="-85622" y="-113696" z="-10613" heading="37355" /> <!-- Giant Fungus -->
+			<npc id="22108" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Giant Fungus -->
+			<npc id="22108" x="-86471" y="-113439" z="-10613" heading="54141" /> <!-- Giant Fungus -->
+			<npc id="22109" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Dire Wyrm -->
+		</group>
+		<group name="treasures_40_49" spawnByDefault="false">
+			<npc id="22122" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22122" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22122" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22122" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian_40_49" spawnByDefault="false">
+			<npc id="22331" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Poison Guard -->
+		</group>
+		
+		<group name="monsters_50_59" spawnByDefault="false">
+			<npc id="22111" x="-86703" y="-114271" z="-10613" heading="4890" /> <!-- Tortured Undead -->
+			<npc id="22111" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Tortured Undead -->
+			<npc id="22111" x="-85886" y="-114530" z="-10613" heading="20894" /> <!-- Tortured Undead -->
+			<npc id="22110" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Taik Orc Supply Officer -->
+			<npc id="22112" x="-85622" y="-113696" z="-10613" heading="37355" /> <!-- Soul of Ruins -->
+			<npc id="22112" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Soul of Ruins -->
+			<npc id="22112" x="-86471" y="-113439" z="-10613" heading="54141" /> <!-- Soul of Ruins -->
+			<npc id="22110" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Taik Orc Supply Officer -->
+		</group>
+		<group name="treasures_50_59" spawnByDefault="false">
+			<npc id="22123" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22123" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22123" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22123" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian_50_59" spawnByDefault="false">
+			<npc id="22332" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Grave Guard -->
+		</group>
+		
+		<group name="monsters_60_69" spawnByDefault="false">
+			<npc id="22114" x="-86703" y="-114271" z="-10613" heading="4890" /> <!-- Vanor -->
+			<npc id="22114" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Vanor -->
+			<npc id="22114" x="-85886" y="-114530" z="-10613" heading="20894" /> <!-- Vanor -->
+			<npc id="22113" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Vanor Silenos Chieftain -->
+			<npc id="22115" x="-85622" y="-113696" z="-10613" heading="37355" /> <!-- Vanor Silenos Shaman -->
+			<npc id="22115" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Vanor Silenos Shaman -->
+			<npc id="22115" x="-86471" y="-113439" z="-10613" heading="54141" /> <!-- Vanor Silenos Shaman -->
+			<npc id="22113" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Vanor Silenos Chieftain -->
+		</group>
+		<group name="treasures_60_69" spawnByDefault="false">
+			<npc id="22124" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian_60_69" spawnByDefault="false">
+			<npc id="22333" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Guard of Honor -->
+		</group>
+		
+		<group name="monsters_70_79" spawnByDefault="false">
+			<npc id="22116" x="-86703" y="-114271" z="-10613" heading="4890" /> <!-- Farcran -->
+			<npc id="22116" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Farcran -->
+			<npc id="22116" x="-85886" y="-114530" z="-10613" heading="20894" /> <!-- Farcran -->
+			<npc id="22118" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Hatar Ratman Boss -->
+			<npc id="22117" x="-85622" y="-113696" z="-10613" heading="37355" /> <!-- Demonic Eye -->
+			<npc id="22117" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Demonic Eye -->
+			<npc id="22117" x="-86471" y="-113439" z="-10613" heading="54141" /> <!-- Demonic Eye -->
+			<npc id="22118" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Hatar Ratman Boss -->
+		</group>
+		<group name="treasures_70_79" spawnByDefault="false">
+			<npc id="22124" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22124" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian_70_79" spawnByDefault="false">
+			<npc id="22334" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Fierce Guard -->
+		</group>
+		
+		<group name="monsters_80_84" spawnByDefault="false">
+			<npc id="22147" x="-86703" y="-114271" z="-10613" heading="4890" /> <!-- Cave Maiden -->
+			<npc id="22147" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Cave Maiden -->
+			<npc id="22147" x="-85886" y="-114530" z="-10613" heading="20894" /> <!-- Cave Maiden -->
+			<npc id="22149" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Headless Knight -->
+			<npc id="22148" x="-85622" y="-113696" z="-10613" heading="37355" /> <!-- Cave Keeper -->
+			<npc id="22148" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Cave Keeper -->
+			<npc id="22148" x="-86471" y="-113439" z="-10613" heading="54141" /> <!-- Cave Keeper -->
+			<npc id="22149" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Headless Knight -->
+		</group>
+		<group name="treasures_80_84" spawnByDefault="false">
+			<npc id="22150" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22150" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22150" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22150" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian_80_84" spawnByDefault="false">
+			<npc id="22335" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Dragon Guardian -->
+		</group>
+		
+		<group name="monsters_85_89" spawnByDefault="false">
+			<npc id="22275" x="-86703" y="-114271" z="-10613" heading="4890" /> <!-- Sel Mahum Raider -->
+			<npc id="22275" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Sel Mahum Raider -->
+			<npc id="22275" x="-85886" y="-114530" z="-10613" heading="20894" /> <!-- Sel Mahum Raider -->
+			<npc id="22277" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Sel Mahum Knight -->
+			<npc id="22276" x="-85622" y="-113696" z="-10613" heading="37355" /> <!-- Sel Mahum Footman -->
+			<npc id="22276" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Sel Mahum Footman -->
+			<npc id="22276" x="-86471" y="-113439" z="-10613" heading="54141" /> <!-- Sel Mahum Footman -->
+			<npc id="22277" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Sel Mahum Knight -->
+		</group>
+		<group name="treasures_85_89" spawnByDefault="false">
+			<npc id="22278" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22278" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22278" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22278" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian_85_89" spawnByDefault="false">
+			<npc id="22292" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Beast Guardian -->
+		</group>
+		
+		<group name="monsters_90_99" spawnByDefault="false">
+			<npc id="22411" x="-86703" y="-114271" z="-10613" heading="4890" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="-85886" y="-114530" z="-10613" heading="20894" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="-85622" y="-113696" z="-10613" heading="37355" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Evolved Lesser Giant Lord -->
+			<npc id="22411" x="-86471" y="-113439" z="-10613" heading="54141" /> <!-- Baron's Overlord -->
+			<npc id="22412" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Evolved Lesser Giant Lord -->
+		</group>
+		<group name="treasures_90_99" spawnByDefault="false">
+			<npc id="22425" x="-86355" y="-114593" z="-10613" heading="13481" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22425" x="-85578" y="-114166" z="-10613" heading="29025" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22425" x="-86002" y="-113395" z="-10613" heading="44119" /> <!-- Transcendent Treasure Chest -->
+			<npc id="22425" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Transcendent Treasure Chest -->
+		</group>
+		<group name="guardian_90_99" spawnByDefault="false">
+			<npc id="22424" x="-86774" y="-113813" z="-10613" heading="61677" /> <!-- Giant Guardian -->
+		</group>
+	</spawnlist>
+</instance>

@@ -1,0 +1,916 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="49500" toLevel="1" name="戰鬥糧食">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>93966</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Feed">
+				<normal>1000</normal>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49501" toLevel="1" name="戰鬥糧食(刻印)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>98970</itemConsumeId>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Feed">
+				<normal>1000</normal>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49502" toLevel="1" name="守護者HP藥水-刻印">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Hp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49503" toLevel="1" name="守護者的報恩：一般製作">
+		
+		<icon>icon.s_guardian_craftpoint_charge</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByMagicType">
+				<magicTypes>0;1</magicTypes>
+				<skillId>49506</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+				</skillLevel>
+				<chance>10</chance>
+				<targetType>OWNER_PET</targetType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49504" toLevel="1" name="守護者的報恩：一般製作">
+		
+		<icon>icon.s_guardian_craftpoint_charge</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByMagicType">
+				<magicTypes>0;1</magicTypes>
+				<skillId>49507</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+				</skillLevel>
+				<chance>10</chance>
+				<targetType>OWNER_PET</targetType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49505" toLevel="3" name="沃爾昆之魂">
+		<icon>icon.s_trigger_heavy_approach1_step_high</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-891</effectPoint>
+	</skill>
+	<skill id="49506" toLevel="1" name="守護者的報恩：一般製作">
+		<icon>icon.s_guardian_craftpoint_charge</icon>
+		<operateType>A2</operateType>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<abnormalLevel>
+			<value level="1">1</value>
+		</abnormalLevel>
+		<abnormalTime>1</abnormalTime>
+		<isMagic>5</isMagic>
+		<isRecoveryHerb>true</isRecoveryHerb>
+		<effects>
+			<effect name="ModifyCraftPoints">
+				<amount>13000</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49507" toLevel="1" name="守護者的報恩：一般製作">
+		<icon>icon.s_guardian_craftpoint_charge</icon>
+		<operateType>A2</operateType>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<abnormalLevel>
+			<value level="1">1</value>
+		</abnormalLevel>
+		<abnormalTime>1</abnormalTime>
+		<isMagic>5</isMagic>
+		<isRecoveryHerb>true</isRecoveryHerb>
+		<effects>
+			<effect name="ModifyCraftPoints">
+				<amount>13000</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49508" toLevel="2" name="守護者的報恩：魔法油燈">
+		
+		
+		<icon>icon.s_guardian_magiclamp_acceleration</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByMagicType">
+				<magicTypes>0;1</magicTypes>
+				<skillId>49509</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+				<chance>10</chance>
+				<targetType>OWNER_PET</targetType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49509" toLevel="2" name="守護者的報恩：魔法油燈">
+		
+		
+		<icon>icon.s_guardian_magiclamp_acceleration</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<isMagic>5</isMagic>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicLampExpRate">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49510" toLevel="2" name="守護者的報恩：魔法油燈">
+		
+		
+		<icon>icon.s_guardian_magiclamp_acceleration</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByMagicType">
+				<magicTypes>0;1</magicTypes>
+				<skillId>49511</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+				<chance>10</chance>
+				<targetType>OWNER_PET</targetType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49511" toLevel="2" name="守護者的報恩：魔法油燈">
+		
+		
+		<icon>icon.s_guardian_magiclamp_acceleration</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<isMagic>5</isMagic>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicLampExpRate">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49512" toLevel="2" name="守護者的報恩：魔法油燈">
+		
+		
+		<icon>icon.s_guardian_magiclamp_acceleration</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByMagicType">
+				<magicTypes>0;1</magicTypes>
+				<skillId>49513</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+				<chance>10</chance>
+				<targetType>OWNER_PET</targetType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49513" toLevel="2" name="守護者的報恩：魔法油燈">
+		
+		
+		<icon>icon.s_guardian_magiclamp_acceleration</icon>
+		<operateType>A2</operateType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<isMagic>5</isMagic>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicLampExpRate">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49514" toLevel="5" name="閃現一擊">
+		<icon>icon.pet_flicker_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-600</value>
+			<value level="3">-760</value>
+			<value level="4">-760</value>
+			<value level="5">-760</value>
+		</effectPoint>
+		<isDebuff>true</isDebuff>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+			<value level="4">45</value>
+			<value level="5">40</value>
+		</mpConsume>
+	</skill>
+	<skill id="49515" toLevel="5" name="浮空跳擊">
+		<icon>icon.pet_leap_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-600</value>
+			<value level="3">-760</value>
+			<value level="4">-760</value>
+			<value level="5">-760</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+			<value level="4">45</value>
+			<value level="5">40</value>
+		</mpConsume>
+	</skill>
+	<skill id="49516" toLevel="5" name="牴撞衝擊">
+		<icon>icon.pet_butt_shock</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-600</value>
+			<value level="3">-760</value>
+			<value level="4">-760</value>
+			<value level="5">-760</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+			<value level="4">45</value>
+			<value level="5">40</value>
+		</mpConsume>
+	</skill>
+	<skill id="49517" toLevel="5" name="急速撲擊">
+		<icon>icon.pet_fast_dive</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-600</value>
+			<value level="3">-760</value>
+			<value level="4">-760</value>
+			<value level="5">-760</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+			<value level="4">45</value>
+			<value level="5">40</value>
+		</mpConsume>
+	</skill>
+	<skill id="49518" toLevel="5" name="跳躍">
+		<icon>icon.pet_jump_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<effectPoint>
+			<value level="1">-400</value>
+			<value level="2">-600</value>
+			<value level="3">-760</value>
+			<value level="4">-850</value>
+			<value level="5">-900</value>
+		</effectPoint>
+		<mpConsume>
+			<value level="1">30</value>
+			<value level="2">40</value>
+			<value level="3">50</value>
+			<value level="4">45</value>
+			<value level="5">40</value>
+		</mpConsume>
+	</skill>
+	<skill id="49519" toLevel="3" name="近激戰">
+		<icon>icon.s_vulkan_heavy_approach_high</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<effectPoint>
+			<value level="1">-540</value>
+			<value level="2">-711</value>
+			<value level="3">-810</value>
+		</effectPoint>
+		<isMagic>6</isMagic>
+		<mpConsume>
+			<value level="1">55</value>
+			<value level="2">76</value>
+			<value level="3">98</value>
+		</mpConsume>
+	</skill>
+	<skill id="49531" toLevel="20" name="星光！">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>
+			<value level="1">121</value>
+			<value level="2">132</value>
+			<value level="3">143</value>
+			<value level="4">154</value>
+			<value level="5">165</value>
+			<value level="6">176</value>
+			<value level="7">187</value>
+			<value level="8">198</value>
+			<value level="9">209</value>
+			<value level="10">220</value>
+			<value level="11">231</value>
+			<value level="12">242</value>
+			<value level="13">253</value>
+			<value level="14">264</value>
+			<value level="15">275</value>
+			<value level="16">286</value>
+			<value level="17">297</value>
+			<value level="18">308</value>
+			<value level="19">319</value>
+			<value level="20">330</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49532" toLevel="20" name="星光！-近距離">
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>
+			<value level="1">121</value>
+			<value level="2">132</value>
+			<value level="3">143</value>
+			<value level="4">154</value>
+			<value level="5">165</value>
+			<value level="6">176</value>
+			<value level="7">187</value>
+			<value level="8">198</value>
+			<value level="9">209</value>
+			<value level="10">220</value>
+			<value level="11">231</value>
+			<value level="12">242</value>
+			<value level="13">253</value>
+			<value level="14">264</value>
+			<value level="15">275</value>
+			<value level="16">286</value>
+			<value level="17">297</value>
+			<value level="18">308</value>
+			<value level="19">319</value>
+			<value level="20">330</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49533" toLevel="20" name="星光！-遠距離">
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>
+			<value level="1">121</value>
+			<value level="2">132</value>
+			<value level="3">143</value>
+			<value level="4">154</value>
+			<value level="5">165</value>
+			<value level="6">176</value>
+			<value level="7">187</value>
+			<value level="8">198</value>
+			<value level="9">209</value>
+			<value level="10">220</value>
+			<value level="11">231</value>
+			<value level="12">242</value>
+			<value level="13">253</value>
+			<value level="14">264</value>
+			<value level="15">275</value>
+			<value level="16">286</value>
+			<value level="17">297</value>
+			<value level="18">308</value>
+			<value level="19">319</value>
+			<value level="20">330</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49534" toLevel="16" name="懸浮！">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>13</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49535" toLevel="16" name="懸浮！-近距離">
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>13</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49536" toLevel="16" name="懸浮！-遠距離">
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>13</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49537" toLevel="12" name="人造衛星！">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>13</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49538" toLevel="12" name="人造衛星！-近距離">
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>13</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49539" toLevel="12" name="人造衛星！-遠距離">
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>13</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49540" toLevel="1" name="史瓦西！">
+		
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>13</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49541" toLevel="1" name="史瓦西！-捕獲">
+		<icon>icon.s_evas_tempest</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-8500</effectPoint>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+		<mpConsume>135</mpConsume>
+		<reuseDelay>35000</reuseDelay>
+	</skill>
+	<skill id="49542" toLevel="8" name="專攻生物學！">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill11184</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="49543" toLevel="8" name="專攻生物學！">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill11184</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="49544" toLevel="1" name="確認奧勒比塔輔助魔法">
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+	</skill>
+	<skill id="49545" toLevel="8" name="傭兵：奧勒比塔">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.mercenary_race_raven</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+					<value level="5">25</value>
+					<value level="6">25</value>
+					<value level="7">25</value>
+					<value level="8">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value>
+					<value level="7">50</value>
+					<value level="8">50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value>
+					<value level="7">50</value>
+					<value level="8">50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">4</value>
+					<value level="4">6</value>
+					<value level="5">8</value>
+					<value level="6">10</value>
+					<value level="7">12</value>
+					<value level="8">15</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">14</value>
+					<value level="4">16</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value>
+					<value level="8">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+					<value level="5">10</value>
+					<value level="6">10</value>
+					<value level="7">10</value>
+					<value level="8">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">5</value>
+					<value level="7">5</value>
+					<value level="8">5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower" fromLevel="8" toLevel="8">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49546" toLevel="8" name="精通奧勒比塔格鬥">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_guardian_raven_combat_mastery</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">20</value>
+					<value level="8">25</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+					<value level="5">40</value>
+					<value level="6">40</value>
+					<value level="7">40</value>
+					<value level="8">40</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">60</value>
+					<value level="7">80</value>
+					<value level="8">100</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">8</value>
+					<value level="4">12</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value>
+					<value level="8">20</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">10</value>
+					<value level="7">15</value>
+					<value level="8">20</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49547" toLevel="1" name="守護者裝備欄位完成紅利">
+		
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="49548" toLevel="1" name="守護者的報恩：自動拾取">
+		
+		<icon>icon.s_auto_pickup_high</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="49549" toLevel="1" name="守護者龍武器效果">
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49550" toLevel="1" name="墓地中介">
+		<icon>icon.s_raven_javelin_flight_high</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-200</effectPoint>
+	</skill>
+	<skill id="49551" toLevel="8" name="大屠殺遊戲">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_carnage_play</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>300000</reuseDelay>
+	</skill>
+	<skill id="49552" toLevel="6" name="鈍潰擊">
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_vulkan_blunt_smash_high</icon>
+		<operateType>A1</operateType>
+		<effectPoint>
+			<value level="1">100</value>
+			<value level="2">200</value>
+			<value level="3">400</value>
+			<value level="4">100</value>
+			<value level="5">200</value>
+			<value level="6">400</value>
+		</effectPoint>
+	</skill>
+	<skill id="49553" toLevel="1" name="沃爾昆真魂">
+		
+		<icon>icon.s_vulkan_iron_age_high</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-891</effectPoint>
+	</skill>
+	<skill id="49554" toLevel="1" name="墓地效果">
+		<icon>icon.s_raven_javelin_flight_high</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-200</effectPoint>
+	</skill>
+	<skill id="49555" toLevel="1" name="鈍潰擊效果">
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="49556" toLevel="1" name="大屠殺遊戲效果">
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="49557" toLevel="8" name="雪山主人">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_lord_of_snow_mountain</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="49558" toLevel="8" name="大屠殺遊戲">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_carnage_play</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>300000</reuseDelay>
+	</skill>
+</list>

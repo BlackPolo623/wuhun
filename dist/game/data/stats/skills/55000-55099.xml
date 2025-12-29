@@ -1,0 +1,3290 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="55000" toLevel="4" name="EXP/SP強化-上級">
+		
+		
+		
+		
+		<icon>icon.etc_recall_exp_scroll</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+		</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">100</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">30</value>
+					<value level="2">40</value>
+					<value level="3">50</value>
+					<value level="4">100</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55001" toLevel="1" name="高級返回卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>200</hitTime>
+	</skill>
+	<skill id="55002" toLevel="1" name="祝福的復活卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="55003" toLevel="1" name="1次轉職輔助魔法卷軸">
+		
+		<icon>BranchIcon.Icon.etc_g_bm_buff_scroll_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29011</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>1040</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1068</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1078</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1085</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1204</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1077</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1087</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1059</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="55004" toLevel="2" name="2次轉職輔助魔法卷軸">
+		
+		<icon>BranchIcon.Icon.etc_g_bm_buff_scroll_i01</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>1200</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29012</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>1040</skillId> 
+				<skillLevel>3</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1068</skillId> 
+				<skillLevel>3</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1085</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1204</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1077</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1044</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1240</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1242</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1036</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1045</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1048</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1086</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1087</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>1059</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="55005" toLevel="1" name="武器強化卷軸-D級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55006" toLevel="1" name="防具強化卷軸-D級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55007" toLevel="1" name="武器強化卷軸-C級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55008" toLevel="1" name="防具強化卷軸-C級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55009" toLevel="1" name="保護的武器強化卷軸-D級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55010" toLevel="1" name="保護的武器強化卷軸-C級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55011" toLevel="1" name="保護的防具強化卷軸-D級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55012" toLevel="1" name="保護的防具強化卷軸-C級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55013" toLevel="1" name="高級返回卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>200</hitTime>
+	</skill>
+	<skill id="55014" toLevel="1" name="祝福的復活卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="55015" toLevel="1" name="瞬間體力治癒劑">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29031</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Hp">
+				<amount>435</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55016" toLevel="1" name="高級瞬間體力治癒藥水">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29032</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Hp">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55017" toLevel="7" name="返回卷軸-古魯丁城鎮">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+	</skill>
+	<skill id="55018" toLevel="1" name="Scroll of Escape: Elven Village">
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+	</skill>
+	<skill id="55019" toLevel="1" name="Scroll of Escape: Dark Elf Village">
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+	</skill>
+	<skill id="55020" toLevel="1" name="Scroll of Escape: Orc Village">
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+	</skill>
+	<skill id="55021" toLevel="1" name="Scroll of Escape: Dwarven Village">
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+	</skill>
+	<skill id="55022" toLevel="1" name="Scroll of Escape: Gludin Village">
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+	</skill>
+	<skill id="55023" toLevel="1" name="Scroll of Escape: Town of Gludio">
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+	</skill>
+	<skill id="55024" toLevel="1" name="VIP1級">
+		
+		<icon>BranchIcon.Icon.g_skill_vip1</icon>
+		<operateType>P</operateType>
+		<hitTime>0</hitTime>
+		<effects>
+			<effect name="ExpModify">
+				<amount>3</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>3</amount>
+			</effect>
+			<effect name="BonusDropRate">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55025" toLevel="1" name="VIP2級">
+		
+		<icon>BranchIcon.Icon.g_skill_vip2</icon>
+		<operateType>P</operateType>
+		<hitTime>0</hitTime>
+		<effects>
+			<effect name="ExpModify">
+				<amount>7</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>7</amount>
+			</effect>
+			<effect name="BonusDropRate">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="WorldChatPoints">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55026" toLevel="1" name="VIP3級">
+		
+		<icon>BranchIcon.Icon.g_skill_vip3</icon>
+		<operateType>P</operateType>
+		<hitTime>0</hitTime>
+		<effects>
+			<effect name="ExpModify">
+				<amount>15</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>15</amount>
+			</effect>
+			<effect name="BonusDropRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="WorldChatPoints">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-10</deathPenalty>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55027" toLevel="1" name="VIP4級">
+		
+		<icon>BranchIcon.Icon.g_skill_vip4</icon>
+		<operateType>P</operateType>
+		<hitTime>0</hitTime>
+		<effects>
+			<effect name="ExpModify">
+				<amount>25</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>25</amount>
+			</effect>
+			<effect name="BonusDropRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="WorldChatPoints">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-20</deathPenalty>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55028" toLevel="1" name="VIP5級">
+		
+		<icon>BranchIcon.Icon.g_skill_vip5</icon>
+		<operateType>P</operateType>
+		<hitTime>0</hitTime>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="BonusDropRate">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="WorldChatPoints">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-20</deathPenalty>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55029" toLevel="1" name="VIP6級">
+		
+		<icon>BranchIcon.Icon.g_skill_vip6</icon>
+		<operateType>P</operateType>
+		<hitTime>0</hitTime>
+		<effects>
+			<effect name="ExpModify">
+				<amount>35</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>35</amount>
+			</effect>
+			<effect name="BonusDropRate">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="WorldChatPoints">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-20</deathPenalty>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>2.5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>2.5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>2.5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55030" toLevel="1" name="VIP7級">
+		
+		<icon>BranchIcon.Icon.g_skill_vip7</icon>
+		<operateType>P</operateType>
+		<hitTime>0</hitTime>
+		<effects>
+			<effect name="ExpModify">
+				<amount>35</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>35</amount>
+			</effect>
+			<effect name="BonusDropRate">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="WorldChatPoints">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-20</deathPenalty>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>WIT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55031" toLevel="1" name="申報狀態">
+		
+		<icon>icon.skill6038</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>BOT_PENALTY</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<canBeDispelled>false</canBeDispelled>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<specialLevel>-1</specialLevel>
+		<stayAfterDeath>True</stayAfterDeath>
+		<effects>
+			<effect name="Speed">
+				<amount>-90</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>300</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>300</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-50</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55032" toLevel="1" name="Life Hazard">
+		
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<effectPoint>1</effectPoint>
+		<hitTime>3000</hitTime>
+		<reuseDelay>43200000</reuseDelay>
+	</skill>
+	<skill id="55033" toLevel="1" name="高級返回卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>200</hitTime>
+	</skill>
+	<skill id="55034" toLevel="1" name="祝福的復活卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="55035" toLevel="1" name="1次轉職輔助魔法卷軸">
+		
+		<icon>BranchIcon.Icon.etc_g_bm_buff_scroll_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<canBeDispelled>false</canBeDispelled>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29552</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<selfEffects>
+			<effect name="CallSkill"> 
+				<skillId>1040</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1068</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1078</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1085</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1204</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>4359</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1087</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1059</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="55036" toLevel="2" name="2次轉職輔助魔法卷軸">
+		
+		<icon>BranchIcon.Icon.etc_g_bm_buff_scroll_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<canBeDispelled>false</canBeDispelled>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29553</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<selfEffects>
+			<effect name="CallSkill"> 
+				<skillId>1040</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1068</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1085</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1204</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>4359</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1044</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1240</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1242</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1036</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1045</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1048</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1086</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1087</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1059</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="55037" toLevel="1" name="瞬間體力治癒藥水">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29554</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Hp">
+				<amount>435</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55038" toLevel="1" name="高級瞬間體力治癒藥水">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29555</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Hp">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55039" toLevel="1" name="歷章禮盒">
+		<icon>icon.new_user_box</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55040" toLevel="1" name="歷章繼承者強悍之力">
+		
+		<icon>icon.event_classic_ring</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="55041" toLevel="1" name="EXP/SP強化">
+		
+		<icon>icon.etc_recall_exp_scroll</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55042" toLevel="1" name="出席獎勵EXP古文">
+		
+		<icon>br_cashtex.item.br_cash_rune_of_exp_i00</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>10</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55043" toLevel="1" name="頭飾禮盒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29701</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="100.0">
+						<item id="29575" count="1" /> 
+					</item>
+					<item chance="100.0">
+						<item id="29576" count="1" /> 
+					</item>
+					<item chance="100.0">
+						<item id="29577" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55044" toLevel="1" name="LineageII禮盒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29581</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					
+					<item chance="2.083333333333333">
+						<item id="49756" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49785" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49664" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49665" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49666" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49667" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49668" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49669" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49541" count="1" /> 
+					</item>
+					
+					<item chance="2.083333333333333">
+						<item id="951" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="952" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="947" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="948" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="730" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="6573" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="6574" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="6571" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="6572" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="6569" count="1" /> 
+					</item>
+					
+					<item chance="2.083333333333333">
+						<item id="3936" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1538" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49080" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49081" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49518" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49110" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="70233" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="70234" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="70235" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="29698" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="29695" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="90020" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="70005" count="1" /> 
+					</item>
+					
+					<item chance="2.083333333333333">
+						<item id="1891" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1892" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1893" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1890" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1887" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="4041" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1875" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1888" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="4042" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="4039" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1874" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1886" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="4040" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1894" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1883" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="4043" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55045" toLevel="1" name="Chronicle禮盒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29582</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					
+					<item chance="2.777777777777778">
+						<item id="49664" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49665" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49666" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49667" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49668" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49669" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49541" count="1" /> 
+					</item>
+					
+					<item chance="2.777777777777778">
+						<item id="951" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="952" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="947" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="948" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="6573" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="6574" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="6571" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="6572" count="1" /> 
+					</item>
+					
+					<item chance="2.777777777777778">
+						<item id="3936" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1538" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49080" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49081" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49518" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49110" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="70233" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="70234" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="70235" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="29698" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="29695" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="70005" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="70000" count="1" /> 
+					</item>
+					
+					<item chance="2.777777777777778">
+						<item id="1885" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1877" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1881" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1880" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1889" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1879" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1882" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1876" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55046" toLevel="1" name="Memories禮盒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29583</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					
+					<item chance="1.0">
+						<item id="49667" count="1" /> 
+					</item>
+					<item chance="1.0">
+						<item id="49668" count="1" /> 
+					</item>
+					<item chance="1.0">
+						<item id="49669" count="1" /> 
+					</item>
+					<item chance="1.0">
+						<item id="49541" count="1" /> 
+					</item>
+					<item chance="1.0">
+						<item id="49491" count="1" /> 
+					</item>
+					
+					<item chance="4.0">
+						<item id="955" count="1" /> 
+					</item>
+					<item chance="4.0">
+						<item id="956" count="1" /> 
+					</item>
+					<item chance="3.5">
+						<item id="951" count="1" /> 
+					</item>
+					<item chance="3.5">
+						<item id="952" count="1" /> 
+					</item>
+					<item chance="1.5">
+						<item id="6573" count="1" /> 
+					</item>
+					<item chance="1.5">
+						<item id="6574" count="1" /> 
+					</item>
+					
+					<item chance="6.299666666666667">
+						<item id="3936" count="1" /> 
+					</item>
+					<item chance="6.299666666666667">
+						<item id="1538" count="1" /> 
+					</item>
+					<item chance="6.299666666666667">
+						<item id="49080" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="70005" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="70000" count="1" /> 
+					</item>
+					
+					<item chance="3.0">
+						<item id="3926" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3927" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3930" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="29686" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="29689" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="29690" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="29691" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3928" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3929" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3932" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3935" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3933" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3931" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3931" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="4218" count="1" /> 
+					</item>
+					
+					<item chance="2.0">
+						<item id="1882" count="1" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1876" count="1" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1884" count="2" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1895" count="2" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1870" count="2" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1878" count="2" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1865" count="2" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1872" count="2" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55047" toLevel="1" name="浪漫神佑之體">
+		
+		<icon>icon.accessory_archer_hat2_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MAX_HP_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>418</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>52</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<effects>
+			<effect name="MaxHp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55048" toLevel="1" name="浪漫之風">
+		
+		<icon>icon.accessory_archer_hat2_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>SPEED_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>219</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>30</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<effects>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55049" toLevel="1" name="歷章繼承者高級裝備隨機箱">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55050" toLevel="1" name="歷章繼承者高級裝備隨機箱">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="55051" toLevel="4" name="EXP/SP強化-上級">
+		
+		
+		
+		
+		<icon>icon.etc_recall_exp_scroll</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55052" toLevel="2" name="XP/SP Scroll - Normal">
+		
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<reuseDelay>60000</reuseDelay>
+	</skill>
+	<skill id="55053" toLevel="3" name="XP/SP Scroll - Medium">
+		
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<reuseDelay>60000</reuseDelay>
+	</skill>
+	<skill id="55054" toLevel="4" name="XP/SP Scroll - High">
+		
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<reuseDelay>60000</reuseDelay>
+	</skill>
+	<skill id="55055" toLevel="1" name="1次轉職輔助魔法卷軸">
+		
+		<icon>BranchIcon.Icon.etc_g_bm_buff_scroll_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<canBeDispelled>false</canBeDispelled>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29654</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<selfEffects>
+			<effect name="CallSkill"> 
+				<skillId>1040</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1068</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1078</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1085</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1204</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>4359</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1087</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1059</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="55056" toLevel="2" name="2次轉職輔助魔法卷軸">
+		
+		<icon>BranchIcon.Icon.etc_g_bm_buff_scroll_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<canBeDispelled>false</canBeDispelled>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29655</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<selfEffects>
+			<effect name="CallSkill"> 
+				<skillId>1040</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1068</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1085</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1204</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>4359</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1044</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1240</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1242</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1036</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1045</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1048</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1086</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1087</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1059</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="55057" toLevel="1" name="風之疾走">
+		
+		<icon>icon.skill1204</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>600</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>400</castRange>
+		<effectPoint>204</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>1800000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55059" toLevel="1" name="壺精封印解除-獅鷲">
+		
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>16055</npcId> 
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55060" toLevel="1" name="獅鷲的祝福">
+		
+		<icon>icon.etc_rbracelet_aga_agit_i00</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55061" toLevel="1" name="城堡EXP/SP強化卷軸-普通">
+		
+		<icon>icon.etc_recall_exp_scroll</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+		</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">35</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">35</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55062" toLevel="1" name="城堡EXP/SP強化卷軸-中級">
+		
+		<icon>icon.etc_recall_exp_scroll</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>
+			<value level="1">3</value>
+		</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>
+					<value level="1">45</value>
+				</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>
+					<value level="1">45</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55063" toLevel="1" name="城堡瞬間體力治癒藥水">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29671</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Hp">
+				<amount>435</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55064" toLevel="1" name="城堡高級瞬間體力治癒藥水">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29672</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Hp">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55065" toLevel="1" name="城堡狂戰士魂卷軸">
+		
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29673</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55066" toLevel="1" name="城堡死之呢喃卷軸">
+		
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29674</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55067" toLevel="1" name="城堡高級返回卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>200</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29675</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpCanEscape" />
+			<condition name="OpHome">
+				<type>CASTLE</type>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Escape">
+				<escapeType>CASTLE</escapeType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55068" toLevel="1" name="城堡之祝福卷軸">
+		
+		<icon>icon.skill1323</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>PRESERVE_ABNORMAL</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>100</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>100</hitTime>
+		<isMagic>1</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29676</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>99</magicLevel>
+		<mpConsume>55</mpConsume>
+		<mpInitialConsume>14</mpInitialConsume>
+		<reuseDelay>1200000</reuseDelay>
+		<effects>
+			<effect name="NoblesseBless" />
+		</effects>
+	</skill>
+	<skill id="55069" toLevel="1" name="城堡之戒">
+		
+		<icon>icon.ev_11th_rare_acc_ring</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55070" toLevel="1" name="城堡耳環">
+		
+		<icon>icon.ev_11th_rare_acc_earing</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MpRegen">
+				<amount>0.2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Heal">
+				<power>2</power>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55071" toLevel="1" name="城堡項鍊">
+		
+		<icon>icon.ev_11th_rare_acc_necklace</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55072" toLevel="1" name="LineageII禮盒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29692</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					
+					<item chance="2.083333333333333">
+						<item id="49756" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49785" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49664" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49665" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49666" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49667" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49668" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49669" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49541" count="1" /> 
+					</item>
+					
+					<item chance="2.083333333333333">
+						<item id="951" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="952" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="947" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="948" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="730" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="6573" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="6574" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="6571" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="6572" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="6569" count="1" /> 
+					</item>
+					
+					<item chance="2.083333333333333">
+						<item id="3936" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1538" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49080" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49081" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49518" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="49110" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="70233" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="70234" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="70235" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="29698" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="29695" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="90020" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="70005" count="1" /> 
+					</item>
+					
+					<item chance="2.083333333333333">
+						<item id="1891" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1892" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1893" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1890" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1887" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="4041" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1875" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1888" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="4042" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="4039" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1874" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1886" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="4040" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1894" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="1883" count="1" /> 
+					</item>
+					<item chance="2.083333333333333">
+						<item id="4043" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55073" toLevel="1" name="Chronicle禮盒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29693</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					
+					<item chance="2.777777777777778">
+						<item id="49664" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49665" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49666" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49667" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49668" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49669" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49541" count="1" /> 
+					</item>
+					
+					<item chance="2.777777777777778">
+						<item id="951" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="952" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="947" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="948" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="6573" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="6574" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="6571" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="6572" count="1" /> 
+					</item>
+					
+					<item chance="2.777777777777778">
+						<item id="3936" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1538" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49080" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49081" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49518" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="49110" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="70233" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="70234" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="70235" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="29698" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="29695" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="70005" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="70000" count="1" /> 
+					</item>
+					
+					<item chance="2.777777777777778">
+						<item id="1885" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1877" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1881" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1880" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1889" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1879" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1882" count="1" /> 
+					</item>
+					<item chance="2.777777777777778">
+						<item id="1876" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55074" toLevel="1" name="Memories禮盒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29694</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					
+					<item chance="1.0">
+						<item id="49667" count="1" /> 
+					</item>
+					<item chance="1.0">
+						<item id="49668" count="1" /> 
+					</item>
+					<item chance="1.0">
+						<item id="49669" count="1" /> 
+					</item>
+					<item chance="1.0">
+						<item id="49541" count="1" /> 
+					</item>
+					<item chance="1.0">
+						<item id="49491" count="1" /> 
+					</item>
+					
+					<item chance="4.0">
+						<item id="955" count="1" /> 
+					</item>
+					<item chance="4.0">
+						<item id="956" count="1" /> 
+					</item>
+					<item chance="3.5">
+						<item id="951" count="1" /> 
+					</item>
+					<item chance="3.5">
+						<item id="952" count="1" /> 
+					</item>
+					<item chance="1.5">
+						<item id="6573" count="1" /> 
+					</item>
+					<item chance="1.5">
+						<item id="6574" count="1" /> 
+					</item>
+					
+					<item chance="6.299666666666667">
+						<item id="3936" count="1" /> 
+					</item>
+					<item chance="6.299666666666667">
+						<item id="1538" count="1" /> 
+					</item>
+					<item chance="6.299666666666667">
+						<item id="49080" count="1" /> 
+					</item>
+					<item chance="0.001">
+						<item id="70005" count="1" /> 
+					</item>
+					<item chance="0.1">
+						<item id="70000" count="1" /> 
+					</item>
+					
+					<item chance="3.0">
+						<item id="3926" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3927" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3930" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="29686" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="29689" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="29690" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="29691" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3928" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3929" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3932" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3935" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3933" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3931" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="3931" count="1" /> 
+					</item>
+					<item chance="3.0">
+						<item id="4218" count="1" /> 
+					</item>
+					
+					<item chance="2.0">
+						<item id="1882" count="1" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1876" count="1" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1884" count="2" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1895" count="2" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1870" count="2" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1878" count="2" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1865" count="2" /> 
+					</item>
+					<item chance="2.0">
+						<item id="1872" count="2" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55075" toLevel="5" name="保護盾">
+		
+		
+		
+		
+		
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<effectPoint>243</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>18</mpConsume>
+		<mpInitialConsume>5</mpInitialConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="55076" toLevel="5" name="力量強化">
+		
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<effectPoint>204</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>16</mpConsume>
+		<mpInitialConsume>4</mpInitialConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="55077" toLevel="8" name="精神專注">
+		
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<effectPoint>285</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>22</mpConsume>
+		<mpInitialConsume>5</mpInitialConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="55078" toLevel="4" name="敏捷術">
+		
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<effectPoint>243</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>18</mpConsume>
+		<mpInitialConsume>5</mpInitialConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="55079" toLevel="4" name="強癒術">
+		
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<effectPoint>331</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>24</mpConsume>
+		<mpInitialConsume>6</mpInitialConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="55080" toLevel="3" name="魔法屏障">
+		
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<effectPoint>418</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>31</mpConsume>
+		<mpInitialConsume>8</mpInitialConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="55081" toLevel="7" name="神佑之體">
+		
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MAX_HP_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>418</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>52</magicLevel>
+		<reuseDelay>2000</reuseDelay>
+		<effects>
+			<effect name="MaxHp">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55082" toLevel="7" name="神佑之魂">
+		
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<effectPoint>418</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>31</mpConsume>
+		<mpInitialConsume>8</mpInitialConsume>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="55083" toLevel="1" name="瞬間體力治癒劑">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29695</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Hp">
+				<amount>435</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55084" toLevel="1" name="高級瞬間體力治癒藥水">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29696</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Hp">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55085" toLevel="1" name="1次轉職輔助魔法卷軸">
+		
+		<icon>BranchIcon.Icon.etc_g_bm_buff_scroll_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalTime>600</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<canBeDispelled>false</canBeDispelled>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29697</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<selfEffects>
+			<effect name="CallSkill"> 
+				<skillId>1040</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1068</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1078</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1085</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1204</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>4359</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1087</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1059</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="55086" toLevel="2" name="2次轉職輔助魔法卷軸">
+		
+		<icon>BranchIcon.Icon.etc_g_bm_buff_scroll_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalTime>600</abnormalTime>
+		<abnormalType>MULTI_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<canBeDispelled>false</canBeDispelled>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29698</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<selfEffects>
+			<effect name="CallSkill"> 
+				<skillId>1040</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1068</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1085</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1204</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>4359</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1044</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1240</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1242</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1036</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1045</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1048</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1086</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1087</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+			<effect name="CallSkill"> 
+				<skillId>1059</skillId> 
+				<skillLevel>2</skillLevel>
+			</effect>
+		</selfEffects>
+	</skill>
+	<skill id="55087" toLevel="1" name="微高級返回卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="55088" toLevel="1" name="微祝福的復活卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="55089" toLevel="1" name="稀有飾品禮盒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49525</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="100.0">
+						<item id="49477" count="1" /> 
+					</item>
+					<item chance="100.0">
+						<item id="49509" count="1" /> 
+					</item>
+					<item chance="100.0">
+						<item id="49493" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55090" toLevel="1" name="未使用-Lv1火龍墜飾基本效果">
+		
+		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55091" toLevel="10" name="未使用-Lv1火龍墜飾強化效果">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">6</value>
+					<value level="2">8</value>
+					<value level="3">12</value>
+					<value level="4">19</value>
+					<value level="5">28</value>
+					<value level="6">35</value>
+					<value level="7">46</value>
+					<value level="8">59</value>
+					<value level="9">63</value>
+					<value level="10">75</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55092" toLevel="1" name="未使用-Lv2火龍墜飾基本效果">
+		
+		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55093" toLevel="10" name="未使用-Lv2火龍墜飾強化效果">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">6</value>
+					<value level="2">8</value>
+					<value level="3">12</value>
+					<value level="4">19</value>
+					<value level="5">28</value>
+					<value level="6">35</value>
+					<value level="7">46</value>
+					<value level="8">59</value>
+					<value level="9">63</value>
+					<value level="10">75</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">38</value>
+					<value level="2">56</value>
+					<value level="3">78</value>
+					<value level="4">124</value>
+					<value level="5">185</value>
+					<value level="6">250</value>
+					<value level="7">307</value>
+					<value level="8">391</value>
+					<value level="9">421</value>
+					<value level="10">498</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55094" toLevel="1" name="未使用-Lv3火龍墜飾基本效果">
+		
+		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55095" toLevel="10" name="未使用-Lv3火龍墜飾強化效果">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">6</value>
+					<value level="2">8</value>
+					<value level="3">12</value>
+					<value level="4">19</value>
+					<value level="5">28</value>
+					<value level="6">35</value>
+					<value level="7">46</value>
+					<value level="8">59</value>
+					<value level="9">63</value>
+					<value level="10">75</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">38</value>
+					<value level="2">56</value>
+					<value level="3">78</value>
+					<value level="4">124</value>
+					<value level="5">185</value>
+					<value level="6">250</value>
+					<value level="7">307</value>
+					<value level="8">391</value>
+					<value level="9">421</value>
+					<value level="10">498</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">8</value>
+					<value level="8">10</value>
+					<value level="9">12</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55096" toLevel="1" name="未使用-Lv4火龍墜飾基本效果">
+		
+		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55097" toLevel="10" name="未使用-Lv4火龍墜飾強化效果">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">6</value>
+					<value level="2">8</value>
+					<value level="3">12</value>
+					<value level="4">19</value>
+					<value level="5">28</value>
+					<value level="6">35</value>
+					<value level="7">46</value>
+					<value level="8">59</value>
+					<value level="9">63</value>
+					<value level="10">75</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">38</value>
+					<value level="2">56</value>
+					<value level="3">78</value>
+					<value level="4">124</value>
+					<value level="5">185</value>
+					<value level="6">250</value>
+					<value level="7">307</value>
+					<value level="8">391</value>
+					<value level="9">421</value>
+					<value level="10">498</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">8</value>
+					<value level="8">10</value>
+					<value level="9">12</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">1.5</value>
+					<value level="2">2</value>
+					<value level="3">2.5</value>
+					<value level="4">3</value>
+					<value level="5">3.5</value>
+					<value level="6">4</value>
+					<value level="7">4.5</value>
+					<value level="8">5</value>
+					<value level="9">6</value>
+					<value level="10">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55098" toLevel="1" name="未使用-Lv5火龍墜飾基本效果">
+		
+		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>26</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="55099" toLevel="10" name="未使用-Lv5火龍墜飾強化效果">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>BranchIcon.Icon.bm_pendant_pve</icon>
+		<operateType>P</operateType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">6</value>
+					<value level="2">8</value>
+					<value level="3">12</value>
+					<value level="4">19</value>
+					<value level="5">28</value>
+					<value level="6">35</value>
+					<value level="7">46</value>
+					<value level="8">59</value>
+					<value level="9">63</value>
+					<value level="10">75</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">38</value>
+					<value level="2">56</value>
+					<value level="3">78</value>
+					<value level="4">124</value>
+					<value level="5">185</value>
+					<value level="6">250</value>
+					<value level="7">307</value>
+					<value level="8">391</value>
+					<value level="9">421</value>
+					<value level="10">498</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">8</value>
+					<value level="8">10</value>
+					<value level="9">12</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">1.5</value>
+					<value level="2">2</value>
+					<value level="3">2.5</value>
+					<value level="4">3</value>
+					<value level="5">3.5</value>
+					<value level="6">4</value>
+					<value level="7">4.5</value>
+					<value level="8">5</value>
+					<value level="9">6</value>
+					<value level="10">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">3</value>
+					<value level="3">4</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">7</value>
+					<value level="7">9</value>
+					<value level="8">11</value>
+					<value level="9">13</value>
+					<value level="10">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="95400" name="option_id_95400">
+		<!-- <Arcane Magic Break Lv. 2>\nWhen triggered: The target's M. Atk. -3000 when hit. -->
+		<passive_skill id="84712" level="1" /> <!-- Arcane Magic Break Lv. 2 -->
+	</option>
+	<option id="95401" name="option_id_95401">
+		<!-- <Arcane Magic Break Lv. 3>\nWhen triggered: The target's M. Atk. -4000 when hit. -->
+		<passive_skill id="84713" level="1" /> <!-- Arcane Magic Break Lv. 3 -->
+	</option>
+	<option id="95402" name="option_id_95402">
+		<!-- <Arcane Magic Break Lv. 4>\nWhen triggered: The target's M. Atk. -5000 when hit. -->
+		<passive_skill id="84714" level="1" /> <!-- Arcane Magic Break Lv. 4 -->
+	</option>
+	<option id="95403" name="option_id_95403">
+		<!-- <Arcane Magic Break Lv. 5>\nWhen triggered: The target's M. Atk. -6000 when hit. -->
+		<passive_skill id="84715" level="1" /> <!-- Arcane Magic Break Lv. 5 -->
+	</option>
+	<option id="95404" name="option_id_95404">
+		<!-- <Arcane Magic Break Lv. 6>\nWhen triggered: The target's M. Atk. -6500 when hit. -->
+		<passive_skill id="84716" level="1" /> <!-- Arcane Magic Break Lv. 6 -->
+	</option>
+	<option id="95405" name="option_id_95405">
+		<!-- <Arcane Magic Break Lv. 7>\nWhen triggered: The target's M. Atk. -7000 when hit. -->
+		<passive_skill id="84717" level="1" /> <!-- Arcane Magic Break Lv. 7 -->
+	</option>
+	<option id="95406" name="option_id_95406">
+		<!-- <Arcane Magic Break Lv. 8>\nWhen triggered: The target's M. Atk. -8000 when hit. -->
+		<passive_skill id="84718" level="1" /> <!-- Arcane Magic Break Lv. 8 -->
+	</option>
+	<option id="95407" name="option_id_95407">
+		<!-- <Arcane Magic Break Lv. 9>\nWhen triggered: The target's M. Atk. -9000 when hit. -->
+		<passive_skill id="84719" level="1" /> <!-- Arcane Magic Break Lv. 9 -->
+	</option>
+	<option id="95408" name="option_id_95408">
+		<!-- <Arcane Magic Break Lv. 10>\nWhen triggered: The target's M. Atk. -10,000 when hit. -->
+		<passive_skill id="84720" level="1" /> <!-- Arcane Magic Break Lv. 10 -->
+	</option>
+	<option id="95409" name="Battle in the Tower of Insolence">
+		<!-- Received P. Skill Critical Damage -0.5% -->
+		<effects>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>-1</amount> <!-- 0.5 -->
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95410" name="Chaos in the Tower of Insolence">
+		<!-- CON/ MEN +1, received damage -1% -->
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-1</amount>
+				<type>ENEMY_ALL</type>
+			</effect>
+			<effect name="DamageByAttack">
+				<amount>-1</amount>
+				<type>PK</type>
+			</effect>
+		</effects>
+	</option>
+	<option id="95411" name="option_id_95411">
+		<!-- All received Critical Damage -1% -->
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95412" name="option_id_95412">
+		<!-- Overwhelming Force Damage Resistance +2% -->
+	</option>
+	<option id="95413" name="option_id_95413">
+		<!-- Overwhelming Force Damage Resistance +4% -->
+	</option>
+	<option id="95414" name="option_id_95414">
+		<!-- P. Atk. +50, M. Atk. +50, P. Def. +70, M. Def. +70, acquired XP/ SP +2%, Unequip Resistance +2% -->
+	</option>
+	<option id="95415" name="option_id_95415">
+		<!-- P. Atk. +100, M. Atk. +100, P. Def. +130, M. Def. +130, acquired XP/ SP +3%, Unequip Resistance +3% -->
+	</option>
+	<option id="95416" name="option_id_95416">
+		<!-- P. Atk. +50, M. Atk. +50, P. Def. +70, M. Def. +70, acquired XP/ SP +2% -->
+	</option>
+	<option id="95417" name="option_id_95417">
+		<!-- P. Atk. +100, M. Atk. +100, P. Def. +130, M. Def. +130, acquired XP/ SP +3% -->
+	</option>
+	<option id="95418" name="option_id_95418">
+		<!-- P./ M. Atk. +50, P./ M. Def. +50 -->
+	</option>
+	<option id="95419" name="option_id_95419">
+		<!-- Acquired XP/ SP +3%, P./ M. Def. +200 -->
+	</option>
+	<option id="95420" name="option_id_95420">
+		<!-- Acquired XP/ SP +7%, P./ M. Def. +800, received PvP damage -5% -->
+	</option>
+	<option id="95421" name="option_id_95421">
+		<!-- All stats +1, HP/ MP Recovery Rate +8 -->
+	</option>
+	<option id="95422" name="option_id_95422">
+		<!-- Acquired XP/ SP +10%, P./ M. Def. +100 -->
+	</option>
+	<option id="95423" name="option_id_95423">
+		<!-- Acquired XP/ SP +5%, P./ M. Atk. +100 -->
+	</option>
+	<option id="95424" name="option_id_95424">
+		<!-- Acquired XP/ SP +4%, Atk. Spd./ Casting Spd. +100 -->
+	</option>
+	<option id="95425" name="option_id_95425">
+		<!-- Atk. Spd./ Casting Spd. +4 -->
+	</option>
+	<option id="95426" name="option_id_95426">
+		<!-- Atk. Spd./ Casting Spd. +6 -->
+	</option>
+	<option id="95427" name="option_id_95427">
+		<!-- P./ M. Atk. +5 -->
+	</option>
+	<option id="95428" name="option_id_95428">
+		<!-- P./ M. Atk. +10 -->
+	</option>
+	<option id="95429" name="option_id_95429">
+		<!-- P./ M. Atk. +15 -->
+	</option>
+	<option id="95430" name="option_id_95430">
+		<!-- HP/ MP Recovery Rate +25% -->
+	</option>
+	<option id="95431" name="option_id_95431">
+		<!-- Max HP +125 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95432" name="option_id_95432">
+		<!-- Max HP +135 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>135</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95433" name="option_id_95433">
+		<!-- Max HP +146 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>146</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95434" name="option_id_95434">
+		<!-- Max HP +158 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>158</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95435" name="option_id_95435">
+		<!-- Max HP +171 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>171</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95436" name="option_id_95436">
+		<!-- Max HP +185 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>185</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95437" name="option_id_95437">
+		<!-- Max HP +200 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95438" name="option_id_95438">
+		<!-- Max HP +216 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>216</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95439" name="option_id_95439">
+		<!-- Max HP +234 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>234</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95440" name="option_id_95440">
+		<!-- Max HP +253 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>253</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95441" name="option_id_95441">
+		<!-- Max HP +274 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>274</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95442" name="option_id_95442">
+		<!-- Max HP +296 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>296</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95443" name="option_id_95443">
+		<!-- Max HP +320 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>320</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95444" name="option_id_95444">
+		<!-- Max HP +360 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95445" name="option_id_95445">
+		<!-- Max HP +400 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95446" name="option_id_95446">
+		<!-- Max HP +420 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>420</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95447" name="option_id_95447">
+		<!-- Max HP +440 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>440</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95448" name="option_id_95448">
+		<!-- Max HP +460 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>460</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95449" name="option_id_95449">
+		<!-- Max HP +480 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>480</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95450" name="option_id_95450">
+		<!-- Max HP +500 -->
+		<effects>
+			<effect name="MaxHp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95451" name="option_id_95451">
+		<!-- Max MP +125 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95452" name="option_id_95452">
+		<!-- Max MP +135 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>135</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95453" name="option_id_95453">
+		<!-- Max MP +146 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>146</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95454" name="option_id_95454">
+		<!-- Max MP +158 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>158</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95455" name="option_id_95455">
+		<!-- Max MP +171 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>171</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95456" name="option_id_95456">
+		<!-- Max MP +185 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>185</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95457" name="option_id_95457">
+		<!-- Max MP +200 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95458" name="option_id_95458">
+		<!-- Max MP +216 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>216</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95459" name="option_id_95459">
+		<!-- Max MP +234 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>234</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95460" name="option_id_95460">
+		<!-- Max MP +253 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>253</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95461" name="option_id_95461">
+		<!-- Max MP +274 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>274</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95462" name="option_id_95462">
+		<!-- Max MP +296 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>296</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95463" name="option_id_95463">
+		<!-- Max MP +320 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>320</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95464" name="option_id_95464">
+		<!-- Max MP +360 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95465" name="option_id_95465">
+		<!-- Max MP +400 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95466" name="option_id_95466">
+		<!-- Max MP +420 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>420</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95467" name="option_id_95467">
+		<!-- Max MP +440 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>440</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95468" name="option_id_95468">
+		<!-- Max MP +460 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>460</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95469" name="option_id_95469">
+		<!-- Max MP +480 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>480</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95470" name="option_id_95470">
+		<!-- Max MP +500 -->
+		<effects>
+			<effect name="MaxMp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95471" name="option_id_95471">
+		<!-- Max CP +125 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>125</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95472" name="option_id_95472">
+		<!-- Max CP +135 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>135</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95473" name="option_id_95473">
+		<!-- Max CP +146 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>146</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95474" name="option_id_95474">
+		<!-- Max CP +158 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>158</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95475" name="option_id_95475">
+		<!-- Max CP +171 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>171</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95476" name="option_id_95476">
+		<!-- Max CP +185 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>185</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95477" name="option_id_95477">
+		<!-- Max CP +200 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95478" name="option_id_95478">
+		<!-- Max CP +216 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>216</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95479" name="option_id_95479">
+		<!-- Max CP +234 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>234</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95480" name="option_id_95480">
+		<!-- Max CP +253 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>253</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95481" name="option_id_95481">
+		<!-- Max CP +274 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>274</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95482" name="option_id_95482">
+		<!-- Max CP +296 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>296</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95483" name="option_id_95483">
+		<!-- Max CP +320 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>320</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95484" name="option_id_95484">
+		<!-- Max CP +360 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>360</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95485" name="option_id_95485">
+		<!-- Max CP +400 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95486" name="option_id_95486">
+		<!-- Max CP +420 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>420</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95487" name="option_id_95487">
+		<!-- Max CP +440 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>440</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95488" name="option_id_95488">
+		<!-- Max CP +460 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>460</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95489" name="option_id_95489">
+		<!-- Max CP +480 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>480</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95490" name="option_id_95490">
+		<!-- Max CP +500 -->
+		<effects>
+			<effect name="MaxCp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95491" name="option_id_95491">
+		<!-- P./ M. Accuracy +2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95492" name="option_id_95492">
+		<!-- P./ M. Accuracy +2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95493" name="option_id_95493">
+		<!-- P./ M. Accuracy +2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95494" name="option_id_95494">
+		<!-- P./ M. Accuracy +2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95495" name="option_id_95495">
+		<!-- P./ M. Accuracy +2.1 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2.1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95496" name="option_id_95496">
+		<!-- P./ M. Accuracy +2.2 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2.2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95497" name="option_id_95497">
+		<!-- P./ M. Accuracy +2.3 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95498" name="option_id_95498">
+		<!-- P./ M. Accuracy +2.4 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+	<option id="95499" name="option_id_95499">
+		<!-- P./ M. Accuracy +2.5 -->
+		<effects>
+			<effect name="Accuracy">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>2.5</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</option>
+</list>

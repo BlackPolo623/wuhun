@@ -1,0 +1,1168 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="26000" level="85" type="Monster" name="達里昂的副官 拜斯卡恩" element="EARTH">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire attributeExp="1955" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="364556963" hpRegen="10.2" mp="12240" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="80" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16" grown="18" />
+			<height normal="42.5" grown="46" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48047" level="1" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26001 (納提的傳令 亞納斯) 已被提取至 RaidBosses.xml -->
+	<npc id="26002" level="80" type="Monster" name="傳令神官">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1518988" hpRegen="10.2" mp="12240" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22" />
+			<height normal="44.3" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26003 (亞蕾斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26004 (巨蟻女王的祭司 得倫) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26005 (巴溫的祭司 天使) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26006 (核心的祭司 狄卡勒) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26007 (奧爾芬的祭司 王 伊波斯) 已被提取至 RaidBosses.xml -->
+	<npc id="26008" level="80" type="Monster" name="女王蜂" title="Bee Hive's Keeper">
+		<race>ANIMAL</race>
+		<sex>MALE</sex>
+		<acquire exp="32000" sp="64" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="163518.35443" hpRegen="10.2" mp="3349.6" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="39" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16" />
+			<height normal="43" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="4" /> 
+			<skill id="4085" level="1" /> 
+			<skill id="4086" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26009" level="85" type="Monster" name="皮耶勒" title="Bee Hive's Manager">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="36125" sp="72" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="263346.83544" hpRegen="10.2" mp="3693.6" mpRegen="3.6" />
+			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="998.10183" magical="730.36761" />
+			<speed>
+				<walk ground="40" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="52.5" />
+			<height normal="50.25" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4085" level="1" /> 
+			<skill id="4086" level="1" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26010 (怨靈 朗特) 已被提取至 RaidBosses.xml -->
+	<npc id="26011" level="85" type="Monster" name="怨恨的靈魂" title="Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1273973.16002885" hpRegen="10.2" mp="1846.8" mpRegen="3.6" />
+			<attack physical="4452.5043" magical="3040.48329" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1996.20366" magical="1460.73522" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="38" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26012" level="85" type="Monster" name="怨恨的射手" title="Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="279" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1273973.16002885" hpRegen="10.2" mp="1846.8" mpRegen="3.6" />
+			<attack physical="4452.5043" magical="3040.48329" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="1996.20366" magical="1460.73522" />
+			<speed>
+				<walk ground="40" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="27" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26013 (死亡之王 哈勒特) 已被提取至 RaidBosses.xml -->
+	<npc id="26014" level="86" type="Monster" name="死亡法師 克里桑" title="Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="1472" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1286712.89162914" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="5006" magical="3418" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="255" magical="1586" />
+			<speed>
+				<walk ground="100" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" grown="25" />
+			<height normal="45" grown="52" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26015" level="86" type="Monster" name="死亡戰士 哈黎格" title="Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="75" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1286712.89162914" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="5006" magical="3418" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="255" magical="1586" />
+			<speed>
+				<walk ground="27" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" grown="14.5" />
+			<height normal="29" grown="36" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26016 (凱艾司) 已被提取至 RaidBosses.xml -->
+	<npc id="26017" level="87" type="Monster" name="凱艾司的犧牲者" title="Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1299580.02054543" hpRegen="10.2" mp="1917" mpRegen="3.6" />
+			<attack physical="556" magical="3796" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3104" magical="1712" />
+			<speed>
+				<walk ground="46" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="35" />
+			<height normal="47.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26018 (永生救贖者 瑪蒂) 已被提取至 RaidBosses.xml -->
+	<npc id="26019" level="88" type="Monster" name="永生救贖者" title="Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1312575.82075088" hpRegen="10.2" mp="1952.4" mpRegen="3.6" />
+			<attack physical="6114" magical="4174" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3658" magical="1838" />
+			<speed>
+				<walk ground="10" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" />
+			<height normal="21" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26020" level="88" type="Monster" name="永生引導者" title="Minion">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1312575.82075088" hpRegen="10.2" mp="1952.4" mpRegen="3.6" />
+			<attack physical="6114" magical="4174" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3658" magical="1838" />
+			<speed>
+				<walk ground="80" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="28" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26021 (勞庫) 已被提取至 RaidBosses.xml -->
+	<npc id="26022" level="89" type="Monster" name="召喚惡魔" title="Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="1472" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1325701.57895839" hpRegen="10.2" mp="1988" mpRegen="3.6" />
+			<attack physical="6668" magical="4552" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4212" magical="1964" />
+			<speed>
+				<walk ground="100" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" grown="25" />
+			<height normal="45" grown="52" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26023" level="89" type="Monster" name="影之騎士" title="Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="142" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1325701.57895839" hpRegen="10.2" mp="1988" mpRegen="3.6" />
+			<attack physical="6668" magical="4552" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4212" magical="1964" />
+			<speed>
+				<walk ground="27" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" grown="14.5" />
+			<height normal="29" grown="36" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26024 (柯林姆) 已被提取至 RaidBosses.xml -->
+	<npc id="26025" level="90" type="Monster" name="柯林姆的警衛隊長 凱溫" title="Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="162" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="36" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="31" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+		</skillList>
+	</npc>
+	<npc id="26026" level="90" type="Monster" name="柯林姆的警衛隊" title="Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="86" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="34" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="29" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26027 (漆黑女王) 已被提取至 RaidBosses.xml -->
+	<npc id="26028" level="90" type="Monster" name="黑暗執行者" title="Raid Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="45" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20" />
+			<height normal="38" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26029" level="90" type="Monster" name="女王的親衛隊長" title="Raid Minion">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="5800" lhand="5799" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="56" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" />
+			<height normal="55" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26030 (柯爾能) 已被提取至 RaidBosses.xml -->
+	<npc id="26031" level="90" type="Monster" name="塔里亞噸" title="Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="1472" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="100" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" grown="25" />
+			<height normal="45" grown="52" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26032" level="90" type="Monster" name="芬斯克" title="Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="142" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="27" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="12" grown="14.5" />
+			<height normal="29" grown="36" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26033 (拉菲爾) 已被提取至 RaidBosses.xml -->
+	<npc id="26034" level="90" type="Monster" name="拉菲爾追隨者" title="Minion">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="50" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="49" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+		</skillList>
+	</npc>
+	<npc id="26035" level="90" type="Monster" name="拉菲爾部下" title="Minion">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="14" />
+			<height normal="33" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26036 (牛角將軍 勾爾昆達) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26037 (血腥祭司 美莉莎) 已被提取至 RaidBosses.xml -->
+	<npc id="26038" level="90" type="Monster" name="美莉莎騎士" title="Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="30" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="24" />
+			<height normal="45" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+		</skillList>
+	</npc>
+	<npc id="26039" level="90" type="Monster" name="美莉莎神官" title="Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="30" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="39" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26040 (懲罰之火 斯萊爾) 已被提取至 RaidBosses.xml -->
+	<npc id="26041" level="90" type="Monster" name="斯萊爾的傳教士" title="Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="201" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="70" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="34" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+		</skillList>
+	</npc>
+	<npc id="26042" level="90" type="Monster" name="斯萊爾的聖騎士" title="Minion">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="73" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13" grown="17" />
+			<height normal="32" grown="39" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26043 (智天使 加洛西亞) 已被提取至 RaidBosses.xml -->
+	<npc id="26044" level="90" type="Monster" name="加洛西亞的護衛隊" title="Minion">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="30" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" grown="16" />
+			<height normal="36.5" grown="42.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+		</skillList>
+	</npc>
+	<npc id="26045" level="90" type="Monster" name="天使的使者" title="Minion">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1338958.59474798" hpRegen="10.2" mp="2023.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="30" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="13.5" grown="16" />
+			<height normal="36.5" grown="42.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26046 (杜林) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26047 (卡突斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26048 (卡斯特) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26049 (卡寇) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26050 (庫卡) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26051 (赤庫) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26052 (強襲隊長) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26053 (搜索隊長) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26054 (首席指揮官) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26055 (騎士團長) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26056 (特攻隊長) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26057 (長老) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26058 (指揮官) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26059 (突擊隊長) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26060 (軍團長) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26061 (高位魔導士) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26062 (監察官) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26063 (搜索隊長) 已被提取至 RaidBosses.xml -->
+	<npc id="26064" level="90" type="Monster" name="咒術士" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="9" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2622150.59319976" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="70" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19.5" />
+			<height normal="47" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26065" level="90" type="Monster" name="分隊長" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="79" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2622150.59319976" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="70" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="30" />
+			<height normal="55" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26066" level="89" type="Monster" name="狙擊兵" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="273" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2383773.26654524" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="6668" magical="4552" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="4212" magical="1964" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="39" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26067" level="89" type="Monster" name="軍官" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="69" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2383773.26654524" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="6668" magical="4552" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4212" magical="1964" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" grown="24" />
+			<height normal="42" grown="49.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26068" level="89" type="Monster" name="強襲隊" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="77" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2383773.26654524" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="6668" magical="4552" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4212" magical="1964" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20.25" />
+			<height normal="39" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26069" level="91" type="Monster" name="軍團兵" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3098905.24650881" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="7776" magical="5308" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="532" magical="2216" />
+			<speed>
+				<walk ground="60" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="43.5" />
+			<height normal="57" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26070" level="91" type="Monster" name="搜索隊" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3098905.24650881" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="7776" magical="5308" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="532" magical="2216" />
+			<speed>
+				<walk ground="60" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="40.5" />
+			<height normal="48" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26071" level="88" type="Monster" name="強襲隊" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="77" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2383773.26654524" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="6114" magical="4174" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3658" magical="1838" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="20.25" />
+			<height normal="39" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26072" level="89" type="Monster" name="搜索隊" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="273" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2622150.59319976" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="6668" magical="4552" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="4212" magical="1964" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16.8" />
+			<height normal="30.6" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26073" level="90" type="Monster" name="軍官" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="69" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3098905.24650881" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16.8" grown="19.2" />
+			<height normal="33" grown="39" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26074" level="91" type="Monster" name="騎士團" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="75" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3337282.57316333" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="7776" magical="5308" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="532" magical="2216" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16.8" grown="19.2" />
+			<height normal="33" grown="39" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26075" level="88" type="Monster" name="特攻隊員" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="71" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2383773.26654524" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="6114" magical="4174" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="3658" magical="1838" />
+			<speed>
+				<walk ground="70" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="30" />
+			<height normal="57" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26076" level="89" type="Monster" name="咒術士" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="186" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2622150.59319976" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="6668" magical="4552" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4212" magical="1964" />
+			<speed>
+				<walk ground="70" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22.5" />
+			<height normal="54" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26077" level="90" type="Monster" name="士兵" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="121" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3098905.24650881" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="70" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="21" />
+			<height normal="58.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26078" level="91" type="Monster" name="突擊隊" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="128" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3337282.57316333" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="7776" magical="5308" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="532" magical="2216" />
+			<speed>
+				<walk ground="67" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="23" />
+			<height normal="61" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26079" level="89" type="Monster" name="軍團兵" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2383773.26654524" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="6668" magical="4552" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4212" magical="1964" />
+			<speed>
+				<walk ground="60" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="43.5" />
+			<height normal="57" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26080" level="89" type="Monster" name="魔導士" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2622150.59319976" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="6668" magical="4552" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4212" magical="1964" />
+			<speed>
+				<walk ground="49" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="43.5" />
+			<height normal="51.75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26081" level="91" type="Monster" name="監視兵" title="Minion" element="FIRE">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="148" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3098905.24650881" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="7776" magical="5308" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="532" magical="2216" />
+			<speed>
+				<walk ground="50" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="19.5" grown="22.5" />
+			<height normal="43.5" grown="52.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26082" level="91" type="Monster" name="特戰士" title="Minion" element="FIRE">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3337282.57316333" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="7776" magical="5308" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="532" magical="2216" />
+			<speed>
+				<walk ground="60" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="40.5" />
+			<height normal="48" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="48044" level="1" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 26083 (闇魔斯卡伊) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26084 (坦斯提) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26085 (貝斯佩拉) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26086 (黯黑曼巴) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26087 (克洛里克斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26088 (闇魔貝因) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26089 (護衛隊長) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26090 (主教) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26091 (大主教) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26092 (謀士) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26093 (參謀) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26094 (軍人) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26095 (指揮官) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26096 (軍團長) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 26097 (司令官) 已被提取至 RaidBosses.xml -->
+	<npc id="26098" level="90" type="Monster" name="雷亞龍" title="Minion" element="WIND">
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2622150.59319976" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="70" />
+				<run ground="174" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="40" />
+			<height normal="147" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="26099" level="90" type="Monster" name="巨龍炸彈" title="Minion" element="WIND">
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2622150.59319976" hpRegen="10.2" mp="1881.8" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="35" />
+				<run ground="250" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="84" />
+			<height normal="58" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> 
+			<skill id="48046" level="1" /> 
+		</skillList>
+	</npc>
+</list>

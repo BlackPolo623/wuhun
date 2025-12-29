@@ -1,0 +1,945 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="49700" toLevel="1" name="種族的祝福">
+		
+		<icon>icon.skill19226</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49701" toLevel="1" name="水之祝福">
+		
+		<icon>icon.skill4280_new</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49702" toLevel="1" name="擊退狀態">
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-900</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49703" toLevel="1" name="麻痺">
+		
+		<icon>icon.skill1170</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>-1000</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> 
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="49704" toLevel="1" name="麻痺">
+		
+		<icon>icon.skill1170</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>-1000</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> 
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="49705" toLevel="1" name="沒有PK懲罰的地區">
+		
+		<icon>icon.nopenalty</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49706" toLevel="1" name="飛濺">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2000</hitTime>
+	</skill>
+	<skill id="49707" toLevel="1" name="暴擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<coolTime>800</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+		<reuseDelay>6000</reuseDelay>
+	</skill>
+	<skill id="49708" toLevel="1" name="黑暗之擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1000</hitTime>
+		<reuseDelay>6000</reuseDelay>
+	</skill>
+	<skill id="49709" toLevel="1" name="一擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>150</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-2</effectPoint>
+		<hitTime>1500</hitTime>
+		<reuseDelay>5000</reuseDelay>
+	</skill>
+	<skill id="49710" toLevel="1" name="致命痛擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<coolTime>700</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1500</hitTime>
+	</skill>
+	<skill id="49711" toLevel="1" name="大地攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>650</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1500</hitTime>
+	</skill>
+	<skill id="49712" toLevel="1" name="魔法射擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>120</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1300</hitTime>
+		<isMagic>1</isMagic> 
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49713" toLevel="1" name="魔法遠擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<effectPoint>-115</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49714" toLevel="1" name="強力攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<coolTime>800</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+		<reuseDelay>6000</reuseDelay>
+	</skill>
+	<skill id="49715" toLevel="1" name="丹帝的揮擊-打西瓜">
+		
+		<icon>icon.skill0003</icon>
+		<operateType>A1</operateType>
+		<castRange>300</castRange>
+		<effectPoint>-250</effectPoint>
+		<hitTime>2000</hitTime>
+	</skill>
+	<skill id="49716" toLevel="1" name="丹帝的揮擊-彈飛玩家">
+		
+		<icon>icon.skill0003</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-250</effectPoint>
+		<hitTime>2000</hitTime>
+	</skill>
+	<skill id="49717" toLevel="1" name="成長的祝福">
+		
+		<icon>icon.four_leaf_clover_i00</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49718" toLevel="1" name="運氣好的日子">
+		
+		<icon>icon.skill1627</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalInstant>true</abnormalInstant>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10800</abnormalTime>
+		<abnormalType>BIG_HEAD</abnormalType>
+		<abnormalVisualEffect>BIG_HEAD</abnormalVisualEffect>
+		<activateRate>0</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectRange>2000</effectRange>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>0</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<trait>ETC</trait>
+		<conditions>
+			<condition name="CannotUseInTransform">
+				<transformId>103</transformId>
+			</condition>
+		</conditions>
+	</skill>
+	<skill id="49719" toLevel="1" name="法利昂攻擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="49720" toLevel="1" name="法利昂攻擊">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49721" toLevel="1" name="法利昂爪擊">
+		
+		<icon>icon.skill32713</icon>
+		<operateType>A1</operateType>
+		<coolTime>1500</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49722" toLevel="1" name="法利昂爪擊">
+		<icon>icon.skill32713</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49723" toLevel="1" name="法利昂爪擊">
+		
+		<icon>icon.skill32713</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49724" toLevel="1" name="法利昂水震波">
+		
+		<icon>icon.skill32715</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49725" toLevel="1" name="法利昂水震波">
+		<icon>icon.skill32715</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49726" toLevel="1" name="法利昂氣息">
+		
+		<icon>icon.skill32716</icon>
+		<operateType>A1</operateType>
+		<coolTime>3000</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>5000</hitTime>
+	</skill>
+	<skill id="49727" toLevel="1" name="法利昂氣息">
+		<icon>icon.skill32716</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49728" toLevel="1" name="法利昂翼擊">
+		
+		<icon>icon.skill32721</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>5000</hitTime>
+	</skill>
+	<skill id="49729" toLevel="1" name="法利昂翼擊">
+		<icon>icon.skill32721</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49730" toLevel="1" name="法利昂潮汐波濤">
+		
+		<icon>icon.skill32722</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="49731" toLevel="1" name="法利昂潮汐波濤">
+		<icon>icon.skill32722</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49732" toLevel="1" name="法利昂潮汐波濤-展示">
+		
+		<icon>icon.skill32722</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>7000</hitTime>
+	</skill>
+	<skill id="49733" toLevel="1" name="法利昂狂暴憤怒">
+		
+		<icon>icon.skill32724</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49734" toLevel="1" name="回憶的即時地區冒險">
+		
+		<icon>icon.skill30530</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49735" toLevel="6" name="紅葉煙火">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49736" toLevel="6" name="落葉煙火">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49737" toLevel="1" name="法力昂治癒">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<effectPoint>100</effectPoint>
+		<hitTime>2000</hitTime>
+	</skill>
+	<skill id="49738" toLevel="2" name="標準攻擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49739" toLevel="2" name="濤水爆擊">
+		
+		<icon>icon.skill0003</icon>
+		<operateType>A1</operateType>
+		<castRange>200</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1500</hitTime>
+	</skill>
+	<skill id="49740" toLevel="2" name="大地水攻擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49741" toLevel="2" name="黑暗水之擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="49742" toLevel="2" name="防禦攻擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1200</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49743" toLevel="2" name="水之擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1500</hitTime>
+	</skill>
+	<skill id="49744" toLevel="2" name="挾帶者攻擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>2000</hitTime>
+	</skill>
+	<skill id="49745" toLevel="2" name="水雷">
+		
+		<icon>icon.skill4280_new</icon>
+		<operateType>A1</operateType>
+		<castRange>650</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49746" toLevel="2" name="水之爆破">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-500</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49747" toLevel="2" name="寧芙元素雷">
+		
+		<icon>icon.skill1441</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49748" toLevel="2" name="康奇範圍攻擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-500</effectPoint>
+		<hitTime>2500</hitTime>
+	</skill>
+	<skill id="49749" toLevel="2" name="麻痺">
+		
+		<icon>icon.skill1170</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+		</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>-500</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> 
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="49750" toLevel="2" name="恐懼">
+		
+		<icon>icon.skill1092</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
+		<activateRate>140</activateRate>
+		<affectLimit>70-80</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>900</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<coolTime>0</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>90</magicLevel>
+		<reuseDelay>0</reuseDelay>
+		<trait>DERANGEMENT</trait>
+		<effects>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+			<effect name="Speed">
+				<amount>-90</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49751" toLevel="2" name="昏厥">
+		
+		<icon>icon.skill0100</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>-500</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="BlockActions" />
+			<effect name="TargetCancel">
+				<chance>80</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49752" toLevel="1" name="法利昂能量戳記">
+		
+		<icon>icon.skill32718</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49753" toLevel="1" name="法利昂能量戳記">
+		
+		<icon>icon.skill32718</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49754" toLevel="1" name="法利昂召喚水球">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49755" toLevel="1" name="法利昂水炸彈">
+		
+		<icon>icon.skill32715</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49756" toLevel="1" name="法利昂水流爆裂">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49757" toLevel="1" name="法利昂水流爆裂">
+		
+		<icon>icon.skill32708</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49758" toLevel="1" name="法利昂水流爆裂">
+		<icon>icon.skill32708</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49759" toLevel="1" name="法利昂水螺旋">
+		
+		<icon>icon.skill32709</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49760" toLevel="1" name="法利昂水螺旋">
+		<icon>icon.skill32709</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49761" toLevel="1" name="法利昂水之爆裂">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49762" toLevel="1" name="法利昂水之爆裂">
+		
+		<icon>icon.skill32708</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49763" toLevel="1" name="法利昂水之爆裂">
+		<icon>icon.skill32708</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49764" toLevel="1" name="法利昂水旋">
+		
+		<icon>icon.skill32709</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49765" toLevel="1" name="法利昂水旋">
+		<icon>icon.skill32709</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49766" toLevel="1" name="魔力穿擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>120</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49767" toLevel="1" name="魔力長穿擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49768" toLevel="1" name="魔法春">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>120</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49769" toLevel="1" name="魔力石穿擊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49770" toLevel="2" name="暴風侵襲">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>150</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>1500</hitTime>
+	</skill>
+	<skill id="49771" toLevel="1" name="瀑布水的神祕效果">
+		
+		<icon>icon.tof_area_buff</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49772" toLevel="2" name="電流能量">
+		
+		<icon>icon.s_mystic_burst</icon>
+		<operateType>A1</operateType>
+		<castRange>650</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49773" toLevel="2" name="電流之擊">
+		
+		<icon>icon.skill0487</icon>
+		<operateType>A1</operateType>
+		<castRange>450</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49774" toLevel="2" name="多重電流之擊">
+		
+		<icon>icon.skill1431</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49775" toLevel="2" name="雷擊爆">
+		
+		<icon>icon.s_gigantic_swing</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49776" toLevel="2" name="雷爆裂">
+		
+		<icon>icon.s_gigantic_swing</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49777" toLevel="2" name="雷擊破">
+		
+		<icon>icon.s_mystic_burst</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49778" toLevel="2" name="雷破波">
+		
+		<icon>icon.s_gigantic_swing</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49779" toLevel="10" name="雷碎擊">
+		
+		<icon>icon.s_mystic_burst</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49780" toLevel="2" name="雷擊束">
+		
+		<icon>icon.skill0017</icon>
+		<operateType>A1</operateType>
+		<castRange>200</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic> 
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="49781" toLevel="2" name="雷離子射擊">
+		
+		<icon>icon.s_mystic_burst</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49782" toLevel="2" name="雷離子爆射">
+		
+		<icon>icon.skill1431</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="49783" toLevel="5" name="超負荷5階段">
+		
+		
+		
+		
+		
+		<icon>icon.s_lightning_spark</icon>
+		<operateType>T</operateType>
+		<effectPoint>-500</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>5</isMagic>
+	</skill>
+	<skill id="49784" toLevel="1" name="薩拉克斯水之箭矢">
+		
+		<icon>icon.s_mystic_burst</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49785" toLevel="1" name="薩拉克斯湧流之箭">
+		
+		<icon>icon.skill1431</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49786" toLevel="1" name="薩拉克斯湧流之箭">
+		<icon>icon.hero_stump</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-15000</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49787" toLevel="1" name="薩拉克斯水之震波">
+		
+		<icon>icon.skill0017</icon>
+		<operateType>A1</operateType>
+		<castRange>200</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic> 
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="49788" toLevel="1" name="薩拉克斯水之震波">
+		
+		<icon>icon.skill4018</icon>
+		<operateType>A1</operateType>
+		<castRange>500</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2200</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49789" toLevel="1" name="薩拉克斯波濤洶湧">
+		
+		<icon>icon.skill1431</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49790" toLevel="1" name="薩拉克斯波濤洶湧">
+		
+		<icon>icon.skill1072</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49791" toLevel="1" name="薩拉克斯水流爆裂">
+		
+		<icon>icon.s_mystic_burst</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49792" toLevel="1" name="薩拉克斯水流爆裂">
+		
+		<icon>icon.s_gigantic_swing</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-500</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49793" toLevel="1" name="薩拉克斯水流爆裂">
+		<icon>icon.s_wide_sweep</icon>
+		<operateType>A1</operateType>
+		<castRange>200</castRange>
+		<effectPoint>-210</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49794" toLevel="1" name="薩拉克斯盾">
+		
+		<icon>icon.skill4280_new</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49795" toLevel="20" name="補充正離子">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill0791</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49796" toLevel="20" name="補充負離子">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill10094_2</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49797" toLevel="1" name="暴走加農砲箭">
+		<operateType>A1</operateType>
+		<castRange>2500</castRange>
+		<effectPoint>-100</effectPoint>
+		<hitTime>5000</hitTime>
+		<isMagic>1</isMagic> 
+		<reuseDelay>10500</reuseDelay>
+	</skill>
+	<skill id="49798" toLevel="1" name="電急流">
+		
+		<operateType>A1</operateType>
+		<castRange>500</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>2000</hitTime>
+	</skill>
+	<skill id="49799" toLevel="1" name="電拳">
+		
+		<operateType>A1</operateType>
+		<castRange>500</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+</list>

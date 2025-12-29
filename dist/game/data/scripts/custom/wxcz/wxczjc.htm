@@ -1,0 +1,107 @@
+<html><head><title>屬性加成</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358 >
+    <tr>
+        <td valign="top" align="center">
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td align=center width=280 height=40 background="L2UI_CT1.Windows_DF_TooltipBG">
+                        <font color="LEVEL" size="5"><b>屬性加成系統</b></font>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td align=center><font color="00FF66">選擇要提升的屬性</font></td>
+                </tr>
+                <tr>
+                    <td align=center><font color="FF3333">每次消耗：1個對應精華</font></td>
+                </tr>
+                <tr>
+                    <td height=10></td>
+                </tr>
+
+                <!-- 屬性升級按鈕 -->
+                <tr>
+                    <td align=center>
+                        <table width="270" cellspacing="3">
+                            <tr>
+                                <td align="center">
+                                    <button value="物理攻擊" action="bypass -h Quest wxcz upgrade_patk" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
+                                        <font color="FFFF00" size="1">擁有：%patk_count%個</font>
+                                </td>
+                                <td align="center">
+                                    <button value="魔法攻擊" action="bypass -h Quest wxcz upgrade_matk" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
+                                        <font color="FFFF00" size="1">擁有：%matk_count%個</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height=5></td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <button value="物理防禦" action="bypass -h Quest wxcz upgrade_pdef" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
+                                        <font color="FFFF00" size="1">擁有：%pdef_count%個</font>
+                                </td>
+                                <td align="center">
+                                    <button value="魔法防禦" action="bypass -h Quest wxcz upgrade_mdef" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
+                                        <font color="FFFF00" size="1">擁有：%mdef_count%個</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height=5></td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <button value="最大HP值" action="bypass -h Quest wxcz upgrade_maxhp" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
+                                        <br><font color="FFFF00" size="1">擁有：%maxhp_count%個</font>
+                                </td>
+                                <td align="center">
+                                    <button value="最大MP值" action="bypass -h Quest wxcz upgrade_maxmp" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
+                                        <font color="FFFF00" size="1">擁有：%maxmp_count%個</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height=5></td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <button value="魔法致命傷害" action="bypass -h Quest wxcz upgrade_mcatk" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
+                                        <font color="FFFF00" size="1">擁有：%mcatk_count%個</font>
+                                </td>
+                                <td align="center">
+                                    <button value="物理致命傷害" action="bypass -h Quest wxcz upgrade_catk" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
+                                        <font color="FFFF00" size="1">擁有：%catk_count%個</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height=5></td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <button value="物理技能致命傷害" action="bypass -h Quest wxcz upgrade_skillcatk" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
+                                        <font color="FFFF00" size="1">擁有：%skillcatk_count%個</font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td height=15></td>
+                </tr>
+
+                <!-- 功能按鈕 -->
+                <tr>
+                    <td align=center>
+                        <button action="bypass -h Quest wxcz view_stats" value="查看屬性" width="120" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                            <button action="bypass -h Quest wxcz main" value="返回主頁" width="120" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

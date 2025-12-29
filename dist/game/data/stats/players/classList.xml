@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/classList.xsd">
+	<class classId="0" name="人類戰士" />
+	<class classId="1" name="鬥士" parentClassId="0" />
+	<class classId="2" name="劍鬥士" parentClassId="1" />
+	<class classId="3" name="傭兵" parentClassId="1" />
+	<class classId="4" name="人類騎士" parentClassId="0" />
+	<class classId="5" name="聖騎士" parentClassId="4" />
+	<class classId="6" name="暗騎士" parentClassId="4" />
+	<class classId="7" name="盜賊" parentClassId="0" />
+	<class classId="8" name="寶藏獵人" parentClassId="7" />
+	<class classId="9" name="鷹眼" parentClassId="7" />
+	<class classId="10" name="人類法師" />
+	<class classId="11" name="人類巫師" parentClassId="10" />
+	<class classId="12" name="術士" parentClassId="11" />
+	<class classId="13" name="死靈法師" parentClassId="11" />
+	<class classId="14" name="法魔" parentClassId="11" />
+	<class classId="15" name="牧師" parentClassId="10" />
+	<class classId="16" name="主教" parentClassId="15" />
+	<class classId="17" name="先知" parentClassId="15" />
+	<class classId="18" name="精靈戰士" />
+	<class classId="19" name="精靈騎士" parentClassId="18" />
+	<class classId="20" name="聖殿騎士" parentClassId="19" />
+	<class classId="21" name="劍術詩人" parentClassId="19" />
+	<class classId="22" name="精靈巡守" parentClassId="18" />
+	<class classId="23" name="大地行者" parentClassId="22" />
+	<class classId="24" name="銀月遊俠" parentClassId="22" />
+	<class classId="25" name="精靈法師" />
+	<class classId="26" name="精靈巫師" parentClassId="25" />
+	<class classId="27" name="咒術詩人" parentClassId="26" />
+	<class classId="28" name="元素使" parentClassId="26" />
+	<class classId="29" name="神使" parentClassId="25" />
+	<class classId="30" name="長老" parentClassId="29" />
+	<class classId="31" name="暗精靈戰士" />
+	<class classId="32" name="沼澤騎士" parentClassId="31" />
+	<class classId="33" name="席琳騎士" parentClassId="32" />
+	<class classId="34" name="劍刃舞者" parentClassId="32" />
+	<class classId="35" name="暗殺者" parentClassId="31" />
+	<class classId="36" name="深淵行者" parentClassId="35" />
+	<class classId="37" name="暗影遊俠" parentClassId="35" />
+	<class classId="38" name="暗精靈法師" />
+	<class classId="39" name="黑暗巫師" parentClassId="38" />
+	<class classId="40" name="狂咒術士" parentClassId="39" />
+	<class classId="41" name="暗影召喚士" parentClassId="39" />
+	<class classId="42" name="席琳神使" parentClassId="38" />
+	<class classId="43" name="席琳長老" parentClassId="42" />
+	<class classId="44" name="獸人戰士" />
+	<class classId="45" name="獸人突襲者" parentClassId="44" />
+	<class classId="46" name="破壞者" parentClassId="45" />
+	<class classId="47" name="獸人武者" parentClassId="44" />
+	<class classId="48" name="暴君" parentClassId="47" />
+	<class classId="49" name="獸人法師" />
+	<class classId="50" name="薩滿巫醫" parentClassId="49" />
+	<class classId="51" name="霸主" parentClassId="50" />
+	<class classId="52" name="戰狂" parentClassId="50" />
+	<class classId="53" name="矮人戰士" />
+	<class classId="54" name="收集者" parentClassId="53" />
+	<class classId="55" name="賞金獵人" parentClassId="54" />
+	<class classId="56" name="工匠" parentClassId="53" />
+	<class classId="57" name="戰爭工匠" parentClassId="56" />
+	<!-- Third Classes -->
+	<class classId="88" name="決鬥者" parentClassId="2" />  <!-- Duelist -->
+	<class classId="89" name="猛將" parentClassId="3" />  <!-- Dreadnought -->
+	<class classId="90" name="聖凰騎士" parentClassId="5" />  <!-- Phoenix Knight -->
+	<class classId="91" name="煉獄騎士" parentClassId="6" />  <!-- Hell Knight -->
+	<class classId="92" name="人馬" parentClassId="9" />  <!-- Sagittarius -->
+	<class classId="93" name="冒險英豪" parentClassId="8" />  <!-- Adventurer -->
+	<class classId="94" name="大魔導士" parentClassId="12" />  <!-- Archmage -->
+	<class classId="95" name="魂狩術士" parentClassId="13" />  <!-- Soultaker -->
+	<class classId="96" name="秘儀召主" parentClassId="14" />  <!-- Arcana Lord -->
+	<class classId="97" name="樞機主教" parentClassId="16" />  <!-- Cardinal -->
+	<class classId="98" name="昭聖者" parentClassId="17" />  <!-- Hierophant -->
+	<class classId="99" name="伊娃神殿騎士" parentClassId="20" />  <!-- Eva's Templar -->
+	<class classId="100" name="伊娃吟遊詩人" parentClassId="21" />  <!-- Sword Muse -->
+	<class classId="101" name="疾風浪人" parentClassId="23" />  <!-- Wind Rider -->
+	<class classId="102" name="月光箭靈" parentClassId="24" />  <!-- Moonlight Sentinel -->
+	<class classId="103" name="伊娃秘術詩人" parentClassId="27" />  <!-- Mystic Muse -->
+	<class classId="104" name="元素支配者" parentClassId="28" />  <!-- Elemental Master -->
+	<class classId="105" name="伊娃聖者" parentClassId="30" />  <!-- Eva's Saint -->
+	<class classId="106" name="席琳冥殿騎士" parentClassId="33" />  <!-- Shillien Templar -->
+	<class classId="107" name="幽冥舞者" parentClassId="34" />  <!-- Spectral Dancer -->
+	<class classId="108" name="魅影獵者" parentClassId="36" />  <!-- Ghost Hunter -->
+	<class classId="109" name="幽冥箭靈" parentClassId="37" />  <!-- Ghost Sentinel -->
+	<class classId="110" name="暴風狂嘯者" parentClassId="40" />  <!-- Storm Screamer -->
+	<class classId="111" name="闇影支配者" parentClassId="41" />  <!-- Spectral Master -->
+	<class classId="112" name="席琳聖者" parentClassId="43" />  <!-- Shillien Saint -->
+	<class classId="113" name="泰坦" parentClassId="46" />  <!-- Titan -->
+	<class classId="114" name="卡巴塔里宗師" parentClassId="48" />  <!-- Grand Khavatari -->
+	<class classId="115" name="君主" parentClassId="51" />  <!-- Dominator -->
+	<class classId="116" name="末日戰狂" parentClassId="52" />  <!-- Doom Cryer -->
+	<class classId="117" name="財富獵人" parentClassId="55" />  <!-- Fortune Seeker -->
+	<class classId="118" name="巨匠" parentClassId="57" />  <!-- Maestro -->
+
+	<class classId="192" name="真闇天使"/>
+	<class classId="125" name="裝甲突擊兵" parentClassId="192"/>
+	<class classId="126" name="阻擊衛士" parentClassId="192"/>
+	<class classId="193" name="探魂者" parentClassId="192"/>
+
+	<class classId="127" name="狂戰士" parentClassId="125"/>
+	<class classId="194" name="碎魂者" parentClassId="193"/>
+	<class classId="130" name="弩弓遊俠" parentClassId="126"/>
+
+	<class classId="131" name="末日使者" parentClassId="127"/>
+	<class classId="134" name="魔彈射手" parentClassId="130"/>
+	<class classId="195" name="追魂者" parentClassId="194"/>
+
+	<!-- Death Knight - Human -->
+	<class classId="196" name="死亡行者" />
+	<class classId="197" name="死亡之刃" parentClassId="196" />
+	<class classId="198" name="死亡使者" parentClassId="197" />
+	<class classId="199" name="死亡騎士" parentClassId="198" />
+	<!-- Death Knight - Elf -->
+	<class classId="200" name="死亡行者" />
+	<class classId="201" name="死亡之刃" parentClassId="200" />
+	<class classId="202" name="死亡使者" parentClassId="201" />
+	<class classId="203" name="死亡騎士" parentClassId="202" />
+	<!-- Death Knight - Dark Elf -->
+	<class classId="204" name="死亡行者" />
+	<class classId="205" name="死亡之刃" parentClassId="204" />
+	<class classId="206" name="死亡使者" parentClassId="205" />
+	<class classId="207" name="死亡騎士" parentClassId="206" />
+	<!-- Sylph -->
+	<class classId="208" name="風靈戰士" />
+	<class classId="209" name="風靈炮手" parentClassId="208" />
+	<class classId="210" name="風之獵者" parentClassId="209" />
+	<class classId="211" name="暴風爆破者" parentClassId="210" />
+	<!-- Vanguard -->
+	<class classId="217" name="半獸人槍矛手" />
+	<class classId="218" name="獵殺者" parentClassId="217" />
+	<class classId="219" name="槍騎兵" parentClassId="218" />
+	<class classId="220" name="先鋒" parentClassId="219" />
+	<!-- Assassin -->
+	<class classId="221" name="暗殺者" />
+	<class classId="222" name="暗殺者【一轉】" parentClassId="221" />
+	<class classId="223" name="暗殺者【二轉】" parentClassId="222" />
+	<class classId="224" name="暗殺者【三轉】" parentClassId="223" />
+	<class classId="225" name="暗殺者" />
+	<class classId="226" name="暗殺者【一轉】" parentClassId="225" />
+	<class classId="227" name="暗殺者【二轉】" parentClassId="226" />
+	<class classId="228" name="暗殺者【三轉】" parentClassId="227" />
+	<!-- High Elf -->
+	<class classId="236" name="伊娃神諭者" />
+	<class classId="237" name="伊娃神諭者" parentClassId="236" />
+	<class classId="238" name="伊娃神諭者" parentClassId="237" />
+	<class classId="239" name="伊娃神諭者" parentClassId="238" />
+	<class classId="240" name="伊娃聖堂武士" />
+	<class classId="241" name="伊娃聖堂武士" parentClassId="240" />
+	<class classId="242" name="伊娃聖堂武士" parentClassId="241" />
+	<class classId="243" name="伊娃聖堂武士" parentClassId="242" />
+	<!-- Warg -->
+	<class classId="247" name="狼人" />
+	<class classId="248" name="狼人【一轉】" parentClassId="247" />
+	<class classId="249" name="狼人【二轉】" parentClassId="248" />
+	<class classId="250" name="狼人【三轉】" parentClassId="249" />
+	<!-- Blood Rose -->
+	<class classId="251" name="血薔薇" />
+	<class classId="252" name="血薔薇【一轉】" parentClassId="251" />
+	<class classId="253" name="血薔薇【二轉】" parentClassId="252" />
+	<class classId="254" name="血薔薇【三轉】" parentClassId="253" />
+	<!-- Samurai -->
+	<class classId="260" name="浪人" />
+	<class classId="261" name="初階武士" parentClassId="260" />
+	<class classId="262" name="正規武士" parentClassId="261" />
+	<class classId="263" name="闇鴉武士" parentClassId="262" />
+</list>

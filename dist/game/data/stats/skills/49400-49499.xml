@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="49400" toLevel="1" name="守護者經驗值轉移">
+		<icon>icon.bm_freya_potion</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49401" toLevel="2" name="寵物加護-主人回復術">
+		
+		
+		<icon>icon.skill11272</icon>
+		<operateType>A2</operateType>
+		<targetType>OWNER_PET</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>
+			<value level="1">120</value>
+			<value level="2">180</value>
+		</abnormalTime>
+		<abnormalType>PET_PROTECTION</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitTime>1000</hitTime>
+		<isMagic>5</isMagic>
+		<mpConsume>100</mpConsume>
+		<reuseDelay>300000</reuseDelay>
+		<effects>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49402" toLevel="2" name="寵物加護-主人射擊">
+		
+		
+		<icon>icon.skill11272</icon>
+		<operateType>A2</operateType>
+		<targetType>OWNER_PET</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>
+			<value level="1">120</value>
+			<value level="2">180</value>
+		</abnormalTime>
+		<abnormalType>PET_PROTECTION</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitTime>1000</hitTime>
+		<isMagic>5</isMagic>
+		<mpConsume>100</mpConsume>
+		<reuseDelay>300000</reuseDelay>
+		<effects>
+			<effect name="SkillEvasion">
+				<magicType>0</magicType>
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</amount>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>1</magicType>
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</amount>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalEvasion">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49403" toLevel="2" name="寵物加護-主人之力">
+		
+		
+		<icon>icon.skill11272</icon>
+		<operateType>A2</operateType>
+		<targetType>OWNER_PET</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>
+			<value level="1">120</value>
+			<value level="2">180</value>
+		</abnormalTime>
+		<abnormalType>PET_PROTECTION</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitTime>1000</hitTime>
+		<isMagic>5</isMagic>
+		<mpConsume>100</mpConsume>
+		<reuseDelay>300000</reuseDelay>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49404" toLevel="2" name="寵物加護-主人強健">
+		
+		
+		<icon>icon.skill11272</icon>
+		<operateType>A2</operateType>
+		<targetType>OWNER_PET</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>
+			<value level="1">120</value>
+			<value level="2">180</value>
+		</abnormalTime>
+		<abnormalType>PET_PROTECTION</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitTime>1000</hitTime>
+		<isMagic>5</isMagic>
+		<mpConsume>100</mpConsume>
+		<reuseDelay>300000</reuseDelay>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">500</value>
+					<value level="2">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49405" toLevel="2" name="寵物加護-主人速度">
+		
+		
+		<icon>icon.skill11272</icon>
+		<operateType>A2</operateType>
+		<targetType>OWNER_PET</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>
+			<value level="1">120</value>
+			<value level="2">180</value>
+		</abnormalTime>
+		<abnormalType>PET_PROTECTION</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitTime>1000</hitTime>
+		<isMagic>5</isMagic>
+		<mpConsume>100</mpConsume>
+		<reuseDelay>300000</reuseDelay>
+		<effects>
+			<effect name="Speed">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49406" toLevel="2" name="寵物加護-主人機會">
+		
+		
+		<icon>icon.skill11272</icon>
+		<operateType>A2</operateType>
+		<targetType>OWNER_PET</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>
+			<value level="1">120</value>
+			<value level="2">180</value>
+		</abnormalTime>
+		<abnormalType>PET_PROTECTION</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitTime>1000</hitTime>
+		<isMagic>5</isMagic>
+		<mpConsume>100</mpConsume>
+		<reuseDelay>300000</reuseDelay>
+		<effects>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">3</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49407" toLevel="1" name="主人輔助魔法維持中">
+		
+		<icon>icon.skill11272</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49451" toLevel="1" name="守護者特級HP藥水">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Hp">
+				<amount>240</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49452" toLevel="1" name="守護者攻擊強化卷軸">
+		
+		<icon>icon.dependant_atk_scrl</icon>
+		<operateType>A2</operateType>
+		<targetType>PET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BOOST_ATTACK_PET</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97432</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49453" toLevel="1" name="守護者防禦強化卷軸">
+		
+		<icon>icon.dependant_def_scrl</icon>
+		<operateType>A2</operateType>
+		<targetType>PET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BOOST_DEFENCE_PET</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97433</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>400</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

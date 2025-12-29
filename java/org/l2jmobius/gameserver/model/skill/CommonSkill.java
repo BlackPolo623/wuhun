@@ -1,0 +1,133 @@
+/*
+ * Copyright (c) 2013 L2jMobius
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+package org.l2jmobius.gameserver.model.skill;
+
+import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
+
+/**
+ * An Enum to hold some important references to commonly used skills
+ * @author DrHouse, Mobius
+ */
+public enum CommonSkill
+{
+	RAID_CURSE(4215, 1),
+	RAID_CURSE2(4515, 1),
+	SEAL_OF_RULER(246, 1),
+	BUILD_HEADQUARTERS(247, 1),
+	WYVERN_BREATH(4289, 1),
+	STRIDER_SIEGE_ASSAULT(325, 1),
+	FIREWORK(5965, 1),
+	LARGE_FIREWORK(2025, 1),
+	BLESSING_OF_PROTECTION(5182, 1),
+	VOID_BURST(3630, 1),
+	VOID_FLOW(3631, 1),
+	THE_VICTOR_OF_WAR(5074, 1),
+	THE_VANQUISHED_OF_WAR(5075, 1),
+	SPECIAL_TREE_RECOVERY_BONUS(2139, 1),
+	WEAPON_GRADE_PENALTY(6209, 1),
+	ARMOR_GRADE_PENALTY(6213, 1),
+	CREATE_DWARVEN(172, 1),
+	LUCKY(194, 1),
+	EXPERTISE(239, 1),
+	CRYSTALLIZE(248, 1),
+	ONYX_BEAST_TRANSFORMATION(617, 1),
+	CREATE_COMMON(1320, 1),
+	DIVINE_INSPIRATION(1405, 1),
+	CARAVANS_SECRET_MEDICINE(2341, 1),
+	MY_TELEPORT(2588, 1),
+	FEATHER_OF_BLESSING(7008, 1),
+	IMPRIT_OF_LIGHT(19034, 1),
+	IMPRIT_OF_DARKNESS(19035, 1),
+	ABILITY_OF_LIGHT(19032, 1),
+	ABILITY_OF_DARKNESS(19033, 1),
+	CLAN_ADVENT(19009, 1),
+	HAIR_ACCESSORY_SET(17192, 1),
+	ALCHEMY_CUBE(17943, 1),
+	ALCHEMY_CUBE_RANDOM_SUCCESS(17966, 1),
+	PET_SWITCH_STANCE(6054, 1),
+	WEIGHT_PENALTY(4270, 1),
+	POTION_MASTERY(45184, 1),
+	STR_INCREASE_BONUS_1(45191, 1),
+	STR_INCREASE_BONUS_2(45191, 2),
+	STR_INCREASE_BONUS_3(45191, 3),
+	INT_INCREASE_BONUS_1(45192, 1),
+	INT_INCREASE_BONUS_2(45192, 2),
+	INT_INCREASE_BONUS_3(45192, 3),
+	DEX_INCREASE_BONUS_1(45193, 1),
+	DEX_INCREASE_BONUS_2(45193, 2),
+	DEX_INCREASE_BONUS_3(45193, 3),
+	WIT_INCREASE_BONUS_1(45194, 1),
+	WIT_INCREASE_BONUS_2(45194, 2),
+	WIT_INCREASE_BONUS_3(45194, 3),
+	CON_INCREASE_BONUS_1(45195, 1),
+	CON_INCREASE_BONUS_2(45195, 2),
+	CON_INCREASE_BONUS_3(45195, 3),
+	MEN_INCREASE_BONUS_1(45196, 1),
+	MEN_INCREASE_BONUS_2(45196, 2),
+	MEN_INCREASE_BONUS_3(45196, 3),
+	GLORIOUS_QUICK_ESCAPE(45429, 1),
+	FORTUNE_SEAKER_MARK(47202, 1),
+	FLAG_DISPLAY(52001, 1),
+	FLAG_POWER_WARRIOR(52002, 1),
+	FLAG_POWER_KNIGHT(52003, 1),
+	FLAG_POWER_ROGUE(52004, 1),
+	FLAG_POWER_ARCHER(52005, 1),
+	FLAG_POWER_MAGE(52006, 1),
+	FLAG_POWER_SUMMONER(52007, 1),
+	FLAG_POWER_HEALER(52008, 1),
+	FLAG_POWER_ENCHANTER(52009, 1),
+	FLAG_POWER_BARD(52010, 1),
+	FLAG_POWER_SHAMAN(52011, 1),
+	FLAG_POWER_FAST_RUN(52012, 1),
+	FLAG_EQUIP(52013, 1),
+	REMOTE_FLAG_DISPLAY(52017, 1),
+	RED_LAMP(52038, 1),
+	PURPLE_LAMP(52039, 1),
+	BLUE_LAMP(52040, 1),
+	GREEN_LAMP(52041, 1),
+	BOT_REPORT_STATUS(55031, 1),
+	EINHASAD_OVERSEEING(60002, 1),
+	TELEPORT(60018, 1),
+	GLORIOUS_TELEPORT(60020, 1),
+	BRUTALITY(87366, 1);
+	
+	private final SkillHolder _holder;
+	
+	CommonSkill(int id, int level)
+	{
+		_holder = new SkillHolder(id, level);
+	}
+	
+	public int getId()
+	{
+		return _holder.getSkillId();
+	}
+	
+	public int getLevel()
+	{
+		return _holder.getSkillLevel();
+	}
+	
+	public Skill getSkill()
+	{
+		return _holder.getSkill();
+	}
+}

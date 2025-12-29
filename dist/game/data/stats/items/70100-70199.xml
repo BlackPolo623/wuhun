@@ -1,0 +1,1619 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="70100" name="未供給-奉獻長襪" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CLOTH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pDef">19</stat>
+			<stat type="maxMp">42</stat>
+		</stats>
+	</item>
+	<item id="70101" name="未供給-時髦金浪漫圓帽" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="time" val="10080" />
+		<skills>
+			<skill id="55239" level="1" /> 
+			<skill id="55240" level="1" /> 
+			<skill id="55238" level="1" /> 
+		</skills>
+	</item>
+	<item id="70102" name="冒險家用攻擊加速藥水" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_reagent_green_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="for_npc" val="true" />
+		<conditions addName="1" msgId="113">
+			<player flyMounted="false" />
+		</conditions>
+		<skills>
+			<skill id="55235" level="1" /> 
+		</skills>
+	</item>
+	<item id="70103" name="冒險家用施法加速藥水" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_potion_of_acumen2_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="0" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="for_npc" val="true" />
+		<conditions addName="1" msgId="113">
+			<player flyMounted="false" />
+		</conditions>
+		<skills>
+			<skill id="55236" level="1" /> 
+		</skills>
+	</item>
+	<item id="70104" name="未供給-吸血怒擊卷軸" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<skills>
+			<skill id="55237" level="1" /> 
+		</skills>
+	</item>
+	<item id="70105" name="未供給-魔力再生卷軸" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<skills>
+			<skill id="55241" level="1" /> 
+		</skills>
+	</item>
+	<item id="70106" name="未供給-提升古文" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="time" val="10080" />
+		<set name="handler" val="ItemSkills" />
+		<skills>
+			<skill id="55246" level="1" /> 
+		</skills>
+	</item>
+	<item id="70107" name="未供給-狂戰士魂卷軸" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<skills>
+			<skill id="55242" level="1" /> 
+		</skills>
+	</item>
+	<item id="70108" name="未供給-火龍墜飾-Lv3" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+		<skills>
+			<skill id="55095" level="3" /> 
+		</skills>
+	</item>
+	<item id="70109" name="未供給-水龍墜飾- Lv3" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="CRYSTAL" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
+		<skills>
+			<skill id="55105" level="3" /> 
+		</skills>
+	</item>
+	<item id="70110" name="未供給-戰士之舞卷軸" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<skills>
+			<skill id="55243" level="2" /> 
+		</skills>
+	</item>
+	<item id="70111" name="未供給-秘術之舞卷軸" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="handler" val="ItemSkills" />
+		<set name="immediate_effect" val="true" />
+		<skills>
+			<skill id="55244" level="2" /> 
+		</skills>
+	</item>
+	<item id="70112" name="未供給-時髦浪漫圓帽-特殊能力" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="commissionItemType" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="time" val="10080" />
+		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="55247" level="1" /> 
+		</skills>
+	</item>
+	<item id="70113" name="未供給-返回卷軸-亞丁城鎮" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="35000" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<conditions addName="1" msgId="113">
+			<player flyMounted="false" />
+		</conditions>
+		<skills>
+			<skill id="55245" level="8" /> 
+		</skills>
+	</item>
+	<item id="70114" name="未供給-壺精封印手鐲-歌手&amp;舞者" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="time" val="10800" />
+		<set name="weight" val="0" />
+		<set name="material" val="SILVER" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> 
+			<skill id="21233" level="1" type="ON_EQUIP" /> 
+			<skill id="23234" level="1" /> 
+			<skill id="55270" level="1" /> 
+			<skill id="55271" level="1" /> 
+			<skill id="55272" level="1" /> 
+		</skills>
+	</item>
+	<item id="70115" name="未供給-漁幣" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LEATHER" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70116" name="黃金人魚精緻釣竿" additionalName="1-day" type="Weapon">
+		
+		<set name="icon" val="icon.bm_gold_fishing_pole" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FISHINGROD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="time" val="1440" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+		<skills>
+			<skill id="39120" level="1" /> 
+			<skill id="39121" level="1" /> 
+			<skill id="55143" level="1" /> 
+		</skills>
+	</item>
+	<item id="70117" name="黃金人魚精緻釣竿" additionalName="3-day" type="Weapon">
+		
+		<set name="icon" val="icon.bm_gold_fishing_pole" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FISHINGROD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+		<skills>
+			<skill id="39120" level="1" /> 
+			<skill id="39121" level="1" /> 
+			<skill id="55143" level="1" /> 
+		</skills>
+	</item>
+	<item id="70118" name="黃金人魚精緻釣竿" additionalName="7-day" type="Weapon">
+		
+		<set name="icon" val="icon.bm_gold_fishing_pole" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FISHINGROD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="time" val="10080" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+		<skills>
+			<skill id="39120" level="1" /> 
+			<skill id="39121" level="1" /> 
+			<skill id="55143" level="1" /> 
+		</skills>
+	</item>
+	<item id="70119" name="黃金人魚精緻釣竿" additionalName="30-day" type="Weapon">
+		
+		<set name="icon" val="icon.bm_gold_fishing_pole" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FISHINGROD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="time" val="43200" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+		<skills>
+			<skill id="39120" level="1" /> 
+			<skill id="39121" level="1" /> 
+			<skill id="55143" level="1" /> 
+		</skills>
+	</item>
+	<item id="70120" name="黃金人魚精緻釣竿" type="Weapon">
+		
+		<set name="icon" val="icon.bm_gold_fishing_pole" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FISHINGROD" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BONE" />
+		<set name="weight" val="0" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+		<skills>
+			<skill id="39120" level="1" /> 
+			<skill id="39121" level="1" /> 
+			<skill id="55143" level="1" /> 
+		</skills>
+	</item>
+	<item id="70121" name="未供給-全身盔甲製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70122" name="未供給-全覆式頭盔製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70123" name="未供給-全覆式盾製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70124" name="未供給-飛龍皮甲製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70125" name="未供給-飛龍皮長靴製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70126" name="未供給-神聖外衣製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70127" name="未供給-神聖長襪製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70128" name="未供給-神聖手套製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70129" name="未供給-末日盾製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="15" max="15" chance="100.0" name="結晶-B級" /> 
+			<item id="1888" min="3" max="3" chance="100.0" name="合成的炭焦" /> 
+			<item id="1890" min="9" max="9" chance="100.0" name="米索莉合金" /> 
+			<item id="1894" min="3" max="3" chance="100.0" name="高級皮革" /> 
+			<item id="2132" min="4" max="4" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="3" max="3" chance="100.0" name="亞索沛" /> 
+			<item id="4077" min="13" max="13" chance="100.0" name="末日盾的碎片" /> 
+			<item id="4980" min="1" max="1" chance="100.0" name="製作卷軸(末日盾60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70130" name="未供給-末日金屬盔甲製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="60" max="60" chance="100.0" name="結晶-B級" /> 
+			<item id="1887" min="15" max="15" chance="100.0" name="純化的研磨劑" /> 
+			<item id="1890" min="45" max="45" chance="100.0" name="米索莉合金" /> 
+			<item id="1892" min="4" max="4" chance="100.0" name="鐵匠模具" /> 
+			<item id="2132" min="31" max="31" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="30" max="30" chance="100.0" name="亞索沛" /> 
+			<item id="4081" min="13" max="13" chance="100.0" name="末日金屬盔甲的合金" /> 
+			<item id="4983" min="1" max="1" chance="100.0" name="製作卷軸(末日金屬盔甲60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70131" name="未供給-末日頭盔製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="14" max="14" chance="100.0" name="結晶-B級" /> 
+			<item id="1892" min="1" max="1" chance="100.0" name="鐵匠模具" /> 
+			<item id="1894" min="40" max="40" chance="100.0" name="高級皮革" /> 
+			<item id="2132" min="7" max="7" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="4" max="4" chance="100.0" name="亞索沛" /> 
+			<item id="4089" min="13" max="13" chance="100.0" name="封印的末日頭盔的圖樣" /> 
+			<item id="4991" min="1" max="1" chance="100.0" name="製作卷軸(封印的末日頭盔60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70132" name="未供給-末日手套製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="8" max="8" chance="100.0" name="結晶-B級" /> 
+			<item id="1885" min="4" max="4" chance="100.0" name="高級軟皮" /> 
+			<item id="1894" min="32" max="32" chance="100.0" name="高級皮革" /> 
+			<item id="2132" min="4" max="4" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="4" max="4" chance="100.0" name="亞索沛" /> 
+			<item id="4091" min="13" max="13" chance="100.0" name="封印的末日手套的碎片" /> 
+			<item id="4993" min="1" max="1" chance="100.0" name="製作卷軸(封印的末日手套60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70133" name="未供給-末日靴製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="8" max="8" chance="100.0" name="結晶-B級" /> 
+			<item id="1885" min="4" max="4" chance="100.0" name="高級軟皮" /> 
+			<item id="1894" min="32" max="32" chance="100.0" name="高級皮革" /> 
+			<item id="2132" min="4" max="4" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="4" max="4" chance="100.0" name="亞索沛" /> 
+			<item id="4099" min="13" max="13" chance="100.0" name="封印的末日靴的碎片" /> 
+			<item id="4999" min="1" max="1" chance="100.0" name="製作卷軸(封印的末日靴60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70134" name="未供給-青狼胸甲製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="40" max="40" chance="100.0" name="結晶-B級" /> 
+			<item id="1890" min="36" max="36" chance="100.0" name="米索莉合金" /> 
+			<item id="1892" min="3" max="3" chance="100.0" name="鐵匠模具" /> 
+			<item id="2132" min="20" max="20" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="24" max="24" chance="100.0" name="亞索沛" /> 
+			<item id="4078" min="13" max="13" chance="100.0" name="青狼胸甲的碎片" /> 
+			<item id="4981" min="1" max="1" chance="100.0" name="製作卷軸(青狼胸甲60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70135" name="未供給-青狼脛甲製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="20" max="20" chance="100.0" name="結晶-B級" /> 
+			<item id="1890" min="24" max="24" chance="100.0" name="米索莉合金" /> 
+			<item id="1892" min="2" max="2" chance="100.0" name="鐵匠模具" /> 
+			<item id="2132" min="12" max="12" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="16" max="16" chance="100.0" name="亞索沛" /> 
+			<item id="4080" min="13" max="13" chance="100.0" name="青狼脛甲的材料" /> 
+			<item id="4982" min="1" max="1" chance="100.0" name="製作卷軸(青狼脛甲60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70136" name="未供給-青狼頭盔製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="14" max="14" chance="100.0" name="結晶-B級" /> 
+			<item id="1892" min="1" max="1" chance="100.0" name="鐵匠模具" /> 
+			<item id="1894" min="40" max="40" chance="100.0" name="高級皮革" /> 
+			<item id="2132" min="7" max="7" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="4" max="4" chance="100.0" name="亞索沛" /> 
+			<item id="4088" min="13" max="13" chance="100.0" name="封印的青狼頭盔的組件" /> 
+			<item id="4990" min="1" max="1" chance="100.0" name="製作卷軸(封印的青狼頭盔60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70137" name="未供給-青狼手套製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="8" max="8" chance="100.0" name="結晶-B級" /> 
+			<item id="1885" min="4" max="4" chance="100.0" name="高級軟皮" /> 
+			<item id="1894" min="32" max="32" chance="100.0" name="高級皮革" /> 
+			<item id="2132" min="4" max="4" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="4" max="4" chance="100.0" name="亞索沛" /> 
+			<item id="4096" min="13" max="13" chance="100.0" name="封印的青狼手套的布料" /> 
+			<item id="4998" min="1" max="1" chance="100.0" name="製作卷軸(封印的青狼手套60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70138" name="未供給-青狼長靴製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="8" max="8" chance="100.0" name="結晶-B級" /> 
+			<item id="1885" min="4" max="4" chance="100.0" name="高級軟皮" /> 
+			<item id="1894" min="32" max="32" chance="100.0" name="高級皮革" /> 
+			<item id="2132" min="4" max="4" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="4" max="4" chance="100.0" name="亞索沛" /> 
+			<item id="4090" min="13" max="13" chance="100.0" name="封印的青狼長靴的圖樣" /> 
+			<item id="4992" min="1" max="1" chance="100.0" name="製作卷軸(封印的青狼長靴60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70139" name="未供給-末日皮甲製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="48" max="48" chance="100.0" name="結晶-B級" /> 
+			<item id="1889" min="25" max="25" chance="100.0" name="合成的絞線" /> 
+			<item id="1894" min="100" max="100" chance="100.0" name="高級皮革" /> 
+			<item id="1895" min="50" max="50" chance="100.0" name="金屬纖維" /> 
+			<item id="2132" min="22" max="22" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="25" max="25" chance="100.0" name="亞索沛" /> 
+			<item id="4083" min="12" max="12" chance="100.0" name="末日皮甲的組件" /> 
+			<item id="4985" min="1" max="1" chance="100.0" name="製作卷軸(末日皮甲60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70140" name="未供給-阿巴敦長袍製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1459" min="95" max="95" chance="100.0" name="結晶-C級" /> 
+			<item id="1889" min="16" max="16" chance="100.0" name="合成的絞線" /> 
+			<item id="1894" min="65" max="65" chance="100.0" name="高級皮革" /> 
+			<item id="1895" min="32" max="32" chance="100.0" name="金屬纖維" /> 
+			<item id="2132" min="14" max="14" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="16" max="16" chance="100.0" name="亞索沛" /> 
+			<item id="4071" min="12" max="12" chance="100.0" name="阿巴敦長袍的布料" /> 
+			<item id="4951" min="1" max="1" chance="100.0" name="製作卷軸(阿巴敦長袍60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70141" name="未供給-阿巴敦頭箍製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1459" min="30" max="30" chance="100.0" name="結晶-C級" /> 
+			<item id="1892" min="1" max="1" chance="100.0" name="鐵匠模具" /> 
+			<item id="1894" min="20" max="20" chance="100.0" name="高級皮革" /> 
+			<item id="2132" min="4" max="4" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="2" max="2" chance="100.0" name="亞索沛" /> 
+			<item id="4072" min="12" max="12" chance="100.0" name="封印的阿巴敦頭箍的圖樣" /> 
+			<item id="4952" min="1" max="1" chance="100.0" name="製作卷軸(封印的阿巴敦頭箍60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70142" name="未供給-阿巴敦手套製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1459" min="25" max="25" chance="100.0" name="結晶-C級" /> 
+			<item id="1885" min="2" max="2" chance="100.0" name="高級軟皮" /> 
+			<item id="1894" min="16" max="16" chance="100.0" name="高級皮革" /> 
+			<item id="2132" min="2" max="2" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="2" max="2" chance="100.0" name="亞索沛" /> 
+			<item id="4073" min="12" max="12" chance="100.0" name="封印的阿巴敦手套的碎片" /> 
+			<item id="4953" min="1" max="1" chance="100.0" name="製作卷軸(封印的阿巴敦手套60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70143" name="未供給-阿巴敦靴製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1459" min="25" max="25" chance="100.0" name="結晶-C級" /> 
+			<item id="1885" min="2" max="2" chance="100.0" name="高級軟皮" /> 
+			<item id="1894" min="16" max="16" chance="100.0" name="高級皮革" /> 
+			<item id="2132" min="2" max="2" chance="100.0" name="寶石-B級" /> 
+			<item id="4043" min="2" max="2" chance="100.0" name="亞索沛" /> 
+			<item id="4098" min="12" max="12" chance="100.0" name="封印的阿巴敦靴的組件" /> 
+			<item id="4959" min="1" max="1" chance="100.0" name="製作卷軸(封印的阿巴敦靴60%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70144" name="未供給-青狼外衣製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70145" name="未供給-青狼長襪製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70146" name="未供給-黑光項鍊製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="20" max="20" chance="100.0" name="結晶-B級" /> 
+			<item id="1887" min="8" max="8" chance="100.0" name="純化的研磨劑" /> 
+			<item id="1889" min="40" max="40" chance="100.0" name="合成的絞線" /> 
+			<item id="1892" min="1" max="1" chance="100.0" name="鐵匠模具" /> 
+			<item id="2132" min="8" max="8" chance="100.0" name="寶石-B級" /> 
+			<item id="4044" min="8" max="8" chance="100.0" name="梭芷" /> 
+			<item id="4054" min="13" max="13" chance="100.0" name="黑光項鍊的珠子" /> 
+			<item id="4975" min="1" max="1" chance="100.0" name="製作卷軸(黑光項鍊70%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70147" name="未供給-黑光戒指製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="10" max="10" chance="100.0" name="結晶-B級" /> 
+			<item id="1887" min="8" max="8" chance="100.0" name="純化的研磨劑" /> 
+			<item id="1886" min="1" max="1" chance="100.0" name="銀鑄模" /> 
+			<item id="1895" min="40" max="40" chance="100.0" name="金屬纖維" /> 
+			<item id="2132" min="4" max="4" chance="100.0" name="寶石-B級" /> 
+			<item id="4044" min="8" max="8" chance="100.0" name="梭芷" /> 
+			<item id="4053" min="13" max="13" chance="100.0" name="黑光戒指的金屬線" /> 
+			<item id="4974" min="1" max="1" chance="100.0" name="製作卷軸(黑光戒指70%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70148" name="未供給-黑光耳環製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="1460" min="16" max="16" chance="100.0" name="結晶-B級" /> 
+			<item id="1887" min="10" max="10" chance="100.0" name="純化的研磨劑" /> 
+			<item id="1892" min="1" max="1" chance="100.0" name="鐵匠模具" /> 
+			<item id="1895" min="50" max="50" chance="100.0" name="金屬纖維" /> 
+			<item id="2132" min="6" max="6" chance="100.0" name="寶石-B級" /> 
+			<item id="4044" min="10" max="10" chance="100.0" name="梭芷" /> 
+			<item id="4052" min="13" max="13" chance="100.0" name="黑光耳環的碎片" /> 
+			<item id="4973" min="1" max="1" chance="100.0" name="製作卷軸(黑光耳環70%)" /> 
+		</capsuled_items>
+	</item>
+	<item id="70149" name="未供給-鎖子甲製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70150" name="未供給-鎖脛甲製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70151" name="未供給-鎖子頭盔製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70152" name="未供給-鎖子盾製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70153" name="未供給-刺尾獅皮襯衫製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70154" name="未供給-刺尾獅皮脛甲製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70155" name="未供給-刺尾獅皮靴製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70156" name="未供給-米索莉外衣製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70157" name="未供給-米索莉長襪製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70158" name="未供給-精靈米索莉手套製作禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70159" name="未供給-魔力恢復劑" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="0" />
+		<set name="is_stackable" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="POTION" />
+		<set name="is_sellable" val="true" />
+		<conditions addName="1" msgId="113">
+			<player flyMounted="false" />
+		</conditions>
+		<skills>
+			<skill id="55142" level="1" /> 
+		</skills>
+	</item>
+	<item id="70160" name="未供給-1週年紀念硬幣" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LEATHER" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70161" name="未供給-自由傳送禮盒" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70162" name="未供給-火龍巴拉卡斯寶箱" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70163" name="未供給-成長氣息" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="ex_immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="for_npc" val="true" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="55273" level="1" /> 
+		</skills>
+	</item>
+	<item id="70164" name="未供給-強力成長氣息" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="ex_immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="for_npc" val="true" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="55273" level="2" /> 
+		</skills>
+	</item>
+	<item id="70165" name="未供給-超強力成長氣息" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="ex_immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="for_npc" val="true" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="55273" level="3" /> 
+		</skills>
+	</item>
+	<item id="70166" name="未供給-疾走氣息" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="ex_immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="for_npc" val="true" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="55274" level="1" /> 
+		</skills>
+	</item>
+	<item id="70167" name="未供給-強力疾走氣息" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="ex_immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="for_npc" val="true" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="55274" level="2" /> 
+		</skills>
+	</item>
+	<item id="70168" name="未供給-超強力疾走氣息" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="ex_immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="for_npc" val="true" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="55274" level="3" /> 
+		</skills>
+	</item>
+	<item id="70169" name="未供給-集中氣息" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="ex_immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="for_npc" val="true" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="55275" level="1" /> 
+		</skills>
+	</item>
+	<item id="70170" name="未供給-強力集中氣息" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="ex_immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="for_npc" val="true" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="55275" level="2" /> 
+		</skills>
+	</item>
+	<item id="70171" name="未供給-超強力集中氣息" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="immediate_effect" val="true" />
+		<set name="ex_immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="for_npc" val="true" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="55275" level="3" /> 
+		</skills>
+	</item>
+	<item id="70172" name="未供給-淚痕之幣" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70173" name="未供給-腐蝕之幣" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70174" name="未供給-風化之幣" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70175" name="未供給-粗糙之幣" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70176" name="未供給-古老之幣" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70177" name="未供給-淚痕之箱" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70178" name="未供給-腐蝕之箱" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70179" name="未供給-風化之箱" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70180" name="未供給-粗糙之箱" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70181" name="未供給-古老之箱" additionalName="Not Available" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="70182" name="未供給-禮遇戒指-限時15日" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="time" val="21600" />
+		<set name="useSkillDisTime" val="1" />
+		<stats>
+			<stat type="mDef">20</stat>
+		</stats>
+		<skills>
+			<skill id="55290" level="1" /> 
+		</skills>
+	</item>
+	<item id="70183" name="未供給-禮遇戒指" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<stats>
+			<stat type="mDef">20</stat>
+		</stats>
+		<skills>
+			<skill id="55291" level="1" /> 
+		</skills>
+	</item>
+	<item id="70184" name="未供給-禮遇耳環-限時15日" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="time" val="21600" />
+		<stats>
+			<stat type="mDef">30</stat>
+			<stat type="maxMp">10</stat>
+		</stats>
+		<skills>
+			<skill id="55292" level="1" /> 
+		</skills>
+	</item>
+	<item id="70185" name="未供給-禮遇耳環" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<stats>
+			<stat type="mDef">30</stat>
+			<stat type="maxMp">10</stat>
+		</stats>
+		<skills>
+			<skill id="55293" level="1" /> 
+		</skills>
+	</item>
+	<item id="70186" name="未供給-禮遇項鍊-限時15日" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="time" val="21600" />
+		<set name="useSkillDisTime" val="1" />
+		<stats>
+			<stat type="mDef">40</stat>
+			<stat type="maxMp">20</stat>
+		</stats>
+		<skills>
+			<skill id="55294" level="1" /> 
+		</skills>
+	</item>
+	<item id="70187" name="未供給-禮遇項鍊" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<stats>
+			<stat type="mDef">40</stat>
+			<stat type="maxMp">20</stat>
+		</stats>
+		<skills>
+			<skill id="55295" level="1" /> 
+		</skills>
+	</item>
+	<item id="70188" name="未供給-測試用1欄位武器" additionalName="Not Available" type="Weapon">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="0" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">41</stat>
+			<stat type="mAtk">43</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="70189" name="未供給-測試用2欄位武器" additionalName="Not Available" type="Weapon">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="0" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">41</stat>
+			<stat type="mAtk">43</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="70190" name="未供給-測試用3欄位武器" additionalName="Not Available" type="Weapon">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="0" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">41</stat>
+			<stat type="mAtk">43</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="70191" name="未供給-測試用只有開啟BM欄位武器" additionalName="Not Available" type="Weapon">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="D" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="0" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">41</stat>
+			<stat type="mAtk">43</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">19</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="70192" name="歷章繼承者耳環階段1" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_earring_of_orfen_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_destroyable" val="false" />
+		<stats>
+			<stat type="mDef">2</stat>
+		</stats>
+		<skills>
+			<skill id="55309" level="1" /> 
+		</skills>
+	</item>
+	<item id="70193" name="歷章繼承者耳環階段2" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_earring_of_orfen_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_destroyable" val="false" />
+		<stats>
+			<stat type="mDef">4</stat>
+		</stats>
+		<skills>
+			<skill id="55309" level="2" /> 
+		</skills>
+	</item>
+	<item id="70194" name="歷章繼承者耳環階段3" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_earring_of_orfen_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_destroyable" val="false" />
+		<stats>
+			<stat type="mDef">6</stat>
+		</stats>
+		<skills>
+			<skill id="55309" level="3" /> 
+		</skills>
+	</item>
+	<item id="70195" name="歷章繼承者耳環階段4" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_earring_of_orfen_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_destroyable" val="false" />
+		<stats>
+			<stat type="mDef">8</stat>
+		</stats>
+		<skills>
+			<skill id="55309" level="4" /> 
+		</skills>
+	</item>
+	<item id="70196" name="歷章繼承者耳環階段5" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_earring_of_orfen_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_destroyable" val="false" />
+		<stats>
+			<stat type="mDef">10</stat>
+		</stats>
+		<skills>
+			<skill id="55309" level="5" /> 
+		</skills>
+	</item>
+	<item id="70197" name="歷章繼承者耳環階段6" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_earring_of_orfen_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_destroyable" val="false" />
+		<stats>
+			<stat type="mDef">12</stat>
+		</stats>
+		<skills>
+			<skill id="55309" level="6" /> 
+		</skills>
+	</item>
+	<item id="70198" name="歷章繼承者耳環階段7" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_earring_of_orfen_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_destroyable" val="false" />
+		<stats>
+			<stat type="mDef">14</stat>
+		</stats>
+		<skills>
+			<skill id="55309" level="7" /> 
+		</skills>
+	</item>
+	<item id="70199" name="歷章繼承者耳環階段8" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_earring_of_orfen_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_destroyable" val="false" />
+		<stats>
+			<stat type="mDef">16</stat>
+		</stats>
+		<skills>
+			<skill id="55309" level="8" /> 
+		</skills>
+	</item>
+</list>

@@ -1,0 +1,903 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="40500" toLevel="1" name="煉獄之火">
+		<icon>icon.hell_fire</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<effectPoint>-999</effectPoint>
+	</skill>
+	<skill id="40501" toLevel="1" name="煉獄之火-展示">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="40502" toLevel="1" name="煉獄之火">
+		<icon>icon.hell_fire</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<effectPoint>-999</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+		<reuseDelay>60000</reuseDelay>
+	</skill>
+	<skill id="40503" toLevel="1" name="煉獄之火倫理">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-999</effectPoint>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="40504" toLevel="1" name="煉獄之火">
+		<icon>icon.hell_fire</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<effectPoint>-999</effectPoint>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="40505" toLevel="1" name="拋繩">
+		
+		<icon>icon.etc_braided_hemp_i00</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<coolTime>500</coolTime>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="40506" toLevel="1" name="Legacy門禁卡">
+		
+		<icon>icon.cardkey_man_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>7200</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitTime>0</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>100100</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>40506</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="BonusDropAdena">
+				<amount>3</amount>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-1000</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>10</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>10</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40507" toLevel="4" name="墓地看守的注意-測試(boss)">
+		
+		<icon>icon.skill0103</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="40508" toLevel="1" name="死亡展示">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40509" toLevel="1" name="渴血血劍外型加工石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40510" toLevel="1" name="鮮鮮武器輔助魔法湯">
+		
+		<icon>icon.fish_stew_residence_luc</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<abnormalVisualEffect>BLUE_DYNASTY</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>0</effectPoint>
+		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>3</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefencePhysicalSkillCriticalRate">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-100</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40511" toLevel="1" name="西瓜爆炸">
+		
+		<icon>icon.s_trigger_kill_effect_watermelon</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="40512" toLevel="1" name="西瓜爆炸">
+		<icon>icon.s_trigger_kill_effect_watermelon</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40513" toLevel="1" name="血劍外型加工石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40514" toLevel="1" name="天堂塔時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>100542</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>90</minLevel>
+				<maxLevel>999</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="AddHuntingTime">
+				<zoneId>29</zoneId>
+				<time>3600000</time>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40515" toLevel="1" name="天堂塔時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>100543</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>90</minLevel>
+				<maxLevel>999</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="AddHuntingTime">
+				<zoneId>29</zoneId>
+				<time>3600000</time>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40516" toLevel="1" name="天堂塔時間充能石(限時)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="40517" toLevel="1" name="榮光名稱裝飾：金色">
+		
+		<icon>icon.special_chat_background_v2</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="40518" toLevel="1" name="榮光名稱裝飾：藍色">
+		
+		<icon>icon.special_chat_background</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="40519" toLevel="1" name="安定的武器強化卷軸-A級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40520" toLevel="1" name="安定的防具強化卷軸-A級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40521" toLevel="6" name="技能效果-不滅之力">
+		
+		
+		
+		
+		
+		
+		<icon>
+			<value level="1">icon.s_trigger_kill_effect_watermelon</value>
+			<value level="2">icon.s_trigger_kill_effect_snow</value>
+			<value level="3">icon.cursed_prison_petal</value>
+			<value level="4">icon.wp_fishing9</value>
+			<value level="5">icon.maple_leaf_i00</value>
+			<value level="6">icon.trigger_kill_effect_immortal</value>
+		</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="40522" toLevel="1" name="染血魔劍加工石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40523" toLevel="1" name="魔劍加工石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40524" toLevel="1" name="被遺忘的武器外型加工石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40525" toLevel="1" name="西瓜爆炸">
+		<icon>icon.s_trigger_kill_effect_watermelon</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40526" toLevel="2" name="黃金之輪後援輔助魔法">
+		
+		<icon>icon.ev_golden_wheel_scroll_special</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="40527" toLevel="1" name="黃金之輪後援輔助魔法">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+	</skill>
+	<skill id="40528" toLevel="1" name="大天使手工巧克力(限時)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40529" toLevel="1" name="求道者飾品強化卷軸">
+		<icon>icon.bm_shilen_scrl_of_ench_acc</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40530" toLevel="1" name="大雪紛飛">
+		<icon>icon.s_trigger_kill_effect_snow</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40531" toLevel="2" name="技能效果-大雪紛飛">
+		
+		<icon>icon.s_trigger_kill_effect_snow</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40532" toLevel="1" name="大雪紛飛">
+		<icon>icon.s_trigger_kill_effect_snow</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40533" toLevel="1" name="巴拉卡斯洞窟時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40534" toLevel="1" name="巴拉卡斯洞窟時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40535" toLevel="1" name="巴拉卡斯洞窟時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40536" toLevel="1" name="夢幻副本追加入場券(限時)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40537" toLevel="1" name="元氣補充HP藥水(期間限定)">
+		<icon>icon.energy_charge_potion</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40538" toLevel="1" name="古代遺址時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="40539" toLevel="1" name="古代遺址時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="40540" toLevel="1" name="古代遺址時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="40541" toLevel="1" name="高級強化石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40542" toLevel="1" name="安定的武器強化卷軸-A級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40543" toLevel="1" name="安定的防具強化卷軸-A級">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40544" toLevel="1" name="亞丁旅行卷軸">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>8000</hitTime>
+	</skill>
+	<skill id="40545" toLevel="15" name="亞丁旅行卷軸-眺望死亡騎士據點">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40546" toLevel="1" name="青龍加護">
+		<icon>icon.bm_dragon_posion_special</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="40547" toLevel="2" name="青龍加護">
+		
+		<icon>icon.bm_dragon_posion_special</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="40548" toLevel="2" name="青龍加護">
+		
+		<icon>icon.bm_dragon_posion_special</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="40549" toLevel="1" name="青龍加護">
+		
+		<icon>icon.bm_dragon_posion_special</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="40550" toLevel="2" name="青龍加護">
+		
+		<icon>icon.bm_dragon_posion_special</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="40551" toLevel="2" name="青龍加護">
+		
+		<icon>icon.bm_dragon_posion_special</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="40552" toLevel="1" name="產生青龍鑄幣">
+		<icon>icon.bm_dragon_posion_special</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="40553" toLevel="1" name="風之森林時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="40554" toLevel="1" name="拋繩">
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="40555" toLevel="1" name="飛花翩翩">
+		<icon>icon.cursed_prison_petal</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40556" toLevel="2" name="技能效果-飛花翩翩">
+		
+		<icon>icon.cursed_prison_petal</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="40557" toLevel="1" name="飛花翩翩">
+		<icon>icon.cursed_prison_petal</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40558" toLevel="1" name="迎春花">
+		<icon>icon.ev_garden_buff</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>1500</hitTime>
+		<isMagic>4</isMagic>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="40559" toLevel="1" name="風之森林時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="40560" toLevel="1" name="造型藥水-I">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="40561" toLevel="1" name="成長支援卷軸">
+		
+		<icon>icon.bm_elmoaden_exp_scrl</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>60000</reuseDelay>
+	</skill>
+	<skill id="40562" toLevel="1" name="成長支援卷軸">
+		
+		<icon>icon.bm_elmoaden_exp_scrl</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>60000</reuseDelay>
+	</skill>
+	<skill id="40563" toLevel="1" name="染血魔劍加工石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40564" toLevel="1" name="魔劍加工石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40565" toLevel="1" name="被遺忘的武器外型加工石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40566" toLevel="1" name="不滅之力">
+		<icon>icon.trigger_kill_effect_immortal</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40567" toLevel="1" name="守護塔的祝福卷軸">
+		
+		<icon>icon.etc_aidcharm_cancel_valbreath_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>4</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount> 
+		<itemConsumeId>49765</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="MaxHp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<PARALYZE>5</PARALYZE>
+				<FEAR>5</FEAR>
+			</effect>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40568" toLevel="1" name="幸運經驗值藥草">
+		
+		<icon>icon.four_leaf_clover_i00</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="40569" toLevel="1" name="幸運HP藥草">
+		<icon>icon.four_leaf_clover_i00</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="40570" toLevel="1" name="幸運MP藥草">
+		<icon>icon.four_leaf_clover_i00</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="40571" toLevel="1" name="守護者要素(上級)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="40572" toLevel="1" name="守護者要素(中級)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="40573" toLevel="1" name="守護者要素(下級)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="40574" toLevel="1" name="守護者要素(上級)-寵物">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="40575" toLevel="1" name="守護者要素(中級)-寵物">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="40576" toLevel="1" name="守護者要素(下級)-寵物">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="40577" toLevel="1" name="守護者要素(上級)-傭兵">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="40578" toLevel="1" name="守護者要素(中級)-傭兵">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="40579" toLevel="1" name="守護者要素(下級)-傭兵">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>500</reuseDelay>
+	</skill>
+	<skill id="40580" toLevel="1" name="超級頭箍安全強化石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40581" toLevel="1" name="伊娃禮物">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="40582" toLevel="1" name="伊娃的祝福">
+		
+		<icon>icon.skill1510</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+	</skill>
+	<skill id="40583" toLevel="1" name="海香氣">
+		<icon>icon.wp_fishing9</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40584" toLevel="1" name="巨鎚敲打">
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="40585" toLevel="1" name="凋落紅葉">
+		<icon>icon.maple_leaf_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40586" toLevel="1" name="技能效果-凋落紅葉">
+		
+		<icon>icon.maple_leaf_i00</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="40587" toLevel="1" name="凋落紅葉">
+		<icon>icon.maple_leaf_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40588" toLevel="1" name="水龍峽谷時間充能石">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="40589" toLevel="1" name="水龍峽谷時間充能石(刻印)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="40590" toLevel="1" name="水龍峽谷時間充能石(時間制)(刻印)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="40591" toLevel="1" name="水中加速祕書">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="40592" toLevel="1" name="物理攻擊力強化卷軸(限時)">
+		
+		<icon>icon.scrl_of_ladies_silver_knife_01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BOOST_ATTACK</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitTime>0</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>94268</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>40220</skillId> 
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>40229</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>800</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>800</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="DefenceMagicCriticalDamage">
+				<amount>-100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40593" toLevel="1" name="物理防禦力強化卷軸(限時)">
+		
+		<icon>icon.scrl_of_ench_bracelet_lucien_01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BOOST_DEFENCE</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitTime>0</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>94270</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<conditions>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>40222</skillId> 
+			</condition>
+			<condition name="OpNotAffectedBySkill">
+				<skillId>40230</skillId> 
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>800</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40594" toLevel="1" name="寵物綠弧(時間制)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="40595" toLevel="1" name="狂戰士卷軸(限時)">
+		
+		<icon>icon.bereserker_scroll_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>SPECIAL_BERSERKER</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitTime>0</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>94776</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalSkillPower">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40596" toLevel="1" name="鋼鐵心臟要塞時間充能石">
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97975</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>1</minLevel>
+				<maxLevel>999</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="AddHuntingTime">
+				<zoneId>35</zoneId>
+				<time>3600000</time>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40597" toLevel="1" name="鋼鐵心臟要塞時間充能石">
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97975</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>1</minLevel>
+				<maxLevel>999</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="AddHuntingTime">
+				<zoneId>35</zoneId>
+				<time>3600000</time>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40598" toLevel="1" name="鋼鐵心臟要塞時間充能石">
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>97975</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="CheckLevel">
+				<minLevel>1</minLevel>
+				<maxLevel>999</maxLevel>
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="AddHuntingTime">
+				<zoneId>35</zoneId>
+				<time>3600000</time>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="40599" toLevel="1" name="巨鎚敲打">
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+</list>

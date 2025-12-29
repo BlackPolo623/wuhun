@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="rewards.xsd">
+	<parameters>
+		<!-- ========== 基礎遊戲規則設定 ========== -->
+
+		<!-- 是否只在有人中獎時才發放參與獎（印記）
+             true = 有人中獎時，其他人才拿到 100 印記
+             false = 不管有沒有人中獎，參與者都拿到 100 印記 -->
+		<param name="give_coin_only_if_redeem" value="true" />
+
+		<!-- 參加活動的最低等級要求 -->
+		<param name="minLevel" value="65" />
+
+		<!-- 每小時抽獎次數（最少 1 次，最多 40 次，預設 5 次）
+             官方客戶端最多支援顯示 5 次，但伺服器可以設定更高 -->
+		<param name="try_to_roll_per_hour" value="5" />
+
+		<!-- 是否用特殊公告顯示中獎者
+             true = 全螢幕會顯示「[玩家名稱] 從秘密商店獲得了 [物品名稱]！」 -->
+		<param name="announce_by_ex_item_announce" value="true" />
+
+		<!-- 是否用系統訊息公告中獎者
+             true = 聊天視窗會顯示系統訊息 -->
+		<param name="announce_by_system_message" value="true" />
+
+		<!-- 公告時是否顯示中獎者名稱
+             true = 顯示「XXX 獲得了 OOO」
+             false = 只顯示「有人獲得了 OOO」（隱藏玩家名稱）
+             ※ 必須 announce_by_system_message 也是 true 才有效 -->
+		<param name="show_name_in_announce" value="true" />
+
+		<!-- ========== 參與獎勵（安慰獎）設定 ========== -->
+
+		<!-- 參與獎的物品 ID -->
+		<param name="coin_id" value="49783" /> <!-- 巴爾薩斯騎士印記（限時）[封印] -->
+
+		<!-- 參與獎的數量（每次發 100 個） -->
+		<param name="coin_count" value="100" />
+
+		<!-- ========== 每日補給箱設定 ========== -->
+
+		<!-- 是否啟用每日補給箱功能 -->
+		<param name="daily_supply_enabled" value="true" />
+
+		<!-- 每日補給箱的物品 ID -->
+		<param name="daily_supply_id" value="49782" /> <!-- 巴爾薩斯騎士補給箱（限時）[封印] -->
+
+		<!-- 每日補給箱的數量 -->
+		<param name="daily_supply_count" value="1" />
+
+		<!-- 是否需要付費才能領取每日補給箱 -->
+		<param name="daily_supply_fee_enabled" value="true" />
+
+		<!-- 領取補給箱的費用物品 ID -->
+		<param name="daily_supply_fee_id" value="57" /> <!-- 金幣 -->
+
+		<!-- 領取補給箱需要的費用數量 -->
+		<param name="daily_supply_fee_count" value="1" />
+
+		<!-- ========== 中獎人數控制 ========== -->
+
+		<!-- 每次抽獎的最少中獎人數 -->
+		<param name="min_winner" value="1" />
+
+		<!-- 每次抽獎的最多中獎人數 -->
+		<param name="max_winner" value="1" />
+
+		<!-- 中獎者是否也能獲得參與獎（100 印記）
+             true = 中獎者除了獎品，還額外拿 100 印記
+             false = 中獎者只拿獎品，不拿印記 -->
+		<param name="give_participation_reward_to_winner" value="true" />
+
+		<!-- ========== 中獎郵件內容（多語言） ========== -->
+
+		<param name="mailSubject_en" value="巴爾薩斯騎士中獎通知！" />
+		<param name="mailContent_en" value="恭喜您在巴爾薩斯活動中獲得獎勵！請查收附件。" />
+	</parameters>
+
+	<!-- ========== 獎品時段設定 ========== -->
+	<!-- 格式說明：
+         from="01" to="16" = 凌晨 1 點到下午 4 點（共用同一個獎品池）
+         id = 物品 ID
+         count = 物品數量
+         chance = 中獎者獲得此物品的機率（1 = 100%）
+         lotteryChance = 系統抽到此獎品的權重（數字越大越容易抽到）
+         redeemInAnyCase = 是否必定發放此獎品
+    -->
+
+	<!-- 凌晨 1 點 ~ 下午 4 點：西比的金幣包 -->
+	<reward from="01" to="16">
+		<items>
+			<item id="49800" count="1" chance="1" lotteryChance="100" redeemInAnyCase="true" />
+		</items>
+	</reward>
+
+	<!-- 下午 5 點：艾丹護身符包 x20 -->
+	<reward from="17" to="17">
+		<items>
+			<item id="98345" count="1" chance="1" lotteryChance="100" redeemInAnyCase="true" />
+		</items>
+	</reward>
+
+	<!-- 下午 6 點：保護斗篷包 x50 -->
+	<reward from="18" to="18">
+		<items>
+			<item id="98343" count="1" chance="1" lotteryChance="100" redeemInAnyCase="true" />
+		</items>
+	</reward>
+
+	<!-- 下午 7 點：龍腰帶包 x50 -->
+	<reward from="19" to="19">
+		<items>
+			<item id="98339" count="1" chance="1" lotteryChance="100" redeemInAnyCase="true" />
+		</items>
+	</reward>
+
+	<!-- 晚上 8 點：補給券 -->
+	<reward from="20" to="20">
+		<items>
+			<item id="98295" count="1" chance="1" lotteryChance="100" redeemInAnyCase="true" />
+		</items>
+	</reward>
+
+	<!-- 晚上 9 點：+8 B級武器包 -->
+	<reward from="21" to="21">
+		<items>
+			<item id="49789" count="1" chance="1" lotteryChance="100" redeemInAnyCase="true" />
+		</items>
+	</reward>
+
+	<!-- 晚上 10 點：A級武器包 -->
+	<reward from="22" to="22">
+		<items>
+			<item id="49785" count="1" chance="1" lotteryChance="100" redeemInAnyCase="true" />
+		</items>
+	</reward>
+
+	<!-- 晚上 11 點：+5 頂級 A級武器包 -->
+	<reward from="23" to="23">
+		<items>
+			<item id="93263" count="1" chance="1" lotteryChance="100" redeemInAnyCase="true" />
+		</items>
+	</reward>
+
+	<!-- 午夜 12 點（凌晨 0 點）：Boss 武器包（頭獎！） -->
+	<reward from="00" to="00">
+		<items>
+			<item id="96616" count="1" chance="1" lotteryChance="100" redeemInAnyCase="true" />
+		</items>
+	</reward>
+</list>

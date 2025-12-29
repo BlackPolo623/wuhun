@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<!-- GrandBoss 集合 - 共 15 個 -->
+
+	<!-- GrandBoss #1 -->
+	<npc id="29001" level="80" type="GrandBoss" name="巨蟻女王" title="Dungeon Queen">
+			<parameters>
+				<minions name="Privates">
+					<npc id="29003" count="6" respawnTime="10" weightPoint="1" /> 
+					<npc id="29005" count="8" respawnTime="360" weightPoint="1" /> 
+				</minions>
+			</parameters>
+			<race>BUG</race>
+			<sex>FEMALE</sex>
+			<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+				<vitals hp="84480000" hpRegen="1" mp="12240" mpRegen="10" />
+				<attack physical="75915" magical="6600.03819341452" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+				<defence physical="2692.68292682927" magical="1794.92939666239" />
+				<speed>
+					<walk ground="80" />
+					<run ground="230" />
+				</speed>
+				<hitTime>370</hitTime>
+				<abnormalResist physical="230" magical="230" />
+			</stats>
+			<status attackable="true" noSleepMode="true" />
+			<skillList>
+				<skill id="4416" level="12" /> 
+				<skill id="14765" level="4" /> 
+				<skill id="4408" level="1" /> 
+				<skill id="4409" level="1" /> 
+				<skill id="4410" level="11" /> 
+				<skill id="4411" level="11" /> 
+				<skill id="4412" level="11" /> 
+				<skill id="4413" level="11" /> 
+				<skill id="4414" level="2" /> 
+				<skill id="4415" level="3" /> 
+				<skill id="4021" level="1" /> 
+				<skill id="4045" level="2" /> 
+				<skill id="4071" level="1" /> 
+				<skill id="4116" level="2" /> 
+				<skill id="48083" level="1" /> 
+				<skill id="4019" level="1" /> 
+				<skill id="4017" level="1" /> 
+			</skillList>
+			<corpseTime>300</corpseTime>
+			<exCrtEffect>true</exCrtEffect>
+			<ai type="BALANCED" clanHelpRange="2000" aggroRange="2000">
+				<clanList>
+					<clan>QUEEN_ANT</clan>
+				</clanList>
+			</ai>
+			<collision>
+				<radius normal="45" />
+				<height normal="53" />
+			</collision>
+	</npc>
+
+	<!-- GrandBoss #2 -->
+	<npc id="29006" level="80" type="GrandBoss" name="核心" title="Cruma Control Device">
+			<parameters>
+				<minions name="Privates">
+					<npc id="29008" count="3" respawnTime="360" weightPoint="1" /> 
+					<npc id="29011" count="4" respawnTime="360" weightPoint="1" /> 
+					<npc id="29007" count="10" respawnTime="360" weightPoint="1" /> 
+				</minions>
+			</parameters>
+			<race>CONSTRUCT</race>
+			<sex>MALE</sex>
+			<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+				<vitals hp="84480000" hpRegen="1" mp="1708.8" mpRegen="20" />
+				<attack physical="15183" magical="6600" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+				<defence physical="2693" magical="1795" />
+				<speed>
+					<walk ground="50" />
+					<run ground="110" />
+				</speed>
+				<hitTime>600</hitTime>
+				<abnormalResist physical="230" magical="230" />
+			</stats>
+			<status attackable="true" />
+			<skillList>
+				<skill id="4416" level="2" /> 
+				<skill id="14765" level="4" /> 
+				<skill id="4408" level="1" /> 
+				<skill id="4409" level="1" /> 
+				<skill id="4410" level="11" /> 
+				<skill id="4411" level="11" /> 
+				<skill id="4412" level="11" /> 
+				<skill id="4413" level="11" /> 
+				<skill id="4414" level="2" /> 
+				<skill id="4415" level="3" /> 
+				<skill id="4045" level="2" /> 
+				<skill id="48083" level="1" /> 
+			</skillList>
+			<corpseTime>10</corpseTime>
+			<exCrtEffect>true</exCrtEffect>
+			<ai type="BALANCED" clanHelpRange="4500" aggroRange="2000">
+				<clanList>
+					<clan>CURMA_CORE</clan>
+				</clanList>
+			</ai>
+			<collision>
+				<radius normal="140" />
+				<height normal="75" />
+			</collision>
+	</npc>
+
+	<!-- GrandBoss #3 -->
+	<npc id="29014" level="80" type="GrandBoss" name="奧爾芬" title="Spore Mistress">
+			<parameters>
+				<param name="MoveAroundSocial" value="80" />
+				<param name="MoveAroundSocial1" value="80" />
+				<param name="MoveAroundSocial2" value="80" />
+			</parameters>
+			<race>FAIRY</race>
+			<sex>FEMALE</sex>
+			<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+				<vitals hp="84480000" hpRegen="1" mp="1708.8" mpRegen="20" />
+				<attack physical="75915" magical="6600" random="10" critical="4" accuracy="0" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
+				<defence physical="2693" magical="1795" />
+				<speed>
+					<walk ground="60" />
+					<run ground="230" />
+				</speed>
+				<hitTime>710</hitTime>
+				<abnormalResist physical="230" magical="230" />
+			</stats>
+			<status attackable="true" noSleepMode="true" />
+			<skillList>
+				<skill id="4416" level="13" /> 
+				<skill id="14765" level="4" /> 
+				<skill id="4408" level="1" /> 
+				<skill id="4409" level="1" /> 
+				<skill id="4410" level="11" /> 
+				<skill id="4411" level="11" /> 
+				<skill id="4412" level="11" /> 
+				<skill id="4413" level="11" /> 
+				<skill id="4414" level="2" /> 
+				<skill id="4415" level="3" /> 
+				<skill id="4062" level="1" /> 
+				<skill id="4045" level="2" /> 
+				<skill id="48083" level="1" /> 
+				<skill id="4063" level="1" /> 
+				<skill id="4064" level="1" /> 
+			</skillList>
+			<corpseTime>300</corpseTime>
+			<exCrtEffect>true</exCrtEffect>
+			<ai type="BALANCED" aggroRange="1000" clanHelpRange="3500" isAggressive="true">
+				<clanList>
+					<clan>ORFEN</clan>
+				</clanList>
+			</ai>
+			<collision>
+				<radius normal="35" />
+				<height normal="143" />
+			</collision>
+	</npc>
+
+	<!-- GrandBoss #4 -->
+	<npc id="29019" level="79" type="GrandBoss" name="安塔瑞斯">
+			<race>DRAGON</race>
+			<sex>MALE</sex>
+			<acquire exp="262720917" sp="63053" />
+			<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+				<vitals hp="7700000" hpRegen="1000" mp="18000" mpRegen="99" />
+				<attack physical="4900" magical="2550" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+				<defence physical="3840" magical="825" />
+				<speed>
+					<walk ground="50" />
+					<run ground="186" />
+				</speed>
+				<hitTime>600</hitTime>
+				<abnormalResist physical="230" magical="230" />
+			</stats>
+			<status attackable="true" noSleepMode="true" />
+			<skillList>
+				<skill id="4416" level="10" /> 
+				<skill id="4408" level="1" /> 
+				<skill id="4409" level="1" /> 
+				<skill id="4410" level="11" /> 
+				<skill id="4411" level="11" /> 
+				<skill id="4412" level="11" /> 
+				<skill id="4413" level="11" /> 
+				<skill id="4414" level="2" /> 
+				<skill id="4415" level="3" /> 
+				<skill id="4045" level="1" /> 
+				<skill id="4122" level="1" /> 
+				<skill id="4071" level="2" /> 
+				<skill id="4106" level="1" /> 
+				<skill id="4108" level="1" /> 
+				<skill id="4109" level="1" /> 
+				<skill id="4110" level="2" /> 
+				<skill id="4111" level="1" /> 
+				<skill id="4112" level="1" /> 
+				<skill id="4113" level="1" /> 
+				<skill id="5092" level="1" /> 
+				<skill id="5093" level="1" /> 
+			</skillList>
+			<corpseTime>14</corpseTime>
+			<exCrtEffect>true</exCrtEffect>
+			<ai type="BALANCED" aggroRange="4096" clanHelpRange="300" isAggressive="true" />
+			<collision>
+				<radius normal="300" />
+				<height normal="300" />
+			</collision>
+		</npc>
+
+	<!-- GrandBoss #5 -->
+	<npc id="29020" level="90" type="GrandBoss" name="巴溫" title="Lord">
+			<race>UNDEAD</race>
+			<sex>MALE</sex>
+			<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+				<vitals hp="293333333.04" hpRegen="1" mp="18000" mpRegen="198" />
+				<attack physical="75915" magical="33000.1909670726" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+				<defence physical="2692.68292682927" magical="1794.92939666239" />
+				<speed>
+					<walk ground="80" />
+					<run ground="120" />
+				</speed>
+				<hitTime>600</hitTime>
+				<abnormalResist physical="230" magical="230" />
+			</stats>
+			<status attackable="true" />
+			<skillList>
+				<skill id="4416" level="1" /> 
+				<skill id="14765" level="4" /> 
+				<skill id="4408" level="1" /> 
+				<skill id="4409" level="1" /> 
+				<skill id="4410" level="11" /> 
+				<skill id="4411" level="11" /> 
+				<skill id="4412" level="11" /> 
+				<skill id="4413" level="11" /> 
+				<skill id="4414" level="2" /> 
+				<skill id="4415" level="3" /> 
+				<skill id="4045" level="2" /> 
+				<skill id="4256" level="1" /> 
+				<skill id="48083" level="1" /> 
+				<skill id="4127" level="1" /> 
+			</skillList>
+			<corpseTime>13</corpseTime>
+			<exCrtEffect>true</exCrtEffect>
+			<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="true">
+				<skill primaryId="4127" />
+			</ai>
+			<collision>
+				<radius normal="65" />
+				<height normal="174" />
+			</collision>
+	</npc>
+
+	<!-- GrandBoss #6 -->
+	<npc id="29022" level="80" type="GrandBoss" name="札肯" title="Pirate Captain">
+			<race>UNDEAD</race>
+			<sex>MALE</sex>
+			<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+				<vitals hp="84480000" hpRegen="1" mp="12240" mpRegen="10" />
+				<attack physical="75915" magical="6600.03819341452" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+				<defence physical="2692.68292682927" magical="1794.92939666239" />
+				<speed>
+					<walk ground="42" />
+					<run ground="190" />
+				</speed>
+				<hitTime>590</hitTime>
+				<abnormalResist physical="230" magical="230" />
+			</stats>
+			<status attackable="true" noSleepMode="true" />
+			<skillList>
+				<skill id="4416" level="1" /> 
+				<skill id="14765" level="4" /> 
+				<skill id="4408" level="1" /> 
+				<skill id="4409" level="1" /> 
+				<skill id="4410" level="11" /> 
+				<skill id="4411" level="11" /> 
+				<skill id="4412" level="11" /> 
+				<skill id="4413" level="11" /> 
+				<skill id="4414" level="2" /> 
+				<skill id="4415" level="3" /> 
+				<skill id="4045" level="2" /> 
+				<skill id="4071" level="1" /> 
+				<skill id="4116" level="2" /> 
+				<skill id="48083" level="1" /> 
+				<skill id="4221" level="1" /> 
+				<skill id="4220" level="1" /> 
+				<skill id="4218" level="1" /> 
+				<skill id="4219" level="1" /> 
+			</skillList>
+			<corpseTime>300</corpseTime>
+			<exCrtEffect>true</exCrtEffect>
+			<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="true" />
+			<collision>
+				<radius normal="32" />
+				<height normal="67" />
+			</collision>
+	</npc>
+
+	<!-- GrandBoss #7 -->
+	<npc id="29066" level="75" type="GrandBoss" name="安塔瑞斯">
+			<parameters>
+				<param name="ultra_respawn_time" value="8" />
+			</parameters>
+			<race>DRAGON</race>
+			<sex>MALE</sex>
+			<acquire exp="262720917" sp="63053" />
+			<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+				<vitals hp="6710000" hpRegen="1100" mp="1800000" mpRegen="1000" />
+				<attack physical="4900" magical="2550" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+				<defence physical="3456" magical="862.5" />
+				<speed>
+					<walk ground="50" />
+					<run ground="186" />
+				</speed>
+				<hitTime>600</hitTime>
+				<abnormalResist physical="230" magical="230" />
+			</stats>
+			<status attackable="true" noSleepMode="true" />
+			<skillList>
+				<skill id="4416" level="10" /> 
+				<skill id="4408" level="1" /> 
+				<skill id="4409" level="1" /> 
+				<skill id="4410" level="11" /> 
+				<skill id="4411" level="11" /> 
+				<skill id="4412" level="11" /> 
+				<skill id="4413" level="11" /> 
+				<skill id="4414" level="2" /> 
+				<skill id="4415" level="3" /> 
+				<skill id="4045" level="1" /> 
+				<skill id="4122" level="1" /> 
+				<skill id="4071" level="2" /> 
+				<skill id="5093" level="1" /> 
+			</skillList>
+			<corpseTime>14</corpseTime>
+			<exCrtEffect>true</exCrtEffect>
+			<ai type="BALANCED" aggroRange="4096" clanHelpRange="300" isAggressive="true">
+				<skill maxChance="25" />
+			</ai>
+			<collision>
+				<radius normal="300" />
+				<height normal="300" />
+			</collision>
+		</npc>
+
+	<!-- GrandBoss #8 -->
+	<npc id="29067" level="75" type="GrandBoss" name="安塔瑞斯">
+			<parameters>
+				<param name="ultra_respawn_time" value="5" />
+			</parameters>
+			<race>DRAGON</race>
+			<sex>MALE</sex>
+			<acquire exp="262720918" sp="29116376" raidPoints="30780" />
+			<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+				<vitals hp="7480000" hpRegen="1100" mp="1800000" mpRegen="1000" />
+				<attack physical="4900" magical="2550" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+				<defence physical="3456" magical="862.5" />
+				<speed>
+					<walk ground="50" />
+					<run ground="186" />
+				</speed>
+				<hitTime>600</hitTime>
+				<abnormalResist physical="230" magical="230" />
+			</stats>
+			<status attackable="true" noSleepMode="true" />
+			<skillList>
+				<skill id="4416" level="10" /> 
+				<skill id="4408" level="1" /> 
+				<skill id="4409" level="1" /> 
+				<skill id="4410" level="11" /> 
+				<skill id="4411" level="11" /> 
+				<skill id="4412" level="11" /> 
+				<skill id="4413" level="11" /> 
+				<skill id="4414" level="2" /> 
+				<skill id="4415" level="3" /> 
+				<skill id="4045" level="1" /> 
+				<skill id="4122" level="1" /> 
+				<skill id="4071" level="2" /> 
+				<skill id="5093" level="1" /> 
+			</skillList>
+			<corpseTime>14</corpseTime>
+			<exCrtEffect>true</exCrtEffect>
+			<ai type="BALANCED" aggroRange="4096" clanHelpRange="300" isAggressive="true">
+				<skill maxChance="25" />
+			</ai>
+			<collision>
+				<radius normal="300" />
+				<height normal="300" />
+			</collision>
+		</npc>
+
+	<!-- GrandBoss #9 -->
+	<npc id="29068" level="80" type="GrandBoss" name="安塔瑞斯" title="Earth Dragon">
+			<parameters>
+				<param name="ultra_respawn_time" value="3" />
+			</parameters>
+			<race>DRAGON</race>
+			<sex>MALE</sex>
+			<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+				<vitals hp="66000000" hpRegen="350000" mp="2025740" mpRegen="1000" />
+				<attack physical="15183" magical="3783.6" random="5" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+				<defence physical="17500" magical="10000" />
+				<speed>
+					<walk ground="50" />
+					<run ground="279" />
+				</speed>
+				<hitTime>600</hitTime>
+				<abnormalResist physical="230" magical="230" />
+			</stats>
+			<status attackable="true" noSleepMode="true" isDeathPenalty="true" />
+			<skillList>
+				<skill id="4416" level="10" /> 
+				<skill id="14765" level="4" /> 
+				<skill id="5465" level="1" /> 
+				<skill id="4408" level="1" /> 
+				<skill id="4409" level="1" /> 
+				<skill id="4410" level="11" /> 
+				<skill id="4411" level="11" /> 
+				<skill id="4412" level="11" /> 
+				<skill id="4413" level="11" /> 
+				<skill id="4414" level="2" /> 
+				<skill id="4415" level="3" /> 
+				<skill id="4045" level="2" /> 
+				<skill id="4122" level="1" /> 
+				<skill id="4071" level="2" /> 
+				<skill id="4112" level="1" /> 
+				<skill id="5093" level="1" /> 
+			</skillList>
+			<corpseTime>14</corpseTime>
+			<exCrtEffect>true</exCrtEffect>
+			<ai type="BALANCED" aggroRange="4096" clanHelpRange="300" isAggressive="true">
+				<skill maxChance="25" primaryId="4112" />
+			</ai>
+			<collision>
+				<radius normal="300" />
+				<height normal="300" />
+			</collision>
+	</npc>
+
+	<!-- GrandBoss #10 -->
+	<npc id="29151" level="90" type="GrandBoss" name="安塔瑞斯" title="Earth Dragon" element="EARTH">
+			<race>DRAGON</race>
+			<sex>MALE</sex>
+			<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+				<vitals hp="907499998.35" hpRegen="10.2" mp="2025740" mpRegen="3.6" />
+				<attack physical="14444" magical="986" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+				<defence physical="9532" magical="418" />
+				<speed>
+					<walk ground="50" />
+					<run ground="279" />
+				</speed>
+				<hitTime>600</hitTime>
+			</stats>
+			<status attackable="true" />
+			<collision>
+				<radius normal="300" />
+				<height normal="300" />
+			</collision>
+			<skillList>
+				<skill id="4416" level="10" /> 
+				<skill id="4122" level="1" /> 
+			</skillList>
+	</npc>
+
+	<!-- GrandBoss #11 -->
+	<npc id="29152" level="90" type="GrandBoss" name="安塔瑞斯" title="Dreadful Earth Dragon" element="EARTH">
+			<race>DRAGON</race>
+			<sex>MALE</sex>
+			<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+				<vitals hp="1290666664.32" hpRegen="10.2" mp="2025740" mpRegen="3.6" />
+				<attack physical="14444" magical="986" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+				<defence physical="9532" magical="418" />
+				<speed>
+					<walk ground="50" />
+					<run ground="279" />
+				</speed>
+				<hitTime>600</hitTime>
+			</stats>
+			<status attackable="true" />
+			<collision>
+				<radius normal="300" />
+				<height normal="300" />
+			</collision>
+			<skillList>
+				<skill id="4416" level="10" /> 
+				<skill id="4122" level="1" /> 
+			</skillList>
+	</npc>
+
+	<!-- GrandBoss #12 -->
+	<npc id="29153" level="90" type="GrandBoss" name="安塔瑞斯" title="Immortal Earth Dragon" element="EARTH">
+			<race>DRAGON</race>
+			<sex>MALE</sex>
+			<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+				<vitals hp="1979999998.02" hpRegen="10.2" mp="2025740" mpRegen="3.6" />
+				<attack physical="14444" magical="986" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+				<defence physical="9532" magical="418" />
+				<speed>
+					<walk ground="50" />
+					<run ground="279" />
+				</speed>
+				<hitTime>600</hitTime>
+			</stats>
+			<status attackable="true" />
+			<collision>
+				<radius normal="300" />
+				<height normal="300" />
+			</collision>
+			<skillList>
+				<skill id="4416" level="10" /> 
+				<skill id="4122" level="1" /> 
+			</skillList>
+	</npc>
+
+	<!-- GrandBoss #13 -->
+	<npc id="29137" level="90" type="GrandBoss" name="格拉奇恩斯" title="Frost Lord" element="WATER">
+			<race>ETC</race>
+			<sex>FEMALE</sex>
+			<equipment rhand="95841" />
+			<stats str="88" int="79" dex="55" wit="38" con="82" men="78">
+				<vitals hp="304615400" hpRegen="10.5" mp="18000" mpRegen="3.6" />
+				<speed>
+					<walk ground="40" />
+					<run ground="180" />
+				</speed>
+				<attack physical="3611" magical="2465" critical="4" attackSpeed="253" range="40" />
+				<defence physical="2383" magical="1045" />
+			</stats>
+			<status attackable="false" />
+			<collision>
+				<radius normal="42" />
+				<height normal="102.75" />
+			</collision>
+			<skillList>
+				<skill id="4279" level="1" /> 
+			</skillList>
+	</npc>
+
+	<!-- GrandBoss #14 -->
+	<npc id="29138" level="90" type="GrandBoss" name="格拉奇恩斯" title="Dreadful Frost Lord" element="WATER">
+			<race>ETC</race>
+			<sex>FEMALE</sex>
+			<equipment rhand="95842" />
+			<stats str="88" int="79" dex="55" wit="45" con="82" men="78">
+				<vitals hp="430015100" hpRegen="10.5" mp="18000" mpRegen="3.6" />
+				<speed>
+					<walk ground="40" />
+					<run ground="180" />
+				</speed>
+				<attack physical="3611" magical="2465" critical="4" attackSpeed="253" range="40" />
+				<defence physical="2383" magical="1045" />
+			</stats>
+			<status attackable="false" />
+			<collision>
+				<radius normal="42" />
+				<height normal="102.75" />
+			</collision>
+			<skillList>
+				<skill id="4279" level="1" /> 
+			</skillList>
+	</npc>
+
+	<!-- GrandBoss #15 -->
+	<npc id="29139" level="90" type="GrandBoss" name="格拉奇恩斯" title="Dreadful Frost Lord" element="WATER">
+			<race>ETC</race>
+			<sex>FEMALE</sex>
+			<equipment rhand="95843" />
+			<stats str="88" int="79" dex="55" wit="45" con="82" men="78">
+				<vitals hp="430015100" hpRegen="20.5" mp="18000" mpRegen="3.6" />
+				<speed>
+					<walk ground="40" />
+					<run ground="180" />
+				</speed>
+				<attack physical="3611" magical="2465" critical="4" attackSpeed="253" range="40" />
+				<defence physical="2383" magical="1045" />
+			</stats>
+			<status attackable="false" />
+			<collision>
+				<radius normal="42" />
+				<height normal="102.75" />
+			</collision>
+			<skillList>
+				<skill id="4279" level="1" /> 
+			</skillList>
+	</npc>
+</list>

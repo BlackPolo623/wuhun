@@ -1,0 +1,1185 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="29100" level="80" type="Monster" name="大天使">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="93" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="822426" hpRegen="158" mp="1475" mpRegen="3" />
+			<attack physical="4185" magical="371" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
+			<defence physical="5108" magical="1686" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>760</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<ai clanHelpRange="300" aggroRange="450">
+			<clanList>
+				<clan>ARCHANGEL</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15" />
+			<height normal="80" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 29101 (巴溫) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29102 (安塔瑞斯) 已被提取至 RaidBosses.xml -->
+	<npc id="29103" level="84" type="Monster" name="貝希莫斯巨龍">
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="556961.9" hpRegen="15" mp="22800" mpRegen="30" />
+			<attack physical="10163" magical="8167" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1245" magical="774" />
+			<speed>
+				<walk ground="55" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" isDeathPenalty="true" />
+		<collision>
+			<radius normal="63" />
+			<height normal="54" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="29104" level="84" type="Monster" name="塔拉斯克龍">
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1113923.8" hpRegen="15" mp="22800" mpRegen="30" />
+			<attack physical="10163" magical="8167" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1245" magical="774" />
+			<speed>
+				<walk ground="55" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" isDeathPenalty="true" />
+		<collision>
+			<radius normal="63" />
+			<height normal="54" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="10" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="6655" level="1" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 29105 (伊格尼斯王) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29106 (芮普拉女王) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29107 (普羅傑爾拉王) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29108 (佩德蘭王) 已被提取至 RaidBosses.xml -->
+	<npc id="29109" level="82" type="Folk" name="芙蕾雅" title="Ice Queen">
+		<race>HUMANOID</race>
+		<sex>FEMALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="13948" hpRegen="1" mp="18000" mpRegen="99" />
+			<attack physical="13829.6" magical="4375.2" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.8" magical="1365.6" />
+			<speed>
+				<walk ground="54" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="false" undying="true" noSleepMode="true" />
+		<collision>
+			<radius normal="22" />
+			<height normal="55" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="29110" level="82" type="Folk" name="安全地帶">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="13948704" hpRegen="1" mp="18000" mpRegen="99" />
+			<attack physical="13829.6" magical="4375.2" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.8" magical="1365.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" undying="true" noSleepMode="true" targetable="false" showName="false" />
+		<collision>
+			<radius normal="0.001" />
+			<height normal="0.001" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="29111" level="80" type="Monster" name="水之史萊因" element="WATER">
+		<parameters>
+			<skill name="Skill01_ID" id="50039" level="1" />
+			<param name="Skill01_Probablity" value="9000" />
+		</parameters>
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="130884.9" hpRegen="1" mp="3349.6" mpRegen="6" />
+			<attack physical="4372.85376" magical="1756.026816" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.25" magical="999.2" />
+			<speed>
+				<walk ground="36" />
+				<run ground="36" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" noSleepMode="true" />
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48045" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="50039" level="1" /> 
+		</skillList>
+		<collision>
+			<radius normal="36" />
+			<height normal="39" />
+		</collision>
+	</npc>
+	<npc id="29112" level="80" type="Monster" name="普羅傑爾拉的守護者" element="WIND">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="1273967" hpRegen="1" mp="3349.6" mpRegen="6" />
+			<attack physical="4372.85376" magical="1756.026816" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.25" magical="999.2" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="230" magical="230" />
+		</stats>
+		<status attackable="true" noSleepMode="true" />
+		<collision>
+			<radius normal="40" />
+			<height normal="133" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48046" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4276" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="29113" level="80" type="Monster" name="普羅傑爾拉的守護者" element="WIND">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="1273967" hpRegen="1" mp="3349.6" mpRegen="6" />
+			<attack physical="4372.85376" magical="1756.026816" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.25" magical="999.2" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="230" magical="230" />
+		</stats>
+		<status attackable="true" noSleepMode="true" />
+		<collision>
+			<radius normal="40" />
+			<height normal="133" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="9" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48046" level="1" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="29114" level="80" type="Monster" name="普羅傑爾拉的守護者" element="WIND">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="1273967" hpRegen="1" mp="3349.6" mpRegen="6" />
+			<attack physical="4372.85376" magical="1756.026816" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.25" magical="999.2" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="230" magical="230" />
+		</stats>
+		<status attackable="true" noSleepMode="true" />
+		<collision>
+			<radius normal="40" />
+			<height normal="133" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48046" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="5620" level="5" /> 
+		</skillList>
+	</npc>
+	<npc id="29115" level="82" type="Monster" name="普羅傑爾拉的風暴" element="WIND">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="2750000" hpRegen="1" mp="18000" mpRegen="99" />
+			<attack physical="13829.6" magical="4375.2" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.8" magical="1365.6" />
+			<speed>
+				<walk ground="1" />
+				<run ground="50" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" undying="true" noSleepMode="true" targetable="false" showName="false" />
+		<collision>
+			<radius normal="50" />
+			<height normal="100" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="29116" level="80" type="Monster" name="佩德蘭的破片" element="EARTH">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="436290.2" hpRegen="1" mp="3349.6" mpRegen="6" />
+			<attack physical="4372.85376" magical="1756.026816" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.25" magical="999.2" />
+			<speed>
+				<walk ground="40" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" noSleepMode="true" canMove="false" />
+		<collision>
+			<radius normal="40" />
+			<height normal="61" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="9" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48047" level="1" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="29117" level="80" type="Monster" name="佩德蘭的碎片" element="EARTH">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="436290.2" hpRegen="1" mp="3349.6" mpRegen="6" />
+			<attack physical="4372.85376" magical="1756.026816" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.25" magical="999.2" />
+			<speed>
+				<walk ground="40" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" noSleepMode="true" canMove="false" />
+		<collision>
+			<radius normal="40" />
+			<height normal="61" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="48047" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="5620" level="5" /> 
+			<skill id="4276" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="29118" level="82" type="Monster" name="精靈王之魔力" element="EARTH">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="4761499" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="3376.912" magical="1729.488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="839.46" magical="460.716" />
+			<speed>
+				<walk ground="45" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="27.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 29119 (札肯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29120 (伊格尼斯王) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29121 (芮普拉女王) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29122 (普羅傑爾拉王) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29123 (佩德蘭王) 已被提取至 RaidBosses.xml -->
+	<npc id="29124" level="84" type="Folk" name="芙蕾雅" title="Ice Queen">
+		<race>HUMANOID</race>
+		<sex>FEMALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="13948" hpRegen="1" mp="18000" mpRegen="99" />
+			<attack physical="35810" magical="4375.2" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2505" magical="1452" />
+			<speed>
+				<walk ground="54" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="false" undying="true" noSleepMode="true" />
+		<collision>
+			<radius normal="22" />
+			<height normal="55" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="29125" level="84" type="Folk" name="安全地帶">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="13948704" hpRegen="1" mp="18000" mpRegen="99" />
+			<attack physical="35810" magical="4375.2" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2505" magical="1452" />
+			<speed>
+				<walk ground="1" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" undying="true" noSleepMode="true" targetable="false" showName="false" />
+		<collision>
+			<radius normal="0.001" />
+			<height normal="0.001" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="29126" level="84" type="Monster" name="水之史萊因" element="WATER">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="125316.5" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="3899.90824" magical="2663.13177" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="811.3347" magical="593.69952" />
+			<speed>
+				<walk ground="36" />
+				<run ground="36" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="36" />
+			<height normal="39" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="5620" level="8" /> 
+		</skillList>
+	</npc>
+	<npc id="29127" level="84" type="Monster" name="普羅傑爾拉的守護者" element="WIND">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="22974640" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="3899.90824" magical="2663.13177" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="811.3347" magical="593.69952" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="40" />
+			<height normal="133" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4276" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="29128" level="84" type="Monster" name="普羅傑爾拉的守護者" element="WIND">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="22974640" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="3899.90824" magical="2663.13177" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="811.3347" magical="593.69952" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="40" />
+			<height normal="133" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4413" level="6" /> 
+		</skillList>
+	</npc>
+	<npc id="29129" level="84" type="Monster" name="普羅傑爾拉的守護者" element="WIND">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="22974640" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="3899.90824" magical="2663.13177" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="811.3347" magical="593.69952" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="40" />
+			<height normal="133" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="5620" level="8" /> 
+		</skillList>
+	</npc>
+	<npc id="29130" level="84" type="Monster" name="普羅傑爾拉的風暴" element="WIND">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3916139" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="3899.90824" magical="2663.13177" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="811.3347" magical="593.69952" />
+			<speed>
+				<walk ground="1" />
+				<run ground="50" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="50" />
+			<height normal="100" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="6" /> 
+		</skillList>
+	</npc>
+	<npc id="29131" level="84" type="Monster" name="佩德蘭的破片" element="EARTH">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6265823" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="3899.90824" magical="2663.13177" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="811.3347" magical="593.69952" />
+			<speed>
+				<walk ground="40" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="40" />
+			<height normal="61" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4413" level="6" /> 
+			<skill id="4276" level="3" /> 
+		</skillList>
+	</npc>
+	<npc id="29132" level="84" type="Monster" name="佩德蘭的碎片" element="EARTH">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6265823" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="3899.90824" magical="2663.13177" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="811.3347" magical="593.69952" />
+			<speed>
+				<walk ground="40" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="40" />
+			<height normal="61" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="5620" level="8" /> 
+		</skillList>
+	</npc>
+	<npc id="29133" level="84" type="Monster" name="精靈王之魔力" element="EARTH">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6265823" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="3899.90824" magical="2663.13177" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="811.3347" magical="593.69952" />
+			<speed>
+				<walk ground="45" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="27.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="1" /> 
+		</skillList>
+	</npc>
+	<npc id="29134" level="80" type="Monster" name="國王 曼提斯">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3924427" hpRegen="10.2" mp="3349.6" mpRegen="3.6" />
+			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="409.65" magical="258.5499" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="40" />
+			<height normal="94" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="7" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 29144 (巴列斯) 已被提取至 RaidBosses.xml -->
+	<npc id="29145" level="90" type="Monster" name="巴列斯的奴隸">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5325950" hpRegen="10.2" mp="3693.6" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="60" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="8" />
+			<height normal="17.5" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4461" level="3" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 29146 (達里昂) 已被提取至 RaidBosses.xml -->
+	<npc id="29147" level="85" type="Monster" name="塔拉斯克龍" title="Earth Dragon">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="18797470" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="4452.5043" magical="3040.48329" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1996.20366" magical="1460.73522" />
+			<speed>
+				<walk ground="30" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="34.5" />
+			<height normal="54.9" />
+		</collision>
+	</npc>
+	<npc id="29148" level="90" type="Monster" name="塔拉斯克龍" title="Earth Dragon" element="EARTH">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="46993670" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="40" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="34.5" />
+			<height normal="54.9" />
+		</collision>
+	</npc>
+	<npc id="29149" level="90" type="Monster" name="塔拉斯克龍" title="Dreadful Earth Dragon" element="EARTH">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="62658230" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="35" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="48" />
+			<height normal="82.5" />
+		</collision>
+	</npc>
+	<npc id="29150" level="90" type="Monster" name="塔拉斯克龍" title="Immortal Earth Dragon" element="EARTH">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="80021540" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="35" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="48" />
+			<height normal="82.5" />
+		</collision>
+	</npc>
+	<!-- NPC 29151 (安塔瑞斯) 已被提取至 GrandBosses.xml -->
+	<!-- NPC 29152 (安塔瑞斯) 已被提取至 GrandBosses.xml -->
+	<!-- NPC 29153 (安塔瑞斯) 已被提取至 GrandBosses.xml -->
+	<!-- NPC 29154 (安塔瑞斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29155 (安塔瑞斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29156 (巴列斯的寶箱) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29157 (巴洛克) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29158 (巴洛克) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29159 (巴洛克) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29160 (巴洛克) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29161 (巴洛克) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29162 (巴洛克) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29163 (巴洛克) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29164 (巴洛克) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29165 (巴洛克) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29166 (巴洛克) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29167 (巴洛克) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29168 (巴洛克) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29169 (巴洛克王) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29170 (渾沌核心) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29171 (渾沌奧爾芬) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29172 (渾沌巨蟻女王) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29173 (渾沌札肯) 已被提取至 RaidBosses.xml -->
+	<npc id="29174" level="87" type="Monster" name="自爆裝置">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5325950" hpRegen="10.2" mp="3693.6" mpRegen="3.6" />
+			<attack physical="4452.5043" magical="3040.48329" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1996.20366" magical="1460.73522" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="32.1" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> 
+		</skillList>
+	</npc>
+	<!-- NPC 29175 (巴溫) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29176 (不滅的巴溫) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29177 (高德) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29178 (不滅的高德) 已被提取至 RaidBosses.xml -->
+	<npc id="29179" level="90" type="Monster" name="不滅的大天使">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="91986" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="18797470" hpRegen="10.2" mp="1475" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="22" />
+			<height normal="120" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="8" /> 
+		</skillList>
+	</npc>
+	<npc id="29190" level="84" type="Monster" name="塔拉斯克龍">
+		<parameters>
+			<skill name="Skill01_ID" id="5095" level="1" />
+			<skill name="Skill02_ID" id="5096" level="1" />
+		</parameters>
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2088607.4" hpRegen="22" mp="22800" mpRegen="30" />
+			<attack physical="14519" magical="11667" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1370" magical="851" />
+			<speed>
+				<walk ground="55" />
+				<run ground="180" />
+			</speed>
+			<hitTime>600</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" isDeathPenalty="true" />
+		<skillList>
+			<skill id="4416" level="10" /> 
+			<skill id="5465" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="6655" level="1" /> 
+			<skill id="5095" level="1" /> 
+			<skill id="5096" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="true" />
+		<collision>
+			<radius normal="63" />
+			<height normal="54" />
+		</collision>
+	</npc>
+	<!-- NPC 29135 (特倫) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29136 (格拉奇恩斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 29137 (格拉奇恩斯) 已被提取至 GrandBosses.xml -->
+	<!-- NPC 29138 (格拉奇恩斯) 已被提取至 GrandBosses.xml -->
+	<!-- NPC 29139 (格拉奇恩斯) 已被提取至 GrandBosses.xml -->
+	<npc id="29140" level="90" type="Monster" name="索迪安" title="Praetorian" element="WATER">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="244947.7" hpRegen="10.5" mp="11928" mpRegen="3.6" />
+			<speed>
+				<walk ground="20" />
+				<run ground="150" />
+			</speed>
+			<attack physical="3611" magical="2465" critical="4" attackSpeed="253" range="40" />
+			<defence physical="2383" magical="1045" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="22.5" />
+			<height normal="48" />
+		</collision>
+		<skillList>
+			<skill id="48354" level="2" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" aggroRange="200" isAggressive="true">
+		</ai>
+	</npc>
+	<npc id="29141" level="90" type="Monster" name="德萊伊迪安" title="Praetorian" element="WATER">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="190514.8" hpRegen="10.5" mp="11928" mpRegen="3.6" />
+			<speed>
+				<walk ground="36" />
+				<run ground="180" />
+			</speed>
+			<attack physical="3611" magical="2465" critical="4" attackSpeed="253" range="40" />
+			<defence physical="2383" magical="1045" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="18" />
+			<height normal="39" />
+		</collision>
+		<skillList>
+			<skill id="48365" level="1" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" aggroRange="200" isAggressive="true">
+		</ai>
+	</npc>
+	<npc id="29142" level="90" type="Monster" name="布烏迪安" title="Praetorian" element="WATER">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="15302" />
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="190514.8" hpRegen="10.5" mp="11928" mpRegen="3.6" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+			<attack physical="3611" magical="2465" critical="4" attackSpeed="253" range="40" />
+			<defence physical="2383" magical="1045" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="15" />
+			<height normal="36.75" />
+		</collision>
+		<skillList>
+			<skill id="48355" level="2" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="ARCHER" aggroRange="200" isAggressive="true">
+		</ai>
+	</npc>
+	<npc id="29143" level="90" type="Monster" name="阿卡迪安" title="Praetorian" element="WATER">
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="15302" />
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="190514.8" hpRegen="10.5" mp="11928" mpRegen="3.6" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<attack physical="3611" magical="2465" critical="4" attackSpeed="253" range="40" />
+			<defence physical="2383" magical="1045" />
+		</stats>
+		<status attackable="false" />
+		<collision>
+			<radius normal="15" />
+			<height normal="36.75" />
+		</collision>
+		<skillList>
+			<skill id="48356" level="2" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="ARCHER" aggroRange="200" isAggressive="true">
+		</ai>
+	</npc>
+	<!-- NPC 29191 (巴拉卡斯) 已被提取至 RaidBosses.xml -->
+	<npc id="29192" level="90" type="Monster" name="熔岩撒魯斯初生體">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="18101270" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="1" />
+				<run ground="1" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="75" />
+		</collision>
+		<skillList>
+			<skill id="4416" level="2" /> 
+		</skillList>
+	</npc>
+	<npc id="29193" level="90" type="Monster" name="呼叫" title="Valakas' Wing">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="18797470" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="60" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="30" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="29194" level="90" type="Monster" name="無敵" title="Valakas' Wing">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="18797470" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="44" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="50" />
+			<height normal="81.2165" />
+		</collision>
+	</npc>
+	<npc id="29195" level="90" type="Monster" name="巴拉卡斯恢復" title="Valakas' Wing">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="18797470" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="60" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="25" />
+			<height normal="70" />
+		</collision>
+	</npc>
+	<npc id="29196" level="90" type="Monster" name="反射" title="Valakas' Wing">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="18797470" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="50" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="11" />
+			<height normal="25.5" />
+		</collision>
+	</npc>
+	<npc id="29197" level="90" type="Monster" name="廣域衝擊" title="Valakas' Wing">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="18797470" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="60" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="18" />
+			<height normal="29.5" />
+		</collision>
+	</npc>
+	<npc id="29198" level="90" type="Monster" name="傷害範圍" title="Valakas' Wing">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="18797470" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="60" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="15" />
+			<height normal="30" />
+		</collision>
+	</npc>
+	<npc id="29199" level="90" type="Monster" name="輔助魔法範圍" title="Valakas' Wing">
+		<race>ETC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="18797470" hpRegen="10.2" mp="18000" mpRegen="3.6" />
+			<attack physical="7222" magical="493" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="4766" magical="209" />
+			<speed>
+				<walk ground="60" />
+				<run ground="170" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="true" />
+		<collision>
+			<radius normal="16" />
+			<height normal="35.5" />
+		</collision>
+	</npc>
+</list>

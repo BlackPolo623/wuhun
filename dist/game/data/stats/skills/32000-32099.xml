@@ -1,0 +1,1258 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="32000" toLevel="1" name="士氣高昂糯米糕">
+		
+		<icon>icon.bm_rice_cake_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>600000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32001" toLevel="1" name="士氣高昂糯米糕-活動">
+		
+		<icon>icon.bm_rice_cake_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>600000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32002" toLevel="1" name="經驗值提升卷軸">
+		
+		<icon>icon.etc_recall_exp_scroll</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>600000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32003" toLevel="1" name="一獲千金補給箱">
+		<icon>icon.event_high_oriental_park_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49082</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="10.0">
+						<item id="735" count="1" /> 
+					</item>
+					<item chance="10.0">
+						<item id="736" count="1" /> 
+					</item>
+					<item chance="10.0">
+						<item id="951" count="1" /> 
+					</item>
+					<item chance="10.0">
+						<item id="952" count="1" /> 
+					</item>
+					<item chance="10.0">
+						<item id="955" count="1" /> 
+					</item>
+					<item chance="10.0">
+						<item id="956" count="1" /> 
+					</item>
+					<item chance="10.0">
+						<item id="1375" count="1" /> 
+					</item>
+					<item chance="10.0">
+						<item id="6035" count="1" /> 
+					</item>
+					<item chance="10.0">
+						<item id="6036" count="1" /> 
+					</item>
+					<item chance="10.0">
+						<item id="49084" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32004" toLevel="1" name="高級復活卷軸">
+		<icon>icon.etc_scroll_of_resurrection_i01</icon>
+		<operateType>A1</operateType>
+		<targetType>PC_BODY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<effectRange>600</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49084</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
+		<effects>
+			<effect name="Resurrection">
+				<power>50</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32005" toLevel="1" name="內衣之難戰鬥支援禮盒">
+		<icon>icon.etc_marguene_collection_box_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49085</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="95.0">
+						<item id="49080" count="2" /> 
+					</item>
+					<item chance="5.0">
+						<item id="49082" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32006" toLevel="1" name="內衣團長之力">
+		
+		<icon>icon.weapon_shining_knife_i00</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1100</hitTime>
+		<reuseDelay>60000</reuseDelay>
+	</skill>
+	<skill id="32007" toLevel="3" name="返回卷軸-龍之谷橋">
+		
+		
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+	</skill>
+	<skill id="32010" toLevel="1" name="美容禮盒">
+		<icon>icon.etc_box_of_adventure_2_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="32011" toLevel="1" name="輔助魔法卷軸禮盒">
+		<icon>icon.etc_box_of_adventure_3_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="32012" toLevel="1" name="高級染料禮盒">
+		<icon>icon.etc_box_of_adventure_4_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49110</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="8.3">
+						<item id="4592" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4591" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4594" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4593" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4595" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4596" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4597" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4598" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4589" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4590" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4599" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4600" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32013" toLevel="1" name="染料禮盒">
+		<icon>icon.etc_box_of_adventure_5_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49111</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="8.3">
+						<item id="4469" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4470" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4471" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4472" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4473" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4474" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4475" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4476" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4477" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4478" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4479" count="1" /> 
+					</item>
+					<item chance="8.3">
+						<item id="4480" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32014" toLevel="1" name="魔杖禮盒">
+		<icon>icon.etc_treasure_box_i02</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49112</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="50.0">
+						<item id="192" count="1" /> 
+					</item>
+					<item chance="50.0">
+						<item id="195" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32015" toLevel="1" name="格鬥兵器禮盒">
+		<icon>icon.etc_treasure_box_i03</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49113</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25.0">
+						<item id="263" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="265" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="266" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="4233" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32016" toLevel="1" name="槍武器禮盒">
+		<icon>icon.etc_treasure_box_i04</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49114</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25.0">
+						<item id="94" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="95" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="298" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="299" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32017" toLevel="1" name="鈍器禮盒">
+		<icon>icon.etc_treasure_box_i05</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49115</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25.0">
+						<item id="162" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="191" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="2502" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="2503" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32018" toLevel="1" name="匕首禮盒">
+		<icon>icon.etc_treasure_box_i06</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49116</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25.0">
+						<item id="226" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="227" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="228" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="233" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32019" toLevel="1" name="單手劍禮盒">
+		<icon>icon.etc_treasure_box_i07</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49117</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25.0">
+						<item id="72" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="74" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="76" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="135" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32020" toLevel="1" name="弓禮盒">
+		<icon>icon.etc_treasure_box_i08</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49118</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="25.0">
+						<item id="281" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="282" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="283" count="1" /> 
+					</item>
+					<item chance="25.0">
+						<item id="286" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32021" toLevel="1" name="禮品盒">
+		<icon>icon.new_user_box</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>0</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49128</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="20">
+						<item id="49110" count="1" /> 
+					</item>
+					<item chance="20">
+						<item id="49111" count="1" /> 
+					</item>
+					<item chance="20">
+						<item id="49108" count="1" /> 
+					</item>
+					<item chance="20">
+						<item id="49109" count="1" /> 
+					</item>
+					<item chance="20">
+						<item id="49013" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32022" toLevel="1" name="威尼斯古文-初級用">
+		
+		<icon>icon.skill19226</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<passiveConditions>
+			<condition name="CheckLevel">
+				<minLevel>1</minLevel>
+				<maxLevel>40</maxLevel>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="ExpModify">
+				<amount>22</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>22</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32023" toLevel="1" name="瑪肯戒指">
+		
+		<icon>icon.ev_11th_rare_acc_ring</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32024" toLevel="1" name="瑪肯耳環">
+		
+		<icon>icon.ev_11th_rare_acc_earing</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Heal">
+				<power>1</power>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32025" toLevel="1" name="瑪肯項鍊">
+		
+		<icon>icon.ev_11th_rare_acc_necklace</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>INSTINCT</abnormalType>
+		<affectLimit>10-10</affectLimit>
+		<affectObject>CLAN</affectObject>
+		<affectRange>1000</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>0</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<reuseDelay>0</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32026" toLevel="1" name="瑪肯戒指">
+		
+		<icon>icon.ev_11th_rare_acc_ring</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32027" toLevel="1" name="瑪肯耳環">
+		
+		<icon>icon.ev_11th_rare_acc_earing</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MpRegen">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Heal">
+				<power>1</power>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32028" toLevel="1" name="瑪肯項鍊">
+		
+		<icon>icon.ev_11th_rare_acc_necklace</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalType>INSTINCT</abnormalType>
+		<affectLimit>10-10</affectLimit>
+		<affectObject>CLAN</affectObject>
+		<affectRange>1000</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>0</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<reuseDelay>0</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>1</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32029" toLevel="1" name="威尼斯古文-高級用">
+		
+		<icon>icon.skill19226</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="ExpModify">
+				<amount>11</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>11</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32030" toLevel="1" name="丹帝的全壘打球">
+		
+		<icon>icon.ev_dinos_baseball</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>CHANGEBODY</abnormalType>
+		<abnormalVisualEffect>CHANGE_DINOS</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>0</effectPoint>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>4</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>46254</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-3</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>100</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>100</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32031" toLevel="1" name="返回卷軸-說話之島村莊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29149</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-84200</x>
+				<y>244566</y>
+				<z>-3728</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32032" toLevel="1" name="返回卷軸-精靈村莊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29150</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>46915</x>
+				<y>51441</y>
+				<z>-2976</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32033" toLevel="1" name="返回卷軸-黑暗精靈村莊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29151</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>9723</x>
+				<y>15576</y>
+				<z>-4568</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32034" toLevel="1" name="返回卷軸-半獸人村莊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29152</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-45208</x>
+				<y>-112502</y>
+				<z>-240</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32035" toLevel="1" name="返回卷軸-矮人村莊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29153</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>115158</x>
+				<y>-178170</y>
+				<z>-880</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32036" toLevel="1" name="返回卷軸-古魯丁村莊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29154</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-80831</x>
+				<y>149808</y>
+				<z>-3040</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32037" toLevel="1" name="返回卷軸-古魯丁城鎮">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29155</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-12728</x>
+				<y>122726</y>
+				<z>-3112</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32038" toLevel="1" name="返回卷軸-狄恩城鎮">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+	</skill>
+	<skill id="32039" toLevel="1" name="返回卷軸-芙羅蘭村莊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+	</skill>
+	<skill id="32040" toLevel="1" name="返回卷軸-奇岩城鎮">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+	</skill>
+	<skill id="32041" toLevel="1" name="返回卷軸-歐瑞城鎮">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+	</skill>
+	<skill id="32042" toLevel="1" name="返回卷軸-象牙塔">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+	</skill>
+	<skill id="32043" toLevel="1" name="返回卷軸-獵人村莊">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>20000</hitTime>
+		<reuseDelay>3600000</reuseDelay>
+	</skill>
+	<skill id="32044" toLevel="1" name="返回卷軸-克魯瑪高塔入口">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49089</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>17192</x>
+				<y>114178</y>
+				<z>-3434</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32045" toLevel="1" name="返回卷軸-龍之谷入口">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49090</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>73024</x>
+				<y>118485</y>
+				<z>-3715</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32046" toLevel="1" name="返回卷軸-龍之谷橋">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49091</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>117368</x>
+				<y>113192</y>
+				<z>-3056</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32047" toLevel="1" name="沙哈晶體-30日">
+		<icon>icon.sa_cube</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="32048" toLevel="1" name="沙哈晶體-90日">
+		<icon>icon.sa_cube</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="32049" toLevel="1" name="暴風氣息">
+		
+		<icon>icon.power_of_storm</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="32050" toLevel="1" name="沙哈寶箱">
+		<icon>icon.etc_pi_gift_box_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>0</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49434</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="1">
+						<item id="57" count="50000" /> 
+					</item>
+					<item chance="20">
+						<item id="57" count="10000" /> 
+					</item>
+					<item chance="40">
+						<item id="57" count="1000" /> 
+					</item>
+					<item chance="6.5">
+						<item id="3926" count="1" /> 
+					</item>
+					<item chance="6.5">
+						<item id="3927" count="1" /> 
+					</item>
+					<item chance="6.5">
+						<item id="3928" count="1" /> 
+					</item>
+					<item chance="6.5">
+						<item id="3930" count="1" /> 
+					</item>
+					<item chance="6.5">
+						<item id="3932" count="1" /> 
+					</item>
+					<item chance="6.5">
+						<item id="49435" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="32051" toLevel="1" name="狂戰士魂">
+		
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>BERSERKER</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockActionUseSkill>true</blockActionUseSkill>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>4000</hitTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49435</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>-5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>-10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-2</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

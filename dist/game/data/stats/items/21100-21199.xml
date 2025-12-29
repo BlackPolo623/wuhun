@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="21162" name="未供給-結婚面紗" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="0" />
+		<set name="is_sellable" val="true" />
+	</item>
+	<item id="21163" name="婚禮花束" type="Weapon">
+		
+		<set name="icon" val="BranchSys2.icon.br_wedding_bouquet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="ETC" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="0" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_sellable" val="true" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">1</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">1</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="21165" name="未供給-壺精封印手鐲-札肯靈魂之劍" additionalName="Not Available" type="Armor">
+		
+		<set name="icon" val="icon.etc_ertheia2" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="0" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="55417" level="1" type="ON_UNEQUIP" /> 
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> 
+		</skills>
+	</item>
+</list>

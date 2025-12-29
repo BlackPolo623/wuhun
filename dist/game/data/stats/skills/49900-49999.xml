@@ -1,0 +1,796 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="49900" toLevel="2" name="藍莓蛋糕">
+		
+		
+		<icon>icon.ev_blue_cake</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49901" toLevel="2" name="芒果蛋糕">
+		
+		
+		<icon>icon.ev_mango_cake</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49902" toLevel="2" name="巧克力蛋糕">
+		
+		
+		<icon>icon.ev_choko_cake</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49903" toLevel="1" name="雷電領域">
+		<icon>icon.skill1450</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-1800</effectPoint>
+		<hitTime>2000</hitTime>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>30000</reuseDelay>
+	</skill>
+	<skill id="49904" toLevel="1" name="強雷震盪">
+		
+		<icon>icon.skill1450</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>7</abnormalTime>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-1800</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> 
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>58</magicLevel>
+		<nextAction>ATTACK</nextAction>
+		<trait>PARALYZE</trait>
+		<effects>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="49905" toLevel="1" name="赤焰領域">
+		<icon>icon.skill11134</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-1800</effectPoint>
+		<hitTime>2000</hitTime>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>30000</reuseDelay>
+	</skill>
+	<skill id="49906" toLevel="1" name="赤焰擊倒">
+		
+		<icon>icon.skill11134</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>7</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<affectLimit>5-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>400</affectRange>
+		<affectScope>FAN</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>-1800</effectPoint>
+		<effectRange>400</effectRange>
+		<fanRange>0;0;400;80</fanRange>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<trait>KNOCKDOWN</trait>
+		<effects>
+			<effect name="KnockBack">
+				<distance>0</distance>
+				<speed>600</speed>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="49907" toLevel="1" name="極凍領域">
+		<icon>icon.skill30009</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-1800</effectPoint>
+		<hitTime>2000</hitTime>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>30000</reuseDelay>
+	</skill>
+	<skill id="49908" toLevel="1" name="冰結">
+		
+		<icon>icon.skill30009</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1800</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49909" toLevel="1" name="疑問的恐懼">
+		
+		<icon>icon.skill11055</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-240</effectPoint>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49910" toLevel="1" name="巨神狩狼">
+		
+		<icon>icon.s_gigantic_wolf</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-1520</effectPoint>
+		<hitTime>5000</hitTime>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>30000</reuseDelay>
+	</skill>
+	<skill id="49911" toLevel="1" name="巨神狩狼">
+		
+		<icon>icon.s_gigantic_wolf</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>TURN_FLEE</abnormalType>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-1980</effectPoint>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<trait>FEAR</trait>
+		<effects>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+		</effects>
+	</skill>
+	<skill id="49912" toLevel="1" name="箭襲">
+		<icon>icon.skill0369</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49913" toLevel="2" name="克魯瑪豺狼能量箭">
+		<icon>icon.skill0056</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<effectPoint>-200</effectPoint>
+		<hitTime>2000</hitTime>
+	</skill>
+	<skill id="49914" toLevel="1" name="出血">
+		
+		<icon>icon.skill0096</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>5</isMagic>
+	</skill>
+	<skill id="49915" toLevel="2" name="克魯瑪豺狼昏迷之擊">
+		
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<coolTime>720</coolTime>
+		<effectPoint>-1</effectPoint>
+		<hitTime>1080</hitTime>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>13000</reuseDelay>
+	</skill>
+	<skill id="49916" toLevel="1" name="衝擊">
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<coolTime>720</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>1080</hitTime>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>13000</reuseDelay>
+	</skill>
+	<skill id="49917" toLevel="2" name="克魯瑪豺狼迴旋攻擊">
+		
+		<icon>icon.skill0003</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>150</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-2</effectPoint>
+		<hitTime>1500</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<nextAction>ATTACK</nextAction>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49918" toLevel="2" name="克魯瑪豺狼風漩術">
+		<icon>icon.s_ev_christmas_snow1</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49919" toLevel="2" name="增加克魯瑪豺狼攻擊速度">
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>100</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49920" toLevel="2" name="增加克魯瑪豺狼攻擊速度">
+		
+		
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>100</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49921" toLevel="1" name="極限傷害">
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="49922" toLevel="1" name="特林的水中支援">
+		
+		<icon>icon.skill_i.pet_town_buff_skill</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49923" toLevel="1" name="衝刺盾">
+		<icon>icon.skill10008</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<effectPoint>-1000</effectPoint>
+		<isMagic>6</isMagic>
+	</skill>
+	<skill id="49924" toLevel="1" name="法力昂守護石火光">
+		<icon>icon.skill32724</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49925" toLevel="1" name="薩拉克斯守護石火光">
+		<icon>icon.skill32724</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49926" toLevel="1" name="解除精靈聖殿">
+		<icon>icon.skill10278</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49927" toLevel="1" name="解除精靈聖殿">
+		<icon>icon.skill10278</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49928" toLevel="2" name="聖誕老人的報答">
+		
+		
+		<icon>BranchSys.icon.br_xmas_present_fun_i00</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="49929" toLevel="1" name="冰之鎖鏈">
+		<icon>icon.skill53003</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>3000</hitTime>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49930" toLevel="1" name="冰之牽引">
+		<icon>icon.skill53003</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49931" toLevel="1" name="冰暴風雪">
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<hitTime>2000</hitTime>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49932" toLevel="1" name="冰暴風雪">
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49933" toLevel="1" name="冰暴風雨">
+		<icon>icon.skill0001</icon>
+		<operateType>A1</operateType>
+		<castRange>650</castRange>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>1500</hitTime>
+	</skill>
+	<skill id="49934" toLevel="1" name="冰烈刃殺">
+		<icon>icon.skill0096</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>5000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+		<reuseDelay>20000</reuseDelay>
+	</skill>
+	<skill id="49935" toLevel="1" name="暴風雪">
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>2000</hitTime>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49936" toLevel="1" name="司令官的咆哮">
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+	</skill>
+	<skill id="49937" toLevel="1" name="暴風雪攻擊">
+		<icon>icon.skill0001</icon>
+		<operateType>A1</operateType>
+		<castRange>1100</castRange>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>3500</hitTime>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49938" toLevel="1" name="冰彈">
+		<icon>icon.skill0001</icon>
+		<operateType>A1</operateType>
+		<castRange>800</castRange>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>1500</hitTime>
+	</skill>
+	<skill id="49939" toLevel="1" name="監視站下達的制壓">
+		
+		<icon>icon.s_archer_blizzard</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49940" toLevel="1" name="監視站下達的制壓">
+		<icon>icon.s_archer_blizzard</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49941" toLevel="1" name="監視站下達的制壓">
+		<icon>icon.s_archer_blizzard</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49942" toLevel="1" name="監視站下達的制壓">
+		<icon>icon.s_archer_blizzard</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49943" toLevel="1" name="監視站下達的制壓">
+		<icon>icon.s_archer_blizzard</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49944" toLevel="1" name="冰烈刃殺">
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49945" toLevel="1" name="克魯瑪豺狼魔力穿擊">
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49946" toLevel="1" name="速度激發">
+		<icon>icon.skill1086</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="49947" toLevel="1" name="昏厥">
+		
+		<icon>icon.skill4106</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49948" toLevel="3" name="大型冰河">
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49949" toLevel="1" name="祭司長權能">
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>3000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49950" toLevel="1" name="祭司長充能">
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>178000</hitTime>
+		<isMagic>6</isMagic>
+	</skill>
+	<skill id="49951" toLevel="1" name="水中保護膜">
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="49952" toLevel="1" name="柯林範圍攻擊">
+		<icon>icon.skill0096</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>5000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+		<reuseDelay>20000</reuseDelay>
+	</skill>
+	<skill id="49953" toLevel="1" name="柯林範圍攻擊">
+		
+		<icon>icon.skill6274</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49954" toLevel="1" name="藍蛇氣息">
+		
+		<icon>icon.s_npc_ev_newyear_dragon_buff</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49955" toLevel="1" name="藍蛇靈氣-恢復">
+		
+		<icon>icon.s_npc_ev_newyear_dragon_buff</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49956" toLevel="1" name="藍蛇重生">
+		
+		<icon>BranchSys3.g_premium_hena_boss_antaras</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<reuseDelay>25000</reuseDelay>
+	</skill>
+	<skill id="49957" toLevel="1" name="藍蛇靈氣-防禦">
+		
+		<icon>icon.s_npc_ev_newyear_dragon_buff</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49958" toLevel="1" name="藍蛇保護">
+		
+		<icon>BranchSys3.g_premium_hena_boss_lindvior</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<reuseDelay>25000</reuseDelay>
+	</skill>
+	<skill id="49959" toLevel="1" name="藍蛇靈氣-攻擊">
+		
+		<icon>icon.s_npc_ev_newyear_dragon_buff</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="49960" toLevel="1" name="藍蛇波動">
+		
+		<icon>BranchSys3.g_premium_hena_boss_valakas</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<reuseDelay>25000</reuseDelay>
+	</skill>
+	<skill id="49961" toLevel="1" name="藍蛇波動">
+		
+		<icon>BranchSys3.g_premium_hena_boss_valakas</icon>
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+		<reuseDelay>25000</reuseDelay>
+	</skill>
+	<skill id="49962" toLevel="40" name="增加物理攻擊力/魔法攻擊力">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49963" toLevel="29" name="減少被擊傷害">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49964" toLevel="1" name="奧爾比斯神殿憑證">
+		
+		<icon>icon.etc_i.ev_orbis_ticket</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="49965" toLevel="1" name="賦予進出奧爾比斯廳資格的人">
+		
+		<icon>icon.etc_i.ev_orbis_enter</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="49966" toLevel="2" name="標準攻擊">
+		
+		<icon>icon.skill0003</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<hitTime>1500</hitTime>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="49967" toLevel="2" name="昏厥">
+		
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>900</castRange>
+		<hitTime>1500</hitTime>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="49968" toLevel="2" name="暴擊">
+		
+		<icon>icon.skill0003</icon>
+		<operateType>A1</operateType>
+		<castRange>150</castRange>
+		<hitTime>1500</hitTime>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="49969" toLevel="2" name="強力攻擊">
+		
+		<icon>icon.skill0003</icon>
+		<operateType>A1</operateType>
+		<castRange>500</castRange>
+		<hitTime>2000</hitTime>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="49970" toLevel="2" name="昏厥">
+		
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>900</castRange>
+		<hitTime>1500</hitTime>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="49971" toLevel="2" name="標準揮擊">
+		
+		<icon>icon.skill0003</icon>
+		<operateType>A1</operateType>
+		<castRange>200</castRange>
+		<hitTime>3000</hitTime>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="49972" toLevel="2" name="石化">
+		
+		<icon>icon.skill4111</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>1000</castRange>
+		<hitTime>3200</hitTime>
+		<coolTime>1800</coolTime>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="49973" toLevel="2" name="黃金標準攻擊">
+		
+		<operateType>A1</operateType>
+		<castRange>650</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="49974" toLevel="2" name="黃金威力攻擊">
+		
+		<icon>icon.skill1167</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>500</castRange>
+		<hitTime>3000</hitTime>
+		<coolTime>1000</coolTime>
+		<reuseDelay>20000</reuseDelay>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="49975" toLevel="2" name="雷吾斯攻擊">
+		
+		<operateType>A1</operateType>
+		<castRange>150</castRange>
+		<hitTime>3500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-200</effectPoint>
+	</skill>
+	<skill id="49976" toLevel="2" name="雷吾斯範圍攻擊">
+		
+		
+		<icon>icon.skill1170</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>600</castRange>
+		<hitTime>2500</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+	</skill>
+	<skill id="49977" toLevel="1" name="法利昂龍懲！">
+		
+		<icon>icon.skill32724</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-200</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49978" toLevel="1" name="黑手黨的手下">
+		
+		<icon>icon.bm2018_ninja_i01</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>900</castRange>
+		<hitTime>1200</hitTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="49979" toLevel="1" name="黑手黨的手下">
+		
+		<icon>icon.bm2018_ninja_i01</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<castRange>900</castRange>
+		<hitTime>1200</hitTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>-500</effectPoint>
+	</skill>
+	<skill id="49980" toLevel="1" name="親衛隊的保護">
+		
+		<icon>icon.bm2018_bluemusketeer_i01</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="49981" toLevel="1" name="奧爾比斯黑暗攻擊">
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<hitTime>2000</hitTime>
+		<coolTime>500</coolTime>
+		<effectPoint>-1000</effectPoint>
+	</skill>
+	<skill id="49982" toLevel="1" name="親衛隊加護">
+		
+		<icon>icon.s_npc_ev_2023_odd_oman_buff</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="49983" toLevel="1" name="巴拉卡斯">
+		
+		<icon>icon.skillboss</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="49984" toLevel="1" name="法利昂">
+		
+		<icon>icon.skillboss</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="49985" toLevel="1" name="林德拜爾">
+		
+		<icon>icon.skillboss</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="49986" toLevel="1" name="安塔瑞斯">
+		
+		<icon>icon.skillboss</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="49987" toLevel="100" name="減少最終傷害">
+		
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49988" toLevel="100" name="減少最終傷害">
+		
+		<operateType>A2</operateType>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49989" toLevel="100" name="減少NPC專用物理防禦力">
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49990" toLevel="100" name="增加NPC專用物理防禦力">
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49991" toLevel="100" name="減少NPC專用魔法防禦力">
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49992" toLevel="100" name="增加NPC專用魔法防禦力">
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="49993" toLevel="50" name="增加NPC專用所受傷害">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49994" toLevel="50" name="增加NPC專用所受傷害(被動)">
+		
+		<operateType>A2</operateType>
+	</skill>
+</list>

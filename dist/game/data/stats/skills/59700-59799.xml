@@ -1,0 +1,787 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="59700" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59701" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59702" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59703" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59704" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59705" toLevel="1" name="騎乘銀甲座龍">
+		
+		<icon>icon.skill1373</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<excludedFromCheck>true</excludedFromCheck>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>20001</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>20001</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59706" toLevel="1" name="騎乘闇甲座龍">
+		
+		<icon>icon.skill1373</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<excludedFromCheck>true</excludedFromCheck>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>20002</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>20002</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59707" toLevel="1" name="騎乘鐵甲座龍">
+		
+		<icon>icon.skill1373</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<effectPoint>1</effectPoint>
+		<excludedFromCheck>true</excludedFromCheck>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplaceableBuff>true</irreplaceableBuff>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>20003</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>20003</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59708" toLevel="1" name="銀甲座龍騎乘刻印書">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>71905</itemConsumeId> 
+		<conditions>
+			<condition name="OpSkill">
+				<skillId>59705</skillId> 
+				<skillLevel>1</skillLevel>
+				<hasLearned>false</hasLearned>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="SetSkill">
+				<skillId>59705</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59709" toLevel="1" name="闇甲座龍騎乘刻印書">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>71906</itemConsumeId> 
+		<conditions>
+			<condition name="OpSkill">
+				<skillId>59706</skillId> 
+				<skillLevel>1</skillLevel>
+				<hasLearned>false</hasLearned>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="SetSkill">
+				<skillId>59706</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59710" toLevel="1" name="鐵甲座龍騎乘刻印書">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>71907</itemConsumeId> 
+		<conditions>
+			<condition name="OpSkill">
+				<skillId>59707</skillId> 
+				<skillLevel>1</skillLevel>
+				<hasLearned>false</hasLearned>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="SetSkill">
+				<skillId>59707</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59711" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59712" toLevel="1" name="魔法書-忍者">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59713" toLevel="1" name="魔法書-牛仔">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59714" toLevel="1" name="魔法書-蒸汽龐克">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59715" toLevel="1" name="魔法書-旗袍">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59716" toLevel="1" name="魔法書-原住民傳統衣裳">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59717" toLevel="1" name="忍者變身">
+		
+		<icon>icon.bm2018_ninja_i01</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="59718" toLevel="1" name="牛仔變身">
+		
+		<icon>icon.bm2018_cowboy_i01</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="59719" toLevel="1" name="蒸汽龐克變身">
+		
+		<icon>BranchIcon.Icon.g_bm_costume_steampunk</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="59720" toLevel="1" name="旗袍變身">
+		
+		<icon>br_L2Icon.qipao_armor_ul_i00</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="59721" toLevel="1" name="原住民傳統衣裳變身">
+		
+		<icon>BranchSys3.icon1.g_co_paiwan_u</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="59722" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59723" toLevel="1" name="VIP Lv. 8">
+		
+		<operateType>P</operateType>
+		<hitTime>500</hitTime>
+		<effects>
+			<effect name="ExpModify">
+				<amount>35</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>35</amount>
+			</effect>
+			<effect name="BonusDropRate">
+				<amount>300</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="WorldChatPoints">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-30</deathPenalty>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>50</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>2</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="MaxHp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59724" toLevel="1" name="VIP Lv. 9">
+		
+		<operateType>P</operateType>
+		<hitTime>500</hitTime>
+		<effects>
+			<effect name="ExpModify">
+				<amount>40</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>40</amount>
+			</effect>
+			<effect name="BonusDropRate">
+				<amount>300</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="WorldChatPoints">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-40</deathPenalty>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>13</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>13</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>13</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>3</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>3</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>3</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>3</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>3</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>3</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="MaxHp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59725" toLevel="1" name="VIP Lv. 10">
+		
+		<operateType>P</operateType>
+		<hitTime>500</hitTime>
+		<effects>
+			<effect name="ExpModify">
+				<amount>50</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>50</amount>
+			</effect>
+			<effect name="BonusDropRate">
+				<amount>300</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="WorldChatPoints">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-50</deathPenalty>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatUp">
+				<amount>4</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>4</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>4</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>4</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>4</amount>
+				<stat>MEN</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>4</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="MaxHp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59726" toLevel="1" name="">
+		<operateType>P</operateType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalVisualEffect>LEGEND_DECO_HERO</abnormalVisualEffect>
+	</skill>
+	<skill id="59727" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59728" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59729" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59730" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59731" toLevel="1" name="經驗值加倍古文">
+		
+		<icon>br_cashtex.item.br_cash_rune_of_exp_i00</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>150</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>150</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59732" toLevel="1" name="+3~+8護身符&amp;腰帶交換券禮盒">
+		<icon>icon.bm_gold_lure_box</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>500</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> 
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>71973</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="16.7">
+						<item id="93717" count="1" /> 
+					</item>
+					<item chance="16.66">
+						<item id="93718" count="1" /> 
+					</item>
+					<item chance="16.66">
+						<item id="93719" count="1" /> 
+					</item>
+					<item chance="16.66">
+						<item id="93720" count="1" /> 
+					</item>
+					<item chance="16.66">
+						<item id="93721" count="1" /> 
+					</item>
+					<item chance="16.66">
+						<item id="93722" count="1" /> 
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59733" toLevel="1" name="聖誕節慶典禮物">
+		
+		<icon>icon.xmas_miracle_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59734" toLevel="1" name="特殊組合包">
+		<icon>icon.sayha2017_box_i03</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59735" toLevel="1" name="卡德姆斯戒指">
+		
+		<icon>icon.ev_11th_rare_acc_ring</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59736" toLevel="1" name="經驗值加倍古文">
+		
+		<icon>br_cashtex.item.br_cash_rune_of_exp_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59737" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59738" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59739" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59740" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59741" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59742" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59743" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59744" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59745" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59746" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59747" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59748" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59749" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59750" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59751" toLevel="1" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59761" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59762" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59763" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59764" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59765" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59766" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59767" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59768" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59769" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59770" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59771" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59772" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59773" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59774" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59775" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59776" toLevel="5" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59777" toLevel="2" name="">
+		
+		<operateType>A1</operateType>
+	</skill>
+</list>

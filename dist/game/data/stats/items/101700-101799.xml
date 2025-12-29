@@ -1,0 +1,1711 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="101700" name="亞丁研究所轉移期望票券" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_lab_move_on" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="true" />
+	</item>
+	<item id="101701" name="亞丁研究所轉移拒絕票券" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_lab_move_off" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="true" />
+	</item>
+	<item id="101702" name="伺服器轉移選擇券組合包" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.event_oriental_park_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101703" name="轉移目標伺服器及角色名稱確定券" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_arrival_server" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="true" />
+	</item>
+	<item id="101704" name="艾勒梅莉亞寶箱(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.npoint_antaras_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="97439" min="1" max="1" chance="8.333333" name="祝福武器精煉石" /> 
+			<item id="97439" min="1" max="1" chance="8.333333" name="祝福武器精煉石" /> 
+			<item id="97439" min="1" max="1" chance="8.333333" name="祝福武器精煉石" /> 
+			<item id="97440" min="1" max="1" chance="8.333333" name="祝福防具精煉石" /> 
+			<item id="97440" min="1" max="1" chance="8.333333" name="祝福防具精煉石" /> 
+			<item id="97440" min="1" max="1" chance="8.333333" name="祝福防具精煉石" /> 
+			<item id="97442" min="1" max="1" chance="8.333333" name="祝福飾品精煉石" /> 
+			<item id="97442" min="1" max="1" chance="8.333333" name="祝福飾品精煉石" /> 
+			<item id="97442" min="1" max="1" chance="8.333333" name="祝福飾品精煉石" /> 
+			<item id="97789" min="1" max="1" chance="8.333333" name="祝福特殊裝備精煉石" /> 
+			<item id="97789" min="1" max="1" chance="8.333333" name="祝福特殊裝備精煉石" /> 
+			<item id="97789" min="1" max="1" chance="8.333333" name="祝福特殊裝備精煉石" /> 
+		</capsuled_items>
+	</item>
+	<item id="101705" name="艾勒梅莉亞寶箱(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.npoint_antaras_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="97439" min="1" max="1" chance="25" name="祝福武器精煉石" /> 
+			<item id="97440" min="1" max="1" chance="25" name="祝福防具精煉石" /> 
+			<item id="97442" min="1" max="1" chance="25" name="祝福飾品精煉石" /> 
+			<item id="97789" min="1" max="1" chance="25" name="祝福特殊裝備精煉石" /> 
+		</capsuled_items>
+	</item>
+	<item id="101706" name="人偶召喚券(一般~稀有)-11次(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bless_doll_summon_11_ticket_lv1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="RelicSummonCoupon" />
+	</item>
+	<item id="101707" name="人偶召喚券(一般~稀有)-1次(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bless_doll_summon_1_ticket_lv1" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="RelicSummonCoupon" />
+	</item>
+	<item id="101708" name="護身符幸運箱(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.npoint_earring_of_lind_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="91767" min="1" max="1" chance="33.33333" name="亞丁護身符強化組合包" /> 
+			<item id="92020" min="1" max="1" chance="33.33333" name="伊娃護身符強化組合包" /> 
+			<item id="93685" min="1" max="1" chance="33.33333" name="疾迅護身符強化組合包" /> 
+		</capsuled_items>
+	</item>
+	<item id="101709" name="春之幸運禮盒(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94380" min="2" max="2" chance="100" name="物理攻擊力強化卷軸(限時)" /> 
+			<item id="94381" min="2" max="2" chance="100" name="物理防禦力強化卷軸(限時)" /> 
+		</capsuled_items>
+	</item>
+	<item id="101710" name="守護斗篷1000個/組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_2018_sayha_cloak_back_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93303" min="1000" max="1000" chance="100" name="守護斗篷組" /> 
+		</capsuled_items>
+	</item>
+	<item id="101711" name="守護斗篷2000個/組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_2018_sayha_cloak_back_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93303" min="2000" max="2000" chance="100" name="守護斗篷組" /> 
+		</capsuled_items>
+	</item>
+	<item id="101712" name="天堂羽毛(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_feather_gold_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101713" name="閃耀的守護寶物(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_nebit_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93303" min="2" max="2" chance="100" name="守護斗篷組" /> 
+		</capsuled_items>
+	</item>
+	<item id="101714" name="+3天堂斗篷袋(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101712" min="50" max="50" chance="100" name="天堂羽毛(限時)" /> 
+			<item id="97145" min="30000" max="30000" chance="100" name="古代的金幣" /> 
+			<item id="97452" min="1" max="1" chance="100" name="天堂斗篷" /> 
+		</capsuled_items>
+	</item>
+	<item id="101715" name="+2天堂斗篷袋(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101712" min="50" max="50" chance="100" name="天堂羽毛(限時)" /> 
+			<item id="97145" min="20000" max="20000" chance="100" name="古代的金幣" /> 
+			<item id="97452" min="1" max="1" chance="100" name="天堂斗篷" /> 
+		</capsuled_items>
+	</item>
+	<item id="101716" name="+1天堂斗篷袋(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101712" min="50" max="50" chance="100" name="天堂羽毛(限時)" /> 
+			<item id="97145" min="15000" max="15000" chance="100" name="古代的金幣" /> 
+			<item id="97452" min="1" max="1" chance="100" name="天堂斗篷" /> 
+		</capsuled_items>
+	</item>
+	<item id="101717" name="天堂斗篷袋(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101712" min="50" max="50" chance="100" name="天堂羽毛(限時)" /> 
+			<item id="97145" min="10000" max="10000" chance="100" name="古代的金幣" /> 
+			<item id="97452" min="1" max="1" chance="100" name="天堂斗篷" /> 
+		</capsuled_items>
+	</item>
+	<item id="101718" name="+10守護斗篷袋(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pouch_gray_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101712" min="10" max="10" chance="100" name="天堂羽毛(限時)" /> 
+			<item id="93301" min="1" max="1" chance="100" name="守護斗篷" /> 
+			<item id="97145" min="5000" max="5000" chance="100" name="古代的金幣" /> 
+		</capsuled_items>
+	</item>
+	<item id="101719" name="+9守護斗篷袋(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pouch_gray_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101712" min="3" max="3" chance="100" name="天堂羽毛(限時)" /> 
+			<item id="93301" min="1" max="1" chance="100" name="守護斗篷" /> 
+			<item id="97145" min="2000" max="2000" chance="100" name="古代的金幣" /> 
+		</capsuled_items>
+	</item>
+	<item id="101720" name="+8守護斗篷袋(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pouch_gray_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101712" min="1" max="1" chance="100" name="天堂羽毛(限時)" /> 
+			<item id="93301" min="1" max="1" chance="100" name="守護斗篷" /> 
+			<item id="97145" min="1000" max="1000" chance="100" name="古代的金幣" /> 
+		</capsuled_items>
+	</item>
+	<item id="101721" name="精煉石交換券(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.variation_stone_ticket_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101722" name="獵人裝備交換券(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_armor_ticket_b" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101723" name="護身符交換券(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_talisman_ticket" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101724" name="製作材料禮盒" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_golden_spice_comp_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="92476" min="10" max="10" chance="16.66667" name="金屬鑄錠" /> 
+			<item id="92477" min="10" max="10" chance="16.66667" name="木材" /> 
+			<item id="92478" min="10" max="10" chance="16.66667" name="研磨劑" /> 
+			<item id="92479" min="10" max="10" chance="16.66667" name="金屬板" /> 
+			<item id="92480" min="10" max="10" chance="16.66667" name="皮革" /> 
+			<item id="92481" min="10" max="10" chance="16.66667" name="布" /> 
+		</capsuled_items>
+	</item>
+	<item id="101725" name="紛飛花瓣組(限時)" type="EtcItem">
+		
+		<set name="icon" val="icon.cursed_prison_petal" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101677" min="1" max="1" chance="100" name="技能效果-紛飛花瓣" /> 
+		</capsuled_items>
+	</item>
+	<item id="101726" name="+9獵人耳環組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.accessary_earing_of_blessing_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98931" min="1" max="1" chance="100" name="獵人耳環" /> 
+		</capsuled_items>
+	</item>
+	<item id="101727" name="A級武器禮盒" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.weapon_group" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="8678" min="1" max="1" chance="6.666667" name="希露冰刃" /> 
+			<item id="8679" min="1" max="1" chance="6.666667" name="伊波斯巨劍" /> 
+			<item id="8680" min="1" max="1" chance="6.666667" name="貝拉凱爾聖斧" /> 
+			<item id="8681" min="1" max="1" chance="6.666667" name="貝希莫斯巨叉" /> 
+			<item id="8682" min="1" max="1" chance="6.666667" name="那卡風暴" /> 
+			<item id="8683" min="1" max="1" chance="6.666667" name="岱依封長戟" /> 
+			<item id="8684" min="1" max="1" chance="6.666667" name="夏伊德獵弓" /> 
+			<item id="8685" min="1" max="1" chance="6.666667" name="索貝克颶風" /> 
+			<item id="8686" min="1" max="1" chance="6.666667" name="緹米絲之舌" /> 
+			<item id="8687" min="1" max="1" chance="6.666667" name="卡布里歐之手" /> 
+			<item id="8688" min="1" max="1" chance="6.666667" name="惡魔結晶" /> 
+			<item id="8938" min="1" max="1" chance="6.666667" name="塔魯刀*大馬士革刀" /> 
+			<item id="91887" min="1" max="1" chance="6.666667" name="光明守護之劍" /> 
+			<item id="91902" min="1" max="1" chance="6.666667" name="閃光之珠" /> 
+			<item id="94886" min="1" max="1" chance="6.666667" name="西菲洛風" /> 
+		</capsuled_items>
+	</item>
+	<item id="101728" name="+4 A級武器禮盒" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.weapon_group" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="8678" min="1" max="1" chance="6.666667" name="希露冰刃" /> 
+			<item id="8679" min="1" max="1" chance="6.666667" name="伊波斯巨劍" /> 
+			<item id="8680" min="1" max="1" chance="6.666667" name="貝拉凱爾聖斧" /> 
+			<item id="8681" min="1" max="1" chance="6.666667" name="貝希莫斯巨叉" /> 
+			<item id="8682" min="1" max="1" chance="6.666667" name="那卡風暴" /> 
+			<item id="8683" min="1" max="1" chance="6.666667" name="岱依封長戟" /> 
+			<item id="8684" min="1" max="1" chance="6.666667" name="夏伊德獵弓" /> 
+			<item id="8685" min="1" max="1" chance="6.666667" name="索貝克颶風" /> 
+			<item id="8686" min="1" max="1" chance="6.666667" name="緹米絲之舌" /> 
+			<item id="8687" min="1" max="1" chance="6.666667" name="卡布里歐之手" /> 
+			<item id="8688" min="1" max="1" chance="6.666667" name="惡魔結晶" /> 
+			<item id="8938" min="1" max="1" chance="6.666667" name="塔魯刀*大馬士革刀" /> 
+			<item id="91887" min="1" max="1" chance="6.666667" name="光明守護之劍" /> 
+			<item id="91902" min="1" max="1" chance="6.666667" name="閃光之珠" /> 
+			<item id="94886" min="1" max="1" chance="6.666667" name="西菲洛風" /> 
+		</capsuled_items>
+	</item>
+	<item id="101729" name="+5 A級武器禮盒" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.weapon_group" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="8678" min="1" max="1" chance="6.666667" name="希露冰刃" /> 
+			<item id="8679" min="1" max="1" chance="6.666667" name="伊波斯巨劍" /> 
+			<item id="8680" min="1" max="1" chance="6.666667" name="貝拉凱爾聖斧" /> 
+			<item id="8681" min="1" max="1" chance="6.666667" name="貝希莫斯巨叉" /> 
+			<item id="8682" min="1" max="1" chance="6.666667" name="那卡風暴" /> 
+			<item id="8683" min="1" max="1" chance="6.666667" name="岱依封長戟" /> 
+			<item id="8684" min="1" max="1" chance="6.666667" name="夏伊德獵弓" /> 
+			<item id="8685" min="1" max="1" chance="6.666667" name="索貝克颶風" /> 
+			<item id="8686" min="1" max="1" chance="6.666667" name="緹米絲之舌" /> 
+			<item id="8687" min="1" max="1" chance="6.666667" name="卡布里歐之手" /> 
+			<item id="8688" min="1" max="1" chance="6.666667" name="惡魔結晶" /> 
+			<item id="8938" min="1" max="1" chance="6.666667" name="塔魯刀*大馬士革刀" /> 
+			<item id="91887" min="1" max="1" chance="6.666667" name="光明守護之劍" /> 
+			<item id="91902" min="1" max="1" chance="6.666667" name="閃光之珠" /> 
+			<item id="94886" min="1" max="1" chance="6.666667" name="西菲洛風" /> 
+		</capsuled_items>
+	</item>
+	<item id="101730" name="+6 A級武器禮盒" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.weapon_group" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="8678" min="1" max="1" chance="6.666667" name="希露冰刃" /> 
+			<item id="8679" min="1" max="1" chance="6.666667" name="伊波斯巨劍" /> 
+			<item id="8680" min="1" max="1" chance="6.666667" name="貝拉凱爾聖斧" /> 
+			<item id="8681" min="1" max="1" chance="6.666667" name="貝希莫斯巨叉" /> 
+			<item id="8682" min="1" max="1" chance="6.666667" name="那卡風暴" /> 
+			<item id="8683" min="1" max="1" chance="6.666667" name="岱依封長戟" /> 
+			<item id="8684" min="1" max="1" chance="6.666667" name="夏伊德獵弓" /> 
+			<item id="8685" min="1" max="1" chance="6.666667" name="索貝克颶風" /> 
+			<item id="8686" min="1" max="1" chance="6.666667" name="緹米絲之舌" /> 
+			<item id="8687" min="1" max="1" chance="6.666667" name="卡布里歐之手" /> 
+			<item id="8688" min="1" max="1" chance="6.666667" name="惡魔結晶" /> 
+			<item id="8938" min="1" max="1" chance="6.666667" name="塔魯刀*大馬士革刀" /> 
+			<item id="91887" min="1" max="1" chance="6.666667" name="光明守護之劍" /> 
+			<item id="91902" min="1" max="1" chance="6.666667" name="閃光之珠" /> 
+			<item id="94886" min="1" max="1" chance="6.666667" name="西菲洛風" /> 
+		</capsuled_items>
+	</item>
+	<item id="101731" name="A級防具禮盒" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_group" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="374" min="1" max="1" chance="4.166667" name="夢魘盔甲" /> 
+			<item id="2383" min="1" max="1" chance="4.166667" name="聖威金屬盔甲" /> 
+			<item id="2394" min="1" max="1" chance="4.166667" name="夢魘皮甲" /> 
+			<item id="2395" min="1" max="1" chance="4.166667" name="聖威皮甲" /> 
+			<item id="2408" min="1" max="1" chance="4.166667" name="夢魘長袍" /> 
+			<item id="2409" min="1" max="1" chance="4.166667" name="聖威長袍" /> 
+			<item id="5771" min="1" max="1" chance="4.166667" name="夢魘長手套-重裝" /> 
+			<item id="5772" min="1" max="1" chance="4.166667" name="夢魘長手套-輕裝" /> 
+			<item id="5773" min="1" max="1" chance="4.166667" name="夢魘長手套-長袍" /> 
+			<item id="5774" min="1" max="1" chance="4.166667" name="聖威手套-重裝" /> 
+			<item id="5775" min="1" max="1" chance="4.166667" name="聖威手套-輕裝" /> 
+			<item id="5776" min="1" max="1" chance="4.166667" name="聖威手套-長袍" /> 
+			<item id="5783" min="1" max="1" chance="4.166667" name="夢魘靴-重裝" /> 
+			<item id="5784" min="1" max="1" chance="4.166667" name="夢魘靴-輕裝" /> 
+			<item id="5785" min="1" max="1" chance="4.166667" name="夢魘靴-長袍" /> 
+			<item id="5786" min="1" max="1" chance="4.166667" name="聖威靴-重裝" /> 
+			<item id="5787" min="1" max="1" chance="4.166667" name="聖威靴-輕裝" /> 
+			<item id="5788" min="1" max="1" chance="4.166667" name="聖威靴-長袍" /> 
+			<item id="90473" min="1" max="1" chance="4.166667" name="夢魘頭盔-重裝" /> 
+			<item id="90474" min="1" max="1" chance="4.166667" name="夢魘頭盔-輕裝" /> 
+			<item id="90475" min="1" max="1" chance="4.166667" name="夢魘頭盔-長袍" /> 
+			<item id="90476" min="1" max="1" chance="4.166667" name="聖威頭箍-重裝" /> 
+			<item id="90477" min="1" max="1" chance="4.166667" name="聖威頭箍-輕裝" /> 
+			<item id="90478" min="1" max="1" chance="4.166667" name="聖威頭箍-長袍" /> 
+		</capsuled_items>
+	</item>
+	<item id="101732" name="+4 A級防具禮盒" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_group" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="374" min="1" max="1" chance="4.166667" name="夢魘盔甲" /> 
+			<item id="2383" min="1" max="1" chance="4.166667" name="聖威金屬盔甲" /> 
+			<item id="2394" min="1" max="1" chance="4.166667" name="夢魘皮甲" /> 
+			<item id="2395" min="1" max="1" chance="4.166667" name="聖威皮甲" /> 
+			<item id="2408" min="1" max="1" chance="4.166667" name="夢魘長袍" /> 
+			<item id="2409" min="1" max="1" chance="4.166667" name="聖威長袍" /> 
+			<item id="5771" min="1" max="1" chance="4.166667" name="夢魘長手套-重裝" /> 
+			<item id="5772" min="1" max="1" chance="4.166667" name="夢魘長手套-輕裝" /> 
+			<item id="5773" min="1" max="1" chance="4.166667" name="夢魘長手套-長袍" /> 
+			<item id="5774" min="1" max="1" chance="4.166667" name="聖威手套-重裝" /> 
+			<item id="5775" min="1" max="1" chance="4.166667" name="聖威手套-輕裝" /> 
+			<item id="5776" min="1" max="1" chance="4.166667" name="聖威手套-長袍" /> 
+			<item id="5783" min="1" max="1" chance="4.166667" name="夢魘靴-重裝" /> 
+			<item id="5784" min="1" max="1" chance="4.166667" name="夢魘靴-輕裝" /> 
+			<item id="5785" min="1" max="1" chance="4.166667" name="夢魘靴-長袍" /> 
+			<item id="5786" min="1" max="1" chance="4.166667" name="聖威靴-重裝" /> 
+			<item id="5787" min="1" max="1" chance="4.166667" name="聖威靴-輕裝" /> 
+			<item id="5788" min="1" max="1" chance="4.166667" name="聖威靴-長袍" /> 
+			<item id="90473" min="1" max="1" chance="4.166667" name="夢魘頭盔-重裝" /> 
+			<item id="90474" min="1" max="1" chance="4.166667" name="夢魘頭盔-輕裝" /> 
+			<item id="90475" min="1" max="1" chance="4.166667" name="夢魘頭盔-長袍" /> 
+			<item id="90476" min="1" max="1" chance="4.166667" name="聖威頭箍-重裝" /> 
+			<item id="90477" min="1" max="1" chance="4.166667" name="聖威頭箍-輕裝" /> 
+			<item id="90478" min="1" max="1" chance="4.166667" name="聖威頭箍-長袍" /> 
+		</capsuled_items>
+	</item>
+	<item id="101733" name="+5 A級防具禮盒" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_group" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="374" min="1" max="1" chance="4.166667" name="夢魘盔甲" /> 
+			<item id="2383" min="1" max="1" chance="4.166667" name="聖威金屬盔甲" /> 
+			<item id="2394" min="1" max="1" chance="4.166667" name="夢魘皮甲" /> 
+			<item id="2395" min="1" max="1" chance="4.166667" name="聖威皮甲" /> 
+			<item id="2408" min="1" max="1" chance="4.166667" name="夢魘長袍" /> 
+			<item id="2409" min="1" max="1" chance="4.166667" name="聖威長袍" /> 
+			<item id="5771" min="1" max="1" chance="4.166667" name="夢魘長手套-重裝" /> 
+			<item id="5772" min="1" max="1" chance="4.166667" name="夢魘長手套-輕裝" /> 
+			<item id="5773" min="1" max="1" chance="4.166667" name="夢魘長手套-長袍" /> 
+			<item id="5774" min="1" max="1" chance="4.166667" name="聖威手套-重裝" /> 
+			<item id="5775" min="1" max="1" chance="4.166667" name="聖威手套-輕裝" /> 
+			<item id="5776" min="1" max="1" chance="4.166667" name="聖威手套-長袍" /> 
+			<item id="5783" min="1" max="1" chance="4.166667" name="夢魘靴-重裝" /> 
+			<item id="5784" min="1" max="1" chance="4.166667" name="夢魘靴-輕裝" /> 
+			<item id="5785" min="1" max="1" chance="4.166667" name="夢魘靴-長袍" /> 
+			<item id="5786" min="1" max="1" chance="4.166667" name="聖威靴-重裝" /> 
+			<item id="5787" min="1" max="1" chance="4.166667" name="聖威靴-輕裝" /> 
+			<item id="5788" min="1" max="1" chance="4.166667" name="聖威靴-長袍" /> 
+			<item id="90473" min="1" max="1" chance="4.166667" name="夢魘頭盔-重裝" /> 
+			<item id="90474" min="1" max="1" chance="4.166667" name="夢魘頭盔-輕裝" /> 
+			<item id="90475" min="1" max="1" chance="4.166667" name="夢魘頭盔-長袍" /> 
+			<item id="90476" min="1" max="1" chance="4.166667" name="聖威頭箍-重裝" /> 
+			<item id="90477" min="1" max="1" chance="4.166667" name="聖威頭箍-輕裝" /> 
+			<item id="90478" min="1" max="1" chance="4.166667" name="聖威頭箍-長袍" /> 
+		</capsuled_items>
+	</item>
+	<item id="101734" name="+6 A級防具禮盒" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.armor_group" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="374" min="1" max="1" chance="4.166667" name="夢魘盔甲" /> 
+			<item id="2383" min="1" max="1" chance="4.166667" name="聖威金屬盔甲" /> 
+			<item id="2394" min="1" max="1" chance="4.166667" name="夢魘皮甲" /> 
+			<item id="2395" min="1" max="1" chance="4.166667" name="聖威皮甲" /> 
+			<item id="2408" min="1" max="1" chance="4.166667" name="夢魘長袍" /> 
+			<item id="2409" min="1" max="1" chance="4.166667" name="聖威長袍" /> 
+			<item id="5771" min="1" max="1" chance="4.166667" name="夢魘長手套-重裝" /> 
+			<item id="5772" min="1" max="1" chance="4.166667" name="夢魘長手套-輕裝" /> 
+			<item id="5773" min="1" max="1" chance="4.166667" name="夢魘長手套-長袍" /> 
+			<item id="5774" min="1" max="1" chance="4.166667" name="聖威手套-重裝" /> 
+			<item id="5775" min="1" max="1" chance="4.166667" name="聖威手套-輕裝" /> 
+			<item id="5776" min="1" max="1" chance="4.166667" name="聖威手套-長袍" /> 
+			<item id="5783" min="1" max="1" chance="4.166667" name="夢魘靴-重裝" /> 
+			<item id="5784" min="1" max="1" chance="4.166667" name="夢魘靴-輕裝" /> 
+			<item id="5785" min="1" max="1" chance="4.166667" name="夢魘靴-長袍" /> 
+			<item id="5786" min="1" max="1" chance="4.166667" name="聖威靴-重裝" /> 
+			<item id="5787" min="1" max="1" chance="4.166667" name="聖威靴-輕裝" /> 
+			<item id="5788" min="1" max="1" chance="4.166667" name="聖威靴-長袍" /> 
+			<item id="90473" min="1" max="1" chance="4.166667" name="夢魘頭盔-重裝" /> 
+			<item id="90474" min="1" max="1" chance="4.166667" name="夢魘頭盔-輕裝" /> 
+			<item id="90475" min="1" max="1" chance="4.166667" name="夢魘頭盔-長袍" /> 
+			<item id="90476" min="1" max="1" chance="4.166667" name="聖威頭箍-重裝" /> 
+			<item id="90477" min="1" max="1" chance="4.166667" name="聖威頭箍-輕裝" /> 
+			<item id="90478" min="1" max="1" chance="4.166667" name="聖威頭箍-長袍" /> 
+		</capsuled_items>
+	</item>
+	<item id="101735" name="暗黑軍團長1階段寶箱" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101587" min="1" max="1" chance="100" name="亞丁研究日誌碎片" /> 
+		</capsuled_items>
+	</item>
+	<item id="101736" name="暗黑軍團長2階段寶箱" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101587" min="1" max="1" chance="100" name="亞丁研究日誌碎片" /> 
+		</capsuled_items>
+	</item>
+	<item id="101737" name="暗黑軍團長3階段寶箱" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101587" min="1" max="1" chance="100" name="亞丁研究日誌碎片" /> 
+		</capsuled_items>
+	</item>
+	<item id="101738" name="暗黑軍團長4階段寶箱" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101587" min="2" max="2" chance="100" name="亞丁研究日誌碎片" /> 
+		</capsuled_items>
+	</item>
+	<item id="101739" name="確定測試禮盒_1" additionalName="Test" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="91912" min="1000" max="1000" chance="16.66667" name="HP藥水" /> 
+			<item id="98423" min="5" max="5" chance="16.66667" name="魔力字板" /> 
+			<item id="3031" min="5000" max="5000" chance="16.66667" name="魔精石" /> 
+			<item id="90907" min="500" max="500" chance="16.66667" name="靈魂彈交換券" /> 
+			<item id="101188" min="1" max="1" chance="16.66667" name="達成等級成長組合包Lv40" /> 
+			<item id="101269" min="1" max="1" chance="16.66667" name="一般摩拉公主人偶召喚券" /> 
+		</capsuled_items>
+	</item>
+	<item id="101740" name="確定測試禮盒_強化" additionalName="Test" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93128" min="1" max="1" chance="20" name="伊格尼斯壺精" /> 
+			<item id="93129" min="1" max="1" chance="20" name="芮普拉壺精" /> 
+			<item id="93130" min="1" max="1" chance="20" name="普羅傑爾拉壺精" /> 
+			<item id="93131" min="1" max="1" chance="20" name="佩德蘭壺精" /> 
+			<item id="93132" min="1" max="1" chance="20" name="開心壺精" /> 
+		</capsuled_items>
+	</item>
+	<item id="101741" name="確定_機率測試禮盒_1" additionalName="Test" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94380" min="2" max="2" chance="100" name="物理攻擊力強化卷軸(限時)" /> 
+			<item id="94381" min="2" max="2" chance="100" name="物理防禦力強化卷軸(限時)" /> 
+		</capsuled_items>
+	</item>
+	<item id="101742" name="確定_額外測試禮盒" additionalName="Test" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94380" min="2" max="2" chance="100" name="物理攻擊力強化卷軸(限時)" /> 
+			<item id="94381" min="2" max="2" chance="100" name="物理防禦力強化卷軸(限時)" /> 
+		</capsuled_items>
+	</item>
+	<item id="101743" name="額外_機率測試禮盒" additionalName="Test" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="100905" min="1" max="1" chance="4.761905" name="最高級巨蟻女王人偶召喚券" /> 
+			<item id="100906" min="1" max="1" chance="4.761905" name="最高級奧爾芬人偶召喚券" /> 
+			<item id="100907" min="1" max="1" chance="4.761905" name="最高級核心人偶召喚券" /> 
+			<item id="100908" min="1" max="1" chance="4.761905" name="最高級芙琳泰沙人偶召喚券" /> 
+			<item id="100909" min="1" max="1" chance="4.761905" name="最高級札肯人偶召喚券" /> 
+			<item id="100910" min="1" max="1" chance="4.761905" name="最高級巴溫人偶召喚券" /> 
+			<item id="100911" min="1" max="1" chance="4.761905" name="最高級安塔瑞斯人偶召喚券" /> 
+			<item id="100912" min="1" max="1" chance="4.761905" name="最高級貝希莫斯人偶召喚券" /> 
+			<item id="100913" min="1" max="1" chance="4.761905" name="最高級格拉奇恩斯人偶召喚券" /> 
+			<item id="100914" min="1" max="1" chance="4.761905" name="最高級安蒂莉雅絲 班 胡爾特人偶召喚券" /> 
+			<item id="100915" min="1" max="1" chance="4.761905" name="最高級凱爾烈光人偶召喚券" /> 
+			<item id="101391" min="1" max="1" chance="4.761905" name="最高級佩利昂人偶召喚券" /> 
+			<item id="101484" min="1" max="1" chance="4.761905" name="最高級伊格尼斯王人偶召喚券" /> 
+			<item id="101485" min="1" max="1" chance="4.761905" name="最高級芮普拉女王人偶召喚券" /> 
+			<item id="101486" min="1" max="1" chance="4.761905" name="最高級普羅傑爾拉王人偶召喚券" /> 
+			<item id="101487" min="1" max="1" chance="4.761905" name="最高級佩德蘭王人偶召喚券" /> 
+			<item id="101488" min="1" max="1" chance="4.761905" name="最高級特倫人偶召喚券" /> 
+			<item id="101489" min="1" max="1" chance="4.761905" name="最高級思卡雷特 潘 哈里夏人偶召喚券" /> 
+			<item id="101490" min="1" max="1" chance="4.761905" name="最高級亞納人偶召喚券" /> 
+			<item id="101491" min="1" max="1" chance="4.761905" name="最高級莉莉絲人偶召喚券" /> 
+			<item id="101708" min="1" max="1" chance="4.761905" name="護身符幸運箱(限時)" /> 
+		</capsuled_items>
+	</item>
+	<item id="101744" name="額外_機率_確定測試禮盒" additionalName="Test" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98039" min="1" max="1" chance="100" name="超越強化石" /> 
+			<item id="101587" min="1" max="1" chance="100" name="亞丁研究日誌碎片" /> 
+		</capsuled_items>
+	</item>
+	<item id="101745" name="機率測試禮盒_1" additionalName="Test" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="91690" min="50" max="50" chance="2.222222" name="特級HP藥水" /> 
+			<item id="92314" min="20" max="20" chance="2.222222" name="奇岩印記" /> 
+			<item id="92314" min="10" max="10" chance="2.222222" name="奇岩印記" /> 
+			<item id="92314" min="5" max="5" chance="2.222222" name="奇岩印記" /> 
+			<item id="92314" min="3" max="3" chance="2.222222" name="奇岩印記" /> 
+			<item id="92314" min="2" max="2" chance="2.222222" name="奇岩印記" /> 
+			<item id="93255" min="1" max="1" chance="2.222222" name="祝福的武器強化卷軸" /> 
+			<item id="93256" min="1" max="1" chance="2.222222" name="祝福的防具強化卷軸" /> 
+			<item id="93739" min="1" max="1" chance="2.222222" name="奇岩印記1000個/組" /> 
+			<item id="94184" min="1" max="1" chance="2.222222" name="祝福卷軸-武器" /> 
+			<item id="94328" min="1" max="1" chance="2.222222" name="萬用靈藥粉末" /> 
+			<item id="94329" min="1" max="1" chance="2.222222" name="奇岩印記500個/組" /> 
+			<item id="94383" min="1" max="1" chance="2.222222" name="稀有飾品強化卷軸" /> 
+			<item id="94385" min="1" max="1" chance="2.222222" name="祝福的稀有飾品強化卷軸" /> 
+			<item id="95783" min="2" max="2" chance="2.222222" name="亞丁搜魂石Lv1-武器" /> 
+			<item id="95803" min="2" max="2" chance="2.222222" name="哈汀搜魂石Lv1" /> 
+			<item id="96297" min="1" max="1" chance="2.222222" name="冰凍君主武器禮盒" /> 
+			<item id="96300" min="1" max="1" chance="2.222222" name="魔法書-屠龍者" /> 
+			<item id="96650" min="1" max="1" chance="2.222222" name="守護防具禮盒" /> 
+			<item id="96901" min="2" max="2" chance="2.222222" name="亞丁搜魂石Lv1-防具" /> 
+			<item id="97338" min="1" max="1" chance="2.222222" name="祝福卷軸-防具" /> 
+			<item id="97860" min="1" max="1" chance="2.222222" name="安定的稀有飾品強化卷軸" /> 
+			<item id="98040" min="1" max="1" chance="2.222222" name="超越強化石" /> 
+			<item id="98240" min="2" max="2" chance="2.222222" name="龍蛋壺精組" /> 
+			<item id="100440" min="1" max="1" chance="2.222222" name="龍蛋壺精200個/組" /> 
+			<item id="101371" min="1" max="1" chance="2.222222" name="奇岩印記5000個/組" /> 
+			<item id="101506" min="1" max="1" chance="2.222222" name="龍蛋壺精500個/組" /> 
+			<item id="101508" min="1" max="1" chance="2.222222" name="龍的黃金鑰匙(限時)" /> 
+			<item id="6660" min="1" max="1" chance="2.222222" name="巨蟻女王戒指" /> 
+			<item id="6661" min="1" max="1" chance="2.222222" name="奧爾芬耳環" /> 
+			<item id="6662" min="1" max="1" chance="2.222222" name="核心戒指" /> 
+			<item id="49580" min="1" max="1" chance="2.222222" name="巴溫戒指" /> 
+			<item id="90763" min="1" max="1" chance="2.222222" name="札肯耳環" /> 
+			<item id="90992" min="1" max="1" chance="2.222222" name="安塔瑞斯耳環" /> 
+			<item id="91550" min="1" max="1" chance="2.222222" name="芙琳泰沙項鍊" /> 
+			<item id="96600" min="1" max="1" chance="2.222222" name="巴列斯戒指" /> 
+			<item id="96613" min="1" max="1" chance="2.222222" name="魔法書-死之擴展" /> 
+			<item id="96983" min="2" max="2" chance="2.222222" name="壺精手鐲Lv3組" /> 
+			<item id="96984" min="2" max="2" chance="2.222222" name="護身符手鐲Lv3組" /> 
+			<item id="96985" min="2" max="2" chance="2.222222" name="胸針Lv3組" /> 
+			<item id="98932" min="1" max="1" chance="2.222222" name="艾姿泰坎耳環" /> 
+			<item id="100053" min="1" max="1" chance="2.222222" name="英雄魔法書交換券" /> 
+			<item id="100370" min="1" max="1" chance="2.222222" name="佩利昂項鍊" /> 
+			<item id="100214" min="1" max="1" chance="2.222222" name="狂風頭盔" /> 
+			<item id="100780" min="1" max="1" chance="2.222222" name="紅焰長手套" /> 
+		</capsuled_items>
+	</item>
+	<item id="101746" name="機率測試禮盒_2" additionalName="Test" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="93128" min="1" max="1" chance="20" name="伊格尼斯壺精" /> 
+			<item id="93129" min="1" max="1" chance="20" name="芮普拉壺精" /> 
+			<item id="93130" min="1" max="1" chance="20" name="普羅傑爾拉壺精" /> 
+			<item id="93131" min="1" max="1" chance="20" name="佩德蘭壺精" /> 
+			<item id="93132" min="1" max="1" chance="20" name="開心壺精" /> 
+		</capsuled_items>
+	</item>
+	<item id="101747" name="光束武器-魔珠" additionalName="Not available" type="Weapon">
+		
+		<set name="icon" val="BranchSys3.Icon.g_beam_bow" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="0" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="2" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">80</stat>
+		</stats>
+	</item>
+	<item id="101748" name="天堂幸運盒(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ev_kalie_treasure_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101749" name="+9強化型裝備幸運盒(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_box_wish_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101750" name="+8強化型裝備幸運盒(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_box_wish_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101751" name="天堂交換券(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_ticket_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101752" name="3月通行證優惠鑄幣(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_coins_blue_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101753" name="3月通行證優惠-高級人偶召喚券禮盒(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="BranchSys.br_gold_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="100894" min="1" max="1" chance="7.142857" name="高級巨蟻女王人偶召喚券" /> 
+			<item id="100895" min="1" max="1" chance="7.142857" name="高級奧爾芬人偶召喚券" /> 
+			<item id="100896" min="1" max="1" chance="7.142857" name="高級核心人偶召喚券" /> 
+			<item id="100897" min="1" max="1" chance="7.142857" name="高級芙琳泰沙人偶召喚券" /> 
+			<item id="100899" min="1" max="1" chance="7.142857" name="高級巴溫人偶召喚券" /> 
+			<item id="100900" min="1" max="1" chance="7.142857" name="高級安塔瑞斯人偶召喚券" /> 
+			<item id="100901" min="1" max="1" chance="7.142857" name="高級貝希莫斯人偶召喚券" /> 
+			<item id="100902" min="1" max="1" chance="7.142857" name="高級格拉奇恩斯人偶召喚券" /> 
+			<item id="100903" min="1" max="1" chance="7.142857" name="高級安蒂莉雅絲 班 胡爾特人偶召喚券" /> 
+			<item id="100904" min="1" max="1" chance="7.142857" name="高級凱爾烈光人偶召喚券" /> 
+			<item id="101390" min="1" max="1" chance="7.142857" name="高級佩利昂人偶召喚券" /> 
+			<item id="101574" min="1" max="1" chance="7.142857" name="高級沃爾昆人偶召喚券" /> 
+			<item id="101646" min="1" max="1" chance="7.142857" name="高級亞納人偶召喚券" /> 
+			<item id="101647" min="1" max="1" chance="7.142857" name="高級莉莉絲人偶召喚券" /> 
+		</capsuled_items>
+	</item>
+	<item id="101754" name="魔法書-激流盔甲" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101755" name="魔法書-激流盔甲" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101756" name="魔法書-水之主" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101757" name="魔法書-水之主" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101758" name="魔法書-庇護領域：大師" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101759" name="魔法書-庇護領域：大師" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101760" name="魔法書-紅雷剎波" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101761" name="魔法書-紅雷剎波" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101762" name="魔法書-雷之主" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101763" name="魔法書-雷之主" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101764" name="魔法書-判責：大師" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101765" name="魔法書-判責：大師" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_magic_book_black_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101766" name="額外x5_機率測試禮盒" additionalName="Test" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="100905" min="1" max="1" chance="4.761905" name="最高級巨蟻女王人偶召喚券" /> 
+			<item id="100906" min="1" max="1" chance="4.761905" name="最高級奧爾芬人偶召喚券" /> 
+			<item id="100907" min="1" max="1" chance="4.761905" name="最高級核心人偶召喚券" /> 
+			<item id="100908" min="1" max="1" chance="4.761905" name="最高級芙琳泰沙人偶召喚券" /> 
+			<item id="100909" min="1" max="1" chance="4.761905" name="最高級札肯人偶召喚券" /> 
+			<item id="100910" min="1" max="1" chance="4.761905" name="最高級巴溫人偶召喚券" /> 
+			<item id="100911" min="1" max="1" chance="4.761905" name="最高級安塔瑞斯人偶召喚券" /> 
+			<item id="100912" min="1" max="1" chance="4.761905" name="最高級貝希莫斯人偶召喚券" /> 
+			<item id="100913" min="1" max="1" chance="4.761905" name="最高級格拉奇恩斯人偶召喚券" /> 
+			<item id="100914" min="1" max="1" chance="4.761905" name="最高級安蒂莉雅絲 班 胡爾特人偶召喚券" /> 
+			<item id="100915" min="1" max="1" chance="4.761905" name="最高級凱爾烈光人偶召喚券" /> 
+			<item id="101391" min="1" max="1" chance="4.761905" name="最高級佩利昂人偶召喚券" /> 
+			<item id="101484" min="1" max="1" chance="4.761905" name="最高級伊格尼斯王人偶召喚券" /> 
+			<item id="101485" min="1" max="1" chance="4.761905" name="最高級芮普拉女王人偶召喚券" /> 
+			<item id="101486" min="1" max="1" chance="4.761905" name="最高級普羅傑爾拉王人偶召喚券" /> 
+			<item id="101487" min="1" max="1" chance="4.761905" name="最高級佩德蘭王人偶召喚券" /> 
+			<item id="101488" min="1" max="1" chance="4.761905" name="最高級特倫人偶召喚券" /> 
+			<item id="101489" min="1" max="1" chance="4.761905" name="最高級思卡雷特 潘 哈里夏人偶召喚券" /> 
+			<item id="101490" min="1" max="1" chance="4.761905" name="最高級亞納人偶召喚券" /> 
+			<item id="101491" min="1" max="1" chance="4.761905" name="最高級莉莉絲人偶召喚券" /> 
+			<item id="101708" min="1" max="1" chance="4.761905" name="護身符幸運箱(限時)" /> 
+		</capsuled_items>
+	</item>
+	<item id="101767" name="額外x2_機率_確定測試禮盒" additionalName="Test" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="98039" min="1" max="1" chance="100" name="超越強化石" /> 
+			<item id="101587" min="1" max="1" chance="100" name="亞丁研究日誌碎片" /> 
+		</capsuled_items>
+	</item>
+	<item id="101768" name="遊玩&amp;回歸感謝票券(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_royal_gold_ticket_all" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101769" name="遊玩&amp;回歸感謝票券(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_royal_gold_ticket_all" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101770" name="+5特殊防具(刻印)交換券" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.rare_armor_ticket_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101771" name="+6首領武器(刻印)交換券" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.boss_weapon_ticket_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101772" name="+6札肯血之劍(刻印)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.special_weapon_onehandsword" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93291" min="1" max="1" chance="100" name="札肯血之劍" /> 
+		</capsuled_items>
+	</item>
+	<item id="101773" name="+6核心離質弓(刻印)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.weapon_karupis_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93292" min="1" max="1" chance="100" name="核心離質弓" /> 
+		</capsuled_items>
+	</item>
+	<item id="101774" name="+6奧爾芬毒之劍(刻印)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.weapon_the_two_handed_sword_of_hero_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93293" min="1" max="1" chance="100" name="奧爾芬毒之劍" /> 
+		</capsuled_items>
+	</item>
+	<item id="101775" name="+6巴溫碎雷者(刻印)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.weapon_terakan_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93294" min="1" max="1" chance="100" name="巴溫碎雷者" /> 
+		</capsuled_items>
+	</item>
+	<item id="101776" name="+6巨蟻女王碎石者(刻印)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.special_weapon_onehandblunt" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="93295" min="1" max="1" chance="100" name="巨蟻女王碎石者" /> 
+		</capsuled_items>
+	</item>
+	<item id="101777" name="+6亞納聖恩鎗(刻印)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.shooter_boss_anakim" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="95422" min="1" max="1" chance="100" name="亞納聖恩鎗" /> 
+		</capsuled_items>
+	</item>
+	<item id="101778" name="+6巴列斯噬魂者(刻印)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.staff_of_bereth" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="96269" min="1" max="1" chance="100" name="巴列斯噬魂者" /> 
+		</capsuled_items>
+	</item>
+	<item id="101779" name="+6高德火焰之矛(刻印)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.weapon_r110_spear_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97302" min="1" max="1" chance="100" name="高德火焰之矛" /> 
+		</capsuled_items>
+	</item>
+	<item id="101780" name="+6加洛西亞的古代劍(刻印)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97957" min="1" max="1" chance="100" name="加洛西亞的古代劍" /> 
+		</capsuled_items>
+	</item>
+	<item id="101781" name="+6夫里艾的細劍(刻印)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.weapon_heavenstair_rapier_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97959" min="1" max="1" chance="100" name="夫里艾的細劍" /> 
+		</capsuled_items>
+	</item>
+	<item id="101782" name="+6亞奈斯雙拳(刻印)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.weapon_vesper_fighter_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97961" min="1" max="1" chance="100" name="亞奈斯雙拳" /> 
+		</capsuled_items>
+	</item>
+	<item id="101783" name="+6尤立海的雙刀(刻印)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="BranchSys2.icon.br_wp_astarot_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="97963" min="1" max="1" chance="100" name="尤立海的雙刀" /> 
+		</capsuled_items>
+	</item>
+	<item id="101784" name="Lv6寶石盒禮盒(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="97685" min="1" max="1" chance="12.5" name="綠柱石Lv6寶石盒" /> 
+			<item id="97688" min="1" max="1" chance="12.5" name="瑪瑙Lv6寶石盒" /> 
+			<item id="97691" min="1" max="1" chance="12.5" name="尖晶石Lv6寶石盒" /> 
+			<item id="97694" min="1" max="1" chance="12.5" name="鋯石Lv6寶石盒" /> 
+			<item id="97697" min="1" max="1" chance="12.5" name="珊瑚Lv6寶石盒" /> 
+			<item id="97700" min="1" max="1" chance="12.5" name="貓眼石Lv6寶石盒" /> 
+			<item id="97703" min="1" max="1" chance="12.5" name="琥珀Lv6寶石盒" /> 
+			<item id="97706" min="1" max="1" chance="12.5" name="月長石Lv6寶石盒" /> 
+		</capsuled_items>
+	</item>
+	<item id="101785" name="伊娃耳環(恢復MP)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.r95_earring_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="100963" min="1" max="1" chance="100" name="伊娃耳環(恢復MP)" /> 
+		</capsuled_items>
+	</item>
+	<item id="101786" name="席琳耳環(吸收HP)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.accessary_sages_earing_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="100964" min="1" max="1" chance="100" name="席琳耳環(吸收HP)" /> 
+		</capsuled_items>
+	</item>
+	<item id="101787" name="沙哈戒指(攻擊速度)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.accessary_ring_of_aurakyria_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="100965" min="1" max="1" chance="100" name="沙哈戒指(攻擊速度)" /> 
+		</capsuled_items>
+	</item>
+	<item id="101788" name="帕格立歐戒指(物理攻擊力/魔法攻擊力)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.accessary_another_worlds_ring_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="100966" min="1" max="1" chance="100" name="帕格立歐戒指(物理攻擊力/魔法攻擊力)" /> 
+		</capsuled_items>
+	</item>
+	<item id="101789" name="殷海薩項鍊(冷卻時間)組" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.r95_necklace_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="100967" min="1" max="1" chance="100" name="殷海薩項鍊(冷卻時間)" /> 
+		</capsuled_items>
+	</item>
+	<item id="101790" name="伊娃耳環(恢復MP)組(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.r95_earring_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101785" min="10" max="10" chance="100" name="伊娃耳環(恢復MP)組" /> 
+		</capsuled_items>
+	</item>
+	<item id="101791" name="席琳耳環(吸收HP)10個/組(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.accessary_sages_earing_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101786" min="10" max="10" chance="100" name="席琳耳環(吸收HP)組" /> 
+		</capsuled_items>
+	</item>
+	<item id="101792" name="沙哈戒指(攻擊速度)10個/組(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.accessary_ring_of_aurakyria_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101787" min="10" max="10" chance="100" name="沙哈戒指(攻擊速度)組" /> 
+		</capsuled_items>
+	</item>
+	<item id="101793" name="帕格立歐戒指(物理攻擊力/魔法攻擊力)10個/組(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.accessary_another_worlds_ring_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101788" min="10" max="10" chance="100" name="帕格立歐戒指(物理攻擊力/魔法攻擊力)組" /> 
+		</capsuled_items>
+	</item>
+	<item id="101794" name="殷海薩項鍊(冷卻時間)10個/組(限時)" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.r95_necklace_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="101789" min="10" max="10" chance="100" name="殷海薩項鍊(冷卻時間)組" /> 
+		</capsuled_items>
+	</item>
+	<item id="101795" name="L2階段提升起始小包I" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_starter_package_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101796" name="L2階段提升起始小包II" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_starter_package_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101797" name="L2階段提升起始小包III" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_starter_package_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101798" name="L2階段提升起始小包IV" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_starter_package_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="101799" name="L2階段提升起始小包V" additionalName="Sealed" type="EtcItem">
+		
+		<set name="icon" val="icon.bm_starter_package_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

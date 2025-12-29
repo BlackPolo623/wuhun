@@ -1,0 +1,38 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<xs:element name="displayId" minOccurs="1" maxOccurs="1" />
+				<xs:element name="ticketId" minOccurs="1" maxOccurs="1" />
+				<xs:element name="dailyResets" minOccurs="1" maxOccurs="1" />
+				<xs:element name="dailyResetsCostAmount" minOccurs="1" maxOccurs="1" />
+				<xs:element name="cells" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="1">
+							<xs:element name="cell" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="id" type="xs:positiveInteger" use="required" />
+									<xs:attribute name="rewardId" type="xs:positiveInteger" use="required" />
+									<xs:attribute name="rewardAmount" type="xs:positiveInteger" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="advancedRewards" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="1">
+							<xs:element name="item" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="id" type="xs:positiveInteger" use="required" />
+									<xs:attribute name="count" type="xs:positiveInteger" use="optional" />
+									<xs:attribute name="chance" type="xs:double" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

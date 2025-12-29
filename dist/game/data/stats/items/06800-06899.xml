@@ -1,0 +1,532 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="6835" name="狄恩之環" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_pledge_cap1_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="0" />
+		<set name="price" val="500000" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{2}}}" />
+		<conditions msgId="1518">
+			<and>
+				<player castle="2" />
+				<player pledgeClass="2" /> 
+			</and>
+		</conditions>
+		<skills>
+			<skill id="3633" level="1" /> 
+		</skills>
+	</item>
+	<item id="6837" name="歐瑞之環" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_pledge_cap1_i04" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="0" />
+		<set name="price" val="500000" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{4}}}" />
+		<conditions msgId="1518">
+			<and>
+				<player castle="4" />
+				<player pledgeClass="2" /> 
+			</and>
+		</conditions>
+		<skills>
+			<skill id="3633" level="1" /> 
+		</skills>
+	</item>
+	<item id="6838" name="古魯丁之環" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_pledge_cap1_i05" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="0" />
+		<set name="price" val="500000" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{1}}}" />
+		<conditions msgId="1518">
+			<and>
+				<player castle="1" />
+				<player pledgeClass="2" /> 
+			</and>
+		</conditions>
+		<skills>
+			<skill id="3633" level="1" /> 
+		</skills>
+	</item>
+	<item id="6839" name="奇岩之環" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_pledge_cap1_i06" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="0" />
+		<set name="price" val="500000" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{3}}}" />
+		<conditions msgId="1518">
+			<and>
+				<player castle="3" />
+				<player pledgeClass="2" /> 
+			</and>
+		</conditions>
+	</item>
+	<item id="6840" name="亞丁之環" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_pledge_cap2_i07" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="0" />
+		<set name="price" val="500000" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{5}}}" />
+		<conditions msgId="1518">
+			<and>
+				<player castle="5" />
+				<player pledgeClass="2" /> 
+			</and>
+		</conditions>
+		<skills>
+			<skill id="3633" level="2" /> 
+		</skills>
+	</item>
+	<item id="6841" name="城主的王冠" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_crown_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="equip_condition" val="{{ec_castle;1};{ec_clan_leader;1}}" />
+		<conditions msgId="1518">
+			<and>
+				<player castle="-1" />
+				<player pledgeClass="-1" /> 
+			</and>
+		</conditions>
+	</item>
+	<item id="6842" name="命運之翼" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_hero_cap_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="isAppearanceable" val="true" />
+		<set name="is_sellable" val="true" />
+		<conditions msgId="1518">
+			<player isHero="true" />
+		</conditions>
+	</item>
+	<item id="6843" name="貓耳" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_cat_ear_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair2" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="0" />
+		<set name="price" val="500000" />
+		<set name="isAppearanceable" val="true" />
+		<set name="commissionItemType" val="HAIR_ACCESSORY" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+	</item>
+	<item id="6845" name="海盜眼罩" additionalName="Sealed" type="Armor">
+		
+		<set name="icon" val="icon.accessory_eye_bandage_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="0" />
+		<set name="price" val="500000" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<skills>
+			<skill id="39296" level="1" /> 
+		</skills>
+	</item>
+	<item id="6847" name="製作卷軸(封印的泰狄奧森耳環30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="74000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="646" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6849" name="製作卷軸(封印的泰狄奧森戒指30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="49400" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="648" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6851" name="製作卷軸(封印的泰狄奧森項鍊30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="98800" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="650" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6853" name="製作卷軸(封印的帝國聖軍胸甲30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="286000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="652" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6855" name="製作卷軸(封印的帝國聖軍脛甲30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="179200" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="654" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6857" name="製作卷軸(封印的帝國聖軍長手套30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="71600" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="656" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6859" name="製作卷軸(封印的帝國聖軍長靴30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="71600" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="658" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6861" name="製作卷軸(封印的帝國聖軍盾30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="75200" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="660" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6863" name="製作卷軸(封印的帝國聖軍頭盔30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="107400" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="662" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6865" name="製作卷軸(封印的紅龍皮甲30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="348000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="664" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6867" name="製作卷軸(封印的紅龍皮手套30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="71600" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="666" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6869" name="製作卷軸(封印的紅龍皮靴30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="71600" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="668" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6871" name="製作卷軸(封印的紅龍皮盔30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="107400" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="670" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6873" name="製作卷軸(封印的大祕儀長袍30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="348000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="672" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6875" name="製作卷軸(封印的大祕儀手套30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="71600" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="674" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6877" name="製作卷軸(封印的大祕儀長靴30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="71600" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="676" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6879" name="製作卷軸(封印的大祕儀頭箍30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="107400" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="678" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6881" name="製作卷軸(忘卻之刃30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="626" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6883" name="製作卷軸(玄武岩戰鎚30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="628" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6885" name="製作卷軸(帝國權杖30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="630" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6887" name="製作卷軸(天使殺手30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="632" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6891" name="製作卷軸(狩龍之斧30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="636" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6893" name="製作卷軸(聖者之矛30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="638" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6895" name="製作卷軸(惡魔獵爪30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="640" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6897" name="製作卷軸(天國審判30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="642" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="6899" name="製作卷軸(祕儀權杖30%)" type="EtcItem">
+		
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="price" val="976000" />
+		<set name="is_stackable" val="true" />
+		<set name="recipe_id" val="644" />
+		<set name="handler" val="Recipes" />
+	</item>
+</list>

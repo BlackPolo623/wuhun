@@ -1,0 +1,79 @@
+<html><head><title>稱號列表</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+    <tr>
+        <td valign="top" align="center">
+            <!-- 標題區域 -->
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td align=center width=280 height=40 background="L2UI_CT1.Windows_DF_TooltipBG">
+                        <font color="LEVEL" size="5"><b>稱號選擇</b></font>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td height=10></td>
+                </tr>
+                <tr>
+                    <td align=center><font color="00FF66">選擇要佩戴的稱號</font></td>
+                </tr>
+                <tr>
+                    <td align=center><font color="FFFF00">已解鎖：%unlocked_count% / %total_count%</font></td>
+                </tr>
+                <tr>
+                    <td height=10></td>
+                </tr>
+            </table>
+
+            <!-- 分隔線 -->
+            <img src="L2UI.SquareGray" width="280" height="1"><br>
+
+            <!-- 稱號列表區域 -->
+            <table width="280" cellspacing="0">
+                <tr>
+                    <td>
+                        <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="2">
+                            <tr bgcolor="333333" height="25">
+                                <td align="center" width="180"><font color="FFCC33">稱號名稱</font></td>
+                                <td align="center" width="100"><font color="FFCC33">操作</font></td>
+                            </tr>
+                        </table>
+                        <!-- 動態列表內容 -->
+                        <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="2">
+                            %list%
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+
+            <!-- 分頁按鈕 -->
+            <table width="280">
+                <tr>
+                    <td align="center">
+                        %prev_page_button%
+                    </td>
+                    <td align="center">
+                        %next_page_button%
+                    </td>
+                </tr>
+            </table>
+            <!-- 返回按鈕 -->
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td height=5></td>
+                </tr>
+                <tr>
+                    <td align=center>
+                        <button action="bypass -h Quest chenghao main" value="返回主頁" width="150" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

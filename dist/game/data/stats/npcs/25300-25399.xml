@@ -1,0 +1,2450 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="25300" level="75" type="Monster" name="黑卡頓的偵查兵" title="Raid Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="35053.4822151596" hpRegen="91.4930863014358" mp="1641" mpRegen="3" />
+			<attack physical="2848.82203115447" magical="1105.91356508692" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="505.60512" magical="493.3" />
+			<speed>
+				<walk ground="45" />
+				<run ground="190" />
+			</speed>
+			<hitTime>910</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="ARCHER" clanHelpRange="300" />
+		<collision>
+			<radius normal="12" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="25301" level="75" type="Monster" name="黑卡頓的侍從" title="Raid Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="26159.31508594" hpRegen="91.4930863014358" mp="1641" mpRegen="3" />
+			<attack physical="2848.82203115447" magical="1105.91356508692" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="505.60512" magical="493.3" />
+			<speed>
+				<walk ground="45" />
+				<run ground="190" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="12" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<!-- NPC 25302 (肯特拉司令官 泰爾) 已被提取至 RaidBosses.xml -->
+	<npc id="25303" level="75" type="Monster" name="泰爾的副官" title="Raid Minion">
+		<parameters>
+			<skill name="DDMagic_a" id="4195" level="9" />
+			<skill name="Debuff_a" id="4200" level="9" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="36487.662943211" hpRegen="95.1367199926651" mp="1777.4" mpRegen="3" />
+			<attack physical="3970.90812329385" magical="2222.63213776311" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="546.7159248" magical="533.4164" />
+			<speed>
+				<walk ground="10" />
+				<run ground="190" />
+			</speed>
+			<hitTime>340</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4195" level="9" /> 
+			<skill id="4200" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="10" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="25304" level="75" type="Monster" name="泰爾的禁衛兵" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4741" level="9" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="54459.1984227031" hpRegen="95.1367199926651" mp="1777.4" mpRegen="3" />
+			<attack physical="5956.51109771821" magical="5001.14110989056" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="546.7159248" magical="533.4164" />
+			<speed>
+				<walk ground="45" />
+				<run ground="190" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4741" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="12" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<!-- NPC 25305 (肯特拉族長 布拉齊) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25306 (火之魂靈 那斯特倫) 已被提取至 RaidBosses.xml -->
+	<npc id="25307" level="75" type="Monster" name="那斯特倫的族人" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4741" level="10" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="39165.6416889468" hpRegen="76.0201258197969" mp="1881.8" mpRegen="3" />
+			<attack physical="3642.58982857972" magical="4799.50285599904" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="581.336118" magical="567.1848" />
+			<speed>
+				<walk ground="90" />
+				<run ground="190" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4741" level="10" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+	</npc>
+	<npc id="25308" level="75" type="Monster" name="那斯特倫的族人" title="Raid Minion">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19582.8208444734" hpRegen="76.0201258197969" mp="1881.8" mpRegen="3" />
+			<attack physical="1821.29491428986" magical="1199.87571399976" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="581.336118" magical="567.1848" />
+			<speed>
+				<walk ground="90" />
+				<run ground="190" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+	</npc>
+	<!-- NPC 25309 (巴瑞卡的英雄 夏帝斯) 已被提取至 RaidBosses.xml -->
+	<npc id="25310" level="75" type="Monster" name="夏帝斯的親衛隊長" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4741" level="8" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="52318.6301718799" hpRegen="91.4930863014358" mp="1641" mpRegen="3" />
+			<attack physical="5697.64406230895" magical="4423.65426034769" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="505.60512" magical="493.3" />
+			<speed>
+				<walk ground="34" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4741" level="8" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="16" />
+			<height normal="41" />
+		</collision>
+	</npc>
+	<npc id="25311" level="75" type="Monster" name="夏帝斯的親衛兵" title="Raid Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="26159.31508594" hpRegen="91.4930863014358" mp="1641" mpRegen="3" />
+			<attack physical="2848.82203115447" magical="1105.91356508692" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="505.60512" magical="493.3" />
+			<speed>
+				<walk ground="44" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="16" />
+			<height normal="38" />
+		</collision>
+	</npc>
+	<!-- NPC 25312 (巴瑞卡司令官 摩斯) 已被提取至 RaidBosses.xml -->
+	<npc id="25313" level="75" type="Monster" name="摩斯的副官" title="Raid Minion">
+		<parameters>
+			<skill name="HealMagic_a" id="4786" level="9" />
+			<skill name="SelfRangeBuff_a" id="4212" level="9" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="54459.1984227031" hpRegen="95.1367199926651" mp="1777.4" mpRegen="3" />
+			<attack physical="2978.25554885911" magical="1250.28527747264" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="546.7159248" magical="533.4164" />
+			<speed>
+				<walk ground="36" />
+				<run ground="190" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4212" level="9" /> 
+			<skill id="4786" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="9" />
+			<height normal="41.5" />
+		</collision>
+	</npc>
+	<npc id="25314" level="75" type="Monster" name="摩斯的護衛兵" title="Raid Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="27229.5992113515" hpRegen="95.1367199926651" mp="1777.4" mpRegen="3" />
+			<attack physical="2978.25554885911" magical="1250.28527747264" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="546.7159248" magical="533.4164" />
+			<speed>
+				<walk ground="44" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="16" />
+			<height normal="38" />
+		</collision>
+	</npc>
+	<!-- NPC 25315 (巴瑞卡族長 荷魯斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25316 (水之魂靈 阿修塔爾) 已被提取至 RaidBosses.xml -->
+	<npc id="25317" level="75" type="Monster" name="阿修塔爾的族人" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4726" level="10" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="39165.6416889468" hpRegen="76.0201258197969" mp="1881.8" mpRegen="3" />
+			<attack physical="3642.58982857972" magical="4799.50285599904" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="581.336118" magical="567.1848" />
+			<speed>
+				<walk ground="90" />
+				<run ground="190" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4726" level="10" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="20" grown="24" />
+		</collision>
+	</npc>
+	<npc id="25318" level="75" type="Monster" name="阿修塔爾的族人" title="Raid Minion">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="19582.8208444734" hpRegen="76.0201258197969" mp="1881.8" mpRegen="3" />
+			<attack physical="1821.29491428986" magical="1199.87571399976" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="581.336118" magical="567.1848" />
+			<speed>
+				<walk ground="90" />
+				<run ground="190" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="20" grown="24" />
+		</collision>
+	</npc>
+	<!-- NPC 25319 (安柏爾) 已被提取至 RaidBosses.xml -->
+	<npc id="25320" level="75" type="Monster" name="安柏爾的衛兵" title="Raid Minion">
+		<parameters>
+			<skill name="DDMagic_a" id="4191" level="9" />
+			<skill name="Debuff_a" id="4199" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="51438.1848185452" hpRegen="134.1096890947" mp="1812" mpRegen="3" />
+			<attack physical="7413.2545534839" magical="7859.00328968377" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="558.2728788" magical="544.6896" />
+			<speed>
+				<walk ground="13" />
+				<run ground="190" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4191" level="9" /> 
+			<skill id="4199" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="38" />
+			<height normal="45" />
+		</collision>
+	</npc>
+	<npc id="25321" level="75" type="Monster" name="安柏爾的傳令" title="Raid Minion">
+		<parameters>
+			<skill name="HealMagic_a" id="4209" level="9" />
+			<skill name="SelfRangeBuff_a" id="4213" level="9" />
+		</parameters>
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="76773.4101769332" hpRegen="134.1096890947" mp="1812" mpRegen="3" />
+			<attack physical="5560.07991711085" magical="4420.88276406805" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="558.2728788" magical="544.6896" />
+			<speed>
+				<walk ground="38" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="7" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4209" level="9" /> 
+			<skill id="4213" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="10" />
+			<height normal="42" />
+		</collision>
+	</npc>
+	<!-- NPC 25322 (惡魔的代理人 法斯騰) 已被提取至 RaidBosses.xml -->
+	<npc id="25323" level="65" type="Monster" name="法斯騰的門徒" title="Raid Minion">
+		<parameters>
+			<skill name="DDMagic_a" id="4192" level="6" />
+			<skill name="Debuff_a" id="4204" level="6" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="40576.3311754788" hpRegen="110.823040573561" mp="1188.8" mpRegen="2.7" />
+			<attack physical="4841.23256010037" magical="4311.34525530238" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="407.835495" magical="397.92" />
+			<speed>
+				<walk ground="46" />
+				<run ground="190" />
+			</speed>
+			<hitTime>460</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4192" level="6" /> 
+			<skill id="4204" level="6" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="MAGE" clanHelpRange="300" />
+		<collision>
+			<radius normal="5.5" grown="6.5" />
+			<height normal="28" grown="34.5" />
+		</collision>
+	</npc>
+	<npc id="25324" level="65" type="Monster" name="法斯騰的僕人" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4169" level="6" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="60561.6883216102" hpRegen="110.823040573561" mp="1188.8" mpRegen="2.7" />
+			<attack physical="7262.03039091033" magical="9700.95124104716" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="407.835495" magical="397.92" />
+			<speed>
+				<walk ground="19" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4169" level="6" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="8" />
+			<height normal="30" />
+		</collision>
+	</npc>
+	<!-- NPC 25325 (輝煌之炎 貝拉凱爾) 已被提取至 RaidBosses.xml -->
+	<npc id="25326" level="69" type="Monster" name="貝拉凱爾的使徒" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4724" level="6" />
+		</parameters>
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="64776.0484751577" hpRegen="116.468584127042" mp="1314" mpRegen="2.7" />
+			<attack physical="8357.00898150475" magical="11094.0736231147" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="436.725945" magical="426.1" />
+			<speed>
+				<walk ground="50" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4724" level="6" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="MAGE" clanHelpRange="300" />
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="38.5" grown="46.5" />
+		</collision>
+	</npc>
+	<npc id="25327" level="69" type="Monster" name="貝拉凱爾的服事" title="Raid Minion">
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="32388.0242375788" hpRegen="116.468584127042" mp="1314" mpRegen="2.7" />
+			<attack physical="4178.50449075237" magical="2773.51840577869" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="436.725945" magical="426.1" />
+			<speed>
+				<walk ground="50" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="8" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="MAGE" clanHelpRange="300" />
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="38.5" grown="46.5" />
+		</collision>
+	</npc>
+	<!-- NPC 25328 (艾爾哈爾德 潘 哈曼) 已被提取至 RaidBosses.xml -->
+	<npc id="25329" level="70" type="Monster" name="薇爾蕾特" title="Raid Minion">
+		<parameters>
+			<skill name="DDMagic_a" id="4193" level="7" />
+			<skill name="Debuff_a" id="4206" level="7" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44029.6855209057" hpRegen="117.68436242886" mp="1345.8" mpRegen="2.7" />
+			<attack physical="5746.2059869401" magical="5101.31544776437" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="443.873955" magical="433.08" />
+			<speed>
+				<walk ground="64" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4193" level="7" /> 
+			<skill id="4206" level="7" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="MAGE" clanHelpRange="300" />
+		<collision>
+			<radius normal="6" grown="7" />
+			<height normal="21.5" grown="25.8" />
+		</collision>
+	</npc>
+	<npc id="25330" level="70" type="Monster" name="克絲緹" title="Raid Minion">
+		<parameters>
+			<skill name="DDMagic_a" id="4193" level="7" />
+			<skill name="Debuff_a" id="4199" level="7" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44029.6855209057" hpRegen="117.68436242886" mp="1345.8" mpRegen="2.7" />
+			<attack physical="5746.2059869401" magical="5101.31544776437" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="443.873955" magical="433.08" />
+			<speed>
+				<walk ground="64" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4193" level="7" /> 
+			<skill id="4199" level="7" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="MAGE" clanHelpRange="300" />
+		<collision>
+			<radius normal="6" grown="7" />
+			<height normal="21.5" grown="25.8" />
+		</collision>
+	</npc>
+	<npc id="25331" level="70" type="Monster" name="米娜" title="Raid Minion">
+		<parameters>
+			<skill name="DDMagic_a" id="4193" level="7" />
+			<skill name="Debuff_a" id="4203" level="7" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="44029.6855209057" hpRegen="117.68436242886" mp="1345.8" mpRegen="2.7" />
+			<attack physical="5746.2059869401" magical="5101.31544776437" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="443.873955" magical="433.08" />
+			<speed>
+				<walk ground="64" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4193" level="7" /> 
+			<skill id="4203" level="7" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="MAGE" clanHelpRange="300" />
+		<collision>
+			<radius normal="6" grown="7" />
+			<height normal="21.5" grown="25.8" />
+		</collision>
+	</npc>
+	<npc id="25332" level="70" type="Monster" name="多里安" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4181" level="7" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="65715.9485386652" hpRegen="117.68436242886" mp="1345.8" mpRegen="2.7" />
+			<attack physical="8619.52446852187" magical="11478.4619401797" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="443.873955" magical="433.08" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>450</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4181" level="7" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="8" grown="9" />
+			<height normal="23.5" grown="29" />
+		</collision>
+	</npc>
+	<!-- NPC 25333 (亞那卡傑爾) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25334 (亞那卡傑爾) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25335 (亞那卡傑爾) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25336 (亞那卡傑爾) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25337 (亞那卡傑爾) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25338 (亞那卡傑爾) 已被提取至 RaidBosses.xml -->
+	<npc id="25339" level="85" type="Monster" name="亞雷提雅" title="Halisha's Shadow">
+		<parameters>
+			<minions name="Privates">
+				<npc id="25340" count="1" respawnTime="360" weightPoint="1" /> 
+				<npc id="25341" count="1" respawnTime="360" weightPoint="1" /> 
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm03_A" />
+			<skill name="RangeDDMagic_a" id="4178" level="9" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="6720" /> 
+		<acquire exp="115600000" sp="3468000" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="5500000" hpRegen="1" mp="1708.8" mpRegen="3" />
+			<attack physical="35810" magical="4375" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="2505" magical="1452" />
+			<speed>
+				<walk ground="43" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="230" magical="230" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="4921" level="1" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="14765" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="12" /> 
+			<skill id="4411" level="12" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4178" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="23" />
+			<height normal="60" />
+		</collision>
+	</npc>
+	<npc id="25340" level="85" type="Monster" name="亞雷提雅的騎士">
+		<parameters>
+			<skill name="HealMagic_a" id="4788" level="9" />
+			<skill name="SelfRangeBuff_a" id="4212" level="9" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="48785.9394" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="857.7603864" />
+			<speed>
+				<walk ground="70" />
+				<run ground="190" />
+			</speed>
+			<hitTime>740</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="10" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="13" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="13" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4212" level="9" /> 
+			<skill id="4788" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="12" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="25341" level="85" type="Monster" name="亞雷提雅的騎士">
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="48785.9394" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="857.7603864" />
+			<speed>
+				<walk ground="35" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="3" /> 
+			<skill id="4408" level="10" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="13" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="13" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="21" />
+			<height normal="35" />
+		</collision>
+	</npc>
+	<npc id="25342" level="85" type="Monster" name="帝夏思" title="Halisha's Shadow">
+		<parameters>
+			<minions name="Privates">
+				<npc id="25343" count="1" respawnTime="360" weightPoint="1" /> 
+				<npc id="25345" count="1" respawnTime="360" weightPoint="1" /> 
+				<npc id="25344" count="1" respawnTime="360" weightPoint="1" /> 
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="PhysicalSpecial_b" id="4748" level="9" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="6720" /> 
+		<acquire exp="2643172" sp="634" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="11000000" hpRegen="1" mp="1708.8" mpRegen="3" />
+			<attack physical="53715" magical="4375" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="2505" magical="1452" />
+			<speed>
+				<walk ground="43" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="230" magical="230" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="4922" level="1" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="14765" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="14" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4748" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="23" />
+			<height normal="60" />
+		</collision>
+	</npc>
+	<npc id="25343" level="85" type="Monster" name="帝夏思的騎士">
+		<parameters>
+			<skill name="HealMagic_a" id="4788" level="9" />
+			<skill name="SelfRangeBuff_a" id="4212" level="9" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="48785.9394" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="857.7603864" />
+			<speed>
+				<walk ground="70" />
+				<run ground="190" />
+			</speed>
+			<hitTime>740</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="11" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="15" /> 
+			<skill id="4412" level="15" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4212" level="9" /> 
+			<skill id="4788" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="12" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="25344" level="85" type="Monster" name="帝夏思的騎士">
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="48785.9394" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="1562.9247648" magical="857.7603864" />
+			<speed>
+				<walk ground="70" />
+				<run ground="190" />
+			</speed>
+			<hitTime>760</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="11" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="15" /> 
+			<skill id="4412" level="15" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="ARCHER" clanHelpRange="300" />
+		<collision>
+			<radius normal="17" />
+			<height normal="55" />
+		</collision>
+	</npc>
+	<npc id="25345" level="85" type="Monster" name="帝夏思的騎士">
+		<parameters>
+			<skill name="DDMagic_a" id="4191" level="9" />
+			<skill name="Debuff_a" id="4203" level="9" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="48785.9394" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="857.7603864" />
+			<speed>
+				<walk ground="50" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="11" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="15" /> 
+			<skill id="4411" level="15" /> 
+			<skill id="4412" level="15" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4191" level="9" /> 
+			<skill id="4203" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="MAGE" clanHelpRange="300" />
+		<collision>
+			<radius normal="9" />
+			<height normal="34" />
+		</collision>
+	</npc>
+	<npc id="25346" level="85" type="Monster" name="梅卡拉" title="Halisha's Shadow">
+		<parameters>
+			<minions name="Privates">
+				<npc id="25347" count="1" respawnTime="360" weightPoint="1" /> 
+				<npc id="25348" count="1" respawnTime="360" weightPoint="1" /> 
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="RangeHold_a" id="4197" level="9" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="6720" /> 
+		<acquire exp="2643172" sp="634" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="19250000" hpRegen="1" mp="1708.8" mpRegen="3" />
+			<attack physical="71332.35" magical="4375" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="2505" magical="1452" />
+			<speed>
+				<walk ground="43" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="230" magical="230" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="4923" level="1" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="14765" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="16" /> 
+			<skill id="4411" level="16" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4197" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="23" />
+			<height normal="60" />
+		</collision>
+	</npc>
+	<npc id="25347" level="85" type="Monster" name="梅卡拉的騎士">
+		<parameters>
+			<skill name="DDMagic_a" id="4191" level="9" />
+			<skill name="Debuff_a" id="4199" level="9" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="48785.9394" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="857.7603864" />
+			<speed>
+				<walk ground="50" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="17" /> 
+			<skill id="4411" level="17" /> 
+			<skill id="4412" level="17" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4191" level="9" /> 
+			<skill id="4199" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="MAGE" clanHelpRange="300" />
+		<collision>
+			<radius normal="9" />
+			<height normal="34" />
+		</collision>
+	</npc>
+	<npc id="25348" level="85" type="Monster" name="梅卡拉的騎士">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="9" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="78" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="48785.9394" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="857.7603864" />
+			<speed>
+				<walk ground="40" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="17" /> 
+			<skill id="4411" level="17" /> 
+			<skill id="4412" level="17" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4743" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="21" grown="25" />
+			<height normal="40" grown="48" />
+		</collision>
+	</npc>
+	<npc id="25349" level="85" type="Monster" name="莫利格爾" title="Halisha's Shadow">
+		<parameters>
+			<minions name="Privates">
+				<npc id="25350" count="1" respawnTime="360" weightPoint="1" /> 
+				<npc id="25351" count="1" respawnTime="360" weightPoint="1" /> 
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm03_A" />
+			<skill name="DDMagic_a" id="4195" level="9" />
+			<skill name="SelfRangeDebuff_a" id="4184" level="9" />
+			<skill name="SelfRangeDebuffAnother_a" id="4187" level="9" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="6720" /> 
+		<acquire exp="2643172" sp="634" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="33000000" hpRegen="1" mp="1708.8" mpRegen="3" />
+			<attack physical="142664.7" magical="4375" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="2505" magical="1452" />
+			<speed>
+				<walk ground="43" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="230" magical="230" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4494" level="1" /> 
+			<skill id="4924" level="1" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="14765" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="18" /> 
+			<skill id="4411" level="18" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4184" level="9" /> 
+			<skill id="4187" level="9" /> 
+			<skill id="4195" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="23" />
+			<height normal="60" />
+		</collision>
+	</npc>
+	<npc id="25350" level="85" type="Monster" name="莫利格爾的騎士">
+		<parameters>
+			<skill name="DDMagic_a" id="4191" level="9" />
+			<skill name="Debuff_a" id="4201" level="9" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="48785.9394" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="857.7603864" />
+			<speed>
+				<walk ground="50" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="13" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="19" /> 
+			<skill id="4411" level="19" /> 
+			<skill id="4412" level="19" /> 
+			<skill id="4413" level="19" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4191" level="9" /> 
+			<skill id="4201" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="MAGE" clanHelpRange="300" />
+		<collision>
+			<radius normal="9" />
+			<height normal="34" />
+		</collision>
+	</npc>
+	<npc id="25351" level="85" type="Monster" name="莫利格爾的騎士">
+		<parameters>
+			<skill name="HealMagic_a" id="4788" level="9" />
+			<skill name="SelfRangeBuff_a" id="4212" level="9" />
+		</parameters>
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="48785.9394" hpRegen="17" mp="2770.2" mpRegen="6" />
+			<attack physical="47554.9" magical="24355.375" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1562.9247648" magical="857.7603864" />
+			<speed>
+				<walk ground="70" />
+				<run ground="190" />
+			</speed>
+			<hitTime>740</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="13" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="19" /> 
+			<skill id="4411" level="19" /> 
+			<skill id="4412" level="19" /> 
+			<skill id="4413" level="19" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4212" level="9" /> 
+			<skill id="4788" level="9" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="12" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<!-- NPC 25352 (巨大荒原邪惡蜥蜴) 已被提取至 RaidBosses.xml -->
+	<npc id="25353" level="29" type="Monster" name="荒原邪惡蜥蜴" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4728" level="2" />
+		</parameters>
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="28916" hpRegen="7" mp="22747" mpRegen="10" />
+			<attack physical="261" magical="148" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="345" magical="244" />
+			<speed>
+				<walk ground="35" />
+				<run ground="190" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="3" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4728" level="2" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="32" />
+			<height normal="22" />
+		</collision>
+	</npc>
+	<!-- NPC 25354 (翼魔之王 西洛可) 已被提取至 RaidBosses.xml -->
+	<npc id="25355" level="34" type="Monster" name="西洛可翼魔" title="Raid Minion">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="30391" hpRegen="9" mp="23908" mpRegen="10" />
+			<attack physical="386" magical="272" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="398" magical="281" />
+			<speed>
+				<walk ground="140" />
+				<run ground="190" />
+			</speed>
+			<hitTime>370</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="16" />
+			<height normal="50" />
+		</collision>
+	</npc>
+	<npc id="25356" level="34" type="Monster" name="西洛可護衛隊" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4741" level="3" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="30391" hpRegen="9" mp="23908" mpRegen="10" />
+			<attack physical="386" magical="272" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="398" magical="281" />
+			<speed>
+				<walk ground="140" />
+				<run ground="190" />
+			</speed>
+			<hitTime>370</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4741" level="3" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="16" />
+			<height normal="50" />
+		</collision>
+	</npc>
+	<!-- NPC 25357 (蘇卡鼠人族長) 已被提取至 RaidBosses.xml -->
+	<npc id="25358" level="20" type="Monster" name="蘇卡鼠人護衛兵" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4733" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="216" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="26439" hpRegen="5" mp="20799" mpRegen="10" />
+			<attack physical="121" magical="52" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="260" magical="184" />
+			<speed>
+				<walk ground="80" />
+				<run ground="190" />
+			</speed>
+			<hitTime>610</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4733" level="2" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="12" />
+			<height normal="18.7" />
+		</collision>
+	</npc>
+	<npc id="25359" level="20" type="Monster" name="蘇卡鼠人祭司" title="Raid Minion">
+		<parameters>
+			<skill name="HealMagic_a" id="4783" level="2" />
+			<skill name="SelfRangeBuff_a" id="4211" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="179" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="26439" hpRegen="5" mp="20799" mpRegen="10" />
+			<attack physical="121" magical="52" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="234" magical="205" />
+			<speed>
+				<walk ground="80" />
+				<run ground="190" />
+			</speed>
+			<hitTime>610</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4211" level="2" /> 
+			<skill id="4783" level="2" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="12" />
+			<height normal="18.7" />
+		</collision>
+	</npc>
+	<!-- NPC 25360 (虎蜂) 已被提取至 RaidBosses.xml -->
+	<npc id="25361" level="25" type="Monster" name="金色大黃蜂" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4733" level="2" />
+		</parameters>
+		<race>BUG</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="6930.60936582996" hpRegen="18.4385313667577" mp="259.2" mpRegen="1.5" />
+			<attack physical="296.889275521805" magical="74.8747587642184" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="152.752995" magical="149.04" />
+			<speed>
+				<walk ground="90" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="12" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4733" level="2" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="8" />
+			<height normal="24.5" />
+		</collision>
+	</npc>
+	<!-- NPC 25362 (追擊隊長 夏魯克) 已被提取至 RaidBosses.xml -->
+	<npc id="25363" level="22" type="Monster" name="夏魯克的搜尋者" title="Raid Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3123.59239397728" hpRegen="17.1576881427546" mp="218.52" mpRegen="1.5" />
+			<attack physical="115.593111188517" magical="14.544467728838" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="138.98541" magical="135.6" />
+			<speed>
+				<walk ground="43" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="10" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="25364" level="22" type="Monster" name="夏魯克的狙擊手" title="Raid Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="4185.61380792955" hpRegen="17.1576881427546" mp="218.52" mpRegen="1.5" />
+			<attack physical="115.593111188517" magical="14.544467728838" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="138.98541" magical="135.6" />
+			<speed>
+				<walk ground="43" />
+				<run ground="190" />
+			</speed>
+			<hitTime>720</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="10" grown="12" />
+			<height normal="22" grown="27" />
+		</collision>
+	</npc>
+	<!-- NPC 25365 (教主 庫勒保洛斯) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25366 (庫勒保洛斯的大祭司) 已被提取至 RaidBosses.xml -->
+	<npc id="25367" level="85" type="Monster" name="庫勒保洛斯的信徒" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="1" lhand="102" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="160460.3" hpRegen="17" mp="71253" mpRegen="10" />
+			<attack physical="3633" magical="6279" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1024" magical="730.36761" />
+			<speed>
+				<walk ground="43" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4743" level="2" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="10" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="25368" level="85" type="Monster" name="庫勒保洛斯的弟子" title="Raid Minion">
+		<parameters>
+			<skill name="HealMagic_a" id="4788" level="6" />
+			<skill name="SelfRangeBuff_a" id="4212" level="6" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="179" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="160460.3" hpRegen="17" mp="71253" mpRegen="10" />
+			<attack physical="3633" magical="6279" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="1024" magical="730.36761" />
+			<speed>
+				<walk ground="43" />
+				<run ground="190" />
+			</speed>
+			<hitTime>480</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4212" level="6" /> 
+			<skill id="4788" level="6" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" />
+		<collision>
+			<radius normal="10" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<!-- NPC 25369 (受詛咒的 斯奇班) 已被提取至 RaidBosses.xml -->
+	<npc id="25370" level="24" type="Monster" name="食腐之屍" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4733" level="2" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="946" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="27512" hpRegen="7" mp="21643" mpRegen="10" />
+			<attack physical="172" magical="95" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="296" magical="209" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>300</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4733" level="2" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="11" />
+			<height normal="31" />
+		</collision>
+	</npc>
+	<npc id="25371" level="24" type="Monster" name="食腐之命" title="Raid Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="946" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="27512" hpRegen="7" mp="21643" mpRegen="10" />
+			<attack physical="172" magical="95" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="296" magical="209" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>300</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="27" grown="34" />
+		</collision>
+	</npc>
+	<!-- NPC 25372 (被遺棄的守護者) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25373 (達高尼爾的使者 瑪雷斯) 已被提取至 RaidBosses.xml -->
+	<npc id="25374" level="20" type="Monster" name="地獄鳥" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4728" level="2" />
+		</parameters>
+		<race>ANIMAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5895.54977206307" hpRegen="16.5400323223535" mp="192" mpRegen="1.2" />
+			<attack physical="195.300657715485" magical="38.1182001422702" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="130.305735" magical="127.14" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4728" level="2" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="10" />
+			<height normal="33.5" />
+		</collision>
+	</npc>
+	<!-- NPC 25375 (殭屍之王 法拉克蘇斯) 已被提取至 RaidBosses.xml -->
+	<npc id="25376" level="19" type="Monster" name="法拉克蘇斯的殭屍戰士" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="1" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5747.15231548848" hpRegen="16.2943663177076" mp="183.28" mpRegen="1.2" />
+			<attack physical="179.477904052609" magical="33.8323268495015" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="126.11457" magical="123.04" />
+			<speed>
+				<walk ground="15" />
+				<run ground="190" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4743" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="13" />
+			<height normal="21" />
+		</collision>
+	</npc>
+	<npc id="25377" level="19" type="Monster" name="法拉克蘇斯的殭屍戰士" title="Raid Minion">
+		<parameters>
+			<skill name="HealMagic_a" id="4783" level="1" />
+			<skill name="SelfRangeBuff_a" id="4213" level="1" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5747.15231548848" hpRegen="16.2943663177076" mp="183.28" mpRegen="1.2" />
+			<attack physical="89.7389520263043" magical="8.45808171237537" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="126.11457" magical="123.04" />
+			<speed>
+				<walk ground="15" />
+				<run ground="190" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4213" level="1" /> 
+			<skill id="4783" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="13" />
+			<height normal="21" />
+		</collision>
+	</npc>
+	<!-- NPC 25378 (瘋狂的野獸) 已被提取至 RaidBosses.xml -->
+	<npc id="25379" level="19" type="Monster" name="呆滯的野獸" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="1" /> 
+		</parameters>
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5747.15231548848" hpRegen="16.2943663177076" mp="183.28" mpRegen="1.2" />
+			<attack physical="179.477904052609" magical="33.8323268495015" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="126.11457" magical="123.04" />
+			<speed>
+				<walk ground="30" />
+				<run ground="190" />
+			</speed>
+			<hitTime>240</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="3" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4743" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="14" grown="17" />
+			<height normal="14.5" grown="18" />
+		</collision>
+	</npc>
+	<!-- NPC 25380 (伊克魯斯的使者 凱沙) 已被提取至 RaidBosses.xml -->
+	<npc id="25381" level="19" type="Monster" name="飛行的夢魘" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="1" /> 
+		</parameters>
+		<race>ANIMAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="5747.15231548848" hpRegen="16.2943663177076" mp="183.28" mpRegen="1.2" />
+			<attack physical="179.477904052609" magical="33.8323268495015" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="126.11457" magical="123.04" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4743" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="10" />
+			<height normal="42" />
+		</collision>
+	</npc>
+	<npc id="25382" level="19" type="Monster" name="飛行的敵意" title="Raid Minion">
+		<race>ANIMAL</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="2873.57615774424" hpRegen="16.2943663177076" mp="183.28" mpRegen="1.2" />
+			<attack physical="89.7389520263043" magical="8.45808171237537" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="126.11457" magical="123.04" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>500</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="4" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="10" />
+			<height normal="33.5" />
+		</collision>
+	</npc>
+	<!-- NPC 25383 (卡里巴斯卿的亡靈) 已被提取至 RaidBosses.xml -->
+	<npc id="25384" level="33" type="Monster" name="卡里巴斯卿的侍從" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4733" level="3" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="946" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="9983.70344337502" hpRegen="24.5170941308607" mp="372.96" mpRegen="1.8" />
+			<attack physical="562.230118784958" magical="179.112100596385" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="193.846425" magical="189.14" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>300</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4733" level="3" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="27" grown="34" />
+		</collision>
+	</npc>
+	<!-- NPC 25385 (司令 坦佛斯特) 已被提取至 RaidBosses.xml -->
+	<npc id="25386" level="80" type="Monster" name="坦佛斯特的亡靈" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="3" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="128" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="99633.6" hpRegen="17" mp="71253" mpRegen="10" />
+			<attack physical="3333" magical="5676" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="957" magical="678" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>300</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4743" level="3" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="11" />
+			<height normal="31" />
+		</collision>
+	</npc>
+	<npc id="25387" level="80" type="Monster" name="坦佛斯特的冤魂" title="Raid Minion">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="946" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="99633.6" hpRegen="17" mp="71253" mpRegen="10" />
+			<attack physical="3333" magical="5676" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="957" magical="678" />
+			<speed>
+				<walk ground="60" />
+				<run ground="190" />
+			</speed>
+			<hitTime>300</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="11" grown="13" />
+			<height normal="25" grown="31" />
+		</collision>
+	</npc>
+	<!-- NPC 25388 (赤眼隊長 特萊契亞) 已被提取至 RaidBosses.xml -->
+	<npc id="25389" level="34" type="Monster" name="赤眼弓兵隊" title="Raid Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="279" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="30391" hpRegen="9" mp="23908" mpRegen="10" />
+			<attack physical="289" magical="272" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="1100" distance="10" width="0" />
+			<defence physical="398" magical="281" />
+			<speed>
+				<walk ground="50" />
+				<run ground="190" />
+			</speed>
+			<hitTime>930</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="ARCHER" clanHelpRange="300" />
+		<collision>
+			<radius normal="14" />
+			<height normal="25" />
+		</collision>
+	</npc>
+	<npc id="25390" level="34" type="Monster" name="赤眼親衛隊" title="Raid Minion">
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="128" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="30391" hpRegen="9" mp="23908" mpRegen="10" />
+			<attack physical="386" magical="272" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="398" magical="281" />
+			<speed>
+				<walk ground="50" />
+				<run ground="190" />
+			</speed>
+			<hitTime>630</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4045" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="14" grown="16" />
+			<height normal="27" grown="32" />
+		</collision>
+	</npc>
+	<!-- NPC 25391 (奴爾卡的密使) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25392 (女王的親衛隊長) 已被提取至 RaidBosses.xml -->
+	<npc id="25393" level="31" type="Monster" name="沼澤司塔卡拓貴族" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4733" level="3" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="223" /> 
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="29497" hpRegen="9" mp="23204" mpRegen="10" />
+			<attack physical="306" magical="210" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="365" magical="258" />
+			<speed>
+				<walk ground="80" />
+				<run ground="190" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="6" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4733" level="3" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="9" grown="11" />
+			<height normal="24" grown="26.4" />
+		</collision>
+	</npc>
+	<!-- NPC 25394 (普雷姆 普萊) 已被提取至 RaidBosses.xml -->
+	<!-- NPC 25395 (阿魯肯基座) 已被提取至 RaidBosses.xml -->
+	<npc id="25396" level="80" type="Monster" name="庫辛基座" title="Raid Minion">
+		<parameters>
+			<skill name="HealMagic_a" id="4788" level="4" />
+			<skill name="SelfRangeBuff_a" id="4212" level="4" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="99633.6" hpRegen="17" mp="71253" mpRegen="10" />
+			<attack physical="3633" magical="6279" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="1024" magical="725" />
+			<speed>
+				<walk ground="27" />
+				<run ground="190" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4212" level="4" /> 
+			<skill id="4788" level="4" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="20" grown="25" />
+			<height normal="35" grown="41.5" />
+		</collision>
+	</npc>
+	<npc id="25397" level="80" type="Monster" name="估瑟托斯基座" title="Raid Minion">
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="4" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="99633.6" hpRegen="17" mp="71253" mpRegen="10" />
+			<attack physical="3633" magical="6279" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="1024" magical="725" />
+			<speed>
+				<walk ground="27" />
+				<run ground="190" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4743" level="4" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="20" grown="25" />
+			<height normal="35" grown="41.5" />
+		</collision>
+	</npc>
+	<!-- NPC 25398 (深淵凝視) 已被提取至 RaidBosses.xml -->
+	<npc id="25399" level="34" type="Monster" name="監視者的門徒" title="Raid Minion">
+		<parameters>
+			<skill name="DDMagic_a" id="4196" level="3" />
+			<skill name="Debuff_a" id="4202" level="3" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="30391" hpRegen="9" mp="23908" mpRegen="10" />
+			<attack physical="386" magical="272" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="358" magical="313" />
+			<speed>
+				<walk ground="90" />
+				<run ground="190" />
+			</speed>
+			<hitTime>390</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status attackable="true" />
+		<skillList>
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4196" level="3" /> 
+			<skill id="4202" level="3" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai clanHelpRange="300" />
+		<collision>
+			<radius normal="11" />
+			<height normal="20" />
+		</collision>
+	</npc>
+</list>

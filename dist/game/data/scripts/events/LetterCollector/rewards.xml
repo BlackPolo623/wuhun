@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="rewards.xsd">
+	<params>
+		<minimum level="40" />
+		<maximum level="-1" /> <!-- -1 = no limit -->
+	</params>
+	<letters>
+		<!-- name of letter, for using down / id of this letter -->
+		<item name="A" id="3875" />
+		<item name="E" id="3877" />
+		<item name="F" id="3878" />
+		<item name="G" id="3879" />
+		<item name="I" id="3881" />
+		<item name="L" id="3882" />
+		<item name="N" id="3883" />
+		<item name="O" id="3884" />
+		<item name="R" id="3885" />
+		<item name="II" id="3888" />
+		<item name="W" id="93414" />
+	</letters>
+	<!-- client id -->
+	<reward id="0">
+		<!-- split letter with ";" /  WOLF ->-->
+		<word>W;O;L;F</word> <!-- WOLF -->
+		<!-- sumChances - sum item chances cumulatively -->
+		<rewards sumChances="true">
+			<!-- item id; count; chance; enchantLevel; / id="-1" = no reward -->
+			<item id="103248" count="10" chance="100" /> <!-- W.O.L.F. Word Special Reward Pack (Time-limited) Sealed -->
+		</rewards>
+	</reward>
+	<reward id="1">
+		<word>W;A;R;G</word> <!-- WARG -->
+		<rewards sumChances="true">
+			<item id="103249" count="1" chance="100" /> <!-- Special W.A.R.G Word Reward Pack (Time-limited) Sealed -->
+		</rewards>
+	</reward>
+	<reward id="2">
+		<!-- split letter with ";" / LINEAGE II -> L;I;N;E;A;G;E;II -->
+		<word>L;I;N;E;A;G;E;II</word> <!-- LINEAGE II -->
+		<rewards sumChances="true">
+			<item id="103250" count="1" chance="100" /> <!-- L.I.N.E.A.G.E.2 Word Special Reward Pack (Time-limited) Sealed -->
+		</rewards>
+	</reward>
+</list>

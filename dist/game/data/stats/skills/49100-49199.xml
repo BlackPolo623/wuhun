@@ -1,0 +1,866 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="49100" toLevel="1" name="守護者HP藥水">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Hp">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49101" toLevel="1" name="寵物1次進化">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49102" toLevel="1" name="寵物2次進化">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49103" toLevel="1" name="能量爆破-展示">
+		<icon>icon.skill1417</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>6</mpConsume>
+	</skill>
+	<skill id="49104" toLevel="1" name="解除地之隱匿">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="49105" toLevel="5" name="鎖鏈禁制">
+		
+		<icon>icon.skill16856</icon>
+		<operateType>A1</operateType>
+		<castRange>700</castRange>
+		<coolTime>1000</coolTime>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-780</value>
+			<value level="3">-800</value>
+			<value level="4">-820</value>
+			<value level="5">-850</value>
+		</effectPoint>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49142" toLevel="20" name="翎羽箭矢">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.pet_feather_arrow</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalTime>5</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>700</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitTime>1500</hitTime>
+		<isMagic>0</isMagic>
+		<mpConsume>6</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>INVINCIBILITY_SPECIAL,-1;HIDE,-1;DANCE_OF_SHADOW,-1</dispel>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>INVINCIBILITY_SPECIAL;HIDE;DANCE_OF_SHADOW</slot>
+			</effect>
+			<effect name="PhysicalDamage">
+				<power>999</power>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49163" toLevel="20" name="狐狸火">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.pet_fox_fire</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-200</value>
+			<value level="3">-300</value>
+			<value level="4">-400</value>
+			<value level="5">-500</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+			<value level="9">-750</value>
+			<value level="10">-800</value>
+			<value level="11">-810</value>
+			<value level="12">-820</value>
+			<value level="13">-830</value>
+			<value level="14">-840</value>
+			<value level="15">-850</value>
+			<value level="16">-860</value>
+			<value level="17">-870</value>
+			<value level="18">-880</value>
+			<value level="19">-890</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<hitTime>1000</hitTime>
+		<mpConsume>
+			<value level="1">11</value>
+			<value level="2">19</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">43</value>
+			<value level="6">51</value>
+			<value level="7">55</value>
+			<value level="8">59</value>
+			<value level="9">63</value>
+			<value level="10">67</value>
+			<value level="11">67</value>
+			<value level="12">68</value>
+			<value level="13">69</value>
+			<value level="14">70</value>
+			<value level="15">71</value>
+			<value level="16">71</value>
+			<value level="17">72</value>
+			<value level="18">73</value>
+			<value level="19">74</value>
+			<value level="20">75</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49164" toLevel="20" name="狐狸火">
+		<icon>icon.pet_fox_fire</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-200</value>
+			<value level="3">-300</value>
+			<value level="4">-400</value>
+			<value level="5">-500</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+			<value level="9">-750</value>
+			<value level="10">-800</value>
+			<value level="11">-810</value>
+			<value level="12">-820</value>
+			<value level="13">-830</value>
+			<value level="14">-840</value>
+			<value level="15">-850</value>
+			<value level="16">-860</value>
+			<value level="17">-870</value>
+			<value level="18">-880</value>
+			<value level="19">-890</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<mpConsume>
+			<value level="1">11</value>
+			<value level="2">19</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">43</value>
+			<value level="6">51</value>
+			<value level="7">55</value>
+			<value level="8">59</value>
+			<value level="9">63</value>
+			<value level="10">67</value>
+			<value level="11">67</value>
+			<value level="12">68</value>
+			<value level="13">69</value>
+			<value level="14">70</value>
+			<value level="15">71</value>
+			<value level="16">71</value>
+			<value level="17">72</value>
+			<value level="18">73</value>
+			<value level="19">74</value>
+			<value level="20">75</value>
+		</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">110</value>
+					<value level="2">115</value>
+					<value level="3">120</value>
+					<value level="4">130</value>
+					<value level="5">140</value>
+					<value level="6">150</value>
+					<value level="7">160</value>
+					<value level="8">170</value>
+					<value level="9">180</value>
+					<value level="10">190</value>
+					<value level="11">200</value>
+					<value level="12">205</value>
+					<value level="13">210</value>
+					<value level="14">215</value>
+					<value level="15">220</value>
+					<value level="16">223</value>
+					<value level="17">226</value>
+					<value level="18">230</value>
+					<value level="19">235</value>
+					<value level="20">240</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49165" toLevel="20" name="狐狸火">
+		<icon>icon.pet_fox_fire</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-100</value>
+			<value level="2">-200</value>
+			<value level="3">-300</value>
+			<value level="4">-400</value>
+			<value level="5">-500</value>
+			<value level="6">-600</value>
+			<value level="7">-650</value>
+			<value level="8">-700</value>
+			<value level="9">-750</value>
+			<value level="10">-800</value>
+			<value level="11">-810</value>
+			<value level="12">-820</value>
+			<value level="13">-830</value>
+			<value level="14">-840</value>
+			<value level="15">-850</value>
+			<value level="16">-860</value>
+			<value level="17">-870</value>
+			<value level="18">-880</value>
+			<value level="19">-890</value>
+			<value level="20">-900</value>
+		</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<mpConsume>
+			<value level="1">11</value>
+			<value level="2">19</value>
+			<value level="3">27</value>
+			<value level="4">35</value>
+			<value level="5">43</value>
+			<value level="6">51</value>
+			<value level="7">55</value>
+			<value level="8">59</value>
+			<value level="9">63</value>
+			<value level="10">67</value>
+			<value level="11">67</value>
+			<value level="12">68</value>
+			<value level="13">69</value>
+			<value level="14">70</value>
+			<value level="15">71</value>
+			<value level="16">71</value>
+			<value level="17">72</value>
+			<value level="18">73</value>
+			<value level="19">74</value>
+			<value level="20">75</value>
+		</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">110</value>
+					<value level="2">115</value>
+					<value level="3">120</value>
+					<value level="4">130</value>
+					<value level="5">140</value>
+					<value level="6">150</value>
+					<value level="7">160</value>
+					<value level="8">170</value>
+					<value level="9">180</value>
+					<value level="10">190</value>
+					<value level="11">200</value>
+					<value level="12">205</value>
+					<value level="13">210</value>
+					<value level="14">215</value>
+					<value level="15">220</value>
+					<value level="16">223</value>
+					<value level="17">226</value>
+					<value level="18">230</value>
+					<value level="19">235</value>
+					<value level="20">240</value>
+				</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49167" toLevel="8" name="罪惡感">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill16872</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalTime>10</abnormalTime>
+		<coolTime>500</coolTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>0</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<effects>
+			<effect name="MagicalAttack">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-15</value>
+					<value level="3">-20</value>
+					<value level="4">-30</value>
+					<value level="5">-33</value>
+					<value level="6">-36</value>
+					<value level="7">-40</value>
+					<value level="8">-45</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">-10</value>
+					<value level="2">-15</value>
+					<value level="3">-20</value>
+					<value level="4">-30</value>
+					<value level="5">-33</value>
+					<value level="6">-36</value>
+					<value level="7">-40</value>
+					<value level="8">-45</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49168" toLevel="20" name="鞭索">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>
+			<value level="1">121</value>
+			<value level="2">132</value>
+			<value level="3">143</value>
+			<value level="4">154</value>
+			<value level="5">165</value>
+			<value level="6">176</value>
+			<value level="7">187</value>
+			<value level="8">198</value>
+			<value level="9">209</value>
+			<value level="10">220</value>
+			<value level="11">231</value>
+			<value level="12">242</value>
+			<value level="13">253</value>
+			<value level="14">264</value>
+			<value level="15">275</value>
+			<value level="16">286</value>
+			<value level="17">297</value>
+			<value level="18">308</value>
+			<value level="19">319</value>
+			<value level="20">330</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49169" toLevel="20" name="鞭索">
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>
+			<value level="1">121</value>
+			<value level="2">132</value>
+			<value level="3">143</value>
+			<value level="4">154</value>
+			<value level="5">165</value>
+			<value level="6">176</value>
+			<value level="7">187</value>
+			<value level="8">198</value>
+			<value level="9">209</value>
+			<value level="10">220</value>
+			<value level="11">231</value>
+			<value level="12">242</value>
+			<value level="13">253</value>
+			<value level="14">264</value>
+			<value level="15">275</value>
+			<value level="16">286</value>
+			<value level="17">297</value>
+			<value level="18">308</value>
+			<value level="19">319</value>
+			<value level="20">330</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49170" toLevel="20" name="鞭索">
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>
+			<value level="1">121</value>
+			<value level="2">132</value>
+			<value level="3">143</value>
+			<value level="4">154</value>
+			<value level="5">165</value>
+			<value level="6">176</value>
+			<value level="7">187</value>
+			<value level="8">198</value>
+			<value level="9">209</value>
+			<value level="10">220</value>
+			<value level="11">231</value>
+			<value level="12">242</value>
+			<value level="13">253</value>
+			<value level="14">264</value>
+			<value level="15">275</value>
+			<value level="16">286</value>
+			<value level="17">297</value>
+			<value level="18">308</value>
+			<value level="19">319</value>
+			<value level="20">330</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49171" toLevel="16" name="寒迫">
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>13</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49172" toLevel="16" name="偏執">
+		
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>13</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49173" toLevel="16" name="偏執-一般">
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>13</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49174" toLevel="5" name="偏執-執著">
+		<icon>icon.skill1290</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-1000</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+	</skill>
+	<skill id="49175" toLevel="12" name="確認格雷希卡輔助魔法">
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>13</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49176" toLevel="12" name="血腥瑪麗">
+		
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>13</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49177" toLevel="12" name="血腥瑪麗-近距離">
+		<icon>icon.s_assassin_swoop_attack</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>200</coolTime>
+		<effectPoint>-60</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>13</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="49178" toLevel="1" name="血腥瑪麗-遠距離">
+		<icon>icon.s_sp_sephiroth</icon>
+		<operateType>A1</operateType>
+		<castRange>900</castRange>
+		<effectPoint>-1980</effectPoint>
+		<hitTime>6000</hitTime>
+		<isMagic>1</isMagic> 
+		<mpConsume>330</mpConsume>
+		<reuseDelay>180000</reuseDelay>
+	</skill>
+	<skill id="49179" toLevel="1" name="雪崩">
+		
+		<icon>icon.s_dance_of_medusa4</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<effectPoint>-686</effectPoint>
+		<hitTime>1400</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+		<reuseDelay>60000</reuseDelay>
+	</skill>
+	<skill id="49180" toLevel="8" name="冰河作用">
+		
+		<icon>icon.skill11184</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="49181" toLevel="8" name="雪崩-大屠殺遊戲">
+		
+		<icon>icon.skill11184</icon>
+		<operateType>A1</operateType>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic> 
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="49182" toLevel="1" name="冰河作用-寒迫">
+		
+		<operateType>A1</operateType>
+		<isMagic>5</isMagic>
+	</skill>
+	<skill id="49183" toLevel="8" name="大屠殺遊戲">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.mercenary_race_raven</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+					<value level="5">25</value>
+					<value level="6">25</value>
+					<value level="7">25</value>
+					<value level="8">25</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value>
+					<value level="7">50</value>
+					<value level="8">50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">50</value>
+					<value level="7">50</value>
+					<value level="8">50</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">4</value>
+					<value level="4">6</value>
+					<value level="5">8</value>
+					<value level="6">10</value>
+					<value level="7">12</value>
+					<value level="8">15</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">12</value>
+					<value level="3">14</value>
+					<value level="4">16</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value>
+					<value level="8">20</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">5</value>
+					<value level="5">10</value>
+					<value level="6">10</value>
+					<value level="7">10</value>
+					<value level="8">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">5</value>
+					<value level="7">5</value>
+					<value level="8">5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower" fromLevel="8" toLevel="8">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49184" toLevel="8" name="大屠殺遊戲">
+		
+		<icon>icon.s_guardian_raven_combat_mastery</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">6</value>
+					<value level="4">8</value>
+					<value level="5">10</value>
+					<value level="6">15</value>
+					<value level="7">20</value>
+					<value level="8">25</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">10</value>
+					<value level="3">15</value>
+					<value level="4">20</value>
+					<value level="5">40</value>
+					<value level="6">40</value>
+					<value level="7">40</value>
+					<value level="8">40</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">20</value>
+					<value level="3">30</value>
+					<value level="4">40</value>
+					<value level="5">50</value>
+					<value level="6">60</value>
+					<value level="7">80</value>
+					<value level="8">100</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">2</value>
+					<value level="2">4</value>
+					<value level="3">8</value>
+					<value level="4">12</value>
+					<value level="5">20</value>
+					<value level="6">20</value>
+					<value level="7">20</value>
+					<value level="8">20</value>
+				</amount>
+				<mode>PER</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">1</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
+					<value level="6">10</value>
+					<value level="7">15</value>
+					<value level="8">20</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="49185" toLevel="8" name="傭兵：格雷希卡">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_mercenary_glassica</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="49186" toLevel="8" name="精通格雷希卡格鬥">
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.s_glassica_combat_mastery</icon>
+		<operateType>A2</operateType>
+	</skill>
+	<skill id="49187" toLevel="1" name="鴉扉-漫步">
+		
+		<icon>icon.s_raven_gate_of_raven_high</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+	</skill>
+	<skill id="49188" toLevel="1" name="沃爾昆真魂">
+		
+		<icon>icon.s_trigger_heavy_approach1_step_high</icon>
+		<operateType>A1</operateType>
+		<isDebuff>true</isDebuff>
+		<effectPoint>-891</effectPoint>
+	</skill>
+	<skill id="49189" toLevel="1" name="沃爾昆真魂">
+		<icon>icon.s_trigger_heavy_approach1_step_high</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-891</effectPoint>
+	</skill>
+	<skill id="49190" toLevel="1" name="沃爾昆真魂">
+		<icon>icon.s_trigger_heavy_approach1_step_high</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-891</effectPoint>
+	</skill>
+	<skill id="49191" toLevel="1" name="空擊標槍-墓地">
+		<icon>icon.s_raven_javelin_flight_high</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-200</effectPoint>
+	</skill>
+</list>

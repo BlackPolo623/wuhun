@@ -1,0 +1,1666 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="88100" toLevel="2" name="戰爭咆哮：大師">
+		
+		<icon>
+			<value level="1">icon.war_roar</value>
+			<value level="2">icon.war_roar_master</value>
+		</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<activateRate>100</activateRate>
+		<affectLimit>12-0</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>400</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<effectPoint>-900</effectPoint>
+		<isDebuff>true</isDebuff>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<trait>FEAR</trait>
+		<pvpEffects>
+			<effect name="BlockControl" />
+			<effect name="Fear" />
+			<effect name="CallSkill">
+				<skillId>45440</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+			</effect>
+		</pvpEffects>
+		<pveEffects>
+			<effect name="CallSkill">
+				<skillId>45441</skillId> 
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+			</effect>
+		</pveEffects>
+	</skill>
+	<skill id="88101" toLevel="3" name="未使用-戰爭咆哮">
+		<icon>icon.war_roar</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<reuseDelay>0</reuseDelay>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">-30</value>
+					<value level="2">-45</value>
+					<value level="3">-60</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">-30</value>
+					<value level="2">-45</value>
+					<value level="3">-60</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88103" toLevel="1" name="未使用-戰爭咆哮">
+		<icon>icon.war_roar_master</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalTime>-1</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<isMagic>5</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="88104" toLevel="3" name="未使用-戰爭咆哮：大師">
+		<icon>icon.war_roar_master</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<reuseDelay>0</reuseDelay>
+		<effects>
+			<effect name="MaxHp">
+				<amount>
+					<value level="1">-30</value>
+					<value level="2">-45</value>
+					<value level="3">-60</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>
+					<value level="1">-30</value>
+					<value level="2">-45</value>
+					<value level="3">-60</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88105" toLevel="2" name="未使用-戰爭咆哮：大師">
+		<icon>
+			<value level="1">icon.war_roar</value>
+			<value level="2">icon.war_roar_master</value>
+		</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<abnormalVisualEffect>H_R_ORC_WAR_ROAR_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<isDebuff>true</isDebuff>
+		<effects>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>88104</skillId> 
+				<skillLevel>1</skillLevel>
+				<min>1</min>
+				<max>999</max>
+			</effect>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>
+					<value level="1">88101</value>
+					<value level="2">88104</value>
+				</skillId>
+				<skillLevel>2</skillLevel>
+				<min>1000</min>
+				<max>1999</max>
+			</effect>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>
+					<value level="1">88101</value>
+					<value level="2">88104</value>
+				</skillId>
+				<skillLevel>3</skillLevel>
+				<min>2000</min>
+				<max>999999</max>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88106" toLevel="3" name="未使用-戰爭咆哮：大師">
+		<icon>icon.war_roar_master</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalTime>20</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<isMagic>5</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="88108" toLevel="10" name="跳躍攻擊">
+		
+		
+		
+		
+		
+		<icon>icon.jump_dash</icon>
+		<operateType>DA1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>5-0</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>400</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>600</castRange>
+		<coolTime>300</coolTime>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-790</value>
+			<value level="3">-810</value>
+			<value level="4">-850</value>
+			<value level="5">-900</value>
+			<value level="6">-900</value> 
+			<value level="7">-900</value> 
+			<value level="8">-900</value> 
+			<value level="9">-900</value> 
+			<value level="10">-900</value> 
+		</effectPoint>
+		<effectRange>700</effectRange>
+		<hitTime>700</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<mpConsume>
+			<value level="1">60</value>
+			<value level="2">65</value>
+			<value level="3">70</value>
+			<value level="4">75</value>
+			<value level="5">80</value>
+			<value level="6">80</value> 
+			<value level="7">80</value> 
+			<value level="8">80</value> 
+			<value level="9">80</value> 
+			<value level="10">80</value> 
+		</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+		<selfEffects>
+			<effect name="CallSkill">
+				<skillId>88122</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</selfEffects>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">4500</value>
+					<value level="2">4800</value>
+					<value level="3">5100</value>
+					<value level="4">5300</value>
+					<value level="5">5500</value>
+					<value level="6">5500</value> 
+					<value level="7">5500</value> 
+					<value level="8">5500</value> 
+					<value level="9">5500</value> 
+					<value level="10">5500</value> 
+				</power>
+				<pDefMod>0.85</pDefMod>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>10</criticalChance>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>88109</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88109" toLevel="5" name="跳躍攻擊">
+		
+		<icon>icon.jump_dash</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>2</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<activateRate>60</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>40</castRange>
+		<effectPoint>
+			<value level="1">-760</value>
+			<value level="2">-790</value>
+			<value level="3">-820</value>
+			<value level="4">-840</value>
+			<value level="5">-860</value>
+		</effectPoint>
+		<effectRange>400</effectRange>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">77</value>
+			<value level="2">78</value>
+			<value level="3">79</value>
+			<value level="4">80</value>
+			<value level="5">81</value>
+		</magicLevel>
+		<trait>KNOCKBACK</trait>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88110" toLevel="1" name="背襲">
+		
+		<icon>icon.back_dash</icon>
+		<operateType>DA3</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>500</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-760</effectPoint>
+		<hitTime>100</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<mpConsume>65</mpConsume>
+		<reuseDelay>40000</reuseDelay>
+		<reuseDelayGroup>88110</reuseDelayGroup>
+		<effects>
+			<effect name="CallSkill">
+				<skillId>88111</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>88112</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88111" toLevel="1" name="背襲">
+		<icon>icon.back_dash</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1</abnormalTime>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>700</castRange>
+		<coolTime>1000</coolTime>
+		<effectPoint>-900</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<isDebuff>true</isDebuff>
+		<trait>PULL</trait>
+		<effects>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>35016</allowedSkills>
+			</effect>
+			<effect name="GetAgro" />
+		</effects>
+	</skill>
+	<skill id="88112" toLevel="1" name="背襲">
+		
+		<icon>icon.back_dash</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1</abnormalTime>
+		<abnormalType>ROOT_MAGICALLY</abnormalType>
+		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<effectPoint>-900</effectPoint>
+		<effectRange>1200</effectRange>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>20</magicLevel>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<HOLD>100</HOLD>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88113" toLevel="1" name="最終秘密：卡巴塔里">
+		
+		
+		
+		
+		<icon>icon.final_secret_khavatari</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>
+			<value level="1">30</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">120</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">600</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">1200</value>
+		</abnormalTime>
+		<abnormalType>FINAL_SECRET</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitCancelTime>0.5</hitCancelTime>
+		<hitTime>1500</hitTime>
+		<itemConsumeCount>
+			<value level="1">10</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">10</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">15</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">15</value>
+		</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId>
+		<magicLevel>76</magicLevel>
+		<mpConsume>41</mpConsume>
+		<reuseDelay>150000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">100</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">200</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">300</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>
+					<value level="1">1</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">3</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">5</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">8</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">2</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">3</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">2</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">3</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">2</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">3</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">2</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">3</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">2</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">3</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">1</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">2</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">3</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<BOW>60</BOW>
+			</effect>
+			<effect name="MagicalSuccessResistance">
+				<amount>60</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">5</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">6</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">8</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88114" toLevel="1" name="赤燄突襲">
+		
+		<icon>icon.burning_assault</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalTime>5</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<effectPoint>-760</effectPoint>
+		<hitTime>0</hitTime>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>0</reuseDelay>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<KNOCKBACK>50</KNOCKBACK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88115" toLevel="4" name="未使用-急速工匠">
+		
+		<icon>icon.artisan_of_speed</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>10</abnormalTime>
+		<abnormalVisualEffect>H_G_ARTISAN_OF_SPEED_BUFF_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+	</skill>
+	<skill id="88116" toLevel="4" name="未使用-急速工匠">
+		<icon>icon.artisan_of_speed</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<abnormalVisualEffect>SPEED_DOWN</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectLimit>8-0</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>-1</castRange>
+		<effectPoint>-200</effectPoint>
+		<hitTime>0</hitTime>
+		<isDebuff>true</isDebuff>
+		<trait>ANOMALY</trait>
+		<effects>
+			<effect name="Speed">
+				<amount>
+					<value level="1">-70</value>
+					<value level="2">-80</value>
+					<value level="3">-90</value>
+					<value level="4">-100</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>
+					<value level="1">-200</value>
+					<value level="2">-240</value>
+					<value level="3">-270</value>
+					<value level="4">-300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>
+					<value level="1">-200</value>
+					<value level="2">-240</value>
+					<value level="3">-270</value>
+					<value level="4">-300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ExceedingPhysicalAttackSpeed">
+				<percentage>20</percentage>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88117" toLevel="10" name="赤燄狂襲">
+		
+		<icon>icon.s_new_burning_strike</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+		</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<activateRate>60</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>40</castRange>
+		<effectPoint>
+			<value level="1">-800</value>
+			<value level="2">-820</value>
+			<value level="3">-840</value>
+			<value level="4">-860</value>
+			<value level="5">-880</value>
+			<value level="6">-900</value>
+			<value level="7">-920</value>
+			<value level="8">-930</value>
+			<value level="9">-940</value>
+			<value level="10">-950</value>
+		</effectPoint>
+		<effectPoint>-500</effectPoint>
+		<effectRange>400</effectRange>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">81</value>
+			<value level="2">82</value>
+			<value level="3">83</value>
+			<value level="4">84</value>
+			<value level="5">85</value>
+			<value level="6">86</value>
+			<value level="7">88</value>
+			<value level="8">89</value>
+			<value level="9">90</value>
+			<value level="10">92</value>
+		</magicLevel>
+		<trait>KNOCKDOWN</trait>
+		<effects>
+			<effect name="KnockBack">
+				<distance>100</distance>
+				<speed>300</speed>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="BlockActions" />
+			<effect name="DefenceTrait">
+				<DERANGEMENT>100</DERANGEMENT>
+				<SLEEP>100</SLEEP>
+				<HOLD>100</HOLD>
+				<SHOCK>100</SHOCK>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88118" toLevel="17" name="精通卡巴塔里攻擊">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.skill10335</icon>
+		<operateType>P</operateType>
+		<passiveConditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+					<item>BLUNT</item>
+					<item>POLE</item>
+					<item>DUAL</item>
+					<item>FIST</item>
+					<item>DUALFIST</item>
+					<item>ANCIENTSWORD</item>
+					<item>RAPIER</item>
+				</weaponType>
+			</condition>
+		</passiveConditions>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">387</value>
+					<value level="2">390</value>
+					<value level="3">393</value>
+					<value level="4">399</value>
+					<value level="5">402</value>
+					<value level="6">405</value>
+					<value level="7">408</value>
+					<value level="8">411</value>
+					<value level="9">414</value>
+					<value level="10">420</value>
+					<value level="11">426</value>
+					<value level="12">434</value>
+					<value level="13">442</value>
+					<value level="14">450</value>
+					<value level="15">450</value>
+					<value level="16">450</value>
+					<value level="17">450</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>80</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="AttackTrait">
+				<KNOCKBACK>15</KNOCKBACK>
+				<SUPPRESSION>15</SUPPRESSION>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>5</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>false</isCritical>
+				<skillId>1612</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillByDamageDealt">
+				<attackerType>Creature</attackerType>
+				<minDamage>1</minDamage>
+				<chance>5</chance>
+				<targetType>ENEMY</targetType>
+				<isCritical>true</isCritical>
+				<skillId>1612</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value fromLevel="1" toLevel="14">0</value>
+					<value level="15">5</value>
+					<value level="16">8</value>
+					<value level="17">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88119" toLevel="17" name="精通卡巴塔里護甲">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.zealot_3</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>
+					<value level="1">119</value>
+					<value level="2">122</value>
+					<value level="3">125</value>
+					<value level="4">131</value>
+					<value level="5">134</value>
+					<value level="6">137</value>
+					<value level="7">140</value>
+					<value level="8">143</value>
+					<value level="9">146</value>
+					<value level="10">150</value>
+					<value level="11">155</value>
+					<value level="12">160</value>
+					<value level="13">165</value>
+					<value level="14">170</value>
+					<value level="15">250</value>
+					<value level="16">350</value>
+					<value level="17">500</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>
+					<value fromLevel="1" toLevel="14">60</value>
+					<value level="15">250</value>
+					<value level="16">350</value>
+					<value level="17">500</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>
+					<value fromLevel="1" toLevel="9">12</value>
+					<value level="10">13</value>
+					<value level="11">13</value>
+					<value level="12">14</value>
+					<value level="13">14</value>
+					<value level="14">15</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+				</amount>
+				<mode>DIFF</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>
+					<value fromLevel="1" toLevel="14">-35</value>
+					<value level="15">0</value>
+					<value level="16">0</value>
+					<value level="17">0</value>
+				</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="MpRegen">
+				<amount>10</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>0</magicType>
+				<amount>
+					<value fromLevel="1" toLevel="14">0</value>
+					<value fromLevel="15" toLevel="17">15</value>
+				</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+			<effect name="DefenceTrait">
+				<KNOCKBACK>
+					<value fromLevel="1" toLevel="14">0</value>
+					<value level="15">5</value>
+					<value level="16">7</value>
+					<value level="17">10</value>
+				</KNOCKBACK>
+				<SUPPRESSION>
+					<value fromLevel="1" toLevel="14">0</value>
+					<value level="15">5</value>
+					<value level="16">7</value>
+					<value level="17">10</value>
+				</SUPPRESSION>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value fromLevel="1" toLevel="14">0</value>
+					<value level="15">1</value>
+					<value level="16">3</value>
+					<value level="17">5</value>
+				</amount>
+				<mode>PER</mode>
+				<armorType>
+					<item>LIGHT</item>
+				</armorType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88120" toLevel="1" name="背襲">
+		
+		<icon>icon.back_dash</icon>
+		<operateType>DA3</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-760</effectPoint>
+		<hitTime>100</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<mpConsume>65</mpConsume>
+		<reuseDelay>40000</reuseDelay>
+		<reuseDelayGroup>88110</reuseDelayGroup>
+		<effects>
+			<effect name="CallSkill">
+				<skillId>88111</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>88112</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88121" toLevel="5" name="赤燄突襲-超越">
+		
+		
+		
+		
+		
+		<icon>icon.burning_assault</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>5-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>
+			<value level="1">-800</value>
+			<value level="2">-820</value>
+			<value level="3">-850</value>
+			<value level="4">-870</value>
+			<value level="5">-900</value>
+		</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>1500</hitTime>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">64</value>
+			<value level="2">66</value>
+			<value level="3">68</value>
+			<value level="4">70</value>
+			<value level="5">72</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>FIST</item>
+					<item>DUALFIST</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">4243</value>
+					<value level="2">4359</value>
+					<value level="3">4531</value>
+					<value level="4">4647</value>
+					<value level="5">4821</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>88114</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88122" toLevel="1" name="跳躍攻擊">
+		<icon>icon.jump_dash</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalTime>5</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<effectPoint>-800</effectPoint>
+		<hitTime>0</hitTime>
+		<reuseDelay>0</reuseDelay>
+		<effects>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>88110</existingSkillId> 
+				<replacementSkillId>88120</replacementSkillId> 
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88123" toLevel="1" name="暴風雨強化">
+		
+		<icon>icon.s_dethrone_fire_combat_1</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="PvePhysicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalAttackDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidPhysicalSkillDamageBonus">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>284</existingSkillId> 
+				<replacementSkillId>88124</replacementSkillId> 
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88124" toLevel="65" name="雙重風暴之擊">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.double_hurricane_assualt</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>
+			<value fromLevel="1" toLevel="45">120</value>
+			<value fromLevel="46" toLevel="65">200</value>
+		</castRange>
+		<coolTime>400</coolTime>
+		<effectPoint>
+			<value level="1">-175</value>
+			<value level="2">-180</value>
+			<value level="3">-185</value>
+			<value level="4">-190</value>
+			<value level="5">-195</value>
+			<value level="6">-200</value>
+			<value level="7">-205</value>
+			<value level="8">-210</value>
+			<value level="9">-215</value>
+			<value level="10">-220</value>
+			<value level="11">-225</value>
+			<value level="12">-230</value>
+			<value level="13">-235</value>
+			<value level="14">-240</value>
+			<value level="15">-245</value>
+			<value level="16">-250</value>
+			<value level="17">-255</value>
+			<value level="18">-260</value>
+			<value level="19">-265</value>
+			<value level="20">-270</value>
+			<value level="21">-275</value>
+			<value level="22">-280</value>
+			<value level="23">-285</value>
+			<value level="24">-290</value>
+			<value level="25">-295</value>
+			<value level="26">-300</value>
+			<value level="27">-305</value>
+			<value level="28">-310</value>
+			<value level="29">-315</value>
+			<value level="30">-320</value>
+			<value level="31">-325</value>
+			<value level="32">-330</value>
+			<value level="33">-335</value>
+			<value level="34">-340</value>
+			<value level="35">-345</value>
+			<value level="36">-350</value>
+			<value level="37">-355</value>
+			<value level="38">-360</value>
+			<value level="39">-365</value>
+			<value level="40">-370</value>
+			<value level="41">-375</value>
+			<value level="42">-380</value>
+			<value level="43">-385</value>
+			<value level="44">-390</value>
+			<value level="45">-395</value>
+			<value level="46">-400</value>
+			<value level="47">-405</value>
+			<value level="48">-410</value>
+			<value level="49">-415</value>
+			<value level="50">-420</value>
+			<value level="51">-425</value>
+			<value level="52">-430</value>
+			<value level="53">-435</value>
+			<value level="54">-440</value>
+			<value level="55">-445</value>
+			<value level="56">-450</value>
+			<value level="57">-455</value>
+			<value level="58">-460</value>
+			<value level="59">-465</value>
+			<value level="60">-470</value>
+			<value level="61">-475</value>
+			<value level="62">-480</value>
+			<value level="63">-485</value>
+			<value level="64">-490</value>
+			<value level="65">-495</value>
+		</effectPoint>
+		<hitTime>1800</hitTime>
+		<mpConsume>
+			<value level="1">26</value>
+			<value level="2">27</value>
+			<value level="3">27</value>
+			<value level="4">28</value>
+			<value level="5">29</value>
+			<value level="6">30</value>
+			<value level="7">30</value>
+			<value level="8">31</value>
+			<value level="9">32</value>
+			<value level="10">33</value>
+			<value level="11">33</value>
+			<value level="12">34</value>
+			<value level="13">35</value>
+			<value level="14">36</value>
+			<value level="15">36</value>
+			<value level="16">37</value>
+			<value level="17">38</value>
+			<value level="18">39</value>
+			<value level="19">39</value>
+			<value level="20">40</value>
+			<value level="21">41</value>
+			<value level="22">42</value>
+			<value level="23">42</value>
+			<value level="24">43</value>
+			<value level="25">44</value>
+			<value level="26">45</value>
+			<value level="27">45</value>
+			<value level="28">46</value>
+			<value level="29">47</value>
+			<value level="30">48</value>
+			<value level="31">48</value>
+			<value level="32">49</value>
+			<value level="33">50</value>
+			<value level="34">51</value>
+			<value level="35">51</value>
+			<value level="36">52</value>
+			<value level="37">53</value>
+			<value level="38">54</value>
+			<value level="39">54</value>
+			<value level="40">55</value>
+			<value level="41">56</value>
+			<value level="42">57</value>
+			<value level="43">57</value>
+			<value level="44">58</value>
+			<value level="45">59</value>
+			<value level="46">60</value>
+			<value level="47">60</value>
+			<value level="48">61</value>
+			<value level="49">62</value>
+			<value level="50">63</value>
+			<value level="51">63</value>
+			<value level="52">64</value>
+			<value level="53">65</value>
+			<value level="54">66</value>
+			<value level="55">66</value>
+			<value level="56">67</value>
+			<value level="57">68</value>
+			<value level="58">69</value>
+			<value level="59">69</value>
+			<value level="60">70</value>
+			<value level="61">72</value>
+			<value level="62">73</value>
+			<value level="63">74</value>
+			<value level="64">75</value>
+			<value level="65">76</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<repeatCount>2</repeatCount>
+				<power>
+					<value level="1">464</value>
+					<value level="2">476</value>
+					<value level="3">489</value>
+					<value level="4">501</value>
+					<value level="5">514</value>
+					<value level="6">728</value>
+					<value level="7">803</value>
+					<value level="8">878</value>
+					<value level="9">954</value>
+					<value level="10">1030</value>
+					<value level="11">1106</value>
+					<value level="12">1183</value>
+					<value level="13">1260</value>
+					<value level="14">1336</value>
+					<value level="15">1414</value>
+					<value level="16">1492</value>
+					<value level="17">1569</value>
+					<value level="18">1648</value>
+					<value level="19">1727</value>
+					<value level="20">1806</value>
+					<value level="21">1884</value>
+					<value level="22">1964</value>
+					<value level="23">2044</value>
+					<value level="24">2124</value>
+					<value level="25">2203</value>
+					<value level="26">2284</value>
+					<value level="27">2365</value>
+					<value level="28">2446</value>
+					<value level="29">2527</value>
+					<value level="30">2608</value>
+					<value level="31">2690</value>
+					<value level="32">2772</value>
+					<value level="33">2853</value>
+					<value level="34">2935</value>
+					<value level="35">3018</value>
+					<value level="36">3101</value>
+					<value level="37">3184</value>
+					<value level="38">3267</value>
+					<value level="39">3350</value>
+					<value level="40">3434</value>
+					<value level="41">3517</value>
+					<value level="42">3601</value>
+					<value level="43">3686</value>
+					<value level="44">3770</value>
+					<value level="45">3854</value>
+					<value level="46">4684</value>
+					<value level="47">4750</value>
+					<value level="48">4817</value>
+					<value level="49">4884</value>
+					<value level="50">4950</value>
+					<value level="51">5017</value>
+					<value level="52">5085</value>
+					<value level="53">5152</value>
+					<value level="54">5219</value>
+					<value level="55">5286</value>
+					<value level="56">5353</value>
+					<value level="57">5421</value>
+					<value level="58">5488</value>
+					<value level="59">5556</value>
+					<value level="60">5623</value>
+					<value level="61">5791</value>
+					<value level="62">5964</value>
+					<value level="63">6142</value>
+					<value level="64">6326</value>
+					<value level="65">6515</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>10</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88125" toLevel="65" name="雙重風暴之擊-超越">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<icon>icon.double_hurricane_assualt</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>5-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>
+			<value fromLevel="1" toLevel="45">120</value>
+			<value fromLevel="46" toLevel="65">200</value>
+		</castRange>
+		<coolTime>400</coolTime>
+		<effectPoint>
+			<value level="1">-175</value>
+			<value level="2">-180</value>
+			<value level="3">-185</value>
+			<value level="4">-190</value>
+			<value level="5">-195</value>
+			<value level="6">-200</value>
+			<value level="7">-205</value>
+			<value level="8">-210</value>
+			<value level="9">-215</value>
+			<value level="10">-220</value>
+			<value level="11">-225</value>
+			<value level="12">-230</value>
+			<value level="13">-235</value>
+			<value level="14">-240</value>
+			<value level="15">-245</value>
+			<value level="16">-250</value>
+			<value level="17">-255</value>
+			<value level="18">-260</value>
+			<value level="19">-265</value>
+			<value level="20">-270</value>
+			<value level="21">-275</value>
+			<value level="22">-280</value>
+			<value level="23">-285</value>
+			<value level="24">-290</value>
+			<value level="25">-295</value>
+			<value level="26">-300</value>
+			<value level="27">-305</value>
+			<value level="28">-310</value>
+			<value level="29">-315</value>
+			<value level="30">-320</value>
+			<value level="31">-325</value>
+			<value level="32">-330</value>
+			<value level="33">-335</value>
+			<value level="34">-340</value>
+			<value level="35">-345</value>
+			<value level="36">-350</value>
+			<value level="37">-355</value>
+			<value level="38">-360</value>
+			<value level="39">-365</value>
+			<value level="40">-370</value>
+			<value level="41">-375</value>
+			<value level="42">-380</value>
+			<value level="43">-385</value>
+			<value level="44">-390</value>
+			<value level="45">-395</value>
+			<value level="46">-400</value>
+			<value level="47">-405</value>
+			<value level="48">-410</value>
+			<value level="49">-415</value>
+			<value level="50">-420</value>
+			<value level="51">-425</value>
+			<value level="52">-430</value>
+			<value level="53">-435</value>
+			<value level="54">-440</value>
+			<value level="55">-445</value>
+			<value level="56">-450</value>
+			<value level="57">-455</value>
+			<value level="58">-460</value>
+			<value level="59">-465</value>
+			<value level="60">-470</value>
+			<value level="61">-475</value>
+			<value level="62">-480</value>
+			<value level="63">-485</value>
+			<value level="64">-490</value>
+			<value level="65">-495</value>
+		</effectPoint>
+		<hitTime>1800</hitTime>
+		<isMagic>0</isMagic>
+		<mpConsume>
+			<value level="1">26</value>
+			<value level="2">27</value>
+			<value level="3">27</value>
+			<value level="4">28</value>
+			<value level="5">29</value>
+			<value level="6">30</value>
+			<value level="7">30</value>
+			<value level="8">31</value>
+			<value level="9">32</value>
+			<value level="10">33</value>
+			<value level="11">33</value>
+			<value level="12">34</value>
+			<value level="13">35</value>
+			<value level="14">36</value>
+			<value level="15">36</value>
+			<value level="16">37</value>
+			<value level="17">38</value>
+			<value level="18">39</value>
+			<value level="19">39</value>
+			<value level="20">40</value>
+			<value level="21">41</value>
+			<value level="22">42</value>
+			<value level="23">42</value>
+			<value level="24">43</value>
+			<value level="25">44</value>
+			<value level="26">45</value>
+			<value level="27">45</value>
+			<value level="28">46</value>
+			<value level="29">47</value>
+			<value level="30">48</value>
+			<value level="31">48</value>
+			<value level="32">49</value>
+			<value level="33">50</value>
+			<value level="34">51</value>
+			<value level="35">51</value>
+			<value level="36">52</value>
+			<value level="37">53</value>
+			<value level="38">54</value>
+			<value level="39">54</value>
+			<value level="40">55</value>
+			<value level="41">56</value>
+			<value level="42">57</value>
+			<value level="43">57</value>
+			<value level="44">58</value>
+			<value level="45">59</value>
+			<value level="46">60</value>
+			<value level="47">60</value>
+			<value level="48">61</value>
+			<value level="49">62</value>
+			<value level="50">63</value>
+			<value level="51">63</value>
+			<value level="52">64</value>
+			<value level="53">65</value>
+			<value level="54">66</value>
+			<value level="55">66</value>
+			<value level="56">67</value>
+			<value level="57">68</value>
+			<value level="58">69</value>
+			<value level="59">69</value>
+			<value level="60">70</value>
+			<value level="61">72</value>
+			<value level="62">73</value>
+			<value level="63">74</value>
+			<value level="64">75</value>
+			<value level="65">76</value>
+		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<repeatCount>2</repeatCount>
+				<power>
+					<value level="1">464</value>
+					<value level="2">476</value>
+					<value level="3">489</value>
+					<value level="4">501</value>
+					<value level="5">514</value>
+					<value level="6">728</value>
+					<value level="7">803</value>
+					<value level="8">878</value>
+					<value level="9">954</value>
+					<value level="10">1030</value>
+					<value level="11">1106</value>
+					<value level="12">1183</value>
+					<value level="13">1260</value>
+					<value level="14">1336</value>
+					<value level="15">1414</value>
+					<value level="16">1492</value>
+					<value level="17">1569</value>
+					<value level="18">1648</value>
+					<value level="19">1727</value>
+					<value level="20">1806</value>
+					<value level="21">1884</value>
+					<value level="22">1964</value>
+					<value level="23">2044</value>
+					<value level="24">2124</value>
+					<value level="25">2203</value>
+					<value level="26">2284</value>
+					<value level="27">2365</value>
+					<value level="28">2446</value>
+					<value level="29">2527</value>
+					<value level="30">2608</value>
+					<value level="31">2690</value>
+					<value level="32">2772</value>
+					<value level="33">2853</value>
+					<value level="34">2935</value>
+					<value level="35">3018</value>
+					<value level="36">3101</value>
+					<value level="37">3184</value>
+					<value level="38">3267</value>
+					<value level="39">3350</value>
+					<value level="40">3434</value>
+					<value level="41">3517</value>
+					<value level="42">3601</value>
+					<value level="43">3686</value>
+					<value level="44">3770</value>
+					<value level="45">3854</value>
+					<value level="46">4684</value>
+					<value level="47">4750</value>
+					<value level="48">4817</value>
+					<value level="49">4884</value>
+					<value level="50">4950</value>
+					<value level="51">5017</value>
+					<value level="52">5085</value>
+					<value level="53">5152</value>
+					<value level="54">5219</value>
+					<value level="55">5286</value>
+					<value level="56">5353</value>
+					<value level="57">5421</value>
+					<value level="58">5488</value>
+					<value level="59">5556</value>
+					<value level="60">5623</value>
+					<value level="61">5791</value>
+					<value level="62">5964</value>
+					<value level="63">6142</value>
+					<value level="64">6326</value>
+					<value level="65">6515</value>
+				</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>10</criticalChance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88126" toLevel="1" name="未使用-戰爭咆哮：大師">
+		<icon>icon.war_roar_master</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalTime>20</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<hitTime>0</hitTime>
+		<isMagic>5</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="88127" toLevel="65" name="雙重風暴之擊">
+		<icon>icon.double_hurricane_assualt</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>-1</castRange>
+		<effectPoint>-500</effectPoint>
+		<hitTime>0</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>0</reuseDelay>
+	</skill>
+	<skill id="88128" toLevel="1" name="未使用-被動戰爭咆哮掌握力確認">
+		
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+	</skill>
+	<skill id="88129" toLevel="1" name="未使用-戰爭咆哮">
+		<icon>icon.war_roar_master</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<abnormalVisualEffect>H_R_ORC_WAR_ROAR_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<isDebuff>true</isDebuff>
+		<effects>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>88101</skillId> 
+				<skillLevel>1</skillLevel>
+				<min>1</min>
+				<max>999</max>
+			</effect>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>88101</skillId> 
+				<skillLevel>2</skillLevel>
+				<min>1000</min>
+				<max>1999</max>
+			</effect>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>88101</skillId> 
+				<skillLevel>3</skillLevel>
+				<min>2000</min>
+				<max>999999</max>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="88130" toLevel="1" name="未使用-戰爭咆哮">
+		<icon>icon.war_roar_master</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<abnormalVisualEffect>H_R_ORC_WAR_ROAR_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<isDebuff>true</isDebuff>
+		<effects>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>88104</skillId> 
+				<skillLevel>1</skillLevel>
+				<min>1</min>
+				<max>999</max>
+			</effect>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>88104</skillId> 
+				<skillLevel>2</skillLevel>
+				<min>1000</min>
+				<max>1999</max>
+			</effect>
+			<effect name="TriggerSkillByCombatPower">
+				<skillId>88104</skillId> 
+				<skillLevel>3</skillLevel>
+				<min>2000</min>
+				<max>999999</max>
+			</effect>
+		</effects>
+	</skill>
+</list>

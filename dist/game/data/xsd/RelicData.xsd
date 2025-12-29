@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="relicSummonCategoryData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="summonCategory">
+								<xs:complexType>
+									<xs:attribute name="id" type="xs:unsignedByte" use="required" />
+									<xs:attribute name="priceId" type="xs:unsignedInt" use="required" />
+									<xs:attribute name="amount" type="xs:unsignedInt" use="required" />
+									<xs:attribute name="summonCount" type="xs:unsignedByte" use="required" />
+									<xs:attribute name="active" type="xs:boolean" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="relicEnchantData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="enchantFee">
+								<xs:complexType>
+									<xs:attribute name="feeItemId" type="xs:unsignedByte" use="required" />
+									<xs:attribute name="feeCount" type="xs:unsignedInt" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="enchantData">
+								<xs:complexType>
+									<xs:attribute name="chancePerIngredients" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="relicCombineData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="combineCategory">
+								<xs:complexType>
+									<xs:attribute name="grade" use="required">
+									    <xs:simpleType>
+									        <xs:restriction base="xs:string">
+									            <xs:enumeration value="COMMON" />
+									            <xs:enumeration value="ENHANCED" />
+									            <xs:enumeration value="SUPERIOR" />
+									            <xs:enumeration value="RARE" />
+									            <xs:enumeration value="HEROIC" />
+									            <xs:enumeration value="LEGENDARY" />
+									            <xs:enumeration value="MYTHIC" />
+									        </xs:restriction>
+									    </xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="feeItemId" type="xs:unsignedByte" use="required" />
+									<xs:attribute name="feeCount" type="xs:unsignedInt" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" name="relic">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="relicStat">
+								<xs:complexType>
+									<xs:attribute name="enchantLevel" type="xs:unsignedShort" use="required" />
+									<xs:attribute name="skillId" type="xs:unsignedInt" use="required" />
+									<xs:attribute name="skillLevel" type="xs:unsignedShort" use="required" />
+									<xs:attribute name="combatPower" type="xs:unsignedShort" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+						<xs:attribute name="grade" type="xs:string" use="required" />
+						<xs:attribute name="summonChance" type="xs:unsignedLong" use="required" />
+						<xs:attribute name="baseRelicId" type="xs:unsignedInt" use="required" />
+						<xs:attribute name="compoundChanceModifier" type="xs:decimal" use="required" />
+						<xs:attribute name="compoundUpGradeChanceModifier" type="xs:decimal" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

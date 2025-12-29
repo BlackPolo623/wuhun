@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Possible "repeatStyle" are: -->
+<!-- "back": NPC moves from first point to last point, then moves back through last point but one, and so on to the first point. -->
+<!-- "cycle": NPC moves from first point to last point, then moves directly to the first point. -->
+<!-- "conveyor": NPC moves from first point to last point, then teleports directly to the first point. -->
+<!-- "random": NPC randomly moves between points. -->
+<!-- Documentation for Strings: -->
+<!-- npcString = to use String Variables from NpcStringId.java -->
+<!-- npcStringId = to use String IDs from client NpcString-e.dat -->
+<!-- string = to use any custom text, example: string="Hello World" -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/Routes.xsd">
+	<route name="FPC_Giran_Evi" repeat="true" repeatStyle="cycle">
+		<target id="80000" spawnX="83485" spawnY="147998" spawnZ="-3407" />
+		<point X="83505" Y="147926" Z="-3428" delay="30" run="true" /> <!-- Gatekeeper -->
+		<point X="82918" Y="147583" Z="-3495" delay="24" run="true" /> <!-- Olympiad Manager -->
+		<point X="82622" Y="147514" Z="-3495" delay="0" run="true" />
+		<point X="82607" Y="146884" Z="-3490" delay="20" run="true" /> <!-- Dimesional Merchant -->
+		<point X="82451" Y="146828" Z="-3490" delay="0" run="true" />
+		<point X="82456" Y="146265" Z="-3488" delay="28" run="true" /> <!-- Warehouse -->
+		<point X="82399" Y="146281" Z="-3488" delay="88" run="true" /> <!-- Warehouse 2 -->
+		<point X="82451" Y="146973" Z="-3490" delay="3" run="true" />
+		<point X="82248" Y="147582" Z="-3495" delay="0" run="true" />
+		<point X="81604" Y="147499" Z="-3495" delay="0" run="true" />
+		<point X="81424" Y="145551" Z="-3559" delay="0" run="true" />
+		<point X="81283" Y="145519" Z="-3533" delay="0" run="true" />
+		<point X="80334" Y="145706" Z="-3533" delay="28" run="true" /> <!-- Pona -->
+		<point X="80201" Y="145826" Z="-3524" delay="0" run="true" />
+		<point X="79968" Y="145826" Z="-3497" delay="0" run="true" />
+		<point X="79781" Y="145546" Z="-3496" delay="0" run="true" />
+		<point X="79736" Y="145518" Z="-3495" delay="0" run="true" />
+		<point X="79663" Y="145529" Z="-3496" delay="40" run="true" /> <!-- Galladucci -->
+		<point X="79661" Y="145429" Z="-3495" delay="80" run="true" /> <!-- Alexandria -->
+		<point X="79999" Y="145152" Z="-3496" delay="0" run="true" />
+		<point X="80393" Y="145136" Z="-3533" delay="0" run="true" />
+		<point X="81061" Y="145563" Z="-3533" delay="0" run="true" />
+		<point X="81340" Y="145531" Z="-3559" delay="0" run="true" />
+		<point X="81591" Y="147629" Z="-3495" delay="0" run="true" />
+		<point X="81352" Y="149753" Z="-3495" delay="52" run="true" /> <!-- Clan Hall Managers -->
+		<point X="81968" Y="149721" Z="-3495" delay="60" run="true" /> <!-- Cooper -->
+	</route>
+</routes>
