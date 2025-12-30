@@ -75,7 +75,6 @@ public class FairyInvadedLands extends Script
 					{12, 0},  // 14:00
 					{18, 0},  // 18:00
 					{0, 0}
-					// 你可以繼續添加更多時間點...
 			};
 
 	// 區域限制設定 (如果需要限制在特定區域內擊殺才計數)

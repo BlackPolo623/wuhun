@@ -79,7 +79,7 @@ public class EvasAvatar extends Script
 			SkillCaster.triggerCast(npc, player, getBuffForDay().getSkill());
 			
 			// Buff players around
-			World.getInstance().forEachVisibleObjectInRange(npc, Player.class, 500, target ->
+			World.getInstance().forEachVisibleObjectInRange(npc, Player.class, 50000, target ->
 			{
 				if ((target != player) && (target != null) && !target.isDead() && GeoEngine.getInstance().canSeeTarget(npc, target))
 				{

@@ -50,12 +50,12 @@
 <!--	</zone>-->
 	<zone id="18" name="冰凍君主之城">
 		<enterLocation>144640,147451,-12094</enterLocation>
-		<initialTime>18000</initialTime>
-		<resetDelay>604800</resetDelay>
-		<maxAddedTime>64800</maxAddedTime>
-		<remainRefillTime>46800</remainRefillTime>
-		<refillTimeMax>46800</refillTimeMax>
-		<entryFee>1000000</entryFee>
+		<initialTime>28800</initialTime>        <!-- 8小時 = 8 * 3600 秒 -->
+		<resetDelay>604800</resetDelay>         <!-- 7天重置（不變）-->
+		<maxAddedTime>86400</maxAddedTime>      <!-- 24小時 = 24 * 3600 秒 -->
+		<remainRefillTime>86400</remainRefillTime> <!-- 24小時 -->
+		<refillTimeMax>86400</refillTimeMax>       <!-- 24小時 -->
+		<entryFee>1000000</entryFee>            <!-- 門票 100萬金幣（不變）-->
 		<minLevel>85</minLevel>
 		<maxLevel>999</maxLevel>
 		<weekly>true</weekly>

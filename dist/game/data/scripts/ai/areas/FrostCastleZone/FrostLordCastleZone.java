@@ -41,7 +41,10 @@ import org.l2jmobius.gameserver.model.spawns.SpawnGroup;
 import org.l2jmobius.gameserver.model.spawns.SpawnTemplate;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.SystemMessageId;
+import org.l2jmobius.gameserver.network.enums.ChatType;
+import org.l2jmobius.gameserver.network.serverpackets.CreatureSay;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
+import org.l2jmobius.gameserver.util.Broadcast;
 
 /**
  * @author Serenitty
@@ -116,6 +119,8 @@ public class FrostLordCastleZone extends Script
 			};
 
 	private static final long DESPAWN_DELAY = 16 * 60 * 60 * 1000;
+	// 提前通知時間（毫秒）
+	private static final long ANNOUNCEMENT_DELAY = 5 * 60 * 1000; // 提前5分鐘通知
 
 	private static Npc _teleportchargedCrystal = null;
 
@@ -123,6 +128,13 @@ public class FrostLordCastleZone extends Script
 
 	// 繁體中文公告訊息
 	private static final String TIRON_SPAWN_MESSAGE = "褻瀆這神聖之地和我們主人的異教徒,你們將受到懲罰!";
+	private static final String REGGIESYS_SPAWN_MESSAGE = "拉吉西耶斯已在冰霜城堡重生！";
+	private static final String SLICING_SPAWN_MESSAGE = "瑟拉西耶格已在冰霜城堡重生！";
+	private static final String TIRON_SPAWN_ANNOUNCE = "特倫已在冰霜城堡重生！";
+
+	// 提前通知訊息
+	private static final String FIRST_RAID_ANNOUNCE_5MIN = "【系統公告】冰凍君主BOSS將在5分鐘後重生！";
+	private static final String SECOND_RAID_ANNOUNCE_5MIN = "【系統公告】特倫將在5分鐘後重生！";
 
 	private FrostLordCastleZone()
 	{
@@ -132,7 +144,7 @@ public class FrostLordCastleZone extends Script
 		addDespawnId(REGGIESYS, SLICING, TIRON);
 		addFirstTalkId(UNDERCOVER_AGENT);
 		addFirstTalkId(CRYSTAL_ENERGY);
-		addSpawnId(TIRON);
+		addSpawnId(TIRON, REGGIESYS, SLICING);
 		addSpawnId(CRYSTAL_ENERGY);
 		scheduleFirstRaid();
 		scheduleSecondRaid();
@@ -178,10 +190,24 @@ public class FrostLordCastleZone extends Script
 				player.teleToLocation(GLAKIAS_RESIDENCE);
 				break;
 			}
+			case "FIRST_RAID_ANNOUNCE":
+			{
+				// 提前5分鐘通知
+				Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.BATTLEFIELD, "系統公告", FIRST_RAID_ANNOUNCE_5MIN));
+				Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(FIRST_RAID_ANNOUNCE_5MIN, ExShowScreenMessage.TOP_CENTER, 10000));
+				break;
+			}
 			case "FIRST_RAID_SPAWN":
 			{
 				int id = Rnd.get(100) < 7 ? SLICING : REGGIESYS;
 				addSpawn(id, REGGIESYS_SLICING_SPAWN_LOC, false, DESPAWN_DELAY);
+				break;
+			}
+			case "SECOND_RAID_ANNOUNCE":
+			{
+				// 提前5分鐘通知
+				Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.BATTLEFIELD, "系統公告", SECOND_RAID_ANNOUNCE_5MIN));
+				Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(SECOND_RAID_ANNOUNCE_5MIN, ExShowScreenMessage.TOP_CENTER, 10000));
 				break;
 			}
 			case "SECOND_RAID_SPAWN":
@@ -220,14 +246,32 @@ public class FrostLordCastleZone extends Script
 	{
 		switch (npc.getId())
 		{
+			case REGGIESYS:
+			{
+				// 雷吉薩斯重生通知
+				Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.BATTLEFIELD, "系統公告", REGGIESYS_SPAWN_MESSAGE));
+				Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(REGGIESYS_SPAWN_MESSAGE, ExShowScreenMessage.TOP_CENTER, 15000));
+				break;
+			}
+			case SLICING:
+			{
+				// 斯萊辛重生通知
+				Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.BATTLEFIELD, "系統公告", SLICING_SPAWN_MESSAGE));
+				Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(SLICING_SPAWN_MESSAGE, ExShowScreenMessage.TOP_CENTER, 15000));
+				break;
+			}
 			case TIRON:
 			{
-				// 使用繁體中文訊息
-				final ExShowScreenMessage msg = new ExShowScreenMessage(TIRON_SPAWN_MESSAGE, ExShowScreenMessage.BOTTOM_CENTER, 17000);
+				// 提隆重生通知（保留原有的區域訊息，並添加全服通知）
+				final ExShowScreenMessage zoneMsg = new ExShowScreenMessage(TIRON_SPAWN_MESSAGE, ExShowScreenMessage.BOTTOM_CENTER, 17000);
 				for (ZoneType zone : ZONES)
 				{
-					zone.broadcastPacket(msg);
+					zone.broadcastPacket(zoneMsg);
 				}
+
+				// 添加全服通知
+				Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.BATTLEFIELD, "系統公告", TIRON_SPAWN_ANNOUNCE));
+				Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(TIRON_SPAWN_ANNOUNCE, ExShowScreenMessage.TOP_CENTER, 15000));
 				break;
 			}
 			case CRYSTAL_ENERGY:
@@ -312,7 +356,15 @@ public class FrostLordCastleZone extends Script
 			}
 		}
 
-		startQuestTimer("FIRST_RAID_SPAWN", time - System.currentTimeMillis(), null, null);
+		long spawnDelay = time - System.currentTimeMillis();
+
+		// 如果刷新時間大於提前通知時間，則安排提前通知
+		if (spawnDelay > ANNOUNCEMENT_DELAY)
+		{
+			startQuestTimer("FIRST_RAID_ANNOUNCE", spawnDelay - ANNOUNCEMENT_DELAY, null, null);
+		}
+
+		startQuestTimer("FIRST_RAID_SPAWN", spawnDelay, null, null);
 	}
 
 	private void scheduleSecondRaid()
@@ -327,7 +379,15 @@ public class FrostLordCastleZone extends Script
 			}
 		}
 
-		startQuestTimer("SECOND_RAID_SPAWN", time - System.currentTimeMillis(), null, null);
+		long spawnDelay = time - System.currentTimeMillis();
+
+		// 如果刷新時間大於提前通知時間，則安排提前通知
+		if (spawnDelay > ANNOUNCEMENT_DELAY)
+		{
+			startQuestTimer("SECOND_RAID_ANNOUNCE", spawnDelay - ANNOUNCEMENT_DELAY, null, null);
+		}
+
+		startQuestTimer("SECOND_RAID_SPAWN", spawnDelay, null, null);
 	}
 
 	private long getNextDateMilis(int dayOfWeek, int hour, int minute)

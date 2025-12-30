@@ -931,14 +931,14 @@
 	<npc id="29140" level="90" type="Monster" name="索迪安" title="Praetorian" element="WATER">
 		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="244947.7" hpRegen="10.5" mp="11928" mpRegen="3.6" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="350797.2" hpRegen="10.5" mp="11502" mpRegen="3.6" />
 			<speed>
-				<walk ground="20" />
+				<walk ground="70" />
 				<run ground="150" />
 			</speed>
-			<attack physical="3611" magical="2465" critical="4" attackSpeed="253" range="40" />
-			<defence physical="2383" magical="1045" />
+			<attack physical="5780" magical="2898" critical="4" attackSpeed="253" range="40" />
+			<defence physical="4000" magical="2600" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -951,18 +951,54 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="200" isAggressive="true">
 		</ai>
+		<dropLists>
+			<drop>
+				<item id="57" min="5369" max="7727" chance="100" />
+				<item id="95782" min="1" max="1" chance="1"/>
+				<item id="97147" min="1" max="1" chance="1"/>
+
+				<item id="94422" min="1" max="1" chance="0.1"/> <!-- 萬用靈藥粉末袋 -->
+				<item id="95844" min="1" max="1" chance="0.07"/>
+
+				<item id="97440" min="1" max="1" chance="0.1"/> <!-- Blessed Augmenting Stone: Armor -->
+				<item id="97441" min="1" max="1" chance="0.1"/>
+				<item id="97443" min="1" max="1" chance="0.1"/>
+				<item id="97442" min="1" max="1" chance="0.1"/> <!-- Blessed Augmenting Stone: Accessory -->
+				<item id="97439" min="1" max="1" chance="0.1"/> <!-- Blessed Augmenting Stone: Weapon -->
+				<item id="97789" min="1" max="1" chance="0.1"/> <!-- Blessed Augmenting Stone: Special Equipment -->
+
+				<item id="93141" min="1" max="1" chance="0.0001"/> <!-- Ice Crystal Breastplate - Sealed -->
+				<item id="93142" min="1" max="1" chance="0.0001"/> <!-- Ice Crystal Gaiters - Sealed -->
+				<item id="93317" min="1" max="1" chance="0.0001"/> <!-- Leather Armor of Lightning - Sealed -->
+				<item id="93318" min="1" max="1" chance="0.0001"/> <!-- Leather Leggings of Lightning - Sealed -->
+				<item id="93735" min="1" max="1" chance="0.0001"/> <!-- Flaming Tunic - Sealed -->
+				<item id="93736" min="1" max="1" chance="0.0001"/> <!-- Flaming Stockings - Sealed -->
+				<item id="94084" min="1" max="1" chance="0.0001"/> <!-- Helmet of Mana - Sealed -->
+				<item id="94086" min="1" max="1" chance="0.0001"/> <!-- Boots of Evasion - Sealed -->
+				<item id="94264" min="1" max="1" chance="0.0001"/> <!-- Stun Gauntlets - Sealed -->
+				<item id="93076" min="1" max="1" chance="0.0001"/> <!-- Gloves of Silence - Sealed -->
+				<item id="94300" min="1" max="1" chance="0.0001"/> <!-- Sigil of Inevitability - Sealed -->
+				<item id="94302" min="1" max="1" chance="0.0001"/> <!-- Shield of Vengeance - Sealed -->
+				<item id="100215" min="1" max="1" chance="0.0001"/>
+				<item id="100781" min="1" max="1" chance="0.0001"/>
+				<item id="103336" min="1" max="1" chance="0.0001"/>
+
+				<item id="95781" min="1" max="1" chance="0.0001"/>
+				<item id="72478" min="1" max="1" chance="0.0001"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="29141" level="90" type="Monster" name="德萊伊迪安" title="Praetorian" element="WATER">
 		<race>ETC</race>
 		<sex>FEMALE</sex>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="190514.8" hpRegen="10.5" mp="11928" mpRegen="3.6" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="350797.2" hpRegen="10.5" mp="11502" mpRegen="3.6" />
 			<speed>
-				<walk ground="36" />
-				<run ground="180" />
+				<walk ground="70" />
+				<run ground="150" />
 			</speed>
-			<attack physical="3611" magical="2465" critical="4" attackSpeed="253" range="40" />
-			<defence physical="2383" magical="1045" />
+			<attack physical="5780" magical="2898" critical="4" attackSpeed="253" range="40" />
+			<defence physical="4000" magical="2600" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -975,19 +1011,55 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai type="BALANCED" aggroRange="200" isAggressive="true">
 		</ai>
+		<dropLists>
+			<drop>
+				<item id="57" min="5369" max="7727" chance="100" />
+				<item id="95782" min="1" max="1" chance="1"/>
+				<item id="97147" min="1" max="1" chance="1"/>
+
+				<item id="94422" min="1" max="1" chance="0.1"/> <!-- 萬用靈藥粉末袋 -->
+				<item id="95844" min="1" max="1" chance="0.07"/>
+
+				<item id="97440" min="1" max="1" chance="0.1"/> <!-- Blessed Augmenting Stone: Armor -->
+				<item id="97441" min="1" max="1" chance="0.1"/>
+				<item id="97443" min="1" max="1" chance="0.1"/>
+				<item id="97442" min="1" max="1" chance="0.1"/> <!-- Blessed Augmenting Stone: Accessory -->
+				<item id="97439" min="1" max="1" chance="0.1"/> <!-- Blessed Augmenting Stone: Weapon -->
+				<item id="97789" min="1" max="1" chance="0.1"/> <!-- Blessed Augmenting Stone: Special Equipment -->
+
+				<item id="93141" min="1" max="1" chance="0.0001"/> <!-- Ice Crystal Breastplate - Sealed -->
+				<item id="93142" min="1" max="1" chance="0.0001"/> <!-- Ice Crystal Gaiters - Sealed -->
+				<item id="93317" min="1" max="1" chance="0.0001"/> <!-- Leather Armor of Lightning - Sealed -->
+				<item id="93318" min="1" max="1" chance="0.0001"/> <!-- Leather Leggings of Lightning - Sealed -->
+				<item id="93735" min="1" max="1" chance="0.0001"/> <!-- Flaming Tunic - Sealed -->
+				<item id="93736" min="1" max="1" chance="0.0001"/> <!-- Flaming Stockings - Sealed -->
+				<item id="94084" min="1" max="1" chance="0.0001"/> <!-- Helmet of Mana - Sealed -->
+				<item id="94086" min="1" max="1" chance="0.0001"/> <!-- Boots of Evasion - Sealed -->
+				<item id="94264" min="1" max="1" chance="0.0001"/> <!-- Stun Gauntlets - Sealed -->
+				<item id="93076" min="1" max="1" chance="0.0001"/> <!-- Gloves of Silence - Sealed -->
+				<item id="94300" min="1" max="1" chance="0.0001"/> <!-- Sigil of Inevitability - Sealed -->
+				<item id="94302" min="1" max="1" chance="0.0001"/> <!-- Shield of Vengeance - Sealed -->
+				<item id="100215" min="1" max="1" chance="0.0001"/>
+				<item id="100781" min="1" max="1" chance="0.0001"/>
+				<item id="103336" min="1" max="1" chance="0.0001"/>
+
+				<item id="95781" min="1" max="1" chance="0.0001"/>
+				<item id="72478" min="1" max="1" chance="0.0001"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="29142" level="90" type="Monster" name="布烏迪安" title="Praetorian" element="WATER">
 		<race>ETC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="15302" />
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="190514.8" hpRegen="10.5" mp="11928" mpRegen="3.6" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="350797.2" hpRegen="10.5" mp="11502" mpRegen="3.6" />
 			<speed>
-				<walk ground="60" />
-				<run ground="180" />
+				<walk ground="70" />
+				<run ground="150" />
 			</speed>
-			<attack physical="3611" magical="2465" critical="4" attackSpeed="253" range="40" />
-			<defence physical="2383" magical="1045" />
+			<attack physical="5780" magical="2898" critical="4" attackSpeed="253" range="40" />
+			<defence physical="4000" magical="2600" />
 		</stats>
 		<status attackable="false" />
 		<collision>
@@ -1000,6 +1072,42 @@
 		<exCrtEffect>false</exCrtEffect>
 		<ai type="ARCHER" aggroRange="200" isAggressive="true">
 		</ai>
+		<dropLists>
+			<drop>
+				<item id="57" min="5369" max="7727" chance="100" />
+				<item id="95782" min="1" max="1" chance="1"/>
+				<item id="97147" min="1" max="1" chance="1"/>
+
+				<item id="94422" min="1" max="1" chance="0.1"/> <!-- 萬用靈藥粉末袋 -->
+				<item id="95844" min="1" max="1" chance="0.07"/>
+
+				<item id="97440" min="1" max="1" chance="0.1"/> <!-- Blessed Augmenting Stone: Armor -->
+				<item id="97441" min="1" max="1" chance="0.1"/>
+				<item id="97443" min="1" max="1" chance="0.1"/>
+				<item id="97442" min="1" max="1" chance="0.1"/> <!-- Blessed Augmenting Stone: Accessory -->
+				<item id="97439" min="1" max="1" chance="0.1"/> <!-- Blessed Augmenting Stone: Weapon -->
+				<item id="97789" min="1" max="1" chance="0.1"/> <!-- Blessed Augmenting Stone: Special Equipment -->
+
+				<item id="93141" min="1" max="1" chance="0.0001"/> <!-- Ice Crystal Breastplate - Sealed -->
+				<item id="93142" min="1" max="1" chance="0.0001"/> <!-- Ice Crystal Gaiters - Sealed -->
+				<item id="93317" min="1" max="1" chance="0.0001"/> <!-- Leather Armor of Lightning - Sealed -->
+				<item id="93318" min="1" max="1" chance="0.0001"/> <!-- Leather Leggings of Lightning - Sealed -->
+				<item id="93735" min="1" max="1" chance="0.0001"/> <!-- Flaming Tunic - Sealed -->
+				<item id="93736" min="1" max="1" chance="0.0001"/> <!-- Flaming Stockings - Sealed -->
+				<item id="94084" min="1" max="1" chance="0.0001"/> <!-- Helmet of Mana - Sealed -->
+				<item id="94086" min="1" max="1" chance="0.0001"/> <!-- Boots of Evasion - Sealed -->
+				<item id="94264" min="1" max="1" chance="0.0001"/> <!-- Stun Gauntlets - Sealed -->
+				<item id="93076" min="1" max="1" chance="0.0001"/> <!-- Gloves of Silence - Sealed -->
+				<item id="94300" min="1" max="1" chance="0.0001"/> <!-- Sigil of Inevitability - Sealed -->
+				<item id="94302" min="1" max="1" chance="0.0001"/> <!-- Shield of Vengeance - Sealed -->
+				<item id="100215" min="1" max="1" chance="0.0001"/>
+				<item id="100781" min="1" max="1" chance="0.0001"/>
+				<item id="103336" min="1" max="1" chance="0.0001"/>
+
+				<item id="95781" min="1" max="1" chance="0.0001"/>
+				<item id="72478" min="1" max="1" chance="0.0001"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="29143" level="90" type="Monster" name="阿卡迪安" title="Praetorian" element="WATER">
 		<race>ETC</race>

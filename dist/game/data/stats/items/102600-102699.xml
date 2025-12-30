@@ -1012,22 +1012,36 @@
 		
 		<set name="icon" val="icon.bless_accessory_black_half_face_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="hairall" />
+		<set name="bodypart" val="hair2" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="0" />
-		<set name="enchant_enabled" val="true" />
 		<set name="is_tradable" val="true" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="true" />
 		<set name="is_freightable" val="true" />
-		<set name="is_stackable" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_limit" val="10" />
+		<set name="weight" val="0" />
+		<skills>
+			<skill id="50568" level="2" />
+			<skill id="50568" level="4" type="ON_ENCHANT" type_value="1" />
+			<skill id="50568" level="6" type="ON_ENCHANT" type_value="2" />
+			<skill id="50568" level="8" type="ON_ENCHANT" type_value="3" />
+			<skill id="50568" level="10" type="ON_ENCHANT" type_value="4" />
+			<skill id="50568" level="12" type="ON_ENCHANT" type_value="5" />
+			<skill id="50568" level="14" type="ON_ENCHANT" type_value="6" />
+			<skill id="50568" level="16" type="ON_ENCHANT" type_value="7" />
+			<skill id="50568" level="18" type="ON_ENCHANT" type_value="8" />
+			<skill id="50568" level="20" type="ON_ENCHANT" type_value="9" />
+			<skill id="50568" level="22" type="ON_ENCHANT" type_value="10" />
+		</skills>
 	</item>
 	<item id="102673" name="祝福的幻影面具" additionalName="Sealed" type="Armor">
 		
 		<set name="icon" val="icon.bless_mask_of_phantom_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="bodypart" val="hairall" />
+		<set name="bodypart" val="hair2" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="0" />
@@ -1036,7 +1050,21 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="true" />
 		<set name="is_freightable" val="true" />
-		<set name="is_stackable" val="true" />
+		<set name="enchant_enabled" val="true" />
+		<set name="enchant_limit" val="10" />
+		<skills>
+			<skill id="50691" level="2" />
+			<skill id="50691" level="4" type="ON_ENCHANT" type_value="1" />
+			<skill id="50691" level="6" type="ON_ENCHANT" type_value="2" />
+			<skill id="50691" level="8" type="ON_ENCHANT" type_value="3" />
+			<skill id="50691" level="10" type="ON_ENCHANT" type_value="4" />
+			<skill id="50691" level="12" type="ON_ENCHANT" type_value="5" />
+			<skill id="50691" level="14" type="ON_ENCHANT" type_value="6" />
+			<skill id="50691" level="16" type="ON_ENCHANT" type_value="7" />
+			<skill id="50691" level="18" type="ON_ENCHANT" type_value="8" />
+			<skill id="50691" level="20" type="ON_ENCHANT" type_value="9" />
+			<skill id="50691" level="22" type="ON_ENCHANT" type_value="10" />
+		</skills>
 	</item>
 	<item id="102674" name="+4祝福的減緩穿刺面具組" additionalName="Sealed" type="EtcItem">
 		

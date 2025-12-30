@@ -5890,68 +5890,8 @@
 		</effects>
 	</skill>
 	<skill id="50386" toLevel="11" name="+10迴避靴">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.armor_t100_b_i00</icon>
 		<operateType>P</operateType>
-		<effects>
-			<effect name="TriggerSkillByDamageReceived">
-				<attackerType>Creature</attackerType>
-				<chance>
-					<value level="1">1</value>
-					<value level="2">1</value>
-					<value level="3">1</value>
-					<value level="4">1</value>
-					<value level="5">1</value>
-					<value level="6">3</value>
-					<value level="7">5</value>
-					<value level="8">7</value>
-					<value level="9">8</value>
-					<value level="10">9</value>
-					<value level="11">100</value>
-				</chance>
-				<targetType>SELF</targetType>
-				<minDamage>1</minDamage>
-				<skillId>50387</skillId> 
-				<skillLevel>1</skillLevel>
-				<removeAfterHits>5</removeAfterHits>
-			</effect>
-			<effect name="Reuse">
-				<amount>
-					<value fromLevel="1" toLevel="5">0</value>
-					<value level="6">-1</value>
-					<value level="7">-2</value>
-					<value level="8">-3</value>
-					<value level="9">-5</value>
-					<value level="10">-7</value>
-					<value level="11">-10</value>
-				</amount>
-				<mode>PER</mode>
-				<magicType>0</magicType>
-			</effect>
-			<effect name="Reuse">
-				<amount>
-					<value fromLevel="1" toLevel="5">0</value>
-					<value level="6">-1</value>
-					<value level="7">-2</value>
-					<value level="8">-3</value>
-					<value level="9">-5</value>
-					<value level="10">-7</value>
-					<value level="11">-10</value>
-				</amount>
-				<mode>PER</mode>
-				<magicType>1</magicType>
-			</effect>
-		</effects>
 	</skill>
 	<skill id="50387" toLevel="1" name="疾速迴避">
 		

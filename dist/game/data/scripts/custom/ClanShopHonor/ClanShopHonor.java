@@ -30,6 +30,8 @@ public class ClanShopHonor extends Script
 	// ============================================
 	private static final int[][] SHOP_ITEMS =
 			{
+					{1, 101909, 1, 30, 5},
+
 					{3, 101806, 1, 500, 1},
 
 					{5, 9589, 1, 80, 2},

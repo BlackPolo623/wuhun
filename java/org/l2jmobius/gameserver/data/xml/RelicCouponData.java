@@ -217,51 +217,78 @@ public class RelicCouponData implements IXmlReader
 		
 		return 0;
 	}
-	
+
 	private void cacheChances()
 	{
 		CACHED_CHANCES.clear();
 		for (RelicCouponHolder holder : RELIC_COUPONS.values())
 		{
 			final Map<Integer, Long> results = new HashMap<>();
+
+			// 處理單一指定人偶的券
 			if (holder.getRelicId() != 0)
 			{
 				results.put(holder.getRelicId(), 10_000_000_000L);
 			}
-			
+
 			final Map<RelicGrade, Integer> grades = new HashMap<>();
 			grades.putAll(holder.getCouponRelicGrades());
+
 			if (!grades.isEmpty())
 			{
-				final Map<Integer, Integer> tempResults = new HashMap<>();
-				for (Entry<RelicGrade, Integer> entry : grades.entrySet())
+				// ⭐ 關鍵修改：按等級分組計算
+				for (Entry<RelicGrade, Integer> gradeEntry : grades.entrySet())
 				{
-					for (RelicDataHolder rh : RelicData.getInstance().getRelicsByGrade(entry.getKey()).stream().filter(r -> !holder.getDisabledIds().contains(r.getRelicId())).collect(Collectors.toList()))
+					RelicGrade grade = gradeEntry.getKey();
+					int gradeChance = gradeEntry.getValue(); // 這個等級的機率（如 30）
+
+					// 取得該等級所有可用人偶
+					List<RelicDataHolder> relicsInGrade = RelicData.getInstance()
+							.getRelicsByGrade(grade)
+							.stream()
+							.filter(r -> !holder.getDisabledIds().contains(r.getRelicId()))
+							.collect(Collectors.toList());
+
+					if (relicsInGrade.isEmpty())
 					{
-						tempResults.put(rh.getRelicId(), entry.getValue());
+						LOGGER.warning("券道具 " + holder.getItemId() +
+								" 配置了等級 " + grade +
+								" (機率 " + gradeChance + "%)，但該等級沒有可用人偶！");
+						continue;
+					}
+
+					// ⭐ 正確計算：等級機率平分給該等級所有人偶
+					long perRelicChance = (gradeChance * 100_000_000L) / relicsInGrade.size();
+
+					for (RelicDataHolder relic : relicsInGrade)
+					{
+						results.put(relic.getRelicId(), perRelicChance);
 					}
 				}
-				
-				for (Entry<Integer, Integer> entry : tempResults.entrySet())
-				{
-					results.put(entry.getKey(), (entry.getValue() * 100_000_000L) / tempResults.size());
-				}
 			}
-			
+
+			// 處理 chanceRolls (直接指定機率的券)
 			if (!holder.getChanceRolls().isEmpty())
 			{
-				final Map<Integer, Integer> chanceRolls = new HashMap<>();
-				chanceRolls.putAll(chanceRolls);
-				for (Entry<Integer, Integer> entry : chanceRolls.entrySet())
+				for (Entry<Integer, Integer> entry : holder.getChanceRolls().entrySet())
 				{
 					results.put(entry.getKey(), entry.getValue() * 10_000_000L);
 				}
 			}
-			
-			LinkedHashMap<Integer, Long> sortedRelics = results.entrySet().stream().sorted(Map.Entry.<Integer, Long> comparingByValue(Comparator.reverseOrder())).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, _) -> e1, LinkedHashMap::new));
+
+			// 按機率排序
+			LinkedHashMap<Integer, Long> sortedRelics = results.entrySet()
+					.stream()
+					.sorted(Map.Entry.<Integer, Long>comparingByValue(Comparator.reverseOrder()))
+					.collect(Collectors.toMap(
+							Map.Entry::getKey,
+							Map.Entry::getValue,
+							(e1, _) -> e1,
+							LinkedHashMap::new
+					));
+
 			CACHED_CHANCES.put(holder.getItemId(), sortedRelics);
 		}
-		
 	}
 	
 	public Map<Integer, Long> getCachedChances(int itemId)

@@ -71,19 +71,29 @@ public class MovementTaskManager
 			while (iterator.hasNext())
 			{
 				creature = iterator.next();
+				boolean shouldRemove = false; // 添加標記變量
+
 				try
 				{
 					if (creature.updatePosition())
 					{
-						iterator.remove();
+						shouldRemove = true; // 標記需要移除
 						creature.getAI().notifyAction(Action.ARRIVED);
 					}
 				}
 				catch (Exception e)
 				{
-					iterator.remove();
+					shouldRemove = true; // 發生異常也需要移除
 					LOGGER.warning("MovementTaskManager: Problem updating position of " + creature);
 					LOGGER.warning(TraceUtil.getStackTrace(e));
+				}
+				finally
+				{
+					// 只在 finally 塊中移除一次
+					if (shouldRemove)
+					{
+						iterator.remove();
+					}
 				}
 			}
 		}

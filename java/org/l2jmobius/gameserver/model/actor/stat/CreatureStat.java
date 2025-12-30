@@ -430,7 +430,7 @@ public class CreatureStat
 				wuxian += _creature.asPlayer().getwxsz(s);
 				for (Item item : _creature.getInventory().getItems())
 				{
-					if (item.isEquipped() && (item.getTemplate() instanceof Weapon))
+					if (item.isEquipped() && ((item.getTemplate() instanceof Weapon)|| (item.getTemplate().getBodyPart() == BodyPart.L_HAND)))
 					{
 						zbzs += item.getzscs();
 					}
@@ -498,7 +498,7 @@ public class CreatureStat
 				wuxian += _creature.asPlayer().getwxsz(s);
 				for (Item item : _creature.getInventory().getItems())
 				{
-					if ((item.getTemplate().getBodyPart() == BodyPart.LR_FINGER) || (item.getTemplate().getBodyPart() == BodyPart.LR_EAR) || (item.getTemplate().getBodyPart() == BodyPart.L_FINGER) || (item.getTemplate().getBodyPart() == BodyPart.R_FINGER) || (item.getTemplate().getBodyPart() == BodyPart.NECK) || (item.getTemplate().getBodyPart() == BodyPart.L_EAR) || (item.getTemplate().getBodyPart() == BodyPart.R_EAR))
+					if ((item.getTemplate().getBodyPart() == BodyPart.LR_FINGER) || (item.getTemplate().getBodyPart() == BodyPart.LR_EAR) || (item.getTemplate().getBodyPart() == BodyPart.L_FINGER) || (item.getTemplate().getBodyPart() == BodyPart.R_FINGER) || (item.getTemplate().getBodyPart() == BodyPart.NECK) || (item.getTemplate().getBodyPart() == BodyPart.L_EAR) || (item.getTemplate().getBodyPart() == BodyPart.R_EAR)|| (item.getTemplate().getBodyPart() == BodyPart.R_EAR)|| (item.getTemplate().getBodyPart() == BodyPart.L_HAND))
 					{
 						zbzs += item.getzscs();
 					}
@@ -612,7 +612,7 @@ public class CreatureStat
 				wuxian += _creature.asPlayer().getwxsz(s);
 				for (Item item : _creature.getInventory().getItems())
 				{
-					if (item.isEquipped() && (item.getTemplate() instanceof Weapon))
+					if (item.isEquipped() && (item.getTemplate() instanceof Weapon || (item.getTemplate().getBodyPart() == BodyPart.L_HAND)))
 					{
 						zbzs += item.getzscs();
 					}
@@ -673,7 +673,7 @@ public class CreatureStat
 				{
 					if (item.isEquipped() && (item.getTemplate() instanceof Armor))
 					{
-						if ((item.getTemplate().getBodyPart() == BodyPart.FULL_ARMOR) || (item.getTemplate().getBodyPart() == BodyPart.HEAD) || (item.getTemplate().getBodyPart() == BodyPart.GLOVES) || (item.getTemplate().getBodyPart() == BodyPart.FEET) || (item.getTemplate().getBodyPart() == BodyPart.CHEST) || (item.getTemplate().getBodyPart() == BodyPart.LEGS))
+						if ((item.getTemplate().getBodyPart() == BodyPart.FULL_ARMOR) || (item.getTemplate().getBodyPart() == BodyPart.HEAD) || (item.getTemplate().getBodyPart() == BodyPart.GLOVES) || (item.getTemplate().getBodyPart() == BodyPart.FEET) || (item.getTemplate().getBodyPart() == BodyPart.CHEST) || (item.getTemplate().getBodyPart() == BodyPart.LEGS)|| (item.getTemplate().getBodyPart() == BodyPart.L_HAND))
 						{
 							zbzs += item.getzscs();
 						}

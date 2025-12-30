@@ -34,7 +34,7 @@ public class zbzs extends Script
 	private static final int[][] SUCCESS_RATES = {
 			{0, 49, 70},
 			{50, 99, 50},
-			{100, 199, 30}
+			{100, 1000, 30}
 	};
 
 	public zbzs()
