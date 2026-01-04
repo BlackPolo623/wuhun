@@ -423,40 +423,42 @@ public class CreatureStat
 		double wuxian = 0;
 		double zbzs = 0;
 		String s = "matk";
+
 		if (_creature instanceof Player)
 		{
 			if (!_creature.isFakePlayer())
 			{
-				wuxian += _creature.asPlayer().getwxsz(s);
-				for (Item item : _creature.getInventory().getItems())
-				{
-					if (item.isEquipped() && ((item.getTemplate() instanceof Weapon)|| (item.getTemplate().getBodyPart() == BodyPart.L_HAND)))
-					{
-						zbzs += item.getzscs();
-					}
-				}
+				Player player = _creature.asPlayer();
+
+				wuxian += player.getwxsz(s);
+				zbzs = player.getWeaponZscs();  // 直接獲取武器轉生緩存
+
 				zbzs *= Custom.zhuangbeijcz;
+
 				if (wuxian >= Custom.WUXIANXIANDING)
 				{
 					wuxian = Custom.WUXIANXIANDING;
 				}
 				wuxian *= Custom.wuxianjiacheng;
+
 				if (zbzs >= Custom.zhuangbeizsjczd)
 				{
 					zbzs = Custom.zhuangbeizsjczd;
 				}
+
 				if (wuxian > 0)
 				{
 					matk *= 1 + (wuxian / 10000);
 				}
 				matk += zbzs;
+
 				if (matk >= PlayerConfig.MAX_MATK)
 				{
 					matk = PlayerConfig.MAX_MATK;
 				}
 			}
 		}
-		
+
 		return (int) matk;
 	}
 	
@@ -491,40 +493,42 @@ public class CreatureStat
 		double wuxian = 0;
 		double zbzs = 0;
 		String s = "mdef";
+
 		if (_creature instanceof Player)
 		{
 			if (!_creature.isFakePlayer())
 			{
-				wuxian += _creature.asPlayer().getwxsz(s);
-				for (Item item : _creature.getInventory().getItems())
-				{
-					if ((item.getTemplate().getBodyPart() == BodyPart.LR_FINGER) || (item.getTemplate().getBodyPart() == BodyPart.LR_EAR) || (item.getTemplate().getBodyPart() == BodyPart.L_FINGER) || (item.getTemplate().getBodyPart() == BodyPart.R_FINGER) || (item.getTemplate().getBodyPart() == BodyPart.NECK) || (item.getTemplate().getBodyPart() == BodyPart.L_EAR) || (item.getTemplate().getBodyPart() == BodyPart.R_EAR)|| (item.getTemplate().getBodyPart() == BodyPart.R_EAR)|| (item.getTemplate().getBodyPart() == BodyPart.L_HAND))
-					{
-						zbzs += item.getzscs();
-					}
-				}
+				Player player = _creature.asPlayer();
+
+				wuxian += player.getwxsz(s);
+				zbzs = player.getAccessoryZscs() + player.getOffHandZscs();  // 飾品 + 副手
+
 				zbzs *= Custom.zhuangbeijcz;
+
 				if (wuxian >= Custom.WUXIANXIANDING)
 				{
 					wuxian = Custom.WUXIANXIANDING;
 				}
 				wuxian *= Custom.wuxianjiacheng;
+
 				if (zbzs >= Custom.zhuangbeizsjczd)
 				{
 					zbzs = Custom.zhuangbeizsjczd;
 				}
+
 				if (wuxian > 0)
 				{
 					mdef *= 1 + (wuxian / 10000);
 				}
 				mdef += zbzs;
+
 				if (mdef >= PlayerConfig.MAX_MATK)
 				{
 					mdef = PlayerConfig.MAX_MATK;
 				}
 			}
 		}
-		
+
 		return (int) mdef;
 	}
 	
@@ -605,40 +609,42 @@ public class CreatureStat
 		double wuxian = 0;
 		double zbzs = 0;
 		String s = "patk";
+
 		if (_creature instanceof Player)
 		{
 			if (!_creature.isFakePlayer())
 			{
-				wuxian += _creature.asPlayer().getwxsz(s);
-				for (Item item : _creature.getInventory().getItems())
-				{
-					if (item.isEquipped() && (item.getTemplate() instanceof Weapon || (item.getTemplate().getBodyPart() == BodyPart.L_HAND)))
-					{
-						zbzs += item.getzscs();
-					}
-				}
+				Player player = _creature.asPlayer();
+
+				wuxian += player.getwxsz(s);
+				zbzs = player.getWeaponZscs();  // 主手 + 副手
+
 				zbzs *= Custom.zhuangbeijcz;
+
 				if (wuxian >= Custom.WUXIANXIANDING)
 				{
 					wuxian = Custom.WUXIANXIANDING;
 				}
 				wuxian *= Custom.wuxianjiacheng;
+
 				if (zbzs >= Custom.zhuangbeizsjczd)
 				{
 					zbzs = Custom.zhuangbeizsjczd;
 				}
+
 				if (wuxian > 0)
 				{
 					patk *= 1 + (wuxian / 10000);
 				}
 				patk += zbzs;
+
 				if (patk >= PlayerConfig.MAX_PATK)
 				{
 					patk = PlayerConfig.MAX_PATK;
 				}
 			}
 		}
-		
+
 		return (int) patk;
 	}
 	
@@ -664,44 +670,43 @@ public class CreatureStat
 		double wuxian = 0;
 		double zbzs = 0;
 		String s = "pdef";
+
 		if (_creature instanceof Player)
 		{
 			if (!_creature.isFakePlayer())
 			{
-				wuxian += _creature.asPlayer().getwxsz(s);
-				for (Item item : _creature.getInventory().getItems())
-				{
-					if (item.isEquipped() && (item.getTemplate() instanceof Armor))
-					{
-						if ((item.getTemplate().getBodyPart() == BodyPart.FULL_ARMOR) || (item.getTemplate().getBodyPart() == BodyPart.HEAD) || (item.getTemplate().getBodyPart() == BodyPart.GLOVES) || (item.getTemplate().getBodyPart() == BodyPart.FEET) || (item.getTemplate().getBodyPart() == BodyPart.CHEST) || (item.getTemplate().getBodyPart() == BodyPart.LEGS)|| (item.getTemplate().getBodyPart() == BodyPart.L_HAND))
-						{
-							zbzs += item.getzscs();
-						}
-						
-					}
-				}
+				Player player = _creature.asPlayer();
+
+				// ✅ 優化：直接讀取緩存
+				wuxian += player.getwxsz(s);
+				zbzs = player.getArmorZscs() + player.getOffHandZscs();  // 防具 + 副手
+
 				zbzs *= Custom.zhuangbeijcz;
+
 				if (wuxian >= Custom.WUXIANXIANDING)
 				{
 					wuxian = Custom.WUXIANXIANDING;
 				}
 				wuxian *= Custom.wuxianjiacheng;
+
 				if (zbzs >= Custom.zhuangbeizsjczd)
 				{
 					zbzs = Custom.zhuangbeizsjczd;
 				}
+
 				if (wuxian > 0)
 				{
 					pdef *= 1 + (wuxian / 10000);
 				}
 				pdef += zbzs;
+
 				if (pdef >= PlayerConfig.MAX_PATK)
 				{
 					pdef = PlayerConfig.MAX_PATK;
 				}
 			}
 		}
-		
+
 		return (int) pdef;
 	}
 	

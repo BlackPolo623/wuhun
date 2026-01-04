@@ -1753,6 +1753,13 @@ public abstract class Inventory extends ItemContainer
 			}
 			
 			_paperdollCache.clearCachedStats();
+
+			if (owner.isPlayer())
+			{
+				final Player player = owner.asPlayer();
+				player.updateZscsCache();
+			}
+
 			owner.getStat().recalculateStats(!owner.isPlayer());
 			
 			if (owner.isPlayer())
@@ -2149,6 +2156,7 @@ public abstract class Inventory extends ItemContainer
 				LOGGER.warning("Unknown body slot " + bodyPart + " for Item ID: " + item.getId());
 				break;
 			}
+
 		}
 	}
 	

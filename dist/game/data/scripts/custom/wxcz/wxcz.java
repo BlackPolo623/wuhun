@@ -294,6 +294,9 @@ public class wxcz extends Script
 			WuxianData.getInstance().add(player.getObjectId(), 1, stat, 1);
 		}
 
+		player.updateWuxianCache();
+		player.broadcastUserInfo();
+
 		player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "無限成長", "成功提升" + STAT_NAME_MAP.get(stat) + "！"));
 	}
 
@@ -372,6 +375,8 @@ public class wxcz extends Script
 
 		if (totalUpgraded > 0)
 		{
+			player.updateWuxianCache();
+			player.broadcastUserInfo();
 			StringBuilder msg = new StringBuilder("一鍵加成完成！共提升" + totalUpgraded + "次：");
 			for (Map.Entry<String, Integer> entry : upgradeResults.entrySet())
 			{

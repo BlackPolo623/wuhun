@@ -94,6 +94,7 @@ public class zbzs extends Script
 
 					item.getVariables().set(ItemVariables.zbzscsu, currentUpgradeCount + 1);
 					item.getVariables().storeMe();
+					player.updateZscsCache();
 					player.broadcastUserInfo();
 					player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "裝備轉生", "成功轉生"));
 				}

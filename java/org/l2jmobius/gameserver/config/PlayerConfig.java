@@ -541,10 +541,10 @@ public class PlayerConfig
 		ALT_CLAN_JOIN_MINS = config.getInt("MinutesBeforeJoinAClan", 1);
 		ALT_CLAN_CREATE_DAYS = config.getInt("DaysBeforeCreateAClan", 10);
 		ALT_CLAN_DISSOLVE_DAYS = config.getInt("DaysToPassToDissolveAClan", 7);
-		ALT_ALLY_JOIN_DAYS_WHEN_LEAVED = config.getInt("DaysBeforeJoinAllyWhenLeaved", 1);
-		ALT_ALLY_JOIN_DAYS_WHEN_DISMISSED = config.getInt("DaysBeforeJoinAllyWhenDismissed", 1);
-		ALT_ACCEPT_CLAN_DAYS_WHEN_DISMISSED = config.getInt("DaysBeforeAcceptNewClanWhenDismissed", 1);
-		ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED = config.getInt("DaysBeforeCreateNewAllyWhenDissolved", 1);
+		ALT_ALLY_JOIN_DAYS_WHEN_LEAVED = config.getInt("DaysBeforeJoinAllyWhenLeaved", 0);
+		ALT_ALLY_JOIN_DAYS_WHEN_DISMISSED = config.getInt("DaysBeforeJoinAllyWhenDismissed", 0);
+		ALT_ACCEPT_CLAN_DAYS_WHEN_DISMISSED = config.getInt("DaysBeforeAcceptNewClanWhenDismissed", 0);
+		ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED = config.getInt("DaysBeforeCreateNewAllyWhenDissolved", 0);
 		ALT_MAX_NUM_OF_CLANS_IN_ALLY = config.getInt("AltMaxNumOfClansInAlly", 3);
 		ALT_CLAN_MEMBERS_FOR_WAR = config.getInt("AltClanMembersForWar", 15);
 		ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH = config.getBoolean("AltMembersCanWithdrawFromClanWH", false);

@@ -875,6 +875,9 @@ public class RunMerchant extends Script
 		pv.remove(PV_PREFIX + "start_x");
 		pv.remove(PV_PREFIX + "start_y");
 		pv.remove(PV_PREFIX + "start_z");
+
+		// 🔧 新增這一行 - 清理監聽器（關鍵！）
+		removeListeners(player);
 	}
 
 	private String formatNumber(long number)

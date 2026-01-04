@@ -1508,21 +1508,16 @@
 			<value level="1">icon.s_queens_garden_buff1</value>
 			<value level="2">icon.s_queens_garden_buff2</value>
 		</icon>
-		<operateType>A1</operateType>
-		<affectLimit>
-			<value level="1">2-8</value>
-			<value level="2">5-12</value>
-		</affectLimit>
+		<operateType>A2</operateType>
 		<castRange>700</castRange>
 		<affectRange>500</affectRange>
 		<effectPoint>-950</effectPoint>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>76</magicLevel>
-		<isMagic>1</isMagic> 
+		<isMagic>1</isMagic>
 		<effectRange>1200</effectRange>
 		<targetType>ENEMY</targetType>
-		<affectScope>RANGE</affectScope>
-		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>SINGLE</affectScope>
 		<effects>
 			<effect name="MagicalDamage">
 				<power>

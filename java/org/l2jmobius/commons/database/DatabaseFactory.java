@@ -78,9 +78,15 @@ public class DatabaseFactory
 			config.setMinimumIdle(determineMinimumIdle(DatabaseConfig.DATABASE_MAX_CONNECTIONS)); // e.g., 20
 			
 			// Timeout Settings.
-			config.setConnectionTimeout(60000); // 1 minute.
-			config.setIdleTimeout(300000); // 5 minutes.
-			config.setMaxLifetime(600000); // 10 minutes.
+//			config.setConnectionTimeout(60000); // 1 minute.
+//			config.setIdleTimeout(300000); // 5 minutes.
+//			config.setMaxLifetime(600000); // 10 minutes.
+
+
+			config.setConnectionTimeout(30000);      // 30 秒 - 獲取連接超時
+			config.setIdleTimeout(600000);           // 10 分鐘 - 空閒連接超時
+			config.setMaxLifetime(25200000);         // 7 小時 - 連接最大生命週期（必須小於 MySQL 的 wait_timeout）
+			config.setKeepaliveTime(300000);         // 5 分鐘 - 心跳保持連接活躍
 			
 			// Leak Detection.
 			config.setLeakDetectionThreshold(60000); // 1 minute.
@@ -94,7 +100,9 @@ public class DatabaseFactory
 			// Additional Optimizations.
 			config.setInitializationFailTimeout(-1);
 			config.setValidationTimeout(5000); // 5 seconds.
-			
+
+			config.setConnectionTestQuery("SELECT 1");
+
 			// Initialize HikariDataSource.
 			DATABASE_POOL = new HikariDataSource(config);
 			
