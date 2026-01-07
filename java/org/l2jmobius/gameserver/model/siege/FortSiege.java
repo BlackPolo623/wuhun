@@ -464,7 +464,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 	{
 		Broadcast.toAllOnlinePlayers(new OrcFortressSiegeInfoHUD(event.getSiege().getFort().getResidenceId(), 0, 0, 0));
 	}
-	
+
 	private void showHUDToPlayer(OnPlayerLogin event)
 	{
 		if (_isInPreparation)
@@ -472,7 +472,7 @@ public class FortSiege extends ListenersContainer implements Siegable
 			final int remainingTimeInSeconds = (int) (_fort.getSiegeDate().getTimeInMillis() - Calendar.getInstance().getTimeInMillis()) / 1000;
 			event.getPlayer().sendPacket(new OrcFortressSiegeInfoHUD(_fort.getResidenceId(), 0, (int) Calendar.getInstance().getTimeInMillis() / 1000, remainingTimeInSeconds));
 		}
-		else if (_isInProgress)
+		else if (_isInProgress && (_siegeEnd != null))  // ← 添加 null 檢查
 		{
 			final int remainingTimeInSeconds = (int) _siegeEnd.getDelay(TimeUnit.SECONDS);
 			event.getPlayer().sendPacket(new OrcFortressSiegeInfoHUD(_fort.getResidenceId(), 1, (int) Calendar.getInstance().getTimeInMillis() / 1000, remainingTimeInSeconds));

@@ -1,7 +1,10 @@
 package custom.Lunhui;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Collection;
 
+import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.data.xml.ClassListData;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
@@ -13,8 +16,14 @@ import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
+import org.l2jmobius.gameserver.network.ConnectionState;
+import org.l2jmobius.gameserver.network.Disconnection;
+import org.l2jmobius.gameserver.network.GameClient;
+import org.l2jmobius.gameserver.network.serverpackets.CharSelectionInfo;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2jmobius.gameserver.network.serverpackets.RestartResponse;
 
 public class Lunhui extends Script
 {
@@ -23,20 +32,27 @@ public class Lunhui extends Script
 
 	// 第一次習得雙職業配置 - {道具ID, 數量}
 	private static final int[][] FIRST_LEARN_ITEMS = {
-			{105805, 12},
+			{105805, 7},
 			{105801, 300},
 			{91481, 500},
-			{57, 100000000},
+			{57, 20000000},
 	};
-	private static final int FIRST_LEARN_MIN_LEVEL = 95;
+
+	private static final int FIRST_LEARN_MIN_LEVEL = 93;
 	private static final int FIRST_LEARN_MIN_CLASS = 88;
+
+
+	private static final String VAR_DAILY_COUNT = "Lunhui_DailyCount";
+	private static final int DAILY_MAX_COUNT = 1; // 每日最大挑戰次數
+	private static final String VAR_LAST_RESET_TIME = "Lunhui_LastResetTime";
+
 
 	// 更換雙職業配置 - {道具ID, 數量}
 	private static final int[][] CHANGE_ITEMS = {
 			{105805, 5},
 			{105801, 500},
 			{91481, 1000},
-			{57, 200000000},
+			{57, 50000000},
 	};
 
 	// ============ 構造函數 ============
@@ -106,6 +122,10 @@ public class Lunhui extends Script
 		NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(player, "data/scripts/custom/Lunhui/start.htm");
 
+		int remainingCount = getRemainingCount(player);
+		html.replace("%remaining_count%", String.valueOf(remainingCount));
+		html.replace("%next_reset_time%", getNextResetTimeString(player)); // 傳入 player
+
 		int currentDualClass = player.getVariables().getInt("雙職業", 0);
 		String currentClassName = "尚未習得";
 		if (currentDualClass > 0)
@@ -116,6 +136,70 @@ public class Lunhui extends Script
 		html.replace("%current_dual_class%", currentClassName);
 		player.sendPacket(html);
 		return "";
+	}
+
+	/**
+	 * 獲取下次重置時間的格式化字符串（根據玩家的重置記錄）
+	 */
+	private String getNextResetTimeString(Player player)
+	{
+		// 讀取玩家的上次重置時間
+		long lastResetTime = player.getVariables().getLong(VAR_LAST_RESET_TIME, 0);
+
+		// 獲取今天0點的時間戳
+		LocalDate today = LocalDate.now(ZoneId.systemDefault());
+		long todayStart = today.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
+
+		// 如果上次重置時間小於今天0點，說明今天還沒重置，下次重置就是今天0點
+		// 如果上次重置時間等於今天0點，說明今天已經重置，下次重置是明天0點
+		long nextResetTime;
+		if (lastResetTime < todayStart)
+		{
+			nextResetTime = todayStart;
+		}
+		else
+		{
+			nextResetTime = today.plusDays(1).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
+		}
+
+		java.time.Instant instant = java.time.Instant.ofEpochMilli(nextResetTime);
+		java.time.LocalDateTime dateTime = java.time.LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
+
+		return String.format("%d年%02d月%02d日 %02d:%02d:%02d",
+				dateTime.getYear(),
+				dateTime.getMonthValue(),
+				dateTime.getDayOfMonth(),
+				dateTime.getHour(),
+				dateTime.getMinute(),
+				dateTime.getSecond()
+		);
+	}
+
+	private int getRemainingCount(Player player)
+	{
+		checkAndResetDailyCount(player); // 加這行
+		int dailyCount = player.getVariables().getInt(VAR_DAILY_COUNT, 0);
+		return Math.max(0, DAILY_MAX_COUNT - dailyCount);
+	}
+
+	// 需要添加這兩個方法（跟副本腳本一樣）
+	private void checkAndResetDailyCount(Player player)
+	{
+		PlayerVariables vars = player.getVariables();
+		long lastResetTime = vars.getLong(VAR_LAST_RESET_TIME, 0);
+		long currentDayStart = getTodayStartTimestamp();
+
+		if (lastResetTime < currentDayStart)
+		{
+			vars.set(VAR_LAST_RESET_TIME, currentDayStart);
+			vars.set(VAR_DAILY_COUNT, 0);
+		}
+	}
+
+	private long getTodayStartTimestamp()
+	{
+		LocalDate today = LocalDate.now(ZoneId.systemDefault());
+		return today.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
 	}
 
 	private String showFirstLearnPage(Player player)
@@ -352,6 +436,23 @@ public class Lunhui extends Script
 
 		String targetClassName = ClassListData.getInstance().getClass(classId).getClassName();
 		player.sendPacket(new ExShowScreenMessage("成功習得雙職業：" + targetClassName + "，請重新登錄", 5000));
+		player.sendPacket(new ExShowScreenMessage("3秒後將返回角色選擇畫面...", 5000));
+
+		// 延遲3秒後執行登出
+		ThreadPool.schedule(() ->
+		{
+			if (player.isOnline())
+			{
+				GameClient client = player.getClient();
+				client.sendPacket(RestartResponse.TRUE);
+				Disconnection.of(client, player).storeAndDelete();
+				client.setConnectionState(ConnectionState.AUTHENTICATED);
+
+				CharSelectionInfo cl = new CharSelectionInfo(client.getAccountName(), client.getSessionId().playOkID1);
+				client.sendPacket(cl);
+				client.setCharSelection(cl.getCharInfo());
+			}
+		}, 3000);
 	}
 
 	private void handleChange(Player player, int classId)
@@ -410,6 +511,23 @@ public class Lunhui extends Script
 
 		String targetClassName = ClassListData.getInstance().getClass(classId).getClassName();
 		player.sendPacket(new ExShowScreenMessage("成功更換雙職業為：" + targetClassName + "，請重新登錄", 5000));
+		player.sendPacket(new ExShowScreenMessage("3秒後將返回角色選擇畫面...", 5000));
+
+		// 延遲3秒後執行登出
+		ThreadPool.schedule(() ->
+		{
+			if (player.isOnline())
+			{
+				GameClient client = player.getClient();
+				client.sendPacket(RestartResponse.TRUE);
+				Disconnection.of(client, player).storeAndDelete();
+				client.setConnectionState(ConnectionState.AUTHENTICATED);
+
+				CharSelectionInfo cl = new CharSelectionInfo(client.getAccountName(), client.getSessionId().playOkID1);
+				client.sendPacket(cl);
+				client.setCharSelection(cl.getCharInfo());
+			}
+		}, 3000);
 	}
 
 	// ============ 輔助方法 ============

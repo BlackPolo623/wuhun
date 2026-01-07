@@ -19,10 +19,12 @@ package instances.Lunhuiinstance;
 import java.time.LocalDate;
 import java.time.ZoneId;
 
+import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.enums.ChatType;
@@ -44,7 +46,7 @@ public class Lunhuiinstance extends InstanceScript
 	private final Location BOSS_LOCATION = new Location(-185854, 147878, -15312);
 	
 	// 道具配置
-	private static final int ITEM_ID = 57; // 消耗道具ID（金幣）
+	private static final int ITEM_ID = 57; // 消耗道具ID(金幣)
 	private static final long ITEM_COUNT = 1000000; // 消耗道具數量
 	private static final int REWARD_ITEM_ID = 105805; // 獎勵道具ID
 	private static final long REWARD_COUNT = 1; // 獎勵道具數量
@@ -54,7 +56,7 @@ public class Lunhuiinstance extends InstanceScript
 	private static final int DAILY_MAX_COUNT = 1; // 每日最大挑戰次數
 	
 	// PlayerVariables 鍵值
-	private static final String VAR_LAST_CHALLENGE_DATE = "Lunhui_LastChallengeDate";
+	private static final String VAR_LAST_RESET_TIME = "Lunhui_LastResetTime"; // 改為存儲時間戳
 	private static final String VAR_DAILY_COUNT = "Lunhui_DailyCount";
 	
 	public Lunhuiinstance()
@@ -83,51 +85,73 @@ public class Lunhuiinstance extends InstanceScript
 			// 檢查是否還有剩餘次數
 			if (dailyCount >= DAILY_MAX_COUNT)
 			{
-				player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "六道輪迴", "今日挑戰次數已用盡！明天再來吧。"));
-				player.sendPacket(new ExShowScreenMessage("今日挑戰次數已用盡！", 3000));
+				player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "六道輪迴", "今日挑戰次數已用盡!明天再來吧。"));
+				player.sendPacket(new ExShowScreenMessage("今日挑戰次數已用盡!", 3000));
 				return htmltext;
 			}
 			
 			// 檢查是否有足夠的道具
 			if (!player.destroyItemByItemId(null, ITEM_ID, ITEM_COUNT, player, true))
 			{
-				player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "六道輪迴", "挑戰道具不足！需要 " + ITEM_COUNT + " 個金幣。"));
-				player.sendPacket(new ExShowScreenMessage("挑戰道具不足！", 2000));
+				player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "六道輪迴", "挑戰道具不足!需要 " + ITEM_COUNT + " 個金幣。"));
+				player.sendPacket(new ExShowScreenMessage("挑戰道具不足!", 2000));
 				return htmltext;
 			}
-			
+			// 處理舊副本
+			Instance oldInstance = getPlayerInstance(player);
+			if (oldInstance != null)
+			{
+				// player.teleToLocation(81292, 148159, -3464);
+				player.setInstanceById(0);
+			}
 			// 增加今日挑戰次數
 			player.getVariables().set(VAR_DAILY_COUNT, dailyCount + 1);
 			
 			// 進入副本
 			enterInstance(player, npc, TEMPLATE_ID);
+			LOGGER.info("玩家 " + player.getName() + " 進入六道輪迴副本");
 			
 			// 刷新BOSS
 			doSpawns(player, BOSS_LOCATION.getX(), BOSS_LOCATION.getY(), BOSS_LOCATION.getZ());
 			
 			// 發送進入訊息
-			player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "六道輪迴", "歡迎進入六道輪迴的挑戰！擊敗BOSS獲得豐厚獎勵！"));
-			player.sendPacket(new ExShowScreenMessage("進入六道輪迴的挑戰！", 3000));
+			player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "六道輪迴", "歡迎進入六道輪迴的挑戰!擊敗BOSS獲得豐厚獎勵!"));
+			player.sendPacket(new ExShowScreenMessage("進入六道輪迴的挑戰!", 3000));
 		}
 		
 		return htmltext;
 	}
 	
 	/**
-	 * 檢查並重置每日次數
+	 * 檢查並重置每日次數(使用時間戳方式)
 	 */
 	private void checkAndResetDailyCount(Player player)
 	{
 		PlayerVariables vars = player.getVariables();
-		String lastChallengeDate = vars.getString(VAR_LAST_CHALLENGE_DATE, "");
-		String today = LocalDate.now(ZoneId.systemDefault()).toString();
 		
-		// 如果不是今天，重置次數
-		if (!today.equals(lastChallengeDate))
+		// 獲取上次重置時間(當天0點的時間戳)
+		long lastResetTime = vars.getLong(VAR_LAST_RESET_TIME, 0);
+		
+		// 獲取今天0點的時間戳
+		long currentDayStart = getTodayStartTimestamp();
+		
+		// 如果上次重置時間小於今天0點,說明已經跨天了,需要重置
+		if (lastResetTime < currentDayStart)
 		{
-			vars.set(VAR_LAST_CHALLENGE_DATE, today);
+			vars.set(VAR_LAST_RESET_TIME, currentDayStart);
 			vars.set(VAR_DAILY_COUNT, 0);
+			
+			LOGGER.info("玩家 " + player.getName() + " 的六道輪迴副本次數已重置");
 		}
+	}
+	
+	/**
+	 * 獲取今天0點的時間戳(毫秒) 這樣可以確保過了23:59:59就會是新的一天
+	 */
+	private long getTodayStartTimestamp()
+	{
+		LocalDate today = LocalDate.now(ZoneId.systemDefault());
+		return today.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
 	}
 	
 	/**
@@ -170,16 +194,29 @@ public class Lunhuiinstance extends InstanceScript
 			player.addItem(null, REWARD_ITEM_ID, REWARD_COUNT, player, true);
 			
 			// 發送成功訊息
-			player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "六道輪迴", "恭喜您成功完成六道輪迴的挑戰！"));
-			player.sendPacket(new ExShowScreenMessage("挑戰成功！獲得豐厚獎勵！", 5000));
+			player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "六道輪迴", "恭喜您成功完成六道輪迴的挑戰!"));
+			player.sendPacket(new ExShowScreenMessage("挑戰成功!獲得豐厚獎勵!5秒後將你傳送出去!", 5000));
+			LOGGER.info("玩家 " + player.getName() + " 完成六道輪迴副本");
+			
+			// 5秒後傳送回普通世界
+			ThreadPool.schedule(() ->
+			{
+				if (player.isOnline())
+				{
+					// 設定你要傳送的地點座標
+					player.teleToLocation(148145, 213248, -2178, null);
+					player.sendPacket(new ExShowScreenMessage("已傳送回普通世界", 3000));
+				}
+			}, 5000); // 5000毫秒 = 5秒
 		}
 	}
 	
 	@Override
 	public String onFirstTalk(Npc npc, Player player)
 	{
-		// 檢查並重置每日次數
 		String htmltext = "";
+		
+		// 檢查並重置每日次數
 		checkAndResetDailyCount(player);
 		
 		// 獲取剩餘次數
@@ -187,7 +224,7 @@ public class Lunhuiinstance extends InstanceScript
 		
 		// 構建HTML頁面
 		NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
-		html.setFile(player, "data/scripts/instances/Lunhuiinstance/Lunhui.htm");
+		html.setFile(player, "data/scripts/custom/Lunhui/start.htm");
 		
 		// 替換變量
 		html.replace("%remaining_count%", String.valueOf(remainingCount));
@@ -218,6 +255,6 @@ public class Lunhuiinstance extends InstanceScript
 	public static void main(String[] args)
 	{
 		new Lunhuiinstance();
-		System.out.println("【系統】六道輪迴的挑戰副本載入完畢！");
+		System.out.println("【系統】六道輪迴的挑戰副本載入完畢!");
 	}
 }

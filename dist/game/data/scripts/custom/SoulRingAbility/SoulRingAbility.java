@@ -17,9 +17,9 @@ import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 public class SoulRingAbility extends Script
 {
 	private static final int NPC_ID = 900013;
-	private static final String SOUL_RING_VAR = "魂環"; // 修正：改為與 Hunhuan.java 一致
+	private static final String SOUL_RING_VAR = "魂環";
 	private static final double PERCENT_PER_POINT = 0.3;
-	private static final int MAX_POINTS_PER_STAT = 200;
+	private static final int MAX_POINTS_PER_STAT = 300;
 	private static final String SYSTEM_NAME = "魂環能力";
 
 	public enum SoulRingStat

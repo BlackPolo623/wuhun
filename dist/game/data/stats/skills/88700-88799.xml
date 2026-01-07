@@ -1,26 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="88701" toLevel="20" name="亡命一擊">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.skill0344</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -73,26 +53,6 @@
 		</mpConsume>
 	</skill>
 	<skill id="88702" toLevel="20" name="亡命一擊">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.skill0344</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -145,26 +105,6 @@
 		</mpConsume>
 	</skill>
 	<skill id="88703" toLevel="20" name="亡命一擊">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.skill0344</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -217,8 +157,6 @@
 		</mpConsume>
 	</skill>
 	<skill id="88704" toLevel="2" name="狂熱鬥志">
-		
-		
 		<icon>icon.skill0768</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
@@ -229,8 +167,6 @@
 		</mpConsume>
 	</skill>
 	<skill id="88705" toLevel="2" name="御風">
-		
-		
 		<icon>icon.skill0769</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
@@ -241,8 +177,6 @@
 		</mpConsume>
 	</skill>
 	<skill id="88706" toLevel="2" name="鬼行">
-		
-		
 		<icon>icon.skill0770</icon>
 		<operateType>A1</operateType>
 		<hitTime>1000</hitTime>
@@ -253,7 +187,6 @@
 		</mpConsume>
 	</skill>
 	<skill id="88707" toLevel="1" name="致命之擊">
-		
 		<icon>icon.skill10508</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -264,7 +197,6 @@
 		<mpConsume>100</mpConsume>
 	</skill>
 	<skill id="88708" toLevel="1" name="狂暴之刃">
-		
 		<icon>icon.s_fury_blade</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -275,7 +207,6 @@
 		<mpConsume>100</mpConsume>
 	</skill>
 	<skill id="88709" toLevel="1" name="致命穿刺">
-		
 		<icon>icon.skill0321</icon>
 		<operateType>A1</operateType>
 		<castRange>40</castRange>
@@ -286,33 +217,18 @@
 		<mpConsume>100</mpConsume>
 	</skill>
 	<skill id="88710" toLevel="1" name="影劍暮：大師">
-		
 		<icon>icon.skill31328_1</icon>
 		<operateType>A2</operateType>
 	</skill>
 	<skill id="88711" toLevel="1" name="影劍風：大師">
-		
 		<icon>icon.skill30928</icon>
 		<operateType>A2</operateType>
 	</skill>
 	<skill id="88712" toLevel="1" name="影劍幻：大師">
-		
 		<icon>icon.skill11029</icon>
 		<operateType>A2</operateType>
 	</skill>
 	<skill id="88713" toLevel="12" name="背刺">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.skill0030</icon>
 		<operateType>A1</operateType>
 		<castRange>300</castRange>
@@ -349,18 +265,6 @@
 		</mpConsume>
 	</skill>
 	<skill id="88714" toLevel="12" name="背刺">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.skill0030</icon>
 		<operateType>A1</operateType>
 		<castRange>300</castRange>
@@ -397,18 +301,6 @@
 		</mpConsume>
 	</skill>
 	<skill id="88715" toLevel="12" name="背刺">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.skill0030</icon>
 		<operateType>A1</operateType>
 		<castRange>300</castRange>
@@ -450,18 +342,69 @@
 		<effectPoint>-400</effectPoint>
 	</skill>
 	<skill id="88717" toLevel="1" name="泰坦兵器">
-		
 		<icon>icon.wepon_of_titan</icon>
-		<operateType>A1</operateType>
-		<effectPoint>1000</effectPoint>
-	</skill>
-	<skill id="88718" toLevel="1" name="泰坦兵器-擊倒">
-		
-		<icon>icon.wepon_of_titan</icon>
-		<operateType>A1</operateType>
-		<isDebuff>true</isDebuff>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>FINAL_SECRET</abnormalType>
+		<abnormalVisualEffect>H_P_CHAMPION_OF_TITAN_AVE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitTime>1000</hitTime>
+		<magicLevel>76</magicLevel>
+		<mpConsume>41</mpConsume>
 		<reuseDelay>1000</reuseDelay>
-		<effectPoint>-500</effectPoint>
+		<effects>
+			<effect name="TriggerSkillBySkillDamage" >
+				<attackSkillId>777</attackSkillId> 
+				<attackerType>Creature</attackerType>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<skillId>88718</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillDamage">
+				<attackSkillId>47471</attackSkillId> 
+				<attackerType>Creature</attackerType>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<skillId>88718</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="TriggerSkillBySkillDamage">
+				<attackSkillId>88721</attackSkillId> 
+				<attackerType>Creature</attackerType>
+				<chance>100</chance>
+				<targetType>ENEMY</targetType>
+				<skillId>88718</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>	
+		</effects>
+		</skill>
+	<skill id="88718" toLevel="1" name="泰坦兵器-擊倒">
+		<icon>icon.wepon_of_titan</icon>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>-1000</effectPoint>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>76</magicLevel>
+		<effects>
+			<effect name="KnockBack">
+				<distance>0</distance>
+				<speed>600</speed>
+				<knockDown>true</knockDown>
+			</effect>
+			<effect name="BlockActions" />
+		</effects>
 	</skill>
 	<skill id="88719" toLevel="9" name="未使用-巨化碎擊">
 		<icon>icon.s_gigantic_crush</icon>
@@ -494,37 +437,139 @@
 		</mpConsume>
 	</skill>
 	<skill id="88720" toLevel="1" name="防禦破壞">
-		
 		<icon>icon.champion_of_titan_legend</icon>
-		<operateType>A1</operateType>
 		<isDebuff>true</isDebuff>
 		<reuseDelay>5000</reuseDelay>
 		<effectPoint>-1000</effectPoint>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>76</magicLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>-35</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88721" toLevel="1" name="超疾襲">
-		
 		<icon>icon.titan_hyper_rush</icon>
-		<operateType>A1</operateType>
-		<castRange>700</castRange>
-		<hitTime>800</hitTime>
+		<operateType>DA2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>
+			<value level="1">1</value>
+		</abnormalLevel>
+		<activateRate>60</activateRate>
+		<affectLimit>5-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>600</affectRange>
+		<affectScope>FAN</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>
+			<value level="1">500</value>
+		</castRange>
 		<coolTime>200</coolTime>
-		<reuseDelay>3000</reuseDelay>
-		<effectPoint>-400</effectPoint>
-		<mpConsume>50</mpConsume>
+		<effectPoint>
+			<value level="1">-600</value>
+		</effectPoint>
+		<effectRange>800</effectRange>
+		<fanRange>0;0;600;60</fanRange>
+		<hitTime>800</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">60</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">40</value>
+		</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<reuseDelay>1000</reuseDelay>
+		<trait>ANOMALY</trait>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>SWORD</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>9570</power>
+				<pDefMod>0.9</pDefMod>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>88722</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+	</effects>
 	</skill>
 	<skill id="88722" toLevel="1" name="超疾襲">
-		
 		<icon>icon.titan_hyper_rush</icon>
-		<operateType>A1</operateType>
-		<isDebuff>true</isDebuff>
 		<effectPoint>-7600</effectPoint>
+		<reuseDelay>5000</reuseDelay>
+		<effectPoint>-1000</effectPoint>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>3</lvlBonusRate>
+		<magicLevel>76</magicLevel>
+		<effects>
+			<effect name="DefenceTrait">
+				<KNOCKDOWN>
+					<value level="1">-10</value>
+				</KNOCKDOWN>
+				<KNOCKBACK>
+					<value level="1">-10</value>
+				</KNOCKBACK>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88724" toLevel="1" name="鬥者奧秘：泰坦">
-		
 		<icon>icon.skill1917</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>FINAL_SECRET</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 		<hitTime>1500</hitTime>
-		<reuseDelay>150000</reuseDelay>
+		<itemConsumeCount>3</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId>
+		<magicLevel>76</magicLevel>
 		<mpConsume>41</mpConsume>
-	</skill>
+		<reuseDelay>150000</reuseDelay>
+		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+				<BOW>60</BOW>
+			</effect>
+			<effect name="MagicalSuccessResistance">
+				<amount>60</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>88717</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>		
+		</effects>
+		</skill>
 </list>

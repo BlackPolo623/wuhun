@@ -67,7 +67,7 @@ import org.l2jmobius.gameserver.util.MathUtil;
 public class Formulas
 {
 	/** Regeneration Task period. */
-	private static final int HP_REGENERATE_PERIOD = 3000; // 3 secs
+	private static final int HP_REGENERATE_PERIOD = 5000; // 3 secs HP回復
 	
 	public static final byte SHIELD_DEFENSE_FAILED = 0; // no shield defense
 	public static final byte SHIELD_DEFENSE_SUCCEED = 1; // normal shield defense
@@ -1605,6 +1605,7 @@ public class Formulas
 		
 		return 900000 / creature.getStat().getPAtkSpd();
 	}
+	//魂環加成
 	private static final double SOUL_RING_PERCENT_PER_POINT = 0.3;
 	// 輔助方法：計算魂環加成
 	private static double getSoulRingBonus(Player player, String varName)

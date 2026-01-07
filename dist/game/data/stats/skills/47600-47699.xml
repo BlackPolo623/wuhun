@@ -1,16 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="47601" toLevel="10" name="風旋箭">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.s_spinning_shot</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -98,16 +88,6 @@
 		</effects>
 	</skill>
 	<skill id="47602" toLevel="10" name="三環連箭">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.s_triple_shot</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -225,14 +205,6 @@
 		</effects>
 	</skill>
 	<skill id="47603" toLevel="8" name="綁鎖箭">
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.s_binding_shot</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -323,7 +295,6 @@
 		</effects>
 	</skill>
 	<skill id="47604" toLevel="8" name="綁鎖箭">
-		
 		<icon>icon.s_binding_shot</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -354,11 +325,6 @@
 		</effects>
 	</skill>
 	<skill id="47605" toLevel="5" name="燃焰箭">
-		
-		
-		
-		
-		
 		<icon>icon.s_burning_shot</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -417,12 +383,10 @@
 				<skillId>47624</skillId> 
 				<skillLevel>1</skillLevel>
 			</effect>
-			
 			<effect name="ComboSkill">
 				<skillId>47641</skillId> 
 				<targetCheckSkillId>47621</targetCheckSkillId> 
 			</effect>
-			
 			<effect name="ComboSkill">
 				<skillId>47642</skillId> 
 				<targetCheckSkillId>47632</targetCheckSkillId> 
@@ -430,11 +394,6 @@
 		</effects>
 	</skill>
 	<skill id="47606" toLevel="5" name="冰瀑箭">
-		
-		
-		
-		
-		
 		<icon>icon.s_freezing_shot</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -493,12 +452,10 @@
 				<skillId>47625</skillId> 
 				<skillLevel>1</skillLevel>
 			</effect>
-			
 			<effect name="ComboSkill">
 				<skillId>47643</skillId> 
 				<targetCheckSkillId>47622</targetCheckSkillId> 
 			</effect>
-			
 			<effect name="ComboSkill">
 				<skillId>47644</skillId> 
 				<targetCheckSkillId>47633</targetCheckSkillId> 
@@ -506,11 +463,6 @@
 		</effects>
 	</skill>
 	<skill id="47607" toLevel="5" name="風之射擊">
-		
-		
-		
-		
-		
 		<icon>icon.s_wind_shot</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -570,12 +522,10 @@
 				<skillId>47626</skillId> 
 				<skillLevel>1</skillLevel>
 			</effect>
-			
 			<effect name="ComboSkill">
 				<skillId>47645</skillId> 
 				<targetCheckSkillId>47623</targetCheckSkillId> 
 			</effect>
-			
 			<effect name="ComboSkill">
 				<skillId>47646</skillId> 
 				<targetCheckSkillId>47634</targetCheckSkillId> 
@@ -583,14 +533,6 @@
 		</effects>
 	</skill>
 	<skill id="47608" toLevel="8" name="螺旋箭">
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.s_spiral_shot</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -691,17 +633,14 @@
 				<skillId>47631</skillId> 
 				<skillLevel>1</skillLevel>
 			</effect>
-			
 			<effect name="ComboSkill">
 				<skillId>47632</skillId> 
 				<targetCheckSkillId>47621</targetCheckSkillId> 
 			</effect>
-			
 			<effect name="ComboSkill">
 				<skillId>47633</skillId> 
 				<targetCheckSkillId>47622</targetCheckSkillId> 
 			</effect>
-			
 			<effect name="ComboSkill">
 				<skillId>47634</skillId> 
 				<targetCheckSkillId>47623</targetCheckSkillId> 
@@ -757,7 +696,6 @@
 		</effects>
 	</skill>
 	<skill id="47621" toLevel="1" name="火焰">
-		
 		<icon>icon.s_archer_flame</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -780,7 +718,6 @@
 		</effects>
 	</skill>
 	<skill id="47622" toLevel="1" name="潮氣">
-		
 		<icon>icon.skill31142</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>3</abnormalTime>
@@ -790,7 +727,6 @@
 		<isTriggeredSkill>true</isTriggeredSkill>
 	</skill>
 	<skill id="47623" toLevel="1" name="風害">
-		
 		<icon>icon.s_archer_wind_damage</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>3</abnormalTime>
@@ -800,7 +736,6 @@
 		<isTriggeredSkill>true</isTriggeredSkill>
 	</skill>
 	<skill id="47624" toLevel="1" name="燃火">
-		
 		<icon>icon.s_archer_burning</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -823,7 +758,6 @@
 		</effects>
 	</skill>
 	<skill id="47625" toLevel="1" name="冷氣">
-		
 		<icon>icon.s_archer_cold</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>3</abnormalTime>
@@ -833,7 +767,6 @@
 		<isTriggeredSkill>true</isTriggeredSkill>
 	</skill>
 	<skill id="47626" toLevel="1" name="清風">
-		
 		<icon>icon.s_archer_wind</icon>
 		<operateType>A2</operateType>
 		<abnormalTime>3</abnormalTime>
@@ -843,7 +776,6 @@
 		<isTriggeredSkill>true</isTriggeredSkill>
 	</skill>
 	<skill id="47631" toLevel="1" name="突風">
-		
 		<icon>icon.s_archer_gust</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -866,7 +798,6 @@
 		</effects>
 	</skill>
 	<skill id="47632" toLevel="1" name="焰火疾風">
-		
 		<icon>icon.skill19436</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -897,7 +828,6 @@
 		</effects>
 	</skill>
 	<skill id="47633" toLevel="1" name="水花">
-		
 		<icon>icon.skill32708</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -927,7 +857,6 @@
 		</effects>
 	</skill>
 	<skill id="47634" toLevel="1" name="暴風">
-		
 		<icon>icon.skill11137</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1154,7 +1083,6 @@
 		</effects>
 	</skill>
 	<skill id="47648" toLevel="1" name="火之標誌">
-		
 		<icon>icon.skill1451</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1179,7 +1107,6 @@
 		</effects>
 	</skill>
 	<skill id="47649" toLevel="1" name="水之標誌">
-		
 		<icon>icon.skill1453</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1204,7 +1131,6 @@
 		</effects>
 	</skill>
 	<skill id="47650" toLevel="1" name="暴風標誌">
-		
 		<icon>icon.skill1456</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1229,7 +1155,6 @@
 		</effects>
 	</skill>
 	<skill id="47651" toLevel="1" name="傳奇箭">
-		
 		<icon>icon.s_legendary_shot_hu</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1275,7 +1200,6 @@
 		</selfEffects>
 	</skill>
 	<skill id="47652" toLevel="1" name="傳奇箭">
-		
 		<icon>icon.s_legendary_shot_el</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1317,7 +1241,6 @@
 		</selfEffects>
 	</skill>
 	<skill id="47653" toLevel="1" name="傳奇箭">
-		
 		<icon>icon.s_legendary_shot_da</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1359,7 +1282,6 @@
 		</selfEffects>
 	</skill>
 	<skill id="47654" toLevel="1" name="刀韌襲">
-		
 		<icon>icon.blade_assault1</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1398,22 +1320,6 @@
 		</effects>
 	</skill>
 	<skill id="47655" toLevel="4" name="未使用-刀震波-大師">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.blade_wave_contender_new</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1536,7 +1442,6 @@
 		</effects>
 	</skill>
 	<skill id="47658" toLevel="4" name="未使用-刀震波-大師">
-		
 		<icon>icon.blade_wave_contender_new</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1563,7 +1468,6 @@
 		</effects>
 	</skill>
 	<skill id="47659" toLevel="1" name="刀韌襲">
-		
 		<icon>icon.blade_assault_debuff1</icon>
 		<operateType>A2</operateType>
 		<targetType>OTHERS</targetType>
@@ -1596,7 +1500,6 @@
 		</effects>
 	</skill>
 	<skill id="47660" toLevel="1" name="刀韌襲">
-		
 		<icon>icon.blade_assault_debuff2</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1619,19 +1522,6 @@
 		</effects>
 	</skill>
 	<skill id="47661" toLevel="13" name="箭羽破">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>
 			<value level="1">icon.skill10756</value>
 			<value level="2">icon.skill10756</value>
@@ -1758,7 +1648,6 @@
 		</effects>
 	</skill>
 	<skill id="47663" toLevel="2" name="皎月箭">
-		
 		<icon>icon.s_moonlight_arrow</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1779,7 +1668,6 @@
 		</effects>
 	</skill>
 	<skill id="47664" toLevel="3" name="皎月箭">
-		
 		<icon>icon.s_fullmoon_arrow</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1852,12 +1740,6 @@
 		</selfEffects>
 	</skill>
 	<skill id="47667" toLevel="6" name="刃疾襲">
-		
-		
-		
-		
-		
-		
 		<icon>icon.sonic_rush</icon>
 		<operateType>DA1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1917,9 +1799,6 @@
 		</effects>
 	</skill>
 	<skill id="47668" toLevel="3" name="不破之刃">
-		
-		
-		
 		<icon>icon.unbreakable_sonic</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1974,7 +1853,6 @@
 		</effects>
 	</skill>
 	<skill id="47670" toLevel="3" name="不破之刃">
-		
 		<icon>icon.unbreakable_sonic</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2010,10 +1888,6 @@
 		</effects>
 	</skill>
 	<skill id="47671" toLevel="1" name="格鬥感識">
-		
-		
-		
-		
 		<icon>icon.s_combat_sense</icon>
 		<operateType>P</operateType>
 		<magicLevel>76</magicLevel>
@@ -2156,10 +2030,6 @@
 		</effects>
 	</skill>
 	<skill id="47673" toLevel="1" name="精靈感識">
-		
-		
-		
-		
 		<icon>icon.s_elven_sense</icon>
 		<operateType>P</operateType>
 		<magicLevel>76</magicLevel>
@@ -2302,7 +2172,6 @@
 		</effects>
 	</skill>
 	<skill id="47675" toLevel="1" name="最終秘密：決鬥">
-		
 		<icon>icon.final_secret_dualist</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2371,7 +2240,6 @@
 		</effects>
 	</skill>
 	<skill id="47676" toLevel="1" name="極限軀體：決鬥">
-		
 		<icon>icon.ultimate_body_dualist</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2434,50 +2302,6 @@
 		</effects>
 	</skill>
 	<skill id="47677" toLevel="11" name="弧刃之擊">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.full_rising_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -2929,7 +2753,6 @@
 		</effects>
 	</skill>
 	<skill id="47681" toLevel="1" name="隨心所欲">
-		
 		<icon>icon.skill0759</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3014,7 +2837,6 @@
 		</effects>
 	</skill>
 	<skill id="47682" toLevel="1" name="隨心所欲">
-		
 		<icon>icon.skill0759</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3099,7 +2921,6 @@
 		</effects>
 	</skill>
 	<skill id="47683" toLevel="1" name="隨心所欲">
-		
 		<icon>icon.skill0759</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3184,12 +3005,10 @@
 		</effects>
 	</skill>
 	<skill id="47684" toLevel="1" name="致命攻擊破壞">
-		
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 	</skill>
 	<skill id="47685" toLevel="1" name="弱點狙擊">
-		
 		<icon>icon.s_focus_arrow</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3228,7 +3047,6 @@
 		</endEffects>
 	</skill>
 	<skill id="47686" toLevel="6" name="焦聚箭">
-		
 		<icon>icon.s_focus_arrow</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3344,7 +3162,6 @@
 		</effects>
 	</skill>
 	<skill id="47687" toLevel="1" name="皎月風暴">
-		
 		<icon>icon.s_moonlight_hurricane</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3380,7 +3197,6 @@
 		</endEffects>
 	</skill>
 	<skill id="47688" toLevel="1" name="皎月風暴：滿月">
-		
 		<icon>icon.s_moonlight_hurricane</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3426,7 +3242,6 @@
 		</effects>
 	</skill>
 	<skill id="47689" toLevel="1" name="絕命弓">
-		
 		<icon>icon.s_fatal_bow</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3478,14 +3293,6 @@
 		</effects>
 	</skill>
 	<skill id="47690" toLevel="8" name="螺旋穿刺">
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.s_archer_sprial_piercing</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -3555,16 +3362,6 @@
 		</effects>
 	</skill>
 	<skill id="47691" toLevel="10" name="風旋穿刺">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.s_archer_spinning_piercing</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -3640,11 +3437,6 @@
 		</effects>
 	</skill>
 	<skill id="47692" toLevel="5" name="燃焰穿刺">
-		
-		
-		
-		
-		
 		<icon>icon.s_archer_burning_piercing</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -3700,11 +3492,6 @@
 		</effects>
 	</skill>
 	<skill id="47693" toLevel="5" name="冰瀑穿刺">
-		
-		
-		
-		
-		
 		<icon>icon.s_archer_freezing_piercing</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -3760,11 +3547,6 @@
 		</effects>
 	</skill>
 	<skill id="47694" toLevel="5" name="疾風穿刺">
-		
-		
-		
-		
-		
 		<icon>icon.s_archer_wind_piercing</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -3820,7 +3602,6 @@
 		</effects>
 	</skill>
 	<skill id="47695" toLevel="1" name="穿刺">
-		
 		<icon>icon.s_archer_piercing</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -3852,7 +3633,6 @@
 		</effects>
 	</skill>
 	<skill id="47696" toLevel="1" name="光穿刺">
-		
 		<icon>icon.s_archer_light_piercing</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -3884,7 +3664,6 @@
 		</effects>
 	</skill>
 	<skill id="47697" toLevel="1" name="暗穿刺">
-		
 		<icon>icon.s_archer_dark_piercing</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -3916,14 +3695,6 @@
 		</effects>
 	</skill>
 	<skill id="47698" toLevel="2" name="燄穿刺">
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.s_archer_flame_piercing</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -4005,14 +3776,6 @@
 		</effects>
 	</skill>
 	<skill id="47699" toLevel="2" name="淼穿刺">
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.s_archer_aqua_piercing</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>

@@ -37,9 +37,8 @@ public class PremiumShop extends Script
 	static
 	{
 		// 配置各種會員套餐
-		PREMIUM_PACKAGES.put(1, new PremiumPackage(7, 210, 100));      // 7天，1000個道具，無折扣
-		PREMIUM_PACKAGES.put(2, new PremiumPackage(15, 400, 95));      // 15天，1900個道具，95折
-		PREMIUM_PACKAGES.put(3, new PremiumPackage(30, 750, 88));      // 30天，3600個道具，9折
+		PREMIUM_PACKAGES.put(1, new PremiumPackage(30, 600, 100));
+		PREMIUM_PACKAGES.put(2, new PremiumPackage(60, 1080, 90));
 	}
 
 	// ==================== 套餐數據類 ====================

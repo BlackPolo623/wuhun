@@ -37,6 +37,8 @@ import org.l2jmobius.gameserver.network.Disconnection;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.LeaveWorld;
 
+import static org.l2jmobius.gameserver.model.script.Quest.giveItems;
+
 /**
  * This class handles following admin commands: - handles every admin menu command
  * @version $Revision: 1.3.2.6.2.4 $ $Date: 2005/04/11 10:06:06 $
@@ -56,6 +58,7 @@ public class AdminMenu implements IAdminCommandHandler
 		"admin_kick_menu",
 		"admin_kill_menu",
 		"admin_ban_menu",
+		"jewels_6",
 		"admin_unban_menu"
 	};
 	
@@ -185,6 +188,14 @@ public class AdminMenu implements IAdminCommandHandler
 		else if (command.equals("admin_kill_menu"))
 		{
 			handleKill(activeChar);
+		} else if (command.equals("jewels_6"))
+		{
+			giveItems(activeChar,92052,1);
+			giveItems(activeChar,92042,1);
+			giveItems(activeChar,102804,1);
+			giveItems(activeChar,102814,1);
+			giveItems(activeChar,102824,1);
+			giveItems(activeChar,102834,1);
 		}
 		else if (command.startsWith("admin_kick_menu"))
 		{

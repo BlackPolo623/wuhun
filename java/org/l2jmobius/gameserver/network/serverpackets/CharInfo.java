@@ -155,9 +155,53 @@ public class CharInfo extends ServerPacket
 		buffer.writeInt(_objId); // Confirmed
 		
 		buffer.writeString(_player.isMercenary() ? _player.getMercenaryName() : _appearance.getVisibleName()); // Confirmed
-		buffer.writeShort(_player.getRace().ordinal()); // Confirmed
+		int j = _player.getVariables().getInt("外形幻化", 0);
+		int z = 0;
+		switch (j)
+		{
+			case 1:
+				z = 88;
+				break;
+			case 2:
+				z = 94;
+				break;
+			case 5:
+				z = 113;
+				break;
+			case 6:
+				z = 115;
+				break;
+			case 9:
+				z = 199;
+				break;
+			case 10:
+				z = 203;
+				break;
+			case 11:
+				z = 207;
+				break;
+			case 12:
+				z = 220;
+				break;
+			case 13:
+				z = 224;
+				break;
+			case 14:
+				z = 228;
+				break;
+			case 16:
+				z = 250;
+				break;
+			case 17:
+				z = 254;
+				break;
+			case 18:
+				z = 263;
+				break;
+		}
+		buffer.writeShort(j > 0 ? _player.getRacesa().ordinal() : _player.getRace().ordinal()); // Confirmed
 		buffer.writeByte(_appearance.isFemale()); // Confirmed
-		buffer.writeInt(_player.getBaseTemplate().getPlayerClass().getRootClass().getId());
+		buffer.writeInt(z > 0 ? z : _player.getBaseTemplate().getPlayerClass().getRootClass().getId());
 		
 		for (int slot : getPaperdollOrder())
 		{

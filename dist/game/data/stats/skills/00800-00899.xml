@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="800" toLevel="3" name="Master Ability: M. Def.">
-		
 		<operateType>P</operateType>
 		<excludedFromCheck>true</excludedFromCheck>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -18,7 +17,6 @@
 		</effects>
 	</skill>
 	<skill id="801" toLevel="1" name="Warrior Ability: Boost CP">
-		
 		<operateType>P</operateType>
 		<excludedFromCheck>true</excludedFromCheck>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -31,7 +29,6 @@
 		</effects>
 	</skill>
 	<skill id="802" toLevel="1" name="Wizard Ability: Anti-magic">
-		
 		<operateType>P</operateType>
 		<excludedFromCheck>true</excludedFromCheck>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -44,7 +41,6 @@
 		</effects>
 	</skill>
 	<skill id="803" toLevel="1" name="Healer Ability: Divine Protection">
-		
 		<operateType>P</operateType>
 		<excludedFromCheck>true</excludedFromCheck>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -61,7 +57,6 @@
 		</effects>
 	</skill>
 	<skill id="804" toLevel="1" name="Knight Ability: Critical Damage Resistance">
-		
 		<operateType>P</operateType>
 		<excludedFromCheck>true</excludedFromCheck>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -79,7 +74,6 @@
 		<magicLevel>75</magicLevel>
 	</skill>
 	<skill id="806" toLevel="1" name="Magic Obstacle">
-		
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -100,7 +94,6 @@
 		</effects>
 	</skill>
 	<skill id="807" toLevel="1" name="Over-hit">
-		
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>99</abnormalLevel>
@@ -122,7 +115,6 @@
 		</effects>
 	</skill>
 	<skill id="808" toLevel="1" name="Golem Punch">
-		
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -153,7 +145,6 @@
 		</effects>
 	</skill>
 	<skill id="809" toLevel="1" name="Golem Tornado Swing">
-		
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -174,15 +165,6 @@
 		</effects>
 	</skill>
 	<skill id="814" toLevel="9" name="全力揮擊">
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<icon>icon.skill0814</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -255,7 +237,6 @@
 		</effects>
 	</skill>
 	<skill id="815" toLevel="43" name="Blade Hurricane">
-		
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectLimit>6-12</affectLimit>
@@ -463,7 +444,6 @@
 		</effects>
 	</skill>
 	<skill id="816" toLevel="43" name="Cleave">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -672,7 +652,6 @@
 		</effects>
 	</skill>
 	<skill id="817" toLevel="43" name="Double Attack">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -880,13 +859,11 @@
 		</effects>
 	</skill>
 	<skill id="818" toLevel="1" name="Evasion Counter">
-		
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>74</magicLevel>
 		<effects>
 			<effect name="TriggerSkillByAvoid">
-				
 				<chance>10</chance>
 				<targetType>TARGET</targetType>
 				<skillId>5673</skillId> 
@@ -895,13 +872,11 @@
 		</effects>
 	</skill>
 	<skill id="819" toLevel="1" name="Evasion Chance">
-		
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>74</magicLevel>
 		<effects>
 			<effect name="TriggerSkillByAvoid">
-				
 				<chance>10</chance>
 				<targetType>SELF</targetType>
 				<skillId>5674</skillId> 
@@ -910,13 +885,11 @@
 		</effects>
 	</skill>
 	<skill id="820" toLevel="1" name="Evasion Haste">
-		
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>74</magicLevel>
 		<effects>
 			<effect name="TriggerSkillByAvoid">
-				
 				<chance>10</chance>
 				<targetType>SELF</targetType>
 				<skillId>5675</skillId> 
@@ -925,7 +898,6 @@
 		</effects>
 	</skill>
 	<skill id="821" toLevel="12" name="影步">
-		
 		<icon>icon.skill0821</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -995,9 +967,6 @@
 		</effects>
 	</skill>
 	<skill id="822" toLevel="3" name="高崙維修">
-		
-		
-		
 		<icon>icon.skill0822</icon>
 		<operateType>A1</operateType>
 		<targetType>SUMMON</targetType>
@@ -1039,9 +1008,6 @@
 		</effects>
 	</skill>
 	<skill id="823" toLevel="3" name="強大之力">
-		
-		
-		
 		<icon>icon.skill0823</icon>
 		<operateType>A2</operateType>
 		<targetType>SUMMON</targetType>
@@ -1091,9 +1057,6 @@
 		</effects>
 	</skill>
 	<skill id="824" toLevel="3" name="防禦武裝">
-		
-		
-		
 		<icon>icon.skill0824</icon>
 		<operateType>A2</operateType>
 		<targetType>SUMMON</targetType>
@@ -1144,7 +1107,6 @@
 		</effects>
 	</skill>
 	<skill id="825" toLevel="1" name="Sharpen Edge">
-		
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -1193,8 +1155,6 @@
 		</effects>
 	</skill>
 	<skill id="826" toLevel="2" name="釘鎚穿刺">
-		
-		
 		<icon>icon.skill0826</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1226,7 +1186,6 @@
 		</effects>
 	</skill>
 	<skill id="827" toLevel="1" name="Bowstring">
-		
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -1263,8 +1222,6 @@
 		</effects>
 	</skill>
 	<skill id="828" toLevel="2" name="表層硬化">
-		
-		
 		<icon>icon.skill0828</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1283,7 +1240,6 @@
 		</effects>
 	</skill>
 	<skill id="829" toLevel="1" name="Hard Tanning">
-		
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -1318,7 +1274,6 @@
 		</effects>
 	</skill>
 	<skill id="830" toLevel="1" name="Embroider">
-		
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -1353,7 +1308,6 @@
 		</effects>
 	</skill>
 	<skill id="832" toLevel="2" name="Fast Recovery">
-		
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
@@ -1385,7 +1339,6 @@
 		</effects>
 	</skill>
 	<skill id="833" toLevel="1" name="Body Reconstruction">
-		
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -1402,7 +1355,6 @@
 		</effects>
 	</skill>
 	<skill id="834" toLevel="1" name="Blood Pact">
-		
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -1430,7 +1382,6 @@
 		</effects>
 	</skill>
 	<skill id="835" toLevel="4" name="Imbue Seed of Destruction">
-		
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
 		<abnormalLevel>8</abnormalLevel>
@@ -1489,7 +1440,6 @@
 		</endEffects>
 	</skill>
 	<skill id="837" toLevel="1" name="Painkiller">
-		
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -1517,7 +1467,6 @@
 		</effects>
 	</skill>
 	<skill id="838" toLevel="1" name="Switch Stance">
-		
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -1534,7 +1483,6 @@
 		</effects>
 	</skill>
 	<skill id="839" toLevel="1" name="降下">
-		
 		<icon>icon.skilltransform2</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -1551,7 +1499,6 @@
 		</effects>
 	</skill>
 	<skill id="843" toLevel="1" name="Shooting Star">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -1569,7 +1516,6 @@
 		</effects>
 	</skill>
 	<skill id="844" toLevel="1" name="建立前哨基地">
-		
 		<icon>icon.skill0247</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -1589,7 +1535,6 @@
 		</conditions>
 	</skill>
 	<skill id="845" toLevel="1" name="撤移前哨基地">
-		
 		<icon>icon.skill0247</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -1606,7 +1551,6 @@
 		<specialLevel>-1</specialLevel>
 	</skill>
 	<skill id="846" toLevel="1" name="持有守護之物">
-		
 		<icon>icon.weapon_fort_flag_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1635,7 +1579,6 @@
 		</effects>
 	</skill>
 	<skill id="847" toLevel="1" name="奪取守護之物">
-		
 		<icon>icon.weapon_fort_flag_i00</icon>
 		<operateType>CA1</operateType>
 		<targetType>ADVANCE_BASE</targetType>
@@ -1652,7 +1595,6 @@
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="848" toLevel="1" name="Gludio Territory Benefaction">
-		
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1668,7 +1610,6 @@
 		</effects>
 	</skill>
 	<skill id="849" toLevel="1" name="Dion Territory Benefaction">
-		
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1684,7 +1625,6 @@
 		</effects>
 	</skill>
 	<skill id="850" toLevel="1" name="Giran Territory Benefaction">
-		
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1700,7 +1640,6 @@
 		</effects>
 	</skill>
 	<skill id="851" toLevel="1" name="Oren Territory Benefaction">
-		
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1716,7 +1655,6 @@
 		</effects>
 	</skill>
 	<skill id="852" toLevel="1" name="Aden Territory Benefaction">
-		
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1732,7 +1670,6 @@
 		</effects>
 	</skill>
 	<skill id="853" toLevel="1" name="Innadril Territory Benefaction">
-		
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1748,7 +1685,6 @@
 		</effects>
 	</skill>
 	<skill id="854" toLevel="1" name="Goddard Territory Benefaction">
-		
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1764,7 +1700,6 @@
 		</effects>
 	</skill>
 	<skill id="855" toLevel="1" name="Rune Territory Benefaction">
-		
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1780,7 +1715,6 @@
 		</effects>
 	</skill>
 	<skill id="856" toLevel="1" name="Schuttgart Territory Benefaction">
-		
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
@@ -1796,7 +1730,6 @@
 		</effects>
 	</skill>
 	<skill id="869" toLevel="9" name="Mercenary Power Strike">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -1837,7 +1770,6 @@
 		</effects>
 	</skill>
 	<skill id="870" toLevel="8" name="Royal Guard Captain Power Strike">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -1885,7 +1817,6 @@
 		</effects>
 	</skill>
 	<skill id="871" toLevel="1" name="Might">
-		
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
 		<abnormalLevel>3</abnormalLevel>
@@ -1911,7 +1842,6 @@
 		</effects>
 	</skill>
 	<skill id="872" toLevel="8" name="Archer Captain Power Shot">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -1959,7 +1889,6 @@
 		</effects>
 	</skill>
 	<skill id="873" toLevel="1" name="Rapid Shot">
-		
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>2</abnormalLevel>
@@ -1984,7 +1913,6 @@
 		</effects>
 	</skill>
 	<skill id="874" toLevel="8" name="Wizard Captain Flame Strike">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectLimit>5-12</affectLimit>
@@ -2046,7 +1974,6 @@
 		</effects>
 	</skill>
 	<skill id="875" toLevel="1" name="Empower">
-		
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
 		<abnormalLevel>3</abnormalLevel>
@@ -2072,7 +1999,6 @@
 		</effects>
 	</skill>
 	<skill id="876" toLevel="8" name="Centurion Enuma Elish">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectLimit>5-12</affectLimit>
@@ -2125,7 +2051,6 @@
 		</effects>
 	</skill>
 	<skill id="877" toLevel="8" name="Centurion Disarm">
-		
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -2175,7 +2100,6 @@
 		</effects>
 	</skill>
 	<skill id="878" toLevel="7" name="Knight Captain Power Strike">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2220,7 +2144,6 @@
 		</effects>
 	</skill>
 	<skill id="879" toLevel="7" name="Knight Captain Curse Fear">
-		
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -2257,7 +2180,6 @@
 		</effects>
 	</skill>
 	<skill id="880" toLevel="1" name="Knight Captain Ultimate Defense">
-		
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>2</abnormalLevel>
@@ -2290,7 +2212,6 @@
 		</effects>
 	</skill>
 	<skill id="881" toLevel="7" name="Commander Twister">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2338,7 +2259,6 @@
 		</effects>
 	</skill>
 	<skill id="882" toLevel="7" name="Commander Blaze">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2385,7 +2305,6 @@
 		</effects>
 	</skill>
 	<skill id="883" toLevel="7" name="Commander Seal of Binding">
-		
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -2425,7 +2344,6 @@
 		</effects>
 	</skill>
 	<skill id="884" toLevel="11" name="Air Assault">
-		
 		<operateType>DA1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectRange>100</affectRange>
@@ -2464,7 +2382,6 @@
 		</effects>
 	</skill>
 	<skill id="886" toLevel="11" name="Air Shock Bomb">
-		
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -2543,7 +2460,6 @@
 		</effects>
 	</skill>
 	<skill id="887" toLevel="11" name="Sky Clutch">
-		
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -2621,7 +2537,6 @@
 		</effects>
 	</skill>
 	<skill id="888" toLevel="11" name="Energy Storm">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2688,7 +2603,6 @@
 		</effects>
 	</skill>
 	<skill id="889" toLevel="11" name="Energy Storm">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2755,7 +2669,6 @@
 		</effects>
 	</skill>
 	<skill id="890" toLevel="11" name="Prodigious Flare">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2822,7 +2735,6 @@
 		</effects>
 	</skill>
 	<skill id="891" toLevel="11" name="Energy Shot">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2890,7 +2802,6 @@
 		</effects>
 	</skill>
 	<skill id="892" toLevel="11" name="Energy Shot">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -2958,7 +2869,6 @@
 		</effects>
 	</skill>
 	<skill id="893" toLevel="11" name="Concentrated Energy Shot">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -3026,7 +2936,6 @@
 		</effects>
 	</skill>
 	<skill id="894" toLevel="1" name="Exhilarate">
-		
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -3060,7 +2969,6 @@
 		</effects>
 	</skill>
 	<skill id="895" toLevel="1" name="Exhilarate">
-		
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -3106,7 +3014,6 @@
 		</effects>
 	</skill>
 	<skill id="896" toLevel="6" name="Rolling Attack">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -3166,7 +3073,6 @@
 		</pvpEffects>
 	</skill>
 	<skill id="897" toLevel="6" name="Double Blast">
-		
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
@@ -3225,7 +3131,6 @@
 		</pvpEffects>
 	</skill>
 	<skill id="898" toLevel="6" name="Tornado Slash">
-		
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectLimit>6-12</affectLimit>
@@ -3285,7 +3190,6 @@
 		</pvpEffects>
 	</skill>
 	<skill id="899" toLevel="6" name="Cat Roar">
-		
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>

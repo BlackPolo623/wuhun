@@ -8043,12 +8043,12 @@ public class Player extends Playable
 					summon.setOwner(player);
 				}
 			}
-
-			// ==========  在這裡添加（注意是小寫 player）==========
-			player.updateWuxianCache();  // 初始化無限成長緩存
+			
+			// ========== 在這裡添加（注意是小寫 player）==========
+			player.updateWuxianCache(); // 初始化無限成長緩存
 			player.updateZscsCache();
 			// ====================================================
-
+			
 			// Recalculate all stats
 			player.getStat().recalculateStats(false);
 			
@@ -12705,7 +12705,7 @@ public class Player extends Playable
 	{
 		return _lastHtmlActionOriginObjId;
 	}
-
+	
 	private boolean validateHtmlAction(Iterable<String> actionIter, String action)
 	{
 		for (String cachedAction : actionIter)
@@ -12715,7 +12715,7 @@ public class Player extends Playable
 			{
 				continue;
 			}
-
+			
 			if (cachedAction.charAt(cachedAction.length() - 1) == AbstractHtmlPacket.VAR_PARAM_START_CHAR)
 			{
 				if (action.startsWith(cachedAction.substring(0, cachedAction.length() - 1).trim()))
@@ -12728,7 +12728,7 @@ public class Player extends Playable
 				return true;
 			}
 		}
-
+		
 		return false;
 	}
 	
@@ -12752,7 +12752,7 @@ public class Player extends Playable
 				return _lastHtmlActionOriginObjId;
 			}
 		}
-
+		
 		return -1;
 	}
 	
@@ -17986,16 +17986,16 @@ public class Player extends Playable
 	private void restoreCrossEvent()
 	{
 		CrossEventManager manager = CrossEventManager.getInstance();
-
+		
 		// 如果活動結束時間為 0 或已過期，直接返回
-		if (manager.getEndTime() == 0 || manager.getEndTime() < (System.currentTimeMillis() / 1000))
+		if ((manager.getEndTime() == 0) || (manager.getEndTime() < (System.currentTimeMillis() / 1000)))
 		{
 			// 清理過期數據（可選）
 			_crossCell.clear();
 			_crossAdvancedReward = 0;
 			return;
 		}
-
+		
 		_crossCell.clear();
 		CrossEventManager.getInstance().resetAdvancedRewards(this);
 		
@@ -18850,7 +18850,7 @@ public class Player extends Playable
 	{
 		return _dualInventorySlot;
 	}
-
+	
 	// ========== 無限成長緩存 ==========
 	private volatile double _wxszPatk = 0;
 	private volatile double _wxszMatk = 0;
@@ -18862,10 +18862,9 @@ public class Player extends Playable
 	private volatile double _wxszCatk = 0;
 	private volatile double _wxszSkillcatk = 0;
 	// =================================
-
+	
 	/**
-	 * 更新無限成長緩存
-	 * 只在登入時和升級屬性後調用
+	 * 更新無限成長緩存 只在登入時和升級屬性後調用
 	 */
 	public void updateWuxianCache()
 	{
@@ -18879,21 +18878,21 @@ public class Player extends Playable
 		_wxszMcatk = 0;
 		_wxszCatk = 0;
 		_wxszSkillcatk = 0;
-
+		
 		// 從數據庫讀取（只讀一次）
 		List<WuxianDataHolder> wxholder = WuxianData.getInstance().getByPlayerId(getObjectId());
-
+		
 		for (WuxianDataHolder wx : wxholder)
 		{
 			String stat = wx.getstat();
 			double value = wx.getshuzhi();
-
+			
 			// 使用 switch 比 if-else 快
 			if (stat == null)
 			{
 				continue;
 			}
-
+			
 			switch (stat.toLowerCase())
 			{
 				case "patk":
@@ -18926,9 +18925,9 @@ public class Player extends Playable
 			}
 		}
 	}
+	
 	/**
-	 * 優化後的版本 - 直接返回緩存值
-	 * 性能提升 1000 倍！
+	 * 優化後的版本 - 直接返回緩存值 性能提升 1000 倍！
 	 */
 	public double getwxsz(String stat)
 	{
@@ -18936,7 +18935,7 @@ public class Player extends Playable
 		{
 			return 0;
 		}
-
+		
 		switch (stat.toLowerCase())
 		{
 			case "patk":
@@ -18961,13 +18960,15 @@ public class Player extends Playable
 				return 0;
 		}
 	}
+	
 	// ==================== 裝備轉生緩存（修正版）====================
-	private volatile int _mainHandZscs = 0;    // 主手轉生
-	private volatile int _offHandZscs = 0;     // 副手轉生
-	private volatile int _armorZscs = 0;       // 防具轉生
-	private volatile int _accessoryZscs = 0;   // 飾品轉生
-	private volatile int _totalZscs = 0;       // 總轉生
+	private volatile int _mainHandZscs = 0; // 主手轉生
+	private volatile int _offHandZscs = 0; // 副手轉生
+	private volatile int _armorZscs = 0; // 防具轉生
+	private volatile int _accessoryZscs = 0; // 飾品轉生
+	private volatile int _totalZscs = 0; // 總轉生
 	// ==========================================================
+	
 	/**
 	 * 更新裝備轉生緩存（修正版：分離主手和副手）
 	 */
@@ -18979,9 +18980,24 @@ public class Player extends Playable
 		_armorZscs = 0;
 		_accessoryZscs = 0;
 		_totalZscs = 0;
-
-		final int[] ALLOWED_SLOTS = {0, 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
-
+		
+		final int[] ALLOWED_SLOTS =
+		{
+			0,
+			1,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14
+		};
+		
 		for (int slot : ALLOWED_SLOTS)
 		{
 			Item item = getInventory().getPaperdollItem(slot);
@@ -18989,19 +19005,19 @@ public class Player extends Playable
 			{
 				continue;
 			}
-
+			
 			int zscs = item.getzscs();
-
+			
 			// 根據槽位編號判斷類型
-			if (slot == 5)  // RHAND (主手)
+			if (slot == 5) // RHAND (主手)
 			{
 				_mainHandZscs += zscs;
 			}
-			else if (slot == 7)  // LHAND (副手)
+			else if (slot == 7) // LHAND (副手)
 			{
 				_offHandZscs += zscs;
 			}
-			else if (slot == 4 || slot == 8 || slot == 9 || slot == 13 || slot == 14)
+			else if ((slot == 4) || (slot == 8) || (slot == 9) || (slot == 13) || (slot == 14))
 			{
 				// NECK(4), REAR(8), LEAR(9), RFINGER(13), LFINGER(14) - 飾品
 				_accessoryZscs += zscs;
@@ -19011,10 +19027,11 @@ public class Player extends Playable
 				// UNDER(0), HEAD(1), CHEST(6), GLOVES(10), LEGS(11), FEET(12) - 防具
 				_armorZscs += zscs;
 			}
-
+			
 			_totalZscs += zscs;
 		}
 	}
+	
 	/**
 	 * 獲取主手轉生次數
 	 */
@@ -19022,7 +19039,7 @@ public class Player extends Playable
 	{
 		return _mainHandZscs;
 	}
-
+	
 	/**
 	 * 獲取副手轉生次數
 	 */
@@ -19030,7 +19047,7 @@ public class Player extends Playable
 	{
 		return _offHandZscs;
 	}
-
+	
 	/**
 	 * 獲取武器（主手+副手）轉生次數總和
 	 */
@@ -19038,7 +19055,7 @@ public class Player extends Playable
 	{
 		return _mainHandZscs + _offHandZscs;
 	}
-
+	
 	/**
 	 * 獲取防具轉生次數總和
 	 */
@@ -19046,7 +19063,7 @@ public class Player extends Playable
 	{
 		return _armorZscs;
 	}
-
+	
 	/**
 	 * 獲取飾品轉生次數總和
 	 */
@@ -19054,7 +19071,7 @@ public class Player extends Playable
 	{
 		return _accessoryZscs;
 	}
-
+	
 	/**
 	 * 獲取所有裝備轉生次數總和
 	 */
@@ -19062,6 +19079,7 @@ public class Player extends Playable
 	{
 		return _totalZscs;
 	}
+	
 	// 转生总次数
 	public int getallzscs()
 	{
@@ -19133,4 +19151,78 @@ public class Player extends Playable
 			}
 		}
 	}
+	
+	public Race getRacesa()
+	{
+		Race race = null;
+		int j = getVariables().getInt("外形幻化", 0);
+		switch (j)
+		{
+			case 0:
+				if (!isSubClassActive())
+				{
+					race = getTemplate().getRace();
+				}
+				else
+				{
+					race = PlayerTemplateData.getInstance().getTemplate(_baseClass).getRace();
+				}
+				break;
+			case 1:
+				race = PlayerTemplateData.getInstance().getTemplate(88).getRace();// 人类战士
+				break;
+			case 2:
+				race = PlayerTemplateData.getInstance().getTemplate(94).getRace();// 人类法师
+				break;
+			case 3:
+				race = Race.ELF;
+				break;
+			case 4:
+				race = Race.DARK_ELF;
+				break;
+			case 5:
+				race = PlayerTemplateData.getInstance().getTemplate(113).getRace();// 人类法师
+				break;
+			case 6:
+				race = PlayerTemplateData.getInstance().getTemplate(115).getRace();// 人类法师
+				break;
+			case 7:
+				race = Race.DWARF;
+				break;
+			case 8:
+				race = Race.KAMAEL;
+				break;
+			case 9:
+				race = PlayerTemplateData.getInstance().getTemplate(199).getRace();// 死骑人
+				break;
+			case 10:
+				race = PlayerTemplateData.getInstance().getTemplate(203).getRace();// 死骑精灵
+				break;
+			case 11:
+				race = PlayerTemplateData.getInstance().getTemplate(207).getRace();// 死骑黑灵
+				break;
+			case 12:
+				race = PlayerTemplateData.getInstance().getTemplate(220).getRace();// 先锋
+			case 13:
+				race = PlayerTemplateData.getInstance().getTemplate(224).getRace();// 新刺客
+				break;
+			case 14:
+				race = PlayerTemplateData.getInstance().getTemplate(228).getRace();// 新刺客
+				break;
+			case 15:
+				race = Race.HIGH_ELF;// 新刺客
+				break;
+			case 16:
+				race = PlayerTemplateData.getInstance().getTemplate(250).getRace();// 新刺客
+				break;
+			case 17:
+				race = PlayerTemplateData.getInstance().getTemplate(254).getRace();// 新刺客
+				break;
+			case 18:
+				race = PlayerTemplateData.getInstance().getTemplate(263).getRace();// 新刺客
+				break;
+		}
+		return race;
+	}
+	
 }

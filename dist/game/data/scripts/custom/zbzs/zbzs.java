@@ -30,6 +30,10 @@ public class zbzs extends Script
 			0, 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14  // UNDER, HEAD, NECK, RHAND, CHEST, LHAND, REAR, LEAR, GLOVES, LEGS, FEET, RFINGER, LFINGER
 	};
 
+	private static final int MODE_1 = 1;
+	private static final int MODE_10 = 10;
+	private static final int MODE_50 = 50;
+
 	// 成功率設定陣列 [起始次數, 結束次數, 成功率%]
 	private static final int[][] SUCCESS_RATES = {
 			{0, 49, 70},
@@ -57,17 +61,27 @@ public class zbzs extends Script
 			return onFirstTalk(npc, player);
 		}
 		else if (event.startsWith("zhuans"))
-		{ // 升級請求
+		{
 			StringTokenizer st = new StringTokenizer(event.substring(7), " ");
 			int page = Integer.parseInt(st.nextToken());
 			showUpgradePage(player, page);
 		}
 		else if (event.startsWith("shuxin"))
-		{ // 升級請求
+		{
 			StringTokenizer st = new StringTokenizer(event.substring(7), " ");
 			int objectId = Integer.parseInt(st.nextToken());
 			int page = Integer.parseInt(st.nextToken());
 			upgradeItem(player, objectId, page);
+		}
+		else if (event.startsWith("mode_"))
+		{
+			// 切换模式
+			StringTokenizer st = new StringTokenizer(event.substring(5), " ");
+			int mode = Integer.parseInt(st.nextToken());  // 先获取模式数字
+			int page = st.hasMoreTokens() ? Integer.parseInt(st.nextToken()) : 1;  // 再获取页码
+
+			player.getVariables().set("zbzs_mode", mode);
+			showUpgradePage(player, page);
 		}
 
 		return null;
@@ -81,38 +95,50 @@ public class zbzs extends Script
 			return;
 		}
 
-		int randomSuccessRate = getRandomSuccessRate(item);
+		// 获取当前模式
+		int mode = player.getVariables().getInt("zbzs_mode", MODE_1);
+
 		int currentUpgradeCount = item.getVariables().getInt(ItemVariables.zbzscsu, 0);
 
-		if (currentUpgradeCount < Custom.zhuangbeizszdz)
+		// 检查是否超过最大值
+		if (currentUpgradeCount >= Custom.zhuangbeizszdz)
 		{
-			if (player.getInventory().getInventoryItemCount(REQUIRED_ITEM_ID, 0) >= REQUIRED_ITEM_COUNT)
-			{
-				if (Rnd.get(100) <= randomSuccessRate)
-				{
-					player.destroyItemByItemId(null, REQUIRED_ITEM_ID, REQUIRED_ITEM_COUNT, null, true);
+			player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "裝備轉生", "達到最大轉生次數" + Custom.zhuangbeizszdz));
+			showUpgradePage(player, page);
+			return;
+		}
 
-					item.getVariables().set(ItemVariables.zbzscsu, currentUpgradeCount + 1);
-					item.getVariables().storeMe();
-					player.updateZscsCache();
-					player.broadcastUserInfo();
-					player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "裝備轉生", "成功轉生"));
-				}
-				else
-				{
-					player.destroyItemByItemId(null, REQUIRED_ITEM_ID, REQUIRED_ITEM_COUNT, null, true);
-					player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "裝備轉生", "轉生失敗扣除材料"));
-				}
-			}
-			else
-			{
-				player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "裝備轉生", "道具不足: " + REQUIRED_ITEM_COUNT));
-			}
+		// 计算实际可升级次数（不超过上限）
+		int canUpgrade = Math.min(mode, Custom.zhuangbeizszdz - currentUpgradeCount);
+		long requiredCount = REQUIRED_ITEM_COUNT * canUpgrade;
+
+		// 检查材料
+		if (player.getInventory().getInventoryItemCount(REQUIRED_ITEM_ID, 0) < requiredCount)
+		{
+			player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "裝備轉生", "道具不足: 需要" + requiredCount + "個"));
+			showUpgradePage(player, page);
+			return;
+		}
+
+		// 获取成功率（使用当前等级的成功率）
+		int randomSuccessRate = getRandomSuccessRate(item);
+
+		// 判断成功
+		if (Rnd.get(100) <= randomSuccessRate)
+		{
+			player.destroyItemByItemId(null, REQUIRED_ITEM_ID, requiredCount, null, true);
+			item.getVariables().set(ItemVariables.zbzscsu, currentUpgradeCount + canUpgrade);
+			item.getVariables().storeMe();
+			player.updateZscsCache();
+			player.broadcastUserInfo();
+			player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "裝備轉生", "成功轉生 +" + canUpgrade + " 次"));
 		}
 		else
 		{
-			player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "裝備轉生", "達到最大轉生次數" + Custom.zhuangbeizszdz));
+			player.destroyItemByItemId(null, REQUIRED_ITEM_ID, requiredCount, null, true);
+			player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "裝備轉生", "轉生失敗，扣除材料"));
 		}
+
 		showUpgradePage(player, page);
 	}
 
@@ -142,7 +168,6 @@ public class zbzs extends Script
 	{
 		List<Item> items = new ArrayList<>();
 
-		// 遍歷允許的槽位，獲取已裝備的裝備
 		for (int slot : ALLOWED_SLOTS)
 		{
 			Item item = player.getInventory().getPaperdollItem(slot);
@@ -155,7 +180,6 @@ public class zbzs extends Script
 		int totalItems = items.size();
 		int totalPages = (int) Math.ceil((double) totalItems / ITEMS_PER_PAGE);
 
-		// 確保 page 在有效範圍內
 		if (page < 1)
 		{
 			page = 1;
@@ -169,7 +193,48 @@ public class zbzs extends Script
 		msg.setFile(player, "data/scripts/custom/zbzs/zbzsck.htm");
 		msg.replace("%list%", generateItemTable(player, page, items));
 
-		// 生成分頁按鈕
+		// 获取当前模式
+		int currentMode = player.getVariables().getInt("zbzs_mode", MODE_1);
+
+		// 生成模式按钮
+		// 生成模式按钮
+		StringBuilder modeButtons = new StringBuilder();
+		modeButtons.append("<table width=\"280\"><tr>");
+
+// +1 按钮
+		if (currentMode == MODE_1)
+		{
+			modeButtons.append("<td width=\"93\" align=\"center\" height=\"25\"><font color=\"FFFF00\" size=\"3\">【+1】</font></td>");
+		}
+		else
+		{
+			modeButtons.append("<td width=\"93\" align=\"center\"><button value=\"+1\" action=\"bypass -h Quest zbzs mode_1 ").append(page).append("\" width=\"85\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\"></td>");
+		}
+
+// +10 按钮
+		if (currentMode == MODE_10)
+		{
+			modeButtons.append("<td width=\"94\" align=\"center\" height=\"25\"><font color=\"FFFF00\" size=\"3\">【+10】</font></td>");
+		}
+		else
+		{
+			modeButtons.append("<td width=\"94\" align=\"center\"><button value=\"+10\" action=\"bypass -h Quest zbzs mode_10 ").append(page).append("\" width=\"85\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\"></td>");
+		}
+
+	// +100 按钮
+		if (currentMode == MODE_50)
+		{
+			modeButtons.append("<td width=\"93\" align=\"center\" height=\"25\"><font color=\"FFFF00\" size=\"3\">【+50】</font></td>");
+		}
+		else
+		{
+			modeButtons.append("<td width=\"93\" align=\"center\"><button value=\"+50\" action=\"bypass -h Quest zbzs mode_50 ").append(page).append("\" width=\"85\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\"></td>");
+		}
+
+		modeButtons.append("</tr></table>");
+
+		msg.replace("%mode_buttons%", modeButtons.toString());
+
 		StringBuilder prevButton = new StringBuilder();
 		StringBuilder nextButton = new StringBuilder();
 

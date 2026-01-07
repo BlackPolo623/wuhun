@@ -184,12 +184,56 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			}
 			
 			buffer.writeByte(_player.isGM());
-			buffer.writeByte(_player.getRace().ordinal());
+			int j = _player.getVariables().getInt("外形幻化", 0);
+			int z = 0;
+			switch (j)
+			{
+				case 1:
+					z = 88;
+					break;
+				case 2:
+					z = 94;
+					break;
+				case 5:
+					z = 113;
+					break;
+				case 6:
+					z = 115;
+					break;
+				case 9:
+					z = 199;
+					break;
+				case 10:
+					z = 203;
+					break;
+				case 11:
+					z = 207;
+					break;
+				case 12:
+					z = 220;
+					break;
+				case 13:
+					z = 224;
+					break;
+				case 14:
+					z = 228;
+					break;
+				case 16:
+					z = 250;
+					break;
+				case 17:
+					z = 254;
+					break;
+				case 18:
+					z = 263;
+					break;
+			}
+			buffer.writeByte(j > 0 ? _player.getRacesa().ordinal() : _player.getRace().ordinal());
 			buffer.writeByte(_appearance.isFemale());
-			buffer.writeInt(_player.getBaseTemplate().getPlayerClass().getRootClass().getId());
-			buffer.writeInt(_player.getPlayerClass().getId());
+			buffer.writeInt(z > 0 ? z : _player.getBaseTemplate().getPlayerClass().getRootClass().getId());
+			buffer.writeInt(z > 0 ? z : _player.getPlayerClass().getId());
 			buffer.writeInt(_player.getLevel()); // 270
-			buffer.writeInt(_player.getPlayerClass().getId()); // 286
+			buffer.writeInt(z > 0 ? z : _player.getPlayerClass().getId()); // 286
 		}
 		
 		if (containsMask(UserInfoType.BASE_STATS))
