@@ -323,7 +323,6 @@ public abstract class Creature extends WorldObject
 	private OnCreatureAttackAvoid _onCreatureAttackAvoid = null;
 	public OnCreatureSkillFinishCast onCreatureSkillFinishCast = null;
 	public OnCreatureSkillUse onCreatureSkillUse = null;
-
 	
 	/**
 	 * Creates a creature.
@@ -920,12 +919,12 @@ public abstract class Creature extends WorldObject
 		{
 			// 檢查是否為跑商專用傳送
 			String allowedDestination = asPlayer().getVariables().getString("RunMerchant_AllowTeleport", "");
-
+			
 			if (!allowedDestination.isEmpty())
 			{
 				// 驗證目標坐標是否匹配
 				String currentDestination = xValue + "," + yValue + "," + zValue;
-
+				
 				if (allowedDestination.equals(currentDestination))
 				{
 					// 坐標匹配，清除標記並允許傳送
@@ -946,7 +945,7 @@ public abstract class Creature extends WorldObject
 				return;
 			}
 		}
-
+		
 		int x = xValue;
 		int y = yValue;
 		int z = _isFlying ? zValue : GeoEngine.getInstance().getHeight(x, y, zValue);
@@ -1491,51 +1490,99 @@ public abstract class Creature extends WorldObject
 			attack.addHit(hit);
 			shotConsumed = hit.isShotUsed();
 		}
-		
-		// H5 Changes: without Polearm Mastery (skill 216) max simultaneous attacks is 3 (1 by default + 2 in skill 3599).
-		int attackCountMax = (int) _stat.getValue(Stat.ATTACK_COUNT_MAX, 1);
-		if ((attackCountMax > 1) && (_stat.getValue(Stat.PHYSICAL_POLEARM_TARGET_SINGLE, 0) <= 0))
+		double wc = getWeaponChange();
+		if (wc >= 1)
 		{
-			final double headingAngle = LocationUtil.convertHeadingToDegree(getHeading());
-			final int maxRadius = _stat.getPhysicalAttackRadius();
-			final int physicalAttackAngle = _stat.getPhysicalAttackAngle();
-			for (Creature obj : World.getInstance().getVisibleObjectsInRange(this, Creature.class, maxRadius))
+			// H5 Changes: without Polearm Mastery (skill 216) max simultaneous attacks is 3 (1 by default + 2 in skill 3599).
+			double attackCountMax = getWeaponChangeCount();
+			if ((attackCountMax > 1) && (_stat.getValue(Stat.PHYSICAL_POLEARM_TARGET_SINGLE, 0) <= 0))
 			{
-				// Skip main target.
-				if (obj == target)
+				final double headingAngle = LocationUtil.convertHeadingToDegree(getHeading());
+				final int maxRadius = (int) getWeaponChangeRadius();
+				final int physicalAttackAngle = (int) getWeaponChangeRadius();
+				for (Creature obj : World.getInstance().getVisibleObjectsInRange(this, Creature.class, maxRadius))
 				{
-					continue;
-				}
-				
-				// Skip dead or fake dead target.
-				if (obj.isAlikeDead())
-				{
-					continue;
-				}
-				
-				// Check if target is auto attackable.
-				if (!obj.isAutoAttackable(this))
-				{
-					continue;
-				}
-				
-				// Check if target is within attack angle.
-				if (Math.abs(calculateDirectionTo(obj) - headingAngle) > physicalAttackAngle)
-				{
-					continue;
-				}
-				
-				// Launch a simple attack against the additional target.
-				hit = generateHit(obj, weapon, shotConsumed, false);
-				attack.addHit(hit);
-				shotConsumed = hit.isShotUsed();
-				if (--attackCountMax <= 0)
-				{
-					break;
+					// Skip main target.
+					if (obj == target)
+					{
+						continue;
+					}
+					
+					// Skip dead or fake dead target.
+					if (obj.isAlikeDead())
+					{
+						continue;
+					}
+					
+					// Check if target is auto attackable.
+					if (!obj.isAutoAttackable(this))
+					{
+						continue;
+					}
+					
+					// Check if target is within attack angle.
+					if (Math.abs(calculateDirectionTo(obj) - headingAngle) > physicalAttackAngle)
+					{
+						continue;
+					}
+					
+					// Launch a simple attack against the additional target.
+					hit = generateHit(obj, weapon, shotConsumed, false);
+					attack.addHit(hit);
+					shotConsumed = hit.isShotUsed();
+					if (--attackCountMax <= 0)
+					{
+						break;
+					}
 				}
 			}
 		}
-		
+		else
+		{
+			// H5 Changes: without Polearm Mastery (skill 216) max simultaneous attacks is 3 (1 by default + 2 in skill 3599).
+			int attackCountMax = (int) _stat.getValue(Stat.ATTACK_COUNT_MAX, 1);
+			if ((attackCountMax > 1) && (_stat.getValue(Stat.PHYSICAL_POLEARM_TARGET_SINGLE, 0) <= 0))
+			{
+				final double headingAngle = LocationUtil.convertHeadingToDegree(getHeading());
+				final int maxRadius = _stat.getPhysicalAttackRadius();
+				final int physicalAttackAngle = _stat.getPhysicalAttackAngle();
+				for (Creature obj : World.getInstance().getVisibleObjectsInRange(this, Creature.class, maxRadius))
+				{
+					// Skip main target.
+					if (obj == target)
+					{
+						continue;
+					}
+					
+					// Skip dead or fake dead target.
+					if (obj.isAlikeDead())
+					{
+						continue;
+					}
+					
+					// Check if target is auto attackable.
+					if (!obj.isAutoAttackable(this))
+					{
+						continue;
+					}
+					
+					// Check if target is within attack angle.
+					if (Math.abs(calculateDirectionTo(obj) - headingAngle) > physicalAttackAngle)
+					{
+						continue;
+					}
+					
+					// Launch a simple attack against the additional target.
+					hit = generateHit(obj, weapon, shotConsumed, false);
+					attack.addHit(hit);
+					shotConsumed = hit.isShotUsed();
+					if (--attackCountMax <= 0)
+					{
+						break;
+					}
+				}
+			}
+		}
 		return attack;
 	}
 	
@@ -5065,6 +5112,21 @@ public abstract class Creature extends WorldObject
 		return _stat.getPAtk();
 	}
 	
+	public double getWeaponChange()
+	{
+		return _stat.getWeaponChange();
+	}
+	
+	public double getWeaponChangeRadius()
+	{
+		return _stat.getWeaponChange();
+	}
+	
+	public double getWeaponChangeCount()
+	{
+		return _stat.getWeaponChange();
+	}
+	
 	public int getWeaponBonusPAtk()
 	{
 		return _stat.getWeaponBonusPAtk();
@@ -5285,17 +5347,17 @@ public abstract class Creature extends WorldObject
 	{
 		reduceCurrentHp(amount, attacker, skill, false, false, false, false);
 	}
-
+	
 	public void reduceCurrentHp(double amountValue, Creature attacker, Skill skill, boolean isDOT, boolean directlyToHp, boolean critical, boolean reflect)
 	{
 		double amount = amountValue;
-
+		
 		// Auto attacks make you stand up.
 		if (isPlayer() && asPlayer().isFakeDeath() && PlayerConfig.FAKE_DEATH_DAMAGE_STAND && (amount > 0))
 		{
 			stopFakeDeath(true);
 		}
-
+		
 		// Notify of this attack only if there is an attacking creature.
 		if ((attacker != null) && EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_DAMAGE_DEALT, attacker))
 		{
@@ -5303,7 +5365,7 @@ public abstract class Creature extends WorldObject
 			{
 				_onCreatureDamageDealt = new OnCreatureDamageDealt();
 			}
-
+			
 			_onCreatureDamageDealt.setAttacker(attacker);
 			_onCreatureDamageDealt.setTarget(this);
 			_onCreatureDamageDealt.setDamage(amount);
@@ -5313,14 +5375,14 @@ public abstract class Creature extends WorldObject
 			_onCreatureDamageDealt.setReflect(reflect);
 			EventDispatcher.getInstance().notifyEvent(_onCreatureDamageDealt, attacker);
 		}
-
+		
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_DAMAGE_RECEIVED, this))
 		{
 			if (_onCreatureDamageReceived == null)
 			{
 				_onCreatureDamageReceived = new OnCreatureDamageReceived();
 			}
-
+			
 			_onCreatureDamageReceived.setAttacker(attacker);
 			_onCreatureDamageReceived.setTarget(this);
 			_onCreatureDamageReceived.setDamage(amount);
@@ -5341,10 +5403,10 @@ public abstract class Creature extends WorldObject
 				}
 			}
 		}
-
+		
 		double elementalDamage = 0;
 		boolean elementalCrit = false;
-
+		
 		// Calculate PvP/PvE damage received. It is a post-attack stat.
 		if (attacker != null)
 		{
@@ -5356,7 +5418,7 @@ public abstract class Creature extends WorldObject
 			{
 				amount *= (100 + Math.max(_stat.getValue(Stat.PVE_DAMAGE_TAKEN), -80)) / 100;
 			}
-
+			
 			if (attacker.isRaid() || attacker.isRaidMinion())
 			{
 				amount *= (100 + Math.max(_stat.getValue(Stat.PVE_DAMAGE_TAKEN_RAID), -80)) / 100;
@@ -5365,7 +5427,7 @@ public abstract class Creature extends WorldObject
 			{
 				amount *= (100 + Math.max(_stat.getValue(Stat.PVE_DAMAGE_TAKEN_MONSTER), -80)) / 100;
 			}
-
+			
 			if (!reflect)
 			{
 				elementalCrit = Formulas.calcSpiritElementalCrit(attacker, this);
@@ -5373,7 +5435,7 @@ public abstract class Creature extends WorldObject
 				amount += elementalDamage;
 			}
 		}
-
+		
 		// ========================================
 		// 限傷系統 - Damage cap should not affect GM characters
 		// ========================================
@@ -5383,7 +5445,7 @@ public abstract class Creature extends WorldObject
 			if (damageCap > 0)
 			{
 				double actualDamageCap = damageCap; // 預設使用基礎傷害上限
-
+				
 				// ========================================
 				// PvP限傷區 - 玩家對玩家（含魂環加成）
 				// ========================================
@@ -5391,7 +5453,7 @@ public abstract class Creature extends WorldObject
 				{
 					// 獲取攻擊者（處理玩家和召喚獸）
 					final Player attackerPlayer = attacker.isPlayer() ? attacker.asPlayer() : attacker.asSummon().getOwner();
-
+					
 					if (attackerPlayer != null)
 					{
 						// 魂環系統 - PvP時才生效
@@ -5408,11 +5470,14 @@ public abstract class Creature extends WorldObject
 				else if (attacker.isPlayable() && (isMonster() || isRaid()))
 				{
 					final Player attackerPlayer = attacker.isPlayer() ? attacker.asPlayer() : attacker.asSummon().getOwner();
-
+					
 					if (attackerPlayer != null)
 					{
-						final int[] SPECIAL_MONSTER_IDS = {61000};
-
+						final int[] SPECIAL_MONSTER_IDS =
+						{
+							61000
+						};
+						
 						boolean isSpecialMonster = false;
 						for (int monsterId : SPECIAL_MONSTER_IDS)
 						{
@@ -5422,7 +5487,7 @@ public abstract class Creature extends WorldObject
 								break;
 							}
 						}
-
+						
 						if (isSpecialMonster)
 						{
 							int soulRingCount = attackerPlayer.getSoulringCount();
@@ -5437,7 +5502,20 @@ public abstract class Creature extends WorldObject
 				amount = Math.min(amount, actualDamageCap);
 			}
 		}
-
+		// ========================================
+		// 最終傷害系統 - 統一適用於所有攻擊
+		// ========================================
+		if (attacker != null)
+		{
+			// 從攻擊者屬性獲取最終傷害加成百分比
+			double finalDamageBonus = attacker.getStat().getValue(Stat.FINAL_DAMAGE_RATE, 0);
+			
+			// 套用最終傷害倍率：最終傷害 = 原傷害 × (100% + 加成%)
+			if (finalDamageBonus != 0)
+			{
+				amount *= (1.0 + (finalDamageBonus / 100.0));
+			}
+		}
 		// ========================================
 		// PvP魂環保護機制
 		// ========================================
@@ -5445,13 +5523,12 @@ public abstract class Creature extends WorldObject
 		{
 			final Player attackerPlayer = attacker.isPlayer() ? attacker.asPlayer() : attacker.asSummon().getOwner();
 			final Player targetPlayer = asPlayer();
-
+			
 			// 檢查攻擊者或被攻擊者是否魂環不足
-			if (attackerPlayer.getSoulringCount() <= Custom.MinSoulRingForPVP ||
-					targetPlayer.getSoulringCount() <= Custom.MinSoulRingForPVP)
+			if ((attackerPlayer.getSoulringCount() <= Custom.MinSoulRingForPVP) || (targetPlayer.getSoulringCount() <= Custom.MinSoulRingForPVP))
 			{
 				amount = 0;
-
+				
 				// 通知攻擊者
 				if (attackerPlayer.getSoulringCount() <= Custom.MinSoulRingForPVP)
 				{
@@ -5461,7 +5538,7 @@ public abstract class Creature extends WorldObject
 				{
 					attackerPlayer.sendMessage("目標玩家魂環數量不足，受到PvP保護！");
 				}
-
+				
 				// 通知被攻擊者
 				if (targetPlayer.getSoulringCount() <= Custom.MinSoulRingForPVP)
 				{
@@ -5469,7 +5546,7 @@ public abstract class Creature extends WorldObject
 				}
 			}
 		}
-
+		
 		if (ChampionMonstersConfig.CHAMPION_ENABLE && isChampion() && (ChampionMonstersConfig.CHAMPION_HP != 0))
 		{
 			_status.reduceHp(amount / ChampionMonstersConfig.CHAMPION_HP, attacker, (skill == null) || !skill.isToggle(), isDOT, false);
@@ -5482,19 +5559,19 @@ public abstract class Creature extends WorldObject
 			{
 				amount = 0;
 			}
-
+			
 			player.getStatus().reduceHp(amount, attacker, skill, (skill == null) || !skill.isToggle(), isDOT, false, directlyToHp);
 		}
 		else
 		{
 			_status.reduceHp(amount, attacker, (skill == null) || !skill.isToggle(), isDOT, false);
 		}
-
+		
 		if (attacker != null)
 		{
 			attacker.sendDamageMessage(this, skill, (int) amount, elementalDamage, critical, false, elementalCrit);
 		}
-
+		
 		if (isMonster() && (attacker instanceof Playable))
 		{
 			final Player attackerPlayer = attacker.asPlayer();
@@ -5621,7 +5698,7 @@ public abstract class Creature extends WorldObject
 			// Source http://l2p.bravehost.com/weightlimit.html (May 2007)
 			// 負重 調整
 			double baseLoad = Math.floor(BaseStat.CON.calcBonus(this) * 69000 * PlayerConfig.ALT_WEIGHT_LIMIT);
-			baseLoad += (asPlayer().getSoulringCount()) * 1000 ;
+			baseLoad += (asPlayer().getSoulringCount()) * 1000;
 			return (int) _stat.getValue(Stat.WEIGHT_LIMIT, baseLoad);
 		}
 		

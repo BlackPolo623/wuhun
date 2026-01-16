@@ -1,27 +1,11 @@
-/*
- * Copyright (c) 2013 L2jMobius
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
- * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
 package instances.WaterTemple;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ScheduledFuture;
 
+import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.managers.ZoneManager;
@@ -42,50 +26,58 @@ import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 
 /**
- * @author Serenitty
+ * 水之神殿副本 - 優化版
+ * @author Serenitty (原作者)
+ * @author 黑普羅 (優化)
  */
 public class WaterTemple extends InstanceScript
 {
 	// NPCs
 	private static final int WATER_SLIME = 19109;
 	private static final int TROOP_CHIEFT = 19108;
-	
 	private static final int BREATH_WATER = 19111;
 	private static final int UNDINE = 19110;
 	private static final int EROSION_PRIEST = 19114;
-	
 	private static final int TEMPLE_GUARDIAN_WARRIOR = 19112;
 	private static final int TEMPLE_GUARDIAN_WIZARD = 19113;
-	
-	private static final int ABER = 19115; // RaidBoss
-	private static final int ELLE = 19116; // RaidBoss
-	
+	private static final int ABER = 19115;
+	private static final int ELLE = 19116;
 	private static final int AOS = 34464;
 	private static final int ANIDA = 34463;
-	
+
+	// 機率設定
 	private static final int FLOOD_CHANCE = 5;
-	private static final int PLUS_BOSS_CHANCE = 20;
-	
+	private static final int ELLE_BOSS_CHANCE = 20;
+
+	// 觸發器ID
 	private static final int FLOOD_STAGE_1 = 22250130;
 	private static final int FLOOD_STAGE_2 = 22250132;
 	private static final int FLOOD_STAGE_3 = 22250134;
-	
 	private static final int FLOOD_STAGE_FINAL_FLOOR_1 = 22250144;
 	private static final int FLOOD_STAGE_FINAL_FLOOR_2 = 22250146;
-	
-	// Teleports
+
+	// 傳送點
 	private static final Location TELEPORT_STAGE_2 = new Location(71101, 242498, -8425);
 	private static final Location TELEPORT_STAGE_3 = new Location(72944, 242782, -7651);
 	private static final Location TELEPORT_OUTSIDE = new Location(83763, 147184, -3404);
-	
-	// Zones
+
+	// 區域
 	private static final ZoneType WATER_ZONE_1 = ZoneManager.getInstance().getZoneByName("Water Temple 1");
 	private static final ZoneType WATER_ZONE_2 = ZoneManager.getInstance().getZoneByName("Water Temple 2");
 	private static final ZoneType WATER_ZONE_3 = ZoneManager.getInstance().getZoneByName("Water Temple 3");
-	
-	// Misc
+
+	// 副本ID
 	private static final int TEMPLATE_ID = 2008;
-	
+
+	// 階段怪物數量配置
+	private static final Map<Integer, Integer> STAGE_MONSTER_COUNTS = new HashMap<>();
+	static
+	{
+		STAGE_MONSTER_COUNTS.put(1, 20); // Stage1需要擊殺20隻怪
+		STAGE_MONSTER_COUNTS.put(2, 15); // Stage2需要擊殺15隻怪
+		STAGE_MONSTER_COUNTS.put(3, 12); // Stage3需要擊殺12隻怪
+	}
+
 	public WaterTemple()
 	{
 		super(TEMPLATE_ID);
@@ -93,14 +85,12 @@ public class WaterTemple extends InstanceScript
 		addInstanceLeaveId(TEMPLATE_ID);
 		addInstanceCreatedId(TEMPLATE_ID);
 		addSpawnId(EROSION_PRIEST);
-		addKillId(WATER_SLIME, TROOP_CHIEFT);
-		addKillId(BREATH_WATER, UNDINE);
-		addKillId(TEMPLE_GUARDIAN_WARRIOR, TEMPLE_GUARDIAN_WIZARD);
-		addKillId(ABER, ELLE);
+		addKillId(WATER_SLIME, TROOP_CHIEFT, BREATH_WATER, UNDINE,
+				TEMPLE_GUARDIAN_WARRIOR, TEMPLE_GUARDIAN_WIZARD, ABER, ELLE);
 		addAttackId(ABER, ELLE);
 		addFirstTalkId(AOS, ANIDA);
 	}
-	
+
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
@@ -108,169 +98,101 @@ public class WaterTemple extends InstanceScript
 		{
 			case "ENTER":
 			{
-				if (player.isInParty())
-				{
-					final Party party = player.getParty();
-					final boolean isInCC = party.isInCommandChannel();
-					final List<Player> members = isInCC ? party.getCommandChannel().getMembers() : party.getMembers();
-					for (Player member : members)
-					{
-						if (!member.isInsideRadius3D(npc, 1000))
-						{
-							player.sendMessage("Player " + member.getName() + " must go closer to Adella.");
-							break;
-						}
-						
-						enterInstance(member, npc, TEMPLATE_ID);
-					}
-				}
-				else if (player.isGM())
-				{
-					enterInstance(player, npc, TEMPLATE_ID);
-					player.sendMessage("SYS: You have entered as GM/Admin to Water Temple.");
-				}
-				else
-				{
-					if (!player.isInsideRadius3D(npc, 1000))
-					{
-						player.sendMessage("You must go closer to Jio.");
-						break;
-					}
-					
-					enterInstance(player, npc, TEMPLATE_ID);
-				}
+				handleEnterInstance(player, npc);
 				break;
 			}
-			
 			case "RESUME_POSITION":
 			{
 				final Instance world = npc.getInstanceWorld();
 				if (world != null)
 				{
-					positionCheck(player, world);
+					teleportToCurrentStage(player, world);
 				}
 				break;
 			}
-			
 			case "EROSION_SPAWN":
 			{
-				final Instance world = npc.getInstanceWorld();
-				if ((world != null) && (world.getNpc(EROSION_PRIEST) == null))
-				{
-					world.spawnGroup("ErosionPriest");
-					startQuestTimer("EROSION_SPAWN", 80000, npc, null);
-				}
+				handleErosionSpawn(npc);
 				break;
 			}
 			case "START_SPAWN":
 			{
-				final Instance world = npc.getInstanceWorld();
-				if (world != null)
-				{
-					world.getPlayers().forEach(p -> p.sendPacket(new ExSendUIEvent(p, false, false, (int) (world.getRemainingTime() / 1000), 0, NpcStringId.WATER_TEMPLE_S_REMAINING_TIME)));
-					world.broadcastPacket(new ExShowScreenMessage(NpcStringId.PLEASE_KILL_THE_MONSTERS_THAT_THREATEN_OUR_MOTHER_TREE, 2, 10000, true));
-					world.spawnGroup("Stage1");
-					if (world.getNpc(AOS) != null)
-					{
-						npc.deleteMe();
-					}
-				}
+				handleStartSpawn(npc);
 				break;
 			}
 			case "FINAL_BOSS":
 			{
-				final Instance world = npc.getInstanceWorld();
-				if (world != null)
-				{
-					int randomChance = Rnd.get(100);
-					if (randomChance < PLUS_BOSS_CHANCE)
-					{
-						world.broadcastPacket(new ExShowScreenMessage(NpcStringId.GODDESS_OF_WATER_ELLE_APPEARS, 2, 10000, true));
-						
-						addSpawn(ELLE, 71796, 242611, -6918, 16145, false, 0, false, world.getId());
-					}
-					else
-					{
-						world.broadcastPacket(new ExShowScreenMessage(NpcStringId.EVA_S_ADEPT_ABER_APPEARS, 2, 10000, true));
-						
-						addSpawn(ABER, 71796, 242611, -6918, 16145, false, 0, false, world.getId());
-					}
-					
-					world.broadcastPacket(new OnEventTrigger(FLOOD_STAGE_FINAL_FLOOR_1, true));
-					world.broadcastPacket(new OnEventTrigger(FLOOD_STAGE_FINAL_FLOOR_2, true));
-					startQuestTimer("EROSION_SPAWN", 50000, npc, null);
-				}
+				handleFinalBoss(npc, player);
 				break;
 			}
 		}
-		
 		return null;
 	}
-	
+
 	@Override
 	public void onInstanceEnter(Player player, Instance world)
 	{
-		final int currentStage = world.getParameters().getInt("stage", 0);
+		// 發送UI計時器
+		player.sendPacket(new ExSendUIEvent(player, false, false,
+				(int) (world.getRemainingTime() / 1000), 0,
+				NpcStringId.WATER_TEMPLE_S_REMAINING_TIME));
+
+		// 根據當前階段顯示對應的水淹效果
+		final int currentStage = world.getParameters().getInt("stage", 1);
+		updateFloodVisuals(player, currentStage);
+
 		world.getParameters().set("isOutside", false);
-		switch (currentStage)
-		{
-			case 2:
-			{
-				player.sendPacket(new OnEventTrigger(FLOOD_STAGE_1, true));
-				break;
-			}
-			case 3:
-			{
-				player.sendPacket(new OnEventTrigger(FLOOD_STAGE_2, true));
-				break;
-			}
-			case 4:
-			{
-				player.sendPacket(new OnEventTrigger(FLOOD_STAGE_3, true));
-				player.sendPacket(new OnEventTrigger(FLOOD_STAGE_FINAL_FLOOR_1, true));
-				player.sendPacket(new OnEventTrigger(FLOOD_STAGE_FINAL_FLOOR_2, true));
-				break;
-			}
-		}
-		
-		sendResumeUi(player, world);
 	}
-	
+
 	@Override
 	public void onInstanceCreated(Instance world, Player player)
 	{
+		// 初始化副本參數
 		world.getParameters().set("stage", 1);
-		
+		world.getParameters().set("stage1_kills", 0);
+		world.getParameters().set("stage2_kills", 0);
+		world.getParameters().set("stage3_kills", 0);
+
+		// 刷新AOS NPC
 		final Npc aosNpc = addSpawn(AOS, 69000, 243368, -8734, 0, false, 0, false, world.getId());
-		aosNpc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.PLEASE_KILL_THE_MONSTERS_THAT_ARE_TRYING_TO_STEAL_THE_WATER_ENERGY_AND_HELP_ME_CLEAR_THIS_PLACE);
+		aosNpc.broadcastSay(ChatType.NPC_GENERAL,
+				NpcStringId.PLEASE_KILL_THE_MONSTERS_THAT_ARE_TRYING_TO_STEAL_THE_WATER_ENERGY_AND_HELP_ME_CLEAR_THIS_PLACE);
 		aosNpc.getAI().setIntention(Intention.MOVE_TO, new Location(70441, 243470, -9179));
-		
+
+		// 10秒後開始刷怪
 		startQuestTimer("START_SPAWN", 10000, aosNpc, null);
 	}
-	
+
 	@Override
-	public void onInstanceLeave(Player player, Instance instance)
+	public void onInstanceLeave(Player player, Instance world)
 	{
-		player.sendPacket(new ExSendUIEvent(player, false, false, 0, 0, NpcStringId.WATER_TEMPLE_S_REMAINING_TIME));
-		instance.getParameters().set("isOutside", true);
+		// 清除UI計時器
+		player.sendPacket(new ExSendUIEvent(player, false, false, 0, 0,
+				NpcStringId.WATER_TEMPLE_S_REMAINING_TIME));
+		world.getParameters().set("isOutside", true);
 	}
-	
+
 	@Override
 	public void onAttack(Npc npc, Player attacker, int damage, boolean isSummon, Skill skill)
 	{
 		final Instance world = npc.getInstanceWorld();
-		if ((attacker != null) && (world != null))
+		if ((world == null) || (attacker == null))
 		{
-			final int playerId = attacker.getObjectId();
-			final String playerKey = "attackers_" + playerId;
-			final boolean didAttack = world.getParameters().getBoolean(playerKey, false);
-			if (!didAttack)
-			{
-				world.getParameters().set(playerKey, true);
-			}
+			return;
 		}
+
+		// 處理寵物/召喚獸的情況
+		Player actualAttacker = attacker;
+		if (isSummon && (attacker.getServitors() != null))
+		{
+			actualAttacker = attacker;
+		}
+
+		// 記錄攻擊者
+		final String playerKey = "attacker_" + actualAttacker.getObjectId();
+		world.getParameters().set(playerKey, true);
 	}
-	
+
 	@Override
 	public void onKill(Npc npc, Player killer, boolean isSummon)
 	{
@@ -279,87 +201,326 @@ public class WaterTemple extends InstanceScript
 		{
 			return;
 		}
-		
-		int currentStage = world.getParameters().getInt("stage", 0);
-		switch (npc.getId())
+
+		final int npcId = npc.getId();
+		final int currentStage = world.getParameters().getInt("stage", 1);
+
+		// 階段1怪物
+		if ((npcId == WATER_SLIME) || (npcId == TROOP_CHIEFT))
 		{
-			case TROOP_CHIEFT:
-			case WATER_SLIME:
-			{
-				handleStage(world, currentStage, 1, FLOOD_STAGE_1, "Stage1", "Stage2", NpcStringId.TO_THE_UPPER_LEVEL_WHERE_MONSTERS_SEEKING_THE_WATER_SPIRIT_S_POWER_DWELL);
-				WATER_ZONE_1.setEnabled(true, world.getId());
-				break;
-			}
-			case BREATH_WATER:
-			case UNDINE:
-			{
-				handleStage(world, currentStage, 2, FLOOD_STAGE_2, "Stage2", "Stage3", NpcStringId.WHERE_MONSTERS_REVEAL_THEIR_TRUE_FACES);
-				WATER_ZONE_2.setEnabled(true, world.getId());
-				break;
-			}
-			case TEMPLE_GUARDIAN_WARRIOR:
-			case TEMPLE_GUARDIAN_WIZARD:
-			{
-				if ((Rnd.get(100) < FLOOD_CHANCE) && (currentStage == 3))
-				{
-					world.broadcastPacket(new OnEventTrigger(FLOOD_STAGE_3, true));
-					WATER_ZONE_3.setEnabled(true, world.getId());
-					world.getParameters().set("stage", currentStage + 1);
-					world.despawnGroup("Stage3");
-					sendEarthquake(world);
-					startQuestTimer("FINAL_BOSS", 4000, npc, killer);
-				}
-				break;
-			}
-			case ABER:
-			case ELLE:
-			{
-				rewardPlayersForBossKill(npc, world);
-				world.finishInstance();
-				addSpawn(ANIDA, 71242, 242569, -6922, 5826, false, 0, false, world.getId());
-				break;
-			}
+			handleStageKill(world, 1, FLOOD_STAGE_1, WATER_ZONE_1, "Stage1", "Stage2",
+					NpcStringId.TO_THE_UPPER_LEVEL_WHERE_MONSTERS_SEEKING_THE_WATER_SPIRIT_S_POWER_DWELL);
+		}
+		// 階段2怪物
+		else if ((npcId == BREATH_WATER) || (npcId == UNDINE))
+		{
+			handleStageKill(world, 2, FLOOD_STAGE_2, WATER_ZONE_2, "Stage2", "Stage3", NpcStringId.WHERE_MONSTERS_REVEAL_THEIR_TRUE_FACES);
+		}
+		// 階段3怪物
+		else if ((npcId == TEMPLE_GUARDIAN_WARRIOR) || (npcId == TEMPLE_GUARDIAN_WIZARD))
+		{
+			handleStage3Kill(world, npc, killer);
+		}
+		// 最終BOSS
+		else if ((npcId == ABER) || (npcId == ELLE))
+		{
+			handleBossKill(npc, world);
 		}
 	}
-	
+
 	@Override
 	public void onSpawn(Npc npc)
 	{
 		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
+			// 讓怪物攻擊所有玩家
 			for (Player player : world.getPlayers())
 			{
 				addAttackPlayerDesire(npc, player);
 			}
 		}
 	}
-	
-	private void handleStage(Instance world, int currentStage, int requiredStage, int floodStage, String despawnGroup, String spawnGroup, NpcStringId message)
+
+	// ==================== 私有方法 ====================
+
+	/**
+	 * 處理進入副本
+	 */
+	private void handleEnterInstance(Player player, Npc npc)
 	{
-		if ((Rnd.get(100) < FLOOD_CHANCE) && (currentStage == requiredStage))
+		if (player.isInParty())
 		{
-			world.broadcastPacket(new OnEventTrigger(floodStage, true));
-			if (message != null)
+			final Party party = player.getParty();
+			final boolean isInCC = party.isInCommandChannel();
+			final List<Player> members = isInCC ? party.getCommandChannel().getMembers() : party.getMembers();
+
+			// 檢查所有成員距離
+			for (Player member : members)
 			{
-				world.broadcastPacket(new ExShowScreenMessage(message, ExShowScreenMessage.BOTTOM_RIGHT, 10000, false));
+				if (!member.isInsideRadius3D(npc, 1000))
+				{
+					player.sendMessage("玩家 " + member.getName() + " 必須靠近NPC。");
+					return;
+				}
 			}
-			
-			world.getParameters().set("stage", currentStage + 1);
-			if (despawnGroup != null)
+
+			// 全部進入
+			for (Player member : members)
 			{
-				world.despawnGroup(despawnGroup);
+				enterInstance(member, npc, TEMPLATE_ID);
 			}
-			
-			if (spawnGroup != null)
+		}
+		else if (player.isGM())
+		{
+			enterInstance(player, npc, TEMPLATE_ID);
+			player.sendMessage("SYS: GM模式進入水之神殿副本。");
+		}
+		else
+		{
+			if (!player.isInsideRadius3D(npc, 1000))
 			{
-				world.spawnGroup(spawnGroup);
+				player.sendMessage("您必須靠近NPC。");
+				return;
 			}
-			
-			sendEarthquake(world);
+			enterInstance(player, npc, TEMPLATE_ID);
 		}
 	}
-	
+
+	/**
+	 * 處理侵蝕祭司刷新
+	 */
+	private void handleErosionSpawn(Npc npc)
+	{
+		final Instance world = npc.getInstanceWorld();
+		if ((world == null))
+		{
+			return; // 副本結束則不再刷新
+		}
+
+		if (world.getNpc(EROSION_PRIEST) == null)
+		{
+			world.spawnGroup("ErosionPriest");
+			// 80秒後再次刷新
+			startQuestTimer("EROSION_SPAWN", 80000, npc, null);
+		}
+	}
+
+	/**
+	 * 處理開始刷怪
+	 */
+	private void handleStartSpawn(Npc npc)
+	{
+		final Instance world = npc.getInstanceWorld();
+		if (world == null)
+		{
+			return;
+		}
+
+		// 發送UI計時器給所有玩家
+		for (Player player : world.getPlayers())
+		{
+			player.sendPacket(new ExSendUIEvent(player, false, false,
+					(int) (world.getRemainingTime() / 1000), 0,
+					NpcStringId.WATER_TEMPLE_S_REMAINING_TIME));
+		}
+
+		// 顯示開始訊息
+		world.broadcastPacket(new ExShowScreenMessage(
+				NpcStringId.PLEASE_KILL_THE_MONSTERS_THAT_THREATEN_OUR_MOTHER_TREE,
+				2, 10000, true));
+
+		// 刷新階段1怪物
+		world.spawnGroup("Stage1");
+
+		// 刪除AOS NPC
+		final Npc aosNpc = world.getNpc(AOS);
+		if (aosNpc != null)
+		{
+			aosNpc.deleteMe();
+		}
+	}
+
+	/**
+	 * 處理階段擊殺計數
+	 */
+	private void handleStageKill(Instance world, int stageNum, int floodTriggerId,
+								 ZoneType waterZone, String despawnGroup, String spawnGroup,
+								 NpcStringId message)
+	{
+		final int currentStage = world.getParameters().getInt("stage", 1);
+		if (currentStage != stageNum)
+		{
+			return; // 不是當前階段則不處理
+		}
+
+		// 增加擊殺計數
+		final String killKey = "stage" + stageNum + "_kills";
+		int kills = world.getParameters().getInt(killKey, 0) + 1;
+		world.getParameters().set(killKey, kills);
+
+		// 取得需要擊殺的總數
+		final int requiredKills = STAGE_MONSTER_COUNTS.getOrDefault(stageNum, 20);
+
+		// 檢查是否清完全部怪物
+		if (kills >= requiredKills)
+		{
+			// 判斷是否觸發水淹
+			if (Rnd.get(100) < FLOOD_CHANCE)
+			{
+				triggerFlood(world, floodTriggerId, waterZone, stageNum + 1,
+						despawnGroup, spawnGroup, message);
+			}
+		}
+	}
+
+	/**
+	 * 處理階段3擊殺(特殊處理)
+	 */
+	private void handleStage3Kill(Instance world, Npc npc, Player killer)
+	{
+		final int currentStage = world.getParameters().getInt("stage", 1);
+		if (currentStage != 3)
+		{
+			return;
+		}
+
+		// 增加擊殺計數
+		int kills = world.getParameters().getInt("stage3_kills", 0) + 1;
+		world.getParameters().set("stage3_kills", kills);
+
+		final int requiredKills = STAGE_MONSTER_COUNTS.getOrDefault(3, 12);
+
+		// 檢查是否清完
+		if (kills >= requiredKills)
+		{
+			// 判斷是否觸發水淹進入BOSS階段
+			if (Rnd.get(100) < FLOOD_CHANCE)
+			{
+				world.broadcastPacket(new OnEventTrigger(FLOOD_STAGE_3, true));
+				WATER_ZONE_3.setEnabled(true, world.getId());
+				world.getParameters().set("stage", 4);
+				world.despawnGroup("Stage3");
+				sendEarthquake(world);
+
+				// 4秒後刷新BOSS
+				startQuestTimer("FINAL_BOSS", 4000, npc, killer);
+			}
+		}
+	}
+
+	/**
+	 * 處理最終BOSS刷新
+	 */
+	private void handleFinalBoss(Npc npc, Player player)
+	{
+		final Instance world = npc.getInstanceWorld();
+		if (world == null)
+		{
+			return;
+		}
+
+		// 隨機決定BOSS
+		final boolean spawnElle = Rnd.get(100) < ELLE_BOSS_CHANCE;
+
+		if (spawnElle)
+		{
+			world.broadcastPacket(new ExShowScreenMessage(
+					NpcStringId.GODDESS_OF_WATER_ELLE_APPEARS, 2, 10000, true));
+			addSpawn(ELLE, 71796, 242611, -6918, 16145, false, 0, false, world.getId());
+		}
+		else
+		{
+			world.broadcastPacket(new ExShowScreenMessage(
+					NpcStringId.EVA_S_ADEPT_ABER_APPEARS, 2, 10000, true));
+			addSpawn(ABER, 71796, 242611, -6918, 16145, false, 0, false, world.getId());
+		}
+
+		// 顯示最終地板水淹效果
+		world.broadcastPacket(new OnEventTrigger(FLOOD_STAGE_FINAL_FLOOR_1, true));
+		world.broadcastPacket(new OnEventTrigger(FLOOD_STAGE_FINAL_FLOOR_2, true));
+
+		// 50秒後刷新侵蝕祭司
+		startQuestTimer("EROSION_SPAWN", 50000, npc, null);
+	}
+
+	/**
+	 * 觸發水淹效果
+	 */
+	private void triggerFlood(Instance world, int floodTriggerId, ZoneType waterZone,
+							  int nextStage, String despawnGroup, String spawnGroup,
+							  NpcStringId message)
+	{
+		// 觸發水淹視覺效果
+		world.broadcastPacket(new OnEventTrigger(floodTriggerId, true));
+
+		// 啟用水區域
+		if (waterZone != null)
+		{
+			waterZone.setEnabled(true, world.getId());
+		}
+
+		// 顯示訊息
+		if (message != null)
+		{
+			world.broadcastPacket(new ExShowScreenMessage(message,
+					ExShowScreenMessage.BOTTOM_RIGHT, 10000, false));
+		}
+
+		// 更新階段
+		world.getParameters().set("stage", nextStage);
+
+		// 清除舊怪物
+		if (despawnGroup != null)
+		{
+			world.despawnGroup(despawnGroup);
+		}
+
+		// 刷新新怪物
+		if (spawnGroup != null)
+		{
+			world.spawnGroup(spawnGroup);
+		}
+
+		// 發送地震效果
+		sendEarthquake(world);
+	}
+
+	/**
+	 * 處理BOSS擊殺獎勵
+	 */
+	private void handleBossKill(Npc npc, Instance world)
+	{
+		// 取消侵蝕祭司刷新計時器
+		cancelQuestTimer("EROSION_SPAWN", npc, null);
+
+		// 發放獎勵
+		final int rewardItemId = (npc.getId() == ABER) ? 101259 : 101260;
+
+		for (Player player : world.getPlayers())
+		{
+			if ((player != null) && player.isOnline())
+			{
+				final String attackerKey = "attacker_" + player.getObjectId();
+				final boolean didAttack = world.getParameters().getBoolean(attackerKey, false);
+
+				if (didAttack)
+				{
+					player.addItem(ItemProcessType.REWARD, rewardItemId, 1, player, true);
+				}
+			}
+		}
+
+		// 刷新出口NPC
+		addSpawn(ANIDA, 71242, 242569, -6922, 5826, false, 0, false, world.getId());
+
+		// 結束副本
+		world.finishInstance();
+	}
+
+	/**
+	 * 發送地震效果
+	 */
 	private void sendEarthquake(Instance world)
 	{
 		for (Player player : world.getPlayers())
@@ -367,53 +528,58 @@ public class WaterTemple extends InstanceScript
 			player.sendPacket(new Earthquake(player, 15, 5));
 		}
 	}
-	
-	private void rewardPlayersForBossKill(Npc npc, Instance world)
+
+	/**
+	 * 根據階段更新水淹視覺效果
+	 */
+	private void updateFloodVisuals(Player player, int stage)
 	{
-		final int finalReward = (npc.getId() == ABER) ? 101259 : 101260;
-		for (Player player : world.getPlayers())
+		switch (stage)
 		{
-			if ((player != null) && player.isOnline())
+			case 2:
 			{
-				final int playerId = player.getObjectId();
-				final String playerKey = "attackers_" + playerId;
-				final boolean didAttack = world.getParameters().getBoolean(playerKey, false);
-				if (didAttack)
-				{
-					player.addItem(ItemProcessType.REWARD, finalReward, 1, player, true);
-					world.getParameters().set(playerKey, false);
-				}
+				player.sendPacket(new OnEventTrigger(FLOOD_STAGE_1, true));
+				break;
+			}
+			case 3:
+			{
+				player.sendPacket(new OnEventTrigger(FLOOD_STAGE_1, true));
+				player.sendPacket(new OnEventTrigger(FLOOD_STAGE_2, true));
+				break;
+			}
+			case 4:
+			{
+				player.sendPacket(new OnEventTrigger(FLOOD_STAGE_1, true));
+				player.sendPacket(new OnEventTrigger(FLOOD_STAGE_2, true));
+				player.sendPacket(new OnEventTrigger(FLOOD_STAGE_3, true));
+				player.sendPacket(new OnEventTrigger(FLOOD_STAGE_FINAL_FLOOR_1, true));
+				player.sendPacket(new OnEventTrigger(FLOOD_STAGE_FINAL_FLOOR_2, true));
+				break;
 			}
 		}
 	}
-	
-	private void sendResumeUi(Player player, Instance world)
+
+	/**
+	 * 傳送到當前階段位置
+	 */
+	private void teleportToCurrentStage(Player player, Instance world)
 	{
-		final boolean isOutside = world.getParameters().getBoolean("isOutside", false);
-		if (isOutside)
-		{
-			sendResumeUi(player, world);
-			world.getParameters().set("isOutside", false);
-			player.sendPacket(new ExSendUIEvent(player, false, false, (int) (world.getRemainingTime() / 1000), 0, NpcStringId.WATER_TEMPLE_S_REMAINING_TIME));
-			if (world.getNpc(AOS) != null)
-			{
-				addSpawn(AOS, 69000, 243368, -8734, 0, false, 0, false, world.getId());
-			}
-		}
-	}
-	
-	public void positionCheck(Player player, Instance world)
-	{
-		final int currentStage = world.getParameters().getInt("stage", 0);
+		final int currentStage = world.getParameters().getInt("stage", 1);
+
 		switch (currentStage)
 		{
 			case 1:
+			{
+				// 階段1保持在入口
+				break;
+			}
 			case 2:
 			{
 				player.teleToLocation(TELEPORT_STAGE_2);
 				break;
 			}
 			case 3:
+			case 4:
 			{
 				player.teleToLocation(TELEPORT_STAGE_3);
 				break;
@@ -425,7 +591,7 @@ public class WaterTemple extends InstanceScript
 			}
 		}
 	}
-	
+
 	public static void main(String[] args)
 	{
 		new WaterTemple();

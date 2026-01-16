@@ -2801,9 +2801,30 @@
 		</effects>
 	</skill>
 	<skill id="87890" toLevel="1" name="貴族聖助">
+		
 		<icon>icon.s_st_noblesse_oblige</icon>
-		<operateType>P</operateType>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>760</effectPoint>
+		<mpConsume>150</mpConsume>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<itemConsumeCount>120</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
 		<effects>
+			<effect name="PhysicalAttack">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
 			<effect name="PhysicalSkillCriticalRate">
 				<amount>15</amount>
 				<mode>PER</mode>

@@ -3030,6 +3030,16 @@
 		</effects>
 	</skill>
 	<skill id="1460" toLevel="10" name="魔力回復">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		<icon>icon.mana_gain</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -3058,6 +3068,76 @@
 					<value level="8">310</value>
 					<value level="9">320</value>
 					<value level="10">330</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatAddForMp">
+				<mp>4000</mp>
+				<stat>MAGIC_ATTACK</stat>
+				<amount>
+					<value level="1">200</value>
+					<value level="2">200</value>
+					<value level="3">200</value>
+					<value level="4">200</value>
+					<value level="5">200</value>
+					<value level="6">200</value>
+					<value level="7">200</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatAddForMp">
+				<mp>8000</mp>
+				<stat>MAGIC_ATTACK</stat>
+				<amount>
+					<value level="1">400</value>
+					<value level="2">400</value>
+					<value level="3">400</value>
+					<value level="4">400</value>
+					<value level="5">400</value>
+					<value level="6">400</value>
+					<value level="7">400</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatAddForMp">
+				<mp>15000</mp>
+				<stat>MAGIC_ATTACK</stat>
+				<amount>
+					<value level="1">600</value>
+					<value level="2">600</value>
+					<value level="3">600</value>
+					<value level="4">600</value>
+					<value level="5">600</value>
+					<value level="6">600</value>
+					<value level="7">600</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatAddForMp">
+				<mp>20000</mp>
+				<stat>MAGIC_ATTACK</stat>
+				<amount>
+					<value level="1">800</value>
+					<value level="2">800</value>
+					<value level="3">800</value>
+					<value level="4">800</value>
+					<value level="5">800</value>
+					<value level="6">800</value>
+					<value level="7">800</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="StatAddForMp">
+				<mp>30000</mp>
+				<stat>MAGIC_ATTACK</stat>
+				<amount>
+					<value level="1">1000</value>
+					<value level="2">1000</value>
+					<value level="3">1000</value>
+					<value level="4">1000</value>
+					<value level="5">1000</value>
+					<value level="6">1000</value>
+					<value level="7">1000</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>

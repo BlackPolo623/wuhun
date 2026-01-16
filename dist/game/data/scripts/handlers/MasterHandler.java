@@ -27,6 +27,7 @@ import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import handlers.itemhandlers.*;
 import org.l2jmobius.gameserver.config.custom.AutoPotionsConfig;
 import org.l2jmobius.gameserver.config.custom.BankingConfig;
 import org.l2jmobius.gameserver.config.custom.ChatModerationConfig;
@@ -198,48 +199,6 @@ import handlers.communityboard.HomepageBoard;
 import handlers.communityboard.MailBoard;
 import handlers.communityboard.MemoBoard;
 import handlers.communityboard.RegionBoard;
-import handlers.itemhandlers.AddSpiritExp;
-import handlers.itemhandlers.Appearance;
-import handlers.itemhandlers.BeastSoulShot;
-import handlers.itemhandlers.BeastSpiritShot;
-import handlers.itemhandlers.BlackCoupon;
-import handlers.itemhandlers.BlessedSoulShots;
-import handlers.itemhandlers.BlessedSpiritShot;
-import handlers.itemhandlers.BlessingScrolls;
-import handlers.itemhandlers.Book;
-import handlers.itemhandlers.BossTeleportScroll;
-import handlers.itemhandlers.Bypass;
-import handlers.itemhandlers.Calculator;
-import handlers.itemhandlers.ChallengePointsCoupon;
-import handlers.itemhandlers.ChangeAttributeCrystal;
-import handlers.itemhandlers.CharmOfCourage;
-import handlers.itemhandlers.Elixir;
-import handlers.itemhandlers.EnchantAttribute;
-import handlers.itemhandlers.EnchantScrolls;
-import handlers.itemhandlers.ExtractableItems;
-import handlers.itemhandlers.FatedSupportBox;
-import handlers.itemhandlers.FishShots;
-import handlers.itemhandlers.Harvester;
-import handlers.itemhandlers.ItemSkills;
-import handlers.itemhandlers.ItemSkillsTemplate;
-import handlers.itemhandlers.LimitedSayha;
-import handlers.itemhandlers.Maps;
-import handlers.itemhandlers.MercTicket;
-import handlers.itemhandlers.MingXiang;
-import handlers.itemhandlers.NicknameColor;
-import handlers.itemhandlers.PetFood;
-import handlers.itemhandlers.RandomCollectionComplete;
-import handlers.itemhandlers.Recipes;
-import handlers.itemhandlers.RelicSummonCoupon;
-import handlers.itemhandlers.RollingDice;
-import handlers.itemhandlers.SecretShopTicket;
-import handlers.itemhandlers.Seed;
-import handlers.itemhandlers.SkillUpgradeHandler;
-import handlers.itemhandlers.SoulShots;
-import handlers.itemhandlers.SpecialXMas;
-import handlers.itemhandlers.SpiritShot;
-import handlers.itemhandlers.SummonItems;
-import handlers.itemhandlers.SummonMonster;
 import handlers.playeractions.AirshipAction;
 import handlers.playeractions.BotReport;
 import handlers.playeractions.InstanceZoneInfo;
@@ -585,6 +544,7 @@ public class MasterHandler
 			SummonItems.class,
 			BossTeleportScroll.class,
 			SummonMonster.class,
+			SummonFrozenLord.class,
 			RandomCollectionComplete.class,
 			SkillUpgradeHandler.class,
 		},

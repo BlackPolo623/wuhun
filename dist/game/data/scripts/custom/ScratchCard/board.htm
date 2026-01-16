@@ -1,0 +1,72 @@
+<!-- board.htm (簡化版) -->
+<html>
+<head><title>刮刮樂</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+    <tr>
+        <td valign="top" align="center">
+            <!-- 標題區域 -->
+
+            <!-- 進度資訊 -->
+            <table width="280">
+                <tr>
+                    <td align="center">
+                        <font color="00FF66">已刮開:</font> <font color="FFFF00">%opened_count%/%total_count%</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <font color="00FF66">累積:</font> <font color="FF9900">%accumulated%</font>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+
+            <!-- 刮刮樂盤面 (4x6格子) -->
+            <table border=0 cellpadding=2 cellspacing=0>
+                %board%
+            </table>
+
+            <br>
+
+            <!-- 符號說明 -->
+            <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="3">
+                <tr bgcolor="333333">
+                    <td align="center" colspan="4"><font color="FFCC33">符號說明</font></td>
+                </tr>
+                <tr bgcolor="222222">
+                    <td width="70" align="center">
+                        <img src="icon.card_devil_black" width="32" height="32"><br>
+                        <font color="808080" size="1">空白</font>
+                    </td>
+                    <td width="70" align="center">
+                        <img src="icon.card_event_dragon_pocket" width="32" height="32"><br>
+                        <font color="00FF66" size="1">累積</font>
+                    </td>
+                    <td width="70" align="center">
+                        <img src="icon.ev_211020_vip_token_i02" width="32" height="32"><br>
+                        <font color="FFD700" size="1">大獎</font>
+                    </td>
+                    <td width="70" align="center">
+                        <font color="FFCC33" size="3"><b>?</b></font><br>
+                        <font color="FFCC33" size="1">未刮開</font>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+
+            <!-- 返回按鈕 -->
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td align=center>
+                        <button action="bypass -h Quest ScratchCard main" value="返回主頁" width="120" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

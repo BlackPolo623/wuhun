@@ -55,6 +55,9 @@ public class Custom
 	public static int paoshangitemid;
 	public static int MinSoulRingForPVP;
 	public static int BUffTIME;
+	public static int checkskillmin;
+	public static int checkskillmax;
+	public static final Set<Integer> SKILL_WHITELIST = new TreeSet<>();
 	
 	public static void load()
 	{
@@ -116,6 +119,14 @@ public class Custom
 		paoshangitemid = config.getInt("paoshangitemid", 57);
 		MinSoulRingForPVP = config.getInt("minsoulringforPVP", 999);
 		BUffTIME = config.getInt("bufftime", 14400);
+		String[] checksikllid = config.getString("CheckSkills", "1").split(",");
+		for (String s : checksikllid)
+		{
+			SKILL_WHITELIST.add(Integer.parseInt(s.trim()));
+		}
+		checkskillmin = config.getInt("checkskillmin", 106030);
+		checkskillmax = config.getInt("checkskillmax", 106031);
+		
 	}
 	
 }

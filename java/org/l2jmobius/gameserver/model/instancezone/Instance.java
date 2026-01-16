@@ -248,6 +248,15 @@ public class Instance
 			_allowed.add(player.getObjectId());
 		}
 	}
+
+	/**
+	 * Remove player from allowed list.
+	 * @param player player instance
+	 */
+	public void removeAllowed(Player player)
+	{
+		_allowed.remove(player.getObjectId());
+	}
 	
 	/**
 	 * Check if player can enter to instance.

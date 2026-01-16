@@ -2081,7 +2081,12 @@
 		<icon>icon.skill0928_1</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
+		<affectLimit>1-1</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>RANGE</affectScope>
+		<magicCriticalRate>5</magicCriticalRate>
+		<nextAction>ATTACK</nextAction>
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
@@ -2393,11 +2398,12 @@
 		</effects>
 	</skill>
 	<skill id="47348" toLevel="1" name="反轉牽引">
+		
 		<icon>icon.skill19557</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>30</abnormalTime>
+		<abnormalTime>1200</abnormalTime>
 		<abnormalType>REVERSED_PULL</abnormalType>
 		<abnormalVisualEffect>H_P_REVERSE_PULLING;H_P_REVERSE_PULLING</abnormalVisualEffect>
 		<affectScope>SINGLE</affectScope>
@@ -2423,6 +2429,18 @@
 				<amount>1500</amount>
 				<mode>DIFF</mode>
 			</effect>
+			<effect name="Speed">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>344</existingSkillId> 
+				<replacementSkillId>88701</replacementSkillId> 
+			</effect>
 			<effect name="BlockAbnormalSlot">
 				<slot>DEADLY_PULL</slot>
 			</effect>
@@ -2439,6 +2457,7 @@
 		</effects>
 	</skill>
 	<skill id="47349" toLevel="1" name="反轉壓制">
+		
 		<icon>icon.skill30961</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2474,11 +2493,12 @@
 		</effects>
 	</skill>
 	<skill id="47350" toLevel="1" name="並肩勇往直前">
+		
 		<icon>icon.s_synchro_freedom</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>30</abnormalTime>
+		<abnormalTime>1200</abnormalTime>
 		<abnormalVisualEffect>V_ROGUE_SYNCHRO</abnormalVisualEffect>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
@@ -2496,9 +2516,17 @@
 			</condition>
 		</conditions>
 		<effects>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="MaxHp">
 				<amount>1500</amount>
 				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>344</existingSkillId> 
+				<replacementSkillId>88702</replacementSkillId> 
 			</effect>
 			<effect name="DefenceTrait">
 				<SUPPRESSION>50</SUPPRESSION>
@@ -2513,11 +2541,12 @@
 		</effects>
 	</skill>
 	<skill id="47351" toLevel="1" name="血腥幻影">
+		
 		<icon>icon.skill1913</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
+		<abnormalTime>1200</abnormalTime>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<effectRange>900</effectRange>
@@ -2538,29 +2567,24 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="MaxHp">
-				<amount>5</amount>
+			<effect name="Speed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>2</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="TriggerSkillByDamageDealt">
-				<minDamage>1</minDamage>
-				<chance>60</chance>
-				<skillId>47352</skillId> 
-				<skillLevel>1</skillLevel>
-				<isCritical>true</isCritical>
-				<allowWeapons>ALL</allowWeapons>
-				<attackerType>Creature</attackerType>
-				<targetType>ENEMY</targetType>
+			<effect name="MaxHp">
+				<amount>1500</amount>
+				<mode>DIFF</mode>
 			</effect>
-			<effect name="TriggerSkillByDamageDealt">
-				<minDamage>1</minDamage>
-				<chance>40</chance>
-				<skillId>47352</skillId> 
-				<skillLevel>1</skillLevel>
-				<isCritical>false</isCritical>
-				<allowWeapons>ALL</allowWeapons>
-				<attackerType>Creature</attackerType>
-				<targetType>ENEMY</targetType>
+			<effect name="DefenceTrait">
+				<ANOMALY>10</ANOMALY>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>344</existingSkillId> 
+				<replacementSkillId>88703</replacementSkillId> 
 			</effect>
 		</effects>
 	</skill>
@@ -2627,10 +2651,11 @@
 		</endEffects>
 	</skill>
 	<skill id="47353" toLevel="1" name="致命之擊">
+		
 		<icon>icon.skill10508</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
-		<affectLimit>1-3</affectLimit>
+		<affectLimit>3-1</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>150</affectRange>
 		<affectScope>RANGE</affectScope>
@@ -2656,19 +2681,25 @@
 		</conditions>
 		<effects>
 			<effect name="FatalBlow">
-				<power>12000</power>
+				<power>10500</power>
 				<criticalChance>20</criticalChance>
 				<chanceBoost>300</chanceBoost>
 				<overHit>true</overHit>
 			</effect>
 			<effect name="FatalBlow">
-				<power>12000</power>
+				<power>10500</power>
 				<criticalChance>20</criticalChance>
 				<chanceBoost>300</chanceBoost>
 				<overHit>true</overHit>
 			</effect>
 			<effect name="FatalBlow">
-				<power>12000</power>
+				<power>10500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="FatalBlow">
+				<power>10500</power>
 				<criticalChance>20</criticalChance>
 				<chanceBoost>300</chanceBoost>
 				<overHit>true</overHit>
@@ -2685,6 +2716,8 @@
 		</effects>
 	</skill>
 	<skill id="47354" toLevel="1" name="致命之刃">
+		
+		
 		<icon>icon.skill1629</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2709,10 +2742,11 @@
 		</effects>
 	</skill>
 	<skill id="47355" toLevel="1" name="狂暴之刃">
+		
 		<icon>icon.s_fury_blade</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
-		<affectLimit>3-3</affectLimit>
+		<affectLimit>3-1</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>300</affectRange>
 		<affectScope>RANGE</affectScope>
@@ -2738,25 +2772,25 @@
 		</conditions>
 		<effects>
 			<effect name="FatalBlow">
-				<power>9000</power>
+				<power>10500</power>
 				<criticalChance>20</criticalChance>
 				<chanceBoost>300</chanceBoost>
 				<overHit>true</overHit>
 			</effect>
 			<effect name="FatalBlow">
-				<power>9000</power>
+				<power>10500</power>
 				<criticalChance>20</criticalChance>
 				<chanceBoost>300</chanceBoost>
 				<overHit>true</overHit>
 			</effect>
 			<effect name="FatalBlow">
-				<power>9000</power>
+				<power>10500</power>
 				<criticalChance>20</criticalChance>
 				<chanceBoost>300</chanceBoost>
 				<overHit>true</overHit>
 			</effect>
 			<effect name="FatalBlow">
-				<power>9000</power>
+				<power>10500</power>
 				<criticalChance>20</criticalChance>
 				<chanceBoost>300</chanceBoost>
 				<overHit>true</overHit>
@@ -2768,6 +2802,7 @@
 		</effects>
 	</skill>
 	<skill id="47356" toLevel="1" name="刃緣">
+		
 		<icon>icon.skill10513</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2791,10 +2826,11 @@
 		</effects>
 	</skill>
 	<skill id="47357" toLevel="1" name="致命穿刺">
+		
 		<icon>icon.skill0321</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
-		<affectLimit>1-3</affectLimit>
+		<affectLimit>3-1</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>300</affectRange>
 		<affectScope>RANGE</affectScope>
@@ -2820,14 +2856,28 @@
 		</conditions>
 		<effects>
 			<effect name="FatalBlow">
-				<power>15500</power>
+				<power>10500</power>
 				<criticalChance>20</criticalChance>
 				<chanceBoost>300</chanceBoost>
 				<overHit>true</overHit>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
 			</effect>
 			<effect name="FatalBlow">
-				<power>15500</power>
+				<power>10500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+			<effect name="FatalBlow">
+				<power>10500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+			<effect name="FatalBlow">
+				<power>10500</power>
 				<criticalChance>20</criticalChance>
 				<chanceBoost>300</chanceBoost>
 				<overHit>true</overHit>

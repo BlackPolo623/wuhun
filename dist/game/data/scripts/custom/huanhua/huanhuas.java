@@ -12,12 +12,12 @@ import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 public class huanhuas extends Script
 {
 	// ==================== 配置區 ====================
-	private static final int NPC_ID = 901008;
+	private static final int NPC_ID = 900022;
 	private static final String HTML_PATH = "data/scripts/custom/huanhua/";
 
 	// 幻化價格配置
 	private static final int PRICE_ITEM_ID = 57;
-	private static final int PRICE_ITEM_COUNT = 1000000;
+	private static final int PRICE_ITEM_COUNT = 1000000000;
 
 	// 每頁顯示數量
 	private static final int RACES_PER_PAGE = 6;

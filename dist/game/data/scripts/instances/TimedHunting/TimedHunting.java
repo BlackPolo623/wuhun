@@ -438,6 +438,7 @@ public class TimedHunting extends InstanceScript
 			player.addSkill(SkillData.getInstance().getSkill(normalSkillId, knownSkill.getLevel(), knownSkill.getSubLevel()), false);
 			player.removeReplacedSkill(normalSkillId);
 		}
+
 	}
 	
 	private String getReplacedSkillNames(Player player)

@@ -1,0 +1,1510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- 槽位配置 -->
+    <slots>
+        <slot id="1" minSkill="111000" maxSkill="111529" />
+        <slot id="2" minSkill="112000" maxSkill="112529" />
+        <slot id="3" minSkill="113000" maxSkill="113529" />
+        <slot id="4" minSkill="114000" maxSkill="114529" />
+    </slots>
+    
+    <!-- 稀有度配置 -->
+    <rarities>
+        <rarity level="1" color="E0E0E0" name="普通" />
+        <rarity level="2" color="97CBFF" name="特殊" />
+        <rarity level="3" color="CA8EFF" name="稀有" />
+        <rarity level="4" color="FFFF93" name="罕見" />
+        <rarity level="5" color="C2FF68" name="傳說" />
+    </rarities>
+    
+    <!-- 技能稀有度區間配置 -->
+    <skillRanges>
+        <!-- HP值 (111000-111009) -->
+        <range slot="1" minSkill="111000" maxSkill="111001" rarity="1" />
+        <range slot="1" minSkill="111002" maxSkill="111003" rarity="2" />
+        <range slot="1" minSkill="111004" maxSkill="111005" rarity="3" />
+        <range slot="1" minSkill="111006" maxSkill="111007" rarity="4" />
+        <range slot="1" minSkill="111008" maxSkill="111009" rarity="5" />
+
+        <!-- HP% (111010-111019) -->
+        <range slot="1" minSkill="111010" maxSkill="111011" rarity="1" />
+        <range slot="1" minSkill="111012" maxSkill="111013" rarity="2" />
+        <range slot="1" minSkill="111014" maxSkill="111015" rarity="3" />
+        <range slot="1" minSkill="111016" maxSkill="111017" rarity="4" />
+        <range slot="1" minSkill="111018" maxSkill="111019" rarity="5" />
+
+        <!-- MP值 (111020-111029) -->
+        <range slot="1" minSkill="111020" maxSkill="111021" rarity="1" />
+        <range slot="1" minSkill="111022" maxSkill="111023" rarity="2" />
+        <range slot="1" minSkill="111024" maxSkill="111025" rarity="3" />
+        <range slot="1" minSkill="111026" maxSkill="111027" rarity="4" />
+        <range slot="1" minSkill="111028" maxSkill="111029" rarity="5" />
+
+        <!-- MP% (111030-111039) -->
+        <range slot="1" minSkill="111030" maxSkill="111031" rarity="1" />
+        <range slot="1" minSkill="111032" maxSkill="111033" rarity="2" />
+        <range slot="1" minSkill="111034" maxSkill="111035" rarity="3" />
+        <range slot="1" minSkill="111036" maxSkill="111037" rarity="4" />
+        <range slot="1" minSkill="111038" maxSkill="111039" rarity="5" />
+
+        <!-- CP值 (111040-111049) -->
+        <range slot="1" minSkill="111040" maxSkill="111041" rarity="1" />
+        <range slot="1" minSkill="111042" maxSkill="111043" rarity="2" />
+        <range slot="1" minSkill="111044" maxSkill="111045" rarity="3" />
+        <range slot="1" minSkill="111046" maxSkill="111047" rarity="4" />
+        <range slot="1" minSkill="111048" maxSkill="111049" rarity="5" />
+
+        <!-- CP% (111050-111059) -->
+        <range slot="1" minSkill="111050" maxSkill="111051" rarity="1" />
+        <range slot="1" minSkill="111052" maxSkill="111053" rarity="2" />
+        <range slot="1" minSkill="111054" maxSkill="111055" rarity="3" />
+        <range slot="1" minSkill="111056" maxSkill="111057" rarity="4" />
+        <range slot="1" minSkill="111058" maxSkill="111059" rarity="5" />
+
+        <!-- 物理攻擊力值 (111060-111069) -->
+        <range slot="1" minSkill="111060" maxSkill="111061" rarity="1" />
+        <range slot="1" minSkill="111062" maxSkill="111063" rarity="2" />
+        <range slot="1" minSkill="111064" maxSkill="111065" rarity="3" />
+        <range slot="1" minSkill="111066" maxSkill="111067" rarity="4" />
+        <range slot="1" minSkill="111068" maxSkill="111069" rarity="5" />
+
+        <!-- 物理攻擊力% (111070-111079) -->
+        <range slot="1" minSkill="111070" maxSkill="111071" rarity="1" />
+        <range slot="1" minSkill="111072" maxSkill="111073" rarity="2" />
+        <range slot="1" minSkill="111074" maxSkill="111075" rarity="3" />
+        <range slot="1" minSkill="111076" maxSkill="111077" rarity="4" />
+        <range slot="1" minSkill="111078" maxSkill="111079" rarity="5" />
+
+        <!-- 魔法攻擊力值 (111080-111089) -->
+        <range slot="1" minSkill="111080" maxSkill="111081" rarity="1" />
+        <range slot="1" minSkill="111082" maxSkill="111083" rarity="2" />
+        <range slot="1" minSkill="111084" maxSkill="111085" rarity="3" />
+        <range slot="1" minSkill="111086" maxSkill="111087" rarity="4" />
+        <range slot="1" minSkill="111088" maxSkill="111089" rarity="5" />
+
+        <!-- 魔法攻擊力% (111090-111099) -->
+        <range slot="1" minSkill="111090" maxSkill="111091" rarity="1" />
+        <range slot="1" minSkill="111092" maxSkill="111093" rarity="2" />
+        <range slot="1" minSkill="111094" maxSkill="111095" rarity="3" />
+        <range slot="1" minSkill="111096" maxSkill="111097" rarity="4" />
+        <range slot="1" minSkill="111098" maxSkill="111099" rarity="5" />
+
+        <!-- 物理防禦力值 (111100-111109) -->
+        <range slot="1" minSkill="111100" maxSkill="111101" rarity="1" />
+        <range slot="1" minSkill="111102" maxSkill="111103" rarity="2" />
+        <range slot="1" minSkill="111104" maxSkill="111105" rarity="3" />
+        <range slot="1" minSkill="111106" maxSkill="111107" rarity="4" />
+        <range slot="1" minSkill="111108" maxSkill="111109" rarity="5" />
+
+        <!-- 物理防禦力% (111110-111119) -->
+        <range slot="1" minSkill="111110" maxSkill="111111" rarity="1" />
+        <range slot="1" minSkill="111112" maxSkill="111113" rarity="2" />
+        <range slot="1" minSkill="111114" maxSkill="111115" rarity="3" />
+        <range slot="1" minSkill="111116" maxSkill="111117" rarity="4" />
+        <range slot="1" minSkill="111118" maxSkill="111119" rarity="5" />
+
+        <!-- 魔法防禦力值 (111120-111129) -->
+        <range slot="1" minSkill="111120" maxSkill="111121" rarity="1" />
+        <range slot="1" minSkill="111122" maxSkill="111123" rarity="2" />
+        <range slot="1" minSkill="111124" maxSkill="111125" rarity="3" />
+        <range slot="1" minSkill="111126" maxSkill="111127" rarity="4" />
+        <range slot="1" minSkill="111128" maxSkill="111129" rarity="5" />
+
+        <!-- 魔法防禦力% (111130-111139) -->
+        <range slot="1" minSkill="111130" maxSkill="111131" rarity="1" />
+        <range slot="1" minSkill="111132" maxSkill="111133" rarity="2" />
+        <range slot="1" minSkill="111134" maxSkill="111135" rarity="3" />
+        <range slot="1" minSkill="111136" maxSkill="111137" rarity="4" />
+        <range slot="1" minSkill="111138" maxSkill="111139" rarity="5" />
+
+        <!-- 攻擊速度值 (111140-111149) -->
+        <range slot="1" minSkill="111140" maxSkill="111141" rarity="1" />
+        <range slot="1" minSkill="111142" maxSkill="111143" rarity="2" />
+        <range slot="1" minSkill="111144" maxSkill="111145" rarity="3" />
+        <range slot="1" minSkill="111146" maxSkill="111147" rarity="4" />
+        <range slot="1" minSkill="111148" maxSkill="111149" rarity="5" />
+
+        <!-- 攻擊速度% (111150-111159) -->
+        <range slot="1" minSkill="111150" maxSkill="111151" rarity="1" />
+        <range slot="1" minSkill="111152" maxSkill="111153" rarity="2" />
+        <range slot="1" minSkill="111154" maxSkill="111155" rarity="3" />
+        <range slot="1" minSkill="111156" maxSkill="111157" rarity="4" />
+        <range slot="1" minSkill="111158" maxSkill="111159" rarity="5" />
+
+        <!-- 施法速度值 (111160-111169) -->
+        <range slot="1" minSkill="111160" maxSkill="111161" rarity="1" />
+        <range slot="1" minSkill="111162" maxSkill="111163" rarity="2" />
+        <range slot="1" minSkill="111164" maxSkill="111165" rarity="3" />
+        <range slot="1" minSkill="111166" maxSkill="111167" rarity="4" />
+        <range slot="1" minSkill="111168" maxSkill="111169" rarity="5" />
+
+        <!-- 施法速度% (111170-111179) -->
+        <range slot="1" minSkill="111170" maxSkill="111171" rarity="1" />
+        <range slot="1" minSkill="111172" maxSkill="111173" rarity="2" />
+        <range slot="1" minSkill="111174" maxSkill="111175" rarity="3" />
+        <range slot="1" minSkill="111176" maxSkill="111177" rarity="4" />
+        <range slot="1" minSkill="111178" maxSkill="111179" rarity="5" />
+
+        <!-- STR (111180-111189) -->
+        <range slot="1" minSkill="111180" maxSkill="111181" rarity="1" />
+        <range slot="1" minSkill="111182" maxSkill="111183" rarity="2" />
+        <range slot="1" minSkill="111184" maxSkill="111185" rarity="3" />
+        <range slot="1" minSkill="111186" maxSkill="111187" rarity="4" />
+        <range slot="1" minSkill="111188" maxSkill="111189" rarity="5" />
+
+        <!-- DEX (111190-111199) -->
+        <range slot="1" minSkill="111190" maxSkill="111191" rarity="1" />
+        <range slot="1" minSkill="111192" maxSkill="111193" rarity="2" />
+        <range slot="1" minSkill="111194" maxSkill="111195" rarity="3" />
+        <range slot="1" minSkill="111196" maxSkill="111197" rarity="4" />
+        <range slot="1" minSkill="111198" maxSkill="111199" rarity="5" />
+
+        <!-- CON (111200-111209) -->
+        <range slot="1" minSkill="111200" maxSkill="111201" rarity="1" />
+        <range slot="1" minSkill="111202" maxSkill="111203" rarity="2" />
+        <range slot="1" minSkill="111204" maxSkill="111205" rarity="3" />
+        <range slot="1" minSkill="111206" maxSkill="111207" rarity="4" />
+        <range slot="1" minSkill="111208" maxSkill="111209" rarity="5" />
+
+        <!-- WIT (111210-111219) -->
+        <range slot="1" minSkill="111210" maxSkill="111211" rarity="1" />
+        <range slot="1" minSkill="111212" maxSkill="111213" rarity="2" />
+        <range slot="1" minSkill="111214" maxSkill="111215" rarity="3" />
+        <range slot="1" minSkill="111216" maxSkill="111217" rarity="4" />
+        <range slot="1" minSkill="111218" maxSkill="111219" rarity="5" />
+
+        <!-- INT (111220-111229) -->
+        <range slot="1" minSkill="111220" maxSkill="111221" rarity="1" />
+        <range slot="1" minSkill="111222" maxSkill="111223" rarity="2" />
+        <range slot="1" minSkill="111224" maxSkill="111225" rarity="3" />
+        <range slot="1" minSkill="111226" maxSkill="111227" rarity="4" />
+        <range slot="1" minSkill="111228" maxSkill="111229" rarity="5" />
+
+        <!-- MEN (111230-111239) -->
+        <range slot="1" minSkill="111230" maxSkill="111231" rarity="1" />
+        <range slot="1" minSkill="111232" maxSkill="111233" rarity="2" />
+        <range slot="1" minSkill="111234" maxSkill="111235" rarity="3" />
+        <range slot="1" minSkill="111236" maxSkill="111237" rarity="4" />
+        <range slot="1" minSkill="111238" maxSkill="111239" rarity="5" />
+
+        <!-- 負重上限 (111240-111249) -->
+        <range slot="1" minSkill="111240" maxSkill="111241" rarity="1" />
+        <range slot="1" minSkill="111242" maxSkill="111243" rarity="2" />
+        <range slot="1" minSkill="111244" maxSkill="111245" rarity="3" />
+        <range slot="1" minSkill="111246" maxSkill="111247" rarity="4" />
+        <range slot="1" minSkill="111248" maxSkill="111249" rarity="5" />
+
+        <!-- 移動速度 (111250-111259) -->
+        <range slot="1" minSkill="111250" maxSkill="111251" rarity="1" />
+        <range slot="1" minSkill="111252" maxSkill="111253" rarity="2" />
+        <range slot="1" minSkill="111254" maxSkill="111255" rarity="3" />
+        <range slot="1" minSkill="111256" maxSkill="111257" rarity="4" />
+        <range slot="1" minSkill="111258" maxSkill="111259" rarity="5" />
+
+        <!-- 命中能力 (111260-111269) -->
+        <range slot="1" minSkill="111260" maxSkill="111261" rarity="1" />
+        <range slot="1" minSkill="111262" maxSkill="111263" rarity="2" />
+        <range slot="1" minSkill="111264" maxSkill="111265" rarity="3" />
+        <range slot="1" minSkill="111266" maxSkill="111267" rarity="4" />
+        <range slot="1" minSkill="111268" maxSkill="111269" rarity="5" />
+
+        <!-- 魔法命中能力 (111270-111279) -->
+        <range slot="1" minSkill="111270" maxSkill="111271" rarity="1" />
+        <range slot="1" minSkill="111272" maxSkill="111273" rarity="2" />
+        <range slot="1" minSkill="111274" maxSkill="111275" rarity="3" />
+        <range slot="1" minSkill="111276" maxSkill="111277" rarity="4" />
+        <range slot="1" minSkill="111278" maxSkill="111279" rarity="5" />
+
+        <!-- 火屬性傷害 (111280-111289) -->
+        <range slot="1" minSkill="111280" maxSkill="111281" rarity="1" />
+        <range slot="1" minSkill="111282" maxSkill="111283" rarity="2" />
+        <range slot="1" minSkill="111284" maxSkill="111285" rarity="3" />
+        <range slot="1" minSkill="111286" maxSkill="111287" rarity="4" />
+        <range slot="1" minSkill="111288" maxSkill="111289" rarity="5" />
+
+        <!-- 水屬性傷害 (111290-111299) -->
+        <range slot="1" minSkill="111290" maxSkill="111291" rarity="1" />
+        <range slot="1" minSkill="111292" maxSkill="111293" rarity="2" />
+        <range slot="1" minSkill="111294" maxSkill="111295" rarity="3" />
+        <range slot="1" minSkill="111296" maxSkill="111297" rarity="4" />
+        <range slot="1" minSkill="111298" maxSkill="111299" rarity="5" />
+
+        <!-- 風屬性傷害 (111300-111309) -->
+        <range slot="1" minSkill="111300" maxSkill="111301" rarity="1" />
+        <range slot="1" minSkill="111302" maxSkill="111303" rarity="2" />
+        <range slot="1" minSkill="111304" maxSkill="111305" rarity="3" />
+        <range slot="1" minSkill="111306" maxSkill="111307" rarity="4" />
+        <range slot="1" minSkill="111308" maxSkill="111309" rarity="5" />
+
+        <!-- 地屬性傷害 (111310-111319) -->
+        <range slot="1" minSkill="111310" maxSkill="111311" rarity="1" />
+        <range slot="1" minSkill="111312" maxSkill="111313" rarity="2" />
+        <range slot="1" minSkill="111314" maxSkill="111315" rarity="3" />
+        <range slot="1" minSkill="111316" maxSkill="111317" rarity="4" />
+        <range slot="1" minSkill="111318" maxSkill="111319" rarity="5" />
+
+        <!-- 聖屬性傷害 (111320-111329) -->
+        <range slot="1" minSkill="111320" maxSkill="111321" rarity="1" />
+        <range slot="1" minSkill="111322" maxSkill="111323" rarity="2" />
+        <range slot="1" minSkill="111324" maxSkill="111325" rarity="3" />
+        <range slot="1" minSkill="111326" maxSkill="111327" rarity="4" />
+        <range slot="1" minSkill="111328" maxSkill="111329" rarity="5" />
+
+        <!-- 暗屬性傷害 (111330-111339) -->
+        <range slot="1" minSkill="111330" maxSkill="111331" rarity="1" />
+        <range slot="1" minSkill="111332" maxSkill="111333" rarity="2" />
+        <range slot="1" minSkill="111334" maxSkill="111335" rarity="3" />
+        <range slot="1" minSkill="111336" maxSkill="111337" rarity="4" />
+        <range slot="1" minSkill="111338" maxSkill="111339" rarity="5" />
+
+        <!-- PVE物理攻擊傷害 (111340-111349) -->
+        <range slot="1" minSkill="111340" maxSkill="111341" rarity="1" />
+        <range slot="1" minSkill="111342" maxSkill="111343" rarity="2" />
+        <range slot="1" minSkill="111344" maxSkill="111345" rarity="3" />
+        <range slot="1" minSkill="111346" maxSkill="111347" rarity="4" />
+        <range slot="1" minSkill="111348" maxSkill="111349" rarity="5" />
+
+        <!-- PVE物理技能傷害 (111350-111359) -->
+        <range slot="1" minSkill="111350" maxSkill="111351" rarity="1" />
+        <range slot="1" minSkill="111352" maxSkill="111353" rarity="2" />
+        <range slot="1" minSkill="111354" maxSkill="111355" rarity="3" />
+        <range slot="1" minSkill="111356" maxSkill="111357" rarity="4" />
+        <range slot="1" minSkill="111358" maxSkill="111359" rarity="5" />
+
+        <!-- PVE魔法技能傷害 (111360-111369) -->
+        <range slot="1" minSkill="111360" maxSkill="111361" rarity="1" />
+        <range slot="1" minSkill="111362" maxSkill="111363" rarity="2" />
+        <range slot="1" minSkill="111364" maxSkill="111365" rarity="3" />
+        <range slot="1" minSkill="111366" maxSkill="111367" rarity="4" />
+        <range slot="1" minSkill="111368" maxSkill="111369" rarity="5" />
+
+        <!-- PVE物理攻擊防禦 (111370-111379) -->
+        <range slot="1" minSkill="111370" maxSkill="111371" rarity="1" />
+        <range slot="1" minSkill="111372" maxSkill="111373" rarity="2" />
+        <range slot="1" minSkill="111374" maxSkill="111375" rarity="3" />
+        <range slot="1" minSkill="111376" maxSkill="111377" rarity="4" />
+        <range slot="1" minSkill="111378" maxSkill="111379" rarity="5" />
+
+        <!-- PVE物理技能防禦 (111380-111389) -->
+        <range slot="1" minSkill="111380" maxSkill="111381" rarity="1" />
+        <range slot="1" minSkill="111382" maxSkill="111383" rarity="2" />
+        <range slot="1" minSkill="111384" maxSkill="111385" rarity="3" />
+        <range slot="1" minSkill="111386" maxSkill="111387" rarity="4" />
+        <range slot="1" minSkill="111388" maxSkill="111389" rarity="5" />
+
+        <!-- PVE魔法技能防禦 (111390-111399) -->
+        <range slot="1" minSkill="111390" maxSkill="111391" rarity="1" />
+        <range slot="1" minSkill="111392" maxSkill="111393" rarity="2" />
+        <range slot="1" minSkill="111394" maxSkill="111395" rarity="3" />
+        <range slot="1" minSkill="111396" maxSkill="111397" rarity="4" />
+        <range slot="1" minSkill="111398" maxSkill="111399" rarity="5" />
+
+        <!-- PVP物理攻擊傷害 (111400-111409) -->
+        <range slot="1" minSkill="111400" maxSkill="111401" rarity="1" />
+        <range slot="1" minSkill="111402" maxSkill="111403" rarity="2" />
+        <range slot="1" minSkill="111404" maxSkill="111405" rarity="3" />
+        <range slot="1" minSkill="111406" maxSkill="111407" rarity="4" />
+        <range slot="1" minSkill="111408" maxSkill="111409" rarity="5" />
+
+        <!-- PVP物理技能傷害 (111410-111419) -->
+        <range slot="1" minSkill="111410" maxSkill="111411" rarity="1" />
+        <range slot="1" minSkill="111412" maxSkill="111413" rarity="2" />
+        <range slot="1" minSkill="111414" maxSkill="111415" rarity="3" />
+        <range slot="1" minSkill="111416" maxSkill="111417" rarity="4" />
+        <range slot="1" minSkill="111418" maxSkill="111419" rarity="5" />
+
+        <!-- PVP魔法技能傷害 (111420-111429) -->
+        <range slot="1" minSkill="111420" maxSkill="111421" rarity="1" />
+        <range slot="1" minSkill="111422" maxSkill="111423" rarity="2" />
+        <range slot="1" minSkill="111424" maxSkill="111425" rarity="3" />
+        <range slot="1" minSkill="111426" maxSkill="111427" rarity="4" />
+        <range slot="1" minSkill="111428" maxSkill="111429" rarity="5" />
+
+        <!-- PVP物理攻擊防禦 (111430-111439) -->
+        <range slot="1" minSkill="111430" maxSkill="111431" rarity="1" />
+        <range slot="1" minSkill="111432" maxSkill="111433" rarity="2" />
+        <range slot="1" minSkill="111434" maxSkill="111435" rarity="3" />
+        <range slot="1" minSkill="111436" maxSkill="111437" rarity="4" />
+        <range slot="1" minSkill="111438" maxSkill="111439" rarity="5" />
+
+        <!-- PVP物理技能防禦 (111440-111449) -->
+        <range slot="1" minSkill="111440" maxSkill="111441" rarity="1" />
+        <range slot="1" minSkill="111442" maxSkill="111443" rarity="2" />
+        <range slot="1" minSkill="111444" maxSkill="111445" rarity="3" />
+        <range slot="1" minSkill="111446" maxSkill="111447" rarity="4" />
+        <range slot="1" minSkill="111448" maxSkill="111449" rarity="5" />
+
+        <!-- PVP魔法技能防禦 (111450-111459) -->
+        <range slot="1" minSkill="111450" maxSkill="111451" rarity="1" />
+        <range slot="1" minSkill="111452" maxSkill="111453" rarity="2" />
+        <range slot="1" minSkill="111454" maxSkill="111455" rarity="3" />
+        <range slot="1" minSkill="111456" maxSkill="111457" rarity="4" />
+        <range slot="1" minSkill="111458" maxSkill="111459" rarity="5" />
+
+        <!-- 物理攻擊爆擊率 (111460-111469) -->
+        <range slot="1" minSkill="111460" maxSkill="111461" rarity="1" />
+        <range slot="1" minSkill="111462" maxSkill="111463" rarity="2" />
+        <range slot="1" minSkill="111464" maxSkill="111465" rarity="3" />
+        <range slot="1" minSkill="111466" maxSkill="111467" rarity="4" />
+        <range slot="1" minSkill="111468" maxSkill="111469" rarity="5" />
+
+        <!-- 物理攻擊爆擊傷害 (111470-111479) -->
+        <range slot="1" minSkill="111470" maxSkill="111471" rarity="1" />
+        <range slot="1" minSkill="111472" maxSkill="111473" rarity="2" />
+        <range slot="1" minSkill="111474" maxSkill="111475" rarity="3" />
+        <range slot="1" minSkill="111476" maxSkill="111477" rarity="4" />
+        <range slot="1" minSkill="111478" maxSkill="111479" rarity="5" />
+
+        <!-- 物理技能爆擊率 (111480-111489) -->
+        <range slot="1" minSkill="111480" maxSkill="111481" rarity="1" />
+        <range slot="1" minSkill="111482" maxSkill="111483" rarity="2" />
+        <range slot="1" minSkill="111484" maxSkill="111485" rarity="3" />
+        <range slot="1" minSkill="111486" maxSkill="111487" rarity="4" />
+        <range slot="1" minSkill="111488" maxSkill="111489" rarity="5" />
+
+        <!-- 物理技能爆擊傷害 (111490-111499) -->
+        <range slot="1" minSkill="111490" maxSkill="111491" rarity="1" />
+        <range slot="1" minSkill="111492" maxSkill="111493" rarity="2" />
+        <range slot="1" minSkill="111494" maxSkill="111495" rarity="3" />
+        <range slot="1" minSkill="111496" maxSkill="111497" rarity="4" />
+        <range slot="1" minSkill="111498" maxSkill="111499" rarity="5" />
+
+        <!-- 魔法爆擊率 (111500-111509) -->
+        <range slot="1" minSkill="111500" maxSkill="111501" rarity="1" />
+        <range slot="1" minSkill="111502" maxSkill="111503" rarity="2" />
+        <range slot="1" minSkill="111504" maxSkill="111505" rarity="3" />
+        <range slot="1" minSkill="111506" maxSkill="111507" rarity="4" />
+        <range slot="1" minSkill="111508" maxSkill="111509" rarity="5" />
+
+        <!-- 魔法爆擊傷害 (111510-111519) -->
+        <range slot="1" minSkill="111510" maxSkill="111511" rarity="1" />
+        <range slot="1" minSkill="111512" maxSkill="111513" rarity="2" />
+        <range slot="1" minSkill="111514" maxSkill="111515" rarity="3" />
+        <range slot="1" minSkill="111516" maxSkill="111517" rarity="4" />
+        <range slot="1" minSkill="111518" maxSkill="111519" rarity="5" />
+
+        <!-- 最終傷害 (111520-111529) -->
+        <range slot="1" minSkill="111520" maxSkill="111521" rarity="1" />
+        <range slot="1" minSkill="111522" maxSkill="111523" rarity="2" />
+        <range slot="1" minSkill="111524" maxSkill="111525" rarity="3" />
+        <range slot="1" minSkill="111526" maxSkill="111527" rarity="4" />
+        <range slot="1" minSkill="111528" maxSkill="111529" rarity="5" />
+        <!-- ========================================分隔線======================================== -->
+
+        <!-- HP值 (111000-111009) -->
+        <range slot="2" minSkill="112000" maxSkill="112001" rarity="1" />
+        <range slot="2" minSkill="112002" maxSkill="112003" rarity="2" />
+        <range slot="2" minSkill="112004" maxSkill="112005" rarity="3" />
+        <range slot="2" minSkill="112006" maxSkill="112007" rarity="4" />
+        <range slot="2" minSkill="112008" maxSkill="112009" rarity="5" />
+
+        <!-- HP% (111010-111019) -->
+        <range slot="2" minSkill="112010" maxSkill="112011" rarity="1" />
+        <range slot="2" minSkill="112012" maxSkill="112013" rarity="2" />
+        <range slot="2" minSkill="112014" maxSkill="112015" rarity="3" />
+        <range slot="2" minSkill="112016" maxSkill="112017" rarity="4" />
+        <range slot="2" minSkill="112018" maxSkill="112019" rarity="5" />
+
+        <!-- MP值 (111020-111029) -->
+        <range slot="2" minSkill="112020" maxSkill="112021" rarity="1" />
+        <range slot="2" minSkill="112022" maxSkill="112023" rarity="2" />
+        <range slot="2" minSkill="112024" maxSkill="112025" rarity="3" />
+        <range slot="2" minSkill="112026" maxSkill="112027" rarity="4" />
+        <range slot="2" minSkill="112028" maxSkill="112029" rarity="5" />
+
+        <!-- MP% (111030-111039) -->
+        <range slot="2" minSkill="112030" maxSkill="112031" rarity="1" />
+        <range slot="2" minSkill="112032" maxSkill="112033" rarity="2" />
+        <range slot="2" minSkill="112034" maxSkill="112035" rarity="3" />
+        <range slot="2" minSkill="112036" maxSkill="112037" rarity="4" />
+        <range slot="2" minSkill="112038" maxSkill="112039" rarity="5" />
+
+        <!-- CP值 (111040-111049) -->
+        <range slot="2" minSkill="112040" maxSkill="112041" rarity="1" />
+        <range slot="2" minSkill="112042" maxSkill="112043" rarity="2" />
+        <range slot="2" minSkill="112044" maxSkill="112045" rarity="3" />
+        <range slot="2" minSkill="112046" maxSkill="112047" rarity="4" />
+        <range slot="2" minSkill="112048" maxSkill="112049" rarity="5" />
+
+        <!-- CP% (111050-111059) -->
+        <range slot="2" minSkill="112050" maxSkill="112051" rarity="1" />
+        <range slot="2" minSkill="112052" maxSkill="112053" rarity="2" />
+        <range slot="2" minSkill="112054" maxSkill="112055" rarity="3" />
+        <range slot="2" minSkill="112056" maxSkill="112057" rarity="4" />
+        <range slot="2" minSkill="112058" maxSkill="112059" rarity="5" />
+
+        <!-- 物理攻擊力值 (111060-111069) -->
+        <range slot="2" minSkill="112060" maxSkill="112061" rarity="1" />
+        <range slot="2" minSkill="112062" maxSkill="112063" rarity="2" />
+        <range slot="2" minSkill="112064" maxSkill="112065" rarity="3" />
+        <range slot="2" minSkill="112066" maxSkill="112067" rarity="4" />
+        <range slot="2" minSkill="112068" maxSkill="112069" rarity="5" />
+
+        <!-- 物理攻擊力% (111070-111079) -->
+        <range slot="2" minSkill="112070" maxSkill="112071" rarity="1" />
+        <range slot="2" minSkill="112072" maxSkill="112073" rarity="2" />
+        <range slot="2" minSkill="112074" maxSkill="112075" rarity="3" />
+        <range slot="2" minSkill="112076" maxSkill="112077" rarity="4" />
+        <range slot="2" minSkill="112078" maxSkill="112079" rarity="5" />
+
+        <!-- 魔法攻擊力值 (111080-111089) -->
+        <range slot="2" minSkill="112080" maxSkill="112081" rarity="1" />
+        <range slot="2" minSkill="112082" maxSkill="112083" rarity="2" />
+        <range slot="2" minSkill="112084" maxSkill="112085" rarity="3" />
+        <range slot="2" minSkill="112086" maxSkill="112087" rarity="4" />
+        <range slot="2" minSkill="112088" maxSkill="112089" rarity="5" />
+
+        <!-- 魔法攻擊力% (111090-111099) -->
+        <range slot="2" minSkill="112090" maxSkill="112091" rarity="1" />
+        <range slot="2" minSkill="112092" maxSkill="112093" rarity="2" />
+        <range slot="2" minSkill="112094" maxSkill="112095" rarity="3" />
+        <range slot="2" minSkill="112096" maxSkill="112097" rarity="4" />
+        <range slot="2" minSkill="112098" maxSkill="112099" rarity="5" />
+
+        <!-- 物理防禦力值 (111100-111109) -->
+        <range slot="2" minSkill="112100" maxSkill="112101" rarity="1" />
+        <range slot="2" minSkill="112102" maxSkill="112103" rarity="2" />
+        <range slot="2" minSkill="112104" maxSkill="112105" rarity="3" />
+        <range slot="2" minSkill="112106" maxSkill="112107" rarity="4" />
+        <range slot="2" minSkill="112108" maxSkill="112109" rarity="5" />
+
+        <!-- 物理防禦力% (111110-111119) -->
+        <range slot="2" minSkill="112110" maxSkill="112111" rarity="1" />
+        <range slot="2" minSkill="112112" maxSkill="112113" rarity="2" />
+        <range slot="2" minSkill="112114" maxSkill="112115" rarity="3" />
+        <range slot="2" minSkill="112116" maxSkill="112117" rarity="4" />
+        <range slot="2" minSkill="112118" maxSkill="112119" rarity="5" />
+
+        <!-- 魔法防禦力值 (111120-111129) -->
+        <range slot="2" minSkill="112120" maxSkill="112121" rarity="1" />
+        <range slot="2" minSkill="112122" maxSkill="112123" rarity="2" />
+        <range slot="2" minSkill="112124" maxSkill="112125" rarity="3" />
+        <range slot="2" minSkill="112126" maxSkill="112127" rarity="4" />
+        <range slot="2" minSkill="112128" maxSkill="112129" rarity="5" />
+
+        <!-- 魔法防禦力% (111130-111139) -->
+        <range slot="2" minSkill="112130" maxSkill="112131" rarity="1" />
+        <range slot="2" minSkill="112132" maxSkill="112133" rarity="2" />
+        <range slot="2" minSkill="112134" maxSkill="112135" rarity="3" />
+        <range slot="2" minSkill="112136" maxSkill="112137" rarity="4" />
+        <range slot="2" minSkill="112138" maxSkill="112139" rarity="5" />
+
+        <!-- 攻擊速度值 (111140-111149) -->
+        <range slot="2" minSkill="112140" maxSkill="112141" rarity="1" />
+        <range slot="2" minSkill="112142" maxSkill="112143" rarity="2" />
+        <range slot="2" minSkill="112144" maxSkill="112145" rarity="3" />
+        <range slot="2" minSkill="112146" maxSkill="112147" rarity="4" />
+        <range slot="2" minSkill="112148" maxSkill="112149" rarity="5" />
+
+        <!-- 攻擊速度% (111150-111159) -->
+        <range slot="2" minSkill="112150" maxSkill="112151" rarity="1" />
+        <range slot="2" minSkill="112152" maxSkill="112153" rarity="2" />
+        <range slot="2" minSkill="112154" maxSkill="112155" rarity="3" />
+        <range slot="2" minSkill="112156" maxSkill="112157" rarity="4" />
+        <range slot="2" minSkill="112158" maxSkill="112159" rarity="5" />
+
+        <!-- 施法速度值 (111160-111169) -->
+        <range slot="2" minSkill="112160" maxSkill="112161" rarity="1" />
+        <range slot="2" minSkill="112162" maxSkill="112163" rarity="2" />
+        <range slot="2" minSkill="112164" maxSkill="112165" rarity="3" />
+        <range slot="2" minSkill="112166" maxSkill="112167" rarity="4" />
+        <range slot="2" minSkill="112168" maxSkill="112169" rarity="5" />
+
+        <!-- 施法速度% (111170-111179) -->
+        <range slot="2" minSkill="112170" maxSkill="112171" rarity="1" />
+        <range slot="2" minSkill="112172" maxSkill="112173" rarity="2" />
+        <range slot="2" minSkill="112174" maxSkill="112175" rarity="3" />
+        <range slot="2" minSkill="112176" maxSkill="112177" rarity="4" />
+        <range slot="2" minSkill="112178" maxSkill="112179" rarity="5" />
+
+        <!-- STR (111180-111189) -->
+        <range slot="2" minSkill="112180" maxSkill="112181" rarity="1" />
+        <range slot="2" minSkill="112182" maxSkill="112183" rarity="2" />
+        <range slot="2" minSkill="112184" maxSkill="112185" rarity="3" />
+        <range slot="2" minSkill="112186" maxSkill="112187" rarity="4" />
+        <range slot="2" minSkill="112188" maxSkill="112189" rarity="5" />
+
+        <!-- DEX (111190-111199) -->
+        <range slot="2" minSkill="112190" maxSkill="112191" rarity="1" />
+        <range slot="2" minSkill="112192" maxSkill="112193" rarity="2" />
+        <range slot="2" minSkill="112194" maxSkill="112195" rarity="3" />
+        <range slot="2" minSkill="112196" maxSkill="112197" rarity="4" />
+        <range slot="2" minSkill="112198" maxSkill="112199" rarity="5" />
+
+        <!-- CON (111200-111209) -->
+        <range slot="2" minSkill="112200" maxSkill="112201" rarity="1" />
+        <range slot="2" minSkill="112202" maxSkill="112203" rarity="2" />
+        <range slot="2" minSkill="112204" maxSkill="112205" rarity="3" />
+        <range slot="2" minSkill="112206" maxSkill="112207" rarity="4" />
+        <range slot="2" minSkill="112208" maxSkill="112209" rarity="5" />
+
+        <!-- WIT (111210-111219) -->
+        <range slot="2" minSkill="112210" maxSkill="112211" rarity="1" />
+        <range slot="2" minSkill="112212" maxSkill="112213" rarity="2" />
+        <range slot="2" minSkill="112214" maxSkill="112215" rarity="3" />
+        <range slot="2" minSkill="112216" maxSkill="112217" rarity="4" />
+        <range slot="2" minSkill="112218" maxSkill="112219" rarity="5" />
+
+        <!-- INT (111220-111229) -->
+        <range slot="2" minSkill="112220" maxSkill="112221" rarity="1" />
+        <range slot="2" minSkill="112222" maxSkill="112223" rarity="2" />
+        <range slot="2" minSkill="112224" maxSkill="112225" rarity="3" />
+        <range slot="2" minSkill="112226" maxSkill="112227" rarity="4" />
+        <range slot="2" minSkill="112228" maxSkill="112229" rarity="5" />
+
+        <!-- MEN (111230-111239) -->
+        <range slot="2" minSkill="112230" maxSkill="112231" rarity="1" />
+        <range slot="2" minSkill="112232" maxSkill="112233" rarity="2" />
+        <range slot="2" minSkill="112234" maxSkill="112235" rarity="3" />
+        <range slot="2" minSkill="112236" maxSkill="112237" rarity="4" />
+        <range slot="2" minSkill="112238" maxSkill="112239" rarity="5" />
+
+        <!-- 負重上限 (111240-111249) -->
+        <range slot="2" minSkill="112240" maxSkill="112241" rarity="1" />
+        <range slot="2" minSkill="112242" maxSkill="112243" rarity="2" />
+        <range slot="2" minSkill="112244" maxSkill="112245" rarity="3" />
+        <range slot="2" minSkill="112246" maxSkill="112247" rarity="4" />
+        <range slot="2" minSkill="112248" maxSkill="112249" rarity="5" />
+
+        <!-- 移動速度 (111250-111259) -->
+        <range slot="2" minSkill="112250" maxSkill="112251" rarity="1" />
+        <range slot="2" minSkill="112252" maxSkill="112253" rarity="2" />
+        <range slot="2" minSkill="112254" maxSkill="112255" rarity="3" />
+        <range slot="2" minSkill="112256" maxSkill="112257" rarity="4" />
+        <range slot="2" minSkill="112258" maxSkill="112259" rarity="5" />
+
+        <!-- 命中能力 (111260-111269) -->
+        <range slot="2" minSkill="112260" maxSkill="112261" rarity="1" />
+        <range slot="2" minSkill="112262" maxSkill="112263" rarity="2" />
+        <range slot="2" minSkill="112264" maxSkill="112265" rarity="3" />
+        <range slot="2" minSkill="112266" maxSkill="112267" rarity="4" />
+        <range slot="2" minSkill="112268" maxSkill="112269" rarity="5" />
+
+        <!-- 魔法命中能力 (111270-111279) -->
+        <range slot="2" minSkill="112270" maxSkill="112271" rarity="1" />
+        <range slot="2" minSkill="112272" maxSkill="112273" rarity="2" />
+        <range slot="2" minSkill="112274" maxSkill="112275" rarity="3" />
+        <range slot="2" minSkill="112276" maxSkill="112277" rarity="4" />
+        <range slot="2" minSkill="112278" maxSkill="112279" rarity="5" />
+
+        <!-- 火屬性傷害 (111280-111289) -->
+        <range slot="2" minSkill="112280" maxSkill="112281" rarity="1" />
+        <range slot="2" minSkill="112282" maxSkill="112283" rarity="2" />
+        <range slot="2" minSkill="112284" maxSkill="112285" rarity="3" />
+        <range slot="2" minSkill="112286" maxSkill="112287" rarity="4" />
+        <range slot="2" minSkill="112288" maxSkill="112289" rarity="5" />
+
+        <!-- 水屬性傷害 (111290-111299) -->
+        <range slot="2" minSkill="112290" maxSkill="112291" rarity="1" />
+        <range slot="2" minSkill="112292" maxSkill="112293" rarity="2" />
+        <range slot="2" minSkill="112294" maxSkill="112295" rarity="3" />
+        <range slot="2" minSkill="112296" maxSkill="112297" rarity="4" />
+        <range slot="2" minSkill="112298" maxSkill="112299" rarity="5" />
+
+        <!-- 風屬性傷害 (111300-111309) -->
+        <range slot="2" minSkill="112300" maxSkill="112301" rarity="1" />
+        <range slot="2" minSkill="112302" maxSkill="112303" rarity="2" />
+        <range slot="2" minSkill="112304" maxSkill="112305" rarity="3" />
+        <range slot="2" minSkill="112306" maxSkill="112307" rarity="4" />
+        <range slot="2" minSkill="112308" maxSkill="112309" rarity="5" />
+
+        <!-- 地屬性傷害 (111310-111319) -->
+        <range slot="2" minSkill="112310" maxSkill="112311" rarity="1" />
+        <range slot="2" minSkill="112312" maxSkill="112313" rarity="2" />
+        <range slot="2" minSkill="112314" maxSkill="112315" rarity="3" />
+        <range slot="2" minSkill="112316" maxSkill="112317" rarity="4" />
+        <range slot="2" minSkill="112318" maxSkill="112319" rarity="5" />
+
+        <!-- 聖屬性傷害 (111320-111329) -->
+        <range slot="2" minSkill="112320" maxSkill="112321" rarity="1" />
+        <range slot="2" minSkill="112322" maxSkill="112323" rarity="2" />
+        <range slot="2" minSkill="112324" maxSkill="112325" rarity="3" />
+        <range slot="2" minSkill="112326" maxSkill="112327" rarity="4" />
+        <range slot="2" minSkill="112328" maxSkill="112329" rarity="5" />
+
+        <!-- 暗屬性傷害 (111330-111339) -->
+        <range slot="2" minSkill="112330" maxSkill="112331" rarity="1" />
+        <range slot="2" minSkill="112332" maxSkill="112333" rarity="2" />
+        <range slot="2" minSkill="112334" maxSkill="112335" rarity="3" />
+        <range slot="2" minSkill="112336" maxSkill="112337" rarity="4" />
+        <range slot="2" minSkill="112338" maxSkill="112339" rarity="5" />
+
+        <!-- PVE物理攻擊傷害 (111340-111349) -->
+        <range slot="2" minSkill="112340" maxSkill="112341" rarity="1" />
+        <range slot="2" minSkill="112342" maxSkill="112343" rarity="2" />
+        <range slot="2" minSkill="112344" maxSkill="112345" rarity="3" />
+        <range slot="2" minSkill="112346" maxSkill="112347" rarity="4" />
+        <range slot="2" minSkill="112348" maxSkill="112349" rarity="5" />
+
+        <!-- PVE物理技能傷害 (111350-111359) -->
+        <range slot="2" minSkill="112350" maxSkill="112351" rarity="1" />
+        <range slot="2" minSkill="112352" maxSkill="112353" rarity="2" />
+        <range slot="2" minSkill="112354" maxSkill="112355" rarity="3" />
+        <range slot="2" minSkill="112356" maxSkill="112357" rarity="4" />
+        <range slot="2" minSkill="112358" maxSkill="112359" rarity="5" />
+
+        <!-- PVE魔法技能傷害 (111360-111369) -->
+        <range slot="2" minSkill="112360" maxSkill="112361" rarity="1" />
+        <range slot="2" minSkill="112362" maxSkill="112363" rarity="2" />
+        <range slot="2" minSkill="112364" maxSkill="112365" rarity="3" />
+        <range slot="2" minSkill="112366" maxSkill="112367" rarity="4" />
+        <range slot="2" minSkill="112368" maxSkill="112369" rarity="5" />
+
+        <!-- PVE物理攻擊防禦 (111370-111379) -->
+        <range slot="2" minSkill="112370" maxSkill="112371" rarity="1" />
+        <range slot="2" minSkill="112372" maxSkill="112373" rarity="2" />
+        <range slot="2" minSkill="112374" maxSkill="112375" rarity="3" />
+        <range slot="2" minSkill="112376" maxSkill="112377" rarity="4" />
+        <range slot="2" minSkill="112378" maxSkill="112379" rarity="5" />
+
+        <!-- PVE物理技能防禦 (111380-111389) -->
+        <range slot="2" minSkill="112380" maxSkill="112381" rarity="1" />
+        <range slot="2" minSkill="112382" maxSkill="112383" rarity="2" />
+        <range slot="2" minSkill="112384" maxSkill="112385" rarity="3" />
+        <range slot="2" minSkill="112386" maxSkill="112387" rarity="4" />
+        <range slot="2" minSkill="112388" maxSkill="112389" rarity="5" />
+
+        <!-- PVE魔法技能防禦 (111390-111399) -->
+        <range slot="2" minSkill="112390" maxSkill="112391" rarity="1" />
+        <range slot="2" minSkill="112392" maxSkill="112393" rarity="2" />
+        <range slot="2" minSkill="112394" maxSkill="112395" rarity="3" />
+        <range slot="2" minSkill="112396" maxSkill="112397" rarity="4" />
+        <range slot="2" minSkill="112398" maxSkill="112399" rarity="5" />
+
+        <!-- PVP物理攻擊傷害 (111400-111409) -->
+        <range slot="2" minSkill="112400" maxSkill="112401" rarity="1" />
+        <range slot="2" minSkill="112402" maxSkill="112403" rarity="2" />
+        <range slot="2" minSkill="112404" maxSkill="112405" rarity="3" />
+        <range slot="2" minSkill="112406" maxSkill="112407" rarity="4" />
+        <range slot="2" minSkill="112408" maxSkill="112409" rarity="5" />
+
+        <!-- PVP物理技能傷害 (111410-111419) -->
+        <range slot="2" minSkill="112410" maxSkill="112411" rarity="1" />
+        <range slot="2" minSkill="112412" maxSkill="112413" rarity="2" />
+        <range slot="2" minSkill="112414" maxSkill="112415" rarity="3" />
+        <range slot="2" minSkill="112416" maxSkill="112417" rarity="4" />
+        <range slot="2" minSkill="112418" maxSkill="112419" rarity="5" />
+
+        <!-- PVP魔法技能傷害 (111420-111429) -->
+        <range slot="2" minSkill="112420" maxSkill="112421" rarity="1" />
+        <range slot="2" minSkill="112422" maxSkill="112423" rarity="2" />
+        <range slot="2" minSkill="112424" maxSkill="112425" rarity="3" />
+        <range slot="2" minSkill="112426" maxSkill="112427" rarity="4" />
+        <range slot="2" minSkill="112428" maxSkill="112429" rarity="5" />
+
+        <!-- PVP物理攻擊防禦 (111430-111439) -->
+        <range slot="2" minSkill="112430" maxSkill="112431" rarity="1" />
+        <range slot="2" minSkill="112432" maxSkill="112433" rarity="2" />
+        <range slot="2" minSkill="112434" maxSkill="112435" rarity="3" />
+        <range slot="2" minSkill="112436" maxSkill="112437" rarity="4" />
+        <range slot="2" minSkill="112438" maxSkill="112439" rarity="5" />
+
+        <!-- PVP物理技能防禦 (111440-111449) -->
+        <range slot="2" minSkill="112440" maxSkill="112441" rarity="1" />
+        <range slot="2" minSkill="112442" maxSkill="112443" rarity="2" />
+        <range slot="2" minSkill="112444" maxSkill="112445" rarity="3" />
+        <range slot="2" minSkill="112446" maxSkill="112447" rarity="4" />
+        <range slot="2" minSkill="112448" maxSkill="112449" rarity="5" />
+
+        <!-- PVP魔法技能防禦 (111450-111459) -->
+        <range slot="2" minSkill="112450" maxSkill="112451" rarity="1" />
+        <range slot="2" minSkill="112452" maxSkill="112453" rarity="2" />
+        <range slot="2" minSkill="112454" maxSkill="112455" rarity="3" />
+        <range slot="2" minSkill="112456" maxSkill="112457" rarity="4" />
+        <range slot="2" minSkill="112458" maxSkill="112459" rarity="5" />
+
+        <!-- 物理攻擊爆擊率 (111460-111469) -->
+        <range slot="2" minSkill="112460" maxSkill="112461" rarity="1" />
+        <range slot="2" minSkill="112462" maxSkill="112463" rarity="2" />
+        <range slot="2" minSkill="112464" maxSkill="112465" rarity="3" />
+        <range slot="2" minSkill="112466" maxSkill="112467" rarity="4" />
+        <range slot="2" minSkill="112468" maxSkill="112469" rarity="5" />
+
+        <!-- 物理攻擊爆擊傷害 (111470-111479) -->
+        <range slot="2" minSkill="112470" maxSkill="112471" rarity="1" />
+        <range slot="2" minSkill="112472" maxSkill="112473" rarity="2" />
+        <range slot="2" minSkill="112474" maxSkill="112475" rarity="3" />
+        <range slot="2" minSkill="112476" maxSkill="112477" rarity="4" />
+        <range slot="2" minSkill="112478" maxSkill="112479" rarity="5" />
+
+        <!-- 物理技能爆擊率 (111480-111489) -->
+        <range slot="2" minSkill="112480" maxSkill="112481" rarity="1" />
+        <range slot="2" minSkill="112482" maxSkill="112483" rarity="2" />
+        <range slot="2" minSkill="112484" maxSkill="112485" rarity="3" />
+        <range slot="2" minSkill="112486" maxSkill="112487" rarity="4" />
+        <range slot="2" minSkill="112488" maxSkill="112489" rarity="5" />
+
+        <!-- 物理技能爆擊傷害 (111490-111499) -->
+        <range slot="2" minSkill="112490" maxSkill="112491" rarity="1" />
+        <range slot="2" minSkill="112492" maxSkill="112493" rarity="2" />
+        <range slot="2" minSkill="112494" maxSkill="112495" rarity="3" />
+        <range slot="2" minSkill="112496" maxSkill="112497" rarity="4" />
+        <range slot="2" minSkill="112498" maxSkill="112499" rarity="5" />
+
+        <!-- 魔法爆擊率 (111500-111509) -->
+        <range slot="2" minSkill="112500" maxSkill="112501" rarity="1" />
+        <range slot="2" minSkill="112502" maxSkill="112503" rarity="2" />
+        <range slot="2" minSkill="112504" maxSkill="112505" rarity="3" />
+        <range slot="2" minSkill="112506" maxSkill="112507" rarity="4" />
+        <range slot="2" minSkill="112508" maxSkill="112509" rarity="5" />
+
+        <!-- 魔法爆擊傷害 (111510-111519) -->
+        <range slot="2" minSkill="112510" maxSkill="112511" rarity="1" />
+        <range slot="2" minSkill="112512" maxSkill="112513" rarity="2" />
+        <range slot="2" minSkill="112514" maxSkill="112515" rarity="3" />
+        <range slot="2" minSkill="112516" maxSkill="112517" rarity="4" />
+        <range slot="2" minSkill="112518" maxSkill="112519" rarity="5" />
+
+        <!-- 最終傷害 (111520-111529) -->
+        <range slot="2" minSkill="112520" maxSkill="112521" rarity="1" />
+        <range slot="2" minSkill="112522" maxSkill="112523" rarity="2" />
+        <range slot="2" minSkill="112524" maxSkill="112525" rarity="3" />
+        <range slot="2" minSkill="112526" maxSkill="112527" rarity="4" />
+        <range slot="2" minSkill="112528" maxSkill="112529" rarity="5" />
+        <!-- ========================================分隔線======================================== -->
+
+        <!-- HP值 (111000-111009) -->
+        <range slot="3" minSkill="113000" maxSkill="113001" rarity="1" />
+        <range slot="3" minSkill="113002" maxSkill="113003" rarity="2" />
+        <range slot="3" minSkill="113004" maxSkill="113005" rarity="3" />
+        <range slot="3" minSkill="113006" maxSkill="113007" rarity="4" />
+        <range slot="3" minSkill="113008" maxSkill="113009" rarity="5" />
+
+        <!-- HP% (111010-111019) -->
+        <range slot="3" minSkill="113010" maxSkill="113011" rarity="1" />
+        <range slot="3" minSkill="113012" maxSkill="113013" rarity="2" />
+        <range slot="3" minSkill="113014" maxSkill="113015" rarity="3" />
+        <range slot="3" minSkill="113016" maxSkill="113017" rarity="4" />
+        <range slot="3" minSkill="113018" maxSkill="113019" rarity="5" />
+
+        <!-- MP值 (111020-111029) -->
+        <range slot="3" minSkill="113020" maxSkill="113021" rarity="1" />
+        <range slot="3" minSkill="113022" maxSkill="113023" rarity="2" />
+        <range slot="3" minSkill="113024" maxSkill="113025" rarity="3" />
+        <range slot="3" minSkill="113026" maxSkill="113027" rarity="4" />
+        <range slot="3" minSkill="113028" maxSkill="113029" rarity="5" />
+
+        <!-- MP% (111030-111039) -->
+        <range slot="3" minSkill="113030" maxSkill="113031" rarity="1" />
+        <range slot="3" minSkill="113032" maxSkill="113033" rarity="2" />
+        <range slot="3" minSkill="113034" maxSkill="113035" rarity="3" />
+        <range slot="3" minSkill="113036" maxSkill="113037" rarity="4" />
+        <range slot="3" minSkill="113038" maxSkill="113039" rarity="5" />
+
+        <!-- CP值 (111040-111049) -->
+        <range slot="3" minSkill="113040" maxSkill="113041" rarity="1" />
+        <range slot="3" minSkill="113042" maxSkill="113043" rarity="2" />
+        <range slot="3" minSkill="113044" maxSkill="113045" rarity="3" />
+        <range slot="3" minSkill="113046" maxSkill="113047" rarity="4" />
+        <range slot="3" minSkill="113048" maxSkill="113049" rarity="5" />
+
+        <!-- CP% (111050-111059) -->
+        <range slot="3" minSkill="113050" maxSkill="113051" rarity="1" />
+        <range slot="3" minSkill="113052" maxSkill="113053" rarity="2" />
+        <range slot="3" minSkill="113054" maxSkill="113055" rarity="3" />
+        <range slot="3" minSkill="113056" maxSkill="113057" rarity="4" />
+        <range slot="3" minSkill="113058" maxSkill="113059" rarity="5" />
+
+        <!-- 物理攻擊力值 (111060-111069) -->
+        <range slot="3" minSkill="113060" maxSkill="113061" rarity="1" />
+        <range slot="3" minSkill="113062" maxSkill="113063" rarity="2" />
+        <range slot="3" minSkill="113064" maxSkill="113065" rarity="3" />
+        <range slot="3" minSkill="113066" maxSkill="113067" rarity="4" />
+        <range slot="3" minSkill="113068" maxSkill="113069" rarity="5" />
+
+        <!-- 物理攻擊力% (111070-111079) -->
+        <range slot="3" minSkill="113070" maxSkill="113071" rarity="1" />
+        <range slot="3" minSkill="113072" maxSkill="113073" rarity="2" />
+        <range slot="3" minSkill="113074" maxSkill="113075" rarity="3" />
+        <range slot="3" minSkill="113076" maxSkill="113077" rarity="4" />
+        <range slot="3" minSkill="113078" maxSkill="113079" rarity="5" />
+
+        <!-- 魔法攻擊力值 (111080-111089) -->
+        <range slot="3" minSkill="113080" maxSkill="113081" rarity="1" />
+        <range slot="3" minSkill="113082" maxSkill="113083" rarity="2" />
+        <range slot="3" minSkill="113084" maxSkill="113085" rarity="3" />
+        <range slot="3" minSkill="113086" maxSkill="113087" rarity="4" />
+        <range slot="3" minSkill="113088" maxSkill="113089" rarity="5" />
+
+        <!-- 魔法攻擊力% (111090-111099) -->
+        <range slot="3" minSkill="113090" maxSkill="113091" rarity="1" />
+        <range slot="3" minSkill="113092" maxSkill="113093" rarity="2" />
+        <range slot="3" minSkill="113094" maxSkill="113095" rarity="3" />
+        <range slot="3" minSkill="113096" maxSkill="113097" rarity="4" />
+        <range slot="3" minSkill="113098" maxSkill="113099" rarity="5" />
+
+        <!-- 物理防禦力值 (111100-111109) -->
+        <range slot="3" minSkill="113100" maxSkill="113101" rarity="1" />
+        <range slot="3" minSkill="113102" maxSkill="113103" rarity="2" />
+        <range slot="3" minSkill="113104" maxSkill="113105" rarity="3" />
+        <range slot="3" minSkill="113106" maxSkill="113107" rarity="4" />
+        <range slot="3" minSkill="113108" maxSkill="113109" rarity="5" />
+
+        <!-- 物理防禦力% (111110-111119) -->
+        <range slot="3" minSkill="113110" maxSkill="113111" rarity="1" />
+        <range slot="3" minSkill="113112" maxSkill="113113" rarity="2" />
+        <range slot="3" minSkill="113114" maxSkill="113115" rarity="3" />
+        <range slot="3" minSkill="113116" maxSkill="113117" rarity="4" />
+        <range slot="3" minSkill="113118" maxSkill="113119" rarity="5" />
+
+        <!-- 魔法防禦力值 (111120-111129) -->
+        <range slot="3" minSkill="113120" maxSkill="113121" rarity="1" />
+        <range slot="3" minSkill="113122" maxSkill="113123" rarity="2" />
+        <range slot="3" minSkill="113124" maxSkill="113125" rarity="3" />
+        <range slot="3" minSkill="113126" maxSkill="113127" rarity="4" />
+        <range slot="3" minSkill="113128" maxSkill="113129" rarity="5" />
+
+        <!-- 魔法防禦力% (111130-111139) -->
+        <range slot="3" minSkill="113130" maxSkill="113131" rarity="1" />
+        <range slot="3" minSkill="113132" maxSkill="113133" rarity="2" />
+        <range slot="3" minSkill="113134" maxSkill="113135" rarity="3" />
+        <range slot="3" minSkill="113136" maxSkill="113137" rarity="4" />
+        <range slot="3" minSkill="113138" maxSkill="113139" rarity="5" />
+
+        <!-- 攻擊速度值 (111140-111149) -->
+        <range slot="3" minSkill="113140" maxSkill="113141" rarity="1" />
+        <range slot="3" minSkill="113142" maxSkill="113143" rarity="2" />
+        <range slot="3" minSkill="113144" maxSkill="113145" rarity="3" />
+        <range slot="3" minSkill="113146" maxSkill="113147" rarity="4" />
+        <range slot="3" minSkill="113148" maxSkill="113149" rarity="5" />
+
+        <!-- 攻擊速度% (111150-111159) -->
+        <range slot="3" minSkill="113150" maxSkill="113151" rarity="1" />
+        <range slot="3" minSkill="113152" maxSkill="113153" rarity="2" />
+        <range slot="3" minSkill="113154" maxSkill="113155" rarity="3" />
+        <range slot="3" minSkill="113156" maxSkill="113157" rarity="4" />
+        <range slot="3" minSkill="113158" maxSkill="113159" rarity="5" />
+
+        <!-- 施法速度值 (111160-111169) -->
+        <range slot="3" minSkill="113160" maxSkill="113161" rarity="1" />
+        <range slot="3" minSkill="113162" maxSkill="113163" rarity="2" />
+        <range slot="3" minSkill="113164" maxSkill="113165" rarity="3" />
+        <range slot="3" minSkill="113166" maxSkill="113167" rarity="4" />
+        <range slot="3" minSkill="113168" maxSkill="113169" rarity="5" />
+
+        <!-- 施法速度% (111170-111179) -->
+        <range slot="3" minSkill="113170" maxSkill="113171" rarity="1" />
+        <range slot="3" minSkill="113172" maxSkill="113173" rarity="2" />
+        <range slot="3" minSkill="113174" maxSkill="113175" rarity="3" />
+        <range slot="3" minSkill="113176" maxSkill="113177" rarity="4" />
+        <range slot="3" minSkill="113178" maxSkill="113179" rarity="5" />
+
+        <!-- STR (111180-111189) -->
+        <range slot="3" minSkill="113180" maxSkill="113181" rarity="1" />
+        <range slot="3" minSkill="113182" maxSkill="113183" rarity="2" />
+        <range slot="3" minSkill="113184" maxSkill="113185" rarity="3" />
+        <range slot="3" minSkill="113186" maxSkill="113187" rarity="4" />
+        <range slot="3" minSkill="113188" maxSkill="113189" rarity="5" />
+
+        <!-- DEX (111190-111199) -->
+        <range slot="3" minSkill="113190" maxSkill="113191" rarity="1" />
+        <range slot="3" minSkill="113192" maxSkill="113193" rarity="2" />
+        <range slot="3" minSkill="113194" maxSkill="113195" rarity="3" />
+        <range slot="3" minSkill="113196" maxSkill="113197" rarity="4" />
+        <range slot="3" minSkill="113198" maxSkill="113199" rarity="5" />
+
+        <!-- CON (111200-111209) -->
+        <range slot="3" minSkill="113200" maxSkill="113201" rarity="1" />
+        <range slot="3" minSkill="113202" maxSkill="113203" rarity="2" />
+        <range slot="3" minSkill="113204" maxSkill="113205" rarity="3" />
+        <range slot="3" minSkill="113206" maxSkill="113207" rarity="4" />
+        <range slot="3" minSkill="113208" maxSkill="113209" rarity="5" />
+
+        <!-- WIT (111210-111219) -->
+        <range slot="3" minSkill="113210" maxSkill="113211" rarity="1" />
+        <range slot="3" minSkill="113212" maxSkill="113213" rarity="2" />
+        <range slot="3" minSkill="113214" maxSkill="113215" rarity="3" />
+        <range slot="3" minSkill="113216" maxSkill="113217" rarity="4" />
+        <range slot="3" minSkill="113218" maxSkill="113219" rarity="5" />
+
+        <!-- INT (111220-111229) -->
+        <range slot="3" minSkill="113220" maxSkill="113221" rarity="1" />
+        <range slot="3" minSkill="113222" maxSkill="113223" rarity="2" />
+        <range slot="3" minSkill="113224" maxSkill="113225" rarity="3" />
+        <range slot="3" minSkill="113226" maxSkill="113227" rarity="4" />
+        <range slot="3" minSkill="113228" maxSkill="113229" rarity="5" />
+
+        <!-- MEN (111230-111239) -->
+        <range slot="3" minSkill="113230" maxSkill="113231" rarity="1" />
+        <range slot="3" minSkill="113232" maxSkill="113233" rarity="2" />
+        <range slot="3" minSkill="113234" maxSkill="113235" rarity="3" />
+        <range slot="3" minSkill="113236" maxSkill="113237" rarity="4" />
+        <range slot="3" minSkill="113238" maxSkill="113239" rarity="5" />
+
+        <!-- 負重上限 (111240-111249) -->
+        <range slot="3" minSkill="113240" maxSkill="113241" rarity="1" />
+        <range slot="3" minSkill="113242" maxSkill="113243" rarity="2" />
+        <range slot="3" minSkill="113244" maxSkill="113245" rarity="3" />
+        <range slot="3" minSkill="113246" maxSkill="113247" rarity="4" />
+        <range slot="3" minSkill="113248" maxSkill="113249" rarity="5" />
+
+        <!-- 移動速度 (111250-111259) -->
+        <range slot="3" minSkill="113250" maxSkill="113251" rarity="1" />
+        <range slot="3" minSkill="113252" maxSkill="113253" rarity="2" />
+        <range slot="3" minSkill="113254" maxSkill="113255" rarity="3" />
+        <range slot="3" minSkill="113256" maxSkill="113257" rarity="4" />
+        <range slot="3" minSkill="113258" maxSkill="113259" rarity="5" />
+
+        <!-- 命中能力 (111260-111269) -->
+        <range slot="3" minSkill="113260" maxSkill="113261" rarity="1" />
+        <range slot="3" minSkill="113262" maxSkill="113263" rarity="2" />
+        <range slot="3" minSkill="113264" maxSkill="113265" rarity="3" />
+        <range slot="3" minSkill="113266" maxSkill="113267" rarity="4" />
+        <range slot="3" minSkill="113268" maxSkill="113269" rarity="5" />
+
+        <!-- 魔法命中能力 (111270-111279) -->
+        <range slot="3" minSkill="113270" maxSkill="113271" rarity="1" />
+        <range slot="3" minSkill="113272" maxSkill="113273" rarity="2" />
+        <range slot="3" minSkill="113274" maxSkill="113275" rarity="3" />
+        <range slot="3" minSkill="113276" maxSkill="113277" rarity="4" />
+        <range slot="3" minSkill="113278" maxSkill="113279" rarity="5" />
+
+        <!-- 火屬性傷害 (111280-111289) -->
+        <range slot="3" minSkill="113280" maxSkill="113281" rarity="1" />
+        <range slot="3" minSkill="113282" maxSkill="113283" rarity="2" />
+        <range slot="3" minSkill="113284" maxSkill="113285" rarity="3" />
+        <range slot="3" minSkill="113286" maxSkill="113287" rarity="4" />
+        <range slot="3" minSkill="113288" maxSkill="113289" rarity="5" />
+
+        <!-- 水屬性傷害 (111290-111299) -->
+        <range slot="3" minSkill="113290" maxSkill="113291" rarity="1" />
+        <range slot="3" minSkill="113292" maxSkill="113293" rarity="2" />
+        <range slot="3" minSkill="113294" maxSkill="113295" rarity="3" />
+        <range slot="3" minSkill="113296" maxSkill="113297" rarity="4" />
+        <range slot="3" minSkill="113298" maxSkill="113299" rarity="5" />
+
+        <!-- 風屬性傷害 (111300-111309) -->
+        <range slot="3" minSkill="113300" maxSkill="113301" rarity="1" />
+        <range slot="3" minSkill="113302" maxSkill="113303" rarity="2" />
+        <range slot="3" minSkill="113304" maxSkill="113305" rarity="3" />
+        <range slot="3" minSkill="113306" maxSkill="113307" rarity="4" />
+        <range slot="3" minSkill="113308" maxSkill="113309" rarity="5" />
+
+        <!-- 地屬性傷害 (111310-111319) -->
+        <range slot="3" minSkill="113310" maxSkill="113311" rarity="1" />
+        <range slot="3" minSkill="113312" maxSkill="113313" rarity="2" />
+        <range slot="3" minSkill="113314" maxSkill="113315" rarity="3" />
+        <range slot="3" minSkill="113316" maxSkill="113317" rarity="4" />
+        <range slot="3" minSkill="113318" maxSkill="113319" rarity="5" />
+
+        <!-- 聖屬性傷害 (111320-111329) -->
+        <range slot="3" minSkill="113320" maxSkill="113321" rarity="1" />
+        <range slot="3" minSkill="113322" maxSkill="113323" rarity="2" />
+        <range slot="3" minSkill="113324" maxSkill="113325" rarity="3" />
+        <range slot="3" minSkill="113326" maxSkill="113327" rarity="4" />
+        <range slot="3" minSkill="113328" maxSkill="113329" rarity="5" />
+
+        <!-- 暗屬性傷害 (111330-111339) -->
+        <range slot="3" minSkill="113330" maxSkill="113331" rarity="1" />
+        <range slot="3" minSkill="113332" maxSkill="113333" rarity="2" />
+        <range slot="3" minSkill="113334" maxSkill="113335" rarity="3" />
+        <range slot="3" minSkill="113336" maxSkill="113337" rarity="4" />
+        <range slot="3" minSkill="113338" maxSkill="113339" rarity="5" />
+
+        <!-- PVE物理攻擊傷害 (111340-111349) -->
+        <range slot="3" minSkill="113340" maxSkill="113341" rarity="1" />
+        <range slot="3" minSkill="113342" maxSkill="113343" rarity="2" />
+        <range slot="3" minSkill="113344" maxSkill="113345" rarity="3" />
+        <range slot="3" minSkill="113346" maxSkill="113347" rarity="4" />
+        <range slot="3" minSkill="113348" maxSkill="113349" rarity="5" />
+
+        <!-- PVE物理技能傷害 (111350-111359) -->
+        <range slot="3" minSkill="113350" maxSkill="113351" rarity="1" />
+        <range slot="3" minSkill="113352" maxSkill="113353" rarity="2" />
+        <range slot="3" minSkill="113354" maxSkill="113355" rarity="3" />
+        <range slot="3" minSkill="113356" maxSkill="113357" rarity="4" />
+        <range slot="3" minSkill="113358" maxSkill="113359" rarity="5" />
+
+        <!-- PVE魔法技能傷害 (111360-111369) -->
+        <range slot="3" minSkill="113360" maxSkill="113361" rarity="1" />
+        <range slot="3" minSkill="113362" maxSkill="113363" rarity="2" />
+        <range slot="3" minSkill="113364" maxSkill="113365" rarity="3" />
+        <range slot="3" minSkill="113366" maxSkill="113367" rarity="4" />
+        <range slot="3" minSkill="113368" maxSkill="113369" rarity="5" />
+
+        <!-- PVE物理攻擊防禦 (111370-111379) -->
+        <range slot="3" minSkill="113370" maxSkill="113371" rarity="1" />
+        <range slot="3" minSkill="113372" maxSkill="113373" rarity="2" />
+        <range slot="3" minSkill="113374" maxSkill="113375" rarity="3" />
+        <range slot="3" minSkill="113376" maxSkill="113377" rarity="4" />
+        <range slot="3" minSkill="113378" maxSkill="113379" rarity="5" />
+
+        <!-- PVE物理技能防禦 (111380-111389) -->
+        <range slot="3" minSkill="113380" maxSkill="113381" rarity="1" />
+        <range slot="3" minSkill="113382" maxSkill="113383" rarity="2" />
+        <range slot="3" minSkill="113384" maxSkill="113385" rarity="3" />
+        <range slot="3" minSkill="113386" maxSkill="113387" rarity="4" />
+        <range slot="3" minSkill="113388" maxSkill="113389" rarity="5" />
+
+        <!-- PVE魔法技能防禦 (111390-111399) -->
+        <range slot="3" minSkill="113390" maxSkill="113391" rarity="1" />
+        <range slot="3" minSkill="113392" maxSkill="113393" rarity="2" />
+        <range slot="3" minSkill="113394" maxSkill="113395" rarity="3" />
+        <range slot="3" minSkill="113396" maxSkill="113397" rarity="4" />
+        <range slot="3" minSkill="113398" maxSkill="113399" rarity="5" />
+
+        <!-- PVP物理攻擊傷害 (111400-111409) -->
+        <range slot="3" minSkill="113400" maxSkill="113401" rarity="1" />
+        <range slot="3" minSkill="113402" maxSkill="113403" rarity="2" />
+        <range slot="3" minSkill="113404" maxSkill="113405" rarity="3" />
+        <range slot="3" minSkill="113406" maxSkill="113407" rarity="4" />
+        <range slot="3" minSkill="113408" maxSkill="113409" rarity="5" />
+
+        <!-- PVP物理技能傷害 (111410-111419) -->
+        <range slot="3" minSkill="113410" maxSkill="113411" rarity="1" />
+        <range slot="3" minSkill="113412" maxSkill="113413" rarity="2" />
+        <range slot="3" minSkill="113414" maxSkill="113415" rarity="3" />
+        <range slot="3" minSkill="113416" maxSkill="113417" rarity="4" />
+        <range slot="3" minSkill="113418" maxSkill="113419" rarity="5" />
+
+        <!-- PVP魔法技能傷害 (111420-111429) -->
+        <range slot="3" minSkill="113420" maxSkill="113421" rarity="1" />
+        <range slot="3" minSkill="113422" maxSkill="113423" rarity="2" />
+        <range slot="3" minSkill="113424" maxSkill="113425" rarity="3" />
+        <range slot="3" minSkill="113426" maxSkill="113427" rarity="4" />
+        <range slot="3" minSkill="113428" maxSkill="113429" rarity="5" />
+
+        <!-- PVP物理攻擊防禦 (111430-111439) -->
+        <range slot="3" minSkill="113430" maxSkill="113431" rarity="1" />
+        <range slot="3" minSkill="113432" maxSkill="113433" rarity="2" />
+        <range slot="3" minSkill="113434" maxSkill="113435" rarity="3" />
+        <range slot="3" minSkill="113436" maxSkill="113437" rarity="4" />
+        <range slot="3" minSkill="113438" maxSkill="113439" rarity="5" />
+
+        <!-- PVP物理技能防禦 (111440-111449) -->
+        <range slot="3" minSkill="113440" maxSkill="113441" rarity="1" />
+        <range slot="3" minSkill="113442" maxSkill="113443" rarity="2" />
+        <range slot="3" minSkill="113444" maxSkill="113445" rarity="3" />
+        <range slot="3" minSkill="113446" maxSkill="113447" rarity="4" />
+        <range slot="3" minSkill="113448" maxSkill="113449" rarity="5" />
+
+        <!-- PVP魔法技能防禦 (111450-111459) -->
+        <range slot="3" minSkill="113450" maxSkill="113451" rarity="1" />
+        <range slot="3" minSkill="113452" maxSkill="113453" rarity="2" />
+        <range slot="3" minSkill="113454" maxSkill="113455" rarity="3" />
+        <range slot="3" minSkill="113456" maxSkill="113457" rarity="4" />
+        <range slot="3" minSkill="113458" maxSkill="113459" rarity="5" />
+
+        <!-- 物理攻擊爆擊率 (111460-111469) -->
+        <range slot="3" minSkill="113460" maxSkill="113461" rarity="1" />
+        <range slot="3" minSkill="113462" maxSkill="113463" rarity="2" />
+        <range slot="3" minSkill="113464" maxSkill="113465" rarity="3" />
+        <range slot="3" minSkill="113466" maxSkill="113467" rarity="4" />
+        <range slot="3" minSkill="113468" maxSkill="113469" rarity="5" />
+
+        <!-- 物理攻擊爆擊傷害 (111470-111479) -->
+        <range slot="3" minSkill="113470" maxSkill="113471" rarity="1" />
+        <range slot="3" minSkill="113472" maxSkill="113473" rarity="2" />
+        <range slot="3" minSkill="113474" maxSkill="113475" rarity="3" />
+        <range slot="3" minSkill="113476" maxSkill="113477" rarity="4" />
+        <range slot="3" minSkill="113478" maxSkill="113479" rarity="5" />
+
+        <!-- 物理技能爆擊率 (111480-111489) -->
+        <range slot="3" minSkill="113480" maxSkill="113481" rarity="1" />
+        <range slot="3" minSkill="113482" maxSkill="113483" rarity="2" />
+        <range slot="3" minSkill="113484" maxSkill="113485" rarity="3" />
+        <range slot="3" minSkill="113486" maxSkill="113487" rarity="4" />
+        <range slot="3" minSkill="113488" maxSkill="113489" rarity="5" />
+
+        <!-- 物理技能爆擊傷害 (111490-111499) -->
+        <range slot="3" minSkill="113490" maxSkill="113491" rarity="1" />
+        <range slot="3" minSkill="113492" maxSkill="113493" rarity="2" />
+        <range slot="3" minSkill="113494" maxSkill="113495" rarity="3" />
+        <range slot="3" minSkill="113496" maxSkill="113497" rarity="4" />
+        <range slot="3" minSkill="113498" maxSkill="113499" rarity="5" />
+
+        <!-- 魔法爆擊率 (111500-111509) -->
+        <range slot="3" minSkill="113500" maxSkill="113501" rarity="1" />
+        <range slot="3" minSkill="113502" maxSkill="113503" rarity="2" />
+        <range slot="3" minSkill="113504" maxSkill="113505" rarity="3" />
+        <range slot="3" minSkill="113506" maxSkill="113507" rarity="4" />
+        <range slot="3" minSkill="113508" maxSkill="113509" rarity="5" />
+
+        <!-- 魔法爆擊傷害 (111510-111519) -->
+        <range slot="3" minSkill="113510" maxSkill="113511" rarity="1" />
+        <range slot="3" minSkill="113512" maxSkill="113513" rarity="2" />
+        <range slot="3" minSkill="113514" maxSkill="113515" rarity="3" />
+        <range slot="3" minSkill="113516" maxSkill="113517" rarity="4" />
+        <range slot="3" minSkill="113518" maxSkill="113519" rarity="5" />
+
+        <!-- 最終傷害 (111520-111529) -->
+        <range slot="3" minSkill="113520" maxSkill="113521" rarity="1" />
+        <range slot="3" minSkill="113522" maxSkill="113523" rarity="2" />
+        <range slot="3" minSkill="113524" maxSkill="113525" rarity="3" />
+        <range slot="3" minSkill="113526" maxSkill="113527" rarity="4" />
+        <range slot="3" minSkill="113528" maxSkill="113529" rarity="5" />
+        <!-- ========================================分隔線======================================== -->
+
+        <!-- HP值 (111000-111009) -->
+        <range slot="4" minSkill="114000" maxSkill="114001" rarity="1" />
+        <range slot="4" minSkill="114002" maxSkill="114003" rarity="2" />
+        <range slot="4" minSkill="114004" maxSkill="114005" rarity="3" />
+        <range slot="4" minSkill="114006" maxSkill="114007" rarity="4" />
+        <range slot="4" minSkill="114008" maxSkill="114009" rarity="5" />
+
+        <!-- HP% (111010-111019) -->
+        <range slot="4" minSkill="114010" maxSkill="114011" rarity="1" />
+        <range slot="4" minSkill="114012" maxSkill="114013" rarity="2" />
+        <range slot="4" minSkill="114014" maxSkill="114015" rarity="3" />
+        <range slot="4" minSkill="114016" maxSkill="114017" rarity="4" />
+        <range slot="4" minSkill="114018" maxSkill="114019" rarity="5" />
+
+        <!-- MP值 (111020-111029) -->
+        <range slot="4" minSkill="114020" maxSkill="114021" rarity="1" />
+        <range slot="4" minSkill="114022" maxSkill="114023" rarity="2" />
+        <range slot="4" minSkill="114024" maxSkill="114025" rarity="3" />
+        <range slot="4" minSkill="114026" maxSkill="114027" rarity="4" />
+        <range slot="4" minSkill="114028" maxSkill="114029" rarity="5" />
+
+        <!-- MP% (111030-111039) -->
+        <range slot="4" minSkill="114030" maxSkill="114031" rarity="1" />
+        <range slot="4" minSkill="114032" maxSkill="114033" rarity="2" />
+        <range slot="4" minSkill="114034" maxSkill="114035" rarity="3" />
+        <range slot="4" minSkill="114036" maxSkill="114037" rarity="4" />
+        <range slot="4" minSkill="114038" maxSkill="114039" rarity="5" />
+
+        <!-- CP值 (111040-111049) -->
+        <range slot="4" minSkill="114040" maxSkill="114041" rarity="1" />
+        <range slot="4" minSkill="114042" maxSkill="114043" rarity="2" />
+        <range slot="4" minSkill="114044" maxSkill="114045" rarity="3" />
+        <range slot="4" minSkill="114046" maxSkill="114047" rarity="4" />
+        <range slot="4" minSkill="114048" maxSkill="114049" rarity="5" />
+
+        <!-- CP% (111050-111059) -->
+        <range slot="4" minSkill="114050" maxSkill="114051" rarity="1" />
+        <range slot="4" minSkill="114052" maxSkill="114053" rarity="2" />
+        <range slot="4" minSkill="114054" maxSkill="114055" rarity="3" />
+        <range slot="4" minSkill="114056" maxSkill="114057" rarity="4" />
+        <range slot="4" minSkill="114058" maxSkill="114059" rarity="5" />
+
+        <!-- 物理攻擊力值 (111060-111069) -->
+        <range slot="4" minSkill="114060" maxSkill="114061" rarity="1" />
+        <range slot="4" minSkill="114062" maxSkill="114063" rarity="2" />
+        <range slot="4" minSkill="114064" maxSkill="114065" rarity="3" />
+        <range slot="4" minSkill="114066" maxSkill="114067" rarity="4" />
+        <range slot="4" minSkill="114068" maxSkill="114069" rarity="5" />
+
+        <!-- 物理攻擊力% (111070-111079) -->
+        <range slot="4" minSkill="114070" maxSkill="114071" rarity="1" />
+        <range slot="4" minSkill="114072" maxSkill="114073" rarity="2" />
+        <range slot="4" minSkill="114074" maxSkill="114075" rarity="3" />
+        <range slot="4" minSkill="114076" maxSkill="114077" rarity="4" />
+        <range slot="4" minSkill="114078" maxSkill="114079" rarity="5" />
+
+        <!-- 魔法攻擊力值 (111080-111089) -->
+        <range slot="4" minSkill="114080" maxSkill="114081" rarity="1" />
+        <range slot="4" minSkill="114082" maxSkill="114083" rarity="2" />
+        <range slot="4" minSkill="114084" maxSkill="114085" rarity="3" />
+        <range slot="4" minSkill="114086" maxSkill="114087" rarity="4" />
+        <range slot="4" minSkill="114088" maxSkill="114089" rarity="5" />
+
+        <!-- 魔法攻擊力% (111090-111099) -->
+        <range slot="4" minSkill="114090" maxSkill="114091" rarity="1" />
+        <range slot="4" minSkill="114092" maxSkill="114093" rarity="2" />
+        <range slot="4" minSkill="114094" maxSkill="114095" rarity="3" />
+        <range slot="4" minSkill="114096" maxSkill="114097" rarity="4" />
+        <range slot="4" minSkill="114098" maxSkill="114099" rarity="5" />
+
+        <!-- 物理防禦力值 (111100-111109) -->
+        <range slot="4" minSkill="114100" maxSkill="114101" rarity="1" />
+        <range slot="4" minSkill="114102" maxSkill="114103" rarity="2" />
+        <range slot="4" minSkill="114104" maxSkill="114105" rarity="3" />
+        <range slot="4" minSkill="114106" maxSkill="114107" rarity="4" />
+        <range slot="4" minSkill="114108" maxSkill="114109" rarity="5" />
+
+        <!-- 物理防禦力% (111110-111119) -->
+        <range slot="4" minSkill="114110" maxSkill="114111" rarity="1" />
+        <range slot="4" minSkill="114112" maxSkill="114113" rarity="2" />
+        <range slot="4" minSkill="114114" maxSkill="114115" rarity="3" />
+        <range slot="4" minSkill="114116" maxSkill="114117" rarity="4" />
+        <range slot="4" minSkill="114118" maxSkill="114119" rarity="5" />
+
+        <!-- 魔法防禦力值 (111120-111129) -->
+        <range slot="4" minSkill="114120" maxSkill="114121" rarity="1" />
+        <range slot="4" minSkill="114122" maxSkill="114123" rarity="2" />
+        <range slot="4" minSkill="114124" maxSkill="114125" rarity="3" />
+        <range slot="4" minSkill="114126" maxSkill="114127" rarity="4" />
+        <range slot="4" minSkill="114128" maxSkill="114129" rarity="5" />
+
+        <!-- 魔法防禦力% (111130-111139) -->
+        <range slot="4" minSkill="114130" maxSkill="114131" rarity="1" />
+        <range slot="4" minSkill="114132" maxSkill="114133" rarity="2" />
+        <range slot="4" minSkill="114134" maxSkill="114135" rarity="3" />
+        <range slot="4" minSkill="114136" maxSkill="114137" rarity="4" />
+        <range slot="4" minSkill="114138" maxSkill="114139" rarity="5" />
+
+        <!-- 攻擊速度值 (111140-111149) -->
+        <range slot="4" minSkill="114140" maxSkill="114141" rarity="1" />
+        <range slot="4" minSkill="114142" maxSkill="114143" rarity="2" />
+        <range slot="4" minSkill="114144" maxSkill="114145" rarity="3" />
+        <range slot="4" minSkill="114146" maxSkill="114147" rarity="4" />
+        <range slot="4" minSkill="114148" maxSkill="114149" rarity="5" />
+
+        <!-- 攻擊速度% (111150-111159) -->
+        <range slot="4" minSkill="114150" maxSkill="114151" rarity="1" />
+        <range slot="4" minSkill="114152" maxSkill="114153" rarity="2" />
+        <range slot="4" minSkill="114154" maxSkill="114155" rarity="3" />
+        <range slot="4" minSkill="114156" maxSkill="114157" rarity="4" />
+        <range slot="4" minSkill="114158" maxSkill="114159" rarity="5" />
+
+        <!-- 施法速度值 (111160-111169) -->
+        <range slot="4" minSkill="114160" maxSkill="114161" rarity="1" />
+        <range slot="4" minSkill="114162" maxSkill="114163" rarity="2" />
+        <range slot="4" minSkill="114164" maxSkill="114165" rarity="3" />
+        <range slot="4" minSkill="114166" maxSkill="114167" rarity="4" />
+        <range slot="4" minSkill="114168" maxSkill="114169" rarity="5" />
+
+        <!-- 施法速度% (111170-111179) -->
+        <range slot="4" minSkill="114170" maxSkill="114171" rarity="1" />
+        <range slot="4" minSkill="114172" maxSkill="114173" rarity="2" />
+        <range slot="4" minSkill="114174" maxSkill="114175" rarity="3" />
+        <range slot="4" minSkill="114176" maxSkill="114177" rarity="4" />
+        <range slot="4" minSkill="114178" maxSkill="114179" rarity="5" />
+
+        <!-- STR (111180-111189) -->
+        <range slot="4" minSkill="114180" maxSkill="114181" rarity="1" />
+        <range slot="4" minSkill="114182" maxSkill="114183" rarity="2" />
+        <range slot="4" minSkill="114184" maxSkill="114185" rarity="3" />
+        <range slot="4" minSkill="114186" maxSkill="114187" rarity="4" />
+        <range slot="4" minSkill="114188" maxSkill="114189" rarity="5" />
+
+        <!-- DEX (111190-111199) -->
+        <range slot="4" minSkill="114190" maxSkill="114191" rarity="1" />
+        <range slot="4" minSkill="114192" maxSkill="114193" rarity="2" />
+        <range slot="4" minSkill="114194" maxSkill="114195" rarity="3" />
+        <range slot="4" minSkill="114196" maxSkill="114197" rarity="4" />
+        <range slot="4" minSkill="114198" maxSkill="114199" rarity="5" />
+
+        <!-- CON (111200-111209) -->
+        <range slot="4" minSkill="114200" maxSkill="114201" rarity="1" />
+        <range slot="4" minSkill="114202" maxSkill="114203" rarity="2" />
+        <range slot="4" minSkill="114204" maxSkill="114205" rarity="3" />
+        <range slot="4" minSkill="114206" maxSkill="114207" rarity="4" />
+        <range slot="4" minSkill="114208" maxSkill="114209" rarity="5" />
+
+        <!-- WIT (111210-111219) -->
+        <range slot="4" minSkill="114210" maxSkill="114211" rarity="1" />
+        <range slot="4" minSkill="114212" maxSkill="114213" rarity="2" />
+        <range slot="4" minSkill="114214" maxSkill="114215" rarity="3" />
+        <range slot="4" minSkill="114216" maxSkill="114217" rarity="4" />
+        <range slot="4" minSkill="114218" maxSkill="114219" rarity="5" />
+
+        <!-- INT (111220-111229) -->
+        <range slot="4" minSkill="114220" maxSkill="114221" rarity="1" />
+        <range slot="4" minSkill="114222" maxSkill="114223" rarity="2" />
+        <range slot="4" minSkill="114224" maxSkill="114225" rarity="3" />
+        <range slot="4" minSkill="114226" maxSkill="114227" rarity="4" />
+        <range slot="4" minSkill="114228" maxSkill="114229" rarity="5" />
+
+        <!-- MEN (111230-111239) -->
+        <range slot="4" minSkill="114230" maxSkill="114231" rarity="1" />
+        <range slot="4" minSkill="114232" maxSkill="114233" rarity="2" />
+        <range slot="4" minSkill="114234" maxSkill="114235" rarity="3" />
+        <range slot="4" minSkill="114236" maxSkill="114237" rarity="4" />
+        <range slot="4" minSkill="114238" maxSkill="114239" rarity="5" />
+
+        <!-- 負重上限 (111240-111249) -->
+        <range slot="4" minSkill="114240" maxSkill="114241" rarity="1" />
+        <range slot="4" minSkill="114242" maxSkill="114243" rarity="2" />
+        <range slot="4" minSkill="114244" maxSkill="114245" rarity="3" />
+        <range slot="4" minSkill="114246" maxSkill="114247" rarity="4" />
+        <range slot="4" minSkill="114248" maxSkill="114249" rarity="5" />
+
+        <!-- 移動速度 (111250-111259) -->
+        <range slot="4" minSkill="114250" maxSkill="114251" rarity="1" />
+        <range slot="4" minSkill="114252" maxSkill="114253" rarity="2" />
+        <range slot="4" minSkill="114254" maxSkill="114255" rarity="3" />
+        <range slot="4" minSkill="114256" maxSkill="114257" rarity="4" />
+        <range slot="4" minSkill="114258" maxSkill="114259" rarity="5" />
+
+        <!-- 命中能力 (111260-111269) -->
+        <range slot="4" minSkill="114260" maxSkill="114261" rarity="1" />
+        <range slot="4" minSkill="114262" maxSkill="114263" rarity="2" />
+        <range slot="4" minSkill="114264" maxSkill="114265" rarity="3" />
+        <range slot="4" minSkill="114266" maxSkill="114267" rarity="4" />
+        <range slot="4" minSkill="114268" maxSkill="114269" rarity="5" />
+
+        <!-- 魔法命中能力 (111270-111279) -->
+        <range slot="4" minSkill="114270" maxSkill="114271" rarity="1" />
+        <range slot="4" minSkill="114272" maxSkill="114273" rarity="2" />
+        <range slot="4" minSkill="114274" maxSkill="114275" rarity="3" />
+        <range slot="4" minSkill="114276" maxSkill="114277" rarity="4" />
+        <range slot="4" minSkill="114278" maxSkill="114279" rarity="5" />
+
+        <!-- 火屬性傷害 (111280-111289) -->
+        <range slot="4" minSkill="114280" maxSkill="114281" rarity="1" />
+        <range slot="4" minSkill="114282" maxSkill="114283" rarity="2" />
+        <range slot="4" minSkill="114284" maxSkill="114285" rarity="3" />
+        <range slot="4" minSkill="114286" maxSkill="114287" rarity="4" />
+        <range slot="4" minSkill="114288" maxSkill="114289" rarity="5" />
+
+        <!-- 水屬性傷害 (111290-111299) -->
+        <range slot="4" minSkill="114290" maxSkill="114291" rarity="1" />
+        <range slot="4" minSkill="114292" maxSkill="114293" rarity="2" />
+        <range slot="4" minSkill="114294" maxSkill="114295" rarity="3" />
+        <range slot="4" minSkill="114296" maxSkill="114297" rarity="4" />
+        <range slot="4" minSkill="114298" maxSkill="114299" rarity="5" />
+
+        <!-- 風屬性傷害 (111300-111309) -->
+        <range slot="4" minSkill="114300" maxSkill="114301" rarity="1" />
+        <range slot="4" minSkill="114302" maxSkill="114303" rarity="2" />
+        <range slot="4" minSkill="114304" maxSkill="114305" rarity="3" />
+        <range slot="4" minSkill="114306" maxSkill="114307" rarity="4" />
+        <range slot="4" minSkill="114308" maxSkill="114309" rarity="5" />
+
+        <!-- 地屬性傷害 (111310-111319) -->
+        <range slot="4" minSkill="114310" maxSkill="114311" rarity="1" />
+        <range slot="4" minSkill="114312" maxSkill="114313" rarity="2" />
+        <range slot="4" minSkill="114314" maxSkill="114315" rarity="3" />
+        <range slot="4" minSkill="114316" maxSkill="114317" rarity="4" />
+        <range slot="4" minSkill="114318" maxSkill="114319" rarity="5" />
+
+        <!-- 聖屬性傷害 (111320-111329) -->
+        <range slot="4" minSkill="114320" maxSkill="114321" rarity="1" />
+        <range slot="4" minSkill="114322" maxSkill="114323" rarity="2" />
+        <range slot="4" minSkill="114324" maxSkill="114325" rarity="3" />
+        <range slot="4" minSkill="114326" maxSkill="114327" rarity="4" />
+        <range slot="4" minSkill="114328" maxSkill="114329" rarity="5" />
+
+        <!-- 暗屬性傷害 (111330-111339) -->
+        <range slot="4" minSkill="114330" maxSkill="114331" rarity="1" />
+        <range slot="4" minSkill="114332" maxSkill="114333" rarity="2" />
+        <range slot="4" minSkill="114334" maxSkill="114335" rarity="3" />
+        <range slot="4" minSkill="114336" maxSkill="114337" rarity="4" />
+        <range slot="4" minSkill="114338" maxSkill="114339" rarity="5" />
+
+        <!-- PVE物理攻擊傷害 (111340-111349) -->
+        <range slot="4" minSkill="114340" maxSkill="114341" rarity="1" />
+        <range slot="4" minSkill="114342" maxSkill="114343" rarity="2" />
+        <range slot="4" minSkill="114344" maxSkill="114345" rarity="3" />
+        <range slot="4" minSkill="114346" maxSkill="114347" rarity="4" />
+        <range slot="4" minSkill="114348" maxSkill="114349" rarity="5" />
+
+        <!-- PVE物理技能傷害 (111350-111359) -->
+        <range slot="4" minSkill="114350" maxSkill="114351" rarity="1" />
+        <range slot="4" minSkill="114352" maxSkill="114353" rarity="2" />
+        <range slot="4" minSkill="114354" maxSkill="114355" rarity="3" />
+        <range slot="4" minSkill="114356" maxSkill="114357" rarity="4" />
+        <range slot="4" minSkill="114358" maxSkill="114359" rarity="5" />
+
+        <!-- PVE魔法技能傷害 (111360-111369) -->
+        <range slot="4" minSkill="114360" maxSkill="114361" rarity="1" />
+        <range slot="4" minSkill="114362" maxSkill="114363" rarity="2" />
+        <range slot="4" minSkill="114364" maxSkill="114365" rarity="3" />
+        <range slot="4" minSkill="114366" maxSkill="114367" rarity="4" />
+        <range slot="4" minSkill="114368" maxSkill="114369" rarity="5" />
+
+        <!-- PVE物理攻擊防禦 (111370-111379) -->
+        <range slot="4" minSkill="114370" maxSkill="114371" rarity="1" />
+        <range slot="4" minSkill="114372" maxSkill="114373" rarity="2" />
+        <range slot="4" minSkill="114374" maxSkill="114375" rarity="3" />
+        <range slot="4" minSkill="114376" maxSkill="114377" rarity="4" />
+        <range slot="4" minSkill="114378" maxSkill="114379" rarity="5" />
+
+        <!-- PVE物理技能防禦 (111380-111389) -->
+        <range slot="4" minSkill="114380" maxSkill="114381" rarity="1" />
+        <range slot="4" minSkill="114382" maxSkill="114383" rarity="2" />
+        <range slot="4" minSkill="114384" maxSkill="114385" rarity="3" />
+        <range slot="4" minSkill="114386" maxSkill="114387" rarity="4" />
+        <range slot="4" minSkill="114388" maxSkill="114389" rarity="5" />
+
+        <!-- PVE魔法技能防禦 (111390-111399) -->
+        <range slot="4" minSkill="114390" maxSkill="114391" rarity="1" />
+        <range slot="4" minSkill="114392" maxSkill="114393" rarity="2" />
+        <range slot="4" minSkill="114394" maxSkill="114395" rarity="3" />
+        <range slot="4" minSkill="114396" maxSkill="114397" rarity="4" />
+        <range slot="4" minSkill="114398" maxSkill="114399" rarity="5" />
+
+        <!-- PVP物理攻擊傷害 (111400-111409) -->
+        <range slot="4" minSkill="114400" maxSkill="114401" rarity="1" />
+        <range slot="4" minSkill="114402" maxSkill="114403" rarity="2" />
+        <range slot="4" minSkill="114404" maxSkill="114405" rarity="3" />
+        <range slot="4" minSkill="114406" maxSkill="114407" rarity="4" />
+        <range slot="4" minSkill="114408" maxSkill="114409" rarity="5" />
+
+        <!-- PVP物理技能傷害 (111410-111419) -->
+        <range slot="4" minSkill="114410" maxSkill="114411" rarity="1" />
+        <range slot="4" minSkill="114412" maxSkill="114413" rarity="2" />
+        <range slot="4" minSkill="114414" maxSkill="114415" rarity="3" />
+        <range slot="4" minSkill="114416" maxSkill="114417" rarity="4" />
+        <range slot="4" minSkill="114418" maxSkill="114419" rarity="5" />
+
+        <!-- PVP魔法技能傷害 (111420-111429) -->
+        <range slot="4" minSkill="114420" maxSkill="114421" rarity="1" />
+        <range slot="4" minSkill="114422" maxSkill="114423" rarity="2" />
+        <range slot="4" minSkill="114424" maxSkill="114425" rarity="3" />
+        <range slot="4" minSkill="114426" maxSkill="114427" rarity="4" />
+        <range slot="4" minSkill="114428" maxSkill="114429" rarity="5" />
+
+        <!-- PVP物理攻擊防禦 (111430-111439) -->
+        <range slot="4" minSkill="114430" maxSkill="114431" rarity="1" />
+        <range slot="4" minSkill="114432" maxSkill="114433" rarity="2" />
+        <range slot="4" minSkill="114434" maxSkill="114435" rarity="3" />
+        <range slot="4" minSkill="114436" maxSkill="114437" rarity="4" />
+        <range slot="4" minSkill="114438" maxSkill="114439" rarity="5" />
+
+        <!-- PVP物理技能防禦 (111440-111449) -->
+        <range slot="4" minSkill="114440" maxSkill="114441" rarity="1" />
+        <range slot="4" minSkill="114442" maxSkill="114443" rarity="2" />
+        <range slot="4" minSkill="114444" maxSkill="114445" rarity="3" />
+        <range slot="4" minSkill="114446" maxSkill="114447" rarity="4" />
+        <range slot="4" minSkill="114448" maxSkill="114449" rarity="5" />
+
+        <!-- PVP魔法技能防禦 (111450-111459) -->
+        <range slot="4" minSkill="114450" maxSkill="114451" rarity="1" />
+        <range slot="4" minSkill="114452" maxSkill="114453" rarity="2" />
+        <range slot="4" minSkill="114454" maxSkill="114455" rarity="3" />
+        <range slot="4" minSkill="114456" maxSkill="114457" rarity="4" />
+        <range slot="4" minSkill="114458" maxSkill="114459" rarity="5" />
+
+        <!-- 物理攻擊爆擊率 (111460-111469) -->
+        <range slot="4" minSkill="114460" maxSkill="114461" rarity="1" />
+        <range slot="4" minSkill="114462" maxSkill="114463" rarity="2" />
+        <range slot="4" minSkill="114464" maxSkill="114465" rarity="3" />
+        <range slot="4" minSkill="114466" maxSkill="114467" rarity="4" />
+        <range slot="4" minSkill="114468" maxSkill="114469" rarity="5" />
+
+        <!-- 物理攻擊爆擊傷害 (111470-111479) -->
+        <range slot="4" minSkill="114470" maxSkill="114471" rarity="1" />
+        <range slot="4" minSkill="114472" maxSkill="114473" rarity="2" />
+        <range slot="4" minSkill="114474" maxSkill="114475" rarity="3" />
+        <range slot="4" minSkill="114476" maxSkill="114477" rarity="4" />
+        <range slot="4" minSkill="114478" maxSkill="114479" rarity="5" />
+
+        <!-- 物理技能爆擊率 (111480-111489) -->
+        <range slot="4" minSkill="114480" maxSkill="114481" rarity="1" />
+        <range slot="4" minSkill="114482" maxSkill="114483" rarity="2" />
+        <range slot="4" minSkill="114484" maxSkill="114485" rarity="3" />
+        <range slot="4" minSkill="114486" maxSkill="114487" rarity="4" />
+        <range slot="4" minSkill="114488" maxSkill="114489" rarity="5" />
+
+        <!-- 物理技能爆擊傷害 (111490-111499) -->
+        <range slot="4" minSkill="114490" maxSkill="114491" rarity="1" />
+        <range slot="4" minSkill="114492" maxSkill="114493" rarity="2" />
+        <range slot="4" minSkill="114494" maxSkill="114495" rarity="3" />
+        <range slot="4" minSkill="114496" maxSkill="114497" rarity="4" />
+        <range slot="4" minSkill="114498" maxSkill="114499" rarity="5" />
+
+        <!-- 魔法爆擊率 (111500-111509) -->
+        <range slot="4" minSkill="114500" maxSkill="114501" rarity="1" />
+        <range slot="4" minSkill="114502" maxSkill="114503" rarity="2" />
+        <range slot="4" minSkill="114504" maxSkill="114505" rarity="3" />
+        <range slot="4" minSkill="114506" maxSkill="114507" rarity="4" />
+        <range slot="4" minSkill="114508" maxSkill="114509" rarity="5" />
+
+        <!-- 魔法爆擊傷害 (111510-111519) -->
+        <range slot="4" minSkill="114510" maxSkill="114511" rarity="1" />
+        <range slot="4" minSkill="114512" maxSkill="114513" rarity="2" />
+        <range slot="4" minSkill="114514" maxSkill="114515" rarity="3" />
+        <range slot="4" minSkill="114516" maxSkill="114517" rarity="4" />
+        <range slot="4" minSkill="114518" maxSkill="114519" rarity="5" />
+
+        <!-- 最終傷害 (111520-111529) -->
+        <range slot="4" minSkill="114520" maxSkill="114521" rarity="1" />
+        <range slot="4" minSkill="114522" maxSkill="114523" rarity="2" />
+        <range slot="4" minSkill="114524" maxSkill="114525" rarity="3" />
+        <range slot="4" minSkill="114526" maxSkill="114527" rarity="4" />
+        <range slot="4" minSkill="114528" maxSkill="114529" rarity="5" />
+
+    </skillRanges>
+</list>

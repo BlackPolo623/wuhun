@@ -21,6 +21,8 @@
 package ai.areas.FairyInvadedLands;
 
 import java.util.Calendar;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
@@ -110,7 +112,8 @@ public class FairyInvadedLands extends Script
 	private static boolean BOSS_1_SPAWNED = false;
 	private static boolean BOSS_2_SPAWNED = false;
 	private static boolean EVENT_ACTIVE = true; // 事件是否啟用
-	private int _lastCheckedMinute = -1; // 記錄上次檢查的分鐘，避免重複觸發
+	private static final Set<String> _spawnedTimesToday = new HashSet<>();
+	private static int _lastResetDay = -1;
 
 	public FairyInvadedLands()
 	{
@@ -136,16 +139,17 @@ public class FairyInvadedLands extends Script
 					return null;
 				}
 
-				// 檢查當前時間是否符合設定的時間點
 				final Calendar calendar = Calendar.getInstance();
+				final int currentDay = calendar.get(Calendar.DAY_OF_YEAR);
 				final int currentHour = calendar.get(Calendar.HOUR_OF_DAY);
 				final int currentMinute = calendar.get(Calendar.MINUTE);
 
-				// 避免在同一分鐘內重複檢查
-				final int currentTimeKey = currentHour * 100 + currentMinute;
-				if (_lastCheckedMinute == currentTimeKey)
+				if (_lastResetDay != currentDay)
 				{
-					return null;
+					_spawnedTimesToday.clear();
+					_lastResetDay = currentDay;
+					KILL_COUNTER.set(0);  // 順便重置計數器
+					LOGGER.info("精靈入侵領地: 新的一天開始，重置所有記錄");
 				}
 
 				// 檢查是否為設定的時間點
@@ -156,7 +160,13 @@ public class FairyInvadedLands extends Script
 
 					if (currentHour == targetHour && currentMinute == targetMinute)
 					{
-						_lastCheckedMinute = currentTimeKey;
+						final String timeKey = String.format("%02d:%02d", targetHour, targetMinute);
+
+						if (_spawnedTimesToday.contains(timeKey))
+						{
+							LOGGER.info("精靈入侵領地: " + timeKey + " 今天已生成過BOSS，跳過");
+							return null;
+						}
 
 						final int currentKills = KILL_COUNTER.get();
 						LOGGER.info(String.format(MSG_TIME_CHECK, currentHour, currentMinute, currentKills, REQUIRED_KILLS));
@@ -164,18 +174,26 @@ public class FairyInvadedLands extends Script
 						// 檢查擊殺數是否達標
 						if (currentKills >= REQUIRED_KILLS && !BOSS_1_SPAWNED && !BOSS_2_SPAWNED)
 						{
+							_spawnedTimesToday.add(timeKey);
+
 							LOGGER.info(MSG_SPAWN_TRIGGERED);
 							Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.BATTLEFIELD, ANNOUNCER_NAME, MSG_SPAWN_TRIGGERED));
 							startQuestTimer("spawn_bosses", 3000, null, null);
 						}
-						else if (BOSS_1_SPAWNED || BOSS_2_SPAWNED)
-						{
-							LOGGER.info("定時檢查: Boss已經生成中，跳過本次檢查");
-						}
 						else
 						{
-							LOGGER.info("定時檢查: 擊殺數不足，需要 " + REQUIRED_KILLS + " 但目前只有 " + currentKills);
-							Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.BATTLEFIELD, ANNOUNCER_NAME, String.format(MSG_KILLS_NOT_ENOUGH, currentKills, REQUIRED_KILLS)));
+							_spawnedTimesToday.add(timeKey);
+
+							if (BOSS_1_SPAWNED || BOSS_2_SPAWNED)
+							{
+								LOGGER.info("定時檢查: Boss已經生成中，跳過本次檢查");
+							}
+							else
+							{
+								LOGGER.info("定時檢查: 擊殺數不足，需要 " + REQUIRED_KILLS + " 但目前只有 " + currentKills);
+								Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.BATTLEFIELD, ANNOUNCER_NAME,
+										String.format(MSG_KILLS_NOT_ENOUGH, currentKills, REQUIRED_KILLS)));
+							}
 						}
 
 						break;

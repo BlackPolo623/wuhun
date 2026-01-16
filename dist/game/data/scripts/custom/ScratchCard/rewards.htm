@@ -1,0 +1,83 @@
+<!-- rewards.htm (修正版) -->
+<html>
+<head><title>獎勵列表</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+    <tr>
+        <td valign="top" align="center">
+            <!-- 標題區域 -->
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td align=center width=280 height=40 background="L2UI_CT1.Windows_DF_TooltipBG">
+                        <font color="LEVEL" size="5"><b>獎勵列表</b></font>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td height=10></td>
+                </tr>
+            </table>
+
+            <!-- 機率說明 (使用ICON) -->
+            <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="3">
+                <tr bgcolor="333333">
+                    <td align="center" colspan="2">
+                        <font color="FFCC33">符號出現機率</font>
+                    </td>
+                </tr>
+                <tr bgcolor="222222">
+                    <td align="center" width="140">
+                        <img src="icon.card_devil_black" width="32" height="32">
+                    </td>
+                    <td align="center" width="140"><font color="FFFF00">%empty_rate%%</font></td>
+                </tr>
+                <tr bgcolor="222222">
+                    <td align="center">
+                        <img src="icon.card_event_dragon_pocket" width="32" height="32">
+                    </td>
+                    <td align="center"><font color="FFFF00">%acc_rate%%</font></td>
+                </tr>
+                <tr bgcolor="222222">
+                    <td align="center">
+                        <img src="icon.ev_211020_vip_token_i02" width="32" height="32">
+                    </td>
+                    <td align="center"><font color="FF0000">%jackpot_rate%%</font></td>
+                </tr>
+            </table>
+
+            <br>
+            <img src="L2UI.SquareGray" width="280" height="1"><br>
+
+            <!-- 累積獎勵列表 -->
+            <table width="280">
+                <tr>
+                    <td align=center height="25">
+                        <font color="FFCC33" size="3"><b>累積獎勵</b></font>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- 滾動區域 -->
+            <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="2">
+                %accumulate_rewards%
+            </table>
+
+            <br>
+            <img src="L2UI.SquareGray" width="280" height="1">
+            <br>
+
+            <!-- 返回按鈕 -->
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td align=center>
+                        <button action="bypass -h Quest ScratchCard main" value="返回主頁" width="150" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

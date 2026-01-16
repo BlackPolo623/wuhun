@@ -1,26 +1,24 @@
 /*
  * This file is part of the L2J Mobius project.
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * 冰凍君主之城副本 - 時間戳版本
+ * @author 黑普羅
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * 修復內容：
+ * 1. 使用時間戳管理每日重置
+ * 2. 防止時間重複計算
+ * 3. 時間上限保護
+ * 4. 詳細日誌追蹤
  */
 package instances.icegongg;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
+import java.util.logging.Logger;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.managers.InstanceManager;
@@ -31,54 +29,54 @@ import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
-/**
- * 冰凍君主之城副本
- * @author 黑普羅
- * 特色：
- * - 每日時間限制
- * - 兩區共享時間
- * - 時間到自動傳送出副本
- */
 public class icegongg extends InstanceScript
 {
+	private static final Logger LOGGER = Logger.getLogger(icegongg.class.getName());
+
 	// NPCs
-	private static final int SORA = 900018; // 進入NPC
+	private static final int SORA = 900018;
 
 	// 副本模板ID
-	private static final int TEMPLATE_ID_ZONE1 = 801; // 一區
-	private static final int TEMPLATE_ID_ZONE2 = 802; // 二區
+	private static final int TEMPLATE_ID_ZONE1 = 801;
+	private static final int TEMPLATE_ID_ZONE2 = 802;
+	private static final int TEMPLATE_ID_ZONE3 = 803;
 
 	// 副本實例ID
-	private static final int INSTANCE_ID_ZONE1 = 600; // 一區實例ID
-	private static final int INSTANCE_ID_ZONE2 = 601; // 二區實例ID
+	private static final int INSTANCE_ID_ZONE1 = 600;
+	private static final int INSTANCE_ID_ZONE2 = 601;
+	private static final int INSTANCE_ID_ZONE3 = 602;
 
 	// 傳送座標
 	private static final int X = 10441;
 	private static final int Y = 249385;
 	private static final int Z = -2019;
 
-	// 離開座標（時間到後傳送到這裡）
+	// 離開座標
 	private static final int EXIT_X = 147931;
 	private static final int EXIT_Y = 213039;
 	private static final int EXIT_Z = -2177;
 
-	// ==================== 時間限制配置 ====================
-	private static final int DAILY_TIME_LIMIT_MINUTES = 480; // 每日可用時間（分鐘）
-	private static final int ENTER_COST = 1000000; // 進入消耗金幣
+	// ==================== 時間配置 ====================
+	private static final int DAILY_TIME_LIMIT_MINUTES = 480;  // 每日限制分鐘
+	private static final int ENTER_COST = 1000000;            // 進入金幣
+	private static final int RESET_HOUR = 6;                  // 重置時間：每天凌晨6點
+	private static final int RESET_MINUTE = 0;
 
-	// 變量名稱（統一管理，兩區共用）
-	private static final String VAR_USED_TIME = "IceGong_UsedTime_"; // 已使用時間（分鐘）
-	private static final String VAR_ENTER_TIME = "IceGong_EnterTime"; // 本次進入時間戳
-	private static final String VAR_CURRENT_ZONE = "IceGong_CurrentZone"; // 當前所在區域
+	// ==================== 變量名稱（時間戳版本）====================
+	private static final String VAR_USED_TIME = "IceGong_UsedMinutes";      // 已使用分鐘數
+	private static final String VAR_LAST_RESET = "IceGong_LastResetTime";   // 上次重置時間戳
+	private static final String VAR_ENTER_TIME = "IceGong_EnterTime";       // 進入時間戳
+	private static final String VAR_CURRENT_ZONE = "IceGong_CurrentZone";   // 當前區域
+	private static final String VAR_IS_INSIDE = "IceGong_IsInside";         // 是否在副本內（防重複計算）
 
-	// 定時任務管理（玩家ID -> 定時任務）
-	private static final Map<Integer, ScheduledFuture<?>> PLAYER_TASKS = new ConcurrentHashMap<>();
+	// 定時任務管理
+	private static final Map<Integer, ScheduledFuture<?>> PLAYER_KICK_TASKS = new ConcurrentHashMap<>();
 
 	public icegongg()
 	{
-		super(TEMPLATE_ID_ZONE1, TEMPLATE_ID_ZONE2);
+		super(TEMPLATE_ID_ZONE1, TEMPLATE_ID_ZONE2, TEMPLATE_ID_ZONE3);
 		addStartNpc(SORA);
-		addInstanceLeaveId(TEMPLATE_ID_ZONE1, TEMPLATE_ID_ZONE2);
+		addInstanceLeaveId(TEMPLATE_ID_ZONE1, TEMPLATE_ID_ZONE2, TEMPLATE_ID_ZONE3);
 		addFirstTalkId(SORA);
 		addTalkId(SORA);
 	}
@@ -90,7 +88,6 @@ public class icegongg extends InstanceScript
 		{
 			String zoneName = event.substring(14);
 
-			// 確定進入哪個區域
 			int templateId;
 			int instanceId;
 
@@ -104,10 +101,18 @@ public class icegongg extends InstanceScript
 				templateId = TEMPLATE_ID_ZONE2;
 				instanceId = INSTANCE_ID_ZONE2;
 			}
+			else if (zoneName.startsWith("冰凍君主之城三區"))
+			{
+				templateId = TEMPLATE_ID_ZONE3;
+				instanceId = INSTANCE_ID_ZONE3;
+			}
 			else
 			{
 				return null;
 			}
+
+			// ==================== 檢查並執行每日重置 ====================
+			checkAndResetDaily(player);
 
 			// ==================== 時間檢查 ====================
 			int remainingMinutes = getRemainingMinutes(player);
@@ -119,8 +124,37 @@ public class icegongg extends InstanceScript
 				player.sendMessage("【冰凍君主之城】今日時間已用完");
 				player.sendMessage("每日限制：" + DAILY_TIME_LIMIT_MINUTES + " 分鐘");
 				player.sendMessage("已使用：" + getUsedMinutes(player) + " 分鐘");
+				player.sendMessage("下次重置：" + getNextResetTimeString());
 				player.sendMessage("========================================");
 				return null;
+			}
+
+			// ==================== 防止重複進入（修復版）====================
+			boolean isMarkedInside = player.getVariables().getBoolean(VAR_IS_INSIDE, false);
+
+			// 如果標記在內，但實際不在副本中，清除異常標記
+			if (isMarkedInside)
+			{
+				Instance currentInstance = player.getInstanceWorld();
+				boolean actuallyInside = currentInstance != null &&
+						(currentInstance.getTemplateId() == TEMPLATE_ID_ZONE1 ||
+								currentInstance.getTemplateId() == TEMPLATE_ID_ZONE2 ||
+								currentInstance.getTemplateId() == TEMPLATE_ID_ZONE3);
+
+				if (!actuallyInside)
+				{
+					// 狀態異常，清除標記
+					LOGGER.warning("[IceGong] 玩家 " + player.getName() + " 標記異常，已自動修復");
+					clearPlayerState(player);
+					isMarkedInside = false;
+				}
+				else
+				{
+					// 真的在副本內，拒絕進入
+					player.sendMessage("系統檢測到您已在副本中，請稍候...");
+					LOGGER.warning("[IceGong] 玩家 " + player.getName() + " 嘗試重複進入副本");
+					return null;
+				}
 			}
 
 			// ==================== 金幣檢查 ====================
@@ -150,12 +184,21 @@ public class icegongg extends InstanceScript
 			player.setInstance(instance);
 			player.teleToLocation(X, Y, Z, 0, instance);
 
-			// 記錄進入時間和區域
-			player.getVariables().set(VAR_ENTER_TIME, System.currentTimeMillis());
+			// ==================== 記錄進入狀態 ====================
+			long enterTime = System.currentTimeMillis();
+			player.getVariables().set(VAR_ENTER_TIME, enterTime);
 			player.getVariables().set(VAR_CURRENT_ZONE, templateId);
+			player.getVariables().set(VAR_IS_INSIDE, true);  // 標記在副本內
 
-			// 啟動定時任務（剩餘時間後踢出）
+			// 日誌記錄
+			LOGGER.info("[IceGong] 玩家 " + player.getName() + " 進入副本" +
+					" | 區域=" + templateId +
+					" | 剩餘時間=" + remainingMinutes + "分鐘" +
+					" | 進入時間戳=" + enterTime);
+
+			// ==================== 啟動定時任務 ====================
 			scheduleKickTask(player, remainingMinutes);
+			scheduleTimeReminders(player, remainingMinutes);
 
 			// 發送提示
 			player.sendMessage("========================================");
@@ -163,9 +206,27 @@ public class icegongg extends InstanceScript
 			player.sendMessage("今日剩餘時間：" + remainingMinutes + " 分鐘");
 			player.sendMessage("時間到後將自動傳送離開");
 			player.sendMessage("========================================");
+		}
+		// ==================== GM指令：重置玩家時間 ====================
+		else if (event.startsWith("admin_reset_icegong"))
+		{
+			if (!player.isGM())
+			{
+				return null;
+			}
 
-			// 每10分鐘提醒一次剩餘時間
-			scheduleTimeReminders(player, remainingMinutes);
+			player.sendMessage("已重置副本時間");
+			resetPlayerTime(player);
+		}
+		// ==================== GM指令：查看玩家時間 ====================
+		else if (event.equals("admin_check_icegong"))
+		{
+			if (!player.isGM())
+			{
+				return null;
+			}
+
+			showDebugInfo(player);
 		}
 
 		return null;
@@ -174,10 +235,12 @@ public class icegongg extends InstanceScript
 	@Override
 	public String onFirstTalk(Npc npc, Player player)
 	{
+		// 先檢查重置
+		checkAndResetDaily(player);
+
 		NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(player, "data/scripts/instances/icegongg/icegongg.htm");
 
-		// 替換剩餘時間信息
 		int remainingMinutes = getRemainingMinutes(player);
 		int usedMinutes = getUsedMinutes(player);
 
@@ -192,21 +255,117 @@ public class icegongg extends InstanceScript
 	@Override
 	public void onInstanceLeave(Player player, Instance instance)
 	{
-		// 玩家離開副本時，計算並記錄使用時間
-		recordUsedTime(player);
+		// ==================== 防止重複計算 ====================
+		if (!player.getVariables().getBoolean(VAR_IS_INSIDE, false))
+		{
+			LOGGER.info("[IceGong] 玩家 " + player.getName() + " 離開副本但未標記在內，跳過時間計算");
+			return;
+		}
 
-		// 取消定時任務
-		cancelPlayerTasks(player);
+		// 計算並記錄使用時間
+		recordUsedTime(player, "onInstanceLeave");
 
-		// 清除進入時間記錄
-		player.getVariables().remove(VAR_ENTER_TIME);
-		player.getVariables().remove(VAR_CURRENT_ZONE);
+		// 取消所有定時任務
+		cancelKickTask(player);
+
+		// 清除所有狀態
+		clearPlayerState(player);
+	}
+
+	// ==================== 核心：每日重置檢查 ====================
+
+	/**
+	 * 檢查是否需要重置，如果需要則執行重置
+	 */
+	private void checkAndResetDaily(Player player)
+	{
+		long lastResetTime = player.getVariables().getLong(VAR_LAST_RESET, 0);
+		long nextResetTime = calculateNextResetTime(lastResetTime);
+		long currentTime = System.currentTimeMillis();
+
+		// 如果當前時間已經超過下次重置時間，執行重置
+		if (currentTime >= nextResetTime)
+		{
+			int oldUsedTime = getUsedMinutes(player);
+
+			// 重置已使用時間
+			player.getVariables().set(VAR_USED_TIME, 0);
+			// 更新重置時間為今天的重置時間點
+			player.getVariables().set(VAR_LAST_RESET, getTodayResetTime());
+
+			LOGGER.info("[IceGong] 玩家 " + player.getName() + " 每日重置" +
+					" | 舊使用時間=" + oldUsedTime +
+					" | 上次重置=" + formatTime(lastResetTime) +
+					" | 新重置時間=" + formatTime(getTodayResetTime()));
+
+			if (oldUsedTime > 0)
+			{
+				player.sendMessage("【冰凍君主之城】每日時間已重置！");
+			}
+		}
+	}
+
+	/**
+	 * 計算下次重置時間
+	 * @param lastResetTime 上次重置時間戳（0表示從未重置）
+	 * @return 下次重置時間戳
+	 */
+	private long calculateNextResetTime(long lastResetTime)
+	{
+		if (lastResetTime == 0)
+		{
+			// 從未重置過，返回今天的重置時間
+			return getTodayResetTime();
+		}
+
+		// 上次重置時間 + 24小時 = 下次重置時間
+		Calendar cal = Calendar.getInstance();
+		cal.setTimeInMillis(lastResetTime);
+		cal.add(Calendar.DAY_OF_MONTH, 1);
+		return cal.getTimeInMillis();
+	}
+
+	/**
+	 * 獲取今天的重置時間點
+	 */
+	private long getTodayResetTime()
+	{
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.HOUR_OF_DAY, RESET_HOUR);
+		cal.set(Calendar.MINUTE, RESET_MINUTE);
+		cal.set(Calendar.SECOND, 0);
+		cal.set(Calendar.MILLISECOND, 0);
+
+		return cal.getTimeInMillis();
+	}
+
+	/**
+	 * 獲取下次重置時間的字符串
+	 */
+	private String getNextResetTimeString()
+	{
+		Calendar cal = Calendar.getInstance();
+		long currentTime = System.currentTimeMillis();
+		long todayReset = getTodayResetTime();
+
+		if (currentTime < todayReset)
+		{
+			cal.setTimeInMillis(todayReset);
+		}
+		else
+		{
+			cal.setTimeInMillis(todayReset);
+			cal.add(Calendar.DAY_OF_MONTH, 1);
+		}
+
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd HH:mm");
+		return sdf.format(cal.getTime());
 	}
 
 	// ==================== 時間管理方法 ====================
 
 	/**
-	 * 獲取今日剩餘分鐘數
+	 * 獲取剩餘分鐘數
 	 */
 	private int getRemainingMinutes(Player player)
 	{
@@ -215,64 +374,124 @@ public class icegongg extends InstanceScript
 	}
 
 	/**
-	 * 獲取今日已使用分鐘數
+	 * 獲取已使用分鐘數
 	 */
 	private int getUsedMinutes(Player player)
 	{
-		String today = getTodayString();
-		return player.getVariables().getInt(VAR_USED_TIME + today, 0);
+		return player.getVariables().getInt(VAR_USED_TIME, 0);
 	}
 
 	/**
-	 * 記錄本次使用時間
+	 * 記錄本次使用時間（帶來源標記，方便除錯）
 	 */
-	private void recordUsedTime(Player player)
+	private void recordUsedTime(Player player, String source)
 	{
 		long enterTime = player.getVariables().getLong(VAR_ENTER_TIME, 0);
 
 		if (enterTime == 0)
 		{
-			return; // 沒有進入記錄
+			LOGGER.warning("[IceGong] " + source + " - 玩家 " + player.getName() + " 沒有進入時間記錄");
+			return;
 		}
 
-		// 計算本次停留時間（分鐘）
 		long currentTime = System.currentTimeMillis();
 		int minutesSpent = (int) ((currentTime - enterTime) / 60000);
 
-		if (minutesSpent <= 0)
+		// 防止負數或異常值
+		if (minutesSpent < 0)
 		{
-			return; // 停留時間太短，不計算
+			LOGGER.warning("[IceGong] " + source + " - 玩家 " + player.getName() +
+					" 計算時間為負數！enterTime=" + enterTime + ", currentTime=" + currentTime);
+			minutesSpent = 0;
 		}
 
-		// 累加到今日已使用時間
-		String today = getTodayString();
-		int totalUsed = getUsedMinutes(player) + minutesSpent;
-		player.getVariables().set(VAR_USED_TIME + today, totalUsed);
+		// 防止單次超過每日上限（異常保護）
+		if (minutesSpent > DAILY_TIME_LIMIT_MINUTES)
+		{
+			LOGGER.warning("[IceGong] " + source + " - 玩家 " + player.getName() +
+					" 單次時間異常：" + minutesSpent + "分鐘，限制為" + DAILY_TIME_LIMIT_MINUTES);
+			minutesSpent = DAILY_TIME_LIMIT_MINUTES;
+		}
 
-		player.sendMessage("本次使用時間：" + minutesSpent + " 分鐘");
-		player.sendMessage("今日累計使用：" + totalUsed + " 分鐘");
+		// 累加時間
+		int currentUsed = getUsedMinutes(player);
+		int newTotal = currentUsed + minutesSpent;
+
+		// 總時間上限保護
+		if (newTotal > DAILY_TIME_LIMIT_MINUTES)
+		{
+			newTotal = DAILY_TIME_LIMIT_MINUTES;
+		}
+
+		player.getVariables().set(VAR_USED_TIME, newTotal);
+
+		// 日誌記錄
+		LOGGER.info("[IceGong] " + source + " - 玩家 " + player.getName() +
+				" 時間記錄 | 本次=" + minutesSpent + "分鐘" +
+				" | 之前累計=" + currentUsed + "分鐘" +
+				" | 新累計=" + newTotal + "分鐘");
+
+		if (minutesSpent > 0)
+		{
+			player.sendMessage("本次使用時間：" + minutesSpent + " 分鐘");
+			player.sendMessage("今日累計使用：" + newTotal + "/" + DAILY_TIME_LIMIT_MINUTES + " 分鐘");
+		}
 	}
 
 	/**
-	 * 獲取今日日期字符串（用於變量名）
+	 * 清除玩家狀態
 	 */
-	private String getTodayString()
+	private void clearPlayerState(Player player)
 	{
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-		return sdf.format(new Date());
+		player.getVariables().remove(VAR_ENTER_TIME);
+		player.getVariables().remove(VAR_CURRENT_ZONE);
+		player.getVariables().set(VAR_IS_INSIDE, false);
 	}
+
+	/**
+	 * 重置玩家時間（GM用）
+	 */
+	private void resetPlayerTime(Player player)
+	{
+		player.getVariables().set(VAR_USED_TIME, 0);
+		player.getVariables().set(VAR_LAST_RESET, System.currentTimeMillis());
+		clearPlayerState(player);
+
+		LOGGER.info("[IceGong] GM重置玩家 " + player.getName() + " 的副本時間");
+		player.sendMessage("【冰凍君主之城】時間已被重置");
+	}
+
+	/**
+	 * 顯示除錯信息（GM用）
+	 */
+	private void showDebugInfo(Player player)
+	{
+		player.sendMessage("========== 冰凍君主副本除錯 ==========");
+		player.sendMessage("已使用時間：" + getUsedMinutes(player) + " 分鐘");
+		player.sendMessage("剩餘時間：" + getRemainingMinutes(player) + " 分鐘");
+		player.sendMessage("每日上限：" + DAILY_TIME_LIMIT_MINUTES + " 分鐘");
+		player.sendMessage("上次重置：" + formatTime(player.getVariables().getLong(VAR_LAST_RESET, 0)));
+		player.sendMessage("進入時間：" + formatTime(player.getVariables().getLong(VAR_ENTER_TIME, 0)));
+		player.sendMessage("是否在內：" + player.getVariables().getBoolean(VAR_IS_INSIDE, false));
+		player.sendMessage("下次重置：" + getNextResetTimeString());
+		player.sendMessage("重置時間：每天 " + RESET_HOUR + ":" + String.format("%02d", RESET_MINUTE));
+		player.sendMessage("=========================================");
+	}
+
+	// ==================== 定時任務管理 ====================
 
 	/**
 	 * 啟動踢出定時任務
 	 */
 	private void scheduleKickTask(Player player, int minutes)
 	{
-		// 取消舊任務
-		cancelPlayerTasks(player);
+		cancelKickTask(player);
 
-		// 創建新任務（分鐘轉毫秒）
-		ScheduledFuture<?> task = ThreadPool.schedule(() -> kickPlayer(player), minutes * 60 * 1000);
-		PLAYER_TASKS.put(player.getObjectId(), task);
+		long delayMs = (long) minutes * 60 * 1000;
+		ScheduledFuture<?> task = ThreadPool.schedule(() -> kickPlayer(player), delayMs);
+		PLAYER_KICK_TASKS.put(player.getObjectId(), task);
+
+		LOGGER.info("[IceGong] 玩家 " + player.getName() + " 踢出任務已設定：" + minutes + "分鐘後");
 	}
 
 	/**
@@ -280,22 +499,21 @@ public class icegongg extends InstanceScript
 	 */
 	private void scheduleTimeReminders(Player player, int totalMinutes)
 	{
-		// 每10分鐘提醒一次
-		int[] reminders = {10, 5, 3, 1}; // 剩餘10/5/3/1分鐘時提醒
+		int[] reminders = {30, 10, 5, 3, 1};
 
 		for (int reminder : reminders)
 		{
 			if (totalMinutes > reminder)
 			{
-				int delay = (totalMinutes - reminder) * 60 * 1000;
+				long delayMs = (long) (totalMinutes - reminder) * 60 * 1000;
 				ThreadPool.schedule(() ->
 				{
-					if (player.isOnline() && isInIceGongInstance(player))
+					if (player.isOnline() && player.getVariables().getBoolean(VAR_IS_INSIDE, false))
 					{
 						player.sendPacket(new ExShowScreenMessage("副本剩餘時間：" + reminder + " 分鐘", 5000));
 						player.sendMessage("【提醒】副本時間還剩 " + reminder + " 分鐘！");
 					}
-				}, delay);
+				}, delayMs);
 			}
 		}
 	}
@@ -307,16 +525,23 @@ public class icegongg extends InstanceScript
 	{
 		if (!player.isOnline())
 		{
+			PLAYER_KICK_TASKS.remove(player.getObjectId());
 			return;
 		}
 
-		if (!isInIceGongInstance(player))
+		if (!player.getVariables().getBoolean(VAR_IS_INSIDE, false))
 		{
-			return; // 已經不在副本中
+			PLAYER_KICK_TASKS.remove(player.getObjectId());
+			return;
 		}
 
-		// 記錄使用時間
-		recordUsedTime(player);
+		LOGGER.info("[IceGong] 時間到，踢出玩家 " + player.getName());
+
+		// 記錄時間（這裡是唯一的記錄點，onInstanceLeave會檢查IS_INSIDE標記避免重複）
+		recordUsedTime(player, "kickPlayer");
+
+		// 先清除狀態，防止onInstanceLeave重複計算
+		clearPlayerState(player);
 
 		// 傳送出去
 		player.setInstance(null);
@@ -328,42 +553,44 @@ public class icegongg extends InstanceScript
 		player.sendMessage("【冰凍君主之城】時間到了");
 		player.sendMessage("您已被傳送出副本");
 		player.sendMessage("今日剩餘時間：0 分鐘");
+		player.sendMessage("下次重置：" + getNextResetTimeString());
 		player.sendMessage("========================================");
 
-		// 清除任務
-		PLAYER_TASKS.remove(player.getObjectId());
+		PLAYER_KICK_TASKS.remove(player.getObjectId());
 	}
 
 	/**
-	 * 取消玩家的定時任務
+	 * 取消踢出任務
 	 */
-	private void cancelPlayerTasks(Player player)
+	private void cancelKickTask(Player player)
 	{
-		ScheduledFuture<?> task = PLAYER_TASKS.remove(player.getObjectId());
+		ScheduledFuture<?> task = PLAYER_KICK_TASKS.remove(player.getObjectId());
 		if (task != null && !task.isDone())
 		{
 			task.cancel(false);
 		}
 	}
 
-	/**
-	 * 檢查玩家是否在冰凍君主副本中
-	 */
-	private boolean isInIceGongInstance(Player player)
-	{
-		Instance instance = player.getInstanceWorld();
-		if (instance == null)
-		{
-			return false;
-		}
+	// ==================== 工具方法 ====================
 
-		int templateId = instance.getTemplateId();
-		return templateId == TEMPLATE_ID_ZONE1 || templateId == TEMPLATE_ID_ZONE2;
+	/**
+	 * 格式化時間戳
+	 */
+	private String formatTime(long timestamp)
+	{
+		if (timestamp == 0)
+		{
+			return "無";
+		}
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return sdf.format(new Date(timestamp));
 	}
 
 	public static void main(String[] args)
 	{
 		new icegongg();
 		System.out.println("【副本】限時多區冰凍君主之城載入完畢！");
+		System.out.println("【副本】每日重置時間：" + RESET_HOUR + ":" + String.format("%02d", RESET_MINUTE));
+		System.out.println("【副本】每日時間限制：" + DAILY_TIME_LIMIT_MINUTES + " 分鐘");
 	}
 }

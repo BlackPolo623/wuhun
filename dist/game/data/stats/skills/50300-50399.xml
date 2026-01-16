@@ -4629,6 +4629,7 @@
 	<skill id="50363" toLevel="1" name="榮耀頭箍">
 		<icon>icon.accessory_hero_cap_i00</icon>
 		<operateType>P</operateType>
+		<abnormalVisualEffect>EVAS_AURA</abnormalVisualEffect>
 		<effects>
 			<effect name="MaxHp">
 				<amount>2500</amount>
@@ -5349,6 +5350,38 @@
 		<icon>icon.armor_leather_helmet_i00</icon>
 		<operateType>P</operateType>
 		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="WeightLimit">
+				<amount>1500</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>6</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="TriggerSkillByMagicType">
 				<magicTypes>0;1</magicTypes>
 				<skillId>50383</skillId> 

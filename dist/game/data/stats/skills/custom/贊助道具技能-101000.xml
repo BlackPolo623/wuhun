@@ -43,4 +43,77 @@
 			</effect>
 		</effects>
 	</skill>
+	<skill id="101001" toLevel="1" name="武器强制轉換-初級">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ChangeWeapon"><!-- 開啓武器轉換默認比1大就可以-->
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ChangeWeaponCount"><!-- 開啓武器轉換攻擊個數-->
+				<amount>5</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ChangeWeaponRadius"><!-- 開啓武器轉換範圍-->
+				<amount>500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="101002" toLevel="1" name="武器强制轉換-中級">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ChangeWeapon"><!-- 開啓武器轉換默認比1大就可以-->
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ChangeWeaponCount"><!-- 開啓武器轉換攻擊個數-->
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ChangeWeaponRadius"><!-- 開啓武器轉換範圍-->
+				<amount>1000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="101002" toLevel="1" name="武器强制轉換-高級">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ChangeWeapon"><!-- 開啓武器轉換默認比1大就可以-->
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ChangeWeaponCount"><!-- 開啓武器轉換攻擊個數-->
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ChangeWeaponRadius"><!-- 開啓武器轉換範圍-->
+				<amount>1500</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="101002" toLevel="1" name="武器强制轉換-頂級">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="ChangeWeapon"><!-- 開啓武器轉換默認比1大就可以-->
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ChangeWeaponCount"><!-- 開啓武器轉換攻擊個數-->
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ChangeWeaponRadius"><!-- 開啓武器轉換範圍-->
+				<amount>2000</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	
 </list>

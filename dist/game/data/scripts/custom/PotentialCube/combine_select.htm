@@ -1,0 +1,59 @@
+<html>
+<head><title>選擇結果</title></head>
+<body scroll="no">
+<table border="0" cellpadding="0" cellspacing="0" width="292" height="358">
+    <tr>
+        <td valign="top" align="center">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td height="20"></td>
+                </tr>
+                <tr>
+                    <td align="center"><font color="LEVEL" size="5"><b>選擇要套用的結果</b></font></td>
+                </tr>
+                <tr>
+                    <td height="15"></td>
+                </tr>
+            </table>
+
+            <!-- 原本的潛能 -->
+            <table width="280">
+                <tr>
+                    <td align="center"><font color="00FF66">原本的潛能</font></td>
+                </tr>
+            </table>
+            <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="3">
+                %old_potentials%
+            </table>
+            <table width="280">
+                <tr>
+                    <td align="center">
+                        <button action="bypass -h Quest PotentialCube combine_apply old" value="使用原本結果" width="180" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+            <img src="L2UI.SquareGray" width="280" height="1"><br>
+
+            <!-- 新的潛能 -->
+            <table width="280">
+                <tr>
+                    <td align="center"><font color="FFFF00">新的潛能</font></td>
+                </tr>
+            </table>
+            <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="3">
+                %new_potentials%
+            </table>
+            <table width="280">
+                <tr>
+                    <td align="center">
+                        <button action="bypass -h Quest PotentialCube combine_apply new" value="使用新的結果" width="180" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

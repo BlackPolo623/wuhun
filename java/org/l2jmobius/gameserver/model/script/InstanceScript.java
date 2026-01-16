@@ -138,15 +138,37 @@ public abstract class InstanceScript extends Script
 	protected void enterInstance(Player player, Npc npc, int templateId)
 	{
 		Instance instance = getPlayerInstance(player);
+
 		if (instance != null) // Player has already any instance active.
 		{
 			if (instance.getTemplateId() != templateId)
 			{
-				player.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_ENTER_AS_C1_IS_IN_ANOTHER_INSTANCE_ZONE).addString(player.getName()));
+				// ===== 強制清理舊副本關聯 =====
+				// 如果玩家還在舊副本內，先踢出去
+				if (instance.containsPlayer(player))
+				{
+					instance.ejectPlayer(player);
+				}
+
+				// 從舊副本的允許列表中移除
+				instance.removeAllowed(player);
+
+				// 記錄日誌
+				LOGGER.warning("【副本清理】玩家 " + player.getName() + " 在嘗試進入副本 " +
+						templateId + " 時，仍在副本 " + instance.getTemplateId() +
+						" 的允許列表中，已強制清除");
+
+				// 清理完成後，重新獲取副本狀態（應該為 null）
+				instance = InstanceManager.getInstance().getPlayerInstance(player, false);
+				// ===== 結束新增 =====
+			}
+
+			// 如果清理後還有副本（同一個 templateId），直接進入
+			if (instance != null)
+			{
+				onEnter(player, instance, false);
 				return;
 			}
-			
-			onEnter(player, instance, false);
 		}
 		else
 		{

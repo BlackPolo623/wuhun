@@ -59,6 +59,7 @@ import org.l2jmobius.gameserver.util.MathUtil;
  */
 public enum Stat
 {
+	FINAL_DAMAGE_RATE("FinalDamage"),
 	// HP, MP & CP
 	HP_LIMIT("hpLimit"),
 	MAX_HP("maxHp", new MaxHpFinalizer()),
@@ -134,7 +135,7 @@ public enum Stat
 	PVE_PHYSICAL_ATTACK_DEFENCE("pvePhysDef"),
 	PVE_PHYSICAL_SKILL_DEFENCE("pvePhysSkillDef"),
 	PVE_MAGICAL_SKILL_DEFENCE("pveMagicalDef"),
-
+	
 	PVE_RAID_PHYSICAL_ATTACK_DAMAGE("pveRaidPhysDmg"),
 	PVE_RAID_PHYSICAL_SKILL_DAMAGE("pveRaidPhysSkillDmg"),
 	PVE_RAID_MAGICAL_SKILL_DAMAGE("pveRaidMagicalDmg"),
@@ -270,7 +271,7 @@ public enum Stat
 	// PROFICIENCY
 	REFLECT_DAMAGE_PERCENT("reflectDam"),
 	REFLECT_DAMAGE_PERCENT_DEFENSE("reflectDamDef"),
-
+	
 	REFLECT_SKILL_MAGIC("reflectSkillMagic"), // Need rework
 	REFLECT_SKILL_PHYSIC("reflectSkillPhysic"), // Need rework
 	REFLECT_DEBUFF_RATE("reflectDebuffrate"),
@@ -371,6 +372,9 @@ public enum Stat
 	IMMOBILE_DAMAGE_RESIST("immobileResist"),
 	
 	CRAFT_RATE("CraftRate"),
+	ChangeWeapon("ChangeWeapon"),
+	ChangeWeaponRadius("ChangeWeaponRadius"),
+	ChangeWeaponCount("ChangeWeaponRadius"),
 	ELIXIR_USAGE_LIMIT("elixirUsageLimit"),
 	RESURRECTION_FEE_MODIFIER("resurrectionFeeModifier"),
 	COMBAT_POWER("combatPower");

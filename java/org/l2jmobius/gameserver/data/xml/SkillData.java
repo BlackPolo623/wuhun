@@ -320,6 +320,11 @@ public class SkillData implements IXmlReader
 							
 							forEachNamedParamInfoParam(conditionParamInfo, level, subLevel, ((skillConditionScope, params) ->
 							{
+								//被動限制
+								if (skillConditionScope == SkillConditionScope.PASSIVE)
+								{
+									return; // 直接跳過 PASSIVE 條件
+								}
 								final String conditionName = params.getString(".name");
 								params.remove(".name");
 								try

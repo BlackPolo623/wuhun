@@ -2412,13 +2412,9 @@
 	<skill id="47255" toLevel="3" name="復仇女神">
 		<icon>icon.s_nemesis</icon>
 		<operateType>A2</operateType>
-		<targetType>ENEMY_ONLY</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>10</abnormalTime>
-		<abnormalType>ROOT_MAGICALLY</abnormalType>
-		<abnormalVisualEffect>H_R_NEMESIS</abnormalVisualEffect>
+		<targetType>ENEMY</targetType>
 		<activateRate>80</activateRate>
-		<affectLimit>10-10</affectLimit>
+		<affectLimit>4-2</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>200</affectRange>
 		<affectScope>RANGE</affectScope>
@@ -2427,8 +2423,6 @@
 		<effectPoint>-549</effectPoint>
 		<effectRange>1000</effectRange>
 		<hitTime>3000</hitTime>
-		<isDebuff>true</isDebuff>
-		<isMagic>1</isMagic> 
 		<itemConsumeCount>5</itemConsumeCount>
 		<itemConsumeId>3031</itemConsumeId> 
 		<lvlBonusRate>30</lvlBonusRate>
@@ -2449,19 +2443,39 @@
 			<value level="3">20</value>
 		</mpInitialConsume>
 		<reuseDelay>60000</reuseDelay>
-		<trait>ANOMALY</trait>
 		<effects>
-			<effect name="HealEffect">
-				<amount>-70</amount>
-				<mode>PER</mode>
+			<effect name="MagicalDamage">
+				<power>
+				<value fromLevel="1" toLevel="3">195</value>
+				<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1003">225</value>
+				<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1003">240</value>
+				<value fromLevel="3" toLevel="3" fromSubLevel="1001" toSubLevel="1003">285</value>	
+				</power>				
 			</effect>
-			<effect name="CallSkill" fromLevel="1" toLevel="3" fromSubLevel="1001" toSubLevel="1003">
-				<skillId>
-					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1003">1047255</value>
-					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1003">2047255</value>
-					<value fromLevel="3" toLevel="3" fromSubLevel="1001" toSubLevel="1003">3047255</value>
-				</skillId>
-				<skillLevel>1</skillLevel>
+			<effect name="MagicalDamage">
+				<power>
+				<value fromLevel="1" toLevel="3">0</value>
+				<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1003">0</value>
+				<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1003">240</value>
+				<value fromLevel="3" toLevel="3" fromSubLevel="1001" toSubLevel="1003">285</value>	
+				</power>				
+			</effect>
+			<effect name="CallSkill">
+				<skillId>88342</skillId>
+				<skillLevel>			
+				<value level="1">1</value>
+				<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">1001</value>
+				<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">1002</value>
+				<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">1003</value>
+				<value level="2">2</value>
+				<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">1001</value>
+				<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">1002</value>
+				<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">1003</value>
+				<value level="3">3</value>
+				<value fromLevel="3" toLevel="3" fromSubLevel="1001" toSubLevel="1001">1001</value>
+				<value fromLevel="3" toLevel="3" fromSubLevel="1002" toSubLevel="1002">1002</value>
+				<value fromLevel="3" toLevel="3" fromSubLevel="1003" toSubLevel="1003">1003</value>
+			</skillLevel>
 			</effect>
 		</effects>
 	</skill>

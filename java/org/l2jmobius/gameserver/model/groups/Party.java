@@ -69,6 +69,7 @@ import org.l2jmobius.gameserver.network.serverpackets.ExPartyPetWindowAdd;
 import org.l2jmobius.gameserver.network.serverpackets.ExPartyPetWindowDelete;
 import org.l2jmobius.gameserver.network.serverpackets.ExSetPartyLooting;
 import org.l2jmobius.gameserver.network.serverpackets.ExTacticalSign;
+import org.l2jmobius.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2jmobius.gameserver.network.serverpackets.PartyMemberPosition;
 import org.l2jmobius.gameserver.network.serverpackets.PartySmallWindowAdd;
 import org.l2jmobius.gameserver.network.serverpackets.PartySmallWindowAll;
@@ -781,7 +782,7 @@ public class Party extends AbstractPlayerGroup
 			distributeAdena(player, itemCount, target);
 			return;
 		}
-
+		
 		final Player looter = getActualLooter(player, itemId, spoil, target);
 		Item enchantitem = looter.addItem(spoil ? ItemProcessType.SWEEP : ItemProcessType.LOOT, itemId, itemCount, target, true);
 		if (enchantitem != null)
@@ -794,16 +795,15 @@ public class Party extends AbstractPlayerGroup
 			else if (enchantitem.getTemplate() instanceof Armor)
 			{
 				BodyPart bodyPart = enchantitem.getTemplate().getBodyPart();
-				if ((bodyPart == BodyPart.HEAD) ||
-						(bodyPart == BodyPart.GLOVES) ||
-						(bodyPart == BodyPart.CHEST) ||
-						(bodyPart == BodyPart.LEGS) ||
-						(bodyPart == BodyPart.FEET))
+				if ((bodyPart == BodyPart.HEAD) || (bodyPart == BodyPart.GLOVES) || (bodyPart == BodyPart.CHEST) || (bodyPart == BodyPart.LEGS) || (bodyPart == BodyPart.FEET))
 				{
 					int rnden = Rnd.get(Custom.enchantmin, Custom.enchantmax);
 					enchantitem.setEnchantLevel(rnden);
 				}
 			}
+			final InventoryUpdate iu = new InventoryUpdate();
+			iu.addItem(enchantitem);
+			looter.sendInventoryUpdate(iu);
 		}
 		// Send messages to other party members about reward
 		if (itemCount > 1)

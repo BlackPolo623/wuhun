@@ -18,6 +18,7 @@ package handlers.itemhandlers;
 
 import java.util.List;
 
+import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.handler.IItemHandler;
 import org.l2jmobius.gameserver.model.actor.Playable;
@@ -31,12 +32,26 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 
 /**
- * 技能升級道具處理器
- * 使用道具直接提升對應技能1級
+ * 技能升級道具處理器 使用道具直接提升對應技能1級
  * @author 黑普羅
  */
 public class SkillUpgradeHandler implements IItemHandler
 {
+	// ==================== 特殊道具配置 ====================
+	private static final int SPECIAL_ITEM_MIN = 106100;
+	private static final int SPECIAL_ITEM_MAX = 106106;
+
+	// 額外獎勵機率 (1%)
+	private static final double BONUS_CHANCE = 1.0;
+
+	// 額外獎勵配置 [道具ID, 數量]
+	// 你可以在這裡自由添加或修改獎勵
+	private static final int[][] BONUS_REWARDS = {
+			{106107, 1},
+			{106108, 1},
+			{106109, 1},
+	};
+
 	@Override
 	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
@@ -46,6 +61,10 @@ public class SkillUpgradeHandler implements IItemHandler
 		}
 
 		final Player player = playable.asPlayer();
+		final int itemId = item.getId();
+
+		// 檢查是否為特殊道具
+		final boolean isSpecialItem = (itemId >= SPECIAL_ITEM_MIN) && (itemId <= SPECIAL_ITEM_MAX);
 
 		// 獲取道具的技能配置
 		final List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
@@ -55,9 +74,52 @@ public class SkillUpgradeHandler implements IItemHandler
 			return false;
 		}
 
-		boolean successfulUse = false;
+		// 如果不是特殊道具，檢查技能是否可以升級
+		if (!isSpecialItem)
+		{
+			boolean canUpgrade = false;
+			for (ItemSkillHolder skillInfo : skills)
+			{
+				if (skillInfo == null)
+				{
+					continue;
+				}
 
-		// 處理每個技能
+				final Skill configSkill = skillInfo.getSkill();
+				if (configSkill == null)
+				{
+					continue;
+				}
+
+				final int skillId = configSkill.getId();
+				final Skill currentSkill = player.getKnownSkill(skillId);
+				int targetLevel = (currentSkill == null) ? 1 : currentSkill.getLevel() + 1;
+				final Skill targetSkill = SkillData.getInstance().getSkill(skillId, targetLevel);
+
+				if (targetSkill != null)
+				{
+					canUpgrade = true;
+					break;
+				}
+			}
+
+			// 普通道具如果技能已滿級，不允許使用
+			if (!canUpgrade)
+			{
+				player.sendPacket(new ExShowScreenMessage("技能已達最高等級!", 3000));
+				return false;
+			}
+		}
+
+		// 消耗道具
+		if (!player.destroyItem(ItemProcessType.NONE, item.getObjectId(), 1, player, false))
+		{
+			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
+			return false;
+		}
+
+		// 處理技能升級
+		boolean skillUpgraded = false;
 		for (ItemSkillHolder skillInfo : skills)
 		{
 			if (skillInfo == null)
@@ -81,7 +143,17 @@ public class SkillUpgradeHandler implements IItemHandler
 			final Skill targetSkill = SkillData.getInstance().getSkill(skillId, targetLevel);
 			if (targetSkill == null)
 			{
-				player.sendPacket(new ExShowScreenMessage("技能已達最高等級!", 3000));
+				// 技能已滿級
+				if (isSpecialItem)
+				{
+					// 特殊道具：提示技能已滿級但不影響使用
+					player.sendPacket(new ExShowScreenMessage("技能已達最高等級", 2000));
+				}
+				else
+				{
+					// 普通道具：不應該走到這裡，因為前面已經檢查過
+					player.sendPacket(new ExShowScreenMessage("技能已達最高等級!", 3000));
+				}
 				continue;
 			}
 
@@ -96,24 +168,56 @@ public class SkillUpgradeHandler implements IItemHandler
 			player.sendSkillList();
 
 			// 發送成功訊息
-			String message = (currentSkill == null)
-					? "獲得新技能: " + targetSkill.getName() + " Lv." + targetLevel
-					: "技能升級: " + targetSkill.getName() + " Lv." + currentSkill.getLevel() + " → Lv." + targetLevel;
+			String message = (currentSkill == null) ?
+					"獲得新技能: " + targetSkill.getName() + " Lv." + targetLevel :
+					"技能升級: " + targetSkill.getName() + " Lv." + currentSkill.getLevel() + " → Lv." + targetLevel;
 
 			player.sendPacket(new ExShowScreenMessage(message, 3000));
 
-			successfulUse = true;
-
 			LOGGER.info("玩家 " + player.getName() + " 使用技能書提升 " + targetSkill.getName() + " 至 Lv." + targetLevel);
+			skillUpgraded = true;
 		}
 
-		// 消耗道具
-		if (successfulUse && !player.destroyItem(ItemProcessType.NONE, item.getObjectId(), 1, player, false))
+		// 如果是特殊道具，處理額外獎勵（無論技能是否升級）
+		if (isSpecialItem)
 		{
-			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
-			return false;
+			processSpecialReward(player);
 		}
 
-		return successfulUse;
+		return true;
+	}
+
+	/**
+	 * 處理特殊道具的額外獎勵
+	 * @param player 玩家
+	 */
+	private void processSpecialReward(Player player)
+	{
+		// 檢查背包空間
+		if (!player.getInventory().validateCapacity(1))
+		{
+			player.sendMessage("背包空間不足，無法獲得額外獎勵！");
+			return;
+		}
+
+		// 1% 機率獲得獎勵
+		if (Rnd.get(10000) < (BONUS_CHANCE * 100))
+		{
+			// 隨機選擇一個獎勵
+			int[] reward = BONUS_REWARDS[Rnd.get(BONUS_REWARDS.length)];
+			int itemId = reward[0];
+			int count = reward[1];
+
+			// 給予獎勵
+			player.addItem(ItemProcessType.NONE, itemId, count, player, true);
+
+			// 發送特殊訊息
+			player.sendPacket(new ExShowScreenMessage("★★★ 恭喜！觸發額外獎勵！★★★", 5000));
+			player.sendMessage("========================================");
+			player.sendMessage("恭喜您觸發了1%的幸運獎勵！");
+			player.sendMessage("========================================");
+
+			LOGGER.info("玩家 " + player.getName() + " 使用特殊技能書觸發額外獎勵: 道具ID=" + itemId + " 數量=" + count);
+		}
 	}
 }

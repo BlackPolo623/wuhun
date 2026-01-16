@@ -73,6 +73,7 @@ public class ExTimedHuntingZoneLeave extends ClientPacket
 			if (world != null)
 			{
 				world.ejectPlayer(player);
+				world.removeAllowed(player);
 			}
 			else
 			{

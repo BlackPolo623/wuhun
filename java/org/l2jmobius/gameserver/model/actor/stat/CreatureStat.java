@@ -45,15 +45,15 @@ import org.l2jmobius.gameserver.model.actor.enums.creature.Position;
 import org.l2jmobius.gameserver.model.actor.holders.creature.DelayedPumpHolder;
 import org.l2jmobius.gameserver.model.actor.instance.Guardian;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
-import org.l2jmobius.gameserver.model.item.Armor;
-import org.l2jmobius.gameserver.model.item.Weapon;
-import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.SkillConditionScope;
-import org.l2jmobius.gameserver.model.stats.*;
+import org.l2jmobius.gameserver.model.stats.Formulas;
+import org.l2jmobius.gameserver.model.stats.MoveType;
+import org.l2jmobius.gameserver.model.stats.Stat;
+import org.l2jmobius.gameserver.model.stats.TraitType;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.util.MathUtil;
 
@@ -250,14 +250,14 @@ public class CreatureStat
 	public int getPSkillCriticalRate()
 	{
 		double baseRate = getValue(Stat.CRITICAL_RATE_SKILL);
-
+		
 		// 只在这里应用职业平衡系数
 		if (_creature.isPlayable())
 		{
 			final double balanceMod = ClassBalanceConfig.PVE_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS[_creature.asPlayer().getPlayerClass().getId()];
 			baseRate *= balanceMod;
 		}
-
+		
 		return (int) baseRate;
 	}
 	
@@ -423,42 +423,42 @@ public class CreatureStat
 		double wuxian = 0;
 		double zbzs = 0;
 		String s = "matk";
-
+		
 		if (_creature instanceof Player)
 		{
 			if (!_creature.isFakePlayer())
 			{
 				Player player = _creature.asPlayer();
-
+				
 				wuxian += player.getwxsz(s);
-				zbzs = player.getWeaponZscs();  // 直接獲取武器轉生緩存
-
+				zbzs = player.getWeaponZscs(); // 直接獲取武器轉生緩存
+				
 				zbzs *= Custom.zhuangbeijcz;
-
+				
 				if (wuxian >= Custom.WUXIANXIANDING)
 				{
 					wuxian = Custom.WUXIANXIANDING;
 				}
 				wuxian *= Custom.wuxianjiacheng;
-
+				
 				if (zbzs >= Custom.zhuangbeizsjczd)
 				{
 					zbzs = Custom.zhuangbeizsjczd;
 				}
-
+				
 				if (wuxian > 0)
 				{
 					matk *= 1 + (wuxian / 10000);
 				}
 				matk += zbzs;
-
+				
 				if (matk >= PlayerConfig.MAX_MATK)
 				{
 					matk = PlayerConfig.MAX_MATK;
 				}
 			}
 		}
-
+		
 		return (int) matk;
 	}
 	
@@ -493,42 +493,42 @@ public class CreatureStat
 		double wuxian = 0;
 		double zbzs = 0;
 		String s = "mdef";
-
+		
 		if (_creature instanceof Player)
 		{
 			if (!_creature.isFakePlayer())
 			{
 				Player player = _creature.asPlayer();
-
+				
 				wuxian += player.getwxsz(s);
-				zbzs = player.getAccessoryZscs() + player.getOffHandZscs();  // 飾品 + 副手
-
+				zbzs = player.getAccessoryZscs() + player.getOffHandZscs(); // 飾品 + 副手
+				
 				zbzs *= Custom.zhuangbeijcz;
-
+				
 				if (wuxian >= Custom.WUXIANXIANDING)
 				{
 					wuxian = Custom.WUXIANXIANDING;
 				}
 				wuxian *= Custom.wuxianjiacheng;
-
+				
 				if (zbzs >= Custom.zhuangbeizsjczd)
 				{
 					zbzs = Custom.zhuangbeizsjczd;
 				}
-
+				
 				if (wuxian > 0)
 				{
 					mdef *= 1 + (wuxian / 10000);
 				}
 				mdef += zbzs;
-
+				
 				if (mdef >= PlayerConfig.MAX_MATK)
 				{
 					mdef = PlayerConfig.MAX_MATK;
 				}
 			}
 		}
-
+		
 		return (int) mdef;
 	}
 	
@@ -609,42 +609,42 @@ public class CreatureStat
 		double wuxian = 0;
 		double zbzs = 0;
 		String s = "patk";
-
+		
 		if (_creature instanceof Player)
 		{
 			if (!_creature.isFakePlayer())
 			{
 				Player player = _creature.asPlayer();
-
+				
 				wuxian += player.getwxsz(s);
-				zbzs = player.getWeaponZscs();  // 主手 + 副手
-
+				zbzs = player.getWeaponZscs(); // 主手 + 副手
+				
 				zbzs *= Custom.zhuangbeijcz;
-
+				
 				if (wuxian >= Custom.WUXIANXIANDING)
 				{
 					wuxian = Custom.WUXIANXIANDING;
 				}
 				wuxian *= Custom.wuxianjiacheng;
-
+				
 				if (zbzs >= Custom.zhuangbeizsjczd)
 				{
 					zbzs = Custom.zhuangbeizsjczd;
 				}
-
+				
 				if (wuxian > 0)
 				{
 					patk *= 1 + (wuxian / 10000);
 				}
 				patk += zbzs;
-
+				
 				if (patk >= PlayerConfig.MAX_PATK)
 				{
 					patk = PlayerConfig.MAX_PATK;
 				}
 			}
 		}
-
+		
 		return (int) patk;
 	}
 	
@@ -670,43 +670,43 @@ public class CreatureStat
 		double wuxian = 0;
 		double zbzs = 0;
 		String s = "pdef";
-
+		
 		if (_creature instanceof Player)
 		{
 			if (!_creature.isFakePlayer())
 			{
 				Player player = _creature.asPlayer();
-
+				
 				// ✅ 優化：直接讀取緩存
 				wuxian += player.getwxsz(s);
-				zbzs = player.getArmorZscs() + player.getOffHandZscs();  // 防具 + 副手
-
+				zbzs = player.getArmorZscs() + player.getOffHandZscs(); // 防具 + 副手
+				
 				zbzs *= Custom.zhuangbeijcz;
-
+				
 				if (wuxian >= Custom.WUXIANXIANDING)
 				{
 					wuxian = Custom.WUXIANXIANDING;
 				}
 				wuxian *= Custom.wuxianjiacheng;
-
+				
 				if (zbzs >= Custom.zhuangbeizsjczd)
 				{
 					zbzs = Custom.zhuangbeizsjczd;
 				}
-
+				
 				if (wuxian > 0)
 				{
 					pdef *= 1 + (wuxian / 10000);
 				}
 				pdef += zbzs;
-
+				
 				if (pdef >= PlayerConfig.MAX_PATK)
 				{
 					pdef = PlayerConfig.MAX_PATK;
 				}
 			}
 		}
-
+		
 		return (int) pdef;
 	}
 	
@@ -726,6 +726,21 @@ public class CreatureStat
 	public int getPhysicalAttackAngle()
 	{
 		return 0;
+	}
+	
+	public double getWeaponChange()
+	{
+		return getValue(Stat.ChangeWeapon, 0);
+	}
+	
+	public double getWeaponChangeRadius()
+	{
+		return getValue(Stat.ChangeWeaponRadius, 0);
+	}
+	
+	public double getWeaponChangeCount()
+	{
+		return getValue(Stat.ChangeWeaponCount, 1);
 	}
 	
 	/**

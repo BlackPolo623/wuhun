@@ -37,10 +37,8 @@ import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.itemcontainer.PlayerFreight;
 import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-import org.l2jmobius.gameserver.network.serverpackets.ExPremiumManagerShowHtml;
-import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
-import org.l2jmobius.gameserver.network.serverpackets.PackageToList;
-import org.l2jmobius.gameserver.network.serverpackets.WareHouseWithdrawalList;
+import org.l2jmobius.gameserver.network.enums.ChatType;
+import org.l2jmobius.gameserver.network.serverpackets.*;
 import org.l2jmobius.gameserver.network.serverpackets.ensoul.ExShowEnsoulExtractionWindow;
 import org.l2jmobius.gameserver.network.serverpackets.ensoul.ExShowEnsoulWindow;
 import org.l2jmobius.gameserver.network.serverpackets.variation.ExShowVariationCancelWindow;
@@ -1699,7 +1697,8 @@ public class GameAssistant extends Script
 	@Override
 	public String onFirstTalk(Npc npc, Player player)
 	{
-		player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/32478.html")));
+		player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "系統通知", "該NPC尚未開放"));
+		//player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/32478.html")));
 		return null;
 	}
 	

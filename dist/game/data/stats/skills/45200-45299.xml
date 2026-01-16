@@ -8872,10 +8872,10 @@
 			</effect>
 			<effect name="MagicalAttack">
 				<amount>
-					<value level="1">170</value>
-					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">420</value>
-					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">670</value>
-					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">920</value>
+					<value level="1">470</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">720</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">970</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">1220</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -8888,7 +8888,34 @@
 				</amount>
 				<mode>PER</mode>
 			</effect>
-		</effects>
+			<effect name="MagicalSkillPower">
+				<amount>
+					<value level="1">0</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">1</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">3</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">5</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">5</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">7</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">10</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ShotsBonus">
+				<amount>
+					<value level="1">0</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">2</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">5</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			</effects>
 	</skill>
 	<skill id="45291" toLevel="1" name="精通席琳之子">
 		<icon>icon.s_children_of_shilen2</icon>

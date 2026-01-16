@@ -493,6 +493,10 @@ public class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("WeightPenalty", WeightPenalty::new);
 		EffectHandler.getInstance().registerHandler("WorldChatPoints", WorldChatPoints::new);
 		EffectHandler.getInstance().registerHandler("ReplaceSkillByCombatPower", ReplaceSkillByCombatPower::new);
+		EffectHandler.getInstance().registerHandler("FinalDamage", FinalDamage::new);
+		EffectHandler.getInstance().registerHandler("ChangeWeapon", ChangeWeapon::new);
+		EffectHandler.getInstance().registerHandler("ChangeWeaponRadius", ChangeWeaponRadius::new);
+		EffectHandler.getInstance().registerHandler("ChangeWeaponCount", ChangeWeaponCount::new);
 		LOGGER.info(EffectMasterHandler.class.getSimpleName() + ": Loaded " + EffectHandler.getInstance().size() + " effect handlers.");
 	}
 }

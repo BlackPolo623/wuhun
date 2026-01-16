@@ -621,8 +621,9 @@ public class InstanceManager implements IXmlReader
 	/**
 	 * Restore instance reenter data for all players.
 	 */
-	private void restoreInstanceTimes()
+	public void restoreInstanceTimes()
 	{
+		_playerTimes.clear();
 		try (Connection con = DatabaseFactory.getConnection();
 			Statement ps = con.createStatement();
 			ResultSet rs = ps.executeQuery("SELECT * FROM character_instance_time ORDER BY charId"))

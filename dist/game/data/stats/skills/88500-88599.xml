@@ -1728,12 +1728,21 @@
 		</effects>
 	</skill>
 	<skill id="88556" toLevel="1" name="血腥薔薇">
+		
 		<icon>icon.s_bloody_rose</icon>
+		<hitTime>1000</hitTime>
+		<coolTime>500</coolTime>
+		<reuseDelay>10000</reuseDelay>
+		<effectPoint>760</effectPoint>
+		<mpConsume>150</mpConsume>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
+		<abnormalTime>600</abnormalTime>
 		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<itemConsumeCount>100</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
 		<effects>
 			<effect name="MagicalAttack">
 				<amount>5</amount>
@@ -1774,6 +1783,14 @@
 			<effect name="ReplaceSkillBySkill">
 				<existingSkillId>88552</existingSkillId> 
 				<replacementSkillId>88553</replacementSkillId> 
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>88557</existingSkillId> 
+				<replacementSkillId>88644</replacementSkillId> 
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>88572</existingSkillId> 
+				<replacementSkillId>88647</replacementSkillId> 
 			</effect>
 		</effects>
 	</skill>

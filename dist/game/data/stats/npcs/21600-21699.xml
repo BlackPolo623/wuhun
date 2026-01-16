@@ -164,7 +164,7 @@
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2663.53343531415" hpRegen="7.5" mp="1251" mpRegen="2.7" />
 			<attack physical="1228.73102605" magical="572.95935785" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="309.707761" magical="226.630701" />
+			<defence physical="309.707761" magical="226.630" />
 			<speed>
 				<walk ground="56" />
 				<run ground="190" />
@@ -215,7 +215,7 @@
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="2663.53343531415" hpRegen="7.5" mp="1251" mpRegen="2.7" />
 			<attack physical="1228.73102605" magical="572.95935785" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="309.707761" magical="226.630701" />
+			<defence physical="309.707761" magical="226.630" />
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
@@ -368,7 +368,7 @@
 		<equipment rhand="78" /> 
 		<acquire exp="43" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2779.53678108017" hpRegen="7.5" mp="1314" mpRegen="2.7" />
+			<vitals hp="2779.5367" hpRegen="7.5" mp="1314" mpRegen="2.7" />
 			<attack physical="1386.0554136" magical="624.51810135" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="320.265693" magical="234.356529" />
 			<speed>
@@ -415,7 +415,7 @@
 		<sex>MALE</sex>
 		<acquire exp="43" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2779.53678108017" hpRegen="7.5" mp="1314" mpRegen="2.7" />
+			<vitals hp="2779.536" hpRegen="7.5" mp="1314" mpRegen="2.7" />
 			<attack physical="1386.0554136" magical="624.51810135" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="320.265693" magical="234.356529" />
 			<speed>
@@ -450,7 +450,7 @@
 			<height normal="50.4" />
 		</collision>
 	</npc>
-	<npc id="21611" level="85" type="Monster" name="莉莉恩暗殺者">
+	<npc id="21611" level="90" type="Monster" name="莉莉恩暗殺者">
 		<parameters>
 			<param name="MoveAroundSocial" value="75" />
 			<param name="MoveAroundSocial1" value="75" />
@@ -464,12 +464,12 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="234" lhand="234" /> 
-		<acquire exp="3641" sp="40" attributeExp="1216" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="26996.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
-			<attack physical="2226.2521499701" magical="1520.24164482038" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
-			<defence physical="998.10183" magical="730.36761" />
+		<equipment rhand="100508" lhand="100508" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
 				<walk ground="36" />
 				<run ground="190" />
@@ -477,7 +477,7 @@
 			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="9" /> 
 			<skill id="4408" level="1" /> 
@@ -501,6 +501,20 @@
 			<radius normal="13" />
 			<height normal="44" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21612" level="85" type="Monster" name="莉莉恩宣道者">
 		<parameters>
@@ -519,19 +533,19 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<acquire exp="3641" sp="40" attributeExp="1216" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="26996.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
-			<attack physical="2226.2521499701" magical="1520.24164482038" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="998.10183" magical="730.36761" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="50" />
-				<run ground="170" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
-			<hitTime>500</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="9" /> 
 			<skill id="4408" level="1" /> 
@@ -557,6 +571,20 @@
 			<radius normal="10" />
 			<height normal="37.5" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21613" level="85" type="Monster" name="那芙琳大主教">
 		<parameters>
@@ -575,19 +603,19 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<acquire exp="7283" sp="40" attributeExp="1216" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="53992.41" hpRegen="8.5" mp="11080.8" mpRegen="3" />
-			<attack physical="2226.2521499701" magical="1520.24164482038" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="998.10183" magical="730.36761" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="50" />
-				<run ground="170" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
-			<hitTime>480</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="8" /> 
 			<skill id="4408" level="1" /> 
@@ -614,6 +642,20 @@
 			<radius normal="21" grown="14" />
 			<height normal="44" grown="56" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21614" level="85" type="Monster" name="那芙琳百人隊長">
 		<parameters>
@@ -630,19 +672,19 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<acquire exp="7283" sp="40" attributeExp="1216" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="53992.41" hpRegen="8.5" mp="11080.8" mpRegen="3" />
-			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="998.10183" magical="730.36761" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="65" />
+				<walk ground="36" />
 				<run ground="190" />
 			</speed>
-			<hitTime>630</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="8" /> 
 			<skill id="4408" level="1" /> 
@@ -668,6 +710,20 @@
 			<radius normal="13" grown="15.6" />
 			<height normal="48" grown="57.6" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21615" level="85" type="Monster" name="墓地守護者">
 		<parameters>
@@ -684,20 +740,20 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="233" /> 
-		<acquire exp="3641" sp="40" attributeExp="1216" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="26996.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
-			<attack physical="2226.2521499701" magical="1520.24164482038" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
-			<defence physical="998.10183" magical="730.36761" />
+		<equipment rhand="104436" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="80" />
+				<walk ground="36" />
 				<run ground="190" />
 			</speed>
-			<hitTime>520</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="1" /> 
 			<skill id="4408" level="1" /> 
@@ -721,6 +777,20 @@
 			<radius normal="13" />
 			<height normal="34.5" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21616" level="85" type="Monster" name="墓地賢者">
 		<parameters>
@@ -736,20 +806,20 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="311" /> 
-		<acquire exp="3641" sp="40" attributeExp="1216" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="26996.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
-			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="998.10183" magical="730.36761" />
+		<equipment rhand="100515" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="70" />
-				<run ground="160" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
-			<hitTime>740</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="9" /> 
 			<skill id="4408" level="1" /> 
@@ -773,6 +843,20 @@
 			<radius normal="13" />
 			<height normal="44" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21617" level="85" type="Monster" name="冥界守護者">
 		<parameters>
@@ -788,19 +872,19 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<acquire exp="3641" sp="40" attributeExp="1216" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="26996.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
-			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="998.10183" magical="730.36761" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="27" />
+				<walk ground="36" />
 				<run ground="190" />
 			</speed>
-			<hitTime>710</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="1" /> 
 			<skill id="4408" level="1" /> 
@@ -824,6 +908,20 @@
 			<radius normal="12" grown="14.5" />
 			<height normal="31" grown="36" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21618" level="85" type="Monster" name="冥界賢者">
 		<parameters>
@@ -839,19 +937,19 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<acquire exp="3641" sp="40" attributeExp="1216" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="26996.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
-			<attack physical="2226.2521499701" magical="1520.24164482038" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="998.10183" magical="730.36761" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="80" />
-				<run ground="160" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
-			<hitTime>560</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="1" /> 
 			<skill id="4408" level="1" /> 
@@ -877,6 +975,20 @@
 			<radius normal="20" />
 			<height normal="42" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21619" level="85" type="Monster" name="墓地親衛隊">
 		<parameters>
@@ -893,19 +1005,19 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<acquire exp="3641" sp="40" attributeExp="1216" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="26996.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
-			<attack physical="2226.2521499701" magical="1520.24164482038" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
-			<defence physical="998.10183" magical="730.36761" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="80" />
-				<run ground="200" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
-			<hitTime>520</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="1" /> 
 			<skill id="4408" level="1" /> 
@@ -929,6 +1041,20 @@
 			<radius normal="14" />
 			<height normal="37.5" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21620" level="80" type="Monster" name="煉獄巨蛇" element="WIND">
 		<parameters>
@@ -944,20 +1070,20 @@
 		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
-		<equipment rhand="73" /> 
-		<acquire exp="1600" sp="16" attributeExp="1144" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="19613.29" hpRegen="7.5" mp="2770.2" mpRegen="2.7" />
-			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="409.65" magical="258.5499" />
+		<equipment rhand="100513" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="70" />
-				<run ground="175" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
 			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="3" /> 
 			<skill id="4408" level="1" /> 
@@ -982,6 +1108,20 @@
 			<radius normal="17" />
 			<height normal="46" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21621" level="80" type="Monster" name="陰間守衛者 梅杜莎" element="WIND">
 		<parameters>
@@ -997,19 +1137,19 @@
 		</parameters>
 		<race>BEAST</race>
 		<sex>FEMALE</sex>
-		<acquire exp="1600" sp="16" attributeExp="1144" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="19613.29" hpRegen="7.5" mp="2770.2" mpRegen="2.7" />
-			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="409.65" magical="258.5499" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="50" />
-				<run ground="165" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
-			<hitTime>520</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="3" /> 
 			<skill id="4408" level="1" /> 
@@ -1034,6 +1174,20 @@
 			<radius normal="13" />
 			<height normal="33.4" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21622" level="80" type="Monster" name="煉獄巫師" element="WIND">
 		<parameters>
@@ -1049,19 +1203,19 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<acquire exp="1600" sp="16" attributeExp="1144" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="19613.29" hpRegen="7.5" mp="2770.2" mpRegen="2.7" />
-			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="409.65" magical="258.5499" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="60" />
-				<run ground="175" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
-			<hitTime>500</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="4" /> 
 			<skill id="4408" level="1" /> 
@@ -1086,6 +1240,20 @@
 			<radius normal="10" />
 			<height normal="33.5" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21623" level="80" type="Monster" name="煉獄翼魔" element="WIND">
 		<parameters>
@@ -1101,19 +1269,19 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<acquire exp="1600" sp="16" attributeExp="1144" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="19613.29" hpRegen="7.5" mp="2770.2" mpRegen="2.7" />
-			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="409.65" magical="258.5499" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="140" />
-				<run ground="170" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
-			<hitTime>370</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="2" /> 
 			<skill id="4408" level="1" /> 
@@ -1138,6 +1306,20 @@
 			<radius normal="16" />
 			<height normal="50" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21624" level="80" type="Monster" name="那芙琳劍士" element="WIND">
 		<parameters>
@@ -1154,19 +1336,19 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<acquire exp="3200" sp="32" attributeExp="1144" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="39225.95" hpRegen="7.5" mp="2770.2" mpRegen="2.7" />
-			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="409.65" magical="258.5499" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="65" />
-				<run ground="170" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
-			<hitTime>630</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="8" /> 
 			<skill id="4408" level="1" /> 
@@ -1193,6 +1375,20 @@
 			<radius normal="11" grown="13.2" />
 			<height normal="39" grown="46.8" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21625" level="80" type="Monster" name="那芙琳警衛" element="WIND">
 		<parameters>
@@ -1208,19 +1404,19 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<acquire exp="3200" sp="32" attributeExp="1144" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="39225.95" hpRegen="7.5" mp="2770.2" mpRegen="2.7" />
-			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="409.65" magical="258.5499" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="65" />
-				<run ground="180" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
-			<hitTime>630</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="8" /> 
 			<skill id="4408" level="1" /> 
@@ -1245,6 +1441,20 @@
 			<radius normal="11" />
 			<height normal="32.4" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21626" level="80" type="Monster" name="聖域審問官" element="WIND">
 		<parameters>
@@ -1260,19 +1470,19 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<acquire exp="1600" sp="16" attributeExp="1144" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="19613.29" hpRegen="7.5" mp="2770.2" mpRegen="2.7" />
-			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="409.65" magical="258.5499" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="80" />
-				<run ground="145" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
-			<hitTime>560</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="9" /> 
 			<skill id="4408" level="1" /> 
@@ -1297,6 +1507,20 @@
 			<radius normal="11" />
 			<height normal="30" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21627" level="80" type="Monster" name="古墓統治者" element="WIND">
 		<parameters>
@@ -1312,20 +1536,20 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="298" /> 
-		<acquire exp="1600" sp="16" attributeExp="1144" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="19613.29" hpRegen="7.5" mp="2770.2" mpRegen="2.7" />
-			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="409.65" magical="258.5499" />
+		<equipment rhand="100511" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="100" />
-				<run ground="170" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
-			<hitTime>450</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="1" /> 
 			<skill id="4408" level="1" /> 
@@ -1350,6 +1574,20 @@
 			<radius normal="16" />
 			<height normal="49.5" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21628" level="80" type="Monster" name="古墓審問官" element="WIND">
 		<parameters>
@@ -1365,19 +1603,19 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<acquire exp="1600" sp="16" attributeExp="1144" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="19613.29" hpRegen="7.5" mp="2770.2" mpRegen="2.7" />
-			<attack physical="1552.864" magical="795.304" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="409.65" magical="258.5499" />
+		<acquire exp="18000" sp="40" attributeExp="1216" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="369960.2" hpRegen="8.5" mp="11080.8" mpRegen="3" />
+			<attack physical="5000.2521499701" magical="5000.24164482038" random="5" critical="8" accuracy="50" attackSpeed="666" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="6000.10183" magical="4000.36761" />
 			<speed>
-				<walk ground="80" />
-				<run ground="145" />
+				<walk ground="36" />
+				<run ground="190" />
 			</speed>
-			<hitTime>500</hitTime>
+			<hitTime>460</hitTime>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status attackable="false" />
 		<skillList>
 			<skill id="4416" level="9" /> 
 			<skill id="4408" level="1" /> 
@@ -1402,6 +1640,20 @@
 			<radius normal="15" />
 			<height normal="46" />
 		</collision>
+		<dropLists>
+			<drop>
+				<item id="97145" min="1" max="50" chance="33"/>
+				<item id="101232" min="1" max="1" chance="0.003"/>
+				<item id="96937" min="1" max="1" chance="0.003"/>
+				<item id="106100" min="1" max="1" chance="0.0007"/>
+				<item id="106101" min="1" max="1" chance="0.0007"/>
+				<item id="106102" min="1" max="1" chance="0.0007"/>
+				<item id="106103" min="1" max="1" chance="0.0007"/>
+				<item id="106104" min="1" max="1" chance="0.0007"/>
+				<item id="106105" min="1" max="1" chance="0.0007"/>
+				<item id="106106" min="1" max="1" chance="0.0007"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="21629" level="71" type="Monster" name="煉獄狼蛛" element="EARTH">
 		<parameters>
@@ -2629,7 +2881,7 @@
 		<acquire exp="51" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3105.82741665381" hpRegen="8.5" mp="1507.8" mpRegen="3" />
-			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="794.70" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<speed>
 				<walk ground="38" />
@@ -2668,7 +2920,7 @@
 		<acquire exp="51" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3105.82741665381" hpRegen="8.5" mp="1507.8" mpRegen="3" />
-			<attack physical="794.70901" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="794.70" magical="542.68324" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<speed>
 				<walk ground="80" />
@@ -3847,7 +4099,7 @@
 		<acquire exp="53" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
 			<vitals hp="3272.76061068" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
-			<attack physical="938.20801458" magical="656.66638089" random="10" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="938.20" magical="656.66638089" random="10" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="354.8183475" magical="239.180922" />
 			<speed>
 				<walk ground="70" />

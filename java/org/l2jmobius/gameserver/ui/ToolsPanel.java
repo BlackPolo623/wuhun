@@ -2,11 +2,17 @@ package org.l2jmobius.gameserver.ui;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 public class ToolsPanel extends JPanel
@@ -14,142 +20,235 @@ public class ToolsPanel extends JPanel
     private static final Color PANEL_BG = new Color(45, 45, 45);
     private static final Color FG_COLOR = new Color(240, 240, 240);
     private static final Color BORDER_COLOR = new Color(100, 100, 100);
-    private static final Color BUTTON_BLUE = new Color(70, 130, 180);
-    private static final Color BUTTON_BLUE_HOVER = new Color(90, 150, 200);
-    private static final Color BUTTON_BORDER = new Color(50, 110, 160);
-    private static final Color BUTTON_GREEN = new Color(60, 150, 90);
-    private static final Color BUTTON_GREEN_HOVER = new Color(80, 170, 110);
-    private static final Color BUTTON_GREEN_BORDER = new Color(40, 130, 70);
-    private static final Color BUTTON_ORANGE = new Color(200, 120, 50);
-    private static final Color BUTTON_ORANGE_HOVER = new Color(220, 140, 70);
-    private static final Color BUTTON_ORANGE_BORDER = new Color(180, 100, 30);
+
+    // 統一淡藍色系
+    private static final Color BUTTON_LIGHT_BLUE = new Color(135, 175, 215);      // 淡藍色
+    private static final Color BUTTON_LIGHT_BLUE_TOP = new Color(155, 190, 225); // 淡藍色頂部（漸層用）
+    private static final Color BUTTON_DARK_BLUE = new Color(85, 125, 165);       // 深藍色（hover）
+    private static final Color BUTTON_DARK_BLUE_TOP = new Color(105, 145, 185);  // 深藍色頂部（hover漸層）
+    private static final Color BUTTON_PRESSED = new Color(65, 105, 145);         // 按下時的顏色
+    private static final Color BUTTON_TEXT = new Color(30, 30, 30);              // 深色文字
+    private static final Color BUTTON_BORDER = new Color(90, 130, 170);          // 邊框顏色
 
     public ToolsPanel()
     {
-       setBackground(PANEL_BG);
-       setBounds(500, 170, 284, 220);  // 高度改為220以容納三個按鈕
-       setBorder(new LineBorder(BORDER_COLOR, 1, false));
-       setOpaque(true);
-       setLayout(null);
+        setBackground(PANEL_BG);
+        setBounds(500, 170, 284, 260);
+        setBorder(new LineBorder(BORDER_COLOR, 1, false));
+        setOpaque(true);
+        setLayout(null);
 
-       final JLabel lblTitle = new JLabel("工具面板");
-       lblTitle.setFont(new Font("微軟正黑體", Font.BOLD, 16));
-       lblTitle.setForeground(FG_COLOR);
-       lblTitle.setBounds(10, 5, 264, 25);
-       add(lblTitle);
+        final JLabel lblTitle = new JLabel("工具面板");
+        lblTitle.setFont(new Font("微軟正黑體", Font.BOLD, 16));
+        lblTitle.setForeground(FG_COLOR);
+        lblTitle.setBounds(10, 5, 264, 25);
+        add(lblTitle);
 
-       // NPC編輯器按鈕
-       final JButton btnNpcEditor = new JButton("開啟 NPC 編輯器");
-       btnNpcEditor.setFont(new Font("微軟正黑體", Font.PLAIN, 14));
-       btnNpcEditor.setBounds(10, 35, 264, 55);
-       btnNpcEditor.setToolTipText("點擊開啟 NPC 編輯器");
-       btnNpcEditor.setBackground(BUTTON_BLUE);
-       btnNpcEditor.setForeground(Color.WHITE);
-       btnNpcEditor.setFocusPainted(false);
-       btnNpcEditor.setBorder(new LineBorder(BUTTON_BORDER, 2, true));
+        // NPC編輯器按鈕
+        final GlossyButton btnNpcEditor = new GlossyButton("開啟 NPC 編輯器");
+        btnNpcEditor.setBounds(10, 35, 264, 45);
+        btnNpcEditor.setToolTipText("點擊開啟 NPC 編輯器");
+        btnNpcEditor.addActionListener(_ -> {
+            try
+            {
+                tools.npceditor.NpcEditorLauncher.launch();
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(this,
+                        "無法啟動NPC編輯器: " + e.getMessage(),
+                        "錯誤",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        });
+        add(btnNpcEditor);
 
-       btnNpcEditor.addMouseListener(new java.awt.event.MouseAdapter() {
-          @Override
-          public void mouseEntered(java.awt.event.MouseEvent evt) {
-             btnNpcEditor.setBackground(BUTTON_BLUE_HOVER);
-          }
+        // 推廣獎勵管理器按鈕
+        final GlossyButton btnPromotionManager = new GlossyButton("推廣獎勵管理器");
+        btnPromotionManager.setBounds(10, 85, 264, 45);
+        btnPromotionManager.setToolTipText("點擊開啟推廣獎勵管理器");
+        btnPromotionManager.addActionListener(_ -> {
+            try
+            {
+                tools.promotionmanager.PromotionManagerLauncher.launch();
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(this,
+                        "無法啟動推廣獎勵管理器: " + e.getMessage(),
+                        "錯誤",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        });
+        add(btnPromotionManager);
 
-          @Override
-          public void mouseExited(java.awt.event.MouseEvent evt) {
-             btnNpcEditor.setBackground(BUTTON_BLUE);
-          }
-       });
+        // 累積贊助滿額禮管理器按鈕
+        final GlossyButton btnDonationReward = new GlossyButton("累積贊助滿額禮");
+        btnDonationReward.setBounds(10, 135, 264, 45);
+        btnDonationReward.setToolTipText("點擊開啟累積贊助滿額禮管理器");
+        btnDonationReward.addActionListener(_ -> {
+            try
+            {
+                tools.donationreward.DonationRewardManagerLauncher.launch();
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(this,
+                        "無法啟動累積贊助滿額禮管理器: " + e.getMessage(),
+                        "錯誤",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        });
+        add(btnDonationReward);
 
-       btnNpcEditor.addActionListener(_ -> {
-          try
-          {
-             tools.npceditor.NpcEditorLauncher.launch();
-          }
-          catch (Exception e)
-          {
-             JOptionPane.showMessageDialog(this,
-                   "無法啟動NPC編輯器: " + e.getMessage(),
-                   "錯誤",
-                   JOptionPane.ERROR_MESSAGE);
-          }
-       });
+        // 禮包發送系統按鈕
+        final GlossyButton btnGiftPackage = new GlossyButton("禮包發送系統");
+        btnGiftPackage.setBounds(10, 185, 264, 45);
+        btnGiftPackage.setToolTipText("點擊開啟禮包發送系統");
+        btnGiftPackage.addActionListener(_ -> {
+            try
+            {
+                tools.giftpackage.GiftPackageManagerLauncher.launch();
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(this,
+                        "無法啟動禮包發送系統: " + e.getMessage(),
+                        "錯誤",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        });
+        add(btnGiftPackage);
+    }
 
-       add(btnNpcEditor);
+    /**
+     * 自定義光亮按鈕類 - 統一淡藍色漸層效果（改進版）
+     */
+    private static class GlossyButton extends JButton
+    {
+        private boolean isHovered = false;
+        private boolean isPressed = false;
 
-       // 推廣獎勵管理器按鈕
-       final JButton btnPromotionManager = new JButton("推廣獎勵管理器");
-       btnPromotionManager.setFont(new Font("微軟正黑體", Font.PLAIN, 14));
-       btnPromotionManager.setBounds(10, 95, 264, 55);
-       btnPromotionManager.setToolTipText("點擊開啟推廣獎勵管理器");
-       btnPromotionManager.setBackground(BUTTON_GREEN);
-       btnPromotionManager.setForeground(Color.WHITE);
-       btnPromotionManager.setFocusPainted(false);
-       btnPromotionManager.setBorder(new LineBorder(BUTTON_GREEN_BORDER, 2, true));
+        public GlossyButton(String text)
+        {
+            super(text);
+            setFont(new Font("微軟正黑體", Font.BOLD, 13));
+            setForeground(BUTTON_TEXT);
+            setFocusPainted(false);
+            setContentAreaFilled(false);
+            setBorderPainted(false);
+            setOpaque(false);
 
-       btnPromotionManager.addMouseListener(new java.awt.event.MouseAdapter() {
-          @Override
-          public void mouseEntered(java.awt.event.MouseEvent evt) {
-             btnPromotionManager.setBackground(BUTTON_GREEN_HOVER);
-          }
+            // 設定內邊距
+            setBorder(new CompoundBorder(
+                    new LineBorder(BUTTON_BORDER, 2, true),
+                    new EmptyBorder(5, 15, 5, 15)
+            ));
 
-          @Override
-          public void mouseExited(java.awt.event.MouseEvent evt) {
-             btnPromotionManager.setBackground(BUTTON_GREEN);
-          }
-       });
+            // 滑鼠事件
+            addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mouseEntered(java.awt.event.MouseEvent evt) {
+                    isHovered = true;
+                    repaint();
+                }
 
-       btnPromotionManager.addActionListener(_ -> {
-          try
-          {
-             tools.promotionmanager.PromotionManagerLauncher.launch();
-          }
-          catch (Exception e)
-          {
-             JOptionPane.showMessageDialog(this,
-                   "無法啟動推廣獎勵管理器: " + e.getMessage(),
-                   "錯誤",
-                   JOptionPane.ERROR_MESSAGE);
-          }
-       });
+                @Override
+                public void mouseExited(java.awt.event.MouseEvent evt) {
+                    isHovered = false;
+                    repaint();
+                }
 
-       add(btnPromotionManager);
+                @Override
+                public void mousePressed(java.awt.event.MouseEvent evt) {
+                    isPressed = true;
+                    repaint();
+                }
 
-       // 累積贊助滿額禮管理器按鈕
-       final JButton btnDonationReward = new JButton("累積贊助滿額禮");
-       btnDonationReward.setFont(new Font("微軟正黑體", Font.PLAIN, 14));
-       btnDonationReward.setBounds(10, 155, 264, 55);
-       btnDonationReward.setToolTipText("點擊開啟累積贊助滿額禮管理器");
-       btnDonationReward.setBackground(BUTTON_ORANGE);
-       btnDonationReward.setForeground(Color.WHITE);
-       btnDonationReward.setFocusPainted(false);
-       btnDonationReward.setBorder(new LineBorder(BUTTON_ORANGE_BORDER, 2, true));
+                @Override
+                public void mouseReleased(java.awt.event.MouseEvent evt) {
+                    isPressed = false;
+                    repaint();
+                }
+            });
+        }
 
-       btnDonationReward.addMouseListener(new java.awt.event.MouseAdapter() {
-          @Override
-          public void mouseEntered(java.awt.event.MouseEvent evt) {
-             btnDonationReward.setBackground(BUTTON_ORANGE_HOVER);
-          }
+        @Override
+        protected void paintComponent(Graphics g)
+        {
+            Graphics2D g2d = (Graphics2D) g.create();
 
-          @Override
-          public void mouseExited(java.awt.event.MouseEvent evt) {
-             btnDonationReward.setBackground(BUTTON_ORANGE);
-          }
-       });
+            // 啟用抗鋸齒
+            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
 
-       btnDonationReward.addActionListener(_ -> {
-          try
-          {
-             tools.donationreward.DonationRewardManagerLauncher.launch();
-          }
-          catch (Exception e)
-          {
-             JOptionPane.showMessageDialog(this,
-                   "無法啟動累積贊助滿額禮管理器: " + e.getMessage(),
-                   "錯誤",
-                   JOptionPane.ERROR_MESSAGE);
-          }
-       });
+            int width = getWidth();
+            int height = getHeight();
 
-       add(btnDonationReward);
+            // 選擇顏色
+            Color topColor;
+            Color bottomColor;
+
+            if (isPressed)
+            {
+                // 按下時的顏色（稍微變暗）
+                topColor = new Color(75, 115, 155);
+                bottomColor = new Color(55, 95, 135);
+            }
+            else if (isHovered)
+            {
+                // 懸停時的顏色（明顯變深）
+                topColor = BUTTON_DARK_BLUE_TOP;
+                bottomColor = BUTTON_DARK_BLUE;
+            }
+            else
+            {
+                // 正常狀態（淡藍色）
+                topColor = BUTTON_LIGHT_BLUE_TOP;
+                bottomColor = BUTTON_LIGHT_BLUE;
+            }
+
+            // 繪製主要漸層背景（從上到下）
+            GradientPaint gradient = new GradientPaint(
+                    0, 0, topColor,
+                    0, height, bottomColor
+            );
+            g2d.setPaint(gradient);
+            g2d.fillRoundRect(0, 0, width - 1, height - 1, 10, 10);
+
+            // ===== 改進：繪製更柔和的高光效果 =====
+            if (!isPressed)
+            {
+                // 方法1: 微妙的頂部高光（非常淡，只在頂部一小部分）
+                GradientPaint subtleHighlight = new GradientPaint(
+                        0, 0, new Color(255, 255, 255, 25),  // 降低透明度
+                        0, height / 3, new Color(255, 255, 255, 0)  // 範圍縮小到1/3
+                );
+                g2d.setPaint(subtleHighlight);
+                g2d.fillRoundRect(3, 3, width - 7, height / 3, 8, 8);
+            }
+
+            // 繪製外邊框
+            g2d.setColor(BUTTON_BORDER);
+            g2d.drawRoundRect(0, 0, width - 1, height - 1, 10, 10);
+
+            // 繪製內部細邊框（增加質感）
+            if (!isPressed)
+            {
+                g2d.setColor(new Color(255, 255, 255, 30));  // 非常淡的白色
+                g2d.drawRoundRect(1, 1, width - 3, height - 3, 9, 9);
+            }
+            else
+            {
+                // 按下時顯示內陰影
+                g2d.setColor(new Color(0, 0, 0, 50));
+                g2d.drawRoundRect(1, 1, width - 3, height - 3, 9, 9);
+            }
+
+            g2d.dispose();
+
+            // 繪製文字
+            super.paintComponent(g);
+        }
     }
 }

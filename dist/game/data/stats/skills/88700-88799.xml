@@ -3,10 +3,11 @@
 	<skill id="88701" toLevel="20" name="亡命一擊">
 		<icon>icon.skill0344</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>40</castRange>
-		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
-		<reuseDelay>1000</reuseDelay>
 		<effectPoint>
 			<value level="1">-400</value>
 			<value level="2">-405</value>
@@ -29,6 +30,31 @@
 			<value level="19">-490</value>
 			<value level="20">-495</value>
 		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1500</hitTime>
+		<isMagic>0</isMagic>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">77</value>
+			<value level="3">78</value>
+			<value level="4">79</value>
+			<value level="5">80</value>
+			<value level="6">81</value>
+			<value level="7">82</value>
+			<value level="8">83</value>
+			<value level="9">84</value>
+			<value level="10">85</value>
+			<value level="11">86</value>
+			<value level="12">87</value>
+			<value level="13">88</value>
+			<value level="14">89</value>
+			<value level="15">90</value>
+			<value level="16">91</value>
+			<value level="17">92</value>
+			<value level="18">93</value>
+			<value level="19">94</value>
+			<value level="20">95</value>
+		</magicLevel>
 		<mpConsume>
 			<value level="1">60</value>
 			<value level="2">60</value>
@@ -46,19 +72,80 @@
 			<value level="14">69</value>
 			<value level="15">70</value>
 			<value level="16">72</value>
-			<value level="17">73</value>
-			<value level="18">74</value>
-			<value level="19">75</value>
-			<value level="20">76</value>
+			<value level="17">74</value>
+			<value level="18">76</value>
+			<value level="19">78</value>
+			<value level="20">80</value>
 		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="FatalBlow">
+				<power>
+					<value level="1">8124</value>
+					<value level="2">8253</value>
+					<value level="3">8383</value>
+					<value level="4">8511</value>
+					<value level="5">8641</value>
+					<value level="6">8771</value>
+					<value level="7">8901</value>
+					<value level="8">9032</value>
+					<value level="9">9163</value>
+					<value level="10">9294</value>
+					<value level="11">9427</value>
+					<value level="12">9560</value>
+					<value level="13">9692</value>
+					<value level="14">9825</value>
+					<value level="15">9959</value>
+					<value level="16">10257</value>
+					<value level="17">10564</value>
+					<value level="18">10880</value>
+					<value level="19">11206</value>
+					<value level="20">11542</value>
+				</power>
+				<chanceBoost>1000</chanceBoost>
+			</effect>
+			<effect name="FatalBlow">
+				<power>
+					<value level="1">8124</value>
+					<value level="2">8253</value>
+					<value level="3">8383</value>
+					<value level="4">8511</value>
+					<value level="5">8641</value>
+					<value level="6">8771</value>
+					<value level="7">8901</value>
+					<value level="8">9032</value>
+					<value level="9">9163</value>
+					<value level="10">9294</value>
+					<value level="11">9427</value>
+					<value level="12">9560</value>
+					<value level="13">9692</value>
+					<value level="14">9825</value>
+					<value level="15">9959</value>
+					<value level="16">10257</value>
+					<value level="17">10564</value>
+					<value level="18">10880</value>
+					<value level="19">11206</value>
+					<value level="20">11542</value>
+				</power>
+				<chanceBoost>1000</chanceBoost>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88702" toLevel="20" name="亡命一擊">
 		<icon>icon.skill0344</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>40</castRange>
-		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
-		<reuseDelay>1000</reuseDelay>
 		<effectPoint>
 			<value level="1">-400</value>
 			<value level="2">-405</value>
@@ -81,6 +168,31 @@
 			<value level="19">-490</value>
 			<value level="20">-495</value>
 		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1500</hitTime>
+		<isMagic>0</isMagic>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">77</value>
+			<value level="3">78</value>
+			<value level="4">79</value>
+			<value level="5">80</value>
+			<value level="6">81</value>
+			<value level="7">82</value>
+			<value level="8">83</value>
+			<value level="9">84</value>
+			<value level="10">85</value>
+			<value level="11">86</value>
+			<value level="12">87</value>
+			<value level="13">88</value>
+			<value level="14">89</value>
+			<value level="15">90</value>
+			<value level="16">91</value>
+			<value level="17">92</value>
+			<value level="18">93</value>
+			<value level="19">94</value>
+			<value level="20">95</value>
+		</magicLevel>
 		<mpConsume>
 			<value level="1">60</value>
 			<value level="2">60</value>
@@ -98,19 +210,80 @@
 			<value level="14">69</value>
 			<value level="15">70</value>
 			<value level="16">72</value>
-			<value level="17">73</value>
-			<value level="18">74</value>
-			<value level="19">75</value>
-			<value level="20">76</value>
+			<value level="17">74</value>
+			<value level="18">76</value>
+			<value level="19">78</value>
+			<value level="20">80</value>
 		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="FatalBlow">
+				<power>
+					<value level="1">8124</value>
+					<value level="2">8253</value>
+					<value level="3">8383</value>
+					<value level="4">8511</value>
+					<value level="5">8641</value>
+					<value level="6">8771</value>
+					<value level="7">8901</value>
+					<value level="8">9032</value>
+					<value level="9">9163</value>
+					<value level="10">9294</value>
+					<value level="11">9427</value>
+					<value level="12">9560</value>
+					<value level="13">9692</value>
+					<value level="14">9825</value>
+					<value level="15">9959</value>
+					<value level="16">10257</value>
+					<value level="17">10564</value>
+					<value level="18">10880</value>
+					<value level="19">11206</value>
+					<value level="20">11542</value>
+				</power>
+				<chanceBoost>1000</chanceBoost>
+			</effect>
+			<effect name="FatalBlow">
+				<power>
+					<value level="1">8124</value>
+					<value level="2">8253</value>
+					<value level="3">8383</value>
+					<value level="4">8511</value>
+					<value level="5">8641</value>
+					<value level="6">8771</value>
+					<value level="7">8901</value>
+					<value level="8">9032</value>
+					<value level="9">9163</value>
+					<value level="10">9294</value>
+					<value level="11">9427</value>
+					<value level="12">9560</value>
+					<value level="13">9692</value>
+					<value level="14">9825</value>
+					<value level="15">9959</value>
+					<value level="16">10257</value>
+					<value level="17">10564</value>
+					<value level="18">10880</value>
+					<value level="19">11206</value>
+					<value level="20">11542</value>
+				</power>
+				<chanceBoost>1000</chanceBoost>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88703" toLevel="20" name="亡命一擊">
 		<icon>icon.skill0344</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>40</castRange>
-		<hitTime>1500</hitTime>
 		<coolTime>500</coolTime>
-		<reuseDelay>1000</reuseDelay>
 		<effectPoint>
 			<value level="1">-400</value>
 			<value level="2">-405</value>
@@ -133,6 +306,31 @@
 			<value level="19">-490</value>
 			<value level="20">-495</value>
 		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1500</hitTime>
+		<isMagic>0</isMagic>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">77</value>
+			<value level="3">78</value>
+			<value level="4">79</value>
+			<value level="5">80</value>
+			<value level="6">81</value>
+			<value level="7">82</value>
+			<value level="8">83</value>
+			<value level="9">84</value>
+			<value level="10">85</value>
+			<value level="11">86</value>
+			<value level="12">87</value>
+			<value level="13">88</value>
+			<value level="14">89</value>
+			<value level="15">90</value>
+			<value level="16">91</value>
+			<value level="17">92</value>
+			<value level="18">93</value>
+			<value level="19">94</value>
+			<value level="20">95</value>
+		</magicLevel>
 		<mpConsume>
 			<value level="1">60</value>
 			<value level="2">60</value>
@@ -150,91 +348,553 @@
 			<value level="14">69</value>
 			<value level="15">70</value>
 			<value level="16">72</value>
-			<value level="17">73</value>
-			<value level="18">74</value>
-			<value level="19">75</value>
-			<value level="20">76</value>
+			<value level="17">74</value>
+			<value level="18">76</value>
+			<value level="19">78</value>
+			<value level="20">80</value>
 		</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="FatalBlow">
+				<power>
+					<value level="1">8124</value>
+					<value level="2">8253</value>
+					<value level="3">8383</value>
+					<value level="4">8511</value>
+					<value level="5">8641</value>
+					<value level="6">8771</value>
+					<value level="7">8901</value>
+					<value level="8">9032</value>
+					<value level="9">9163</value>
+					<value level="10">9294</value>
+					<value level="11">9427</value>
+					<value level="12">9560</value>
+					<value level="13">9692</value>
+					<value level="14">9825</value>
+					<value level="15">9959</value>
+					<value level="16">10257</value>
+					<value level="17">10564</value>
+					<value level="18">10880</value>
+					<value level="19">11206</value>
+					<value level="20">11542</value>
+				</power>
+				<chanceBoost>1000</chanceBoost>
+			</effect>
+			<effect name="FatalBlow">
+				<power>
+					<value level="1">8124</value>
+					<value level="2">8253</value>
+					<value level="3">8383</value>
+					<value level="4">8511</value>
+					<value level="5">8641</value>
+					<value level="6">8771</value>
+					<value level="7">8901</value>
+					<value level="8">9032</value>
+					<value level="9">9163</value>
+					<value level="10">9294</value>
+					<value level="11">9427</value>
+					<value level="12">9560</value>
+					<value level="13">9692</value>
+					<value level="14">9825</value>
+					<value level="15">9959</value>
+					<value level="16">10257</value>
+					<value level="17">10564</value>
+					<value level="18">10880</value>
+					<value level="19">11206</value>
+					<value level="20">11542</value>
+				</power>
+				<chanceBoost>1000</chanceBoost>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88704" toLevel="2" name="狂熱鬥志">
 		<icon>icon.skill0768</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>AVOID_UP_SPECIAL</abnormalType>
+		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 		<hitTime>1000</hitTime>
-		<reuseDelay>900000</reuseDelay>
+		<itemConsumeCount>
+			<value level="1">5</value>
+			<value level="2">10</value>
+		</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<magicLevel>76</magicLevel>
 		<mpConsume>
 			<value level="1">36</value>
 			<value level="2">38</value>
 		</mpConsume>
+		<reuseDelay>900000</reuseDelay>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">300</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="Speed">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>0</magicType>
+				<amount>
+					<value level="1">40</value>
+					<value level="2">60</value>
+				</amount>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-90</amount>
+				<slot>BUFF</slot>
+			</effect>
+			<effect name="DefenceTrait" fromLevel="2" toLevel="2">
+				<SUPPRESSION>20</SUPPRESSION>
+			</effect>			
+			<effect name="PhysicalDefence">
+				<amount>		
+				<value level="1">1000</value>
+				<value level="2">2500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>		
+				<value level="1">1000</value>
+				<value level="2">2500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>		
+				<value level="1">0</value>
+				<value level="2">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88705" toLevel="2" name="御風">
 		<icon>icon.skill0769</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>AVOID_UP_SPECIAL</abnormalType>
+		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 		<hitTime>1000</hitTime>
+		<itemConsumeCount>2</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<mpConsume>36</mpConsume>
 		<reuseDelay>900000</reuseDelay>
-		<mpConsume>
-			<value level="1">36</value>
-			<value level="2">38</value>
-		</mpConsume>
+		<effects>
+			<effect name="Speed">
+				<amount>30</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>0</magicType>
+				<amount>60</amount>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-80</amount>
+				<slot>BUFF</slot>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>		
+				<value level="1">0</value>
+				<value level="2">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>		
+				<value level="1">1000</value>
+				<value level="2">2500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>		
+				<value level="1">1000</value>
+				<value level="2">2500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88706" toLevel="2" name="鬼行">
 		<icon>icon.skill0770</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>AVOID_UP_SPECIAL</abnormalType>
+		<abnormalVisualEffect>ULTIMATE_DEFENCE</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 		<hitTime>1000</hitTime>
+		<itemConsumeCount>5</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<mpConsume>36</mpConsume>
 		<reuseDelay>900000</reuseDelay>
-		<mpConsume>
-			<value level="1">36</value>
-			<value level="2">38</value>
-		</mpConsume>
+		<effects>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="FatalBlowRate">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="SkillEvasion">
+				<magicType>0</magicType>
+				<amount>50</amount>
+			</effect>
+			<effect name="ResistDispelByCategory">
+				<amount>-80</amount>
+				<slot>BUFF</slot>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>		
+				<value level="1">0</value>
+				<value level="2">1000</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>		
+				<value level="1">1000</value>
+				<value level="2">2500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>		
+				<value level="1">1000</value>
+				<value level="2">2500</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88707" toLevel="1" name="致命之擊">
 		<icon>icon.skill10508</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>3-1</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>150</affectRange>
+		<affectScope>RANGE</affectScope>
 		<castRange>40</castRange>
-		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
-		<reuseDelay>20000</reuseDelay>
 		<effectPoint>-2000</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<itemConsumeCount>15</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
 		<mpConsume>100</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<reuseDelay>30000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="FatalBlow">
+				<power>13500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="FatalBlow">
+				<power>13500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="FatalBlow">
+				<power>13500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="FatalBlow">
+				<power>13500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>47354</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>47361</skillId> 
+				<skillLevel>1</skillLevel>
+				<chance>30</chance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88708" toLevel="1" name="狂暴之刃">
 		<icon>icon.s_fury_blade</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>3-1</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>RANGE</affectScope>
 		<castRange>40</castRange>
-		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
-		<reuseDelay>20000</reuseDelay>
 		<effectPoint>-2000</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<itemConsumeCount>15</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
 		<mpConsume>100</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<reuseDelay>20000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="FatalBlow">
+				<power>13500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="FatalBlow">
+				<power>13500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="FatalBlow">
+				<power>13500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="FatalBlow">
+				<power>13500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>47356</skillId> 
+				<skillLevel>1</skillLevel>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88709" toLevel="1" name="致命穿刺">
 		<icon>icon.skill0321</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectLimit>3-1</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>RANGE</affectScope>
 		<castRange>40</castRange>
-		<hitTime>1000</hitTime>
 		<coolTime>500</coolTime>
-		<reuseDelay>20000</reuseDelay>
 		<effectPoint>-2000</effectPoint>
+		<effectRange>500</effectRange>
+		<hitTime>1000</hitTime>
+		<itemConsumeCount>15</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
 		<mpConsume>100</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<reuseDelay>20000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="FatalBlow">
+				<power>13500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+			<effect name="FatalBlow">
+				<power>13500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+			<effect name="FatalBlow">
+				<power>13500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+			<effect name="FatalBlow">
+				<power>13500</power>
+				<criticalChance>20</criticalChance>
+				<chanceBoost>300</chanceBoost>
+				<overHit>true</overHit>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+			</effect>
+			<effect name="DisarmShield">
+				<chance>30</chance>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88710" toLevel="1" name="影劍暮：大師">
 		<icon>icon.skill31328_1</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+			  <ANOMALY>30</ANOMALY>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>47334</existingSkillId> 
+				<replacementSkillId>88713</replacementSkillId> 
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>768</existingSkillId> 
+				<replacementSkillId>88704</replacementSkillId> 
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>47353</existingSkillId> 
+				<replacementSkillId>88707</replacementSkillId> 
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88711" toLevel="1" name="影劍風：大師">
 		<icon>icon.skill30928</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+			  <ANOMALY>30</ANOMALY>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>47334</existingSkillId> 
+				<replacementSkillId>88714</replacementSkillId> 
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>769</existingSkillId> 
+				<replacementSkillId>88705</replacementSkillId> 
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>47355</existingSkillId> 
+				<replacementSkillId>88708</replacementSkillId> 
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88712" toLevel="1" name="影劍幻：大師">
 		<icon>icon.skill11029</icon>
-		<operateType>A2</operateType>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="MaxHp">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceTrait">
+			  <ANOMALY>30</ANOMALY>
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>47335</existingSkillId> 
+				<replacementSkillId>88715</replacementSkillId> 
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>770</existingSkillId> 
+				<replacementSkillId>88706</replacementSkillId> 
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>47357</existingSkillId> 
+				<replacementSkillId>88709</replacementSkillId> 
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88713" toLevel="12" name="背刺">
 		<icon>icon.skill0030</icon>
-		<operateType>A1</operateType>
-		<castRange>300</castRange>
-		<hitTime>1000</hitTime>
+	    <operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>40</castRange>
 		<coolTime>500</coolTime>
-		<reuseDelay>8000</reuseDelay>
 		<effectPoint>
 			<value level="1">-400</value>
 			<value level="2">-500</value>
@@ -249,6 +909,24 @@
 			<value level="11">-880</value>
 			<value level="12">-900</value>
 		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>0</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">50</value>
+			<value level="3">60</value>
+			<value level="4">70</value>
+			<value level="5">76</value>
+			<value level="6">78</value>
+			<value level="7">80</value>
+			<value level="8">82</value>
+			<value level="9">84</value>
+			<value level="10">86</value>
+			<value level="11">88</value>
+			<value level="12">90</value>
+		</magicLevel>
 		<mpConsume>
 			<value level="1">35</value>
 			<value level="2">40</value>
@@ -263,14 +941,45 @@
 			<value level="11">75</value>
 			<value level="12">80</value>
 		</mpConsume>
+		<reuseDelay>3000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Backstab">
+				<power>
+					<value level="1">3360</value>
+					<value level="2">4590</value>
+					<value level="3">7425</value>
+					<value level="4">8640</value>
+					<value level="5">8910</value>
+					<value level="6">9180</value>
+					<value level="7">9585</value>
+					<value level="8">9990</value>
+					<value level="9">10395</value>
+					<value level="10">10800</value>
+					<value level="11">11475</value>
+					<value level="12">12150</value>
+				</power>
+				<criticalChance>30</criticalChance>
+				<chanceBoost>950</chanceBoost>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88714" toLevel="12" name="背刺">
 		<icon>icon.skill0030</icon>
-		<operateType>A1</operateType>
-		<castRange>300</castRange>
-		<hitTime>1000</hitTime>
+	    <operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>40</castRange>
 		<coolTime>500</coolTime>
-		<reuseDelay>8000</reuseDelay>
 		<effectPoint>
 			<value level="1">-400</value>
 			<value level="2">-500</value>
@@ -285,6 +994,24 @@
 			<value level="11">-880</value>
 			<value level="12">-900</value>
 		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>0</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">50</value>
+			<value level="3">60</value>
+			<value level="4">70</value>
+			<value level="5">76</value>
+			<value level="6">78</value>
+			<value level="7">80</value>
+			<value level="8">82</value>
+			<value level="9">84</value>
+			<value level="10">86</value>
+			<value level="11">88</value>
+			<value level="12">90</value>
+		</magicLevel>
 		<mpConsume>
 			<value level="1">35</value>
 			<value level="2">40</value>
@@ -299,14 +1026,45 @@
 			<value level="11">75</value>
 			<value level="12">80</value>
 		</mpConsume>
+		<reuseDelay>3000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Backstab">
+				<power>
+					<value level="1">3360</value>
+					<value level="2">4590</value>
+					<value level="3">7425</value>
+					<value level="4">8640</value>
+					<value level="5">8910</value>
+					<value level="6">9180</value>
+					<value level="7">9585</value>
+					<value level="8">9990</value>
+					<value level="9">10395</value>
+					<value level="10">10800</value>
+					<value level="11">11475</value>
+					<value level="12">12150</value>
+				</power>
+				<criticalChance>30</criticalChance>
+				<chanceBoost>950</chanceBoost>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88715" toLevel="12" name="背刺">
 		<icon>icon.skill0030</icon>
-		<operateType>A1</operateType>
-		<castRange>300</castRange>
-		<hitTime>1000</hitTime>
+	    <operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>40</castRange>
 		<coolTime>500</coolTime>
-		<reuseDelay>8000</reuseDelay>
 		<effectPoint>
 			<value level="1">-400</value>
 			<value level="2">-500</value>
@@ -321,6 +1079,24 @@
 			<value level="11">-880</value>
 			<value level="12">-900</value>
 		</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>0</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">40</value>
+			<value level="2">50</value>
+			<value level="3">60</value>
+			<value level="4">70</value>
+			<value level="5">76</value>
+			<value level="6">78</value>
+			<value level="7">80</value>
+			<value level="8">82</value>
+			<value level="9">84</value>
+			<value level="10">86</value>
+			<value level="11">88</value>
+			<value level="12">90</value>
+		</magicLevel>
 		<mpConsume>
 			<value level="1">35</value>
 			<value level="2">40</value>
@@ -335,6 +1111,36 @@
 			<value level="11">75</value>
 			<value level="12">80</value>
 		</mpConsume>
+		<reuseDelay>3000</reuseDelay>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+					<item>DUALDAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Backstab">
+				<power>
+					<value level="1">3360</value>
+					<value level="2">4590</value>
+					<value level="3">7425</value>
+					<value level="4">8640</value>
+					<value level="5">8910</value>
+					<value level="6">9180</value>
+					<value level="7">9585</value>
+					<value level="8">9990</value>
+					<value level="9">10395</value>
+					<value level="10">10800</value>
+					<value level="11">11475</value>
+					<value level="12">12150</value>
+				</power>
+				<criticalChance>30</criticalChance>
+				<chanceBoost>950</chanceBoost>
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="88716" toLevel="1" name="超疾襲">
 		<icon>icon.titan_hyper_rush</icon>

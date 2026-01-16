@@ -1,0 +1,79 @@
+<!-- main.htm -->
+<html>
+<head><title>新春刮刮樂</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+    <tr>
+        <td valign="top" align="center">
+            <!-- 標題區域 -->
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td align=center width=290 height=90 background="L2UI_EPIC.HtmlWnd.HtmlWnd_PremiumManagerWnd_ItemEnchant_IMG">
+                    </td>
+                </tr>
+            </table>
+
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td height=20></td>
+                </tr>
+                <tr>
+                    <td align=center><font color="LEVEL" size="6"><b>新春刮刮樂</b></font></td>
+                </tr>
+                <tr>
+                    <td height=15></td>
+                </tr>
+                <tr>
+                    <td align=center><font color="FF9900">刮開驚喜,好運連連!</font></td>
+                </tr>
+                <tr>
+                    <td height=10></td>
+                </tr>
+            </table>
+
+            <!-- 分隔線 -->
+            <img src="L2UI.SquareGray" width="270" height="1"><br>
+
+            <!-- 當前狀態 -->
+            <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="3">
+                <tr bgcolor="222222">
+                    <td align="center" width="140"><font color="00FF66">擁有刮刮樂</font></td>
+                    <td align="center" width="140"><font color="FFFF00">%has_card%</font></td>
+                </tr>
+                <tr bgcolor="222222">
+                    <td align="center"><font color="00FF66">今日已購買</font></td>
+                    <td align="center"><font color="FFFF00">%today_count% / %daily_limit%</font></td>
+                </tr>
+                <tr bgcolor="222222">
+                    <td align="center"><font color="00FF66">刮刮樂價格</font></td>
+                    <td align="center"><font color="FFD700">%price% 金幣</font></td>
+                </tr>
+            </table>
+
+            <br>
+            <img src="L2UI.SquareGray" width="270" height="1"><br>
+            <br>
+
+            <!-- 主要按鈕 -->
+            %main_button%
+
+            <br>
+
+            <!-- 功能按鈕 -->
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td height=10></td>
+                </tr>
+                <tr>
+                    <td align=center>
+                        <button action="bypass -h Quest ScratchCard rewards" value="查看獎勵列表" width="150" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -5040,6 +5040,9 @@ public class Player extends Playable
 						enchantitem.setEnchantLevel(rnden);
 					}
 				}
+				final InventoryUpdate iu = new InventoryUpdate();
+				iu.addItem(enchantitem);
+				sendInventoryUpdate(iu);
 			}
 		}
 	}
@@ -9111,6 +9114,10 @@ public class Player extends Playable
 					
 					if (GeneralConfig.SKILL_CHECK_ENABLE && (!isGM() || GeneralConfig.SKILL_CHECK_GM) && !SkillTreeData.getInstance().isSkillAllowed(this, skill))
 					{
+						if (Custom.SKILL_WHITELIST.contains(id) || ((id >= Custom.checkskillmin) && (id <= Custom.checkskillmax)))
+						{
+							continue;
+						}
 						PunishmentManager.handleIllegalPlayerAction(this, "Player " + _name + " has invalid skill " + skill.getName() + " (" + skill.getId() + "/" + skill.getLevel() + "), class:" + ClassListData.getInstance().getClass(getPlayerClass()).getClassName(), IllegalActionPunishmentType.BROADCAST);
 						if (GeneralConfig.SKILL_CHECK_REMOVE)
 						{

@@ -809,7 +809,7 @@ public class AdenLaboratoryManager
 		final long adenaCount = isFirstFree ? 0 : AdenLaboratoryConfig.ADENLAB_SPECIAL_CONFIRM_FEE;
 
 		// 除錯訊息(伺服器日誌)
-		LOGGER.info("【亞丁研究所】玩家 " + player.getName() + " - Boss:" + bossId + " 頁面:" + pageIndex + " 第一次:" + isFirstFree + " 需要:" + adenaCount + " 擁有:" + player.getInventory().getAdena());
+		//LOGGER.info("【亞丁研究所】玩家 " + player.getName() + " - Boss:" + bossId + " 頁面:" + pageIndex + " 第一次:" + isFirstFree + " 需要:" + adenaCount + " 擁有:" + player.getInventory().getAdena());
 
 		if (player.getInventory().getAdena() < adenaCount)
 		{

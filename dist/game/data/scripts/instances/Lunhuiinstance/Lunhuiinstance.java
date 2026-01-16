@@ -18,13 +18,15 @@ package instances.Lunhuiinstance;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.managers.InstanceManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.enums.ChatType;
@@ -79,6 +81,13 @@ public class Lunhuiinstance extends InstanceScript
 			// 檢查並重置每日次數
 			checkAndResetDailyCount(player);
 			
+			final Map<Integer, Long> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(player);
+			for (Entry<Integer, Long> entry : instanceTimes.entrySet())
+			{
+				final int id = entry.getKey();
+				InstanceManager.getInstance().deleteInstanceTime(player, id);
+				InstanceManager.getInstance().restoreInstanceTimes();
+			}
 			// 獲取今日已使用次數
 			int dailyCount = player.getVariables().getInt(VAR_DAILY_COUNT, 0);
 			
@@ -98,12 +107,7 @@ public class Lunhuiinstance extends InstanceScript
 				return htmltext;
 			}
 			// 處理舊副本
-			Instance oldInstance = getPlayerInstance(player);
-			if (oldInstance != null)
-			{
-				// player.teleToLocation(81292, 148159, -3464);
-				player.setInstanceById(0);
-			}
+			
 			// 增加今日挑戰次數
 			player.getVariables().set(VAR_DAILY_COUNT, dailyCount + 1);
 			

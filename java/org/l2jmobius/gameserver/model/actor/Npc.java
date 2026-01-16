@@ -1747,11 +1747,7 @@ public class Npc extends Creature
 			{
 				BodyPart bodyPart = item.getTemplate().getBodyPart();
 				// 只對特定部位附魔
-				if ((bodyPart == BodyPart.HEAD) ||
-						(bodyPart == BodyPart.GLOVES) ||
-						(bodyPart == BodyPart.CHEST) ||
-						(bodyPart == BodyPart.LEGS) ||
-						(bodyPart == BodyPart.FEET))
+				if ((bodyPart == BodyPart.HEAD) || (bodyPart == BodyPart.GLOVES) || (bodyPart == BodyPart.CHEST) || (bodyPart == BodyPart.LEGS) || (bodyPart == BodyPart.FEET))
 				{
 					int rnden = Rnd.get(Custom.enchantmin, Custom.enchantmax);
 					item.setEnchantLevel(rnden);

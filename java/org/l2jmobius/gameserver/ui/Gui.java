@@ -383,7 +383,7 @@ public class Gui
 		frame.setJMenuBar(menuBar);
 		frame.setIconImages(icons);
 		frame.add(layeredPanel, BorderLayout.CENTER);
-		frame.getContentPane().setPreferredSize(new Dimension(InterfaceConfig.DARK_THEME ? 815 : 800, 550));
+		frame.getContentPane().setPreferredSize(new Dimension(InterfaceConfig.DARK_THEME ? 1600 : 1600, 900));
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 		

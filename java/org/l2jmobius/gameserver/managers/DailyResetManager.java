@@ -226,6 +226,7 @@ public class DailyResetManager
 		resetAttendanceRewards();
 		resetVip();
 		resetResurrectionByPayment();
+		resetScratchCard();
 		checkWeekSwap();
 
 		// Trigger daily reset event.
@@ -241,6 +242,7 @@ public class DailyResetManager
 			player.getAccountVariables().storeMe();
 			player.broadcastUserInfo();
 		}
+
 
 		announceToAll("======================================");
 		announceToAll("每日重置執行完畢！");
@@ -1076,6 +1078,34 @@ public class DailyResetManager
 		}
 
 		LOGGER.info("Daily Pouch Extract Count have been reset.");
+	}
+
+	/**
+	 * 重置刮刮樂每日購買次數
+	 */
+	private void resetScratchCard()
+	{
+		// Update data for offline players.
+		try (Connection con = DatabaseFactory.getConnection())
+		{
+			try (PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var = ? AND charId IN (SELECT charId FROM characters WHERE online = 0)"))
+			{
+				ps.setString(1, "ScratchCard_daily_count");
+				ps.execute();
+			}
+		}
+		catch (Exception e)
+		{
+			LOGGER.log(Level.SEVERE, getClass().getSimpleName() + ": Could not reset Scratch Card daily count: ", e);
+		}
+
+		// Update data for online players.
+		for (Player player : World.getInstance().getPlayers())
+		{
+			player.getVariables().remove("ScratchCard_daily_count");
+		}
+
+		LOGGER.info("Scratch Card daily purchase count have been reset.");
 	}
 
 	public static DailyResetManager getInstance()
