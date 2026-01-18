@@ -12,40 +12,45 @@ import org.l2jmobius.commons.database.DatabaseFactory;
 public class ScratchCardDAO
 {
     private static final Logger LOGGER = Logger.getLogger(ScratchCardDAO.class.getName());
-    
-    private static final String SELECT_SQL = 
-        "SELECT board_state, opened_positions, opened_count, accumulated_count FROM scratch_cards WHERE player_id = ?";
-    
-    private static final String INSERT_SQL = 
-        "INSERT INTO scratch_cards (player_id, board_state, opened_positions, opened_count, accumulated_count, purchase_time) " +
-        "VALUES (?, ?, '', 0, 0, ?) ON DUPLICATE KEY UPDATE " +
-        "board_state = VALUES(board_state), opened_positions = '', opened_count = 0, accumulated_count = 0, purchase_time = VALUES(purchase_time)";
-    
-    private static final String UPDATE_SQL = 
-        "UPDATE scratch_cards SET opened_positions = ?, opened_count = ?, accumulated_count = ? WHERE player_id = ?";
-    
-    private static final String DELETE_SQL = 
-        "DELETE FROM scratch_cards WHERE player_id = ?";
-    
+
+    private static final String SELECT_SQL =
+            "SELECT card_type, board_state, opened_positions, opened_count, accumulated_count " +
+                    "FROM scratch_cards WHERE player_id = ?";
+
+    private static final String INSERT_SQL =
+            "INSERT INTO scratch_cards (player_id, card_type, board_state, opened_positions, " +
+                    "opened_count, accumulated_count, purchase_time) " +
+                    "VALUES (?, ?, ?, '', 0, 0, ?) ON DUPLICATE KEY UPDATE " +
+                    "card_type = VALUES(card_type), board_state = VALUES(board_state), " +
+                    "opened_positions = '', opened_count = 0, accumulated_count = 0, " +
+                    "purchase_time = VALUES(purchase_time)";
+
+    private static final String UPDATE_SQL =
+            "UPDATE scratch_cards SET opened_positions = ?, opened_count = ?, accumulated_count = ? " +
+                    "WHERE player_id = ?";
+
+    private static final String DELETE_SQL =
+            "DELETE FROM scratch_cards WHERE player_id = ?";
+
     public static class ScratchCardState
     {
+        public int cardType;  // 新增:刮刮樂類型
         public String boardState;
         public String openedPositions;
         public int openedCount;
         public int accumulatedCount;
-        
-        public ScratchCardState(String boardState, String openedPositions, int openedCount, int accumulatedCount)
+
+        public ScratchCardState(int cardType, String boardState, String openedPositions,
+                                int openedCount, int accumulatedCount)
         {
+            this.cardType = cardType;
             this.boardState = boardState;
             this.openedPositions = openedPositions;
             this.openedCount = openedCount;
             this.accumulatedCount = accumulatedCount;
         }
     }
-    
-    /**
-     * 載入玩家刮刮樂狀態
-     */
+
     public static ScratchCardState loadState(int playerId)
     {
         try (Connection con = DatabaseFactory.getConnection();
@@ -57,10 +62,11 @@ public class ScratchCardDAO
                 if (rs.next())
                 {
                     return new ScratchCardState(
-                        rs.getString("board_state"),
-                        rs.getString("opened_positions"),
-                        rs.getInt("opened_count"),
-                        rs.getInt("accumulated_count")
+                            rs.getInt("card_type"),
+                            rs.getString("board_state"),
+                            rs.getString("opened_positions"),
+                            rs.getInt("opened_count"),
+                            rs.getInt("accumulated_count")
                     );
                 }
             }
@@ -71,18 +77,16 @@ public class ScratchCardDAO
         }
         return null;
     }
-    
-    /**
-     * 創建新刮刮樂
-     */
-    public static boolean createNew(int playerId, String boardState)
+
+    public static boolean createNew(int playerId, int cardType, String boardState)
     {
         try (Connection con = DatabaseFactory.getConnection();
              PreparedStatement ps = con.prepareStatement(INSERT_SQL))
         {
             ps.setInt(1, playerId);
-            ps.setString(2, boardState);
-            ps.setLong(3, System.currentTimeMillis());
+            ps.setInt(2, cardType);
+            ps.setString(3, boardState);
+            ps.setLong(4, System.currentTimeMillis());
             ps.executeUpdate();
             return true;
         }
@@ -92,11 +96,9 @@ public class ScratchCardDAO
             return false;
         }
     }
-    
-    /**
-     * 更新刮開狀態
-     */
-    public static boolean updateState(int playerId, String openedPositions, int openedCount, int accumulatedCount)
+
+    public static boolean updateState(int playerId, String openedPositions,
+                                      int openedCount, int accumulatedCount)
     {
         try (Connection con = DatabaseFactory.getConnection();
              PreparedStatement ps = con.prepareStatement(UPDATE_SQL))
@@ -114,10 +116,7 @@ public class ScratchCardDAO
             return false;
         }
     }
-    
-    /**
-     * 刪除刮刮樂記錄
-     */
+
     public static boolean deleteState(int playerId)
     {
         try (Connection con = DatabaseFactory.getConnection();

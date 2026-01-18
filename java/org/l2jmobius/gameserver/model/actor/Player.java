@@ -10788,7 +10788,7 @@ public class Player extends Playable
 	@Override
 	public void sendMessage(String message)
 	{
-		sendPacket(new SystemMessage(SendMessageLocalisationData.getLocalisation(this, message)));
+		sendPacket(new CreatureSay(null, ChatType.GENERAL, "系統通知", SendMessageLocalisationData.getLocalisation(this, message)));
 	}
 	
 	/**

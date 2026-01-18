@@ -182,18 +182,32 @@ public class PlayerVariables extends AbstractVariables
 			return false;
 		}
 		
-		// If async saving is enabled and not already scheduled, schedule a save.
-		if (ASYNC_SAVE_ENABLED && !_scheduledSave.get())
+		// Async save only: schedule once.
+		if (ASYNC_SAVE_ENABLED)
 		{
-			_scheduledSave.set(true);
-			ThreadPool.schedule(() ->
+			if (_scheduledSave.compareAndSet(false, true))
 			{
-				_scheduledSave.set(false);
-				saveNow();
-			}, SAVE_INTERVAL);
+				ThreadPool.schedule(() ->
+				{
+					try
+					{
+						if (hasChanges())
+						{
+							saveNow();
+						}
+					}
+					finally
+					{
+						_scheduledSave.set(false);
+					}
+				}, SAVE_INTERVAL);
+			}
+			
+			// 已排程 or 剛排程，都算成功
 			return true;
 		}
 		
+		// Fallback: no async → synchronous save
 		return saveNow();
 	}
 	
@@ -226,81 +240,130 @@ public class PlayerVariables extends AbstractVariables
 	private boolean saveNowSync()
 	{
 		_saveLock.lock();
-		
-		try (Connection con = DatabaseFactory.getConnection())
+
+		int retryCount = 0;
+		final int MAX_RETRIES = 3;
+		final int DEADLOCK_ERROR_CODE = 1213;
+
+		while (retryCount <= MAX_RETRIES)
 		{
-			// Process deletions.
-			if (!_deleted.isEmpty())
+			try (Connection con = DatabaseFactory.getConnection())
 			{
-				try (PreparedStatement st = con.prepareStatement(DELETE_QUERY))
+				con.setAutoCommit(false);
+
+				try
 				{
-					for (String name : _deleted)
+					// DELETE batch
+					if (!_deleted.isEmpty())
 					{
-						st.setInt(1, _objectId);
-						st.setString(2, name);
-						st.addBatch();
-					}
-					
-					st.executeBatch();
-				}
-			}
-			
-			// Process additions.
-			if (!_added.isEmpty())
-			{
-				try (PreparedStatement st = con.prepareStatement(INSERT_QUERY))
-				{
-					for (String name : _added)
-					{
-						final Object value = getSet().get(name);
-						if (value != null)
+						try (PreparedStatement st = con.prepareStatement(DELETE_QUERY))
 						{
-							st.setInt(1, _objectId);
-							st.setString(2, name);
-							st.setString(3, String.valueOf(value));
-							st.addBatch();
+							for (String name : _deleted)
+							{
+								st.setInt(1, _objectId);
+								st.setString(2, name);
+								st.addBatch();
+							}
+							st.executeBatch();
 						}
 					}
-					
-					st.executeBatch();
-				}
-			}
-			
-			// Process modifications.
-			if (!_modified.isEmpty())
-			{
-				try (PreparedStatement st = con.prepareStatement(UPDATE_QUERY))
-				{
-					for (String name : _modified)
+
+					// INSERT batch
+					if (!_added.isEmpty())
 					{
-						final Object value = getSet().get(name);
-						if (value != null)
+						try (PreparedStatement st = con.prepareStatement(INSERT_QUERY))
 						{
-							st.setString(1, String.valueOf(value));
-							st.setInt(2, _objectId);
-							st.setString(3, name);
-							st.addBatch();
+							for (String name : _added)
+							{
+								final Object value = getSet().get(name);
+								if (value != null)
+								{
+									st.setInt(1, _objectId);
+									st.setString(2, name);
+									st.setString(3, String.valueOf(value));
+									st.addBatch();
+								}
+							}
+							st.executeBatch();
 						}
 					}
-					
-					st.executeBatch();
+
+					// UPDATE batch
+					if (!_modified.isEmpty())
+					{
+						try (PreparedStatement st = con.prepareStatement(UPDATE_QUERY))
+						{
+							for (String name : _modified)
+							{
+								final Object value = getSet().get(name);
+								if (value != null)
+								{
+									st.setString(1, String.valueOf(value));
+									st.setInt(2, _objectId);
+									st.setString(3, name);
+									st.addBatch();
+								}
+							}
+							st.executeBatch();
+						}
+					}
+
+					con.commit();
+
+					clearChangeTracking();
+					compareAndSetChanges(true, false);
+					_saveLock.unlock();
+
+					if (retryCount > 0)
+					{
+						LOGGER.info("Successfully saved after " + retryCount + " retries for player: " + _objectId);
+					}
+
+					return true;
+				}
+				catch (SQLException e)
+				{
+					try
+					{
+						con.rollback();
+					}
+					catch (SQLException rollbackEx)
+					{
+						LOGGER.log(Level.WARNING, "Rollback failed for: " + _objectId, rollbackEx);
+					}
+
+					if (e.getErrorCode() == DEADLOCK_ERROR_CODE && retryCount < MAX_RETRIES)
+					{
+						retryCount++;
+						LOGGER.warning("Deadlock detected for player " + _objectId + ", retry " + retryCount + "/" + MAX_RETRIES);
+
+						try
+						{
+							Thread.sleep(50 + (long)(Math.random() * 100));
+						}
+						catch (InterruptedException ie)
+						{
+							Thread.currentThread().interrupt();
+							_saveLock.unlock();
+							return false;
+						}
+
+						continue;  // 重試
+					}
+
+					throw e;  // 非死鎖錯誤或重試用盡
 				}
 			}
+			catch (SQLException e)
+			{
+				LOGGER.log(Level.WARNING, "Could not update variables for: " + _objectId + " (ErrorCode: " + e.getErrorCode() + ")", e);
+				_saveLock.unlock();
+				return false;
+			}
 		}
-		catch (SQLException e)
-		{
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Could not update variables for: " + _objectId, e);
-			_saveLock.unlock();
-			return false;
-		}
-		finally
-		{
-			clearChangeTracking();
-			compareAndSetChanges(true, false);
-			_saveLock.unlock();
-		}
-		
-		return true;
+
+		_saveLock.unlock();
+		return false;
 	}
 	
 	public boolean deleteMe()

@@ -1,0 +1,26 @@
+<html><head><title>訪客管理</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+<tr><td valign="top" align="center">
+<table border=0 cellpadding=0 cellspacing=0 width="272">
+<tr><td height="25"></td></tr>
+<tr><td align="center" height="30"><font color="LEVEL">訪客管理系統</font></td></tr>
+<tr><td height="10"></td></tr>
+
+<tr><td align="center"><font color="00FF66">您是基地主人：%is_owner%</font></td></tr>
+<tr><td height="15"></td></tr>
+
+<tr><td align=center><font color="LEVEL">輸入玩家名稱</font><edit var="VisitorName" width=150 height=15></td></tr>
+<tr><td height="10"></td></tr>
+
+<tr><td align=center><button action="bypass -h Quest BaseVisitorNpc add_visitor $VisitorName" value="添加訪客" width=150 height=25 back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF"></td></tr>
+<tr><td height="10"></td></tr>
+
+<tr><td align=center><button action="bypass -h Quest BaseVisitorNpc view_visitors" value="查看訪客列表" width=150 height=25 back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF"></td></tr>
+<tr><td height="5"></td></tr>
+
+<tr><td align=center><button action="bypass -h Quest BaseVisitorNpc view_online" value="查看基地內玩家" width=150 height=25 back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF"></td></tr>
+
+</table>
+</td></tr></table>
+</body></html>

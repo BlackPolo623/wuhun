@@ -33,7 +33,7 @@ public class ToolsPanel extends JPanel
     public ToolsPanel()
     {
         setBackground(PANEL_BG);
-        setBounds(500, 170, 284, 260);
+        setBounds(500, 170, 284, 520);
         setBorder(new LineBorder(BORDER_COLOR, 1, false));
         setOpaque(true);
         setLayout(null);
@@ -119,6 +119,24 @@ public class ToolsPanel extends JPanel
             }
         });
         add(btnGiftPackage);
+
+        final GlossyButton btnBaseManager = new GlossyButton("基地管理系統");
+        btnBaseManager.setBounds(10, 235, 264, 45);
+        btnBaseManager.setToolTipText("點擊開啟基地管理系統");
+        btnBaseManager.addActionListener(_ -> {
+            try
+            {
+                tools.playerbase.PlayerBaseManagerLauncher.launch();
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(this,
+                        "無法啟動基地管理系統: " + e.getMessage(),
+                        "錯誤",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        });
+        add(btnBaseManager);
     }
 
     /**

@@ -62,6 +62,7 @@ public class Jieka implements IVoicedCommandHandler
 				activeChar.sendPacket(new CreatureSay(null, ChatType.WORLD, "解卡功能", "✓ 從副本 " + currentInstance.getTemplateId() + " 中移除"));
 			}
 			activeChar.sendPacket(new CreatureSay(null, ChatType.WORLD, "解卡功能", "您現在可以正常進入副本了！"));
+			activeChar.sendSkillList();
 		}
 		return true;
 	}

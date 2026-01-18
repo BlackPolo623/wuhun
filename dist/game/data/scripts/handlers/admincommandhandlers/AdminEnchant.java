@@ -133,9 +133,9 @@ public class AdminEnchant implements IAdminCommandHandler
 					final int ench = Integer.parseInt(command.substring(12));
 					
 					// check value
-					if ((ench < 0) || (ench > 127))
+					if (ench < 0)
 					{
-						activeChar.sendSysMessage("You must set the enchant level to be between 0-127.");
+						activeChar.sendSysMessage("需要大於0");
 					}
 					else
 					{

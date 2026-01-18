@@ -28,6 +28,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import handlers.itemhandlers.*;
+import handlers.voicedcommandhandlers.*;
 import org.l2jmobius.gameserver.config.custom.AutoPotionsConfig;
 import org.l2jmobius.gameserver.config.custom.BankingConfig;
 import org.l2jmobius.gameserver.config.custom.ChatModerationConfig;
@@ -296,21 +297,6 @@ import handlers.usercommandhandlers.PartyInfo;
 import handlers.usercommandhandlers.SiegeStatus;
 import handlers.usercommandhandlers.Time;
 import handlers.usercommandhandlers.Unstuck;
-import handlers.voicedcommandhandlers.AutoPotion;
-import handlers.voicedcommandhandlers.Banking;
-import handlers.voicedcommandhandlers.BossTeleportHandler;
-import handlers.voicedcommandhandlers.ChangePassword;
-import handlers.voicedcommandhandlers.ChatAdmin;
-import handlers.voicedcommandhandlers.Hunhuan;
-import handlers.voicedcommandhandlers.Jieka;
-import handlers.voicedcommandhandlers.Lang;
-import handlers.voicedcommandhandlers.MingXiangStart;
-import handlers.voicedcommandhandlers.Offline;
-import handlers.voicedcommandhandlers.OfflinePlay;
-import handlers.voicedcommandhandlers.Online;
-import handlers.voicedcommandhandlers.Premium;
-import handlers.voicedcommandhandlers.Trade;
-import handlers.voicedcommandhandlers.Wedding;
 
 /**
  * Master handler.
@@ -547,6 +533,8 @@ public class MasterHandler
 			SummonFrozenLord.class,
 			RandomCollectionComplete.class,
 			SkillUpgradeHandler.class,
+				SkillController.class,
+				SkillPermission.class,
 		},
 		{
 			// Punishment Handlers
@@ -593,6 +581,7 @@ public class MasterHandler
 			Trade.class,
 			SecretShopTicket.class,
 			BossTeleportHandler.class,
+			SkillControllerCmd.class,
 		},
 		{
 			// Target Handlers

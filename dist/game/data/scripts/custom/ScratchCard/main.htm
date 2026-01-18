@@ -1,6 +1,5 @@
-<!-- main.htm -->
 <html>
-<head><title>新春刮刮樂</title></head>
+<head><title>刮刮樂系統</title></head>
 <body scroll="no">
 <table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
     <tr>
@@ -18,7 +17,7 @@
                     <td height=20></td>
                 </tr>
                 <tr>
-                    <td align=center><font color="LEVEL" size="6"><b>新春刮刮樂</b></font></td>
+                    <td align=center><font color="LEVEL" size="6"><b>刮刮樂系統</b></font></td>
                 </tr>
                 <tr>
                     <td height=15></td>
@@ -37,16 +36,12 @@
             <!-- 當前狀態 -->
             <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="3">
                 <tr bgcolor="222222">
-                    <td align="center" width="140"><font color="00FF66">擁有刮刮樂</font></td>
-                    <td align="center" width="140"><font color="FFFF00">%has_card%</font></td>
+                    <td align="center" width="140"><font color="00FF66">當前狀態</font></td>
+                    <td align="center" width="140">%status%</td>
                 </tr>
                 <tr bgcolor="222222">
-                    <td align="center"><font color="00FF66">今日已購買</font></td>
-                    <td align="center"><font color="FFFF00">%today_count% / %daily_limit%</font></td>
-                </tr>
-                <tr bgcolor="222222">
-                    <td align="center"><font color="00FF66">刮刮樂價格</font></td>
-                    <td align="center"><font color="FFD700">%price% 金幣</font></td>
+                    <td align="center"><font color="00FF66">進行中類型</font></td>
+                    <td align="center"><font color="FFFF00">%current_card%</font></td>
                 </tr>
             </table>
 
@@ -59,14 +54,16 @@
 
             <br>
 
-            <!-- 功能按鈕 -->
-            <table border=0 cellpadding=0 cellspacing=0>
+            <!-- 提示文字 -->
+            <table width="280">
                 <tr>
-                    <td height=10></td>
+                    <td align=center>
+                        <font color="808080" size="1">※ 每種刮刮樂有獨立的每日次數限制</font>
+                    </td>
                 </tr>
                 <tr>
                     <td align=center>
-                        <button action="bypass -h Quest ScratchCard rewards" value="查看獎勵列表" width="150" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                        <font color="808080" size="1">※ 同時只能進行一張刮刮樂</font>
                     </td>
                 </tr>
             </table>

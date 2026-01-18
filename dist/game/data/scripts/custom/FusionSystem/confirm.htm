@@ -1,0 +1,124 @@
+<html><head><title>確認融合</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+    <tr>
+        <td valign="top" align="center">
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td height=10></td>
+                </tr>
+                <tr>
+                    <td align=center><font color="FFCC33">已裝備武器：%equipment_name%</font></td>
+                </tr>
+                <tr>
+                    <td align=center>
+                        <font color="00FF00">強化+%equipment_enchant%/轉生%equipment_rebirth%</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td height=10></td>
+                </tr>
+            </table>
+
+            <br>
+
+            <!-- 成功率顯示 -->
+            <table width="280">
+                <tr>
+                    <td align=center><font color="FFCC33">融合機率：</font></td>
+                </tr>
+                <tr>
+                    <td height=5></td>
+                </tr>
+                <tr>
+                    <td align=center>
+                        <font color="00FF66">完全成功：%full_success_rate%%</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align=center>
+                        <font color="FFFF00">部分成功：%partial_success_rate%%</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align=center>
+                        <font color="FF3333">完全失敗：%fail_rate%%</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td height=10></td>
+                </tr>
+            </table>
+
+           <br>
+
+            <!-- 材料需求 -->
+            <table width="280">
+                <tr>
+                    <td align=center><font color="FFCC33">所需材料：</font></td>
+                </tr>
+                <tr>
+                    <td height=5></td>
+                </tr>
+            </table>
+
+            <table width="280">
+                %material_list%
+            </table>
+
+            <br>
+
+            <!-- 目標裝備列表 -->
+            <table width="280">
+                <tr>
+                    <td align=center><font color="FFCC33">背包中可融合武器：</font></td>
+                </tr>
+                <tr>
+                    <td height=5></td>
+                </tr>
+            </table>
+
+            <table width="280" cellspacing="0">
+                <tr>
+                    <td>
+                        <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="2">
+                            <tr bgcolor="333333" height="25">
+                                <td align="center" width="100"><font color="FFCC33">背包武器</font></td>
+                                <td align="center" width="100"><font color="FFCC33">融合結果</font></td>
+                                <td align="center" width="80"><font color="FFCC33">操作</font></td>
+                            </tr>
+                        </table>
+                        <!-- 動態列表內容 -->
+                        <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="2">
+                            %target_list%
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+
+            <!-- 說明文字 -->
+            <table width="280">
+                <tr>
+                    <td align=center>
+                        <font color="808080" size="1">※ 兩件武器會一起消失進行融合</font>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+
+            <!-- 返回按鈕 -->
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td align=center>
+                        <button action="bypass -h Quest FusionSystem selectEquipment" value="返回選擇" width="150" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

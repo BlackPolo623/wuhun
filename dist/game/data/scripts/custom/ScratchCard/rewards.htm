@@ -1,4 +1,3 @@
-<!-- rewards.htm (修正版) -->
 <html>
 <head><title>獎勵列表</title></head>
 <body scroll="no">
@@ -9,7 +8,12 @@
             <table border=0 cellpadding=0 cellspacing=0>
                 <tr>
                     <td align=center width=280 height=40 background="L2UI_CT1.Windows_DF_TooltipBG">
-                        <font color="LEVEL" size="5"><b>獎勵列表</b></font>
+                        <font color="LEVEL" size="5"><b>%card_name%</b></font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align=center>
+                        <font color="00FF66">獎勵內容</font>
                     </td>
                 </tr>
             </table>
@@ -20,6 +24,9 @@
                 </tr>
             </table>
 
+            <!-- 分隔線 -->
+            <img src="L2UI.SquareGray" width="280" height="1"><br>
+
             <!-- 機率說明 (使用ICON) -->
             <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="3">
                 <tr bgcolor="333333">
@@ -29,19 +36,22 @@
                 </tr>
                 <tr bgcolor="222222">
                     <td align="center" width="140">
-                        <img src="icon.card_devil_black" width="32" height="32">
+                        <img src="icon.card_devil_black" width="32" height="32"><br>
+                        <font color="808080" size="1">空白</font>
                     </td>
                     <td align="center" width="140"><font color="FFFF00">%empty_rate%%</font></td>
                 </tr>
                 <tr bgcolor="222222">
                     <td align="center">
-                        <img src="icon.card_event_dragon_pocket" width="32" height="32">
+                        <img src="icon.card_event_dragon_pocket" width="32" height="32"><br>
+                        <font color="00FF66" size="1">累積</font>
                     </td>
                     <td align="center"><font color="FFFF00">%acc_rate%%</font></td>
                 </tr>
                 <tr bgcolor="222222">
                     <td align="center">
-                        <img src="icon.ev_211020_vip_token_i02" width="32" height="32">
+                        <img src="icon.ev_211020_vip_token_i02" width="32" height="32"><br>
+                        <font color="FFD700" size="1">大獎</font>
                     </td>
                     <td align="center"><font color="FF0000">%jackpot_rate%%</font></td>
                 </tr>
@@ -71,8 +81,11 @@
             <!-- 返回按鈕 -->
             <table border=0 cellpadding=0 cellspacing=0>
                 <tr>
+                    <td height=5></td>
+                </tr>
+                <tr>
                     <td align=center>
-                        <button action="bypass -h Quest ScratchCard main" value="返回主頁" width="150" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                        <button action="bypass -h Quest ScratchCard selectType" value="返回選擇" width="150" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
                     </td>
                 </tr>
             </table>

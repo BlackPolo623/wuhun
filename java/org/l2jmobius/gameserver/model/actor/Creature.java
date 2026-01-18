@@ -1495,11 +1495,11 @@ public abstract class Creature extends WorldObject
 		{
 			// H5 Changes: without Polearm Mastery (skill 216) max simultaneous attacks is 3 (1 by default + 2 in skill 3599).
 			double attackCountMax = getWeaponChangeCount();
-			if ((attackCountMax > 1) && (_stat.getValue(Stat.PHYSICAL_POLEARM_TARGET_SINGLE, 0) <= 0))
+			if ((attackCountMax > 1))
 			{
 				final double headingAngle = LocationUtil.convertHeadingToDegree(getHeading());
-				final int maxRadius = (int) getWeaponChangeRadius();
-				final int physicalAttackAngle = (int) getWeaponChangeRadius();
+				final int maxRadius = (int) getWeaponChangeRadius() + _stat.getPhysicalAttackRadius();
+				final int physicalAttackAngle = (int) getWeaponChangeRadius() + _stat.getPhysicalAttackAngle();
 				for (Creature obj : World.getInstance().getVisibleObjectsInRange(this, Creature.class, maxRadius))
 				{
 					// Skip main target.
@@ -5119,12 +5119,12 @@ public abstract class Creature extends WorldObject
 	
 	public double getWeaponChangeRadius()
 	{
-		return _stat.getWeaponChange();
+		return _stat.getWeaponChangeRadius();
 	}
 	
 	public double getWeaponChangeCount()
 	{
-		return _stat.getWeaponChange();
+		return _stat.getWeaponChangeCount();
 	}
 	
 	public int getWeaponBonusPAtk()

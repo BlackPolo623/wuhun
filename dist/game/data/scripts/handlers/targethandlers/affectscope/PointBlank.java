@@ -45,7 +45,7 @@ public class PointBlank implements IAffectScopeHandler
 		final IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		final int affectRange = skill.getAffectRange();
 		final int affectLimit = skill.getAffectLimit();
-		
+		System.out.println("affectLimit = " + skill.getAffectLimit());
 		// Target checks.
 		final AtomicInteger affected = new AtomicInteger(0);
 		final Predicate<Creature> filter = c ->

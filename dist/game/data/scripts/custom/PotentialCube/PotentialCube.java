@@ -124,11 +124,6 @@ public class PotentialCube extends Script
 
         Map<Integer, Integer> potentials = PotentialDAO.loadPotentials(player.getObjectId());
 
-        // 如果沒有潛能，初始化
-        if (potentials.isEmpty())
-        {
-            initializePotentials(player, potentials);
-        }
 
         NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
         html.setFile(player, HTML_PATH + "main.htm");
@@ -595,15 +590,44 @@ public class PotentialCube extends Script
         for (int i = 1; i <= 4; i++)
         {
             Integer skillId = potentials.get(i);
-            if (skillId == null)
+
+            sb.append("<tr bgcolor=\"222222\">");
+            if (skillId == null || skillId == 0)
             {
+                if (compact)
+                {
+                    sb.append("<td align=\"left\" width=\"140\">槽位").append(i).append("</td>");
+                    sb.append("<td align=\"right\" width=\"140\"><font color=\"808080\">尚未啟用</font></td>");
+                }
+                else
+                {
+                    sb.append("<td align=\"center\" colspan=\"2\">");
+                    sb.append("<font color=\"FFCC33\">槽位").append(i).append(": </font>");
+                    sb.append("<font color=\"808080\">尚未啟用</font>");
+                    sb.append("</td>");
+                }
+                sb.append("</tr>");
                 continue;
             }
 
             String skillName = getSkillName(skillId);
-            String color = PotentialData.getInstance().getSkillColor(skillId);
+            String color = "808080";
 
-            sb.append("<tr bgcolor=\"222222\">");
+            if (!skillName.equals("尚未啟用"))
+            {
+                try
+                {
+                    String skillColor = PotentialData.getInstance().getSkillColor(skillId);
+                    if (skillColor != null && !skillColor.isEmpty())
+                    {
+                        color = skillColor;
+                    }
+                }
+                catch (Exception e)
+                {
+                    color = "808080";
+                }
+            }
 
             if (compact)
             {
@@ -627,8 +651,14 @@ public class PotentialCube extends Script
 
     private String getSkillName(int skillId)
     {
+
         Skill skill = SkillData.getInstance().getSkill(skillId, 1);
-        return skill != null ? skill.getName() : "未知技能";
+        if (skill != null)
+        {
+            return skill.getName();
+        }
+
+        return "尚未啟用";
     }
 
     private void applyPotentialSkills(Player player, Map<Integer, Integer> potentials)

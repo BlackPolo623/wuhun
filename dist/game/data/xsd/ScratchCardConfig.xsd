@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+	<!-- 根元素 list -->
 	<xs:element name="list">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="config" type="ConfigType" />
-				<xs:element name="probabilities" type="ProbabilitiesType" />
-				<xs:element name="accumulateRewards" type="AccumulateRewardsType" />
-				<xs:element name="jackpotRewards" type="JackpotRewardsType" />
+				<!-- 可以包含多個 scratchCard -->
+				<xs:element name="scratchCard" type="ScratchCardType" minOccurs="1" maxOccurs="unbounded" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 
+	<!-- 刮刮樂類型定義 -->
+	<xs:complexType name="ScratchCardType">
+		<xs:sequence>
+			<xs:element name="config" type="ConfigType" />
+			<xs:element name="probabilities" type="ProbabilitiesType" />
+			<xs:element name="accumulateRewards" type="AccumulateRewardsType" />
+			<xs:element name="jackpotRewards" type="JackpotRewardsType" />
+		</xs:sequence>
+		<!-- 屬性：id, name, enabled -->
+		<xs:attribute name="id" type="xs:int" use="required" />
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="enabled" type="xs:boolean" default="true" />
+	</xs:complexType>
+
+	<!-- 配置類型 -->
 	<xs:complexType name="ConfigType">
 		<xs:sequence>
 			<xs:element name="price">
@@ -25,6 +39,7 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<!-- 機率類型 -->
 	<xs:complexType name="ProbabilitiesType">
 		<xs:sequence>
 			<xs:element name="symbol" maxOccurs="unbounded">
@@ -36,6 +51,7 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<!-- 累積獎勵類型 -->
 	<xs:complexType name="AccumulateRewardsType">
 		<xs:sequence>
 			<xs:element name="reward" maxOccurs="unbounded">
@@ -54,6 +70,7 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<!-- 大獎池類型 -->
 	<xs:complexType name="JackpotRewardsType">
 		<xs:sequence>
 			<xs:element name="reward" maxOccurs="unbounded">

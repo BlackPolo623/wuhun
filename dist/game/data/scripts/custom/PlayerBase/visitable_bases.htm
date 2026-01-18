@@ -1,0 +1,73 @@
+<html><head><title>可訪問基地列表</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+    <tr>
+        <td valign="top" align="center">
+
+
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td height=10></td>
+                </tr>
+                <tr>
+                    <td align=center><font color="00FF66">選擇要訪問的基地</font></td>
+                </tr>
+                <tr>
+                    <td height=10></td>
+                </tr>
+            </table>
+
+            <!-- 分隔線 -->
+            <img src="L2UI.SquareGray" width="280" height="1"><br>
+
+            <!-- 基地列表區域 -->
+            <table width="280" cellspacing="0">
+                <tr>
+                    <td>
+                        <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="2">
+                            <tr bgcolor="333333" height="25">
+                                <td align="center" width="120"><font color="FFCC33">基地主人</font></td>
+                                <td align="center" width="60"><font color="FFCC33">狀態</font></td>
+                                <td align="center" width="100"><font color="FFCC33">操作</font></td>
+                            </tr>
+                        </table>
+                        <!-- 動態列表內容 -->
+                        <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="2">
+                            %base_list%
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+
+            <!-- 提示信息 -->
+            <table width="280">
+                <tr>
+                    <td align=center>
+                        <font color="FFD700" size="1">※ 只能進入已授權的基地</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align=center>
+                        <font color="808080" size="1">※ 基地主人可管理訪客權限</font>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- 返回按鈕 -->
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td height=10></td>
+                </tr>
+                <tr>
+                    <td align=center>
+                        <button action="bypass -h Quest PlayerBase enter_my_base" value="返回主頁" width="150" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

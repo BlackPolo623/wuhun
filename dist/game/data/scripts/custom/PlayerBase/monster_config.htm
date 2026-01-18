@@ -1,0 +1,74 @@
+<html><head><title>怪物配置</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+    <tr>
+        <td valign="top" align="center">
+
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr><td height=10></td></tr>
+                <tr>
+                    <td align=center><font color="00FF66">當前數量：%current_count%/%max_count%</font></td>
+                </tr>
+                <tr><td height=10></td></tr>
+            </table>
+
+            <img src="L2UI.SquareGray" width="280" height="1"><br>
+
+            <!-- 添加怪物區域 -->
+            <table width="280">
+                <tr><td align=center><font color="FFCC33">添加怪物</font></td></tr>
+                <tr><td height=5></td></tr>
+                <tr>
+                    <td align=center>
+                        <table>
+                            <tr>
+                                <td width=80><font color="LEVEL">怪物類型:</font></td>
+                                <td><combobox width=120 var=monster_id list=%monster_list%></td>
+                            </tr>
+                            <tr><td height=5></td></tr>
+                            <tr>
+                                <td><font color="LEVEL">數量:</font></td>
+                                <td><edit var=count width=120 height=15></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr><td height=10></td></tr>
+                <tr>
+                    <td align=center>
+                        <button value="添加" action="bypass -h Quest BaseMonsterNpc add_monster $monster_id $count" width=100 height=25 back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+            </table>
+
+            <br><img src="L2UI.SquareGray" width="280" height="1"><br>
+
+            <!-- 當前配置列表 -->
+            <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="2">
+                <tr bgcolor="333333" height="25">
+                    <td align="center" width="140"><font color="FFCC33">怪物名稱</font></td>
+                    <td align="center" width="70"><font color="FFCC33">數量</font></td>
+                    <td align="center" width="70"><font color="FFCC33">操作</font></td>
+                </tr>
+            </table>
+
+            <table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="2">
+                %config_list%
+            </table>
+
+            <br>
+
+            <!-- 功能按鈕 -->
+            <table width="280">
+                <tr>
+                    <td align=center>
+                        <button value="生成全部" action="bypass -h Quest BaseMonsterNpc spawn_all" width=120 height=25 back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                            <button value="清除全部" action="bypass -h Quest BaseMonsterNpc despawn_all" width=120 height=25 back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

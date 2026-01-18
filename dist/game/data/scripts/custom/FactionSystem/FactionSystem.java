@@ -20,6 +20,7 @@
  */
 package custom.FactionSystem;
 
+import custom.FusionSystem.FusionSystem;
 import org.l2jmobius.gameserver.config.custom.FactionSystemConfig;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -36,7 +37,7 @@ public class FactionSystem extends Script
 {
 	// NPCs
 	private static final int MANAGER = 500;
-	
+
 	// Other
 	private static final String[] TEXTS =
 	{
@@ -44,20 +45,20 @@ public class FactionSystem extends Script
 		"Select your faction!",
 		"The choice is yours!"
 	};
-	
+
 	private FactionSystem()
 	{
 		addSpawnId(MANAGER);
 		addStartNpc(MANAGER);
 		addTalkId(MANAGER);
 		addFirstTalkId(MANAGER);
-		
+
 		if (FactionSystemConfig.FACTION_SYSTEM_ENABLED)
 		{
 			addSpawn(MANAGER, FactionSystemConfig.FACTION_MANAGER_LOCATION, false, 0);
 		}
 	}
-	
+
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
@@ -76,12 +77,12 @@ public class FactionSystem extends Script
 					player.sendPacket(packet);
 					return htmltext;
 				}
-				
+
 				if (FactionSystemConfig.FACTION_AUTO_NOBLESS)
 				{
 					player.setNoble(true);
 				}
-				
+
 				player.setGood();
 				final PlayerAppearance appearance = player.getAppearance();
 				appearance.setNameColor(FactionSystemConfig.FACTION_GOOD_NAME_COLOR);
@@ -106,12 +107,12 @@ public class FactionSystem extends Script
 					player.sendPacket(packet);
 					return htmltext;
 				}
-				
+
 				if (FactionSystemConfig.FACTION_AUTO_NOBLESS)
 				{
 					player.setNoble(true);
 				}
-				
+
 				player.setEvil();
 				final PlayerAppearance appearance = player.getAppearance();
 				appearance.setNameColor(FactionSystemConfig.FACTION_EVIL_NAME_COLOR);
@@ -132,10 +133,10 @@ public class FactionSystem extends Script
 				break;
 			}
 		}
-		
+
 		return super.onEvent(event, npc, player);
 	}
-	
+
 	@Override
 	public String onFirstTalk(Npc npc, Player player)
 	{
@@ -148,7 +149,7 @@ public class FactionSystem extends Script
 		player.sendPacket(packet);
 		return htmltext;
 	}
-	
+
 	@Override
 	public void onSpawn(Npc npc)
 	{
@@ -157,7 +158,7 @@ public class FactionSystem extends Script
 			startQuestTimer("SPEAK", 10000, npc, null, true);
 		}
 	}
-	
+
 	private void broadcastMessageToFaction(String factionName, String message)
 	{
 		if (factionName.equals(FactionSystemConfig.FACTION_GOOD_TEAM_NAME))
@@ -175,7 +176,7 @@ public class FactionSystem extends Script
 			}
 		}
 	}
-	
+
 	public static void main(String[] args)
 	{
 		new FactionSystem();

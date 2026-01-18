@@ -1,65 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/ScratchCardConfig.xsd">
 
-	<!-- 基本設定 -->
-	<config>
-		<!-- 刮刮樂價格 -->
-		<price itemId="57" count="1000000" />  <!-- 100萬金幣 -->
+	<!-- 刮刮樂類型1: 新春刮刮樂 -->
+	<scratchCard id="1" name="新春刮刮樂" enabled="true">
+		<config>
+			<price itemId="57" count="1000000" />
+			<dailyLimit>10</dailyLimit>
+			<gridSize>24</gridSize>
+		</config>
 
-		<!-- 每日購買次數限制 (0=無限制) -->
-		<dailyLimit>10</dailyLimit>
+		<probabilities>
+			<symbol type="empty" chance="700" />
+			<symbol type="accumulate" chance="295" />
+			<symbol type="jackpot" chance="5" />
+		</probabilities>
 
-		<!-- 格子總數 -->
-		<gridSize>24</gridSize>  <!-- 4x6 -->
-	</config>
+		<accumulateRewards>
+			<reward count="1">
+				<item id="57" amount="500000" />
+			</reward>
+			<reward count="3">
+				<item id="57" amount="2000000" />
+			</reward>
+			<reward count="5">
+				<item id="57" amount="5000000" />
+			</reward>
+			<reward count="8">
+				<item id="57" amount="10000000" />
+			</reward>
+			<reward count="12">
+				<item id="57" amount="20000000" />
+			</reward>
+			<reward count="15">
+				<item id="57" amount="50000000" />
+			</reward>
+		</accumulateRewards>
 
-	<!-- 符號出現機率配置 (千分比,總和必須=1000) -->
-	<probabilities>
-		<symbol type="empty" chance="700" />      <!-- X: 70.0% -->
-		<symbol type="accumulate" chance="295" /> <!-- ◼︎: 29.5% -->
-		<symbol type="jackpot" chance="5" />      <!-- ★: 0.5% (千分之五) -->
-	</probabilities>
+		<jackpotRewards>
+			<reward weight="400">
+				<item id="57" amount="20000000" />
+			</reward>
+			<reward weight="300">
+				<item id="57" amount="50000000" />
+			</reward>
+			<reward weight="200">
+				<item id="57" amount="100000000" />
+			</reward>
+			<reward weight="80">
+				<item id="57" amount="200000000" />
+			</reward>
+			<reward weight="20">
+				<item id="57" amount="500000000" />
+			</reward>
+		</jackpotRewards>
+	</scratchCard>
 
-	<!-- 累積獎勵配置 (根據◼︎數量) -->
-	<accumulateRewards>
-		<reward count="1">
-			<item id="57" amount="1" />  <!-- 50萬金幣 -->
-		</reward>
-		<reward count="3">
-			<item id="57" amount="3" />
-		</reward>
-		<reward count="5">
-			<item id="57" amount="5" />
-		</reward>
-		<reward count="8">
-			<item id="57" amount="8" />
-		</reward>
-		<reward count="12">
-			<item id="57" amount="12" />
-		</reward>
-		<reward count="15">
-			<item id="57" amount="15" />
-		</reward>
-	</accumulateRewards>
+	<!-- 刮刮樂類型2: 端午刮刮樂 -->
+	<scratchCard id="2" name="端午刮刮樂" enabled="true">
+		<config>
+			<price itemId="57" count="2000000" />
+			<dailyLimit>5</dailyLimit>
+			<gridSize>20</gridSize>
+		</config>
 
-	<!-- 神秘大獎池 -->
-	<jackpotRewards>
-		<!-- 權重越高,抽中機率越高 -->
-		<reward weight="400">
-			<item id="57" amount="20000000" />
-		</reward>
-		<reward weight="300">
-			<item id="57" amount="20000000" />
-		</reward>
-		<reward weight="200">
-			<item id="57" amount="20000000" />
-		</reward>
-		<reward weight="80">
-			<item id="57" amount="20000000" />
-		</reward>
-		<reward weight="20">
-			<item id="57" amount="20000000" />
-		</reward>
-	</jackpotRewards>
+		<probabilities>
+			<symbol type="empty" chance="600" />
+			<symbol type="accumulate" chance="390" />
+			<symbol type="jackpot" chance="10" />
+		</probabilities>
+
+		<accumulateRewards>
+			<reward count="2">
+				<item id="57" amount="1000000" />
+			</reward>
+			<reward count="5">
+				<item id="57" amount="5000000" />
+			</reward>
+			<reward count="10">
+				<item id="57" amount="20000000" />
+			</reward>
+		</accumulateRewards>
+
+		<jackpotRewards>
+			<reward weight="500">
+				<item id="57" amount="50000000" />
+			</reward>
+			<reward weight="300">
+				<item id="57" amount="100000000" />
+			</reward>
+			<reward weight="200">
+				<item id="57" amount="300000000" />
+			</reward>
+		</jackpotRewards>
+	</scratchCard>
 
 </list>

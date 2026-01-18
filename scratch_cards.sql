@@ -11,7 +11,7 @@
  Target Server Version : 101001
  File Encoding         : 65001
 
- Date: 15/01/2026 22:13:07
+ Date: 17/01/2026 05:11:02
 */
 
 SET NAMES utf8mb4;
@@ -23,6 +23,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `scratch_cards`;
 CREATE TABLE `scratch_cards`  (
   `player_id` int(11) NOT NULL,
+  `card_type` int(11) NOT NULL DEFAULT 1,
   `board_state` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `opened_positions` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `opened_count` int(11) NULL DEFAULT 0,
@@ -30,5 +31,9 @@ CREATE TABLE `scratch_cards`  (
   `purchase_time` bigint(20) NOT NULL,
   PRIMARY KEY (`player_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of scratch_cards
+-- ----------------------------
 
 SET FOREIGN_KEY_CHECKS = 1;
