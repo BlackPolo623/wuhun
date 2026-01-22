@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
+    <npc id="80000" level="90" type="Monster" name="我超猛" usingServerSideName="true" title="猛襲副本" usingServerSideTitle="true">
+        <race>ELEMENTAL</race>
+        <sex>MALE</sex>
+        <stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+            <vitals hp="300000" hpRegen="10.2" mp="18000" mpRegen="3.6"/>
+            <attack physical="2000" magical="100" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
+                    range="40" distance="80" width="120"/>
+            <defence physical="1000" magical="500"/>
+            <speed>
+                <walk ground="255"/>
+                <run ground="315"/>
+            </speed>
+            <hitTime>600</hitTime>
+        </stats>
+        <collision>
+            <radius normal="45"/>
+            <height normal="136.5"/>
+        </collision>
+        <dropLists>
+            <drop>
+                <item id="57" min="50000" max="100000" chance="100"/>
+            </drop>
+        </dropLists>
+    </npc>
+</list>

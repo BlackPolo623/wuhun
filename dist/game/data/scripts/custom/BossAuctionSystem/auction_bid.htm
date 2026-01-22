@@ -1,0 +1,144 @@
+<html><head><title>出價</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+    <tr>
+        <td valign="top" align="center">
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td height=20></td>
+                </tr>
+                <tr>
+                    <td align=center><font color="00FFFF" size="4"><b>%item_name%</b></font></td>
+                </tr>
+                <tr>
+                    <td height=15></td>
+                </tr>
+
+                <!-- 物品信息 -->
+                <tr>
+                    <td align=center>
+                        <table width="270" bgcolor="111111" border="0" cellspacing="1" cellpadding="3">
+                            <tr bgcolor="222222">
+                                <td align="center" width="135"><font color="FFCC33">當前價格</font></td>
+                                <td align="center" width="135"><font color="FFFF00">%current_bid%</font></td>
+                            </tr>
+                            <tr bgcolor="222222">
+                                <td align="center"><font color="FFCC33">當前領先</font></td>
+                                <td align="center"><font color="00FF66">%current_bidder%</font></td>
+                            </tr>
+                            <tr bgcolor="222222">
+                                <td align="center"><font color="FFCC33">出價次數</font></td>
+                                <td align="center"><font color="808080">%bid_count%</font></td>
+                            </tr>
+                            <tr bgcolor="222222">
+                                <td align="center"><font color="FFCC33">剩餘時間</font></td>
+                                <td align="center"><font color="%time_color%">%time_remaining%</font></td>
+                            </tr>
+                            <tr bgcolor="222222">
+                                <td align="center"><font color="FFCC33">可延長次數</font></td>
+                                <td align="center"><font color="FF9900">%extension_remaining%</font></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td height=30></td>
+                </tr>
+
+
+                <!-- 出價區 -->
+                <tr>
+                    <td align=center><font color="LEVEL" size="4">快捷出價(按下即出價)</font></td>
+                </tr>
+                <tr>
+                    <td height=10></td>
+                </tr>
+
+                <!-- 快捷按鈕 -->
+                <tr>
+                    <td align=center>
+                        <table width="270" border="0" cellspacing="0" cellpadding="2">
+                            <tr>
+                                <td width="90" align=center>
+                                    <button action="bypass -h Quest BossAuctionSystem bidAdd_%auction_item_id%_10" value="+10" width="80" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                                </td>
+                                <td width="90" align=center>
+                                    <button action="bypass -h Quest BossAuctionSystem bidAdd_%auction_item_id%_100" value="+100" width="80" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                                </td>
+                                <td width="90" align=center>
+                                    <button action="bypass -h Quest BossAuctionSystem bidAdd_%auction_item_id%_1000" value="+1000" width="80" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td height=10></td>
+                </tr>
+
+                <tr>
+                    <td align=center><font color="LEVEL" size="4">自訂金額</font></td>
+                </tr>
+
+                <tr>
+                    <td height=20></td>
+                </tr>
+
+                <tr>
+                    <td align=center>
+                        <edit var="bid_input" width="200" height="15">
+                    </td>
+                </tr>
+                <tr>
+                    <td height=20></td>
+                </tr>
+                <tr>
+                    <td align=center>
+                        <button action="bypass -h Quest BossAuctionSystem bidCustom_%auction_item_id% $bid_input" value="確認出價" width="200" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td height=15></td>
+                </tr>
+
+                <tr>
+                    <td align=center>
+                        <img src="L2UI.SquareGray" width="270" height="1">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td height=10></td>
+                </tr>
+
+                <!-- 說明文字 -->
+                <tr>
+                    <td align=center>
+                        <font color="888888" size="2">※ 出價後需等待 30 秒冷卻</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align=center>
+                        <font color="888888" size="2">※ 最後 5 分鐘出價會延長時間</font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td height=10></td>
+                </tr>
+
+                <!-- 返回按鈕 -->
+                <tr>
+                    <td align=center>
+                        <button action="bypass -h Quest BossAuctionSystem viewSession_%session_id%" value="返回物品列表" width="150" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1479,28 +1479,24 @@
 		</effects>
 	</skill>
 	<skill id="1627" toLevel="1" name="摧毀咆哮">
+		
 		<icon>icon.skill1481</icon>
-		<operateType>A2</operateType>
+		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>3</abnormalTime>
-		<abnormalType>TURN_FLEE</abnormalType>
-		<abnormalVisualEffect>TURN_FLEE</abnormalVisualEffect>
 		<activateRate>40</activateRate>
-		<affectLimit>10-10</affectLimit>
+		<affectLimit>4-2</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
-		<affectRange>200</affectRange>
+		<affectRange>300</affectRange>
 		<affectScope>POINT_BLANK</affectScope>
 		<basicProperty>PHYSICAL</basicProperty>
 		<coolTime>500</coolTime>
 		<effectPoint>-137</effectPoint>
 		<hitTime>1000</hitTime>
-		<isDebuff>true</isDebuff>
 		<lvlBonusRate>20</lvlBonusRate>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>77</magicLevel>
-		<mpConsume>57</mpConsume>
-		<reuseDelay>60000</reuseDelay>
+		<magicLevel>90</magicLevel>
+		<mpConsume>62</mpConsume>
+		<reuseDelay>10000</reuseDelay>
 		<trait>DERANGEMENT</trait>
 		<conditions>
 			<condition name="EquipWeapon">
@@ -1511,11 +1507,11 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="BlockControl" />
-			<effect name="Fear" />
-			<effect name="Speed">
-				<amount>-90</amount>
-				<mode>PER</mode>
+			<effect name="PhysicalDamage">
+				<power>4725</power>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
+				<criticalChance>15</criticalChance>
 			</effect>
 		</effects>
 	</skill>

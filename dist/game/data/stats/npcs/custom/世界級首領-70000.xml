@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
+    <npc id="70000" displayId="26295" level="90" type="GrandBoss" name="深淵女王" usingServerSideName="true" title="★★★世界首領★★★" usingServerSideTitle="true">
+        <race>ELEMENTAL</race>
+        <sex>MALE</sex>
+        <equipment rhand="95843"/>
+        <stats str="150" int="150" dex="150" wit="150" con="150" men="150">
+            <vitals hp="1530015100" hpRegen="20000000" mp="18000" mpRegen="3.6"/>
+            <speed>
+                <walk ground="40"/>
+                <run ground="180"/>
+            </speed>
+            <attack physical="120000" magical="22465" critical="4" attackSpeed="1000" range="40"/>
+            <defence physical="70000" magical="70000"/>
+        </stats>
+        <collision>
+            <radius normal="45"/>
+            <height normal="136.5"/>
+        </collision>
+        <dropLists>
+            <drop>
+                <item id="22223" min="1" max="20" chance="15"/>
+                <item id="22224" min="1" max="20" chance="15"/>
+                <item id="101214" min="1" max="10" chance="9"/>
+                <item id="101215" min="1" max="7" chance="9"/>
+                <item id="101216" min="1" max="5" chance="9"/>
+                <item id="98782" min="1" max="1" chance="15"/>
+                <item id="98782" min="1" max="1" chance="15"/>
+                <item id="98782" min="1" max="1" chance="15"/>
+                <item id="98782" min="1" max="1" chance="15"/>
+                <item id="98782" min="1" max="1" chance="15"/>
+                <item id="100126" min="1" max="20" chance="10"/>
+                <item id="100126" min="1" max="20" chance="10"/>
+                <item id="100126" min="1" max="20" chance="10"/>
+                <item id="97133" min="1" max="10" chance="10"/>
+                <item id="97133" min="1" max="10" chance="10"/>
+                <item id="97133" min="1" max="10" chance="10"/>
+                <item id="97133" min="1" max="10" chance="10"/>
+                <item id="105313" min="1" max="1" chance="5"/>
+                <item id="105314" min="1" max="1" chance="5"/>
+                <item id="105315" min="1" max="1" chance="5"/>
+                <item id="105316" min="1" max="1" chance="5"/>
+                <item id="105317" min="1" max="1" chance="5"/>
+                <item id="105318" min="1" max="1" chance="5"/>
+                <item id="105319" min="1" max="1" chance="5"/>
+                <item id="105320" min="1" max="1" chance="5"/>
+                <item id="105321" min="1" max="1" chance="5"/>
+                <item id="105322" min="1" max="1" chance="5"/>
+                <item id="105323" min="1" max="1" chance="5"/>
+                <item id="105324" min="1" max="1" chance="5"/>
+                <item id="105325" min="1" max="1" chance="5"/>
+            </drop>
+        </dropLists>
+    </npc>
+
+</list>

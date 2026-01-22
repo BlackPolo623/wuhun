@@ -62,7 +62,7 @@ public class UndergroundLabyrinthGuide extends Script
 				}
 				else
 				{
-					player.sendMessage("You cannot teleport while you are a prisoner.");
+					player.sendMessage("你還是囚犯，無法傳送。");
 				}
 				break;
 			}
@@ -70,10 +70,10 @@ public class UndergroundLabyrinthGuide extends Script
 			{
 				if ((player.getInventory().getItemByItemId(MARKS_OF_REPENTANCE) == null) || !(player.getInventory().getItemByItemId(MARKS_OF_REPENTANCE).getCount() < PrisonConfig.MARK_RELEASE_AMOUNT))
 				{
-					player.sendMessage("You don't have enough Mark of Repentance. Collect 100 and come back.");
+					player.sendMessage("你沒有足夠的懺悔之印。收集 100 個後再來。");
 					break;
 				}
-				
+
 				if (player.destroyItemByItemId(ItemProcessType.FEE, MARKS_OF_REPENTANCE, PrisonConfig.MARK_RELEASE_AMOUNT, player, true))
 				{
 					player.setReputation(-135000);
@@ -86,10 +86,10 @@ public class UndergroundLabyrinthGuide extends Script
 				final long count = PrisonConfig.LCOIN_RELEASE_AMOUNT;
 				if ((player.getInventory().getItemByItemId(LCOIN) == null) || (player.getInventory().getItemByItemId(LCOIN).getCount() < count))
 				{
-					player.sendMessage("You don't have enough L-Coins for this transaction.");
+					player.sendMessage("你沒有足夠的 L-Coin 進行此交易。");
 					break;
 				}
-				
+
 				if (player.destroyItemByItemId(ItemProcessType.FEE, LCOIN, count, player, true))
 				{
 					player.getPrisonerInfo().processFreedom(false);

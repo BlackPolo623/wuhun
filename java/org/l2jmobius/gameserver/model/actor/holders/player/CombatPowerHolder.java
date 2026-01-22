@@ -96,17 +96,17 @@ public class CombatPowerHolder
 	{
 		if (item.isBlessed())
 		{
-			_blessCP.addAndGet(item.getTemplate().getGearScore() + (int) (Math.pow(1.2, item.getEnchantLevel())));
+			_blessCP.addAndGet(item.getTemplate().getGearScore() + (item.getEnchantLevel() * 100));
 		}
 		else if (!item.getSpecialAbilities().isEmpty() || !item.getAdditionalSpecialAbilities().isEmpty())
 		{
-			_ensoulCP.addAndGet(item.getTemplate().getGearScore() + (int) (Math.pow(1.2, item.getEnchantLevel())));
+			_ensoulCP.addAndGet(item.getTemplate().getGearScore() + (item.getEnchantLevel() * 100));
 		}
 		else
 		{
-			_itemCP.addAndGet(item.getTemplate().getGearScore() + (int) (Math.pow(1.2, item.getEnchantLevel())));
+			_itemCP.addAndGet(item.getTemplate().getGearScore() + (item.getEnchantLevel() * 100));
 		}
-		
+
 		_owner.sendCombatPower();
 	}
 	
@@ -114,17 +114,17 @@ public class CombatPowerHolder
 	{
 		if (item.isBlessed())
 		{
-			_blessCP.addAndGet(-(item.getTemplate().getGearScore() + (int) (Math.pow(1.2, item.getEnchantLevel()))));
+			_blessCP.addAndGet(-(item.getTemplate().getGearScore() + (item.getEnchantLevel() * 100)));
 		}
 		else if (!item.getSpecialAbilities().isEmpty() || !item.getAdditionalSpecialAbilities().isEmpty())
 		{
-			_ensoulCP.addAndGet(-(item.getTemplate().getGearScore() + (int) (Math.pow(1.2, item.getEnchantLevel()))));
+			_ensoulCP.addAndGet(-(item.getTemplate().getGearScore() + (item.getEnchantLevel() * 100)));
 		}
 		else
 		{
-			_itemCP.addAndGet(-(item.getTemplate().getGearScore() + (int) (Math.pow(1.2, item.getEnchantLevel()))));
+			_itemCP.addAndGet(-(item.getTemplate().getGearScore() + (item.getEnchantLevel() * 100)));
 		}
-		
+
 		_owner.sendCombatPower();
 	}
 	

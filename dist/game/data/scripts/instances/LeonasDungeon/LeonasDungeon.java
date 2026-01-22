@@ -109,20 +109,20 @@ public class LeonasDungeon extends InstanceScript
 					{
 						if (!member.isInsideRadius3D(npc, 1000))
 						{
-							player.sendMessage("Player " + member.getName() + " must go closer.");
+							player.sendMessage("玩家 " + member.getName() + " 必須靠近一些。");
 						}
-						
+
 						enterInstance(member, npc, TEMPLATE_ID);
 					}
 				}
 				else if (player.isGM())
 				{
 					enterInstance(player, npc, TEMPLATE_ID);
-					player.sendMessage("SYS: You have entered as GM/Admin to Leona Dungeon.");
+					player.sendMessage("系統：你以 GM/管理員身份進入了蕾歐娜地下城。");
 				}
 				else
 				{
-					player.sendMessage("You must come with a party.");
+					player.sendMessage("你必須組隊才能進入。");
 				}
 				break;
 			}
@@ -187,7 +187,7 @@ public class LeonasDungeon extends InstanceScript
 					}
 					else
 					{
-						player.sendMessage("You have not enough adena.");
+						player.sendMessage("你沒有足夠的金幣。");
 					}
 				}
 				break;

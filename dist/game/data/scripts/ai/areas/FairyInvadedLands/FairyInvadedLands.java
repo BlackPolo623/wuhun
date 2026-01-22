@@ -388,21 +388,28 @@ public class FairyInvadedLands extends Script
 
 		// 增加擊殺計數
 		final int count = KILL_COUNTER.incrementAndGet();
-		final String nextCheckTime = getNextCheckTime();
 
-		// ========== 【新增】顯示當前時段的生成狀態 ==========
-		String statusMsg = String.format(MSG_KILL_COUNT, count, REQUIRED_KILLS, nextCheckTime);
-
-		if (_currentTimeSlot != null)
+		// ========== 【修改】只在特定情況下顯示訊息 ==========
+		// 條件1: 計數小於要求數量時顯示
+		// 條件2: 剛好達到要求數量時顯示
+		// 條件3: 超過要求數量後不再顯示,避免干擾
+		if (count <= REQUIRED_KILLS)
 		{
-			final int currentSpawnCount = _spawnCountToday.getOrDefault(_currentTimeSlot, 0);
-			if (MAX_SPAWNS_PER_TIMEPOINT > 0)
-			{
-				statusMsg += String.format(" | 本時段: %d/%d次", currentSpawnCount, MAX_SPAWNS_PER_TIMEPOINT);
-			}
-		}
+			final String nextCheckTime = getNextCheckTime();
+			String statusMsg = String.format(MSG_KILL_COUNT, count, REQUIRED_KILLS, nextCheckTime);
 
-		killer.sendMessage(statusMsg);
+			if (_currentTimeSlot != null)
+			{
+				final int currentSpawnCount = _spawnCountToday.getOrDefault(_currentTimeSlot, 0);
+				if (MAX_SPAWNS_PER_TIMEPOINT > 0)
+				{
+					statusMsg += String.format(" | 本時段: %d/%d次", currentSpawnCount, MAX_SPAWNS_PER_TIMEPOINT);
+				}
+			}
+
+			killer.sendMessage(statusMsg);
+		}
+		// 如果超過REQUIRED_KILLS,不顯示任何訊息,避免刷屏
 	}
 
 	/**

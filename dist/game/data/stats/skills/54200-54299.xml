@@ -164,6 +164,8 @@
 		</effects>
 	</skill>
 	<skill id="54206" toLevel="2" name="真死亡騎士：大師">
+		
+		
 		<icon>
 			<value level="1">icon.death_knight_transform</value>
 			<value level="2">icon.s_death_knight_transform_new</value>
@@ -177,20 +179,20 @@
 		<abnormalTime>1200</abnormalTime>
 		<abnormalType>BUFF_SPECIAL_CLASS</abnormalType>
 		<abnormalVisualEffect>
-			<value level="1">JDK_BODY_FIRE_1</value>
-			<value level="2">JDK_BODY_FIRE_2</value>
+			<value level="1">JDK_BODY_FIRE</value>
+			<value level="2">JDK_BODY_FIRE1</value>
 		</abnormalVisualEffect>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<coolTime>500</coolTime>
 		<effectPoint>1</effectPoint>
 		<hitTime>1000</hitTime>
-		<isMagic>4</isMagic>
+		<isMagic>4</isMagic> 
 		<itemConsumeCount>
 			<value level="1">50</value>
 			<value level="2">60</value>
 		</itemConsumeCount>
-		<itemConsumeId>3031</itemConsumeId>
+		<itemConsumeId>3031</itemConsumeId> 
 		<magicLevel>76</magicLevel>
 		<reuseDelay>60000</reuseDelay>
 		<stayAfterDeath>true</stayAfterDeath>
@@ -317,7 +319,7 @@
 				<chance>50</chance>
 				<targetType>SELF</targetType>
 				<isCritical>true</isCritical>
-				<skillId>47536</skillId>
+				<skillId>47536</skillId> 
 				<skillLevel>1</skillLevel>
 				<allowSkillAttack>true</allowSkillAttack>
 			</effect>
@@ -327,7 +329,7 @@
 				<chance>50</chance>
 				<targetType>SELF</targetType>
 				<isCritical>false</isCritical>
-				<skillId>47536</skillId>
+				<skillId>47536</skillId> 
 				<skillLevel>1</skillLevel>
 				<allowSkillAttack>true</allowSkillAttack>
 			</effect>

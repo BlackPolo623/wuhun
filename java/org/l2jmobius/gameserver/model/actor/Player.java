@@ -12068,10 +12068,6 @@ public class Player extends Playable
 		revalidateZone(true);
 		
 		notifyFriends(FriendStatus.MODE_ONLINE);
-		if (!isGM() && PlayerConfig.DECREASE_SKILL_LEVEL)
-		{
-			checkPlayerSkills();
-		}
 		
 		try
 		{

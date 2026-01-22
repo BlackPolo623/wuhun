@@ -1281,6 +1281,13 @@ public class Attackable extends Npc
 		}
 		
 		final Collection<ItemHolder> deathItems = npcTemplate.calculateDrops(DropType.DROP, this, player);
+
+		// Check if a custom BOSS drop handler should process the drops
+		if (_isRaid && org.l2jmobius.gameserver.handler.BossDropHandler.handleDrop(this, player, deathItems))
+		{
+			return; // Handler processed the drops, don't drop items on ground
+		}
+
 		if (deathItems != null)
 		{
 			List<Integer> announceItems = null;

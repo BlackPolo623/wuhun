@@ -6,6 +6,7 @@ import java.util.StringTokenizer;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.appearance.PlayerAppearance;
 import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -72,6 +73,28 @@ public class huanhuas extends Script
 			int raceId = Integer.parseInt(st.nextToken());
 			int page = Integer.parseInt(st.nextToken());
 			transformRace(player, npc, raceId, page);
+		}
+		else if (event.startsWith("bianxing"))
+		{
+			long playerGold = player.getInventory().getInventoryItemCount(PRICE_ITEM_ID, 0);
+			if (playerGold < PRICE_ITEM_COUNT)
+			{
+				player.sendMessage("金幣不足！需要 " + formatNumber(PRICE_ITEM_COUNT) + " 金幣");
+				return null;
+			}
+			player.destroyItemByItemId(null, PRICE_ITEM_ID, PRICE_ITEM_COUNT, null, true);
+			final PlayerAppearance appearance = player.getAppearance();
+			if (appearance.isFemale())
+			{
+				appearance.setMale();
+			}
+			else
+			{
+				appearance.setFemale();
+			}
+
+			player.sendMessage("你的性別已經進行變更");
+			player.broadcastUserInfo();
 		}
 		else if (event.equals("reset"))
 		{

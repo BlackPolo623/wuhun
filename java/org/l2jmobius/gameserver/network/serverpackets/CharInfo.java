@@ -288,7 +288,7 @@ public class CharInfo extends ServerPacket
 		buffer.writeByte(_player.isInsideZone(ZoneId.WATER) ? 1 : _player.isFlyingMounted() ? 2 : 0);
 		buffer.writeShort(_player.getRecomHave()); // Confirmed
 		buffer.writeInt(_player.getMountNpcId() == 0 ? 0 : _player.getMountNpcId() + 1000000);
-		buffer.writeInt(_player.getPlayerClass().getId()); // Confirmed
+		buffer.writeInt(z > 0 ? z : _player.getPlayerClass().getId()); // Confirmed
 		buffer.writeInt(0); // TODO: Find me!
 		buffer.writeByte(_player.isMounted() ? 0 : _enchantLevel); // Confirmed
 		buffer.writeByte(_player.getTeam().getId()); // Confirmed
@@ -362,7 +362,7 @@ public class CharInfo extends ServerPacket
 		buffer.writeInt(_rank);
 		buffer.writeShort(0);
 		buffer.writeByte(0);
-		buffer.writeInt(_player.getPlayerClass().getId());
+		buffer.writeInt(z > 0 ? z : _player.getPlayerClass().getId());
 		buffer.writeByte(0);
 		
 		switch (_player.getBaseClass())

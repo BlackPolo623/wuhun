@@ -28,18 +28,17 @@ public class FusionSystem extends Script
 
 	// Currently allowed slots (weapons only, can be expanded in future)
 	private static final int[] ALLOWED_SLOTS = {
-			5,  // RHAND (Right Hand Weapon)
-			7   // LHAND (Left Hand Weapon/Shield)
+			5
 	};
 
 	// Fixed success rates
-	private static final int FULL_SUCCESS_RATE = 10;    // 完全成功率: 10%
+	private static final int FULL_SUCCESS_RATE = 25;    // 完全成功率: 10%
 	private static final int PARTIAL_SUCCESS_RATE = 25; // 部分成功率: 25%
 	// 完全失败率: 65% (100 - 10 - 25)
 
 	// Fusion material configuration [itemId, count]
 	private static final int[][] FUSION_MATERIALS = {
-			{57, 100000000}
+			{91663, 10000}
 	};
 
 	// Announcement threshold (enchant level)
@@ -246,34 +245,35 @@ public class FusionSystem extends Script
 
 			// Calculate two possible fused values
 			int sourceEnchant = sourceItem.getEnchantLevel();
+			int sourceRebirth = sourceItem.getVariables().getInt(ItemVariables.zbzscsu, 0);
 			int fullSuccessEnchant = sourceEnchant + enchantLevel;  // 完全成功：相加
 			int partialSuccessEnchant = (sourceEnchant + enchantLevel) / 2;  // 部分成功：平均
-			int fusedRebirth = Math.max(
-					sourceItem.getVariables().getInt(ItemVariables.zbzscsu, 0),
-					rebirth
-			) / 2;
+			// 轉生次數：兩裝備轉生相加再除以2
+			int fusedRebirth = (sourceRebirth + rebirth) / 2;
 
 			String enchantColor = getEnchantColor(enchantLevel);
 
-			sb.append("<tr bgcolor=\"222222\" height=\"30\">");
+			sb.append("<tr bgcolor=\"222222\" height=\"40\">");
 			sb.append("<td align=\"center\" width=\"100\">");
 			sb.append("<font color=\"").append(enchantColor).append("\">+").append(enchantLevel).append("</font>");
 			sb.append(" / ");
 			sb.append("<font color=\"FFFF00\">轉").append(rebirth).append("</font>");
 			sb.append("</td>");
-			sb.append("<td align=\"center\" width=\"100\">");
-			// 顯示兩種可能結果
+			sb.append("<td align=\"center\" width=\"120\">");
+			// 顯示兩種可能結果（包含轉生次數）
 			sb.append("<font color=\"00FF00\">+").append(fullSuccessEnchant).append("</font>");
-			sb.append("<font color=\"808080\" size=\"1\">(完全)</font><br1>");
+			sb.append(" <font color=\"FFFF00\">轉").append(fusedRebirth).append("</font>");
+			sb.append("<br1><font color=\"808080\" size=\"1\">(完全成功)</font><br1>");
 			sb.append("<font color=\"FFFF00\">+").append(partialSuccessEnchant).append("</font>");
-			sb.append("<font color=\"808080\" size=\"1\">(部分)</font>");
+			sb.append(" <font color=\"FFFF00\">轉").append(fusedRebirth).append("</font>");
+			sb.append("<br1><font color=\"808080\" size=\"1\">(部分成功)</font>");
 			sb.append("</td>");
-			sb.append("<td align=\"center\" width=\"80\">");
-			sb.append("<button value=\"確認融合\" action=\"bypass -h Quest FusionSystem confirmFusion_")
-					.append(sourceItem.getObjectId()).append("_").append(target.getObjectId())
-					.append("\" width=\"70\" height=\"22\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
-			sb.append("</td>");
-			sb.append("</tr>");
+			sb.append("<td align=\"center\" width=\"60\">");
+			sb.append("<button value=\"融合\" action=\"bypass -h Quest FusionSystem confirmFusion_")
+			  .append(sourceItem.getObjectId()).append("_").append(target.getObjectId())
+			  .append("\" width=\"55\" height=\"22\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
+		sb.append("</td>");
+		sb.append("</tr>");
 		}
 
 		return sb.toString();
@@ -380,7 +380,8 @@ public class FusionSystem extends Script
 		// 計算兩種可能的融合結果
 		int fullSuccessEnchant = equipmentEnchant + targetEnchant;  // 完全成功：相加
 		int partialSuccessEnchant = (equipmentEnchant + targetEnchant) / 2;  // 部分成功：平均
-		int fusedRebirth = Math.max(equipmentRebirth, targetRebirth) / 2;
+		// 轉生次數：兩裝備轉生相加再除以2
+		int fusedRebirth = (equipmentRebirth + targetRebirth) / 2;
 
 		// 限制最大強化值
 		fullSuccessEnchant = Math.min(fullSuccessEnchant, MAX_FUSED_ENCHANT);
@@ -468,7 +469,8 @@ public class FusionSystem extends Script
 			if (item.getId() == itemId &&
 					item.getObjectId() != excludeObjectId &&
 					isValidFusionItem(item) &&
-					!item.isEquipped())
+					!item.isEquipped() &&
+					item.getEnchantLevel() >= 10)  // 只顯示強化值 >= 10 的裝備
 			{
 				result.add(item);
 			}

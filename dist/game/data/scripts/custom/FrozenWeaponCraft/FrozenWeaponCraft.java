@@ -50,12 +50,12 @@ public class FrozenWeaponCraft extends Script
 	};
 
 	// ==================== 強化值配置 ====================
-	private static final int MIN_ENCHANT = 1;         // 最小強化值
+	private static final int MIN_ENCHANT = 12;         // 最小強化值
 	private static final int MAX_ENCHANT = 30;        // 最大強化值
 	private static final int ANNOUNCE_THRESHOLD = 22; // 公告閾值
 
 	// ==================== 成功率配置 ====================
-	private static final int BASE_SUCCESS_RATE = 10;  // 基礎成功率 (10%)
+	private static final int BASE_SUCCESS_RATE = 15;  // 基礎成功率 (10%)
 
 	// ==================== 成功率提升道具配置 ====================
 	private static final int BOOST_ITEM_ID = 95781;         // 提升成功率的道具ID

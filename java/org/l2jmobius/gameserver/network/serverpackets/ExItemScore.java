@@ -40,7 +40,11 @@ public class ExItemScore extends ServerPacket
 	
 	public ExItemScore(CombatPowerHolder combatPowerHolder)
 	{
-		_total = combatPowerHolder.getTotalCombatPower();
+		int combatpower = combatPowerHolder.getTotalCombatPower();
+		if (combatpower > 999999) {
+			combatpower = 999999;
+		}
+		_total = combatpower;
 		_equipedItem = combatPowerHolder.getItemCombatPower();
 		_relics = combatPowerHolder.getRelicEffectCombatPower();
 		_relicsCollection = combatPowerHolder.getRelicCollectionCombatPower();

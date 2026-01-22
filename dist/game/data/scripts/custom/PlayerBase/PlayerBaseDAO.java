@@ -308,4 +308,145 @@ public class PlayerBaseDAO
 		}
 		return count;
 	}
+
+	// ==================== 拜訪系統管理 ====================
+
+	/**
+	 * 檢查今日是否已經拜訪過
+	 */
+	public static boolean hasDailyVisitedToday(int playerId)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			 PreparedStatement ps = con.prepareStatement(
+					 "SELECT COUNT(*) as count FROM player_base_daily_visits " +
+							 "WHERE visitor_id = ? AND DATE(FROM_UNIXTIME(visit_time/1000)) = CURDATE()"))
+		{
+			ps.setInt(1, playerId);
+			try (ResultSet rs = ps.executeQuery())
+			{
+				if (rs.next())
+				{
+					return rs.getInt("count") > 0;
+				}
+			}
+		}
+		catch (SQLException e)
+		{
+			LOGGER.log(Level.WARNING, "檢查今日拜訪次數失敗: " + e.getMessage(), e);
+		}
+		return false;
+	}
+
+	/**
+	 * 獲取今日已拜訪次數
+	 */
+	public static int getTodayVisitCount(int playerId)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			 PreparedStatement ps = con.prepareStatement(
+					 "SELECT COUNT(*) as count FROM player_base_daily_visits " +
+							 "WHERE visitor_id = ? AND DATE(FROM_UNIXTIME(visit_time/1000)) = CURDATE()"))
+		{
+			ps.setInt(1, playerId);
+			try (ResultSet rs = ps.executeQuery())
+			{
+				if (rs.next())
+				{
+					return rs.getInt("count");
+				}
+			}
+		}
+		catch (SQLException e)
+		{
+			LOGGER.log(Level.WARNING, "獲取今日拜訪次數失敗: " + e.getMessage(), e);
+		}
+		return 0;
+	}
+
+	/**
+	 * 獲取隨機一個有基地的玩家（排除自己和今天已拜訪過的）
+	 */
+	public static Map<String, Object> getRandomBaseForVisit(int visitorId)
+	{
+		Map<String, Object> baseInfo = new HashMap<>();
+		try (Connection con = DatabaseFactory.getConnection();
+			 PreparedStatement ps = con.prepareStatement(
+					 "SELECT pb.player_id, pb.player_name, pb.instance_id, pb.template_id " +
+							 "FROM player_base pb " +
+							 "WHERE pb.player_id != ? " +
+							 "AND pb.player_id NOT IN ( " +
+							 "  SELECT base_owner_id FROM player_base_daily_visits " +
+							 "  WHERE visitor_id = ? AND DATE(FROM_UNIXTIME(visit_time/1000)) = CURDATE() " +
+							 ") " +
+							 "ORDER BY RAND() LIMIT 1"))
+		{
+			ps.setInt(1, visitorId);
+			ps.setInt(2, visitorId);
+			try (ResultSet rs = ps.executeQuery())
+			{
+				if (rs.next())
+				{
+					baseInfo.put("player_id", rs.getInt("player_id"));
+					baseInfo.put("player_name", rs.getString("player_name"));
+					baseInfo.put("instance_id", rs.getInt("instance_id"));
+					baseInfo.put("template_id", rs.getInt("template_id"));
+				}
+			}
+		}
+		catch (SQLException e)
+		{
+			LOGGER.log(Level.WARNING, "獲取隨機基地失敗: " + e.getMessage(), e);
+		}
+		return baseInfo;
+	}
+
+	/**
+	 * 記錄拜訪
+	 */
+	public static boolean recordDailyVisit(int visitorId, String visitorName, int baseOwnerId, String baseOwnerName)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			 PreparedStatement ps = con.prepareStatement(
+					 "INSERT INTO player_base_daily_visits (visitor_id, visitor_name, base_owner_id, base_owner_name, visit_time) " +
+							 "VALUES (?, ?, ?, ?, ?)"))
+		{
+			ps.setInt(1, visitorId);
+			ps.setString(2, visitorName);
+			ps.setInt(3, baseOwnerId);
+			ps.setString(4, baseOwnerName);
+			ps.setLong(5, System.currentTimeMillis());
+			ps.executeUpdate();
+			return true;
+		}
+		catch (SQLException e)
+		{
+			LOGGER.log(Level.WARNING, "記錄拜訪失敗: " + e.getMessage(), e);
+		}
+		return false;
+	}
+
+	/**
+	 * 獲取所有有基地的玩家數量（排除自己）
+	 */
+	public static int getTotalBasesCount(int excludePlayerId)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			 PreparedStatement ps = con.prepareStatement(
+					 "SELECT COUNT(*) as count FROM player_base WHERE player_id != ?"))
+		{
+			ps.setInt(1, excludePlayerId);
+			try (ResultSet rs = ps.executeQuery())
+			{
+				if (rs.next())
+				{
+					return rs.getInt("count");
+				}
+			}
+		}
+		catch (SQLException e)
+		{
+			LOGGER.log(Level.WARNING, "獲取基地總數失敗: " + e.getMessage(), e);
+		}
+		return 0;
+	}
 }

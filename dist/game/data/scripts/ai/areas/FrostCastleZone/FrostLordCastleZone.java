@@ -310,17 +310,25 @@ public class FrostLordCastleZone extends Script
 			case REGGIESYS:
 			{
 				addSpawn(REGGIESYS_GLAKIAS[Rnd.get(0, REGGIESYS_GLAKIAS.length - 1)], GLAKIAS_SPAWN_LOC, false, DESPAWN_DELAY);
-				SPAWN_BATTLE_MOBS.set(SpawnData.getInstance().getSpawnByName("glakias_mobs_pretorian"));
-				SPAWN_BATTLE_MOBS.get().getGroups().forEach(SpawnGroup::despawnAll);
-				SPAWN_BATTLE_MOBS.get().getGroups().forEach(SpawnGroup::spawnAll);
+				SpawnTemplate spawnTemplate = SpawnData.getInstance().getSpawnByName("glakias_mobs_pretorian");
+				SPAWN_BATTLE_MOBS.set(spawnTemplate);
+				if (spawnTemplate != null)
+				{
+					spawnTemplate.getGroups().forEach(SpawnGroup::despawnAll);
+					spawnTemplate.getGroups().forEach(SpawnGroup::spawnAll);
+				}
 				break;
 			}
 			case SLICING:
 			{
 				addSpawn(SLICING_GLAKIAS[Rnd.get(0, SLICING_GLAKIAS.length - 1)], GLAKIAS_SPAWN_LOC, false, DESPAWN_DELAY);
-				SPAWN_BATTLE_MOBS.set(SpawnData.getInstance().getSpawnByName("glakias_mobs_pretorian"));
-				SPAWN_BATTLE_MOBS.get().getGroups().forEach(SpawnGroup::despawnAll);
-				SPAWN_BATTLE_MOBS.get().getGroups().forEach(SpawnGroup::spawnAll);
+				SpawnTemplate spawnTemplate = SpawnData.getInstance().getSpawnByName("glakias_mobs_pretorian");
+				SPAWN_BATTLE_MOBS.set(spawnTemplate);
+				if (spawnTemplate != null)
+				{
+					spawnTemplate.getGroups().forEach(SpawnGroup::despawnAll);
+					spawnTemplate.getGroups().forEach(SpawnGroup::spawnAll);
+				}
 				break;
 			}
 			case TIRON:
@@ -471,7 +479,11 @@ public class FrostLordCastleZone extends Script
 		int npcId = npc.getId();
 		if ((npcId == REGGIESYS_GLAKIAS[0]) || (npcId == REGGIESYS_GLAKIAS[1]) || (npcId == SLICING_GLAKIAS[0]) || (npcId == SLICING_GLAKIAS[1]))
 		{
-			SPAWN_BATTLE_MOBS.get().getGroups().forEach(SpawnGroup::despawnAll);
+			SpawnTemplate spawnTemplate = SPAWN_BATTLE_MOBS.get();
+			if (spawnTemplate != null)
+			{
+				spawnTemplate.getGroups().forEach(SpawnGroup::despawnAll);
+			}
 		}
 	}
 
