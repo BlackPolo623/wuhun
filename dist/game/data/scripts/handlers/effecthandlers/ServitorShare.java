@@ -69,18 +69,45 @@ public class ServitorShare extends AbstractEffect
 	@Override
 	public void pump(Creature effected, Skill skill)
 	{
+		// effected is the summon, need to get its owner
+		if (!effected.isSummon())
+		{
+			return;
+		}
+
 		final Player player = effected.asPlayer();
 		if (player == null)
 		{
 			return;
 		}
-		
+
+		// Cache player stat values BEFORE acquiring summon's lock to avoid deadlock
+		final Map<Stat, Double> cachedPlayerStats = new EnumMap<>(Stat.class);
 		final PlayerStat playerStat = player.getStat();
+		for (Entry<Stat, Float> entry : _sharedStats.entrySet())
+		{
+			final Stat stat = entry.getKey();
+			try
+			{
+				cachedPlayerStats.put(stat, playerStat.getValue(stat));
+			}
+			catch (Exception e)
+			{
+				// If we can't read player stat, skip this stat to avoid deadlock
+				continue;
+			}
+		}
+
+		// Now apply cached values to summon (only holds summon's lock)
 		final CreatureStat effectedStat = effected.getStat();
 		for (Entry<Stat, Float> entry : _sharedStats.entrySet())
 		{
 			final Stat stat = entry.getKey();
-			effectedStat.mergeAdd(stat, playerStat.getValue(stat) * entry.getValue());
+			final Double playerStatValue = cachedPlayerStats.get(stat);
+			if (playerStatValue != null)
+			{
+				effectedStat.mergeAdd(stat, playerStatValue * entry.getValue());
+			}
 		}
 	}
 	

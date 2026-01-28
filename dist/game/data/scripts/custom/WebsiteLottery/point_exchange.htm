@@ -1,0 +1,31 @@
+<html><body><title>積分兌換</title>
+<center>
+<br>
+<font color="LEVEL">積分兌換系統</font><br><br>
+
+<font color="LEVEL">網站積分:</font> <font color="00FF00">%web_points%</font><br>
+<font color="LEVEL">遊戲內 %item_name%:</font> <font color="FFFF00">%game_item_count%</font><br><br>
+
+<font color="LEVEL">兌換比率:</font><br>
+<font color="FFFF00">%item_per_unit% %item_name% ⇔ %points_per_unit% 積分</font><br><br>
+
+<img src="L2UI.SquareGray" width=280 height=1><br>
+
+<font color="LEVEL">道具兌換成積分</font><br>
+<font color="FF6666">※ 遊戲內道具 → 網站積分</font><br>
+<edit var="to_web_amount" width=100 height=15 type="number"><br>
+<button value="兌換" action="bypass -h Quest WebsiteLottery exchange_to_web $to_web_amount" width=100 height=20 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"><br><br>
+
+<img src="L2UI.SquareGray" width=280 height=1><br>
+
+<font color="LEVEL">積分兌換成道具</font><br>
+<font color="FF6666">※ 網站積分 → 遊戲內道具</font><br>
+<edit var="to_game_amount" width=100 height=15 type="number"><br>
+<button value="兌換" action="bypass -h Quest WebsiteLottery exchange_to_game $to_game_amount" width=100 height=20 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"><br><br>
+
+<img src="L2UI.SquareGray" width=280 height=1><br>
+
+<button value="返回主選單" action="bypass -h Quest WebsiteLottery main" width=120 height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+
+</center>
+</body></html>

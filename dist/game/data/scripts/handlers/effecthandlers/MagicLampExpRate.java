@@ -46,13 +46,21 @@ public class MagicLampExpRate extends AbstractStatPercentEffect
 			effected.getStat().mergeAdd(Stat.LAMP_BONUS_EXP, _amount);
 			effected.getStat().mergeAdd(Stat.LAMP_BONUS_BUFFS_COUNT, 1d);
 		}
-		
+
 		final Player player = effected.asPlayer();
 		if (player == null)
 		{
 			return;
 		}
-		
-		player.sendPacket(new ExMagicLampInfo(player));
+
+		// Schedule packet send AFTER pump completes to avoid deadlock
+		// Do not send packet while holding stat write lock
+		org.l2jmobius.commons.threads.ThreadPool.execute(() ->
+		{
+			if (player.isOnline())
+			{
+				player.sendPacket(new ExMagicLampInfo(player));
+			}
+		});
 	}
 }

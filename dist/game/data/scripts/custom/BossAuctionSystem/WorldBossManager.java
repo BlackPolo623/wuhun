@@ -16,6 +16,7 @@ import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
+import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
@@ -36,7 +37,7 @@ public class WorldBossManager extends Script
 	private static final Logger LOGGER = Logger.getLogger(WorldBossManager.class.getName());
 	private static WorldBossManager _instance;
 
-	private Npc _currentBoss = null;
+	private Monster _currentBoss = null;
 	private int _currentBossId = 0;
 	private long _nextSpawnTime = 0;
 	private ScheduledFuture<?> _spawnTask = null;
@@ -159,7 +160,7 @@ public class WorldBossManager extends Script
 
 		try
 		{
-			_currentBoss = new Npc(template);
+			_currentBoss = new Monster(template);
 			_currentBoss.setSpawn(null);
 			_currentBoss.setXYZ(loc.getX(), loc.getY(), loc.getZ());
 			_currentBoss.setHeading(0);
@@ -227,7 +228,7 @@ public class WorldBossManager extends Script
 	/**
 	 * 獲取當前首領
 	 */
-	public Npc getCurrentBoss()
+	public Monster getCurrentBoss()
 	{
 		return _currentBoss;
 	}

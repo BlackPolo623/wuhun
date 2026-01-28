@@ -71,13 +71,13 @@ public class SevenSignsDungeons extends Script
 	private static final Map<Integer, Location> ZIGGURAT_SPAWNS = new HashMap<>();
 	static
 	{
-		ZIGGURAT_SPAWNS.put(31075, new Location(148453, 211885, -2182));
+		ZIGGURAT_SPAWNS.put(31075, new Location(83591, 148832, -3427));
 		ZIGGURAT_SPAWNS.put(31076, new Location(12941, -248481, -9555));
 
-		ZIGGURAT_SPAWNS.put(31077, new Location(148236, 211948, -2181));
+		ZIGGURAT_SPAWNS.put(31077, new Location(83600, 148651, -3427));
 		ZIGGURAT_SPAWNS.put(31078, new Location(-21392, 77376, -5168));
 
-		ZIGGURAT_SPAWNS.put(31079, new Location(148675, 212016, -2175));
+		ZIGGURAT_SPAWNS.put(31079, new Location(83577, 148442, -3427));
 		ZIGGURAT_SPAWNS.put(31080, new Location(140784, 79680, -5424));
 	}
 
@@ -93,9 +93,9 @@ public class SevenSignsDungeons extends Script
 	private static final Map<Integer, Location> EXIT_TELEPORTS = new HashMap<>();
 	static
 	{
-		EXIT_TELEPORTS.put(31076, new Location(148453, 211885, -2182));
-		EXIT_TELEPORTS.put(31078, new Location(148236, 211948, -2181));
-		EXIT_TELEPORTS.put(31080, new Location(148675, 212016, -2175));
+		EXIT_TELEPORTS.put(31076, new Location(83591, 148832, -3427));
+		EXIT_TELEPORTS.put(31078, new Location(83600, 148651, -3427));
+		EXIT_TELEPORTS.put(31080, new Location(83577, 148442, -3427));
 	}
 
 	private static final Location GIRAN_TELEPORT = TeleportListData.getInstance().getTeleport(25).getLocation();

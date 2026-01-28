@@ -36,15 +36,18 @@ public class icegongg extends InstanceScript
 	// NPCs
 	private static final int SORA = 900018;
 
-	// 副本模板ID
-	private static final int TEMPLATE_ID_ZONE1 = 801;
-	private static final int TEMPLATE_ID_ZONE2 = 802;
-	private static final int TEMPLATE_ID_ZONE3 = 803;
+	// 副本模板ID（統一使用 801）
+	private static final int TEMPLATE_ID = 801;
 
-	// 副本實例ID
+	// 副本實例ID（8個區域）
 	private static final int INSTANCE_ID_ZONE1 = 600;
 	private static final int INSTANCE_ID_ZONE2 = 601;
 	private static final int INSTANCE_ID_ZONE3 = 602;
+	private static final int INSTANCE_ID_ZONE4 = 603;
+	private static final int INSTANCE_ID_ZONE5 = 604;
+	private static final int INSTANCE_ID_ZONE6 = 605;
+	private static final int INSTANCE_ID_ZONE7 = 606;
+	private static final int INSTANCE_ID_ZONE8 = 607;
 
 	// 傳送座標
 	private static final int X = 10441;
@@ -57,7 +60,7 @@ public class icegongg extends InstanceScript
 	private static final int EXIT_Z = -2177;
 
 	// ==================== 時間配置 ====================
-	private static final int DAILY_TIME_LIMIT_MINUTES = 480;  // 每日限制分鐘
+	private static final int DAILY_TIME_LIMIT_MINUTES = 600;  // 每日限制分鐘
 	private static final int ENTER_COST = 1000000;            // 進入金幣
 	private static final int RESET_HOUR = 6;                  // 重置時間：每天凌晨6點
 	private static final int RESET_MINUTE = 0;
@@ -74,9 +77,9 @@ public class icegongg extends InstanceScript
 
 	public icegongg()
 	{
-		super(TEMPLATE_ID_ZONE1, TEMPLATE_ID_ZONE2, TEMPLATE_ID_ZONE3);
+		super(TEMPLATE_ID);
 		addStartNpc(SORA);
-		addInstanceLeaveId(TEMPLATE_ID_ZONE1, TEMPLATE_ID_ZONE2, TEMPLATE_ID_ZONE3);
+		addInstanceLeaveId(TEMPLATE_ID);
 		addFirstTalkId(SORA);
 		addTalkId(SORA);
 	}
@@ -88,28 +91,45 @@ public class icegongg extends InstanceScript
 		{
 			String zoneName = event.substring(14);
 
-			int templateId;
 			int instanceId;
-
 			if (zoneName.startsWith("冰凍君主之城一區"))
 			{
-				templateId = TEMPLATE_ID_ZONE1;
 				instanceId = INSTANCE_ID_ZONE1;
 			}
 			else if (zoneName.startsWith("冰凍君主之城二區"))
 			{
-				templateId = TEMPLATE_ID_ZONE2;
 				instanceId = INSTANCE_ID_ZONE2;
 			}
 			else if (zoneName.startsWith("冰凍君主之城三區"))
 			{
-				templateId = TEMPLATE_ID_ZONE3;
 				instanceId = INSTANCE_ID_ZONE3;
+			}
+			else if (zoneName.startsWith("冰凍君主之城四區"))
+			{
+				instanceId = INSTANCE_ID_ZONE4;
+			}
+			else if (zoneName.startsWith("冰凍君主之城五區"))
+			{
+				instanceId = INSTANCE_ID_ZONE5;
+			}
+			else if (zoneName.startsWith("冰凍君主之城六區"))
+			{
+				instanceId = INSTANCE_ID_ZONE6;
+			}
+			else if (zoneName.startsWith("冰凍君主之城七區"))
+			{
+				instanceId = INSTANCE_ID_ZONE7;
+			}
+			else if (zoneName.startsWith("冰凍君主之城八區"))
+			{
+				instanceId = INSTANCE_ID_ZONE8;
 			}
 			else
 			{
 				return null;
 			}
+
+			int templateId = TEMPLATE_ID;
 
 			// ==================== 檢查並執行每日重置 ====================
 			checkAndResetDaily(player);
@@ -137,9 +157,7 @@ public class icegongg extends InstanceScript
 			{
 				Instance currentInstance = player.getInstanceWorld();
 				boolean actuallyInside = currentInstance != null &&
-						(currentInstance.getTemplateId() == TEMPLATE_ID_ZONE1 ||
-								currentInstance.getTemplateId() == TEMPLATE_ID_ZONE2 ||
-								currentInstance.getTemplateId() == TEMPLATE_ID_ZONE3);
+						currentInstance.getTemplateId() == TEMPLATE_ID;
 
 				if (!actuallyInside)
 				{
@@ -192,7 +210,7 @@ public class icegongg extends InstanceScript
 
 			// 日誌記錄
 			LOGGER.info("[IceGong] 玩家 " + player.getName() + " 進入副本" +
-					" | 區域=" + templateId +
+					" | 模板=" + templateId+ "(" + instance + ")" +
 					" | 剩餘時間=" + remainingMinutes + "分鐘" +
 					" | 進入時間戳=" + enterTime);
 

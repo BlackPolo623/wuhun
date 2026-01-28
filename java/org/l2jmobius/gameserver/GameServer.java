@@ -424,7 +424,10 @@ public class GameServer
 		{
 			CustomMailManager.getInstance();
 		}
-		
+
+		// 武魂網頁商城郵件管理器
+		wuhun.web.shop.WebShopMailManager.getInstance();
+
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_SERVER_START))
 		{
 			EventDispatcher.getInstance().notifyEventAsync(new OnServerStart());

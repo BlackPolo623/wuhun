@@ -5667,7 +5667,61 @@ public abstract class Creature extends WorldObject
 	{
 		_status.setCurrentMp(newMp, false);
 	}
-	
+
+	/**
+	 * Sets the creature's physical attack multiplier.
+	 * @param multiplier the multiplier to apply
+	 */
+	public void setPhysicalAttackMultiplier(double multiplier)
+	{
+		_stat.mergeMul(Stat.PHYSICAL_ATTACK, multiplier);
+	}
+
+	/**
+	 * Sets the creature's magical attack multiplier.
+	 * @param multiplier the multiplier to apply
+	 */
+	public void setMagicalAttackMultiplier(double multiplier)
+	{
+		_stat.mergeMul(Stat.MAGIC_ATTACK, multiplier);
+	}
+
+	/**
+	 * Sets the creature's physical defense multiplier.
+	 * @param multiplier the multiplier to apply
+	 */
+	public void setPhysicalDefenseMultiplier(double multiplier)
+	{
+		_stat.mergeMul(Stat.PHYSICAL_DEFENCE, multiplier);
+	}
+
+	/**
+	 * Sets the creature's magical defense multiplier.
+	 * @param multiplier the multiplier to apply
+	 */
+	public void setMagicalDefenseMultiplier(double multiplier)
+	{
+		_stat.mergeMul(Stat.MAGICAL_DEFENCE, multiplier);
+	}
+
+	/**
+	 * Sets the creature's attack speed multiplier.
+	 * @param multiplier the multiplier to apply
+	 */
+	public void setAttackSpeedMultiplier(double multiplier)
+	{
+		_stat.mergeMul(Stat.PHYSICAL_ATTACK_SPEED, multiplier);
+	}
+
+	/**
+	 * Sets the creature's casting speed multiplier.
+	 * @param multiplier the multiplier to apply
+	 */
+	public void setCastSpeedMultiplier(double multiplier)
+	{
+		_stat.mergeMul(Stat.MAGIC_ATTACK_SPEED, multiplier);
+	}
+
 	/**
 	 * Fully restores the creature's HP and MP to their maximum values.
 	 * <p>

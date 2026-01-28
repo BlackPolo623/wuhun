@@ -1,0 +1,45 @@
+<html><body><title>貨幣兌換</title>
+
+<!-- 玩家目前持有貨幣資訊 -->
+<table width=270>
+<tr><td><font color="LEVEL">目前持有金幣:</font></td>
+<td align=right><font color="FFFFFF">%adena_count%</font></td></tr>
+<tr><td><font color="LEVEL">目前持有 L Coin:</font></td>
+<td align=right><font color="FFFFFF">%lcoin_count%</font></td></tr>
+</table>
+
+<br><img src="L2UI_CH3.refinegrade1_21" width=264 height=1><br>
+
+<!-- 上半區: 金幣 → L Coin -->
+<table width=270 border=0 bgcolor="333333">
+<tr><td align=center height=30><font color="FFAA00">金幣 → L Coin</font></td></tr>
+</table>
+<table width=270>
+<tr><td colspan=2 align=center><font color="888888">50,000 金幣 = 1 L Coin</font></td></tr>
+<tr><td height=5></td></tr>
+<tr><td><font color="LEVEL">可兌換:</font></td>
+<td align=right><font color="00FF00">%max_lcoin% L Coin</font></td></tr>
+</table>
+<br>
+<button value="兌換 L Coin" action="bypass -h Quest CurrencyExchange exchange_adena_to_lcoin" width=200 height=30 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+
+<br><img src="L2UI_CH3.refinegrade1_21" width=264 height=1><br><br>
+
+<!-- 下半區: L Coin → 金幣 -->
+<table width=270 border=0 bgcolor="333333">
+<tr><td align=center height=30><font color="FFAA00">L Coin → 金幣</font></td></tr>
+</table>
+<table width=270>
+<tr><td colspan=2 align=center><font color="888888">1 L Coin = 50,000 金幣</font></td></tr>
+<tr><td height=5></td></tr>
+<tr><td><font color="LEVEL">可兌換:</font></td>
+<td align=right><font color="00FF00">%max_adena% 金幣</font></td></tr>
+</table>
+<br>
+<button value="兌換金幣" action="bypass -h Quest CurrencyExchange exchange_lcoin_to_adena" width=200 height=30 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+
+<br><br>
+<font color="777777">提示: 兌換即時生效，請謹慎操作</font>
+
+</center>
+</body></html>

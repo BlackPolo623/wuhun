@@ -1,0 +1,22 @@
+<html><body><title>貨幣兌換</title>
+<center>
+<br><img src="L2UI_CH3.herotower_deco" width=256 height=32><br>
+<table width=280 border=0 bgcolor="000000">
+<tr><td align=center><font color="FFFF00">L Coin → 金幣</font></td></tr>
+</table><br>
+
+<!-- 顯示目前擁有 -->
+<table width=400>
+<tr><td><font color="LEVEL">目前擁有 L Coin:%lcoin_count%</font></td></tr>
+<tr><td><font color="LEVEL">可兌換金幣:%max_adena%</font></td></tr>
+<tr><td height=10></td></tr>
+<tr><td ><font color="888888">兌換比例: 1 L Coin = 50,000 金幣</font></td></tr>
+</table><br>
+
+<!-- 輸入框 -->
+<br><font color="LEVEL">請輸入要兌換的 L Coin 數量:</font><br>
+<edit var="amount" width=120 height=15><br>
+<button value="確認兌換" action="bypass -h Quest CurrencyExchange convert_lcoin $amount" width=120 height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"><br>
+<button value="返回" action="bypass -h Quest CurrencyExchange back" width=120 height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</center>
+</body></html>

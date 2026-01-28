@@ -5,7 +5,14 @@ import java.util.concurrent.ScheduledFuture;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.events.EventType;
+import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
+import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
+import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogout;
 import org.l2jmobius.gameserver.model.script.Script;
+import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
 
 public class WuHunMingXiang extends Script
 {
@@ -134,6 +141,45 @@ public class WuHunMingXiang extends Script
 
 		int count = player.getVariables().getInt(VAR_COUNT, 0) + 1;
 		player.getVariables().set(VAR_COUNT, count);
+	}
+
+	/**
+	 * 玩家登入時檢查冥想狀態
+	 */
+	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	public void onPlayerLogin(OnPlayerLogin event)
+	{
+		Player player = event.getPlayer();
+		boolean doing = player.getVariables().getBoolean(VAR_DOING, false);
+
+		if (doing)
+		{
+			// 登入時如果還在冥想狀態，恢復固定和視覺效果
+			player.setImmobilized(true);
+			player.setBlockActions(true);
+			player.getEffectList().startAbnormalVisualEffect(AbnormalVisualEffect.V_C_R_PURSUIT_AIRBORNE);
+		}
+	}
+
+	/**
+	 * 玩家登出時清除冥想狀態
+	 */
+	@RegisterEvent(EventType.ON_PLAYER_LOGOUT)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	public void onPlayerLogout(OnPlayerLogout event)
+	{
+		Player player = event.getPlayer();
+		boolean doing = player.getVariables().getBoolean(VAR_DOING, false);
+
+		if (doing)
+		{
+			// 登出時清除冥想狀態，防止漏洞
+			player.getVariables().set(VAR_DOING, false);
+			player.setImmobilized(false);
+			player.setBlockActions(false);
+			player.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.V_C_R_PURSUIT_AIRBORNE);
+		}
 	}
 
 	public static void main(String[] args)

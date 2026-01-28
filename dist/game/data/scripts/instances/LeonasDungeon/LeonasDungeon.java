@@ -31,13 +31,9 @@ import org.l2jmobius.gameserver.managers.events.LeonasDungeonManager;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.item.enums.BodyPart;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
-import org.l2jmobius.gameserver.model.item.instance.Item;
-import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -55,11 +51,7 @@ public class LeonasDungeon extends InstanceScript
 {
 	// NPC
 	private static final int LEONA = 34357;
-	
-	// Items
-	private static final int LEONA_WEAPON_SPEAR = 97508;
-	private static final int LEONA_WEAPON_GUN = 97509;
-	
+
 	// Skills
 	private final SkillHolder FORCE_BUFF = new SkillHolder(4647, 4);
 	private final SkillHolder FORCE_DEBUFF = new SkillHolder(48403, 2);
@@ -76,21 +68,49 @@ public class LeonasDungeon extends InstanceScript
 		new SkillHolder(48653, 2), // Leona's Blessing - MP Recovery
 		new SkillHolder(48836, 1), // Leona's XP Blessing
 	};
-	private static final SkillHolder TRANSFORM_SKILL = new SkillHolder(48634, 1); // Transformation - Leona Blackbird
 	// Misc
 	private static final int EVENT_TRIGGER_LEONAS_AREA = 18108866;
 	private static final int TEMPLATE_ID = 236;
+
+	// Monster IDs
+	private static final int[] MOBS_DIFFICULTY_1 = {22535, 22536, 22537}; // Lith Guard, Lith Medium, Lith Prefect
+	private static final int[] MOBS_DIFFICULTY_2 = {22529, 22530, 22531}; // Nephilim Guardsman, Nephilim Cardinal, Nephilim Battlemaster
+	private static final int[] MOBS_DIFFICULTY_3 = {22538, 22539, 22540}; // Lilim's Guardian, Lilim's Assassin, Lilim's Soldier
+
+	// Scoring Configuration
+	private static final int POINTS_PER_KILL = 5; // 擊殺怪物基礎分數
+	private static final int POINTS_PER_MINUTE_LOW = 10; // 低難度每分鐘分數
+	private static final int POINTS_PER_MINUTE_MED = 20; // 中難度每分鐘分數
+	private static final int POINTS_PER_MINUTE_HIGH = 30; // 高難度每分鐘分數
+	private static final int POINTS_DEDUCT_PER_DEATH = 50; // 每次死亡扣分
+	private static final int POINTS_DEDUCT_HP_THRESHOLD = 50; // HP低於此%時扣分
+	private static final int POINTS_DEDUCT_LOW_HP = 200; // HP過低時扣分
+	private static final double MOB_POWER_INCREASE = 1.3; // 怪物每次重生增強5%
+
+	// Tiered Milestone System (無上限階梯式獎勵)
+	// 1000-1999: 每100隻 +5分
+	// 2000-2999: 每100隻 +7分
+	// 3000-3999: 每100隻 +9分
+	// 以此類推，每1000隻增加2分獎勵
 	
 	private LeonasDungeon()
 	{
 		super(TEMPLATE_ID);
-		
+
 		addFirstTalkId(LEONA);
 		addTalkId(LEONA);
 		addEnterZoneId(EVENT_TRIGGER_LEONAS_AREA);
 		addInstanceEnterId(TEMPLATE_ID);
 		addInstanceLeaveId(TEMPLATE_ID);
 		addInstanceDestroyId(TEMPLATE_ID);
+
+		// Register kill and spawn events for all mob types
+		addKillId(MOBS_DIFFICULTY_1);
+		addKillId(MOBS_DIFFICULTY_2);
+		addKillId(MOBS_DIFFICULTY_3);
+		addSpawnId(MOBS_DIFFICULTY_1);
+		addSpawnId(MOBS_DIFFICULTY_2);
+		addSpawnId(MOBS_DIFFICULTY_3);
 	}
 	
 	@Override
@@ -101,6 +121,13 @@ public class LeonasDungeon extends InstanceScript
 		{
 			case "enterInstance":
 			{
+				if (!LeonasDungeonManager.getInstance().canEnterDungeon(player))
+				{
+					final int remaining = LeonasDungeonManager.getInstance().getRemainingEntries(player);
+					player.sendMessage("你本週的進入次數已用完。剩餘次數: " + remaining + "/" + LeonasDungeonManager.MAX_WEEKLY_ENTRIES);
+					return null;
+				}
+
 				if (player.isInParty())
 				{
 					final Party party = player.getParty();
@@ -112,7 +139,15 @@ public class LeonasDungeon extends InstanceScript
 							player.sendMessage("玩家 " + member.getName() + " 必須靠近一些。");
 						}
 
-						enterInstance(member, npc, TEMPLATE_ID);
+						if (LeonasDungeonManager.getInstance().canEnterDungeon(member))
+						{
+							enterInstance(member, npc, TEMPLATE_ID);
+							LeonasDungeonManager.getInstance().incrementEntryCount(member);
+						}
+						else
+						{
+							member.sendMessage("你本週的進入次數已用完。");
+						}
 					}
 				}
 				else if (player.isGM())
@@ -192,41 +227,9 @@ public class LeonasDungeon extends InstanceScript
 				}
 				break;
 			}
-			case "getTransform":
+			case "viewScoreFormula":
 			{
-				final Instance instance = player.getInstanceWorld();
-				if (instance != null)
-				{
-					if (player.getInventory().isItemEquipped(LEONA_WEAPON_SPEAR) || (player.getInventory().isItemEquipped(LEONA_WEAPON_GUN)))
-					{
-						player.doCast(TRANSFORM_SKILL.getSkill());
-					}
-					else
-					{
-						return "notWeapon.htm";
-					}
-				}
-				break;
-			}
-			case "getWeapon":
-			{
-				final Instance instance = player.getInstanceWorld();
-				if (instance != null)
-				{
-					final boolean hasItem = (player.getInventory().getItemByItemId(LEONA_WEAPON_GUN) != null) || (player.getInventory().getItemByItemId(LEONA_WEAPON_SPEAR) != null);
-					if (!hasItem)
-					{
-						player.addItem(ItemProcessType.REWARD, player.getRace() == Race.SYLPH ? LEONA_WEAPON_GUN : LEONA_WEAPON_SPEAR, 1, player, true);
-						html = "gotWeapon.htm";
-					}
-					else
-					{
-						html = "haveWeapon.htm";
-					}
-					
-					return html;
-				}
-				break;
+				return "scoreFormula.htm";
 			}
 			case "setDifficulty1":
 			{
@@ -316,22 +319,37 @@ public class LeonasDungeon extends InstanceScript
 	{
 		final Instance instance = player.getInstanceWorld();
 		instance.setParameter("Leona_Running", true);
+		instance.setParameter("StartTime", System.currentTimeMillis());
 		player.getInstanceWorld().broadcastPacket(new ExSendUIEvent(player, false, false, (int) (instance.getRemainingTime() / 1000), 0, NpcStringId.TIME_LEFT));
 		instance.broadcastPacket(new OnEventTrigger(EVENT_TRIGGER_LEONAS_AREA, true));
 		if (npc.getId() == LEONA)
 		{
 			npc.setDisplayEffect(2);
 		}
-		
+
+		// Initialize score tracking for all players
+		final Collection<Player> members = instance.getPlayers();
+		for (Player member : members)
+		{
+			instance.getParameters().set("Player_" + member.getObjectId() + "_Score", 0);
+			instance.getParameters().set("Player_" + member.getObjectId() + "_Kills", 0);
+			instance.getParameters().set("Player_" + member.getObjectId() + "_Deaths", 0);
+		}
+
+		// Schedule periodic HP check and death tracking
 		final ScheduledFuture<?> scheduledTask = ThreadPool.scheduleAtFixedRate(() ->
 		{
-			final Collection<Player> members = instance.getPlayers();
-			for (Player member : members)
+			for (Player member : instance.getPlayers())
 			{
-				LeonasDungeonManager.getInstance().addPointsForPlayer(member, 60);
+				// Track if player died
+				if (member.isDead())
+				{
+					final int deaths = instance.getParameters().getInt("Player_" + member.getObjectId() + "_Deaths", 0);
+					instance.getParameters().set("Player_" + member.getObjectId() + "_Deaths", deaths + 1);
+				}
 			}
-		}, 60000, 60000);
-		
+		}, 5000, 5000);
+
 		instance.setParameter("RankingPointTask", scheduledTask);
 	}
 	
@@ -363,30 +381,9 @@ public class LeonasDungeon extends InstanceScript
 	public void onInstanceLeave(Player player, Instance instance)
 	{
 		player.sendPacket(new ExSendUIEvent(player, false, false, 0, 0, NpcStringId.TIME_LEFT));
-		
-		if (player.isTransformed())
-		{
-			player.untransform();
-		}
-		
+
+		// 清除所有效果（保留BUFF清除功能）
 		player.stopAllEffects();
-		
-		final Item itemToDisarm = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
-		if (itemToDisarm == null)
-		{
-			return;
-		}
-		
-		if ((itemToDisarm == player.getInventory().getItemByItemId(LEONA_WEAPON_SPEAR)) || (itemToDisarm == player.getInventory().getItemByItemId(LEONA_WEAPON_GUN)))
-		{
-			final BodyPart bodyPart = BodyPart.fromItem(itemToDisarm);
-			player.getInventory().unEquipItemInBodySlot(bodyPart);
-			
-			final InventoryUpdate iu = new InventoryUpdate();
-			iu.addModifiedItem(itemToDisarm);
-			player.sendInventoryUpdate(iu);
-			player.broadcastUserInfo();
-		}
 	}
 	
 	@Override
@@ -397,8 +394,114 @@ public class LeonasDungeon extends InstanceScript
 		{
 			task.cancel(true);
 		}
-		
+
+		// Calculate final score for all players
+		final Collection<Player> players = instance.getPlayers();
+		for (Player member : players)
+		{
+			final int finalScore = calculateFinalScore(member, instance);
+			LeonasDungeonManager.getInstance().updateBestScore(member, finalScore);
+			member.sendMessage("你的最終得分: " + finalScore + " 分");
+		}
+
 		instance.setParameter("RankingPointTask", null);
+	}
+
+	@Override
+	public void onKill(Npc npc, Player killer, boolean isSummon)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if (instance != null)
+		{
+			// Increment kill count for the killer
+			final int kills = instance.getParameters().getInt("Player_" + killer.getObjectId() + "_Kills", 0) + 1;
+			instance.getParameters().set("Player_" + killer.getObjectId() + "_Kills", kills);
+
+			// Add points for kill
+			addScoreToPlayer(killer, instance, POINTS_PER_KILL);
+
+			// Check tiered milestone bonuses (階梯式獎勵)
+			if (kills >= 1000)
+			{
+				// 檢查是否剛好達到100的整數倍
+				if ((kills % 100) == 0)
+				{
+					final int tier = kills / 1000; // 1000-1999=1, 2000-2999=2, etc.
+					final int bonusPoints = 5 + (tier - 1) * 2; // 1000檔:5分, 2000檔:7分, 3000檔:9分
+					addScoreToPlayer(killer, instance, bonusPoints);
+					killer.sendMessage("擊殺里程碑！擊殺 " + kills + " 隻怪物，獲得 " + bonusPoints + " 分獎勵！");
+				}
+			}
+
+			// Track mob for respawn with increased power
+			final int mobRespawnCount = instance.getParameters().getInt("Mob_" + npc.getId() + "_RespawnCount", 0);
+			instance.getParameters().set("Mob_" + npc.getId() + "_RespawnCount", mobRespawnCount + 1);
+		}
+	}
+
+	@Override
+	public void onSpawn(Npc npc)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		if (instance != null)
+		{
+			// Apply power increase based on respawn count
+			final int respawnCount = instance.getParameters().getInt("Mob_" + npc.getId() + "_RespawnCount", 0);
+			if (respawnCount > 0)
+			{
+				final double powerMultiplier = Math.pow(MOB_POWER_INCREASE, respawnCount);
+
+				// Apply HP and MP multiplier
+				npc.setCurrentHp(npc.getMaxHp() * powerMultiplier);
+				npc.setCurrentMp(npc.getMaxMp() * powerMultiplier);
+
+				// Apply stat multipliers using new source code methods
+				npc.setPhysicalAttackMultiplier(powerMultiplier);
+				npc.setMagicalAttackMultiplier(powerMultiplier);
+				npc.setPhysicalDefenseMultiplier(powerMultiplier);
+				npc.setMagicalDefenseMultiplier(powerMultiplier);
+				npc.setAttackSpeedMultiplier(powerMultiplier);
+				npc.setCastSpeedMultiplier(powerMultiplier);
+			}
+		}
+	}
+
+	private void addScoreToPlayer(Player player, Instance instance, int points)
+	{
+		final int currentScore = instance.getParameters().getInt("Player_" + player.getObjectId() + "_Score", 0);
+		instance.getParameters().set("Player_" + player.getObjectId() + "_Score", currentScore + points);
+	}
+
+	private int calculateFinalScore(Player player, Instance instance)
+	{
+		int finalScore = instance.getParameters().getInt("Player_" + player.getObjectId() + "_Score", 0);
+
+		// Add time-based points based on difficulty
+		final int difficulty = instance.getParameters().getInt("INSTANCE_DIFFICULTY", 1);
+		final long timeInMinutes = (30 * 60000 - instance.getRemainingTime()) / 60000;
+		int pointsPerMinute = POINTS_PER_MINUTE_LOW;
+		if (difficulty == 2)
+		{
+			pointsPerMinute = POINTS_PER_MINUTE_MED;
+		}
+		else if (difficulty == 3)
+		{
+			pointsPerMinute = POINTS_PER_MINUTE_HIGH;
+		}
+		finalScore += (int) (timeInMinutes * pointsPerMinute);
+
+		// Deduct points for deaths
+		final int deaths = instance.getParameters().getInt("Player_" + player.getObjectId() + "_Deaths", 0);
+		finalScore -= deaths * POINTS_DEDUCT_PER_DEATH;
+
+		// Deduct points if HP is too low at the end
+		final double hpPercent = (player.getCurrentHp() / player.getMaxHp()) * 100;
+		if (hpPercent < POINTS_DEDUCT_HP_THRESHOLD)
+		{
+			finalScore -= POINTS_DEDUCT_LOW_HP;
+		}
+
+		return Math.max(0, finalScore);
 	}
 	
 	public static void main(String[] args)

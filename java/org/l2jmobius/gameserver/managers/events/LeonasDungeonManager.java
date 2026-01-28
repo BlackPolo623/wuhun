@@ -51,13 +51,17 @@ public class LeonasDungeonManager
 {
 	private static final Logger LOGGER = Logger.getLogger(LeonasDungeonManager.class.getName());
 	
-	private static final String INSERT_DUNGEON_RANKING = "REPLACE INTO leonas_dungeon_ranking (charId, points) VALUES (?, ?)";
-	private static final String SELECT_DUNGEON_RANKING = "SELECT charId, points FROM leonas_dungeon_ranking";
+	private static final String INSERT_DUNGEON_RANKING = "REPLACE INTO leonas_dungeon_ranking (charId, points, weekly_entries) VALUES (?, ?, ?)";
+	private static final String SELECT_DUNGEON_RANKING = "SELECT charId, points, weekly_entries FROM leonas_dungeon_ranking";
 	private static final String DELETE_DUNGEON_RANKING = "DELETE FROM leonas_dungeon_ranking WHERE charId=?";
 	private static final String DELETE_ALL_DUNGEON_RANKING = "DELETE FROM leonas_dungeon_ranking";
-	
+
 	private final ConcurrentHashMap<Integer, AtomicInteger> _playerPoints = new ConcurrentHashMap<>();
+	private final ConcurrentHashMap<Integer, AtomicInteger> _playerWeeklyEntries = new ConcurrentHashMap<>();
 	private final List<Integer> _rewardedPlayers = new ArrayList<>();
+
+	// Configuration
+	public static final int MAX_WEEKLY_ENTRIES = 5;
 	
 	public LeonasDungeonManager()
 	{
@@ -90,6 +94,34 @@ public class LeonasDungeonManager
 	public void addPointsForPlayer(Player player, int val)
 	{
 		_playerPoints.computeIfAbsent(player.getObjectId(), k -> new AtomicInteger()).addAndGet(val);
+		saveDungeonRankingToDatabase();
+	}
+
+	public void updateBestScore(Player player, int score)
+	{
+		final AtomicInteger currentBest = _playerPoints.computeIfAbsent(player.getObjectId(), k -> new AtomicInteger(0));
+		if (score > currentBest.get())
+		{
+			currentBest.set(score);
+			saveDungeonRankingToDatabase();
+		}
+	}
+
+	public boolean canEnterDungeon(Player player)
+	{
+		final int entries = _playerWeeklyEntries.getOrDefault(player.getObjectId(), new AtomicInteger(0)).get();
+		return entries < MAX_WEEKLY_ENTRIES;
+	}
+
+	public int getRemainingEntries(Player player)
+	{
+		final int entries = _playerWeeklyEntries.getOrDefault(player.getObjectId(), new AtomicInteger(0)).get();
+		return Math.max(0, MAX_WEEKLY_ENTRIES - entries);
+	}
+
+	public void incrementEntryCount(Player player)
+	{
+		_playerWeeklyEntries.computeIfAbsent(player.getObjectId(), k -> new AtomicInteger()).incrementAndGet();
 		saveDungeonRankingToDatabase();
 	}
 	
@@ -171,6 +203,7 @@ public class LeonasDungeonManager
 	public void clear()
 	{
 		_playerPoints.clear();
+		_playerWeeklyEntries.clear();
 		_rewardedPlayers.clear();
 	}
 	
@@ -185,6 +218,7 @@ public class LeonasDungeonManager
 				{
 					statement.setInt(1, playerId);
 					statement.setInt(2, points.get());
+					statement.setInt(3, _playerWeeklyEntries.getOrDefault(playerId, new AtomicInteger(0)).get());
 					statement.addBatch();
 				}
 				catch (SQLException e)
@@ -192,7 +226,7 @@ public class LeonasDungeonManager
 					LOGGER.severe(getClass().getSimpleName() + ": Error preparing batch statement: " + e.getMessage());
 				}
 			});
-			
+
 			statement.executeBatch();
 			// No need to call con.commit() as HikariCP autocommit is true.
 		}
@@ -205,6 +239,7 @@ public class LeonasDungeonManager
 	public void restoreDungeonRankingFromDatabase()
 	{
 		_playerPoints.clear();
+		_playerWeeklyEntries.clear();
 		try (Connection con = DatabaseFactory.getConnection();
 			PreparedStatement statement = con.prepareStatement(SELECT_DUNGEON_RANKING);
 			ResultSet result = statement.executeQuery())
@@ -213,7 +248,9 @@ public class LeonasDungeonManager
 			{
 				final int playerId = result.getInt("charId");
 				final int points = result.getInt("points");
+				final int weeklyEntries = result.getInt("weekly_entries");
 				_playerPoints.put(playerId, new AtomicInteger(points));
+				_playerWeeklyEntries.put(playerId, new AtomicInteger(weeklyEntries));
 			}
 		}
 		catch (SQLException e)
@@ -234,8 +271,9 @@ public class LeonasDungeonManager
 		{
 			LOGGER.severe(getClass().getSimpleName() + ": Error deleting Leona Dungeon player from database: " + e.getMessage());
 		}
-		
+
 		_playerPoints.remove(playerId);
+		_playerWeeklyEntries.remove(playerId);
 	}
 	
 	public void deleteAllDungeonRankingData()

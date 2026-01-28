@@ -3,6 +3,7 @@ package custom.BossAuctionSystem;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -99,7 +100,7 @@ public class WorldBossNpc extends Script
 		String bossStatus;
 		if (manager.hasBoss())
 		{
-			Npc boss = manager.getCurrentBoss();
+			Monster boss = manager.getCurrentBoss();
 			double currentHp = boss.getStatus().getCurrentHp();
 			double maxHp = boss.getMaxHp();
 			int hpPercent = (int) ((currentHp * 100) / maxHp);
