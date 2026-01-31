@@ -208,7 +208,7 @@ public class Lunhuiinstance extends InstanceScript
 				if (player.isOnline())
 				{
 					// 設定你要傳送的地點座標
-					player.teleToLocation(148145, 213248, -2178, null);
+					player.teleToLocation(83090, 148649, -3408, null);
 					player.sendPacket(new ExShowScreenMessage("已傳送回普通世界", 3000));
 				}
 			}, 5000); // 5000毫秒 = 5秒

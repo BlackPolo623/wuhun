@@ -18,6 +18,7 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
+import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
@@ -38,6 +39,7 @@ public class WorldBossManager extends Script
 	private static WorldBossManager _instance;
 
 	private Monster _currentBoss = null;
+	private Spawn _currentSpawn = null;
 	private int _currentBossId = 0;
 	private long _nextSpawnTime = 0;
 	private ScheduledFuture<?> _spawnTask = null;
@@ -160,12 +162,19 @@ public class WorldBossManager extends Script
 
 		try
 		{
-			_currentBoss = new Monster(template);
-			_currentBoss.setSpawn(null);
-			_currentBoss.setXYZ(loc.getX(), loc.getY(), loc.getZ());
-			_currentBoss.setHeading(0);
-			_currentBoss.setCurrentHpMp(_currentBoss.getMaxHp(), _currentBoss.getMaxMp());
-			_currentBoss.spawnMe();
+			// 創建 Spawn 物件,讓掉落攔截機制可以正常運作
+			_currentSpawn = new Spawn(template);
+			_currentSpawn.setLocation(loc);
+			_currentSpawn.setHeading(0);
+			_currentSpawn.setRespawnDelay(0);
+			_currentSpawn.setAmount(1);
+
+			// 使用 Spawn 來產生怪物
+			_currentBoss = (Monster) _currentSpawn.doSpawn(false);
+			_currentBoss.setRandomWalking(false);
+
+			// 停止自動重生
+			_currentSpawn.stopRespawn();
 
 			// 公告
 			if (WorldBossConfig.isAnnounceSpawn())
@@ -191,6 +200,14 @@ public class WorldBossManager extends Script
 					if (_currentBoss != null && !_currentBoss.isDead())
 					{
 						_currentBoss.deleteMe();
+
+						// 停止並刪除 Spawn,防止自動重生
+						if (_currentSpawn != null)
+						{
+							_currentSpawn.stopRespawn();
+							_currentSpawn = null;
+						}
+
 						_currentBoss = null;
 						LOGGER.info("【世界首領】已自動消失(超時)");
 					}
@@ -218,6 +235,13 @@ public class WorldBossManager extends Script
 			{
 				_despawnTask.cancel(false);
 				_despawnTask = null;
+			}
+
+			// 停止並刪除 Spawn,防止自動重生
+			if (_currentSpawn != null)
+			{
+				_currentSpawn.stopRespawn();
+				_currentSpawn = null;
 			}
 
 			_currentBoss = null;

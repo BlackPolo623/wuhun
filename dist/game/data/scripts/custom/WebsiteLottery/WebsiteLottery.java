@@ -1,14 +1,13 @@
 package custom.WebsiteLottery;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
+import java.util.logging.Logger;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -19,11 +18,17 @@ import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
- * 網站抽獎系統 NPC
+ * 網站積分兌換系統 NPC
  * @author 黑普羅
+ *
+ * 積分兌換採用本地佇列機制，避免跨地域延遲：
+ * 1. 玩家兌換時，先在本地遊戲DB寫入佇列
+ * 2. WebsiteExchangeProcessor 腳本會定時檢查佇列並處理
  */
 public class WebsiteLottery extends Script
 {
+	private static final Logger LOGGER = Logger.getLogger(WebsiteLottery.class.getName());
+
 	// NPC ID
 	private static final int NPC_ID = 900034;
 
@@ -31,16 +36,25 @@ public class WebsiteLottery extends Script
 	private static final String HTML_PATH = "data/scripts/custom/WebsiteLottery/";
 
 	// 積分兌換配置
-	private static final int POINT_ITEM_ID = 91663;           // 兌換積分的道具ID (預設: 金幣)
-	private static final long POINT_ITEM_COUNT = 1;  // 單位數量 (100萬金幣)
-	private static final int POINTS_PER_UNIT = 1;          // 每單位兌換的積分數
+	private static final int POINT_ITEM_ID = 91663;           // 兌換積分的道具ID
+	private static final long POINT_ITEM_COUNT = 1;           // 單位數量
+	private static final int POINTS_PER_UNIT = 1;             // 每單位兌換的積分數
+
+	// 網站資料庫連線設定
+	private static final String WEB_DB_URL = "jdbc:mysql://et9w7o.stackhero-network.com:5063/wuhun_web?useSSL=true&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+	private static final String WEB_DB_USER = "root";
+	private static final String WEB_DB_PASS = "5LYOR0g3oh1WJ7Ds73YtahZjDOgciznj";
 
 	public WebsiteLottery()
 	{
 		addStartNpc(NPC_ID);
 		addTalkId(NPC_ID);
 		addFirstTalkId(NPC_ID);
+
+		LOGGER.info("[WebsiteLottery] 積分兌換 NPC 已載入（即時兌換模式）");
 	}
+
+	// ==================== NPC 事件處理 ====================
 
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
@@ -48,32 +62,6 @@ public class WebsiteLottery extends Script
 		if (event.equals("main"))
 		{
 			return showMainPage(player);
-		}
-		else if (event.equals("receive_rewards"))
-		{
-			return showReceiveRewardsPage(player);
-		}
-		else if (event.equals("view_history"))
-		{
-			return showHistoryPage(player, 1);
-		}
-		else if (event.startsWith("history_page_"))
-		{
-			int page = Integer.parseInt(event.substring("history_page_".length()));
-			return showHistoryPage(player, page);
-		}
-		else if (event.startsWith("receive_"))
-		{
-			int rewardId = Integer.parseInt(event.substring("receive_".length()));
-			return receiveReward(player, rewardId);
-		}
-		else if (event.equals("receive_all"))
-		{
-			return receiveAllRewards(player);
-		}
-		else if (event.equals("point_exchange"))
-		{
-			return showPointExchangePage(player);
 		}
 		else if (event.startsWith("exchange_to_web "))
 		{
@@ -111,6 +99,8 @@ public class WebsiteLottery extends Script
 		return showMainPage(player);
 	}
 
+	// ==================== 頁面顯示 ====================
+
 	/**
 	 * 顯示主頁面
 	 */
@@ -120,36 +110,55 @@ public class WebsiteLottery extends Script
 		replacements.put("char_id", String.valueOf(player.getObjectId()));
 		replacements.put("char_name", player.getName());
 
-		// 檢查綁定狀態和積分
+		// 檢查綁定狀態
 		String boundUsername = getBoundUsername(player);
-		int webPoints = 0;
+
 		if (boundUsername != null)
 		{
-			replacements.put("bind_status", "<font color=\"00FF00\">已綁定</font>");
-			replacements.put("bind_info", "<font color=\"LEVEL\">綁定的帳號:</font> <font color=\"FFFF00\">" + boundUsername + "</font>");
-			webPoints = getWebPoints(player);
+			// 已綁定，顯示兌換頁面
+			return showExchangePage(player, boundUsername);
 		}
 		else
 		{
+			// 未綁定，顯示提示頁面
 			replacements.put("bind_status", "<font color=\"FF6666\">未綁定</font>");
-			replacements.put("bind_info", "<font color=\"FF6666\">請先到網站使用上方的角色專屬ID進行綁定</font>");
+			return showHtmlFile(player, "not_bound.htm", replacements);
 		}
+	}
+
+	/**
+	 * 顯示兌換頁面（已綁定玩家）
+	 */
+	private String showExchangePage(Player player, String boundUsername)
+	{
+		Map<String, String> replacements = new HashMap<>();
+		replacements.put("char_id", String.valueOf(player.getObjectId()));
+		replacements.put("char_name", player.getName());
+		replacements.put("bind_status", "<font color=\"00FF00\">已綁定</font>");
+		replacements.put("bound_username", boundUsername);
+
+		// 獲取遊戲內道具數量
+		long gameItemCount = player.getInventory().getInventoryItemCount(POINT_ITEM_ID, -1);
+		replacements.put("game_item_count", formatNumber(gameItemCount));
+
+		// 獲取道具名稱
+		ItemTemplate itemTemplate = ItemData.getInstance().getTemplate(POINT_ITEM_ID);
+		String itemName = itemTemplate != null ? itemTemplate.getName() : "道具";
+		replacements.put("item_name", itemName);
+
+		// 獲取網站積分
+		int webPoints = getWebPoints(player);
 		replacements.put("web_points", String.valueOf(webPoints));
 
-		// 檢查待領取獎勵數量
-		int pendingCount = getPendingRewardsCount(player);
-		replacements.put("pending_count", String.valueOf(pendingCount));
-
-		if (pendingCount > 0)
-		{
-			replacements.put("reward_notice", "<font color=\"FFFF00\">您有 " + pendingCount + " 個待領取的獎勵！</font>");
-		}
-		else
-		{
-			replacements.put("reward_notice", "<font color=\"LEVEL\">目前沒有待領取的獎勵</font>");
-		}
-
 		return showHtmlFile(player, "main.htm", replacements);
+	}
+
+	/**
+	 * 獲取網站資料庫連線
+	 */
+	private Connection getWebDatabaseConnection() throws SQLException
+	{
+		return DriverManager.getConnection(WEB_DB_URL, WEB_DB_USER, WEB_DB_PASS);
 	}
 
 	/**
@@ -157,7 +166,7 @@ public class WebsiteLottery extends Script
 	 */
 	private String getBoundUsername(Player player)
 	{
-		try (Connection con = DatabaseFactory.getConnection();
+		try (Connection con = getWebDatabaseConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT username FROM bound_accounts WHERE char_id = ?"))
 		{
 			ps.setInt(1, player.getObjectId());
@@ -171,7 +180,7 @@ public class WebsiteLottery extends Script
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			LOGGER.warning("[WebsiteLottery] 查詢綁定帳號失敗: " + e.getMessage());
 		}
 		return null;
 	}
@@ -181,7 +190,7 @@ public class WebsiteLottery extends Script
 	 */
 	private int getWebPoints(Player player)
 	{
-		try (Connection con = DatabaseFactory.getConnection();
+		try (Connection con = getWebDatabaseConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT points FROM bound_accounts WHERE char_id = ?"))
 		{
 			ps.setInt(1, player.getObjectId());
@@ -195,44 +204,11 @@ public class WebsiteLottery extends Script
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			LOGGER.warning("[WebsiteLottery] 查詢網站積分失敗: " + e.getMessage());
 		}
 		return 0;
 	}
 
-	/**
-	 * 顯示積分兌換頁面
-	 */
-	private String showPointExchangePage(Player player)
-	{
-		// 檢查是否已綁定
-		String boundUsername = getBoundUsername(player);
-		if (boundUsername == null)
-		{
-			return showHtmlFile(player, "error.htm", createMap("message", "您尚未綁定網站帳號<br>請先綁定後再使用積分功能"));
-		}
-
-		Map<String, String> replacements = new HashMap<>();
-
-		// 獲取網站積分
-		int webPoints = getWebPoints(player);
-		replacements.put("web_points", String.valueOf(webPoints));
-
-		// 獲取遊戲內道具數量
-		long gameItemCount = player.getInventory().getInventoryItemCount(POINT_ITEM_ID, -1);
-		replacements.put("game_item_count", formatNumber(gameItemCount));
-
-		// 獲取道具名稱
-		ItemTemplate itemTemplate = ItemData.getInstance().getTemplate(POINT_ITEM_ID);
-		String itemName = itemTemplate != null ? itemTemplate.getName() : "道具";
-		replacements.put("item_name", itemName);
-
-		// 兌換比率資訊
-		replacements.put("item_per_unit", formatNumber(POINT_ITEM_COUNT));
-		replacements.put("points_per_unit", String.valueOf(POINTS_PER_UNIT));
-
-		return showHtmlFile(player, "point_exchange.htm", replacements);
-	}
 
 	/**
 	 * 將遊戲道具兌換成網站積分
@@ -266,39 +242,48 @@ public class WebsiteLottery extends Script
 		// 計算獲得的積分
 		int pointsToAdd = POINTS_PER_UNIT * units;
 
-		try (Connection con = DatabaseFactory.getConnection())
+		// 先扣除道具
+		if (!player.destroyItemByItemId(ItemProcessType.NONE, POINT_ITEM_ID, totalItemCount, player, true))
 		{
-			// 扣除道具
-			if (!player.destroyItemByItemId(ItemProcessType.NONE, POINT_ITEM_ID, totalItemCount, player, true))
+			return showHtmlFile(player, "error.htm", createMap("message", "扣除道具失敗"));
+		}
+
+		// 直接更新網站資料庫積分
+		try (Connection con = getWebDatabaseConnection();
+			PreparedStatement ps = con.prepareStatement("UPDATE bound_accounts SET points = points + ? WHERE char_id = ?"))
+		{
+			ps.setInt(1, pointsToAdd);
+			ps.setInt(2, player.getObjectId());
+			int updated = ps.executeUpdate();
+
+			if (updated > 0)
 			{
-				return showHtmlFile(player, "error.htm", createMap("message", "扣除道具失敗"));
+				LOGGER.info("[WebsiteLottery] 玩家 " + player.getName() + " 兌換道具->積分成功，增加積分: " + pointsToAdd);
 			}
-
-			// 增加網站積分
-			try (PreparedStatement ps = con.prepareStatement("UPDATE bound_accounts SET points = points + ? WHERE char_id = ?"))
+			else
 			{
-				ps.setInt(1, pointsToAdd);
-				ps.setInt(2, player.getObjectId());
-				ps.executeUpdate();
+				// 更新失敗，返還道具
+				player.addItem(ItemProcessType.NONE, POINT_ITEM_ID, totalItemCount, player, true);
+				return showHtmlFile(player, "error.htm", createMap("message", "綁定資料異常，請聯繫管理員"));
 			}
-
-			ItemTemplate itemTemplate = ItemData.getInstance().getTemplate(POINT_ITEM_ID);
-			String itemName = itemTemplate != null ? itemTemplate.getName() : "道具";
-
-			Map<String, String> replacements = new HashMap<>();
-			replacements.put("title", "兌換成功！");
-			replacements.put("line1", "消耗 " + formatNumber(totalItemCount) + " " + itemName);
-			replacements.put("line2", "獲得 " + pointsToAdd + " 網站積分");
-
-			return showHtmlFile(player, "success.htm", replacements);
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
-			// 如果更新失敗，返還道具
+			LOGGER.warning("[WebsiteLottery] 更新網站積分失敗: " + e.getMessage());
+			// 更新失敗，返還道具
 			player.addItem(ItemProcessType.NONE, POINT_ITEM_ID, totalItemCount, player, true);
-			return showHtmlFile(player, "error.htm", createMap("message", "資料庫錯誤，請聯繫管理員"));
+			return showHtmlFile(player, "error.htm", createMap("message", "系統繁忙，請稍後再試"));
 		}
+
+		ItemTemplate itemTemplate = ItemData.getInstance().getTemplate(POINT_ITEM_ID);
+		String itemName = itemTemplate != null ? itemTemplate.getName() : "道具";
+
+		Map<String, String> replacements = new HashMap<>();
+		replacements.put("title", "兌換成功！");
+		replacements.put("line1", "消耗 " + formatNumber(totalItemCount) + " " + itemName);
+		replacements.put("line2", "獲得 " + pointsToAdd + " 網站積分");
+
+		return showHtmlFile(player, "success.htm", replacements);
 	}
 
 	/**
@@ -320,387 +305,56 @@ public class WebsiteLottery extends Script
 
 		// 計算需要的積分
 		int pointsNeeded = POINTS_PER_UNIT * units;
-		int currentPoints = getWebPoints(player);
-
-		if (currentPoints < pointsNeeded)
-		{
-			return showHtmlFile(player, "error.htm", createMap("message",
-				"積分不足<br>需要: " + pointsNeeded + " 積分<br>擁有: " + currentPoints + " 積分"));
-		}
 
 		// 計算獲得的道具數量
 		long itemsToGive = POINT_ITEM_COUNT * units;
 
-		try (Connection con = DatabaseFactory.getConnection())
+		// 檢查網站積分是否足夠
+		int currentPoints = getWebPoints(player);
+		if (currentPoints < pointsNeeded)
 		{
-			// 扣除網站積分
-			try (PreparedStatement ps = con.prepareStatement("UPDATE bound_accounts SET points = points - ? WHERE char_id = ? AND points >= ?"))
-			{
-				ps.setInt(1, pointsNeeded);
-				ps.setInt(2, player.getObjectId());
-				ps.setInt(3, pointsNeeded);
-				int updated = ps.executeUpdate();
-
-				if (updated == 0)
-				{
-					return showHtmlFile(player, "error.htm", createMap("message", "積分不足或扣除失敗"));
-				}
-			}
-
-			// 給予道具
-			player.addItem(ItemProcessType.NONE, POINT_ITEM_ID, itemsToGive, player, true);
-
-			ItemTemplate itemTemplate = ItemData.getInstance().getTemplate(POINT_ITEM_ID);
-			String itemName = itemTemplate != null ? itemTemplate.getName() : "道具";
-
-			Map<String, String> replacements = new HashMap<>();
-			replacements.put("title", "兌換成功！");
-			replacements.put("line1", "消耗 " + pointsNeeded + " 網站積分");
-			replacements.put("line2", "獲得 " + formatNumber(itemsToGive) + " " + itemName);
-
-			return showHtmlFile(player, "success.htm", replacements);
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-			return showHtmlFile(player, "error.htm", createMap("message", "資料庫錯誤，請聯繫管理員"));
-		}
-	}
-
-	/**
-	 * 顯示待領取獎勵頁面
-	 */
-	private String showReceiveRewardsPage(Player player)
-	{
-		List<RewardData> rewards = getPendingRewards(player);
-
-		StringBuilder rewardList = new StringBuilder();
-
-		if (rewards.isEmpty())
-		{
-			rewardList.append("<font color=\"LEVEL\">目前沒有待領取的獎勵</font><br>");
-		}
-		else
-		{
-			rewardList.append("<table width=280>");
-			rewardList.append("<tr><td width=180><font color=\"LEVEL\">獎品名稱</font></td><td width=50><font color=\"LEVEL\">數量</font></td><td width=50></td></tr>");
-
-			for (RewardData reward : rewards)
-			{
-				rewardList.append("<tr>");
-				rewardList.append("<td width=180><font color=\"FFFF00\">").append(reward.itemName).append("</font></td>");
-				rewardList.append("<td width=50><font color=\"LEVEL\">").append(reward.itemCount).append("</font></td>");
-				rewardList.append("<td width=50><button value=\"領取\" action=\"bypass -h Quest WebsiteLottery receive_").append(reward.id).append("\" width=45 height=20 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
-				rewardList.append("</tr>");
-			}
-
-			rewardList.append("</table><br>");
-
-			if (rewards.size() > 1)
-			{
-				rewardList.append("<button value=\"一鍵領取全部\" action=\"bypass -h Quest WebsiteLottery receive_all\" width=120 height=25 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"><br>");
-			}
+			return showHtmlFile(player, "error.htm", createMap("message",
+				"積分不足<br>需要: " + pointsNeeded + " 積分<br>目前: " + currentPoints + " 積分"));
 		}
 
-		Map<String, String> replacements = new HashMap<>();
-		replacements.put("reward_list", rewardList.toString());
-		replacements.put("total_count", String.valueOf(rewards.size()));
-
-		return showHtmlFile(player, "receive_rewards.htm", replacements);
-	}
-
-	/**
-	 * 顯示歷史記錄頁面
-	 */
-	private String showHistoryPage(Player player, int page)
-	{
-		int pageSize = 10;
-		int offset = (page - 1) * pageSize;
-
-		List<HistoryData> history = getLotteryHistory(player, offset, pageSize);
-		int totalCount = getLotteryHistoryCount(player);
-		int totalPages = (int) Math.ceil((double) totalCount / pageSize);
-
-		StringBuilder historyList = new StringBuilder();
-
-		if (history.isEmpty())
+		// 先扣除網站積分
+		try (Connection con = getWebDatabaseConnection();
+			PreparedStatement ps = con.prepareStatement("UPDATE bound_accounts SET points = points - ? WHERE char_id = ? AND points >= ?"))
 		{
-			historyList.append("<font color=\"LEVEL\">目前沒有抽獎記錄</font><br>");
-		}
-		else
-		{
-			historyList.append("<table width=280>");
-			historyList.append("<tr><td width=180><font color=\"LEVEL\">獎品名稱</font></td><td width=100><font color=\"LEVEL\">時間</font></td></tr>");
-
-			for (HistoryData record : history)
-			{
-				historyList.append("<tr>");
-				historyList.append("<td width=180><font color=\"FFFF00\">").append(record.prizeName).append("</font></td>");
-				historyList.append("<td width=100><font color=\"LEVEL\">").append(formatDateTime(record.createdAt)).append("</font></td>");
-				historyList.append("</tr>");
-			}
-
-			historyList.append("</table><br>");
-
-			// 分頁按鈕
-			if (totalPages > 1)
-			{
-				historyList.append("<table width=280><tr>");
-
-				if (page > 1)
-				{
-					historyList.append("<td width=70><button value=\"上一頁\" action=\"bypass -h Quest WebsiteLottery history_page_").append(page - 1).append("\" width=65 height=20 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
-				}
-				else
-				{
-					historyList.append("<td width=70></td>");
-				}
-
-				historyList.append("<td width=140 align=center><font color=\"LEVEL\">第 ").append(page).append(" / ").append(totalPages).append(" 頁</font></td>");
-
-				if (page < totalPages)
-				{
-					historyList.append("<td width=70><button value=\"下一頁\" action=\"bypass -h Quest WebsiteLottery history_page_").append(page + 1).append("\" width=65 height=20 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
-				}
-				else
-				{
-					historyList.append("<td width=70></td>");
-				}
-
-				historyList.append("</tr></table>");
-			}
-		}
-
-		Map<String, String> replacements = new HashMap<>();
-		replacements.put("history_list", historyList.toString());
-		replacements.put("total_count", String.valueOf(totalCount));
-
-		return showHtmlFile(player, "history.htm", replacements);
-	}
-
-	/**
-	 * 領取單個獎勵
-	 */
-	private String receiveReward(Player player, int rewardId)
-	{
-		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT item_id, item_name, item_count FROM lottery_rewards WHERE id = ? AND char_id = ? AND received = 0"))
-		{
-			ps.setInt(1, rewardId);
+			ps.setInt(1, pointsNeeded);
 			ps.setInt(2, player.getObjectId());
+			ps.setInt(3, pointsNeeded);
+			int updated = ps.executeUpdate();
 
-			try (ResultSet rs = ps.executeQuery())
+			if (updated == 0)
 			{
-				if (rs.next())
-				{
-					int itemId = rs.getInt("item_id");
-					String itemName = rs.getString("item_name");
-					int itemCount = rs.getInt("item_count");
-
-					// 給予物品
-					player.addItem(ItemProcessType.NONE, itemId, itemCount, player, true);
-
-					// 更新資料庫標記為已領取
-					try (PreparedStatement updatePs = con.prepareStatement("UPDATE lottery_rewards SET received = 1, received_at = NOW() WHERE id = ?"))
-					{
-						updatePs.setInt(1, rewardId);
-						updatePs.executeUpdate();
-					}
-
-					Map<String, String> replacements = new HashMap<>();
-					replacements.put("title", "領取成功！");
-					replacements.put("line1", "獎品: " + itemName);
-					replacements.put("line2", "數量: " + itemCount);
-
-					return showHtmlFile(player, "success.htm", replacements);
-				}
-				else
-				{
-					return showHtmlFile(player, "error.htm", createMap("message", "找不到該獎勵或已領取"));
-				}
+				return showHtmlFile(player, "error.htm", createMap("message", "積分不足或綁定資料異常"));
 			}
+
+			LOGGER.info("[WebsiteLottery] 玩家 " + player.getName() + " 兌換積分->道具成功，扣除積分: " + pointsNeeded);
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
-			return showHtmlFile(player, "error.htm", createMap("message", "資料庫錯誤，請聯繫管理員"));
-		}
-	}
-
-	/**
-	 * 一鍵領取所有獎勵
-	 */
-	private String receiveAllRewards(Player player)
-	{
-		List<RewardData> rewards = getPendingRewards(player);
-
-		if (rewards.isEmpty())
-		{
-			return showHtmlFile(player, "error.htm", createMap("message", "沒有可領取的獎勵"));
+			LOGGER.warning("[WebsiteLottery] 扣除網站積分失敗: " + e.getMessage());
+			return showHtmlFile(player, "error.htm", createMap("message", "系統繁忙，請稍後再試"));
 		}
 
-		int successCount = 0;
-		StringBuilder itemList = new StringBuilder();
+		// 給予遊戲道具
+		player.addItem(ItemProcessType.NONE, POINT_ITEM_ID, itemsToGive, player, true);
 
-		try (Connection con = DatabaseFactory.getConnection())
-		{
-			for (RewardData reward : rewards)
-			{
-				// 給予物品
-				player.addItem(ItemProcessType.NONE, reward.itemId, reward.itemCount, player, false);
-
-				// 更新資料庫
-				try (PreparedStatement ps = con.prepareStatement("UPDATE lottery_rewards SET received = 1, received_at = NOW() WHERE id = ?"))
-				{
-					ps.setInt(1, reward.id);
-					ps.executeUpdate();
-				}
-
-				successCount++;
-				itemList.append(reward.itemName).append(" x").append(reward.itemCount).append("<br>");
-			}
-
-			player.sendItemList();
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-			return showHtmlFile(player, "error.htm", createMap("message", "領取過程中發生錯誤"));
-		}
+		ItemTemplate itemTemplate = ItemData.getInstance().getTemplate(POINT_ITEM_ID);
+		String itemName = itemTemplate != null ? itemTemplate.getName() : "道具";
 
 		Map<String, String> replacements = new HashMap<>();
-		replacements.put("title", "批量領取成功！");
-		replacements.put("line1", "成功領取 " + successCount + " 個獎勵");
-		replacements.put("line2", itemList.toString());
+		replacements.put("title", "兌換成功！");
+		replacements.put("line1", "消耗 " + pointsNeeded + " 網站積分");
+		replacements.put("line2", "獲得 " + formatNumber(itemsToGive) + " " + itemName);
 
 		return showHtmlFile(player, "success.htm", replacements);
 	}
 
-	/**
-	 * 獲取待領取獎勵數量
-	 */
-	private int getPendingRewardsCount(Player player)
-	{
-		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) FROM lottery_rewards WHERE char_id = ? AND received = 0"))
-		{
-			ps.setInt(1, player.getObjectId());
-			try (ResultSet rs = ps.executeQuery())
-			{
-				if (rs.next())
-				{
-					return rs.getInt(1);
-				}
-			}
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-		}
-		return 0;
-	}
 
-	/**
-	 * 獲取待領取獎勵列表
-	 */
-	private List<RewardData> getPendingRewards(Player player)
-	{
-		List<RewardData> rewards = new ArrayList<>();
-
-		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT id, item_id, item_name, item_count FROM lottery_rewards WHERE char_id = ? AND received = 0 ORDER BY created_at DESC"))
-		{
-			ps.setInt(1, player.getObjectId());
-			try (ResultSet rs = ps.executeQuery())
-			{
-				while (rs.next())
-				{
-					RewardData reward = new RewardData();
-					reward.id = rs.getInt("id");
-					reward.itemId = rs.getInt("item_id");
-					reward.itemName = rs.getString("item_name");
-					reward.itemCount = rs.getInt("item_count");
-					rewards.add(reward);
-				}
-			}
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-		}
-
-		return rewards;
-	}
-
-	/**
-	 * 獲取抽獎歷史記錄總數
-	 */
-	private int getLotteryHistoryCount(Player player)
-	{
-		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) FROM lottery_log l INNER JOIN bound_accounts b ON l.user_id = b.id WHERE b.char_id = ?"))
-		{
-			ps.setInt(1, player.getObjectId());
-			try (ResultSet rs = ps.executeQuery())
-			{
-				if (rs.next())
-				{
-					return rs.getInt(1);
-				}
-			}
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-		}
-		return 0;
-	}
-
-	/**
-	 * 獲取抽獎歷史記錄
-	 */
-	private List<HistoryData> getLotteryHistory(Player player, int offset, int limit)
-	{
-		List<HistoryData> history = new ArrayList<>();
-
-		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT l.prize_name, l.created_at FROM lottery_log l INNER JOIN bound_accounts b ON l.user_id = b.id WHERE b.char_id = ? ORDER BY l.created_at DESC LIMIT ? OFFSET ?"))
-		{
-			ps.setInt(1, player.getObjectId());
-			ps.setInt(2, limit);
-			ps.setInt(3, offset);
-
-			try (ResultSet rs = ps.executeQuery())
-			{
-				while (rs.next())
-				{
-					HistoryData record = new HistoryData();
-					record.prizeName = rs.getString("prize_name");
-					record.createdAt = rs.getString("created_at");
-					history.add(record);
-				}
-			}
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-		}
-
-		return history;
-	}
-
-	/**
-	 * 格式化日期時間
-	 */
-	private String formatDateTime(String datetime)
-	{
-		if (datetime == null || datetime.length() < 16)
-		{
-			return datetime;
-		}
-		// 從 "2024-01-28 10:30:45" 截取為 "01-28 10:30"
-		return datetime.substring(5, 16);
-	}
+	// ==================== 工具方法 ====================
 
 	/**
 	 * 創建單一鍵值對的 Map
@@ -735,26 +389,6 @@ public class WebsiteLottery extends Script
 
 		player.sendPacket(html);
 		return null;
-	}
-
-	/**
-	 * 獎勵數據類
-	 */
-	private static class RewardData
-	{
-		int id;
-		int itemId;
-		String itemName;
-		int itemCount;
-	}
-
-	/**
-	 * 歷史記錄數據類
-	 */
-	private static class HistoryData
-	{
-		String prizeName;
-		String createdAt;
 	}
 
 	/**

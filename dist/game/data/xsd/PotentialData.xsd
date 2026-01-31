@@ -1,0 +1,48 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="slots" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="slot" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute type="xs:int" name="id" use="required"/>
+									<xs:attribute type="xs:int" name="minSkill" use="required"/>
+									<xs:attribute type="xs:int" name="maxSkill" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="rarities" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="rarity" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute type="xs:int" name="level" use="required"/>
+									<xs:attribute type="xs:string" name="color" use="required"/>
+									<xs:attribute type="xs:string" name="name" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="skillRanges" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="range" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute type="xs:int" name="slot" use="required"/>
+									<xs:attribute type="xs:int" name="minSkill" use="required"/>
+									<xs:attribute type="xs:int" name="maxSkill" use="required"/>
+									<xs:attribute type="xs:int" name="rarity" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

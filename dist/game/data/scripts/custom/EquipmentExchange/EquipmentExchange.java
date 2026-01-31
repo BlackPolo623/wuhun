@@ -179,20 +179,7 @@ public class EquipmentExchange extends Script
 			}
 		}
 
-		// 執行單件互換
-		else if (event.startsWith("do_exchange_"))
-		{
-			String[] parts = event.substring("do_exchange_".length()).split("_");
-			if (parts.length == 3)
-			{
-				int sourceItemId = Integer.parseInt(parts[0]);
-				int targetItemId = Integer.parseInt(parts[1]);
-				int objectId = Integer.parseInt(parts[2]);
-				return doSingleExchange(player, sourceItemId, targetItemId, objectId);
-			}
-		}
-
-		// 執行全部互換
+		// 執行全部互換 (先檢查更具體的條件)
 		else if (event.startsWith("do_exchange_all_"))
 		{
 			String[] parts = event.substring("do_exchange_all_".length()).split("_");
@@ -205,6 +192,19 @@ public class EquipmentExchange extends Script
 					String seriesName = _seriesNameList.get(seriesIndex);
 					return doExchangeAll(player, seriesName, targetItemId);
 				}
+			}
+		}
+
+		// 執行單件互換
+		else if (event.startsWith("do_exchange_"))
+		{
+			String[] parts = event.substring("do_exchange_".length()).split("_");
+			if (parts.length == 3)
+			{
+				int sourceItemId = Integer.parseInt(parts[0]);
+				int targetItemId = Integer.parseInt(parts[1]);
+				int objectId = Integer.parseInt(parts[2]);
+				return doSingleExchange(player, sourceItemId, targetItemId, objectId);
 			}
 		}
 

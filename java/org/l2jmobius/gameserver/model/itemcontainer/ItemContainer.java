@@ -511,7 +511,7 @@ public abstract class ItemContainer
 			}
 			
 			// Tempfix for black shortcut icon when consumed item count reaches 0.
-			if (item.getCount() < 1)
+			if ((item.getCount() < 1) && (actor != null))
 			{
 				actor.sendPacket(new ShortcutInit(actor));
 			}

@@ -1,19 +1,32 @@
-<html><body><title>網站抽獎系統</title>
+<html><body><title>網站積分兌換系統</title>
 <center>
-<br>
-<font color="LEVEL">網站抽獎系統</font><br><br>
 
 <font color="LEVEL">角色名稱:</font> <font color="FFFF00">%char_name%</font><br>
 <font color="LEVEL">角色專屬ID:</font> <font color="FFFF00">%char_id%</font><br>
 <font color="LEVEL">綁定狀態:</font> %bind_status%<br>
-%bind_info%<br>
-<font color="LEVEL">網站積分:</font> <font color="00FF00">%web_points%</font><br><br>
+<font color="LEVEL">網站帳號:</font> <font color="FFFF00">%bound_username%</font><br>
+<br>
 
-%reward_notice%<br><br>
+<font color="LEVEL">━━━━━━━━━━━━━━━━━</font><br><br>
 
-<button value="領取抽獎獎品" action="bypass -h Quest WebsiteLottery receive_rewards" width=200 height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"><br>
-<button value="查看抽獎歷史" action="bypass -h Quest WebsiteLottery view_history" width=200 height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"><br>
-<button value="積分兌換" action="bypass -h Quest WebsiteLottery point_exchange" width=200 height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"><br>
+<font color="LEVEL">身上 L Coin:</font> <font color="00FF00">%game_item_count% %item_name%</font><br>
+<font color="LEVEL">網站積分:</font> <font color="00FF00">%web_points% 分</font><br><br>
+
+<font color="LEVEL">請選擇兌換方向:</font><br><br>
+
+<table width=300>
+<tr>
+<td width=150>
+<button value="L Coin → 網站積分" action="bypass -h Quest WebsiteLottery exchange_to_web $amount" width=140 height=30 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td>
+<td width=150>
+<button value="網站積分 → L Coin" action="bypass -h Quest WebsiteLottery exchange_to_game $amount" width=140 height=30 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td>
+</tr>
+</table>
+
+<br><font color="LEVEL">請輸入兌換數量:</font><br>
+<edit var="amount" width=120 height=15 type=number>
 
 </center>
 </body></html>
