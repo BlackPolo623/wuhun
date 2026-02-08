@@ -3,39 +3,18 @@
 	<skill id="47101" toLevel="4" name="元素靈魄">
 		<icon>icon.skill30401</icon>
 		<operateType>P</operateType>
-		<abnormalLevel>
-			<value level="1">1</value>
-			<value level="2">2</value>
-			<value level="3">3</value>
-			<value level="4">4</value>
-		</abnormalLevel>
-		<abnormalTime>-1</abnormalTime>
-		<abnormalVisualEffect>
-			<value level="1">H_SY_BOARDA_DECO</value>
-			<value level="2">H_SY_BOARDA_DECO</value>
-			<value level="3">H_SY_BOARDA_DECO</value>
-			<value level="4">H_SY_BOARDA_DECO</value>
-		</abnormalVisualEffect>
 		<effects>
-			<effect name="TriggerSkillByDamageReceived">
-				<attackerType>Creature</attackerType>
-				<skillId>47048</skillId> 
-				<skillLevel>1</skillLevel>
-				<minDamage>100</minDamage>
-				<chance>10</chance>
-				<targetType>SELF</targetType>
+			<effect name="ReplaceSkillBySkill" fromLevel="4" toLevel="4">
+				<existingSkillId>47045</existingSkillId> 
+				<replacementSkillId>47052</replacementSkillId> 
 			</effect>
 			<effect name="TriggerSkillByDamageReceived">
 				<attackerType>Creature</attackerType>
-				<skillId>47060</skillId> 
-				<skillLevel>1</skillLevel>
-				<minDamage>100</minDamage>
-				<chance>10</chance>
-				<targetType>SELF</targetType>
-			</effect>
-			<effect name="TriggerSkillByDamageReceived">
-				<attackerType>Creature</attackerType>
-				<skillId>47059</skillId> 
+				<skillId>			
+				<value level="2">47048</value>
+				<value level="3">47048</value>
+				<value level="4">47053</value>
+			    </skillId> 
 				<skillLevel>1</skillLevel>
 				<minDamage>100</minDamage>
 				<chance>10</chance>
@@ -49,6 +28,7 @@
 					<value level="4">10</value>
 				</IMPRISON>
 			</effect>
+
 		</effects>
 	</skill>
 	<skill id="47104" toLevel="5" name="元素親和">

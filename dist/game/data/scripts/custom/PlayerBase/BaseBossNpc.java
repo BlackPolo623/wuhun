@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.Map;
 
 import org.l2jmobius.commons.database.DatabaseFactory;
+import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
@@ -19,7 +20,8 @@ public class BaseBossNpc extends Script
 	private static final int SUMMON_TICKET_ID = 105807;
 
 	private static final int[][] CRAFT_MATERIALS = {
-			{57, 50000000}
+			{57, 100000000},
+			{92476, 10000}
 	};
 
 	private static final Object[][] BOSS_LIST = {
@@ -290,7 +292,8 @@ public class BaseBossNpc extends Script
 		StringBuilder materialList = new StringBuilder();
 		for (int[] material : CRAFT_MATERIALS)
 		{
-			materialList.append("道具ID ").append(material[0]).append(" x").append(material[1]).append("<br1>");
+			String itemName = ItemData.getInstance().getTemplate(material[0]).getName();
+			materialList.append(itemName).append(" x").append(material[1]).append("<br1>");
 		}
 		html.replace("%material_list%", materialList.toString());
 

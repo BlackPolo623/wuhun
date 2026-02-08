@@ -60,7 +60,7 @@ public class icegongg extends InstanceScript
 	private static final int EXIT_Z = -2177;
 
 	// ==================== 時間配置 ====================
-	private static final int DAILY_TIME_LIMIT_MINUTES = 600;  // 每日限制分鐘
+	private static final int DAILY_TIME_LIMIT_MINUTES = 720;  // 每日限制分鐘
 	private static final int ENTER_COST = 1000000;            // 進入金幣
 	private static final int RESET_HOUR = 6;                  // 重置時間：每天凌晨6點
 	private static final int RESET_MINUTE = 0;

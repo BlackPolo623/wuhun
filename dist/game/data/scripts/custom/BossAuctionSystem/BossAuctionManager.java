@@ -86,7 +86,7 @@ public class BossAuctionManager
 		BossAuctionConfig.load();
 
 		// 從配置類獲取設置
-		_auctionDurationMs = BossAuctionConfig.getAuctionDurationHours() * 3600000L;
+		_auctionDurationMs = BossAuctionConfig.getAuctionDurationMinutes() * 60000L;
 		_minDamageRequired = BossAuctionConfig.getMinDamageRequired();
 		_currencyItemId = BossAuctionConfig.getCurrencyItemId();
 		_minBidIncrement = BossAuctionConfig.getMinBidIncrement();
@@ -101,7 +101,7 @@ public class BossAuctionManager
 		// 【新增】載入出價冷卻配置
 		_bidCooldownMs = BossAuctionConfig.getBidCooldownSeconds() * 1000L;
 
-		LOGGER.info("【競標系統】配置載入完成 - 競標時長: " + (_auctionDurationMs / 3600000) + "小時, 最低傷害: " + _minDamageRequired);
+		LOGGER.info("【競標系統】配置載入完成 - 競標時長: " + (_auctionDurationMs / 60000) + "分鐘, 最低傷害: " + _minDamageRequired);
 		LOGGER.info("【競標系統】延長機制 - 觸發時間: " + (_extensionTriggerTimeMs / 60000) + "分鐘, 延長時間: " + (_extensionDurationMs / 60000) + "分鐘, 最多延長: " + _maxExtensionCount + "次");
 		LOGGER.info("【競標系統】出價冷卻 - " + (_bidCooldownMs / 1000) + "秒");
 	}
@@ -234,7 +234,7 @@ public class BossAuctionManager
 		if (_announcementEnabled)
 		{
 			Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.ANNOUNCEMENT, "競標系統",
-				"【BOSS競標】" + bossName + " 已被擊殺！掉落物品開始競標，持續 " + (_auctionDurationMs / 3600000) + " 小時！"));
+				"【BOSS競標】" + bossName + " 已被擊殺！掉落物品開始競標，持續 " + (_auctionDurationMs / 60000) + " 分鐘！"));
 		}
 
 		LOGGER.info("【競標系統】創建會話成功 - SessionID: " + sessionId + ", BOSS: " + bossName);

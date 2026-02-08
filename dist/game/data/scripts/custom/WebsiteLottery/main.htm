@@ -7,26 +7,24 @@
 <font color="LEVEL">網站帳號:</font> <font color="FFFF00">%bound_username%</font><br>
 <br>
 
-<font color="LEVEL">━━━━━━━━━━━━━━━━━</font><br><br>
+<font color="LEVEL">持有 L Coin:</font> <font color="00FF00">%game_item_count% %item_name%</font><br>
+<font color="LEVEL">持有 網站積分:</font> <font color="00FF00">%web_points% 分</font><br><br>
 
-<font color="LEVEL">身上 L Coin:</font> <font color="00FF00">%game_item_count% %item_name%</font><br>
-<font color="LEVEL">網站積分:</font> <font color="00FF00">%web_points% 分</font><br><br>
+    <br><font color="LEVEL">請輸入兌換數量:</font><br>
+    <edit var="amount" width=120 height=15 type=number><br>
 
-<font color="LEVEL">請選擇兌換方向:</font><br><br>
-
+    <font color="LEVEL">請選擇兌換方向:</font><br>
 <table width=300>
 <tr>
 <td width=150>
-<button value="L Coin → 網站積分" action="bypass -h Quest WebsiteLottery exchange_to_web $amount" width=140 height=30 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+<button value="L Coin→網站積分" action="bypass -h Quest WebsiteLottery exchange_to_web $amount" width=125 height=30 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
 </td>
 <td width=150>
-<button value="網站積分 → L Coin" action="bypass -h Quest WebsiteLottery exchange_to_game $amount" width=140 height=30 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+<button value="網站積分→L Coin" action="bypass -h Quest WebsiteLottery exchange_to_game $amount" width=125 height=30 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
 </td>
 </tr>
 </table>
 
-<br><font color="LEVEL">請輸入兌換數量:</font><br>
-<edit var="amount" width=120 height=15 type=number>
 
 </center>
 </body></html>

@@ -19,7 +19,7 @@ public class BaseMonsterNpc extends Script
 	private static final int MONSTER_MANAGER_NPC = 900027;
 
 	// ==================== 重生時間配置 ====================
-	private static final int RESPAWN_TIME = 15; // 重生時間（秒）
+	private static final int RESPAWN_TIME = 10; // 重生時間（秒）
 	private static final int RESPAWN_RANDOM_TIME = 0; // 隨機重生時間範圍（秒）
 
 	// 怪物生成座標（100個）

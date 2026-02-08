@@ -25,23 +25,17 @@ import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 
 import org.l2jmobius.commons.threads.ThreadPool;
-import org.l2jmobius.commons.util.Rnd;
-import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.events.LeonasDungeonManager;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
-import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.script.InstanceScript;
-import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.serverpackets.ExSendUIEvent;
-import org.l2jmobius.gameserver.network.serverpackets.InventoryUpdate;
-import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 
 /**
@@ -55,19 +49,6 @@ public class LeonasDungeon extends InstanceScript
 	// Skills
 	private final SkillHolder FORCE_BUFF = new SkillHolder(4647, 4);
 	private final SkillHolder FORCE_DEBUFF = new SkillHolder(48403, 2);
-	private final SkillHolder[] LEONA_BUFFS =
-	{
-		new SkillHolder(48640, 4), // Leona's Blessing - Focus
-		new SkillHolder(48641, 4), // Leona's Blessing - Death Whisper
-		new SkillHolder(48643, 3), // Leona's Blessing - Haste
-		new SkillHolder(48645, 4), // Leona's Blessing - Might
-		new SkillHolder(48647, 4), // Leona's Blessing - Shield
-		new SkillHolder(48649, 3), // Leona's Blessing - Wind Walk
-		new SkillHolder(48651, 3), // Leona's Blessing - Berserker Spirit
-		new SkillHolder(48652, 2), // Leona's Blessing - HP Recovery
-		new SkillHolder(48653, 2), // Leona's Blessing - MP Recovery
-		new SkillHolder(48836, 1), // Leona's XP Blessing
-	};
 	// Misc
 	private static final int EVENT_TRIGGER_LEONAS_AREA = 18108866;
 	private static final int TEMPLATE_ID = 236;
@@ -85,7 +66,7 @@ public class LeonasDungeon extends InstanceScript
 	private static final int POINTS_DEDUCT_PER_DEATH = 50; // 每次死亡扣分
 	private static final int POINTS_DEDUCT_HP_THRESHOLD = 50; // HP低於此%時扣分
 	private static final int POINTS_DEDUCT_LOW_HP = 200; // HP過低時扣分
-	private static final double MOB_POWER_INCREASE = 1.3; // 怪物每次重生增強5%
+	private static final double MOB_POWER_INCREASE = 1.02; // 怪物每次重生增強5%
 
 	// Tiered Milestone System (無上限階梯式獎勵)
 	// 1000-1999: 每100隻 +5分
@@ -164,68 +145,27 @@ public class LeonasDungeon extends InstanceScript
 			case "setDifficulty":
 			{
 				final Instance instance = player.getInstanceWorld();
+				if (instance == null)
+				{
+					return null;
+				}
+
+				// 只有隊長可以切換難度
+				if (player.isInParty() && !player.getParty().isLeader(player))
+				{
+					player.sendMessage("只有隊長可以切換難度。");
+					return null;
+				}
+
+				// 難度已選定後不可變更
 				final int difficulty = instance.getParameters().getInt("INSTANCE_DIFFICULTY", 0);
-				if (difficulty == 0)
+				if (difficulty != 0)
 				{
-					return "setDifficulty.htm";
+					player.sendMessage("難度已選定，無法變更。");
+					return null;
 				}
-				
-				final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
-				packet.setHtml(getHtm(player, "setDifficulty.htm"));
-				switch (difficulty)
-				{
-					case 1:
-					{
-						packet.replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Quest LeonasDungeon setDifficulty1\">Difficulty - Low</Button>", "");
-						break;
-					}
-					case 2:
-					{
-						packet.replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Quest LeonasDungeon setDifficulty2\">Difficulty - Medium</Button>", "");
-						break;
-					}
-					case 3:
-					{
-						packet.replace("<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Quest LeonasDungeon setDifficulty3\">Difficulty - High</Button>", "");
-						break;
-					}
-				}
-				
-				player.sendPacket(packet);
-				return null;
-			}
-			case "getBuff":
-			{
-				final Instance instance = player.getInstanceWorld();
-				if (instance != null)
-				{
-					if ((player.getInventory().getItemByItemId(57) != null) && (player.getInventory().getItemByItemId(57).getCount() >= 50000))
-					{
-						if (player.destroyItemByItemId(ItemProcessType.FEE, 57, 50000, player, true))
-						{
-							for (SkillHolder holder : LEONA_BUFFS)
-							{
-								if (holder.getSkillId() == 48836) // Leona's XP Blessing
-								{
-									final Skill randomXpBlessing = SkillData.getInstance().getSkill(48836, Rnd.get(1, 4));
-									if (randomXpBlessing != null)
-									{
-										randomXpBlessing.applyEffects(npc, player);
-									}
-								}
-								else
-								{
-									holder.getSkill().applyEffects(npc, player);
-								}
-							}
-						}
-					}
-					else
-					{
-						player.sendMessage("你沒有足夠的金幣。");
-					}
-				}
-				break;
+
+				return "setDifficulty.htm";
 			}
 			case "viewScoreFormula":
 			{
@@ -234,10 +174,27 @@ public class LeonasDungeon extends InstanceScript
 			case "setDifficulty1":
 			{
 				final Instance instance = player.getInstanceWorld();
+				if (instance == null)
+				{
+					return null;
+				}
+
+				// 只有隊長可以切換難度
+				if (player.isInParty() && !player.getParty().isLeader(player))
+				{
+					player.sendMessage("只有隊長可以切換難度。");
+					return null;
+				}
+
+				// 難度已選定後不可變更
 				final int difficulty = instance.getParameters().getInt("INSTANCE_DIFFICULTY", 0);
+				if (difficulty != 0)
+				{
+					player.sendMessage("難度已選定，無法變更。");
+					return null;
+				}
+
 				instance.getParameters().set("INSTANCE_DIFFICULTY", 1);
-				instance.getParameters().set("INSTANCE_DIFFICULTY_LOCK_TIME", System.currentTimeMillis() + 60000);
-				instance.despawnGroup("Mobs_" + difficulty);
 				
 				instance.spawnGroup("MOBS_1");
 				if (!instance.getParameters().getBoolean("PlayerEnter", false))
@@ -251,10 +208,27 @@ public class LeonasDungeon extends InstanceScript
 			case "setDifficulty2":
 			{
 				final Instance instance = player.getInstanceWorld();
+				if (instance == null)
+				{
+					return null;
+				}
+
+				// 只有隊長可以切換難度
+				if (player.isInParty() && !player.getParty().isLeader(player))
+				{
+					player.sendMessage("只有隊長可以切換難度。");
+					return null;
+				}
+
+				// 難度已選定後不可變更
 				final int difficulty = instance.getParameters().getInt("INSTANCE_DIFFICULTY", 0);
+				if (difficulty != 0)
+				{
+					player.sendMessage("難度已選定，無法變更。");
+					return null;
+				}
+
 				instance.getParameters().set("INSTANCE_DIFFICULTY", 2);
-				instance.getParameters().set("INSTANCE_DIFFICULTY_LOCK_TIME", System.currentTimeMillis() + 60000);
-				instance.despawnGroup("Mobs_" + difficulty);
 				
 				instance.spawnGroup("MOBS_2");
 				if (!instance.getParameters().getBoolean("PlayerEnter", false))
@@ -268,10 +242,27 @@ public class LeonasDungeon extends InstanceScript
 			case "setDifficulty3":
 			{
 				final Instance instance = player.getInstanceWorld();
+				if (instance == null)
+				{
+					return null;
+				}
+
+				// 只有隊長可以切換難度
+				if (player.isInParty() && !player.getParty().isLeader(player))
+				{
+					player.sendMessage("只有隊長可以切換難度。");
+					return null;
+				}
+
+				// 難度已選定後不可變更
 				final int difficulty = instance.getParameters().getInt("INSTANCE_DIFFICULTY", 0);
+				if (difficulty != 0)
+				{
+					player.sendMessage("難度已選定，無法變更。");
+					return null;
+				}
+
 				instance.getParameters().set("INSTANCE_DIFFICULTY", 3);
-				instance.getParameters().set("INSTANCE_DIFFICULTY_LOCK_TIME", System.currentTimeMillis() + 60000);
-				instance.despawnGroup("Mobs_" + difficulty);
 				
 				instance.spawnGroup("MOBS_3");
 				if (!instance.getParameters().getBoolean("PlayerEnter", false))
@@ -304,13 +295,7 @@ public class LeonasDungeon extends InstanceScript
 		{
 			return null;
 		}
-		
-		final long lockTime = instance.getParameters().getLong("INSTANCE_DIFFICULTY_LOCK_TIME", 0);
-		if (lockTime > System.currentTimeMillis())
-		{
-			return "34357-03.htm";
-		}
-		
+
 		final boolean instanceStarted = instance.getParameters().getBoolean("PlayerEnter", false);
 		return instanceStarted ? "34357-02.htm" : "34357-01.htm";
 	}
@@ -357,7 +342,12 @@ public class LeonasDungeon extends InstanceScript
 	public void onEnterZone(Creature creature, ZoneType zone)
 	{
 		final Instance instance = creature.getInstanceWorld();
-		if ((instance != null) && creature.isPlayer())
+		if (instance == null)
+		{
+			return;
+		}
+
+		if (creature.isPlayer())
 		{
 			FORCE_BUFF.getSkill().applyEffects(creature, creature);
 		}
@@ -374,6 +364,14 @@ public class LeonasDungeon extends InstanceScript
 		if ((instance.getRemainingTime() > 0) && running)
 		{
 			player.sendPacket(new ExSendUIEvent(player, false, false, (int) (instance.getRemainingTime() / 1000), 0, NpcStringId.TIME_LEFT));
+
+			// 初始化中途加入玩家的分數
+			if (instance.getParameters().getInt("Player_" + player.getObjectId() + "_Score", -1) == -1)
+			{
+				instance.getParameters().set("Player_" + player.getObjectId() + "_Score", 0);
+				instance.getParameters().set("Player_" + player.getObjectId() + "_Kills", 0);
+				instance.getParameters().set("Player_" + player.getObjectId() + "_Deaths", 0);
+			}
 		}
 	}
 	

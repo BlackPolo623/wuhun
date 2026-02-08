@@ -3,21 +3,20 @@
 	<skill id="47001" toLevel="5" name="推刺">
 		<icon>icon.piercing_thrust</icon>
 		<operateType>A1</operateType>
-		<targetType>GROUND</targetType>
-		<affectLimit>5-12</affectLimit>
+		<affectLimit>6-0</affectLimit>
+		<targetType>ENEMY</targetType>
 		<affectObject>NOT_FRIEND</affectObject>
-		<affectScope>FAN_PB</affectScope>
-		<castRange>900</castRange>
-		<coolTime>500</coolTime>
-		<effectPoint>-5000</effectPoint>
-		<effectRange>1100</effectRange>
-		<fanRange>0;0;900;20</fanRange>
-		<hitTime>500</hitTime>
-		<isMagic>0</isMagic>
+		<affectScope>RANGE</affectScope>
+		<affectRange>1200</affectRange>
+		<basicProperty>NONE</basicProperty>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>76</magicLevel>
-		<mpConsume>500</mpConsume>
+		<mpConsume>50</mpConsume>
+		<castRange>600</castRange>
 		<reuseDelay>60000</reuseDelay>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> 
 		<staticReuse>true</staticReuse>
 		<conditions>
 			<condition name="EquipWeapon">
@@ -27,18 +26,11 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="PhysicalDamage">
-				<power>
-					<value fromLevel="1" toLevel="5">8000</value> 
-					<value fromLevel="1" toLevel="5" fromSubLevel="1001" toSubLevel="1001">8720</value> 
-					<value fromLevel="1" toLevel="5" fromSubLevel="1002" toSubLevel="1002">9440</value> 
-					<value fromLevel="1" toLevel="5" fromSubLevel="1003" toSubLevel="1003">10160</value> 
-				</power>
-				<pDefMod>0.5</pDefMod>
-			</effect>
-			<effect name="CallSkill">
-				<skillId>47020</skillId> 
-				<skillLevel>1</skillLevel>
+			<effect name="TriggerSkillByDualRange">
+				<closeSkill>88664</closeSkill>
+				<rangeSkill>88665</rangeSkill>
+				<adjustLevel>false</adjustLevel>
+				<distance>700</distance>
 			</effect>
 		</effects>
 	</skill>
@@ -2677,17 +2669,17 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="47046" toLevel="2" name="元素弱化">
+	<skill id="47046" toLevel="1" name="元素弱化">
 		<icon>icon.skill19425</icon>
 		<operateType>A2</operateType>
-		<targetType>ENEMY_ONLY</targetType>
+		<targetType>ENEMY</targetType>
 		<abnormalLevel>
 			<value level="1">1</value>
 			<value level="2">2</value>
 		</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<activateRate>100</activateRate>
-		<affectLimit>10-10</affectLimit>
+		<affectLimit>7-3</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>200</affectRange>
 		<affectScope>RANGE</affectScope>
@@ -2706,66 +2698,43 @@
 		</magicLevel>
 		<effects>
 			<effect name="PveMagicalSkillDefenceBonus">
-				<amount>
-					<value level="1">-5</value>
-					<value level="2">-10</value>
-				</amount>
+				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalAttackDefenceBonus">
-				<amount>
-					<value level="1">-5</value>
-					<value level="2">-10</value>
-				</amount>
+				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalSkillDefenceBonus">
-				<amount>
-					<value level="1">-5</value>
-					<value level="2">-10</value>
-				</amount>
+				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDefenceBonus">
-				<amount>
-					<value level="1">-5</value>
-					<value level="2">-10</value>
-				</amount>
+				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDefenceBonus">
-				<amount>
-					<value level="1">-5</value>
-					<value level="2">-10</value>
-				</amount>
+				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalSkillDefenceBonus">
-				<amount>
-					<value level="1">-5</value>
-					<value level="2">-10</value>
-				</amount>
+				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PveRaidMagicalSkillDefenceBonus">
-				<amount>
-					<value level="1">-5</value>
-					<value level="2">-10</value>
-				</amount>
+				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="ResistAbnormalByCategory">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-				</amount>
+				<amount>10</amount>
 				<slot>DEBUFF</slot>
 			</effect>
 			<effect name="DefenceTrait">
-				<ANOMALY>
-					<value level="1">-10</value>
-					<value level="2">-20</value>
-				</ANOMALY>
+				<ANOMALY>-10</ANOMALY>
+			</effect>
+			<effect name="CallSkill">
+				<skillId>88652</skillId> 
+				<skillLevel>1</skillLevel>
 			</effect>
 		</effects>
 	</skill>
@@ -2778,7 +2747,7 @@
 			<value level="2">2</value>
 		</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
-		<affectLimit>10-10</affectLimit>
+		<affectLimit>7-3</affectLimit>
 		<affectObject>FRIEND</affectObject>
 		<affectRange>600</affectRange>
 		<affectScope>PLEDGE</affectScope>
@@ -2792,66 +2761,39 @@
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="PveMagicalSkillDefenceBonus">
-				<amount>
-					<value level="1">5</value>
-					<value level="2">10</value>
-				</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalAttackDefenceBonus">
-				<amount>
-					<value level="1">5</value>
-					<value level="2">10</value>
-				</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvePhysicalSkillDefenceBonus">
-				<amount>
-					<value level="1">5</value>
-					<value level="2">10</value>
-				</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDefenceBonus">
-				<amount>
-					<value level="1">5</value>
-					<value level="2">10</value>
-				</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalAttackDefenceBonus">
-				<amount>
-					<value level="1">5</value>
-					<value level="2">10</value>
-				</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalSkillDefenceBonus">
-				<amount>
-					<value level="1">5</value>
-					<value level="2">10</value>
-				</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PveRaidMagicalSkillDefenceBonus">
-				<amount>
-					<value level="1">5</value>
-					<value level="2">10</value>
-				</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="ResistAbnormalByCategory">
-				<amount>
-					<value level="1">-10</value>
-					<value level="2">-20</value>
-				</amount>
+				<amount>-5</amount>
 				<slot>DEBUFF</slot>
 			</effect>
 			<effect name="DefenceTrait">
-				<ANOMALY>
-					<value level="1">10</value>
-					<value level="2">20</value>
-				</ANOMALY>
+				<ANOMALY>10</ANOMALY>
 			</effect>
 		</effects>
 	</skill>
@@ -2958,14 +2900,8 @@
 		</conditions>
 		<effects>
 			<effect name="TriggerSkillByTargetType">
-				<allySkill>47047</allySkill>
-				<enemySkill>47046</enemySkill>
-				<allySkillLevel>
-					<value level="1">2</value>
-				</allySkillLevel>
-				<enemySkillLevel>
-					<value level="1">2</value>
-				</enemySkillLevel>
+				<allySkill>88672</allySkill>
+				<enemySkill>88671</enemySkill>
 			</effect>
 		</effects>
 	</skill>
@@ -2980,13 +2916,6 @@
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<reuseDelay>60000</reuseDelay>
-		<conditions>
-			<condition name="OpCheckAbnormal">
-				<type>ELEMENTAL_SPIRIT</type>
-				<level>2</level>
-				<hasAbnormal>true</hasAbnormal>
-			</condition>
-		</conditions>
 		<effects>
 			<effect name="DefenceTrait">
 				<BLUNT>10</BLUNT>
@@ -3001,14 +2930,35 @@
 				<CROSSBOW>10</CROSSBOW>
 				<PISTOLS>10</PISTOLS>
 			</effect>
-			<effect name="SkillEvasion">
-				<magicType>0</magicType>
-				<amount>20</amount>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="SkillEvasion">
-				<magicType>1</magicType>
-				<amount>20</amount>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDefenceBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+
 		</effects>
 	</skill>
 	<skill id="47054" toLevel="2" name="元素Assist">
@@ -3242,27 +3192,19 @@
 	</skill>
 	<skill id="47062" toLevel="12" name="炎燄爆裂">
 		<icon>icon.burst_time</icon>
-		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<abnormalLevel>
-			<value level="1">1</value>
-			<value fromLevel="2" toLevel="12">2</value> 
-		</abnormalLevel>
-		<abnormalTime>
-			<value level="1">30</value>
-			<value fromLevel="2" toLevel="12">60</value> 
-		</abnormalTime>
-		<abnormalVisualEffect>V_SY_BURST_TIME_AVE</abnormalVisualEffect>
-		<affectScope>SINGLE</affectScope>
+		<operateType>A1</operateType>
+		<affectLimit>3-0</affectLimit>
+		<targetType>ENEMY</targetType>
+		<affectScope>RANGE</affectScope>
+		<affectRange>700</affectRange>
 		<basicProperty>NONE</basicProperty>
-		<hitTime>1000</hitTime>
+		<affectObject>NOT_FRIEND</affectObject>
+		<hitTime>1000</hitTime>		
+		<castRange>600</castRange>
 		<isMagic>1</isMagic>
 		<magicCriticalRate>5</magicCriticalRate>
-		<mpConsume>
-			<value level="1">30</value>
-			<value level="2">50</value>
-		</mpConsume>
-		<reuseDelay>300000</reuseDelay>
+		<mpConsume>50</mpConsume>
+		<reuseDelay>15000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<conditions>
 			<condition name="EquipWeapon">
@@ -3272,46 +3214,22 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="TriggerSkillBySkillDamage">
-				<skillId>47063</skillId> 
-				<skillLevel>1</skillLevel>
-				<attackSkillId>47003</attackSkillId> 
-				<chance>
-					<value level="1">10</value>
-					<value fromLevel="2" toLevel="12">50</value> 
-				</chance>
-				<targetType>ENEMY</targetType>
+			<effect name="PhysicalDamage" fromLevel="1" toLevel="1">
+				<power>
+					<value level="1">4500</value>
+				</power>
+				<pDefMod>0.9</pDefMod>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<criticalChance>15</criticalChance>
+				<overHit>true</overHit>
 			</effect>
-			<effect name="TriggerSkillBySkillDamage">
-				<skillId>47063</skillId> 
-				<skillLevel>1</skillLevel>
-				<attackSkillId>47004</attackSkillId> 
-				<chance>
-					<value level="1">10</value>
-					<value fromLevel="2" toLevel="12">50</value> 
-				</chance>
-				<targetType>ENEMY</targetType>
+			<effect name="TriggerSkillByDualRange" fromLevel="2" toLevel="12">
+				<closeSkill>88656</closeSkill>		 
+				<rangeSkill>88658</rangeSkill>
+				<adjustLevel>false</adjustLevel>
+				<distance>250</distance>
 			</effect>
-			<effect name="TriggerSkillBySkillDamage">
-				<skillId>47064</skillId> 
-				<skillLevel>1</skillLevel>
-				<attackSkillId>47006</attackSkillId> 
-				<chance>
-					<value level="1">10</value>
-					<value fromLevel="2" toLevel="12">50</value> 
-				</chance>
-				<targetType>ENEMY</targetType>
-			</effect>
-			<effect name="TriggerSkillBySkillDamage">
-				<skillId>47064</skillId> 
-				<skillLevel>1</skillLevel>
-				<attackSkillId>47007</attackSkillId> 
-				<chance>
-					<value level="1">10</value>
-					<value fromLevel="2" toLevel="12">50</value> 
-				</chance>
-				<targetType>ENEMY</targetType>
-			</effect>
+			
 		</effects>
 	</skill>
 	<skill id="47063" toLevel="2" name="元素爆發">
@@ -3695,11 +3613,70 @@
 	</skill>
 	<skill id="47085" toLevel="1" name="追加痛擊">
 		<icon>icon.additional_hit</icon>
-		<operateType>P</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<reuseDelay>60000</reuseDelay>
 		<effects>
+			<effect name="PhysicalAttack">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillPower">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveMagicalSkillDefenceBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalAttackDefenceBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvePhysicalSkillDefenceBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PveRaidMagicalSkillDefenceBonus">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalSkillCriticalDamage">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttack">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
 			<effect name="ReplaceSkillBySkill">
 				<existingSkillId>47002</existingSkillId> 
 				<replacementSkillId>47005</replacementSkillId> 
+			</effect>
+			<effect name="ReplaceSkillBySkill">
+				<existingSkillId>47062</existingSkillId> 
+				<replacementSkillId>88659</replacementSkillId> 
 			</effect>
 		</effects>
 	</skill>

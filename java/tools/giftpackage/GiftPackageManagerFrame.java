@@ -133,7 +133,7 @@ public class GiftPackageManagerFrame extends JFrame
     {
         Map<String, GiftPackage> packages = new LinkedHashMap<>();
         
-        // ========== 2025年1月禮包 ==========
+        // ========== 2025年2月禮包 ==========
         
         // 基礎禮包
         GiftPackage Donate_202602_3000 = new GiftPackage(

@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
+import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.handler.BossDropHandler;
 import org.l2jmobius.gameserver.handler.IBossDropHandler;
@@ -29,6 +32,16 @@ import custom.BossAuctionSystem.BossAuctionManager.DropItem;
 public class BossKillListener extends Script implements IBossDropHandler
 {
 	private static final Logger LOGGER = Logger.getLogger(BossKillListener.class.getName());
+
+	// 【優化】批次更新間隔（毫秒）- 每 5 秒批次更新一次
+	private static final long BATCH_UPDATE_INTERVAL = 5000;
+
+	// 【優化】本地傷害緩存 - 每個 BOSS 的傷害暫存
+	// Key: BOSS ObjectId, Value: Map<PlayerId, AtomicLong(damage)>
+	private final Map<Integer, Map<Integer, AtomicLong>> _localDamageCache = new ConcurrentHashMap<>();
+
+	// 【優化】追蹤每個 BOSS 的批次更新任務
+	private final Map<Integer, java.util.concurrent.ScheduledFuture<?>> _batchUpdateTasks = new ConcurrentHashMap<>();
 
 	public BossKillListener()
 	{
@@ -59,7 +72,7 @@ public class BossKillListener extends Script implements IBossDropHandler
 
 	/**
 	 * 監聽攻擊事件（記錄對BOSS的傷害）
-	 * 使用傳統的 onAttack 方法，兼容性更好
+	 * 【優化】使用本地緩存，不直接寫入主 Map
 	 */
 	@Override
 	public void onAttack(Npc npc, Player attacker, int damage, boolean isSummon, Skill skill)
@@ -85,16 +98,105 @@ public class BossKillListener extends Script implements IBossDropHandler
 			player = attacker;
 		}
 
-		if (player == null)
+		if (player == null || damage <= 0)
 		{
 			return;
 		}
 
-		// 使用BOSS的ObjectId作為臨時SessionId
-		int tempSessionId = boss.getObjectId();
+		// 【優化】累積到本地緩存，而不是直接寫入主 Map
+		int bossObjectId = boss.getObjectId();
+		int playerId = player.getObjectId();
 
-		// 記錄傷害（移除日誌輸出以避免刷屏）
-		BossAuctionManager.getInstance().recordDamage(tempSessionId, player, (long) damage);
+		// 獲取或創建此 BOSS 的本地緩存
+		Map<Integer, AtomicLong> bossCache = _localDamageCache.computeIfAbsent(bossObjectId, k -> new ConcurrentHashMap<>());
+
+		// 累加傷害到本地緩存（使用 AtomicLong 保證線程安全）
+		AtomicLong playerDamage = bossCache.computeIfAbsent(playerId, k -> new AtomicLong(0));
+		playerDamage.addAndGet(damage);
+
+		// 【優化】如果這是第一次攻擊此 BOSS，啟動批次更新任務
+		if (!_batchUpdateTasks.containsKey(bossObjectId))
+		{
+			startBatchUpdateTask(bossObjectId);
+		}
+	}
+
+	/**
+	 * 【優化】啟動批次更新任務
+	 * 每 5 秒將本地緩存的傷害同步到主 Map
+	 */
+	private void startBatchUpdateTask(int bossObjectId)
+	{
+		java.util.concurrent.ScheduledFuture<?> task = ThreadPool.scheduleAtFixedRate(() -> {
+			try
+			{
+				syncDamageToMainMap(bossObjectId);
+			}
+			catch (Exception e)
+			{
+				LOGGER.warning("【競標系統】批次更新傷害失敗: " + e.getMessage());
+			}
+		}, BATCH_UPDATE_INTERVAL, BATCH_UPDATE_INTERVAL);
+
+		_batchUpdateTasks.put(bossObjectId, task);
+		LOGGER.info("【競標系統】已啟動 BOSS " + bossObjectId + " 的批次更新任務（每 " + (BATCH_UPDATE_INTERVAL / 1000) + " 秒）");
+	}
+
+	/**
+	 * 【優化】將本地緩存的傷害同步到主 Map
+	 */
+	private void syncDamageToMainMap(int bossObjectId)
+	{
+		Map<Integer, AtomicLong> bossCache = _localDamageCache.get(bossObjectId);
+		if (bossCache == null || bossCache.isEmpty())
+		{
+			return;
+		}
+
+		// 批次更新到主 Map
+		int updateCount = 0;
+		for (Map.Entry<Integer, AtomicLong> entry : bossCache.entrySet())
+		{
+			int playerId = entry.getKey();
+			long damage = entry.getValue().getAndSet(0); // 讀取並重置為 0
+
+			if (damage > 0)
+			{
+				// 獲取玩家名稱（從 World 查找）
+				Player player = org.l2jmobius.gameserver.model.World.getInstance().getPlayer(playerId);
+				if (player != null)
+				{
+					BossAuctionManager.getInstance().recordDamage(bossObjectId, player, damage);
+					updateCount++;
+				}
+			}
+		}
+
+		if (updateCount > 0)
+		{
+			LOGGER.info("【競標系統】批次更新 BOSS " + bossObjectId + " 的傷害記錄，共 " + updateCount + " 個玩家");
+		}
+	}
+
+	/**
+	 * 【優化】立即同步所有未更新的傷害（BOSS 死亡時調用）
+	 */
+	private void syncAllDamageImmediately(int bossObjectId)
+	{
+		// 停止批次更新任務
+		java.util.concurrent.ScheduledFuture<?> task = _batchUpdateTasks.remove(bossObjectId);
+		if (task != null)
+		{
+			task.cancel(false);
+		}
+
+		// 立即同步所有傷害
+		syncDamageToMainMap(bossObjectId);
+
+		// 清除本地緩存
+		_localDamageCache.remove(bossObjectId);
+
+		LOGGER.info("【競標系統】已停止 BOSS " + bossObjectId + " 的批次更新任務並同步所有傷害");
 	}
 
 	// ========== IBossDropHandler Interface Implementation ==========
@@ -118,6 +220,9 @@ public class BossKillListener extends Script implements IBossDropHandler
 	{
 		try
 		{
+			// 【優化】BOSS 死亡時，立即同步所有未更新的傷害
+			syncAllDamageImmediately(boss.getObjectId());
+
 			// 驗證輸入
 			if (drops == null || drops.isEmpty())
 			{

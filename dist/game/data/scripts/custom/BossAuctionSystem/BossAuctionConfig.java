@@ -27,7 +27,7 @@ public class BossAuctionConfig
 
 	// Configuration values
 	private static Set<Integer> ENABLED_BOSS_IDS = new HashSet<>();
-	private static int AUCTION_DURATION_HOURS = 2;
+	private static int AUCTION_DURATION_MINUTES = 120;
 	private static long MIN_DAMAGE_REQUIRED = 200000000L;
 	private static int CURRENCY_ITEM_ID = 91663;
 	private static long MIN_BID_INCREMENT = 5000L;
@@ -94,7 +94,7 @@ public class BossAuctionConfig
 			}
 
 			// Parse other settings
-			AUCTION_DURATION_HOURS = parseInt(properties, "AuctionDurationHours", 2);
+			AUCTION_DURATION_MINUTES = parseInt(properties, "AuctionDurationMinutes", 120);
 			MIN_DAMAGE_REQUIRED = parseLong(properties, "MinDamageRequired", 200000000L);
 			CURRENCY_ITEM_ID = parseInt(properties, "CurrencyItemId", 91663);
 			MIN_BID_INCREMENT = parseLong(properties, "MinBidIncrement", 5000L);
@@ -126,7 +126,7 @@ public class BossAuctionConfig
 						// Extract boss ID from key: Boss.29001.Duration
 						String bossIdStr = key.substring(5, key.indexOf(".Duration"));
 						int bossId = Integer.parseInt(bossIdStr);
-						int duration = parseInt(properties, key, AUCTION_DURATION_HOURS);
+						int duration = parseInt(properties, key, AUCTION_DURATION_MINUTES);
 						BOSS_SPECIFIC_DURATION.put(bossId, duration);
 					}
 					catch (Exception e)
@@ -138,7 +138,7 @@ public class BossAuctionConfig
 
 			LOGGER.info("【競標系統】配置文件載入完成");
 			LOGGER.info("【啟用 BOSS 數量】" + ENABLED_BOSS_IDS.size());
-			LOGGER.info("【競標時長】" + AUCTION_DURATION_HOURS + " 小時");
+			LOGGER.info("【競標時長】" + AUCTION_DURATION_MINUTES + " 分鐘");
 			LOGGER.info("【貨幣物品 ID】" + CURRENCY_ITEM_ID);
 			LOGGER.info("【最低加價】" + MIN_BID_INCREMENT);
 			LOGGER.info("【全服公告】" + (ANNOUNCEMENT_ENABLED ? "啟用" : "停用"));
@@ -169,7 +169,7 @@ public class BossAuctionConfig
 		ENABLED_BOSS_IDS.add(29006); // Core
 		ENABLED_BOSS_IDS.add(29014); // Orfen
 
-		AUCTION_DURATION_HOURS = 2;
+		AUCTION_DURATION_MINUTES = 120;
 		MIN_DAMAGE_REQUIRED = 200000000L;
 		CURRENCY_ITEM_ID = 91663;
 		MIN_BID_INCREMENT = 5000L;
@@ -239,14 +239,14 @@ public class BossAuctionConfig
 		return ENABLED_BOSS_IDS.contains(bossId);
 	}
 
-	public static int getAuctionDurationHours()
+	public static int getAuctionDurationMinutes()
 	{
-		return AUCTION_DURATION_HOURS;
+		return AUCTION_DURATION_MINUTES;
 	}
 
-	public static int getAuctionDurationHours(int bossId)
+	public static int getAuctionDurationMinutes(int bossId)
 	{
-		return BOSS_SPECIFIC_DURATION.getOrDefault(bossId, AUCTION_DURATION_HOURS);
+		return BOSS_SPECIFIC_DURATION.getOrDefault(bossId, AUCTION_DURATION_MINUTES);
 	}
 
 	public static long getMinDamageRequired()
