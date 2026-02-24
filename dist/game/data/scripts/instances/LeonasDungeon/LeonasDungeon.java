@@ -92,10 +92,10 @@ public class LeonasDungeon extends InstanceScript {
 
 	// Boss Spawn Locations (BOSS出生座標 - X, Y, Z, Heading)
 	private static final int[][] BOSS_SPAWN_LOCATIONS = {
-			{-46752, 243871, -7856, 0}, // BOSS 1 出生點
-			{-49402, 242191, -7856, 0}, // BOSS 2 出生點
-			{-51764, 245745, -7856, 0}, // BOSS 3 出生點
-			{-49396, 249977, -7856, 0}  // BOSS 4 出生點
+			{-46752, -243871, -7850, 0}, // BOSS 1 出生點
+			{-49402, -242191, -7850, 0}, // BOSS 2 出生點
+			{-51764, -245745, -7850, 0}, // BOSS 3 出生點
+			{-49396, -249977, -7850, 0}  // BOSS 4 出生點
 	};
 
 	private LeonasDungeon() {

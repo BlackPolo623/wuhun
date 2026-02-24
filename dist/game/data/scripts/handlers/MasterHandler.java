@@ -115,6 +115,7 @@ import handlers.admincommandhandlers.AdminKick;
 import handlers.admincommandhandlers.AdminKill;
 import handlers.admincommandhandlers.AdminLevel;
 import handlers.admincommandhandlers.AdminLogin;
+import handlers.admincommandhandlers.AdminMail;
 import handlers.admincommandhandlers.AdminManor;
 import handlers.admincommandhandlers.AdminMenu;
 import handlers.admincommandhandlers.AdminMessages;
@@ -395,6 +396,7 @@ public class MasterHandler
 			AdminKill.class,
 			AdminLevel.class,
 			AdminLogin.class,
+			AdminMail.class,
 			AdminManor.class,
 			AdminMenu.class,
 			AdminMessages.class,
