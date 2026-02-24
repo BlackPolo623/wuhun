@@ -33,6 +33,14 @@ public class wxcz extends Script
 	private static final Map<String, Integer> STAT_MATERIAL_MAP = new HashMap<>();
 	private static final Map<String, String> STAT_NAME_MAP = new HashMap<>();
 
+	// 階段消耗配置 [階段門檻, 消耗數量]
+	// 例如: [20000, 3] 表示超過20000時，每次消耗3個道具
+	private static final int[][] STAGE_COST_CONFIG = {
+		{0, 1},       // 0~19999: 消耗1個
+		{20000, 5},   // 20000~39999: 消耗3個
+		{40000, 10},   // 40000以上: 消耗5個
+	};
+
 	static
 	{
 		// 屬性名稱對應
@@ -56,6 +64,25 @@ public class wxcz extends Script
 		STAT_MATERIAL_MAP.put("mcatk", 108006);   // 魔爆精華
 		STAT_MATERIAL_MAP.put("catk", 108007);    // 破甲精華
 		STAT_MATERIAL_MAP.put("skillcatk", 108008);    // 物理技能破甲精華
+	}
+
+	/**
+	 * 根據當前數值取得消耗數量
+	 * @param currentValue 當前數值
+	 * @return 消耗數量
+	 */
+	private int getCostByValue(long currentValue)
+	{
+		int cost = 1;
+		for (int i = STAGE_COST_CONFIG.length - 1; i >= 0; i--)
+		{
+			if (currentValue >= STAGE_COST_CONFIG[i][0])
+			{
+				cost = STAGE_COST_CONFIG[i][1];
+				break;
+			}
+		}
+		return cost;
 	}
 
 	private wxcz()
@@ -149,8 +176,36 @@ public class wxcz extends Script
 		html.replace("%mcatk_count%", String.valueOf(player.getInventory().getInventoryItemCount(STAT_MATERIAL_MAP.get("mcatk"), -1)));
 		html.replace("%catk_count%", String.valueOf(player.getInventory().getInventoryItemCount(STAT_MATERIAL_MAP.get("catk"), -1)));
 		html.replace("%skillcatk_count%", String.valueOf(player.getInventory().getInventoryItemCount(STAT_MATERIAL_MAP.get("skillcatk"), -1)));
+
+		// 替換消耗數量 (根據當前數值計算)
+		html.replace("%patk_cost%", String.valueOf(getCostByValue(getPlayerStatValue(player, "patk"))));
+		html.replace("%matk_cost%", String.valueOf(getCostByValue(getPlayerStatValue(player, "matk"))));
+		html.replace("%pdef_cost%", String.valueOf(getCostByValue(getPlayerStatValue(player, "pdef"))));
+		html.replace("%mdef_cost%", String.valueOf(getCostByValue(getPlayerStatValue(player, "mdef"))));
+		html.replace("%maxhp_cost%", String.valueOf(getCostByValue(getPlayerStatValue(player, "maxhp"))));
+		html.replace("%maxmp_cost%", String.valueOf(getCostByValue(getPlayerStatValue(player, "maxmp"))));
+		html.replace("%mcatk_cost%", String.valueOf(getCostByValue(getPlayerStatValue(player, "mcatk"))));
+		html.replace("%catk_cost%", String.valueOf(getCostByValue(getPlayerStatValue(player, "catk"))));
+		html.replace("%skillcatk_cost%", String.valueOf(getCostByValue(getPlayerStatValue(player, "skillcatk"))));
+
 		player.sendPacket(html);
 		return null;
+	}
+
+	/**
+	 * 取得玩家指定屬性的當前數值
+	 */
+	private long getPlayerStatValue(Player player, String stat)
+	{
+		List<WuxianDataHolder> holders = WuxianData.getInstance().getByPlayerId(player.getObjectId());
+		for (WuxianDataHolder holder : holders)
+		{
+			if (holder.getstat().equalsIgnoreCase(stat))
+			{
+				return holder.getshuzhi();
+			}
+		}
+		return 0;
 	}
 
 	private String showCraftPage(Npc npc, Player player)
@@ -255,13 +310,7 @@ public class wxcz extends Script
 		int materialId = STAT_MATERIAL_MAP.get(stat);
 		long materialCount = player.getInventory().getInventoryItemCount(materialId, -1);
 
-		if (materialCount < 1)
-		{
-			player.sendPacket(new ExShowScreenMessage("材料不足：需要1個" + STAT_NAME_MAP.get(stat) + "精華", 3000));
-			return;
-		}
-
-		// 檢查是否已達上限
+		// 檢查是否已達上限並取得當前數值
 		boolean isStatNull = false;
 		WuxianDataHolder enchant = null;
 		List<WuxianDataHolder> holders = WuxianData.getInstance().getByPlayerId(player.getObjectId());
@@ -276,6 +325,18 @@ public class wxcz extends Script
 			}
 		}
 
+		// 取得當前數值
+		long currentValue = (enchant != null) ? enchant.getshuzhi() : 0;
+
+		// 根據當前數值計算消耗
+		int requiredCost = getCostByValue(currentValue);
+
+		if (materialCount < requiredCost)
+		{
+			player.sendPacket(new ExShowScreenMessage("材料不足：需要" + requiredCost + "個" + STAT_NAME_MAP.get(stat) + "精華", 3000));
+			return;
+		}
+
 		if (enchant != null && enchant.getshuzhi() >= Custom.WUXIANXIANDING)
 		{
 			player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "無限成長", "目前達到成長最高值，請聯繫管理員開放更高的限制"));
@@ -283,7 +344,7 @@ public class wxcz extends Script
 		}
 
 		// 消耗材料並升級
-		player.destroyItemByItemId(null, materialId, 1, null, true);
+		player.destroyItemByItemId(null, materialId, requiredCost, null, true);
 
 		if (isStatNull && enchant != null)
 		{
@@ -297,7 +358,7 @@ public class wxcz extends Script
 		player.updateWuxianCache();
 		player.broadcastUserInfo();
 
-		player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "無限成長", "成功提升" + STAT_NAME_MAP.get(stat) + "！"));
+		player.sendPacket(new CreatureSay(null, ChatType.GENERAL, "無限成長", "成功提升" + STAT_NAME_MAP.get(stat) + "！(消耗" + requiredCost + "個精華)"));
 	}
 
 	private void processCraftMaterial(Player player)
@@ -327,6 +388,7 @@ public class wxcz extends Script
 	private void processUpgradeAll(Player player)
 	{
 		int totalUpgraded = 0;
+		long totalMaterialUsed = 0;
 		Map<String, Integer> upgradeResults = new HashMap<>();
 
 		for (String stat : STAT_MATERIAL_MAP.keySet())
@@ -347,29 +409,44 @@ public class wxcz extends Script
 				}
 			}
 
-			// 計算可升級次數
-			long canUpgrade = materialCount;
-			if (enchant != null)
+			long currentValue = (enchant != null) ? enchant.getshuzhi() : 0;
+			long remaining = Custom.WUXIANXIANDING - currentValue;
+
+			if (remaining <= 0) continue;
+
+			// 計算可升級次數 (考慮階段消耗)
+			int upgradeCount = 0;
+			long materialsUsed = 0;
+			long tempValue = currentValue;
+
+			while (materialsUsed < materialCount && upgradeCount < remaining)
 			{
-				long remaining = Custom.WUXIANXIANDING - enchant.getshuzhi();
-				canUpgrade = Math.min(materialCount, remaining);
+				int cost = getCostByValue(tempValue);
+				if (materialsUsed + cost > materialCount)
+				{
+					break;
+				}
+				materialsUsed += cost;
+				upgradeCount++;
+				tempValue++;
 			}
 
-			if (canUpgrade > 0)
+			if (upgradeCount > 0)
 			{
-				player.destroyItemByItemId(null, materialId, canUpgrade, null, false);
+				player.destroyItemByItemId(null, materialId, materialsUsed, null, false);
 
 				if (enchant != null)
 				{
-					WuxianData.getInstance().updateItemValue(enchant.getId(), enchant.getshuzhi() + (int)canUpgrade, stat, enchant.getlevel());
+					WuxianData.getInstance().updateItemValue(enchant.getId(), enchant.getshuzhi() + upgradeCount, stat, enchant.getlevel());
 				}
 				else
 				{
-					WuxianData.getInstance().add(player.getObjectId(), (int)canUpgrade, stat, 1);
+					WuxianData.getInstance().add(player.getObjectId(), upgradeCount, stat, 1);
 				}
 
-				upgradeResults.put(stat, (int)canUpgrade);
-				totalUpgraded += canUpgrade;
+				upgradeResults.put(stat, upgradeCount);
+				totalUpgraded += upgradeCount;
+				totalMaterialUsed += materialsUsed;
 			}
 		}
 
@@ -377,7 +454,7 @@ public class wxcz extends Script
 		{
 			player.updateWuxianCache();
 			player.broadcastUserInfo();
-			StringBuilder msg = new StringBuilder("一鍵加成完成！共提升" + totalUpgraded + "次：");
+			StringBuilder msg = new StringBuilder("一鍵加成完成！共提升" + totalUpgraded + "次(消耗" + totalMaterialUsed + "個精華)：");
 			for (Map.Entry<String, Integer> entry : upgradeResults.entrySet())
 			{
 				msg.append(" ").append(STAT_NAME_MAP.get(entry.getKey())).append("×").append(entry.getValue());

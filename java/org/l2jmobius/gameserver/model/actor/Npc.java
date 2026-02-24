@@ -1212,28 +1212,30 @@ public class Npc extends Creature
 	{
 		// Make it alive
 		setDead(false);
-		
+
 		// Stop all effects and recalculate stats without broadcasting.
 		getEffectList().stopAllEffects(false);
-		
+
 		// Reset decay info
 		setDecayed(false);
-		
-		// Fully heal NPC.
-		fullRestore();
-		
+
+		// Fully heal NPC without broadcasting (optimization for respawn)
+		// No need to broadcast status on respawn as there may be no players nearby
+		setCurrentHp(getMaxHp(), false);
+		setCurrentMp(getMaxMp(), false);
+
 		// Clear script variables
 		if (hasVariables())
 		{
 			getVariables().getSet().clear();
 		}
-		
+
 		// Reset targetable state
 		setTargetable(getTemplate().isTargetable());
-		
+
 		// Reset summoner
 		setSummoner(null);
-		
+
 		// Reset summoned list
 		resetSummonedNpcs();
 		

@@ -182,7 +182,15 @@ public class Formulas
 		final double pvpPveMod = calculatePvpPveBonus(attacker, target, skill, mcrit);
 		
 		// MDAM Formula.
-		double damage = ((77 * (power + attacker.getStat().getValue(Stat.SKILL_POWER_ADD, 0)) * Math.sqrt(mAtk)) / mDef) * shotsBonus;
+		// [自定義修改] 將魔法公式改為與物理相同的線性結構，並乘以固定比例係數。
+		// 原版公式: 77 * (power) * √(mAtk) / mDef （mAtk被√壓縮，高數值時魔法嚴重落後物理）
+		// 物理公式: 77 * ((pAtk * levelMod) + power) / pDef
+		// 新公式:   77 * ((mAtk * levelMod) + power) * MAGIC_DAMAGE_RATIO / mDef
+		// MAGIC_DAMAGE_RATIO 用來控制魔法相對物理的傷害比例，0.75 = 魔法為物理的75%（少25%）
+		// 可調整: 0.75=少25% / 0.85=少15% / 1.0=完全相同
+		final double MAGIC_DAMAGE_RATIO = 1.7;
+		final double skillPowerAdd = attacker.getStat().getValue(Stat.SKILL_POWER_ADD, 0);
+		double damage = ((77 * ((mAtk * attacker.getLevelMod()) + power + skillPowerAdd)) / mDef) * MAGIC_DAMAGE_RATIO * shotsBonus;
 		
 		// Failure calculation
 		if (PlayerConfig.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))

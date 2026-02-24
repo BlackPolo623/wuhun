@@ -139,19 +139,30 @@
 		<icon>icon.skill30003</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
-		<affectLimit>5-0</affectLimit>
+		<affectLimit>5-1</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
-		<affectRange>500</affectRange>
-		<affectScope>FAN_PB</affectScope>
-		<fanRange>0;0;500;360</fanRange>
-		<castRange>50</castRange>
-		<hitTime>100</hitTime>
+		<affectRange>250</affectRange>
+		<affectScope>RANGE</affectScope>
+		<castRange>500</castRange>
+		<effectPoint>
+			<value level="1">-138</value>
+		</effectPoint>
+		<effectRange>1000</effectRange>
+		<hitTime>3000</hitTime>
 		<isMagic>1</isMagic>
-		<mpConsume>100</mpConsume>
-		<reuseDelay>100</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">58</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">100</value>
+		</mpConsume>
+		<reuseDelay>7000</reuseDelay>
 		<effects>
 			<effect name="MagicalDamage">
-				<power>10000</power>
+				<power>
+					<value level="1">10000</value>
+				</power>
 			</effect>
 		</effects>
 	</skill>
@@ -159,19 +170,30 @@
 		<icon>icon.skill30003</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
-		<affectLimit>10-0</affectLimit>
+		<affectLimit>10-1</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
-		<affectRange>1000</affectRange>
-		<affectScope>FAN_PB</affectScope>
-		<fanRange>0;0;1000;360</fanRange>
-		<castRange>50</castRange>
-		<hitTime>100</hitTime>
+		<affectRange>500</affectRange>
+		<affectScope>RANGE</affectScope>
+		<castRange>500</castRange>
+		<effectPoint>
+			<value level="1">-138</value>
+		</effectPoint>
+		<effectRange>1000</effectRange>
+		<hitTime>3000</hitTime>
 		<isMagic>1</isMagic>
-		<mpConsume>100</mpConsume>
-		<reuseDelay>100</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">58</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">100</value>
+		</mpConsume>
+		<reuseDelay>7000</reuseDelay>
 		<effects>
 			<effect name="MagicalDamage">
-				<power>15000</power>
+				<power>
+					<value level="1">15000</value>
+				</power>
 			</effect>
 		</effects>
 	</skill>
@@ -179,19 +201,30 @@
 		<icon>icon.skill30003</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
-		<affectLimit>15-0</affectLimit>
+		<affectLimit>15-1</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
-		<affectRange>1500</affectRange>
-		<affectScope>FAN_PB</affectScope>
-		<fanRange>0;0;1500;360</fanRange>
-		<castRange>50</castRange>
-		<hitTime>100</hitTime>
+		<affectRange>1000</affectRange>
+		<affectScope>RANGE</affectScope>
+		<castRange>500</castRange>
+		<effectPoint>
+			<value level="1">-138</value>
+		</effectPoint>
+		<effectRange>1000</effectRange>
+		<hitTime>3000</hitTime>
 		<isMagic>1</isMagic>
-		<mpConsume>100</mpConsume>
-		<reuseDelay>100</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">58</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">100</value>
+		</mpConsume>
+		<reuseDelay>7000</reuseDelay>
 		<effects>
 			<effect name="MagicalDamage">
-				<power>20000</power>
+				<power>
+					<value level="1">20000</value>
+				</power>
 			</effect>
 		</effects>
 	</skill>
@@ -199,21 +232,32 @@
 		<icon>icon.skill30003</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
-		<affectLimit>20-0</affectLimit>
+		<affectLimit>20-1</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
-		<affectRange>2000</affectRange>
-		<affectScope>FAN_PB</affectScope>
-		<fanRange>0;0;2000;360</fanRange>
-		<castRange>50</castRange>
-		<hitTime>100</hitTime>
+		<affectRange>1500</affectRange>
+		<affectScope>RANGE</affectScope>
+		<castRange>500</castRange>
+		<effectPoint>
+			<value level="1">-138</value>
+		</effectPoint>
+		<effectRange>1000</effectRange>
+		<hitTime>3000</hitTime>
 		<isMagic>1</isMagic>
-		<mpConsume>100</mpConsume>
-		<reuseDelay>100</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">58</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">100</value>
+		</mpConsume>
+		<reuseDelay>7000</reuseDelay>
 		<effects>
 			<effect name="MagicalDamage">
-				<power>25000</power>
+				<power>
+					<value level="1">25000</value>
+				</power>
 			</effect>
 		</effects>
 	</skill>
-	
+
 </list>

@@ -22,7 +22,7 @@ public class WebShopMailConfig
 	public static void load()
 	{
 		final ConfigReader config = new ConfigReader(CONFIG_FILE);
-		ENABLED = config.getBoolean("WebShopMailEnabled", true);
+		ENABLED = config.getBoolean("WebShopMailEnabled", false);
 		CHECK_DELAY = config.getInt("CheckDelaySeconds", 10) * 1000;
 	}
 }

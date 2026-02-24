@@ -42,9 +42,10 @@ public class danrentongguan_exp extends InstanceScript
 	private static final int TEMPLATE_ID = 901; // 副本模板ID
 	private static final int ITEM_ID = 57; // 挑戰道具ID（金幣）
 	private static final int ITEM_COUNT = 10000000; // 挑戰道具數量（1000萬金幣）
-	private static final int DAILY_LIMIT = 5; // 每日挑戰次數上限
+	private static final int DAILY_LIMIT = 3; // 每日挑戰次數上限
 
 	// 時間配置（秒）
+	private static final int COUNTDOWN_TIME = 10; // 進入副本後倒數秒數
 	private static final int SPAWN_INTERVAL = 1; // 怪物刷新間隔（秒）
 	private static final int SURVIVAL_TIME = 120; // 生存時間要求（秒）
 	private static final int CLEAR_TIME_LIMIT = 130; // 清理時間上限（秒）
@@ -64,10 +65,11 @@ public class danrentongguan_exp extends InstanceScript
 	// 怪物刷新位置
 	private static final Location[] SPAWN_LOCATIONS =
 	{
-		new Location(-147433, 213320, -10064),
-		new Location(-147093, 212487, -10064),
-		new Location(-146843, 213069, -10064),
-		new Location(-147682, 212734, -10064)
+		new Location(47488, 152858, -2756),
+		new Location(47900, 152557, -2756),
+		new Location(47747, 152082, -2756),
+		new Location(47228, 152071, -2756),
+		new Location(47067, 152565, -2756)
 	};
 
 	// 玩家變量名稱
@@ -93,11 +95,13 @@ public class danrentongguan_exp extends InstanceScript
 	{
 		long enterTime;
 		int killCount;
+		boolean clearPhaseHandled; // 清理階段是否已處理（防止重複執行）
 
 		PlayerTaskData(long enterTime)
 		{
 			this.enterTime = enterTime;
 			this.killCount = 0;
+			this.clearPhaseHandled = false;
 		}
 	}
 
@@ -163,6 +167,10 @@ public class danrentongguan_exp extends InstanceScript
 			{
 				return showLeaderboard(player);
 			}
+			case "main":
+			{
+				return onFirstTalk(npc, player);
+			}
 		}
 		return "";
 	}
@@ -172,20 +180,41 @@ public class danrentongguan_exp extends InstanceScript
 	 */
 	private String handleEnterInstance(Player player)
 	{
+		// [自定義修改] 防卡副本：檢查玩家是否殘留在舊副本中，如果是則自動清除
+		final Instance currentInstance = player.getInstanceWorld();
+		if (currentInstance != null)
+		{
+			if (currentInstance.getTemplateId() == TEMPLATE_ID)
+			{
+				// 殘留在同類型副本中（斷線、崩潰等異常情況），自動清除
+				LOGGER.info("[猛襲副本] 玩家 " + player.getName() + " 殘留在舊副本中，自動清除");
+				currentInstance.removePlayer(player);
+				player.setInstance(null);
+				playerTasks.remove(player.getObjectId());
+				player.getVariables().set(VAR_ENTER_TIME, 0);
+			}
+			else
+			{
+				// 在其他類型副本中，不能進入
+				player.sendPacket(new ExShowScreenMessage("你已經在其他副本中，無法進入！", 2000));
+				return "";
+			}
+		}
+
 		// 檢查每日次數限制
 		if (!checkDailyLimit(player))
 		{
 			player.sendPacket(new ExShowScreenMessage("每天最大挑戰次數為:" + DAILY_LIMIT + "!", 2000));
 			return "";
 		}
-		
+
 		// 檢查挑戰道具
 		if (!player.destroyItemByItemId(null, ITEM_ID, ITEM_COUNT, player, true))
 		{
 			player.sendPacket(new ExShowScreenMessage("挑戰道具不足!", 2000));
 			return "";
 		}
-		
+
 		// 進入副本
 		enterInstance(player, null, TEMPLATE_ID);
 		
@@ -290,15 +319,15 @@ public class danrentongguan_exp extends InstanceScript
 	private boolean processPlayerTask(Player player, PlayerTaskData taskData)
 	{
 		Instance world = player.getInstanceWorld();
-		
+
 		// 檢查玩家是否離開副本
-		if ((world == null) || (player.getInstanceId() == 0))
+		if (player.getInstanceId() == 0)
 		{
 			player.getVariables().set(VAR_ENTER_TIME, 0);
 			player.sendPacket(new ExShowScreenMessage("玩家[" + player.getName() + "]退出副本,副本結束", 3000));
 			return true;
 		}
-		
+
 		// 檢查玩家是否死亡
 		if (player.isDead())
 		{
@@ -308,43 +337,67 @@ public class danrentongguan_exp extends InstanceScript
 			world.removePlayer(player);
 			return true;
 		}
-		
+
 		// 計算經過的時間
 		long timeSpent = System.currentTimeMillis() - taskData.enterTime;
 		int seconds = (int) TimeUnit.MILLISECONDS.toSeconds(timeSpent);
-		
+
+		// 倒數階段（0 ~ COUNTDOWN_TIME秒）
+		if (seconds < COUNTDOWN_TIME)
+		{
+			int remaining = COUNTDOWN_TIME - seconds;
+			player.sendPacket(new ExShowScreenMessage("副本即將開始，倒數 " + remaining + " 秒...", 1500));
+			return false;
+		}
+
+		// 調整實際遊戲時間（扣除倒數時間）
+		int gameSeconds = seconds - COUNTDOWN_TIME;
+
 		// 生存階段（0-120秒）
-		if (seconds < SURVIVAL_TIME)
+		if (gameSeconds < SURVIVAL_TIME)
 		{
 			// 每秒刷新怪物
-			if ((seconds % SPAWN_INTERVAL) == 0)
+			if ((gameSeconds % SPAWN_INTERVAL) == 0)
 			{
 				spawnMonsters(player, world);
 			}
-			player.sendPacket(new ExShowScreenMessage("當前生存時間為:[" + seconds + "]秒,每" + SPAWN_INTERVAL + "秒刷新" + SPAWN_LOCATIONS.length + "個怪物,堅持" + SURVIVAL_TIME + "秒即可通關", 3000));
+			player.sendPacket(new ExShowScreenMessage("當前生存時間為:[" + gameSeconds + "]秒,每" + SPAWN_INTERVAL + "秒刷新" + SPAWN_LOCATIONS.length + "個怪物,堅持" + SURVIVAL_TIME + "秒即可通關", 3000));
 			return false;
 		}
 		// 清理階段（120-130秒）
-		else if (seconds < CLEAR_TIME_LIMIT)
+		else if (gameSeconds < CLEAR_TIME_LIMIT)
 		{
-			// 檢查是否清理完畢
-			if (world.getAliveNpcCount() == 0)
+			// 防止重複處理
+			if (taskData.clearPhaseHandled)
 			{
-				int killCount = player.getVariables().getInt(VAR_KILL_COUNT, 0);
-				player.getVariables().set(VAR_ENTER_TIME, 0);
-				player.sendPacket(new ExShowScreenMessage("恭喜通關！共擊殺 " + killCount + " 隻怪物！", 3000));
-
-				// 保存排行榜記錄
-				saveLeaderboardRecord(player, killCount);
-
-				return true;
+				return false;
 			}
 
-			// 顯示剩餘怪物數量
-			int remainingMonsters = world.getAliveNpcCount();
-			int killCount = player.getVariables().getInt(VAR_KILL_COUNT, 0);
-			player.sendPacket(new ExShowScreenMessage("剩餘 " + remainingMonsters + " 隻怪物，已擊殺 " + killCount + " 隻", 3000));
+			// 標記已處理，後續每秒的呼叫都會直接跳過
+			taskData.clearPhaseHandled = true;
 
+			int killCount = player.getVariables().getInt(VAR_KILL_COUNT, 0);
+
+			// 不管怪物有沒有清完，都保存排行榜
+			saveLeaderboardRecord(player, killCount);
+
+			// 清除副本內剩餘怪物
+			world.removeNpcs();
+
+			player.getVariables().set(VAR_ENTER_TIME, 0);
+			player.sendPacket(new ExShowScreenMessage("挑戰成功！共擊殺 " + killCount + " 隻怪物！5秒後傳送回城", 5000));
+			LOGGER.info("玩家 " + player.getName() + " 完成猛襲副本，擊殺 " + killCount + " 隻怪物");
+
+			// 5秒後傳送回普通世界並移除任務
+			ThreadPool.schedule(() ->
+			{
+				if (player.isOnline())
+				{
+					player.teleToLocation(83090, 148649, -3408, null);
+					player.sendPacket(new ExShowScreenMessage("已傳送回普通世界", 3000));
+				}
+				playerTasks.remove(player.getObjectId());
+			}, 5000);
 			return false;
 		}
 		// 超時失敗
@@ -356,6 +409,7 @@ public class danrentongguan_exp extends InstanceScript
 			world.removePlayer(player);
 			return true;
 		}
+
 	}
 	
 	/**
@@ -378,8 +432,8 @@ public class danrentongguan_exp extends InstanceScript
 		{
 			Spawn spawn = new Spawn(GOLBERG);
 			spawn.setXYZ(location.getX(), location.getY(), location.getZ());
-			spawn.setInstanceId(world.getId());
-			
+			spawn.setInstanceId(player.getInstanceId());
+
 			Npc npc = spawn.doSpawn();
 			if (npc != null)
 			{
@@ -483,7 +537,7 @@ public class danrentongguan_exp extends InstanceScript
 
 		sb.append("<tr><td height=\"10\"></td></tr>");
 		sb.append("<tr><td align=center>");
-		sb.append("<button value=\"返回\" action=\"bypass -h npc_%objectId%_Quest danrentongguan_exp\" width=100 height=30 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">");
+		sb.append("<button value=\"返回\" action=\"bypass -h Quest danrentongguan_exp main\" width=100 height=30 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">");
 		sb.append("</td></tr>");
 		sb.append("</table>");
 		sb.append("</td></tr></table>");

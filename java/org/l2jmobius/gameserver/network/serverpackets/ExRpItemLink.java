@@ -21,6 +21,7 @@
 package org.l2jmobius.gameserver.network.serverpackets;
 
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.GameClient;
@@ -42,18 +43,22 @@ public class ExRpItemLink extends AbstractItemPacket
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
 		ServerPackets.EX_RP_ITEMLINK.writeId(this, buffer);
-		final Player player = _item.asPlayer();
-		if ((player != null) && player.isOnline())
+		final Player owner = World.getInstance().getPlayer(_item.getOwnerId());
+		System.out.println("[ItemLink] 寫入封包 - 物品: " + _item.getName() + " | itemId: " + _item.getId() + " | objectId: " + _item.getObjectId() + " | ownerId: " + _item.getOwnerId() + " | owner找到: " + (owner != null) + " | isOnline: " + (owner != null && owner.isOnline()));
+		if ((owner != null) && owner.isOnline())
 		{
 			buffer.writeByte(1);
-			buffer.writeInt(player.getObjectId());
+			buffer.writeInt(owner.getObjectId());
+			System.out.println("[ItemLink] 寫入擁有者 objectId: " + owner.getObjectId());
 		}
 		else
 		{
 			buffer.writeByte(0);
 			buffer.writeInt(0);
+			System.out.println("[ItemLink] 擁有者不在線，寫入 0");
 		}
-		
+
 		writeItem(_item, buffer);
+		System.out.println("[ItemLink] 封包寫入完成");
 	}
 }

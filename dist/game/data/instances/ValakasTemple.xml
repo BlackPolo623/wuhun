@@ -13,22 +13,12 @@
 			<param name="limit" value="2" />
 		</condition>
 		<condition type="GroupMax">
-			<param name="limit" value="100" />
+			<param name="limit" value="9" />
 		</condition>
 		<condition type="Level">
 			<param name="min" value="76" />
 		</condition>
-		<condition type="Distance" />
-		<condition type="Reenter" />
-		<condition type="Level">
-			<param name="min" value="76" />
-			<param name="max" value="99" />
-		</condition>
-		<condition type="Reenter" />
 	</conditions>
-	<reenter apply="ON_FINISH">
-		<reset day="WEDNESDAY" hour="6" minute="30" />
-	</reenter>
 	<doorlist>
 		<door id="24130002" />
 	</doorlist>

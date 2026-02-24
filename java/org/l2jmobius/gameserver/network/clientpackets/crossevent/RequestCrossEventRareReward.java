@@ -67,23 +67,33 @@ public class RequestCrossEventRareReward extends ClientPacket
 		player.sendPacket(new ExCrossEventInfo(player));
 	}
 	
+	// [自定義修改] 優化獎勵抽選機制：
+	// 1. 基數從 100000 改為 1000（配合 Holder 的 *10），減少無效重試
+	// 2. 遞迴改為 while 迴圈，避免 StackOverflow
+	// 3. 加上最大重試次數保護（1000次），防止無限迴圈
+	private static final int RARE_REWARD_RANDOM_BASE = 1000;
+	private static final int RARE_REWARD_MAX_RETRIES = 1000;
+
 	private CrossEventAdvancedRewardHolder getRareReward()
 	{
-		final List<CrossEventAdvancedRewardHolder> tempList = new ArrayList<>();
-		for (CrossEventAdvancedRewardHolder reward : CrossEventManager.getInstance().getAdvancedRewardList())
+		for (int attempt = 0; attempt < RARE_REWARD_MAX_RETRIES; attempt++)
 		{
-			if (Rnd.get(100000) <= reward.getChance())
+			final List<CrossEventAdvancedRewardHolder> tempList = new ArrayList<>();
+			for (CrossEventAdvancedRewardHolder reward : CrossEventManager.getInstance().getAdvancedRewardList())
 			{
-				tempList.add(reward);
+				if (Rnd.get(RARE_REWARD_RANDOM_BASE) <= reward.getChance())
+				{
+					tempList.add(reward);
+				}
+			}
+
+			if (!tempList.isEmpty())
+			{
+				return tempList.get(Rnd.get(0, tempList.size() - 1));
 			}
 		}
-		
-		// Prevent tempList to be empty.
-		if (tempList.isEmpty())
-		{
-			return getRareReward();
-		}
-		
-		return tempList.get(Rnd.get(0, tempList.size() - 1));
+
+		// 保底：重試耗盡時回傳第一個獎勵（正常不應該發生）
+		return CrossEventManager.getInstance().getAdvancedRewardList().get(0);
 	}
 }

@@ -190,7 +190,7 @@ public class DatabaseSpawnManager
 		if (npc != null)
 		{
 			npc.setDBStatus(RaidBossStatus.ALIVE);
-			
+
 			final StatSet info = new StatSet();
 			info.set("currentHP", npc.getCurrentHp());
 			info.set("currentMP", npc.getCurrentMp());
@@ -198,8 +198,12 @@ public class DatabaseSpawnManager
 			_storedInfo.put(npcId, info);
 			_npcs.put(npcId, npc);
 			LOGGER.info(getClass().getSimpleName() + ": Spawning NPC " + npc.getName());
+
+			// [自定義修改] BOSS復活時立即將 respawnTime=0 寫回資料庫
+			// 原版只在死亡和伺服器關閉時更新DB，導致復活後DB仍殘留舊的重生時間
+			updateRespawnTimeInDb(npcId, 0);
 		}
-		
+
 		_schedules.remove(npcId);
 	}
 	
@@ -492,7 +496,28 @@ public class DatabaseSpawnManager
 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": SQL error while updating database spawn to database: ", e);
 		}
 	}
-	
+
+	/**
+	 * [自定義修改] 單獨更新指定NPC的 respawnTime 到資料庫
+	 * 用於BOSS復活時立即同步DB狀態，避免卷軸等外部查詢讀到過時資料
+	 * @param npcId NPC ID
+	 * @param respawnTime 重生時間（0=存活）
+	 */
+	private void updateRespawnTimeInDb(int npcId, long respawnTime)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement statement = con.prepareStatement("UPDATE npc_respawns SET respawnTime = ? WHERE id = ?"))
+		{
+			statement.setLong(1, respawnTime);
+			statement.setInt(2, npcId);
+			statement.executeUpdate();
+		}
+		catch (SQLException e)
+		{
+			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Could not update respawnTime for npc #" + npcId, e);
+		}
+	}
+
 	/**
 	 * Gets the all npc status.
 	 * @return the all npc status

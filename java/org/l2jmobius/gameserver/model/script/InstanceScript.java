@@ -137,109 +137,136 @@ public abstract class InstanceScript extends Script
 	 */
 	protected void enterInstance(Player player, Npc npc, int templateId)
 	{
+		// [自定義修改] 統一防卡副本：進入前先清除所有殘留的舊副本綁定
 		Instance instance = getPlayerInstance(player);
 
 		if (instance != null) // Player has already any instance active.
 		{
 			if (instance.getTemplateId() != templateId)
 			{
-				// ===== 強制清理舊副本關聯 =====
-				// 如果玩家還在舊副本內，先踢出去
-				if (instance.containsPlayer(player))
-				{
-					instance.ejectPlayer(player);
-				}
-
-				// 從舊副本的允許列表中移除
-				instance.removeAllowed(player);
-
-				// 記錄日誌
-				LOGGER.warning("【副本清理】玩家 " + player.getName() + " 在嘗試進入副本 " +
-						templateId + " 時，仍在副本 " + instance.getTemplateId() +
-						" 的允許列表中，已強制清除");
-
-				// 清理完成後，重新獲取副本狀態（應該為 null）
-				instance = InstanceManager.getInstance().getPlayerInstance(player, false);
-				// ===== 結束新增 =====
+				// 不同類型副本殘留，強制清除
+				cleanupStaleInstance(player, instance, templateId);
+				instance = getPlayerInstance(player);
 			}
 
-			// 如果清理後還有副本（同一個 templateId），直接進入
+			// 同類型副本殘留，檢查玩家是否真的在裡面
 			if (instance != null)
 			{
-				onEnter(player, instance, false);
-				return;
+				if (instance.containsPlayer(player))
+				{
+					// 玩家確實在副本內，正常重新進入
+					onEnter(player, instance, false);
+					return;
+				}
+
+				// 玩家不在副本內但 allowed 列表殘留，清除後重新建立
+				cleanupStaleInstance(player, instance, templateId);
+				instance = getPlayerInstance(player);
+				if (instance != null)
+				{
+					onEnter(player, instance, false);
+					return;
+				}
 			}
 		}
-		else
+
+		// Get instance template.
+		final InstanceManager instanceManager = InstanceManager.getInstance();
+		final InstanceTemplate instanceTemplate = instanceManager.getInstanceTemplate(templateId);
+		if (instanceTemplate == null)
 		{
-			// Get instance template.
-			final InstanceManager instanceManager = InstanceManager.getInstance();
-			final InstanceTemplate instanceTemplate = instanceManager.getInstanceTemplate(templateId);
-			if (instanceTemplate == null)
+			LOGGER.warning(player + " wants to create instance with unknown template id " + templateId + "!");
+			return;
+		}
+
+		// Get instance enter scope.
+		final List<Player> group = instanceTemplate.getEnterGroup(player);
+
+		// When nobody can enter.
+		if (group == null)
+		{
+			LOGGER.warning("Instance " + instanceTemplate.getName() + " (" + templateId + ") has invalid group size limits!");
+			return;
+		}
+
+		// Validate conditions for group.
+		if (!player.isGM() && (!instanceTemplate.validateConditions(group, npc, this::showHtmlFile) || !validateConditions(group, npc, instanceTemplate)))
+		{
+			return;
+		}
+
+		// Check if maximum world count limit is exceeded.
+		if ((instanceTemplate.getMaxWorlds() != -1 /* unlimited instances */) && (instanceManager.getWorldCount(templateId) >= instanceTemplate.getMaxWorlds()))
+		{
+			player.sendPacket(SystemMessageId.THE_NUMBER_OF_INSTANCE_ZONES_THAT_CAN_BE_CREATED_HAS_BEEN_EXCEEDED_PLEASE_TRY_AGAIN_LATER);
+			return;
+		}
+
+		// [自定義修改] 組隊成員也做防卡檢查：殘留舊副本自動清除，而非直接拒絕
+		for (Player member : group)
+		{
+			final Instance memberInstance = getPlayerInstance(member);
+			if (memberInstance != null)
 			{
-				LOGGER.warning(player + " wants to create instance with unknown template id " + templateId + "!");
-				return;
-			}
-			
-			// Get instance enter scope.
-			final List<Player> group = instanceTemplate.getEnterGroup(player);
-			
-			// When nobody can enter.
-			if (group == null)
-			{
-				LOGGER.warning("Instance " + instanceTemplate.getName() + " (" + templateId + ") has invalid group size limits!");
-				return;
-			}
-			
-			// Validate conditions for group.
-			if (!player.isGM() && (!instanceTemplate.validateConditions(group, npc, this::showHtmlFile) || !validateConditions(group, npc, instanceTemplate)))
-			{
-				return;
-			}
-			
-			// Check if maximum world count limit is exceeded.
-			if ((instanceTemplate.getMaxWorlds() != -1 /* unlimited instances */) && (instanceManager.getWorldCount(templateId) >= instanceTemplate.getMaxWorlds()))
-			{
-				player.sendPacket(SystemMessageId.THE_NUMBER_OF_INSTANCE_ZONES_THAT_CAN_BE_CREATED_HAS_BEEN_EXCEEDED_PLEASE_TRY_AGAIN_LATER);
-				return;
-			}
-			
-			// Check if any player from enter group has active instance.
-			for (Player member : group)
-			{
-				if (getPlayerInstance(member) != null)
+				if (memberInstance.containsPlayer(member))
 				{
+					// 成員確實在其他副本內，這是正常情況，拒絕進入
 					group.forEach(p -> p.sendPacket(new SystemMessage(SystemMessageId.YOU_CANNOT_ENTER_AS_C1_IS_IN_ANOTHER_INSTANCE_ZONE).addString(member.getName())));
 					return;
 				}
-				
-				// Check if any player from the group has already finished the instance.
-				if (InstanceManager.getInstance().getInstanceTime(member, templateId) > 0)
-				{
-					group.forEach(p -> p.sendPacket(new SystemMessage(SystemMessageId.C1_CANNOT_ENTER_YET).addString(member.getName())));
-					return;
-				}
+
+				// 成員不在副本內但有殘留綁定，自動清除
+				cleanupStaleInstance(member, memberInstance, templateId);
 			}
-			
-			// Create new instance for enter player group.
-			instance = instanceManager.createInstance(instanceTemplate, player);
-			
-			// Move each player from enter group to instance.
-			for (Player member : group)
+
+			// Check if any player from the group has already finished the instance.
+			// [自定義修改] 只有 XML 設定了 <reenter> 的副本才檢查再入場時間
+			if ((instanceTemplate.getReenterType() != InstanceReenterType.NONE) && (InstanceManager.getInstance().getInstanceTime(member, templateId) > 0))
 			{
-				instance.addAllowed(member);
-				onEnter(member, instance, true);
-			}
-			
-			// Apply condition success effects.
-			instanceTemplate.applyConditionEffects(group);
-			
-			// Set re-enter for instances with re-enter on start.
-			if (instance.getReenterType() == InstanceReenterType.ON_ENTER)
-			{
-				instance.setReenterTime();
+				group.forEach(p -> p.sendPacket(new SystemMessage(SystemMessageId.C1_CANNOT_ENTER_YET).addString(member.getName())));
+				return;
 			}
 		}
+
+		// Create new instance for enter player group.
+		instance = instanceManager.createInstance(instanceTemplate, player);
+
+		// Move each player from enter group to instance.
+		for (Player member : group)
+		{
+			instance.addAllowed(member);
+			onEnter(member, instance, true);
+		}
+
+		// Apply condition success effects.
+		instanceTemplate.applyConditionEffects(group);
+
+		// Set re-enter for instances with re-enter on start.
+		if (instance.getReenterType() == InstanceReenterType.ON_ENTER)
+		{
+			instance.setReenterTime();
+		}
+	}
+
+	/**
+	 * [自定義修改] 清除玩家殘留的舊副本綁定（防卡副本）
+	 * 當玩家因斷線、崩潰等原因未正常離開副本時，allowed 列表會殘留，
+	 * 導致下次進入任何副本都被拒絕。此方法自動清除這些殘留。
+	 * @param player 需要清除的玩家
+	 * @param staleInstance 殘留的舊副本
+	 * @param newTemplateId 玩家想要進入的新副本模板ID（用於日誌）
+	 */
+	private void cleanupStaleInstance(Player player, Instance staleInstance, int newTemplateId)
+	{
+		LOGGER.info("【副本防卡】玩家 " + player.getName() +
+				" 殘留在副本 " + staleInstance.getTemplateId() + "(ID:" + staleInstance.getId() + ")" +
+				"，嘗試進入副本 " + newTemplateId + "，自動清除殘留");
+
+		if (staleInstance.containsPlayer(player))
+		{
+			staleInstance.ejectPlayer(player);
+		}
+		staleInstance.removeAllowed(player);
 	}
 	
 	/**

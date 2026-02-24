@@ -102,23 +102,32 @@ public class PotentialCube extends Script
         String[] pending = PotentialDAO.loadPendingChoice(player.getObjectId());
         if (pending != null)
         {
-            int pendingType = Integer.parseInt(pending[0]);
             String oldData = pending[1];
             String newData = pending[2];
 
-            if (pendingType == PENDING_TYPE_COMBINE)
+            // 資料損壞檢查：如果 oldData 或 newData 是 "null" 字串，清除這筆壞記錄
+            if ("null".equalsIgnoreCase(oldData) || "null".equalsIgnoreCase(newData))
             {
-                // 恢復結合選擇頁面
-                Map<Integer, Integer> oldPotentials = deserializePotentials(oldData);
-                Map<Integer, Integer> newPotentials = deserializePotentials(newData);
-                showCombineSelectPage(player, oldPotentials, newPotentials);
-                return;
+                PotentialDAO.deletePendingChoice(player.getObjectId());
             }
-            else if (pendingType == PENDING_TYPE_FREE)
+            else
             {
-                // 恢復自由選擇頁面
-                showFreeSelectPageFromDb(player, oldData, newData);
-                return;
+                int pendingType = Integer.parseInt(pending[0]);
+
+                if (pendingType == PENDING_TYPE_COMBINE)
+                {
+                    // 恢復結合選擇頁面
+                    Map<Integer, Integer> oldPotentials = deserializePotentials(oldData);
+                    Map<Integer, Integer> newPotentials = deserializePotentials(newData);
+                    showCombineSelectPage(player, oldPotentials, newPotentials);
+                    return;
+                }
+                else if (pendingType == PENDING_TYPE_FREE)
+                {
+                    // 恢復自由選擇頁面
+                    showFreeSelectPageFromDb(player, oldData, newData);
+                    return;
+                }
             }
         }
 
@@ -534,7 +543,7 @@ public class PotentialCube extends Script
     private Map<Integer, Integer> deserializePotentials(String data)
     {
         Map<Integer, Integer> result = new HashMap<>();
-        if (data == null || data.isEmpty())
+        if (data == null || data.isEmpty() || "null".equalsIgnoreCase(data))
         {
             return result;
         }
@@ -543,8 +552,12 @@ public class PotentialCube extends Script
         for (String pair : pairs)
         {
             String[] parts = pair.split(":");
-            int slot = Integer.parseInt(parts[0]);
-            int skillId = Integer.parseInt(parts[1]);
+            if (parts.length < 2 || "null".equalsIgnoreCase(parts[0]) || "null".equalsIgnoreCase(parts[1]))
+            {
+                continue; // 跳過損壞的資料
+            }
+            int slot = Integer.parseInt(parts[0].trim());
+            int skillId = Integer.parseInt(parts[1].trim());
             result.put(slot, skillId);
         }
         return result;
@@ -568,8 +581,7 @@ public class PotentialCube extends Script
     private List<Integer> deserializeIntList(String data)
     {
         List<Integer> result = new ArrayList<>();
-        if (data == null || data.isEmpty())
-        {
+        if (data == null || data.isEmpty() || "null".equalsIgnoreCase(data))        {
             return result;
         }
 
@@ -679,7 +691,8 @@ public class PotentialCube extends Script
     {
         for (int skillId : potentials.values())
         {
-            player.removeSkill(skillId);
+            Skill skill = SkillData.getInstance().getSkill(skillId, 1);
+            player.removeSkill(skill,true,true);
         }
         player.sendPacket(new SkillList());
     }

@@ -2,40 +2,87 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CrossEvent.xsd">
 	<displayId>4</displayId> 
 	<ticketId>72458</ticketId> 
-	<dailyResets>3</dailyResets>
-	<dailyResetsCostAmount>10000000</dailyResetsCostAmount>
+	<dailyResets>5</dailyResets>
+	<dailyResetsCostAmount>300000000</dailyResetsCostAmount>
 	<cells>
-		<cell id="1" rewardId="97145" rewardAmount="50" /> 
-		<cell id="2" rewardId="3031" rewardAmount="500" /> 
-		<cell id="3" rewardId="97597" rewardAmount="1" /> 
-		<cell id="4" rewardId="98941" rewardAmount="1" /> 
-		<cell id="5" rewardId="91840" rewardAmount="2" /> 
-		<cell id="6" rewardId="94780" rewardAmount="2" /> 
-		<cell id="7" rewardId="98250" rewardAmount="1" /> 
-		<cell id="8" rewardId="90835" rewardAmount="2" /> 
-		<cell id="9" rewardId="98945" rewardAmount="1" /> 
-		<cell id="10" rewardId="97975" rewardAmount="1" /> 
-		<cell id="11" rewardId="94620" rewardAmount="1" /> 
-		<cell id="12" rewardId="94615" rewardAmount="1" /> 
-		<cell id="13" rewardId="97147" rewardAmount="1" /> 
-		<cell id="14" rewardId="98697" rewardAmount="100" /> 
-		<cell id="15" rewardId="97425" rewardAmount="1" /> 
-		<cell id="16" rewardId="91690" rewardAmount="50" /> 
+		<cell id="1" rewardId="111001" rewardAmount="1" />
+		<cell id="2" rewardId="111001" rewardAmount="1" />
+		<cell id="3" rewardId="111001" rewardAmount="1" />
+		<cell id="4" rewardId="111001" rewardAmount="1" />
+		<cell id="5" rewardId="111001" rewardAmount="1" />
+		<cell id="6" rewardId="111001" rewardAmount="1" />
+		<cell id="7" rewardId="111001" rewardAmount="1" />
+		<cell id="8" rewardId="111001" rewardAmount="1" />
+		<cell id="9" rewardId="111001" rewardAmount="1" />
+		<cell id="10" rewardId="111001" rewardAmount="1" />
+		<cell id="11" rewardId="111001" rewardAmount="1" />
+		<cell id="12" rewardId="111001" rewardAmount="1" />
+		<cell id="13" rewardId="111001" rewardAmount="1" />
+		<cell id="14" rewardId="111001" rewardAmount="1" />
+		<cell id="15" rewardId="111001" rewardAmount="1" />
+		<cell id="16" rewardId="111001" rewardAmount="1" />
 	</cells>
 	<advancedRewards>
-		<item id="94780" count="50" chance="10.00" /> 
-		<item id="94780" count="100" chance="8.00" /> 
-		<item id="97147" count="10" chance="6.00" /> 
-		<item id="97128" count="1" chance="4.00" /> 
-		<item id="97129" count="1" chance="3.00" /> 
-		<item id="94328" count="3" chance="2.25" /> 
-		<item id="98075" count="1" chance="1.50" /> 
-		<item id="98221" count="1" chance="12.00" /> 
-		<item id="97121" count="1" chance="15.00" /> 
-		<item id="100242" count="1" chance="20.00" /> 
-		<item id="100058" count="1" chance="25.00" /> 
-		<item id="97122" count="1" chance="30.00" /> 
-		<item id="97123" count="1" chance="35.00" /> 
-		<item id="94314" count="1" chance="40.00" /> 
+		<!-- 111001 隨機 1~50 顆，數量越多機率越低 -->
+		<!-- 1~5顆：高機率區（每個 80~100） -->
+		<item id="111001" count="1" chance="100.00" />
+		<item id="111001" count="2" chance="95.00" />
+		<item id="111001" count="3" chance="90.00" />
+		<item id="111001" count="4" chance="85.00" />
+		<item id="111001" count="5" chance="80.00" />
+		<!-- 6~10顆：較高機率區（每個 60~75） -->
+		<item id="111001" count="6" chance="75.00" />
+		<item id="111001" count="7" chance="72.00" />
+		<item id="111001" count="8" chance="69.00" />
+		<item id="111001" count="9" chance="66.00" />
+		<item id="111001" count="10" chance="63.00" />
+		<!-- 11~15顆：中高機率區（每個 45~60） -->
+		<item id="111001" count="11" chance="60.00" />
+		<item id="111001" count="12" chance="57.00" />
+		<item id="111001" count="13" chance="54.00" />
+		<item id="111001" count="14" chance="51.00" />
+		<item id="111001" count="15" chance="48.00" />
+		<!-- 16~20顆：中等機率區（每個 30~45） -->
+		<item id="111001" count="16" chance="45.00" />
+		<item id="111001" count="17" chance="42.00" />
+		<item id="111001" count="18" chance="39.00" />
+		<item id="111001" count="19" chance="36.00" />
+		<item id="111001" count="20" chance="33.00" />
+		<!-- 21~25顆：中低機率區（每個 20~30） -->
+		<item id="111001" count="21" chance="30.00" />
+		<item id="111001" count="22" chance="28.00" />
+		<item id="111001" count="23" chance="26.00" />
+		<item id="111001" count="24" chance="24.00" />
+		<item id="111001" count="25" chance="22.00" />
+		<!-- 26~30顆：較低機率區（每個 13~20） -->
+		<item id="111001" count="26" chance="20.00" />
+		<item id="111001" count="27" chance="18.50" />
+		<item id="111001" count="28" chance="17.00" />
+		<item id="111001" count="29" chance="15.50" />
+		<item id="111001" count="30" chance="14.00" />
+		<!-- 31~35顆：低機率區（每個 8~13） -->
+		<item id="111001" count="31" chance="13.00" />
+		<item id="111001" count="32" chance="12.00" />
+		<item id="111001" count="33" chance="11.00" />
+		<item id="111001" count="34" chance="10.00" />
+		<item id="111001" count="35" chance="9.00" />
+		<!-- 36~40顆：很低機率區（每個 4~8） -->
+		<item id="111001" count="36" chance="8.00" />
+		<item id="111001" count="37" chance="7.00" />
+		<item id="111001" count="38" chance="6.00" />
+		<item id="111001" count="39" chance="5.00" />
+		<item id="111001" count="40" chance="4.00" />
+		<!-- 41~45顆：極低機率區（每個 1.5~3.5） -->
+		<item id="111001" count="41" chance="3.50" />
+		<item id="111001" count="42" chance="3.00" />
+		<item id="111001" count="43" chance="2.50" />
+		<item id="111001" count="44" chance="2.00" />
+		<item id="111001" count="45" chance="1.50" />
+		<!-- 46~50顆：大獎區（每個 0.5~1.2） -->
+		<item id="111001" count="46" chance="1.20" />
+		<item id="111001" count="47" chance="1.00" />
+		<item id="111001" count="48" chance="0.80" />
+		<item id="111001" count="49" chance="0.60" />
+		<item id="111001" count="50" chance="0.50" />
 	</advancedRewards>
 </list>

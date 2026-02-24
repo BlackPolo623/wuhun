@@ -42,5 +42,6 @@ public enum ItemProcessType
 	REWARD,
 	QUEST,
 	DESTROY,
-	ADENLAB
+	ADENLAB,
+	JEWEL
 }

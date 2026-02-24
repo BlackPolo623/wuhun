@@ -8050,6 +8050,7 @@ public class Player extends Playable
 			// ========== 在這裡添加（注意是小寫 player）==========
 			player.updateWuxianCache(); // 初始化無限成長緩存
 			player.updateZscsCache();
+			player.updateJewelBonusCache(); // 初始化寶玉系統緩存
 			// ====================================================
 			
 			// Recalculate all stats
@@ -12913,7 +12914,17 @@ public class Player extends Playable
 		{
 			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerLogout(this), this);
 		}
-		
+
+		// 保存寶玉系統數據
+		try
+		{
+			org.l2jmobius.gameserver.model.jewel.JewelSystemManager.getInstance().onPlayerLogout(this);
+		}
+		catch (Exception e)
+		{
+			LOGGER.log(Level.WARNING, "Failed to save jewel system data for player: " + getName(), e);
+		}
+
 		if (getReputation() < 0)
 		{
 			World.getInstance().removePkPlayer(this);
@@ -18963,7 +18974,28 @@ public class Player extends Playable
 				return 0;
 		}
 	}
-	
+
+	// ==================== 寶玉系統緩存 ====================
+	private volatile long _jewelBonus = 0;
+	// ==========================================================
+
+	/**
+	 * 獲取寶玉系統加成值
+	 * @return 寶玉系統總加成
+	 */
+	public long getJewelBonus()
+	{
+		return _jewelBonus;
+	}
+
+	/**
+	 * 更新寶玉系統緩存
+	 */
+	public void updateJewelBonusCache()
+	{
+		_jewelBonus = org.l2jmobius.gameserver.model.jewel.JewelSystemManager.getInstance().getTotalBonus(this);
+	}
+
 	// ==================== 裝備轉生緩存（修正版）====================
 	private volatile int _mainHandZscs = 0; // 主手轉生
 	private volatile int _offHandZscs = 0; // 副手轉生

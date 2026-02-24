@@ -51,7 +51,7 @@ public class TreasureManager
 			{
 				while (rs.next())
 				{
-					int treasure = rs.getInt("dynamicTreasury");
+					long treasure = rs.getLong("dynamicTreasury");
 					int castleId = rs.getInt("id");
 					if (treasure > 0)
 					{

@@ -45,7 +45,7 @@ public class Lunhuiinstance extends InstanceScript
 	private static final int GOLBERG = 61000; // BOSS
 	
 	// BOSS刷新位置
-	private final Location BOSS_LOCATION = new Location(-185854, 147878, -15312);
+	private final Location BOSS_LOCATION = new Location(47484, 152430, -2759);
 	
 	// 道具配置
 	private static final int ITEM_ID = 57; // 消耗道具ID(金幣)

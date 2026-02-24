@@ -136,18 +136,43 @@ public class GiftPackageManagerFrame extends JFrame
         // ========== 2025年2月禮包 ==========
         
         // 基礎禮包
-        GiftPackage Donate_202602_3000 = new GiftPackage(
-            "Donate_202602_3000",
-            "2026年2月禮包_3000元",
-            "3000元"
+        GiftPackage Donate_202602_2000 = new GiftPackage(
+            "Donate_202602_2000",
+            "2026年2月禮包初階轉換禮包",
+            "2000元"
         );
-        Donate_202602_3000.addReward(57, 10000);      // 古幣 x10000
-        Donate_202602_3000.addReward(105801, 10);        // 武魂魂魄 x10
-        Donate_202602_3000.addReward(105802, 5);         // 收藏品隨機開啟券 x5
-        packages.put(Donate_202602_3000.getPackageId(), Donate_202602_3000);
-        
+        Donate_202602_2000.addReward(109001, 1);
+        Donate_202602_2000.addReward(111003, 200);
+        packages.put(Donate_202602_2000.getPackageId(), Donate_202602_2000);
 
-        
+        GiftPackage Donate_202602_4000 = new GiftPackage(
+                "Donate_202602_4000",
+                "2026年2月禮包中階轉換禮包",
+                "4000元"
+        );
+        Donate_202602_4000.addReward(109002, 1);
+        Donate_202602_4000.addReward(111003, 300);
+        packages.put(Donate_202602_4000.getPackageId(), Donate_202602_4000);
+
+        GiftPackage Donate_202602_6000 = new GiftPackage(
+                "Donate_202602_6000",
+                "2026年2月禮包高階轉換禮包",
+                "6000元"
+        );
+        Donate_202602_6000.addReward(109003, 1);
+        Donate_202602_6000.addReward(111003, 400);
+        packages.put(Donate_202602_6000.getPackageId(), Donate_202602_6000);
+
+        GiftPackage Donate_202602_8000 = new GiftPackage(
+                "Donate_202602_8000",
+                "2026年2月禮包頂級轉換禮包",
+                "8000元"
+        );
+        Donate_202602_8000.addReward(109004, 1);
+        Donate_202602_8000.addReward(111003, 500);
+        packages.put(Donate_202602_8000.getPackageId(), Donate_202602_8000);
+
+
         // TODO: 新月份禮包在這裡添加
         // 例如：2025年2月禮包
         /*

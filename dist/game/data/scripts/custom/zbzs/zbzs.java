@@ -40,6 +40,7 @@ public class zbzs extends Script
 			{50, 99, 50},
 			{100, 1000, 30},
 			{1001, 1200, 20},
+			{1201, 2000, 5},
 	};
 
 	public zbzs()

@@ -10,8 +10,8 @@
                 <walk ground="40"/>
                 <run ground="180"/>
             </speed>
-            <attack physical="120000" magical="22465" critical="4" attackSpeed="1000" range="40"/>
-            <defence physical="120000" magical="45000"/>
+            <attack physical="5500000" magical="5500000" critical="4" attackSpeed="1000" range="40"/>
+            <defence physical="750000" magical="750000"/>
         </stats>
         <collision>
             <radius normal="66"/>
@@ -22,6 +22,7 @@
         </skillList>
         <dropLists>
             <drop>
+                <item id="97452" min="1" max="1" chance="10"/>
                 <item id="22223" min="1" max="20" chance="15"/>
                 <item id="22224" min="1" max="20" chance="15"/>
                 <item id="101214" min="1" max="10" chance="9"/>

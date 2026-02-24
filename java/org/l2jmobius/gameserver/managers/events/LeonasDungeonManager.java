@@ -61,7 +61,7 @@ public class LeonasDungeonManager
 	private final List<Integer> _rewardedPlayers = new ArrayList<>();
 
 	// Configuration
-	public static final int MAX_WEEKLY_ENTRIES = 5;
+	public static final int MAX_WEEKLY_ENTRIES = 14;
 	
 	public LeonasDungeonManager()
 	{
@@ -153,37 +153,37 @@ public class LeonasDungeonManager
 		for (Entry<Integer, Integer> entry : topPlayers.entrySet())
 		{
 			final int playerId = entry.getKey();
-			int rewardsId = 99845;
+			int rewardsId = 97366;
 			int rewards = 1;
 			if (rank == 1)
 			{
-				rewards = 10;
+				rewards = 100;
 				rewardsId = 97366; // Dawn Lady's Pack (Time-limited) Sealed x1
 			}
 			else if ((rank == 2) || (rank == 3))
 			{
-				rewards = 1;
-				rewardsId = 99849; // Dawn Prince's Pack (Time-limited) Sealed x1
+				rewards = 70;
+				rewardsId = 97366; // Dawn Prince's Pack (Time-limited) Sealed x1
 			}
 			else if ((rank >= 4) && (rank <= 10))
 			{
-				rewards = 1;
-				rewardsId = 99848; // Dawn Bishop's Pack (Time-limited) Sealed x1
+				rewards = 40;
+				rewardsId = 97366; // Dawn Bishop's Pack (Time-limited) Sealed x1
 			}
 			else if ((rank >= 11) && (rank <= 50))
 			{
-				rewards = 1;
-				rewardsId = 99847; // Dawn Aristocrat's Pack (Time-limited) Sealed x1
+				rewards = 30;
+				rewardsId = 97366; // Dawn Aristocrat's Pack (Time-limited) Sealed x1
 			}
 			else if ((rank >= 51) && (rank <= 100))
 			{
-				rewards = 1;
-				rewardsId = 99846; // Dawn General's Pack (Time-limited) Sealed x1
+				rewards = 20;
+				rewardsId = 97366; // Dawn General's Pack (Time-limited) Sealed x1
 			}
 			else if ((rank >= 101) && (rank <= 150))
 			{
-				rewards = 1;
-				rewardsId = 99845; // Dawn General's Pack (Time-limited) Sealed x1
+				rewards = 10;
+				rewardsId = 97366; // Dawn General's Pack (Time-limited) Sealed x1
 			}
 			
 			giveRewardToPlayer(playerId, rewardsId, rewards);
@@ -212,12 +212,15 @@ public class LeonasDungeonManager
 		try (Connection con = DatabaseFactory.getConnection();
 			PreparedStatement statement = con.prepareStatement(INSERT_DUNGEON_RANKING))
 		{
-			_playerPoints.forEach((playerId, points) ->
+			// Merge both maps so players with only entry count (no points) are also saved.
+			final java.util.Set<Integer> allPlayerIds = new java.util.HashSet<>(_playerPoints.keySet());
+			allPlayerIds.addAll(_playerWeeklyEntries.keySet());
+			allPlayerIds.forEach(playerId ->
 			{
 				try
 				{
 					statement.setInt(1, playerId);
-					statement.setInt(2, points.get());
+					statement.setInt(2, _playerPoints.getOrDefault(playerId, new AtomicInteger(0)).get());
 					statement.setInt(3, _playerWeeklyEntries.getOrDefault(playerId, new AtomicInteger(0)).get());
 					statement.addBatch();
 				}

@@ -182,7 +182,7 @@ public class SkillCaster implements Runnable
 		{
 			return null;
 		}
-		
+
 		// You should not heal/buff monsters without pressing the ctrl button.
 		if (caster.isPlayer() && (target.isMonster() && !target.isFakePlayer()) && (skill.getEffectPoint() > 0) && !ctrlPressed)
 		{

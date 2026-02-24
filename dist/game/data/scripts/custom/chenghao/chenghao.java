@@ -1,10 +1,7 @@
 package custom.chenghao;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.List;
 
-import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -18,207 +15,114 @@ import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.network.serverpackets.SkillList;
 import org.l2jmobius.gameserver.util.Broadcast;
 
+import custom.chenghao.TitleSystem.SmallTitle;
+import custom.chenghao.TitleSystem.TitleSeries;
+
+/**
+ * 稱號系統 - 主腳本
+ * 重構版：支持多系列、只有最終稱號可配戴、系列全解永久啟用
+ */
 public class chenghao extends Script
 {
-	// ==================== 配置常數 ====================
-	private static final int NPC_ID = 900003;
-	private static final String VAR_TITLE = "稱號融合系統";
 	private static final String HTML_PATH = "data/scripts/custom/chenghao/";
-
-	// 稱號配置
-	private static final int SKILL_LEVEL = 1;
-	private static final int TITLES_PER_PAGE = 5;
-
-	// 融合配置
-	private static final String FUSION_TITLE = "終焉武魂";
-	private static final int FUSION_SKILL_ID = 100000;
-	private static final int MAX_FUSION_LEVEL = 10;
-	private static final int FUSION_ITEM_ID = 57;
-	private static final int FUSION_ITEM_COUNT = 5000000;
-
-	// ==================== 融合成功率配置 ====================
-
-	// 失敗懲罰類型
-	private static final int FAILURE_PENALTY_TYPE = 1;
-	// 1 = 扣材料，保留等級，消耗稱號
-	// 2 = 扣材料，降1級，消耗稱號（標準模式）
-	// 3 = 扣材料，歸零，消耗稱號（硬核模式）
-
-	private static final Map<String, Integer> TITLE_SKILL_MAP = new LinkedHashMap<>();
-	private static final Map<String, Integer> TITLE_BOSS_REQUIREMENT = new LinkedHashMap<>();
-	private static final Map<String, String> TITLE_BOSS_NAME = new LinkedHashMap<>();
-	private static final Map<Integer, Integer> FUSION_SUCCESS_RATES = new LinkedHashMap<>();
-
-	// ==================== 融合稱號名稱配置（Lv.1-10）====================
-	private static final Map<Integer, String> FUSION_TITLE_NAMES = new LinkedHashMap<>();
-	static
-	{
-		// ==================== 融合稱號名稱（可隨意修改）====================
-		FUSION_TITLE_NAMES.put(1, "武魂壹♦覺醒");
-		FUSION_TITLE_NAMES.put(2, "武魂貳♦蛻變");
-		FUSION_TITLE_NAMES.put(3, "武魂參♦進化");
-		FUSION_TITLE_NAMES.put(4, "武魂肆♦突破");
-		FUSION_TITLE_NAMES.put(5, "武魂伍♦超越");
-		FUSION_TITLE_NAMES.put(6, "武魂陸♦完美");
-		FUSION_TITLE_NAMES.put(7, "武魂柒♦究極");
-		FUSION_TITLE_NAMES.put(8, "武魂捌♦至尊");
-		FUSION_TITLE_NAMES.put(9, "武魂玖♦神化");
-		FUSION_TITLE_NAMES.put(10, "終焉武魂");
-
-		// ==================== 成功率配置 ====================
-		FUSION_SUCCESS_RATES.put(1, 90);  // Lv.1 → Lv.2: 90%
-		FUSION_SUCCESS_RATES.put(2, 80);  // Lv.2 → Lv.3: 80%
-		FUSION_SUCCESS_RATES.put(3, 70);  // Lv.3 → Lv.4: 70%
-		FUSION_SUCCESS_RATES.put(4, 60);  // Lv.4 → Lv.5: 60%
-		FUSION_SUCCESS_RATES.put(5, 50);  // Lv.5 → Lv.6: 50%
-		FUSION_SUCCESS_RATES.put(6, 40);  // Lv.6 → Lv.7: 40%
-		FUSION_SUCCESS_RATES.put(7, 30);  // Lv.7 → Lv.8: 30%
-		FUSION_SUCCESS_RATES.put(8, 20);  // Lv.8 → Lv.9: 20%
-		FUSION_SUCCESS_RATES.put(9, 10);  // Lv.9 → Lv.10: 15%
-
-		// 首次融合（從0→1）100%成功
-		FUSION_SUCCESS_RATES.put(0, 100);
-
-		// ==================== 稱號技能配置 ====================
-		TITLE_SKILL_MAP.put("實驗體一號", 100001);
-		TITLE_SKILL_MAP.put("實驗體二號", 100002);
-		TITLE_SKILL_MAP.put("實驗體三號", 100003);
-		TITLE_SKILL_MAP.put("實驗體四號", 100004);
-		TITLE_SKILL_MAP.put("實驗體五號", 100005);
-		TITLE_SKILL_MAP.put("實驗體六號", 100006);
-		TITLE_SKILL_MAP.put("實驗體七號", 100007);
-		TITLE_SKILL_MAP.put("實驗體八號", 100008);
-		TITLE_SKILL_MAP.put("實驗體九號", 100009);
-		TITLE_SKILL_MAP.put("實驗體十號", 100010);
-		TITLE_SKILL_MAP.put("實驗體十一號", 100011);
-		TITLE_SKILL_MAP.put("實驗體十二號", 100012);
-		TITLE_SKILL_MAP.put("實驗體十三號", 100013);
-		TITLE_SKILL_MAP.put("實驗體十四號", 100014);
-		TITLE_SKILL_MAP.put("實驗體十五號", 100015);
-		TITLE_SKILL_MAP.put("實驗體十六號", 100016);
-		TITLE_SKILL_MAP.put("實驗體十七號", 100017);
-		TITLE_SKILL_MAP.put("實驗體十八號", 100018);
-		TITLE_SKILL_MAP.put("實驗體十九號", 100019);
-		TITLE_SKILL_MAP.put("實驗體二十號", 100020);
-		TITLE_SKILL_MAP.put("實驗體二十一號", 100021);
-		TITLE_SKILL_MAP.put("實驗體二十二號", 100022);
-		TITLE_SKILL_MAP.put("實驗體二十三號", 100023);
-		TITLE_SKILL_MAP.put("實驗體二十四號", 100024);
-		TITLE_SKILL_MAP.put("實驗體二十五號", 100025);
-		TITLE_SKILL_MAP.put("實驗體二十六號", 100026);
-		TITLE_SKILL_MAP.put("實驗體二十七號", 100027);
-		TITLE_SKILL_MAP.put("實驗體二十八號", 100028);
-		TITLE_SKILL_MAP.put("實驗體二十九號", 100029);
-		TITLE_SKILL_MAP.put("實驗體三十號", 100030);
-		TITLE_SKILL_MAP.put("實驗體三十一號", 100031);
-		TITLE_SKILL_MAP.put("實驗體三十二號", 100032);
-		TITLE_SKILL_MAP.put("實驗體三十三號", 100033);
-		TITLE_SKILL_MAP.put("實驗體三十四號", 100034);
-		TITLE_SKILL_MAP.put("實驗體三十五號", 100035);
-
-// 稱號解鎖條件（boss npcId）
-		TITLE_BOSS_REQUIREMENT.put("實驗體一號", 50001);
-		TITLE_BOSS_REQUIREMENT.put("實驗體二號", 50002);
-		TITLE_BOSS_REQUIREMENT.put("實驗體三號", 50003);
-		TITLE_BOSS_REQUIREMENT.put("實驗體四號", 50004);
-		TITLE_BOSS_REQUIREMENT.put("實驗體五號", 50005);
-		TITLE_BOSS_REQUIREMENT.put("實驗體六號", 50006);
-		TITLE_BOSS_REQUIREMENT.put("實驗體七號", 50007);
-		TITLE_BOSS_REQUIREMENT.put("實驗體八號", 50008);
-		TITLE_BOSS_REQUIREMENT.put("實驗體九號", 50009);
-		TITLE_BOSS_REQUIREMENT.put("實驗體十號", 50010);
-		TITLE_BOSS_REQUIREMENT.put("實驗體十一號", 50011);
-		TITLE_BOSS_REQUIREMENT.put("實驗體十二號", 50012);
-		TITLE_BOSS_REQUIREMENT.put("實驗體十三號", 50013);
-		TITLE_BOSS_REQUIREMENT.put("實驗體十四號", 50014);
-		TITLE_BOSS_REQUIREMENT.put("實驗體十五號", 50015);
-		TITLE_BOSS_REQUIREMENT.put("實驗體十六號", 50016);
-		TITLE_BOSS_REQUIREMENT.put("實驗體十七號", 50017);
-		TITLE_BOSS_REQUIREMENT.put("實驗體十八號", 50018);
-		TITLE_BOSS_REQUIREMENT.put("實驗體十九號", 50019);
-		TITLE_BOSS_REQUIREMENT.put("實驗體二十號", 50020);
-		TITLE_BOSS_REQUIREMENT.put("實驗體二十一號", 50021);
-		TITLE_BOSS_REQUIREMENT.put("實驗體二十二號", 50022);
-		TITLE_BOSS_REQUIREMENT.put("實驗體二十三號", 50023);
-		TITLE_BOSS_REQUIREMENT.put("實驗體二十四號", 50024);
-		TITLE_BOSS_REQUIREMENT.put("實驗體二十五號", 50025);
-		TITLE_BOSS_REQUIREMENT.put("實驗體二十六號", 50026);
-		TITLE_BOSS_REQUIREMENT.put("實驗體二十七號", 50027);
-		TITLE_BOSS_REQUIREMENT.put("實驗體二十八號", 50028);
-		TITLE_BOSS_REQUIREMENT.put("實驗體二十九號", 50029);
-		TITLE_BOSS_REQUIREMENT.put("實驗體三十號", 50030);
-		TITLE_BOSS_REQUIREMENT.put("實驗體三十一號", 50031);
-		TITLE_BOSS_REQUIREMENT.put("實驗體三十二號", 50032);
-		TITLE_BOSS_REQUIREMENT.put("實驗體三十三號", 50033);
-		TITLE_BOSS_REQUIREMENT.put("實驗體三十四號", 50034);
-		TITLE_BOSS_REQUIREMENT.put("實驗體三十五號", 50035);
-	}
 
 	public chenghao()
 	{
-		addStartNpc(NPC_ID);
-		addFirstTalkId(NPC_ID);
-		addTalkId(NPC_ID);
+		addStartNpc(TitleSystem.NPC_ID);
+		addFirstTalkId(TitleSystem.NPC_ID);
+		addTalkId(TitleSystem.NPC_ID);
 
-		for (int bossId : TITLE_BOSS_REQUIREMENT.values())
+		// 註冊所有系列的BOSS擊殺事件
+		for (TitleSeries series : TitleSystem.getAllSeries())
 		{
-			addKillId(bossId);
+			for (SmallTitle title : series.getSmallTitles())
+			{
+				addKillId(title.getBossNpcId());
+			}
 		}
-
-		// 初始化BOSS名稱緩存
-		initBossNames();
 	}
-
-	// ==================== 事件處理 ====================
 
 	@Override
 	public String onFirstTalk(Npc npc, Player player)
 	{
-		showMainPage(player);
+		showAllSeriesPage(player, 0);
 		return null;
 	}
 
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		if ((event == null) || (player == null))
+		if (event == null || player == null)
 		{
 			return null;
 		}
 
-		if (event.equals("main"))
+		switch (event)
 		{
-			showMainPage(player);
-		}
-		else if (event.startsWith("showTitleList"))
-		{
-			String[] parts = event.split(" ");
-			int page = parts.length > 1 ? Integer.parseInt(parts[1]) : 1;
-			showTitleListPage(player, page);
-		}
-		else if (event.equals("showFusion"))
-		{
-			showFusionPage(player);
-		}
-		// 新增：顯示融合稱號佩戴頁面
-		else if (event.equals("showFusionTitle"))
-		{
-			showFusionTitlePage(player);
-		}
-		else if (event.startsWith("selectTitle_"))
-		{
-			String titleName = event.substring(12);
-			selectTitle(player, titleName);
-		}
-		else if (event.equals("doFusion"))
-		{
-			processFusion(player);
-		}
-		// 新增：佩戴融合稱號
-		else if (event.equals("equipFusionTitle"))
-		{
-			selectTitle(player, FUSION_TITLE);
-			showFusionTitlePage(player); // 刷新頁面
+			case "main":
+				showAllSeriesPage(player, 0);
+				break;
+			case "showAllSeries":
+				showAllSeriesPage(player, 0);
+				break;
+			default:
+				if (event.startsWith("showAllSeries_"))
+				{
+					try
+					{
+						int page = Integer.parseInt(event.substring(14));
+						showAllSeriesPage(player, page);
+					}
+					catch (NumberFormatException e)
+					{
+						showAllSeriesPage(player, 0);
+					}
+				}
+				else if (event.startsWith("showSeries_"))
+				{
+					String seriesId = event.substring(11);
+					showSeriesDetailPage(player, seriesId);
+				}
+				else if (event.startsWith("fuseSeries_"))
+				{
+					String seriesId = event.substring(11);
+					processFusion(player, seriesId);
+				}
+				else if (event.startsWith("showEquipSelect_"))
+				{
+					String seriesId = event.substring(16);
+					showEquipSelectPage(player, seriesId);
+				}
+				else if (event.startsWith("equipSeriesLevel_"))
+				{
+					// 格式: equipSeriesLevel_seriesId_level
+					String remainder = event.substring(17);
+					int lastUnderscore = remainder.lastIndexOf('_');
+					if (lastUnderscore > 0)
+					{
+						String sId = remainder.substring(0, lastUnderscore);
+						try
+						{
+							int level = Integer.parseInt(remainder.substring(lastUnderscore + 1));
+							equipFinalTitleAtLevel(player, sId, level);
+						}
+						catch (NumberFormatException e)
+						{
+							showSeriesDetailPage(player, sId);
+						}
+					}
+				}
+				else if (event.startsWith("equipSeries_"))
+				{
+					String seriesId = event.substring(12);
+					equipFinalTitle(player, seriesId);
+				}
+				else if (event.startsWith("unequipSeries_"))
+				{
+					String seriesId = event.substring(14);
+					unequipFinalTitle(player, seriesId);
+				}
+				break;
 		}
 
 		return null;
@@ -232,18 +136,23 @@ public class chenghao extends Script
 			return;
 		}
 
-		for (Map.Entry<String, Integer> entry : TITLE_BOSS_REQUIREMENT.entrySet())
+		for (TitleSeries series : TitleSystem.getAllSeries())
 		{
-			String title = entry.getKey();
-			int requiredNpcId = entry.getValue();
-
-			if (npc.getId() == requiredNpcId)
+			for (SmallTitle title : series.getSmallTitles())
 			{
-				if (!killer.getVariables().getBoolean("title_unlocked_" + title, false))
+				if (npc.getId() == title.getBossNpcId())
 				{
-					killer.getVariables().set("title_unlocked_" + title, true);
-					killer.sendMessage("恭喜！你已解鎖稱號：" + title);
-					killer.sendMessage("前往稱號NPC即可佩戴該稱號！");
+					String varKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_" + title.getTitleName();
+					if (!killer.getVariables().getBoolean(varKey, false))
+					{
+						killer.getVariables().set(varKey, true);
+						killer.sendMessage("========================================");
+						killer.sendMessage("恭喜！你已解鎖【" + series.getSeriesName() + "】");
+						killer.sendMessage("稱號：" + title.getTitleName());
+						killer.sendMessage("前往稱號NPC查看進度！");
+						killer.sendMessage("========================================");
+					}
+					return;
 				}
 			}
 		}
@@ -252,544 +161,547 @@ public class chenghao extends Script
 	@Override
 	public void onEnterWorld(Player player)
 	{
-		String currentTitle = player.getVariables().getString(VAR_TITLE, null);
-		if (currentTitle == null)
+		String equippedSeriesId = player.getVariables().getString(TitleSystem.VAR_PREFIX + "equipped", null);
+		if (equippedSeriesId != null)
 		{
+			TitleSeries series = TitleSystem.getSeriesById(equippedSeriesId);
+			if (series != null && isSeriesFused(player, series))
+			{
+				String levelKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_level";
+				int fusionLevel = player.getVariables().getInt(levelKey, 1);
+				// 使用玩家選擇的配戴等級，若無記錄則用融合等級
+				int equippedLevel = player.getVariables().getInt(TitleSystem.VAR_PREFIX + "equipped_level", fusionLevel);
+
+				player.setTitle(series.getFinalTitleName());
+				Skill skill = SkillData.getInstance().getSkill(series.getFinalSkillId(), equippedLevel);
+				if (skill != null)
+				{
+					player.addSkill(skill, true);
+					player.sendPacket(new SkillList());
+				}
+			}
+		}
+
+		activatePermanentSkills(player);
+	}
+
+	private void showMainPage(Player player)
+	{
+		NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
+		html.setFile(player, HTML_PATH + "main.htm");
+
+		String equippedSeriesId = player.getVariables().getString(TitleSystem.VAR_PREFIX + "equipped", null);
+		if (equippedSeriesId != null)
+		{
+			TitleSeries series = TitleSystem.getSeriesById(equippedSeriesId);
+			if (series != null)
+			{
+				// 獲取當前等級
+				String levelKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_level";
+				int currentLevel = player.getVariables().getInt(levelKey, 1);
+				html.replace("%current_title%", "<font color=\"FFFF00\">" + series.getFinalTitleName() + " Lv." + currentLevel + "</font>");
+			}
+			else
+			{
+				html.replace("%current_title%", "<font color=\"808080\">無</font>");
+			}
+		}
+		else
+		{
+			html.replace("%current_title%", "<font color=\"808080\">無</font>");
+		}
+
+		int totalSeries = TitleSystem.getAllSeries().size();
+		int completedSeries = 0;
+		for (TitleSeries series : TitleSystem.getAllSeries())
+		{
+			if (isSeriesCompleted(player, series))
+			{
+				completedSeries++;
+			}
+		}
+
+		html.replace("%completed_series%", String.valueOf(completedSeries));
+		html.replace("%total_series%", String.valueOf(totalSeries));
+
+		player.sendPacket(html);
+	}
+
+	private void showAllSeriesPage(Player player, int page)
+	{
+		NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
+		html.setFile(player, HTML_PATH + "series_list.htm");
+
+		List<TitleSeries> allSeries = TitleSystem.getAllSeries();
+		int totalSeries = allSeries.size();
+		int totalPages = Math.max(1, (totalSeries + 4) / 5);
+		if (page < 0) page = 0;
+		if (page >= totalPages) page = totalPages - 1;
+
+		int start = page * 5;
+		int end = Math.min(start + 5, totalSeries);
+
+		StringBuilder seriesList = new StringBuilder();
+		for (int i = start; i < end; i++)
+		{
+			TitleSeries series = allSeries.get(i);
+			int unlockedCount = getUnlockedCount(player, series);
+			int totalCount = series.getTotalCount();
+			boolean completed = isSeriesCompleted(player, series);
+			boolean fused = isSeriesFused(player, series);
+
+			seriesList.append("<tr bgcolor=\"222222\" height=\"40\">");
+			seriesList.append("<td width=\"120\" align=\"center\">");
+
+			if (completed)
+			{
+				seriesList.append("<font color=\"00FF66\">").append(series.getSeriesName()).append("</font>");
+			}
+			else
+			{
+				seriesList.append("<font color=\"FFAA00\">").append(series.getSeriesName()).append("</font>");
+			}
+
+			seriesList.append("</td>");
+			seriesList.append("<td width=\"50\" align=\"center\">");
+			seriesList.append(unlockedCount).append(" / ").append(totalCount);
+			seriesList.append("</td>");
+			seriesList.append("<td width=\"60\" align=\"center\">");
+
+			if (fused)
+			{
+				String fusionLevelKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_level";
+				int fusionLevel = player.getVariables().getInt(fusionLevelKey, 0);
+				String lvColor = fusionLevel >= series.getMaxLevel() ? "00FF66" : "FFAA00";
+				seriesList.append("<font color=\"" + lvColor + "\">Lv." + fusionLevel + "/" + series.getMaxLevel() + "</font>");
+			}
+			else if (completed)
+			{
+				seriesList.append("<font color=\"FFFF00\">可融合</font>");
+			}
+			else
+			{
+				seriesList.append("<font color=\"808080\">未完成</font>");
+			}
+
+			seriesList.append("</td>");
+			seriesList.append("<td width=\"60\" align=\"center\">");
+			seriesList.append("<button value=\"查看\" action=\"bypass -h Quest chenghao showSeries_").append(series.getSeriesId());
+			seriesList.append("\" width=\"55\" height=\"22\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
+			seriesList.append("</td>");
+			seriesList.append("</tr>");
+		}
+
+		html.replace("%series_list%", seriesList.toString());
+
+		// 分頁導航
+		StringBuilder pageNav = new StringBuilder();
+		pageNav.append("<table width=\"290\"><tr>");
+		pageNav.append("<td width=\"90\" align=\"center\">");
+		if (page > 0)
+		{
+			pageNav.append("<button value=\"上一頁\" action=\"bypass -h Quest chenghao showAllSeries_").append(page - 1);
+			pageNav.append("\" width=\"80\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
+		}
+		pageNav.append("</td>");
+		pageNav.append("<td width=\"110\" align=\"center\">");
+		pageNav.append("<font color=\"AAAAAA\">").append(page + 1).append(" / ").append(totalPages).append("</font>");
+		pageNav.append("</td>");
+		pageNav.append("<td width=\"90\" align=\"center\">");
+		if (page < totalPages - 1)
+		{
+			pageNav.append("<button value=\"下一頁\" action=\"bypass -h Quest chenghao showAllSeries_").append(page + 1);
+			pageNav.append("\" width=\"80\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
+		}
+		pageNav.append("</td>");
+		pageNav.append("</tr></table>");
+
+		html.replace("%page_nav%", pageNav.toString());
+		player.sendPacket(html);
+	}
+
+	private void showSeriesDetailPage(Player player, String seriesId)
+	{
+		TitleSeries series = TitleSystem.getSeriesById(seriesId);
+		if (series == null)
+		{
+			player.sendMessage("無效的系列！");
 			return;
 		}
 
-		// 處理融合稱號
-		if (currentTitle.equals(FUSION_TITLE))
+		NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
+		html.setFile(player, HTML_PATH + "series_detail.htm");
+
+		html.replace("%series_name%", series.getSeriesName());
+		html.replace("%final_title%", series.getFinalTitleName());
+
+		int unlockedCount = getUnlockedCount(player, series);
+		int totalCount = series.getTotalCount();
+		boolean completed = isSeriesCompleted(player, series);
+		boolean fused = isSeriesFused(player, series);
+		boolean equipped = isSeriesEquipped(player, series);
+
+		// 獲取當前等級
+		String levelKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_level";
+		int currentLevel = player.getVariables().getInt(levelKey, 0);
+
+		html.replace("%unlocked_count%", String.valueOf(unlockedCount));
+		html.replace("%total_count%", String.valueOf(totalCount));
+
+		int progress = (int) ((double) unlockedCount / totalCount * 100);
+		html.replace("%progress%", String.valueOf(progress));
+
+		StringBuilder titleList = new StringBuilder();
+		for (SmallTitle title : series.getSmallTitles())
 		{
-			int fusionLevel = player.getVariables().getInt("fusion_level", 0);
-			if (fusionLevel > 0)
+			String varKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_" + title.getTitleName();
+			boolean unlocked = player.getVariables().getBoolean(varKey, false);
+
+			titleList.append("<tr bgcolor=\"222222\" height=\"25\">");
+			titleList.append("<td width=\"150\" align=\"left\">");
+
+			if (unlocked)
 			{
-				Skill fusionSkill = SkillData.getInstance().getSkill(FUSION_SKILL_ID, fusionLevel);
-				if (fusionSkill != null)
+				titleList.append("<font color=\"00FF66\">已完成 -- ").append(title.getTitleName()).append("</font>");
+			}
+			else
+			{
+				titleList.append("<font color=\"808080\">未完成 -- ").append(title.getTitleName()).append("</font>");
+			}
+
+			titleList.append("</td>");
+			titleList.append("<td width=\"100\" align=\"center\">");
+
+			if (!unlocked)
+			{
+				NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(title.getBossNpcId());
+				String bossName = npcTemplate != null ? npcTemplate.getName() : "未知";
+				titleList.append("<font color=\"666666\" size=\"1\">").append(bossName).append("</font>");
+			}
+
+			titleList.append("</td>");
+			titleList.append("</tr>");
+		}
+
+		html.replace("%title_list%", titleList.toString());
+
+		StringBuilder fusionButton = new StringBuilder();
+		if (currentLevel >= series.getMaxLevel())
+		{
+			fusionButton.append("<table width=\"280\"><tr><td align=\"center\"><font color=\"00FF66\" size=\"3\">✓ 已達最高等級 Lv.").append(currentLevel).append("</font></td></tr></table>");
+		}
+		else if (completed)
+		{
+			long itemCount = player.getInventory().getInventoryItemCount(TitleSystem.FUSION_ITEM_ID, 0);
+			if (itemCount >= TitleSystem.FUSION_ITEM_COUNT)
+			{
+				String buttonText = fused ? "升級稱號 (Lv." + currentLevel + " → Lv." + (currentLevel + 1) + ")" : "融合稱號";
+				fusionButton.append("<button value=\"").append(buttonText).append("\" action=\"bypass -h Quest chenghao fuseSeries_").append(seriesId);
+				fusionButton.append("\" width=\"200\" height=\"31\" back=\"BranchSys3.icon2.ArmyTrainingInfo_down\" fore=\"BranchSys3.icon2.ArmyTrainingInfo\">");
+
+				// 顯示成功率
+				int targetLevel = currentLevel + 1;
+				Double successRate = series.getFusionSuccessRate(targetLevel);
+				if (successRate != null && successRate < 1.0)
 				{
-					player.addSkill(fusionSkill, true);
+					int percentage = (int) (successRate * 100);
+					String color = percentage >= 70 ? "00FF66" : (percentage >= 40 ? "FFAA00" : "FF3333");
+					fusionButton.append("<table width=\"280\"><tr><td align=\"center\">");
+					fusionButton.append("<font color=\"").append(color).append("\" size=\"1\">成功率: ").append(percentage).append("%</font>");
+					fusionButton.append("</td></tr></table>");
 				}
-				// 修改：使用等級對應的稱號名稱
-				player.setTitle(getFusionTitleByLevel(fusionLevel));
-				player.sendPacket(new SkillList());
-				//Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.BATTLEFIELD, "公告", "歡迎融合稱號擁有者 " + player.getName() + " 進入天堂2世界"));
+			}
+			else
+			{
+				fusionButton.append("<table width=\"280\"><tr><td align=\"center\"><font color=\"FF3333\">材料不足</font></td></tr>");
+				fusionButton.append("<tr><td align=\"center\"><font color=\"808080\" size=\"1\">需要 ").append(TitleSystem.FUSION_ITEM_COUNT).append(" 金幣</font></td></tr></table>");
 			}
 		}
-		// 處理普通稱號
-		else if (TITLE_SKILL_MAP.containsKey(currentTitle))
+		else
 		{
-			int skillId = TITLE_SKILL_MAP.get(currentTitle);
-			Skill skill = SkillData.getInstance().getSkill(skillId, SKILL_LEVEL);
+			fusionButton.append("<table width=\"280\"><tr><td align=\"center\"><font color=\"808080\">請先完成全部稱號解鎖</font></td></tr></table>");
+		}
+
+		html.replace("%fusion_button%", fusionButton.toString());
+
+		// 合成進度
+		if (fused)
+		{
+			String progressColor = currentLevel >= series.getMaxLevel() ? "00FF66" : "FFAA00";
+			html.replace("%fusion_progress%", "<font color=\"" + progressColor + "\">" + currentLevel + " / " + series.getMaxLevel() + "</font>");
+		}
+		else
+		{
+			html.replace("%fusion_progress%", "<font color=\"808080\">尚未融合</font>");
+		}
+
+		// 配戴選擇按鈕（顯示在合成進度旁）
+		if (!fused)
+		{
+			html.replace("%equip_select_button%", "");
+		}
+		else
+		{
+			int eLevel = equipped ? player.getVariables().getInt(TitleSystem.VAR_PREFIX + "equipped_level", currentLevel) : 0;
+			String btnLabel = equipped ? "配戴中 Lv." + eLevel : "選擇配戴";
+			String btnStyle = "L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF";
+			html.replace("%equip_select_button%", "<button value=\"" + btnLabel + "\" action=\"bypass -h Quest chenghao showEquipSelect_" + seriesId + "\" width=\"130\" height=\"22\" back=\"" + btnStyle + "\">");
+		}
+
+		// 檢查是否達到最高等級
+		if (currentLevel >= series.getMaxLevel())
+		{
+			html.replace("%permanent_status%", "<font color=\"00FF66\">✓ 已永久啟用技能 Lv." + currentLevel + "</font>");
+		}
+		else if (fused)
+		{
+			html.replace("%permanent_status%", "<font color=\"FFAA00\">升至最高等級後永久啟用</font>");
+		}
+		else
+		{
+			html.replace("%permanent_status%", "<font color=\"808080\">完成全部解鎖後永久啟用</font>");
+		}
+
+		int seriesPage = getSeriesPage(series.getSeriesId());
+		String backButton = "<button value=\"返回列表\" action=\"bypass -h Quest chenghao showAllSeries_" + seriesPage + "\" width=\"100\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">";
+		html.replace("%back_button%", backButton);
+
+		player.sendPacket(html);
+	}
+
+	private void processFusion(Player player, String seriesId)
+	{
+		TitleSeries series = TitleSystem.getSeriesById(seriesId);
+		if (series == null)
+		{
+			player.sendMessage("無效的系列！");
+			return;
+		}
+
+		// 獲取當前等級
+		String levelKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_level";
+		int currentLevel = player.getVariables().getInt(levelKey, 0);
+
+		// 檢查是否已達最高等級
+		if (currentLevel >= series.getMaxLevel())
+		{
+			player.sendMessage("此系列已達到最高等級！");
+			showSeriesDetailPage(player, seriesId);
+			return;
+		}
+
+		// 檢查是否完成全部解鎖
+		if (!isSeriesCompleted(player, series))
+		{
+			player.sendMessage("請先完成全部稱號解鎖！");
+			showSeriesDetailPage(player, seriesId);
+			return;
+		}
+
+		// 檢查材料
+		long itemCount = player.getInventory().getInventoryItemCount(TitleSystem.FUSION_ITEM_ID, 0);
+		if (itemCount < TitleSystem.FUSION_ITEM_COUNT)
+		{
+			player.sendMessage("材料不足！需要 " + TitleSystem.FUSION_ITEM_COUNT + " 金幣");
+			showSeriesDetailPage(player, seriesId);
+			return;
+		}
+
+		// 扣除材料
+		player.destroyItemByItemId(null, TitleSystem.FUSION_ITEM_ID, TitleSystem.FUSION_ITEM_COUNT, null, true);
+
+		// 計算目標等級
+		int newLevel = currentLevel + 1;
+
+		// 檢查成功率
+		Double successRate = series.getFusionSuccessRate(newLevel);
+		boolean success = true;
+
+		if (successRate != null && successRate < 1.0)
+		{
+			// 有設定成功率，進行判定
+			double random = Math.random();
+			success = random < successRate;
+
+			// 顯示成功率資訊
+			int percentage = (int) (successRate * 100);
+			player.sendMessage("合成成功率: " + percentage + "%");
+		}
+
+		// 合成失敗
+		if (!success)
+		{
+			// 移除所有小稱號解鎖狀態（消耗掉）
+			for (SmallTitle title : series.getSmallTitles())
+			{
+				String varKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_" + title.getTitleName();
+				player.getVariables().remove(varKey);
+			}
+
+			// 失敗訊息
+			player.sendMessage("========================================");
+			player.sendMessage("很遺憾，合成失敗了...");
+			player.sendMessage("材料和稱號已消耗，請重新收集");
+			player.sendMessage("========================================");
+
+			showSeriesDetailPage(player, seriesId);
+			return;
+		}
+
+		// 合成成功 - 升級
+		player.getVariables().set(levelKey, newLevel);
+
+		// 標記為已融合（首次融合時）
+		if (currentLevel == 0)
+		{
+			String fusedKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_fused";
+			player.getVariables().set(fusedKey, true);
+		}
+
+		// 移除所有小稱號解鎖狀態（消耗掉）
+		for (SmallTitle title : series.getSmallTitles())
+		{
+			String varKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_" + title.getTitleName();
+			player.getVariables().remove(varKey);
+		}
+
+		// 更新技能等級
+		String equippedSeriesId = player.getVariables().getString(TitleSystem.VAR_PREFIX + "equipped", null);
+		boolean isEquipped = series.getSeriesId().equals(equippedSeriesId);
+
+		// 如果配戴中,更新技能等級
+		if (isEquipped)
+		{
+			Skill skill = SkillData.getInstance().getSkill(series.getFinalSkillId(), newLevel);
 			if (skill != null)
 			{
 				player.addSkill(skill, true);
 				player.sendPacket(new SkillList());
 			}
-			player.setTitle(currentTitle);
-			Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.BATTLEFIELD, "公告",
-					"歡迎【" + currentTitle + "】稱號擁有者 " + player.getName() + " 進入天堂2世界"));
 		}
-	}
-
-	// ==================== 頁面顯示 ====================
-
-	private void showMainPage(Player player)
-	{
-		NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
-		html.setFile(player, HTML_PATH + "chenghao.htm");
-
-		String currentTitle = player.getVariables().getString(VAR_TITLE, null);
-		if (currentTitle == null)
+		// 如果達到最高等級,永久啟用技能(即使未配戴)
+		else if (newLevel >= series.getMaxLevel())
 		{
-			html.replace("%current_title%", "<font color=\"808080\">無</font>");
-		}
-		else
-		{
-			int fusionLevel = player.getVariables().getInt("fusion_level", 0);
-			if (currentTitle.equals(FUSION_TITLE) && fusionLevel > 0)
+			Skill skill = SkillData.getInstance().getSkill(series.getFinalSkillId(), newLevel);
+			if (skill != null)
 			{
-				// 修改：顯示對應等級的稱號名稱
-				String displayTitle = getFusionTitleByLevel(fusionLevel);
-				html.replace("%current_title%", displayTitle);
-			}
-			else
-			{
-				html.replace("%current_title%", currentTitle);
-			}
-		}
-
-		player.sendPacket(html);
-	}
-
-	private void showTitleListPage(Player player, int page)
-	{
-		int unlockedCount = getUnlockedTitleCount(player);
-		int totalCount = TITLE_SKILL_MAP.size();
-		int totalPages = (int) Math.ceil((double) totalCount / TITLES_PER_PAGE);
-
-		// 確保頁碼有效
-		page = Math.max(1, Math.min(page, totalPages));
-
-		NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
-		html.setFile(player, HTML_PATH + "chenghaolist.htm");
-
-		html.replace("%unlocked_count%", String.valueOf(unlockedCount));
-		html.replace("%total_count%", String.valueOf(totalCount));
-		html.replace("%list%", generateTitleList(player, page));
-
-		// 分頁按鈕
-		StringBuilder prevButton = new StringBuilder();
-		StringBuilder nextButton = new StringBuilder();
-
-		if (page > 1)
-		{
-			prevButton.append("<button value=\"上一頁\" action=\"bypass -h Quest chenghao showTitleList ")
-					.append(page - 1).append("\" width=\"80\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
-		}
-
-		if (page < totalPages)
-		{
-			nextButton.append("<button value=\"下一頁\" action=\"bypass -h Quest chenghao showTitleList ")
-					.append(page + 1).append("\" width=\"80\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
-		}
-
-		html.replace("%prev_page_button%", prevButton.toString());
-		html.replace("%next_page_button%", nextButton.toString());
-
-		player.sendPacket(html);
-	}
-
-	private void showFusionPage(Player player)
-	{
-		NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
-		html.setFile(player, HTML_PATH + "chenghaofusion.htm");
-
-		int fusionLevel = player.getVariables().getInt("fusion_level", 0);
-		int unlockedCount = getUnlockedTitleCount(player);
-		int totalCount = TITLE_SKILL_MAP.size();
-		long currentItemCount = player.getInventory().getInventoryItemCount(FUSION_ITEM_ID, 0);
-
-		// 獲取當前等級的成功率
-		int successRate = FUSION_SUCCESS_RATES.getOrDefault(fusionLevel, 0);
-
-		// 修改：顯示對應等級的稱號名稱
-		String currentFusionTitle = fusionLevel > 0 ? getFusionTitleByLevel(fusionLevel) : "未融合";
-		html.replace("%fusion_title%", currentFusionTitle);
-		html.replace("%fusion_level%", String.valueOf(fusionLevel));
-		html.replace("%max_level%", String.valueOf(MAX_FUSION_LEVEL));
-		html.replace("%unlocked_count%", String.valueOf(unlockedCount));
-		html.replace("%total_count%", String.valueOf(totalCount));
-		html.replace("%required_count%", String.valueOf(FUSION_ITEM_COUNT));
-		html.replace("%current_count%", String.valueOf(currentItemCount));
-		html.replace("%success_rate%", String.valueOf(successRate));
-
-		// 成功率顏色
-		String rateColor = "00FF00"; // 綠色
-		if (successRate < 50)
-		{
-			rateColor = "FF0000"; // 紅色
-		}
-		else if (successRate < 80)
-		{
-			rateColor = "FFFF00"; // 黃色
-		}
-		html.replace("%rate_color%", rateColor);
-
-		// 判斷融合條件
-		StringBuilder requirementText = new StringBuilder();
-		StringBuilder fusionButton = new StringBuilder();
-
-		boolean hasAllTitles = hasAllTitles(player);
-		boolean hasEnoughItems = currentItemCount >= FUSION_ITEM_COUNT;
-		boolean canFusion = false;
-
-		if (fusionLevel >= MAX_FUSION_LEVEL)
-		{
-			requirementText.append("<font color=\"FF0000\">融合稱號已達到最高等級！</font>");
-		}
-		else if (fusionLevel == 0)
-		{
-			// 首次融合
-			if (!hasAllTitles)
-			{
-				requirementText.append("<font color=\"FF3333\">需解鎖全部14個基礎稱號</font>");
-			}
-			else
-			{
-				requirementText.append("<font color=\"00FF66\">✓ 已解鎖全部稱號</font>");
-				canFusion = hasEnoughItems;
-			}
-		}
-		else
-		{
-			// 升級融合
-			if (!hasAllTitles)
-			{
-				requirementText.append("<font color=\"FF3333\">需重新解鎖全部基礎稱號</font>");
-			}
-			else
-			{
-				requirementText.append("<font color=\"00FF66\">✓ 已解鎖全部稱號</font>");
-				canFusion = hasEnoughItems;
-			}
-		}
-
-		html.replace("%fusion_requirement%", requirementText.toString());
-
-		// 融合按鈕
-		if (canFusion)
-		{
-			fusionButton.append("<button action=\"bypass -h Quest chenghao doFusion\" value=\"");
-			fusionButton.append(fusionLevel == 0 ? "融合稱號" : "升級稱號");
-			fusionButton.append("\" width=\"200\" height=\"31\" back=\"BranchSys3.icon2.ArmyTrainingInfo_down\" fore=\"BranchSys3.icon2.ArmyTrainingInfo\">");
-		}
-		else
-		{
-			fusionButton.append("<table width=\"200\"><tr><td align=center><font color=\"808080\">條件未滿足</font></td></tr></table>");
-		}
-
-		html.replace("%fusion_button%", fusionButton.toString());
-
-		player.sendPacket(html);
-	}
-
-	// ==================== 業務邏輯 ====================
-
-	private String generateTitleList(Player player, int page)
-	{
-		StringBuilder sb = new StringBuilder();
-		String currentTitle = player.getVariables().getString(VAR_TITLE, null);
-
-		int startIdx = (page - 1) * TITLES_PER_PAGE;
-		int endIdx = Math.min(startIdx + TITLES_PER_PAGE, TITLE_SKILL_MAP.size());
-
-		int index = 0;
-		for (Map.Entry<String, Integer> entry : TITLE_SKILL_MAP.entrySet())
-		{
-			if ((index >= startIdx) && (index < endIdx))
-			{
-				String titleName = entry.getKey();
-				boolean unlocked = player.getVariables().getBoolean("title_unlocked_" + titleName, false);
-
-				sb.append("<tr bgcolor=\"222222\" height=\"30\">");
-
-				if (unlocked)
-				{
-					// 已解鎖的稱號
-					String titleColor = titleName.equals(currentTitle) ? "FFFF00" : "00FF00";
-					sb.append("<td align=\"left\" width=\"180\"><font color=\"").append(titleColor).append("\">")
-							.append(titleName).append("</font></td>");
-
-					sb.append("<td align=\"center\" width=\"100\">");
-					if (titleName.equals(currentTitle))
-					{
-						sb.append("<font color=\"00FF66\">使用中</font>");
-					}
-					else
-					{
-						sb.append("<button value=\"佩戴\" action=\"bypass -h Quest chenghao selectTitle_")
-								.append(titleName).append("\" width=\"70\" height=\"22\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
-					}
-					sb.append("</td>");
-				}
-				else
-				{
-					// 未解鎖的稱號
-					String bossName = TITLE_BOSS_NAME.getOrDefault(titleName, "未知BOSS");
-					sb.append("<td align=\"left\" width=\"180\"><font color=\"808080\">").append(titleName).append("</font></td>");
-					sb.append("<td align=\"center\" width=\"100\"><font color=\"FF3333\" size=\"1\">未解鎖</font></td>");
-					sb.append("</tr>");
-					sb.append("<tr bgcolor=\"222222\">");
-					sb.append("<td colspan=\"2\" align=\"center\" height=\"20\"><font color=\"666666\" size=\"1\">需擊殺：")
-							.append(bossName).append("</font></td>");
-				}
-
-				sb.append("</tr>");
-			}
-			index++;
-		}
-
-		if (sb.length() == 0)
-		{
-			return "<tr bgcolor=\"222222\"><td colspan=\"2\" align=\"center\" height=\"30\"><font color=\"808080\">無可用稱號</font></td></tr>";
-		}
-
-		return sb.toString();
-	}
-
-	private void selectTitle(Player player, String titleName)
-	{
-		// 處理融合稱號選擇
-		if (titleName.equals(FUSION_TITLE))
-		{
-			int fusionLevel = player.getVariables().getInt("fusion_level", 0);
-			if (fusionLevel <= 0)
-			{
-				player.sendMessage("你尚未融合稱號，無法佩戴！");
-				return;
-			}
-
-			String oldTitle = player.getVariables().getString(VAR_TITLE, null);
-			removeOldTitleSkill(player, oldTitle);
-
-			// 修改：使用等級對應的稱號名稱
-			player.setTitle(getFusionTitleByLevel(fusionLevel));
-			player.broadcastTitleInfo();
-			player.getVariables().set(VAR_TITLE, FUSION_TITLE);
-
-			Skill fusionSkill = SkillData.getInstance().getSkill(FUSION_SKILL_ID, fusionLevel);
-			if (fusionSkill != null)
-			{
-				player.addSkill(fusionSkill, true);
+				player.addSkill(skill, true);
 				player.sendPacket(new SkillList());
 			}
-
-			player.sendMessage("你已佩戴融合稱號：" + getFusionTitleByLevel(fusionLevel));
-			return;
 		}
 
-		// 處理普通稱號選擇
-		if (!TITLE_SKILL_MAP.containsKey(titleName))
+		// 訊息提示
+		player.sendMessage("========================================");
+		if (currentLevel == 0)
 		{
-			player.sendMessage("無效的稱號！");
-			return;
+			player.sendMessage("恭喜！成功融合【" + series.getSeriesName() + "】");
+			player.sendMessage("獲得稱號：" + series.getFinalTitleName() + " Lv." + newLevel);
 		}
-
-		boolean unlocked = player.getVariables().getBoolean("title_unlocked_" + titleName, false);
-		if (!unlocked)
+		else
 		{
-			player.sendMessage("你尚未解鎖該稱號！");
+			player.sendMessage("恭喜！稱號升級成功！");
+			player.sendMessage(series.getFinalTitleName() + " Lv." + currentLevel + " → Lv." + newLevel);
+		}
+		player.sendMessage("========================================");
+
+		// 全服公告
+		if (currentLevel == 0 || newLevel >= 5)
+		{
+			Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.BATTLEFIELD, "系統公告",
+				"恭喜玩家 " + player.getName() + " 將【" + series.getFinalTitleName() + "】升級至 Lv." + newLevel + "！"));
+		}
+
+		showSeriesDetailPage(player, seriesId);
+	}
+
+	private void equipFinalTitle(Player player, String seriesId)
+	{
+		TitleSeries series = TitleSystem.getSeriesById(seriesId);
+		if (series == null)
+		{
+			player.sendMessage("無效的系列！");
 			return;
 		}
 
-		String oldTitle = player.getVariables().getString(VAR_TITLE, null);
-		removeOldTitleSkill(player, oldTitle);
+		if (!isSeriesFused(player, series))
+		{
+			player.sendMessage("你尚未融合此系列！");
+			return;
+		}
 
-		player.setTitle(titleName);
+		String oldEquippedId = player.getVariables().getString(TitleSystem.VAR_PREFIX + "equipped", null);
+		if (oldEquippedId != null)
+		{
+			TitleSeries oldSeries = TitleSystem.getSeriesById(oldEquippedId);
+			if (oldSeries != null)
+			{
+				// 檢查舊系列是否達到最高等級
+				String oldLevelKey = TitleSystem.VAR_PREFIX + oldSeries.getSeriesId() + "_level";
+				int oldLevel = player.getVariables().getInt(oldLevelKey, 0);
+
+				// 只有未達最高等級才移除技能
+				if (oldLevel < oldSeries.getMaxLevel())
+				{
+					player.removeSkill(oldSeries.getFinalSkillId());
+				}
+			}
+		}
+
+		// 獲取當前等級
+		String levelKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_level";
+		int currentLevel = player.getVariables().getInt(levelKey, 1);
+
+		player.setTitle(series.getFinalTitleName());
 		player.broadcastTitleInfo();
-		player.getVariables().set(VAR_TITLE, titleName);
+		player.getVariables().set(TitleSystem.VAR_PREFIX + "equipped", seriesId);
 
-		int skillId = TITLE_SKILL_MAP.get(titleName);
-		Skill skill = SkillData.getInstance().getSkill(skillId, SKILL_LEVEL);
+		Skill skill = SkillData.getInstance().getSkill(series.getFinalSkillId(), currentLevel);
 		if (skill != null)
 		{
 			player.addSkill(skill, true);
 			player.sendPacket(new SkillList());
 		}
 
-		player.sendMessage("你已佩戴稱號：" + titleName);
+		player.sendMessage("已配戴稱號：" + series.getFinalTitleName() + " Lv." + currentLevel);
+		showSeriesDetailPage(player, seriesId);
 	}
 
-	private void processFusion(Player player)
+	private void unequipFinalTitle(Player player, String seriesId)
 	{
-		int currentLevel = player.getVariables().getInt("fusion_level", 0);
-
-		// 檢查是否已達最高等級
-		if (currentLevel >= MAX_FUSION_LEVEL)
+		TitleSeries series = TitleSystem.getSeriesById(seriesId);
+		if (series == null)
 		{
-			player.sendMessage("融合稱號技能已達到最高等級！");
-			showFusionPage(player);
+			player.sendMessage("無效的系列！");
 			return;
 		}
 
-		// 檢查是否有全部稱號
-		if (!hasAllTitles(player))
+		player.setTitle("");
+		player.broadcastTitleInfo();
+		player.getVariables().remove(TitleSystem.VAR_PREFIX + "equipped");
+		player.getVariables().remove(TitleSystem.VAR_PREFIX + "equipped_level");
+
+		// 檢查是否達到最高等級
+		String levelKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_level";
+		int currentLevel = player.getVariables().getInt(levelKey, 0);
+
+		// 只有達到最高等級才是永久技能,否則卸下時移除
+		if (currentLevel < series.getMaxLevel())
 		{
-			if (currentLevel == 0)
-			{
-				player.sendMessage("你尚未解鎖所有基礎稱號，無法首次融合！");
-			}
-			else
-			{
-				player.sendMessage("要升級融合稱號，請重新解鎖全部14個基礎稱號！");
-			}
-			showFusionPage(player);
-			return;
+			player.removeSkill(series.getFinalSkillId());
+			player.sendPacket(new SkillList());
 		}
 
-		// 檢查材料
-		long itemCount = player.getInventory().getInventoryItemCount(FUSION_ITEM_ID, 0);
-		if (itemCount < FUSION_ITEM_COUNT)
-		{
-			player.sendMessage("所需道具不足，需要 " + FUSION_ITEM_COUNT + " 個金幣！");
-			showFusionPage(player);
-			return;
-		}
-
-		// ==================== 機率判定 ====================
-		int successRate = FUSION_SUCCESS_RATES.getOrDefault(currentLevel, 0);
-		boolean success = Rnd.get(100) < successRate;
-
-		// 消耗材料（無論成功失敗都扣）
-		player.destroyItemByItemId(null, FUSION_ITEM_ID, FUSION_ITEM_COUNT, null, true);
-
-		// 移除基礎稱號技能及解鎖狀態（無論成功失敗都移除）
-		for (String baseTitle : TITLE_SKILL_MAP.keySet())
-		{
-			if (player.getVariables().getBoolean("title_unlocked_" + baseTitle, false))
-			{
-				int skillId = TITLE_SKILL_MAP.get(baseTitle);
-				player.removeSkill(skillId);
-				player.getVariables().remove("title_unlocked_" + baseTitle);
-			}
-		}
-
-		// 移除當前稱號技能
-		String oldTitle = player.getVariables().getString(VAR_TITLE, null);
-		removeOldTitleSkill(player, oldTitle);
-
-		if (success)
-		{
-			// ========== 成功邏輯 ==========
-			int newLevel = currentLevel + 1;
-			player.getVariables().set("fusion_level", newLevel);
-
-			// 修改：使用等級對應的稱號名稱
-			player.setTitle(getFusionTitleByLevel(newLevel));
-			player.getVariables().set(VAR_TITLE, FUSION_TITLE);
-
-			// 添加融合技能
-			Skill fusionSkill = SkillData.getInstance().getSkill(FUSION_SKILL_ID, newLevel);
-			if (fusionSkill != null)
-			{
-				player.addSkill(fusionSkill, true);
-				player.sendPacket(new SkillList());
-			}
-
-			player.broadcastTitleInfo();
-
-			String newTitleName = getFusionTitleByLevel(newLevel);
-
-			if (currentLevel == 0)
-			{
-				player.sendMessage("========================================");
-				player.sendMessage("恭喜！你成功融合稱號！");
-				player.sendMessage("獲得：[" + newTitleName + "] Lv." + newLevel + " 技能");
-				player.sendMessage("成功率：" + successRate + "%");
-				player.sendMessage("========================================");
-
-				// 全服公告
-				Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.BATTLEFIELD, "系統公告",
-						"恭喜玩家 " + player.getName() + " 成功融合稱號【" + newTitleName + "】！"));
-			}
-			else
-			{
-				String oldTitleName = getFusionTitleByLevel(currentLevel);
-				player.sendMessage("========================================");
-				player.sendMessage("恭喜！融合稱號升級成功！");
-				player.sendMessage("[" + oldTitleName + "] → [" + newTitleName + "]");
-				player.sendMessage("成功率：" + successRate + "%");
-				player.sendMessage("========================================");
-
-				// 高等級升級成功時全服公告
-				if (newLevel >= 5)
-				{
-					Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.BATTLEFIELD, "系統公告",
-							"恭喜玩家 " + player.getName() + " 將融合稱號升級至【" + newTitleName + "】！"));
-				}
-			}
-		}
-		else
-		{
-			// ========== 失敗邏輯 ==========
-			int newLevel = currentLevel;
-
-			switch (FAILURE_PENALTY_TYPE)
-			{
-				case 1: // 保留等級
-					newLevel = currentLevel;
-					break;
-				case 2: // 降1級
-					newLevel = Math.max(0, currentLevel - 1);
-					break;
-				case 3: // 歸零
-					newLevel = 0;
-					break;
-			}
-
-			player.getVariables().set("fusion_level", newLevel);
-
-			// 如果還有等級，保留融合稱號
-			if (newLevel > 0)
-			{
-				// 修改：使用等級對應的稱號名稱
-				player.setTitle(getFusionTitleByLevel(newLevel));
-				player.getVariables().set(VAR_TITLE, FUSION_TITLE);
-
-				Skill fusionSkill = SkillData.getInstance().getSkill(FUSION_SKILL_ID, newLevel);
-				if (fusionSkill != null)
-				{
-					player.addSkill(fusionSkill, true);
-					player.sendPacket(new SkillList());
-				}
-			}
-			else
-			{
-				// 等級歸零，移除稱號
-				player.setTitle("");
-				player.getVariables().remove(VAR_TITLE);
-			}
-
-			player.broadcastTitleInfo();
-
-			player.sendMessage("========================================");
-			player.sendMessage("很遺憾，稱號融合失敗了...");
-			player.sendMessage("成功率：" + successRate + "%");
-
-			if (FAILURE_PENALTY_TYPE == 1)
-			{
-				player.sendMessage("融合等級保持：Lv." + newLevel);
-			}
-			else if (FAILURE_PENALTY_TYPE == 2)
-			{
-				if (currentLevel > 0)
-				{
-					String oldTitleName = getFusionTitleByLevel(currentLevel);
-					String newTitleName = newLevel > 0 ? getFusionTitleByLevel(newLevel) : "無";
-					player.sendMessage("融合等級降低：[" + oldTitleName + "] → [" + newTitleName + "]");
-				}
-				else
-				{
-					player.sendMessage("首次融合失敗，請重新收集稱號再試。");
-				}
-			}
-			else if (FAILURE_PENALTY_TYPE == 3)
-			{
-				player.sendMessage("融合等級歸零！需重新開始。");
-			}
-
-			player.sendMessage("已消耗材料和全部基礎稱號。");
-			player.sendMessage("========================================");
-		}
-
-		showFusionPage(player);
+		player.sendMessage("已卸下稱號");
+		showSeriesDetailPage(player, seriesId);
 	}
 
-	// ==================== 輔助方法 ====================
-
-	private void initBossNames()
-	{
-		for (Map.Entry<String, Integer> entry : TITLE_BOSS_REQUIREMENT.entrySet())
-		{
-			String titleName = entry.getKey();
-			int bossId = entry.getValue();
-			String bossName = getNpcName(bossId);
-			TITLE_BOSS_NAME.put(titleName, bossName);
-		}
-	}
-
-	private String getNpcName(int npcId)
-	{
-		NpcTemplate template = NpcData.getInstance().getTemplate(npcId);
-		return template != null ? template.getName() : "未知BOSS";
-	}
-
-	private int getUnlockedTitleCount(Player player)
+	private int getUnlockedCount(Player player, TitleSeries series)
 	{
 		int count = 0;
-		for (String title : TITLE_SKILL_MAP.keySet())
+		for (SmallTitle title : series.getSmallTitles())
 		{
-			if (player.getVariables().getBoolean("title_unlocked_" + title, false))
+			String varKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_" + title.getTitleName();
+			if (player.getVariables().getBoolean(varKey, false))
 			{
 				count++;
 			}
@@ -797,88 +709,202 @@ public class chenghao extends Script
 		return count;
 	}
 
-	private boolean hasAllTitles(Player player)
+	private boolean isSeriesCompleted(Player player, TitleSeries series)
 	{
-		for (String title : TITLE_SKILL_MAP.keySet())
-		{
-			if (!player.getVariables().getBoolean("title_unlocked_" + title, false))
-			{
-				return false;
-			}
-		}
-		return true;
+		return getUnlockedCount(player, series) == series.getTotalCount();
 	}
 
-	private void removeOldTitleSkill(Player player, String oldTitle)
+	private boolean isSeriesFused(Player player, TitleSeries series)
 	{
-		if (oldTitle == null)
+		String fusedKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_fused";
+		return player.getVariables().getBoolean(fusedKey, false);
+	}
+
+	private boolean isSeriesEquipped(Player player, TitleSeries series)
+	{
+		String equippedId = player.getVariables().getString(TitleSystem.VAR_PREFIX + "equipped", null);
+		return series.getSeriesId().equals(equippedId);
+	}
+
+	private void equipFinalTitleAtLevel(Player player, String seriesId, int level)
+	{
+		TitleSeries series = TitleSystem.getSeriesById(seriesId);
+		if (series == null)
 		{
+			player.sendMessage("無效的系列！");
 			return;
 		}
 
-		if (TITLE_SKILL_MAP.containsKey(oldTitle))
+		if (!isSeriesFused(player, series))
 		{
-			player.removeSkill(TITLE_SKILL_MAP.get(oldTitle));
+			player.sendMessage("你尚未融合此系列！");
+			return;
 		}
-		else if (oldTitle.equals(FUSION_TITLE))
+
+		String levelKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_level";
+		int currentLevel = player.getVariables().getInt(levelKey, 0);
+
+		if (level < 1 || level > currentLevel)
 		{
-			int fusionLevel = player.getVariables().getInt("fusion_level", 0);
-			if (fusionLevel > 0)
+			player.sendMessage("無效的等級！");
+			return;
+		}
+
+		// 移除其他尚未升滿（非永久）系列的技能
+		for (TitleSeries s : TitleSystem.getAllSeries())
+		{
+			if (s.getSeriesId().equals(seriesId)) continue;
+			String sLevelKey = TitleSystem.VAR_PREFIX + s.getSeriesId() + "_level";
+			int sLevel = player.getVariables().getInt(sLevelKey, 0);
+			if (sLevel < s.getMaxLevel()) // 未升滿，非永久技能
 			{
-				player.removeSkill(FUSION_SKILL_ID);
+				player.removeSkill(s.getFinalSkillId());
 			}
 		}
-	}
-	// 新增方法：顯示融合稱號佩戴頁面
-	private void showFusionTitlePage(Player player)
-	{
-		NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
-		html.setFile(player, HTML_PATH + "chenghaofusiontitle.htm");
 
-		int fusionLevel = player.getVariables().getInt("fusion_level", 0);
-		String currentTitle = player.getVariables().getString(VAR_TITLE, null);
+		player.setTitle(series.getFinalTitleName());
+		player.broadcastTitleInfo();
+		player.getVariables().set(TitleSystem.VAR_PREFIX + "equipped", seriesId);
+		player.getVariables().set(TitleSystem.VAR_PREFIX + "equipped_level", level);
 
-		if (fusionLevel <= 0)
+		Skill skill = SkillData.getInstance().getSkill(series.getFinalSkillId(), level);
+		if (skill != null)
 		{
-			// 尚未融合
-			html.replace("%fusion_title_name%", "<font color=\"808080\">尚未融合</font>");
-			html.replace("%fusion_level%", "0");
-			html.replace("%equipped_status%", "<font color=\"808080\">-</font>");
-			html.replace("%equip_button%", "<table width=\"280\"><tr><td align=center><font color=\"FF3333\">您還沒有融合稱號</font></td></tr><tr><td align=center><font color=\"808080\">請先完成稱號融合</font></td></tr></table>");
+			player.addSkill(skill, true);
+			player.sendPacket(new SkillList());
 		}
-		else
+
+		player.sendMessage("已配戴稱號：" + series.getFinalTitleName() + " Lv." + level);
+		showSeriesDetailPage(player, seriesId);
+	}
+
+	private void showEquipSelectPage(Player player, String seriesId)
+	{
+		TitleSeries series = TitleSystem.getSeriesById(seriesId);
+		if (series == null) return;
+
+		if (!isSeriesFused(player, series))
 		{
-			// 已融合
-			String fusionTitleName = getFusionTitleByLevel(fusionLevel);
-			html.replace("%fusion_title_name%", fusionTitleName);
-			html.replace("%fusion_level%", String.valueOf(fusionLevel));
+			player.sendMessage("你尚未融合此系列！");
+			return;
+		}
 
-			boolean isEquipped = FUSION_TITLE.equals(currentTitle);
+		String levelKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_level";
+		int currentLevel = player.getVariables().getInt(levelKey, 0);
+		boolean equipped = isSeriesEquipped(player, series);
+		int equippedLevel = equipped ? player.getVariables().getInt(TitleSystem.VAR_PREFIX + "equipped_level", currentLevel) : 0;
 
-			if (isEquipped)
+		StringBuilder sb = new StringBuilder();
+		sb.append("<html><body><title>選擇配戴稱號</title><center>");
+		sb.append("<br><table width=\"290\" bgcolor=\"000000\">");
+		sb.append("<tr><td align=\"center\"><font color=\"FFAA00\" size=\"3\">").append(series.getSeriesName()).append("</font></td></tr>");
+		sb.append("</table><br>");
+		sb.append("<table width=\"290\" bgcolor=\"222222\">");
+		sb.append("<tr><td height=\"5\"></td></tr>");
+		sb.append("<tr><td align=\"center\"><font color=\"AAAAAA\" size=\"1\">選擇要配戴的稱號等級</font></td></tr>");
+		if (equipped)
+		{
+			sb.append("<tr><td align=\"center\"><font color=\"00FF66\" size=\"1\">目前配戴: Lv.").append(equippedLevel).append("</font></td></tr>");
+		}
+		sb.append("<tr><td height=\"5\"></td></tr>");
+		sb.append("</table><br>");
+
+		// 等級選擇按鈕，每行 5 個
+		sb.append("<table width=\"290\">");
+		int col = 0;
+		for (int lv = 1; lv <= currentLevel; lv++)
+		{
+			if (col == 0) sb.append("<tr>");
+			sb.append("<td align=\"center\">");
+			if (equipped && equippedLevel == lv)
 			{
-				html.replace("%equipped_status%", "<font color=\"00FF66\">✓ 已佩戴</font>");
-				html.replace("%equip_button%", "<table width=\"280\"><tr><td align=center><font color=\"00FF66\" size=\"3\">當前正在使用此稱號</font></td></tr></table>");
+				sb.append("<button value=\"Lv.").append(lv).append("\" action=\"bypass -h Quest chenghao unequipSeries_").append(seriesId);
+				sb.append("\" width=\"50\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
 			}
 			else
 			{
-				html.replace("%equipped_status%", "<font color=\"808080\">未佩戴</font>");
-				html.replace("%equip_button%", "<button action=\"bypass -h Quest chenghao equipFusionTitle\" value=\"佩戴融合稱號\" width=\"200\" height=\"31\" back=\"BranchSys3.icon2.ArmyTrainingInfo_down\" fore=\"BranchSys3.icon2.ArmyTrainingInfo\">");
+				sb.append("<button value=\"Lv.").append(lv).append("\" action=\"bypass -h Quest chenghao equipSeriesLevel_").append(seriesId).append("_").append(lv);
+				sb.append("\" width=\"50\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
+			}
+			sb.append("</td>");
+			col++;
+			if (col == 5 || lv == currentLevel)
+			{
+				sb.append("</tr>");
+				col = 0;
 			}
 		}
+		sb.append("</table><br>");
+		sb.append("<button value=\"返回\" action=\"bypass -h Quest chenghao showSeries_").append(seriesId);
+		sb.append("\" width=\"100\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
+		sb.append("</center></body></html>");
 
+		NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
+		html.setHtml(sb.toString());
 		player.sendPacket(html);
 	}
 
-	// ==================== 根據等級獲取稱號名稱 ====================
-	private String getFusionTitleByLevel(int level)
+	private int getSeriesPage(String seriesId)
 	{
-		return FUSION_TITLE_NAMES.getOrDefault(level, "未知稱號");
+		int index = 0;
+		for (TitleSeries series : TitleSystem.getAllSeries())
+		{
+			if (series.getSeriesId().equals(seriesId))
+			{
+				return index / 5;
+			}
+			index++;
+		}
+		return 0;
+	}
+
+	private void removeOldSkills(Player player)
+	{
+		boolean removed = false;
+		// 移除舊版實驗體技能 (100001~100035)
+		for (int skillId = TitleSystem.OLD_SKILL_ID_START; skillId <= TitleSystem.OLD_SKILL_ID_END; skillId++)
+		{
+			if (player.getKnownSkill(skillId) != null)
+			{
+				player.removeSkill(skillId);
+				removed = true;
+			}
+		}
+
+		if (removed)
+		{
+			player.sendPacket(new SkillList());
+			player.sendMessage("已移除舊版稱號技能");
+		}
+	}
+
+	private void activatePermanentSkills(Player player)
+	{
+		for (TitleSeries series : TitleSystem.getAllSeries())
+		{
+			// 只有達到最高等級才永久啟用技能
+			if (isSeriesFused(player, series))
+			{
+				String levelKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_level";
+				int currentLevel = player.getVariables().getInt(levelKey, 0);
+
+				// 只有達到最高等級才永久啟用
+				if (currentLevel >= series.getMaxLevel())
+				{
+					Skill skill = SkillData.getInstance().getSkill(series.getFinalSkillId(), currentLevel);
+					if (skill != null && player.getKnownSkill(series.getFinalSkillId()) == null)
+					{
+						player.addSkill(skill, true);
+					}
+				}
+			}
+		}
+		player.sendPacket(new SkillList());
 	}
 
 	public static void main(String[] args)
 	{
-		System.out.println("【系統】稱號融合系統載入完畢！");
+		System.out.println("【系統】稱號系統載入完畢！");
 		new chenghao();
 	}
 }

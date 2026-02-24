@@ -155,6 +155,7 @@ import handlers.admincommandhandlers.AdminZoneBuild;
 import handlers.bypasshandlers.Augment;
 import handlers.bypasshandlers.Buy;
 import handlers.bypasshandlers.ChatLink;
+import handlers.bypasshandlers.SummonBoss;
 import handlers.bypasshandlers.ClanWarehouse;
 import handlers.bypasshandlers.EnsoulWindow;
 import handlers.bypasshandlers.FindPvP;
@@ -437,6 +438,7 @@ public class MasterHandler
 			Augment.class,
 			Buy.class,
 			ChatLink.class,
+			SummonBoss.class,
 			ClanWarehouse.class,
 			EnsoulWindow.class,
 			FindPvP.class,
@@ -530,6 +532,7 @@ public class MasterHandler
 			SummonItems.class,
 			BossTeleportScroll.class,
 			SummonMonster.class,
+			SummonBossSelector.class,
 			SummonFrozenLord.class,
 			RandomCollectionComplete.class,
 			SkillUpgradeHandler.class,

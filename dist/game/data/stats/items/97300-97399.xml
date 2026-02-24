@@ -1014,7 +1014,7 @@
 		<set name="is_sellable" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="97366" name="黎明君主補給品禮盒(限時)" additionalName="Sealed" type="EtcItem">
+	<item id="97366" name="蕾歐娜禮盒" additionalName="Sealed" type="EtcItem">
 		<set name="icon" val="icon.event_orc_coinbox" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1024,11 +1024,11 @@
 		<set name="is_sellable" val="true" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="91840" min="3" max="3" chance="100" name="經驗值提升卷軸(限時)" /> 
-			<item id="93848" min="20" max="20" chance="100" name="恩寵餅乾(限時)" /> 
-			<item id="90907" min="20" max="20" chance="100" name="靈魂彈交換券" /> 
-			<item id="3031" min="20" max="20" chance="100" name="魔精石" /> 
+			<item id="112001" min="1" max="1000" chance="95" name="寶玉研磨石" />
+			<item id="112002" min="1" max="5" chance="5" name="寶玉加工盒" />
 		</capsuled_items>
 	</item>
 	<item id="97367" name="黎明印記禮盒(限時)" additionalName="Sealed" type="EtcItem">

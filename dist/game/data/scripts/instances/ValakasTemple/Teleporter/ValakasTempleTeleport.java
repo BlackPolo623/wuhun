@@ -1,16 +1,16 @@
 /*
  * Copyright (c) 2013 L2jMobius
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -20,35 +20,47 @@
  */
 package instances.ValakasTemple.Teleporter;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
 
-import org.l2jmobius.gameserver.managers.InstanceManager;
+import org.l2jmobius.gameserver.managers.events.ValakasTempleManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.groups.CommandChannel;
+import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.script.InstanceScript;
-import org.l2jmobius.gameserver.network.SystemMessageId;
-import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
+import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
 import instances.ValakasTemple.ValakasTemple;
 
 /**
- * @author Index
+ * @author Index (modified: Party entry + weekly limit)
  */
 public class ValakasTempleTeleport extends InstanceScript
 {
 	public static final int PARME_NPC_ID = 34258;
-	private static final Map<Integer, Set<Player>> PLAYER_TO_LOGIN = new HashMap<>();
-	
+
 	private ValakasTempleTeleport()
 	{
 		super(ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID);
 		addTalkId(PARME_NPC_ID);
+		addFirstTalkId(PARME_NPC_ID);
 	}
-	
+
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		final ValakasTempleManager manager = ValakasTempleManager.getInstance();
+		final int remaining = manager.getRemainingEntries(player);
+		final String resetTime = manager.getNextResetString();
+
+		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId(), 1);
+		html.setFile(player, "data/scripts/instances/ValakasTemple/Teleporter/" + PARME_NPC_ID + "-01.htm");
+		html.replace("%remaining%", String.valueOf(remaining));
+		html.replace("%maxEntries%", String.valueOf(ValakasTempleManager.MAX_WEEKLY_ENTRIES));
+		html.replace("%resetTime%", resetTime);
+		player.sendPacket(html);
+		return null;
+	}
+
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
@@ -68,79 +80,84 @@ public class ValakasTempleTeleport extends InstanceScript
 			}
 			case "VALAKAS_TEMPLE_ENTER_TO_INSTANCE":
 			{
-				if (checkRequirementsForEnter(player))
-				{
-					return PARME_NPC_ID + "-no_cc.htm";
-				}
-				
-				PLAYER_TO_LOGIN.get(player.getObjectId()).forEach(p -> enterInstance(p, npc, ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID));
-				PLAYER_TO_LOGIN.remove(player.getObjectId());
+				handleEnter(npc, player);
+				break;
 			}
 		}
-		
+
 		return super.onEvent(event, npc, player);
 	}
-	
-	private static boolean checkRequirementsForEnter(Player requestor)
+
+	private void handleEnter(Npc npc, Player player)
 	{
-		if (requestor.isGM())
+		final ValakasTempleManager manager = ValakasTempleManager.getInstance();
+
+		// GM 可直接進入（單人或帶隊）
+		if (player.isGM())
 		{
-			PLAYER_TO_LOGIN.put(requestor.getObjectId(), new HashSet<>());
-			PLAYER_TO_LOGIN.get(requestor.getObjectId()).addAll(requestor.isInParty() ? requestor.getParty().getMembers() : requestor.isInCommandChannel() ? requestor.getCommandChannel().getMembers() : Set.of(requestor));
-		}
-		else
-		{
-			if (!requestor.isInCommandChannel())
+			if (player.isInParty())
 			{
-				requestor.sendPacket(SystemMessageId.COMMAND_CHANNEL_INQUIRY);
-				return true;
-			}
-			
-			final CommandChannel currentChannel = requestor.getCommandChannel();
-			if ((currentChannel.getMemberCount() < 15) || (currentChannel.getMemberCount() > 100))
-			{
-				currentChannel.getMembers().forEach(p -> p.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_DUE_TO_THE_PARTY_HAVING_EXCEEDED_THE_LIMIT));
-				return true;
-			}
-			
-			for (Player player : currentChannel.getMembers())
-			{
-				final SystemMessage sm = checkInstanceStatus(player);
-				if (sm != null)
+				for (Player member : player.getParty().getMembers())
 				{
-					currentChannel.getMembers().forEach(p -> p.sendPacket(sm));
-					return true;
+					enterInstance(member, npc, ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID);
 				}
 			}
-			
-			PLAYER_TO_LOGIN.put(requestor.getObjectId(), new HashSet<>());
-			PLAYER_TO_LOGIN.get(requestor.getObjectId()).addAll(currentChannel.getMembers());
+			else
+			{
+				enterInstance(player, npc, ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID);
+			}
+			player.sendMessage("系統：你以 GM/管理員身份進入了巴拉卡斯神殿。");
+			return;
 		}
-		
-		return false;
+
+		// 必須組隊
+		if (!player.isInParty())
+		{
+			player.sendMessage("你必須組隊才能進入巴拉卡斯神殿。");
+			return;
+		}
+
+		// 檢查自己的次數
+		if (!manager.canEnter(player))
+		{
+			final int remaining = manager.getRemainingEntries(player);
+			player.sendMessage("你本週的進入次數已用完。剩餘次數: " + remaining + "/" + ValakasTempleManager.MAX_WEEKLY_ENTRIES);
+			return;
+		}
+
+		final Party party = player.getParty();
+		final List<Player> members = party.getMembers();
+
+		// 先檢查所有隊員條件
+		for (Player member : members)
+		{
+			if (!member.isInsideRadius3D(npc, 1500))
+			{
+				player.sendMessage("隊員 " + member.getName() + " 距離太遠，請靠近傳送員。");
+				return;
+			}
+			if (member.getLevel() < 76)
+			{
+				player.sendMessage("隊員 " + member.getName() + " 等級不足（需要76級以上）。");
+				return;
+			}
+		}
+
+		// 全部符合條件，逐一傳送
+		for (Player member : members)
+		{
+			if (manager.canEnter(member))
+			{
+				enterInstance(member, npc, ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID);
+				manager.incrementEntryCount(member);
+			}
+			else
+			{
+				member.sendMessage("你本週的進入次數已用完，無法進入巴拉卡斯神殿。");
+			}
+		}
 	}
-	
-	public static SystemMessage checkInstanceStatus(Player player)
-	{
-		if (player.getLevel() < 76)
-		{
-			return new SystemMessage(SystemMessageId.C1_DOES_NOT_MEET_LEVEL_REQUIREMENTS_AND_CANNOT_ENTER).addString(player.getName());
-		}
-		
-		final long currentTime = System.currentTimeMillis();
-		if (currentTime < InstanceManager.getInstance().getInstanceTime(player, ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID))
-		{
-			return new SystemMessage(SystemMessageId.C1_CANNOT_ENTER_YET).addString(player.getName());
-		}
-		
-		if (InstanceManager.getInstance().getPlayerInstance(player, true) != null)
-		{
-			return new SystemMessage(SystemMessageId.YOU_CANNOT_ENTER_AS_C1_IS_IN_ANOTHER_INSTANCE_ZONE).addString(player.getName());
-		}
-		
-		return null;
-	}
-	
+
 	public static void main(String[] args)
 	{
 		new ValakasTempleTeleport();

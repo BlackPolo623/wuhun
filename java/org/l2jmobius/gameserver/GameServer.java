@@ -119,6 +119,7 @@ import org.l2jmobius.gameserver.model.drops.WorldDropManager;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.OnServerStart;
+import org.l2jmobius.gameserver.model.jewel.JewelSystemManager;
 import org.l2jmobius.gameserver.model.olympiad.Hero;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
 import org.l2jmobius.gameserver.model.variables.GlobalVariables;
@@ -322,6 +323,7 @@ public class GameServer
 		GrandBossManager.getInstance();
 		EventDropManager.getInstance();
 		LeonasDungeonManager.getInstance();
+		JewelSystemManager.getInstance();
 		
 		printSection("Instance");
 		InstanceManager.getInstance();

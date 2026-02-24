@@ -257,8 +257,11 @@ public class BaseMonsterNpc extends Script
 
 	// 可選怪物列表 {顯示名稱, NPC_ID}
 	private static final Object[][] AVAILABLE_MONSTERS = {
-			{"帝王騎士", 22348},
-			{"神聖法師", 22773}
+			{"冰凍城-帝王騎士", 22348},
+			{"古墓-那芙琳隊長", 21614},
+			{"天堂塔-神聖騎士", 22774},
+			{"天堂塔-幻影戰士", 22873},
+			{"鱷魚島-紐司", 22191}
 	};
 
 	private static final Map<Integer, List<Spawn>> SPAWNED_MONSTERS = new ConcurrentHashMap<>();
@@ -335,7 +338,14 @@ public class BaseMonsterNpc extends Script
 		}
 
 		Map<String, Object> baseInfo = PlayerBaseDAO.getBaseInfo(player.getObjectId());
-		int maxCount = (int) baseInfo.get("max_monster_count");
+
+		// 防止 NullPointerException - 檢查 baseInfo 是否包含 max_monster_count
+		int maxCount = 0;
+		if (baseInfo != null && baseInfo.containsKey("max_monster_count") && baseInfo.get("max_monster_count") != null)
+		{
+			maxCount = (int) baseInfo.get("max_monster_count");
+		}
+
 		int currentCount = PlayerBaseDAO.getCurrentMonsterCount(player.getObjectId());
 
 		if (currentCount + count > maxCount)
@@ -420,7 +430,7 @@ public class BaseMonsterNpc extends Script
 
 				try
 				{
-					// ===== 關鍵修改：使用 Spawn 對象並設置重生時間 =====
+					// ===== 使用 Spawn 對象並設置重生時間 =====
 					Spawn spawn = new Spawn(template);
 					spawn.setLocation(loc);
 					spawn.setHeading(0);
@@ -460,30 +470,38 @@ public class BaseMonsterNpc extends Script
 
 	private String handleDespawnAll(Player player)
 	{
-		List<Spawn> spawns = SPAWNED_MONSTERS.get(player.getObjectId());
-
-		if (spawns != null)
-		{
-			for (Spawn spawn : spawns)
-			{
-				if (spawn != null)
-				{
-					// 停止重生
-					spawn.stopRespawn();
-
-					// 刪除當前的 NPC
-					Npc npc = spawn.getLastSpawn();
-					if (npc != null && !npc.isDead())
-					{
-						npc.deleteMe();
-					}
-				}
-			}
-			spawns.clear();
-		}
-
+		despawnForPlayer(player.getObjectId());
 		player.sendMessage("已清除所有怪物");
 		return null;
+	}
+
+	public static void despawnForPlayer(int playerId)
+	{
+		List<Spawn> spawns = SPAWNED_MONSTERS.remove(playerId);
+		if (spawns == null)
+		{
+			return;
+		}
+
+		List<Spawn> copy = new java.util.ArrayList<>(spawns);
+		for (Spawn spawn : copy)
+		{
+			if (spawn == null)
+			{
+				continue;
+			}
+
+			// 停止重生（無論死活都要停）
+			spawn.stopRespawn();
+
+			// 刪除當前存活的 NPC
+			Npc npc = spawn.getLastSpawn();
+			if (npc != null && !npc.isDecayed())
+			{
+				npc.deleteMe();
+			}
+		}
+		spawns.clear();
 	}
 
 	private String showConfigPage(Player player)
@@ -532,7 +550,13 @@ public class BaseMonsterNpc extends Script
 		// 統計信息
 		Map<String, Object> baseInfo = PlayerBaseDAO.getBaseInfo(player.getObjectId());
 		int currentCount = PlayerBaseDAO.getCurrentMonsterCount(player.getObjectId());
-		int maxCount = (int) baseInfo.get("max_monster_count");
+
+		// 防止 NullPointerException - 檢查 baseInfo 是否包含 max_monster_count
+		int maxCount = 0;
+		if (baseInfo != null && baseInfo.containsKey("max_monster_count") && baseInfo.get("max_monster_count") != null)
+		{
+			maxCount = (int) baseInfo.get("max_monster_count");
+		}
 
 		html.replace("%current_count%", String.valueOf(currentCount));
 		html.replace("%max_count%", String.valueOf(maxCount));

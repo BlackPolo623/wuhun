@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance id="236" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
-	<time duration="30" empty="3000000" />
+	<time duration="30" empty="5000" />
 	<removeBuffs type="ALL" />
 	<locations>
 		<enter type="FIXED">
@@ -10,10 +10,7 @@
 	</locations>
 	<conditions>
 		<condition type="Party" />
-		<condition type="CommandChannel">
-			<param name="html" value="no-cc.htm" />
-		</condition>
-		<condition type="CommandChannelLeader" />
+		<condition type="PartyLeader" />
 		<condition type="GroupMin">
 			<param name="limit" value="2" />
 		</condition>
@@ -25,17 +22,7 @@
 			<param name="max" value="999" />
 		</condition>
 		<condition type="Distance" />
-		<condition type="Reenter" />
 	</conditions>
-	<reenter apply="ON_FINISH">
-		<reset day="MONDAY" hour="6" minute="30" />
-		<reset day="TUESDAY" hour="6" minute="30" />
-		<reset day="WEDNESDAY" hour="6" minute="30" />
-		<reset day="THURSDAY" hour="6" minute="30" />
-		<reset day="FRIDAY" hour="6" minute="30" />
-		<reset day="SATURDAY" hour="6" minute="30" />
-		<reset day="SUNDAY" hour="6" minute="30" />
-	</reenter>
 	<spawnlist>
 		<group name="leona" spawnByDefault="true">
 			<npc id="34357" x="-49138" y="-245746" z="-7858" heading="945" /> <!-- Leona Blackbird -->

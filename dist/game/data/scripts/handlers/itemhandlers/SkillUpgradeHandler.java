@@ -93,10 +93,23 @@ public class SkillUpgradeHandler implements IItemHandler
 
 				final int skillId = configSkill.getId();
 				final Skill currentSkill = player.getKnownSkill(skillId);
-				int targetLevel = (currentSkill == null) ? 1 : currentSkill.getLevel() + 1;
-				final Skill targetSkill = SkillData.getInstance().getSkill(skillId, targetLevel);
 
-				if (targetSkill != null)
+				// 獲取技能的最大等級
+				final int maxLevel = SkillData.getInstance().getMaxLevel(skillId);
+				if (maxLevel <= 0)
+				{
+					continue;
+				}
+
+				// 如果玩家沒有這個技能，可以學習
+				if (currentSkill == null)
+				{
+					canUpgrade = true;
+					break;
+				}
+
+				// 如果當前等級小於最大等級，可以升級
+				if (currentSkill.getLevel() < maxLevel)
 				{
 					canUpgrade = true;
 					break;
@@ -120,6 +133,8 @@ public class SkillUpgradeHandler implements IItemHandler
 
 		// 處理技能升級
 		boolean skillUpgraded = false;
+		boolean allSkillsMaxLevel = true; // 追蹤是否所有技能都已滿級
+
 		for (ItemSkillHolder skillInfo : skills)
 		{
 			if (skillInfo == null)
@@ -136,42 +151,71 @@ public class SkillUpgradeHandler implements IItemHandler
 			final int skillId = configSkill.getId();
 			final Skill currentSkill = player.getKnownSkill(skillId);
 
-			// 計算目標等級
-			int targetLevel = (currentSkill == null) ? 1 : currentSkill.getLevel() + 1;
-
-			// 檢查目標等級是否存在
-			final Skill targetSkill = SkillData.getInstance().getSkill(skillId, targetLevel);
-			if (targetSkill == null)
+			// 獲取技能的最大等級
+			final int maxLevel = SkillData.getInstance().getMaxLevel(skillId);
+			if (maxLevel <= 0)
 			{
-				// 技能已滿級
-				if (isSpecialItem)
+				LOGGER.warning("技能 " + skillId + " 沒有配置最大等級!");
+				continue;
+			}
+
+			// 如果玩家還沒有這個技能，說明不是滿級
+			if (currentSkill == null)
+			{
+				allSkillsMaxLevel = false;
+				// 學習1級技能
+				final Skill targetSkill = SkillData.getInstance().getSkill(skillId, 1);
+				if (targetSkill != null)
 				{
-					// 特殊道具：提示技能已滿級但不影響使用
-					player.sendPacket(new ExShowScreenMessage("技能已達最高等級", 2000));
-				}
-				else
-				{
-					// 普通道具：不應該走到這裡，因為前面已經檢查過
-					player.sendPacket(new ExShowScreenMessage("技能已達最高等級!", 3000));
+					player.addSkill(targetSkill, true);
+					player.sendSkillList();
+					player.sendPacket(new ExShowScreenMessage("獲得新技能: " + targetSkill.getName() + " Lv.1", 3000));
+					LOGGER.info("玩家 " + player.getName() + " 使用技能書獲得 " + targetSkill.getName() + " Lv.1");
+					skillUpgraded = true;
 				}
 				continue;
 			}
 
-			// 移除舊技能
-			if (currentSkill != null)
+			// 檢查當前技能是否已達最大等級
+			if (currentSkill.getLevel() >= maxLevel)
 			{
-				player.removeSkill(currentSkill, true);
+				// 技能已滿級
+				if (isSpecialItem)
+				{
+					// 特殊道具：提示技能已滿級但繼續處理獎勵
+					player.sendPacket(new ExShowScreenMessage("技能已達最高等級 Lv." + currentSkill.getLevel() + " (上限 Lv." + maxLevel + ")", 2000));
+				}
+				else
+				{
+					// 普通道具：提示技能已滿級
+					player.sendPacket(new ExShowScreenMessage("技能已達最高等級 Lv." + currentSkill.getLevel() + " (上限 Lv." + maxLevel + ")", 3000));
+				}
+				continue;
 			}
+
+			// 計算目標等級
+			int targetLevel = currentSkill.getLevel() + 1;
+
+			// 技能還可以升級，標記為非滿級
+			allSkillsMaxLevel = false;
+
+			// 獲取目標技能（這裡應該不會失敗，因為已經檢查過 maxLevel）
+			final Skill targetSkill = SkillData.getInstance().getSkill(skillId, targetLevel);
+			if (targetSkill == null)
+			{
+				LOGGER.warning("技能 " + skillId + " 等級 " + targetLevel + " 不存在，但最大等級為 " + maxLevel);
+				continue;
+			}
+
+			// 移除舊技能
+			player.removeSkill(currentSkill, true);
 
 			// 添加新技能
 			player.addSkill(targetSkill, true);
 			player.sendSkillList();
 
 			// 發送成功訊息
-			String message = (currentSkill == null) ?
-					"獲得新技能: " + targetSkill.getName() + " Lv." + targetLevel :
-					"技能升級: " + targetSkill.getName() + " Lv." + currentSkill.getLevel() + " → Lv." + targetLevel;
-
+			String message = "技能升級: " + targetSkill.getName() + " Lv." + currentSkill.getLevel() + " → Lv." + targetLevel;
 			player.sendPacket(new ExShowScreenMessage(message, 3000));
 
 			LOGGER.info("玩家 " + player.getName() + " 使用技能書提升 " + targetSkill.getName() + " 至 Lv." + targetLevel);

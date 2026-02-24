@@ -1,10 +1,5 @@
 package handlers.voicedcommandhandlers;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
-import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.handler.IVoicedCommandHandler;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -15,10 +10,10 @@ import handlers.itemhandlers.BossTeleportScroll;
 public class BossTeleportHandler implements IVoicedCommandHandler
 {
 	private static final String[] VOICED_COMMANDS =
-			{
-					"bosspage",
-					"bosstele"
-			};
+	{
+		"bosspage",
+		"bosstele"
+	};
 
 	private static final int SCROLL_ITEM_ID = 109000; // BOSS傳送卷軸道具ID
 
@@ -56,7 +51,9 @@ public class BossTeleportHandler implements IVoicedCommandHandler
 	}
 
 	/**
-	 * 傳送玩家到指定 BOSS 位置
+	 * [自定義修改] 傳送玩家到指定 BOSS 位置
+	 * 座標和存活狀態全部從 npc_respawns 資料庫讀取
+	 * 不再依賴硬編碼座標，基地副本內的同ID BOSS不會影響判斷
 	 * @param player 玩家
 	 * @param bossId BOSS ID
 	 */
@@ -69,7 +66,7 @@ public class BossTeleportHandler implements IVoicedCommandHandler
 			return;
 		}
 
-		// 獲取 BOSS 位置
+		// [自定義修改] 從資料庫讀取 BOSS 座標（不論存活或死亡都可傳送）
 		Location bossLocation = BossTeleportScroll.getBossLocation(bossId);
 		if (bossLocation == null)
 		{
@@ -77,48 +74,10 @@ public class BossTeleportHandler implements IVoicedCommandHandler
 			return;
 		}
 
-		// 檢查 BOSS 是否存活
-		if (!isBossAlive(bossId))
-		{
-			player.sendPacket(new ExShowScreenMessage("BOSS已死亡，無法傳送", 3000));
-			return;
-		}
-
 		// 扣除卷軸並傳送
 		player.destroyItemByItemId(null, SCROLL_ITEM_ID, 1, player, true);
 		player.teleToLocation(bossLocation);
 		player.sendPacket(new ExShowScreenMessage("已傳送至BOSS領地", 3000));
-	}
-
-	/**
-	 * 從資料庫檢查 BOSS 是否存活
-	 * @param npcId BOSS ID
-	 * @return true 如果已重生(存活), false 如果還在重生倒計時(死亡)
-	 */
-	private boolean isBossAlive(int npcId)
-	{
-		try (Connection con = DatabaseFactory.getConnection();
-			 PreparedStatement statement = con.prepareStatement("SELECT respawnTime FROM npc_respawns WHERE id = ?"))
-		{
-			statement.setInt(1, npcId);
-
-			try (ResultSet rset = statement.executeQuery())
-			{
-				if (rset.next())
-				{
-					long respawnTime = rset.getLong("respawnTime");
-					// 如果 respawnTime <= 當前時間,表示已經重生(存活)
-					return respawnTime <= System.currentTimeMillis();
-				}
-			}
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-
-		// 如果資料庫中沒有記錄,預設為存活
-		return true;
 	}
 
 	@Override

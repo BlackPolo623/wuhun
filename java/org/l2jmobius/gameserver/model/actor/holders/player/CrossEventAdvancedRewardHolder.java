@@ -33,7 +33,9 @@ public class CrossEventAdvancedRewardHolder
 	{
 		_itemId = itemId;
 		_itemCount = itemCount;
-		_itemChance = (int) (itemChance * 1000);
+		// [自定義修改] 原版 *1000 配合 Rnd.get(100000)，改為 *10 配合 Rnd.get(1000)
+		// XML chance 值含義不變：100.00 = 100%, 0.50 = 0.5%
+		_itemChance = (int) (itemChance * 10);
 	}
 	
 	public int getItemId()

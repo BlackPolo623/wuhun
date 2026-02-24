@@ -178,7 +178,6 @@ public class SecretShop extends LongTimeEvent implements IXmlReader
 	
 	public static void main(String[] args)
 	{
-		System.out.println("秘密商店活動已開啟！");
 		new SecretShop();
 	}
 }

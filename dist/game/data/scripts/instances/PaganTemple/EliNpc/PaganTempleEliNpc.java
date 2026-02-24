@@ -22,15 +22,19 @@ package instances.PaganTemple.EliNpc;
 
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map.Entry;
 
+import org.l2jmobius.gameserver.cache.HtmCache;
+import org.l2jmobius.gameserver.managers.InstanceManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.script.Script;
+import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
 import instances.PaganTemple.PaganTempleManager;
 
@@ -62,8 +66,19 @@ public class PaganTempleEliNpc extends Script
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final Instance world = (player == null) || (npc == null) ? null : player.getInstanceWorld();
-		if ((event == null) || (npc == null) || (world == null) || (world.getTemplateId() != PaganTempleManager.INSTANCE_TEMPLATE_ID))
+		if ((event == null) || (npc == null) || (player == null))
+		{
+			return super.onEvent(event, npc, player);
+		}
+
+		// 主世界入口處理
+		if (event.equalsIgnoreCase("enterPaganTemple"))
+		{
+			return handleEnterFromOutside(player);
+		}
+
+		final Instance world = player.getInstanceWorld();
+		if ((world == null) || (world.getTemplateId() != PaganTempleManager.INSTANCE_TEMPLATE_ID))
 		{
 			return super.onEvent(event, npc, player);
 		}
@@ -224,24 +239,166 @@ public class PaganTempleEliNpc extends Script
 	public String onFirstTalk(Npc npc, Player player)
 	{
 		final Instance world = (player == null) || (npc == null) ? null : player.getInstanceWorld();
-		if ((npc == null) || (world == null) || (world.getTemplateId() != PaganTempleManager.INSTANCE_TEMPLATE_ID))
+
+		// 主世界 - 顯示入口資訊頁面
+		if ((world == null) || (world.getTemplateId() != PaganTempleManager.INSTANCE_TEMPLATE_ID))
 		{
-			return super.onFirstTalk(npc, player);
+			showEntrancePage(npc, player);
+			return null;
 		}
-		
+
+		// 副本內 - 原有邏輯
 		if (!PaganTempleManager.isAvailableToEnter(player))
 		{
 			return npc.getId() + "-no" + ".htm";
 		}
-		
+
 		if (isFightBefore(world, player))
 		{
 			return ELI_NPC_ID + "-ex" + ".htm";
 		}
-		
+
 		return ELI_NPC_ID + ".htm";
 	}
-	
+
+	// ==================== 主世界入口功能 ====================
+
+	private void showEntrancePage(Npc npc, Player player)
+	{
+		String content = HtmCache.getInstance().getHtm(player, "data/scripts/instances/PaganTemple/34379-entrance.htm");
+		if (content == null)
+		{
+			player.sendMessage("找不到對話頁面。");
+			return;
+		}
+
+		final Instance paganInstance = findPaganInstance();
+		final String statusText;
+		final String statusColor;
+		final String remainingTime;
+
+		// 用 Calendar 判斷真實的開放狀態
+		final Calendar now = Calendar.getInstance();
+		final int dayOfWeek = now.get(Calendar.DAY_OF_WEEK);
+		final int hour = now.get(Calendar.HOUR_OF_DAY);
+		// 開放時間：週一 00:00 ~ 週六 00:00 (Calendar: SUNDAY=1, MONDAY=2, ..., SATURDAY=7)
+		final boolean isOpenPeriod = (dayOfWeek >= Calendar.MONDAY) && (dayOfWeek <= Calendar.FRIDAY);
+
+		if (!isOpenPeriod)
+		{
+			// 週六或週日 = 關閉期間
+			statusText = "已關閉";
+			statusColor = "FF0000";
+			final Calendar nextMonday = (Calendar) now.clone();
+			final int daysToMonday = (dayOfWeek == Calendar.SATURDAY) ? 2 : 1;
+			nextMonday.add(Calendar.DAY_OF_MONTH, daysToMonday);
+			nextMonday.set(Calendar.HOUR_OF_DAY, 0);
+			nextMonday.set(Calendar.MINUTE, 0);
+			nextMonday.set(Calendar.SECOND, 0);
+			remainingTime = formatDuration(nextMonday.getTimeInMillis() - now.getTimeInMillis()) + " 後重新開放";
+		}
+		else
+		{
+			// 週一~週五 = 開放期間
+			// 檢查是否有 BOSS
+			if ((paganInstance != null) && (paganInstance.getParameters().getInt("INSTANCE_STATUS", PaganTempleManager.NORMAL) == PaganTempleManager.ANDREAS_BOSS))
+			{
+				statusText = "BOSS 出沒中";
+				statusColor = "FF00FF";
+			}
+			else if ((dayOfWeek == Calendar.FRIDAY) && (hour >= 22))
+			{
+				statusText = "BOSS 出沒中";
+				statusColor = "FF00FF";
+			}
+			else
+			{
+				statusText = "開放中";
+				statusColor = "00FF00";
+			}
+
+			// 計算到週六 00:00 的剩餘時間
+			final Calendar saturday = (Calendar) now.clone();
+			final int daysToSaturday = Calendar.SATURDAY - dayOfWeek;
+			saturday.add(Calendar.DAY_OF_MONTH, daysToSaturday);
+			saturday.set(Calendar.HOUR_OF_DAY, 0);
+			saturday.set(Calendar.MINUTE, 0);
+			saturday.set(Calendar.SECOND, 0);
+			remainingTime = formatDuration(saturday.getTimeInMillis() - now.getTimeInMillis());
+		}
+
+		final int playerCount = (paganInstance != null) ? paganInstance.getPlayers().size() : 0;
+
+		content = content.replace("%status%", statusText);
+		content = content.replace("%statusColor%", statusColor);
+		content = content.replace("%remainingTime%", remainingTime);
+		content = content.replace("%playerCount%", String.valueOf(playerCount));
+
+		final NpcHtmlMessage msg = new NpcHtmlMessage(npc.getObjectId());
+		msg.setHtml(content);
+		player.sendPacket(msg);
+	}
+
+	private String handleEnterFromOutside(Player player)
+	{
+		if ((player.getLevel() < 85) || (player.getLevel() > 99))
+		{
+			player.sendMessage("等級不符合要求（需要 85~99 級）。");
+			return null;
+		}
+
+		// 用 Calendar 判斷是否在開放時段
+		final Calendar now = Calendar.getInstance();
+		final int dayOfWeek = now.get(Calendar.DAY_OF_WEEK);
+		final boolean isOpenPeriod = (dayOfWeek >= Calendar.MONDAY) && (dayOfWeek <= Calendar.FRIDAY);
+		if (!isOpenPeriod)
+		{
+			player.sendMessage("異教神殿目前已關閉，每週一 00:00 重新開放。");
+			return null;
+		}
+
+		final Instance paganInstance = findPaganInstance();
+		if (paganInstance == null)
+		{
+			player.sendMessage("異教神殿尚未開放，請稍後再試。");
+			return null;
+		}
+
+		player.teleToLocation(-16364, -40790, -10702, paganInstance);
+		return null;
+	}
+
+	private String formatDuration(long ms)
+	{
+		final long totalSeconds = ms / 1000;
+		final long days = totalSeconds / 86400;
+		final long hours = (totalSeconds % 86400) / 3600;
+		final long minutes = (totalSeconds % 3600) / 60;
+		final StringBuilder sb = new StringBuilder();
+		if (days > 0)
+		{
+			sb.append(days).append(" 天 ");
+		}
+		if (hours > 0)
+		{
+			sb.append(hours).append(" 小時 ");
+		}
+		sb.append(minutes).append(" 分鐘");
+		return sb.toString();
+	}
+
+	private Instance findPaganInstance()
+	{
+		for (Instance instance : InstanceManager.getInstance().getInstances())
+		{
+			if (instance.getTemplateId() == PaganTempleManager.INSTANCE_TEMPLATE_ID)
+			{
+				return instance;
+			}
+		}
+		return null;
+	}
+
 	public static void main(String[] args)
 	{
 		new PaganTempleEliNpc();

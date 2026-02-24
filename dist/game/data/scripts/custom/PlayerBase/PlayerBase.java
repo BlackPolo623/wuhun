@@ -31,7 +31,7 @@ public class PlayerBase extends Script
 	private static final Location BASE_ENTER_LOC = new Location(58232, -90853, -1385);
 
 	// 離開座標
-	private static final Location EXIT_LOC = new Location(148694, 214058, -2063);
+	private static final Location EXIT_LOC = new Location(82519, 148619, -3456);
 
 	// 創建基地消耗
 	private static final int CREATE_COST_ITEM = 57;
@@ -229,6 +229,8 @@ public class PlayerBase extends Script
 	@Override
 	public void onInstanceLeave(Player player, Instance instance)
 	{
+		// 玩家離開基地時自動清除所有怪物，防止 spawn 持續重生堆積
+		BaseMonsterNpc.despawnForPlayer(player.getObjectId());
 		player.setInstance(null);
 		player.teleToLocation(EXIT_LOC);
 	}
