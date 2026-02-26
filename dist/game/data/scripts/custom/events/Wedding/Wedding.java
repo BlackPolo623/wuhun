@@ -125,33 +125,46 @@ public class Wedding extends Script
 				{
 					player.reduceAdena(ItemProcessType.FEE, WeddingConfig.WEDDING_PRICE, player.getLastFolkNPC(), true);
 					partner.reduceAdena(ItemProcessType.FEE, WeddingConfig.WEDDING_PRICE, player.getLastFolkNPC(), true);
-					
+
 					// Accept the wedding request
 					player.setMarryAccepted(true);
 					final Couple couple = CoupleManager.getInstance().getCouple(player.getCoupleId());
 					couple.marry();
-					
-					// Messages to the couple
-					player.sendMessage("Congratulations you are married!");
+
+					// Messages to the couple - 給新人的訊息
+					player.sendMessage("========================================");
+					player.sendMessage("恭喜！你們正式結為夫妻！");
+					player.sendMessage("願你們的愛情如同永恆之火，永不熄滅！");
+					player.sendMessage("========================================");
 					player.setMarried(true);
 					player.setMarryRequest(false);
-					partner.sendMessage("Congratulations you are married!");
+
+					partner.sendMessage("========================================");
+					partner.sendMessage("恭喜！你們正式結為夫妻！");
+					partner.sendMessage("願你們的愛情如同永恆之火，永不熄滅！");
+					partner.sendMessage("========================================");
 					partner.setMarried(true);
 					partner.setMarryRequest(false);
-					
-					// Wedding march
+
+					// Wedding march - 婚禮進行曲
 					player.broadcastPacket(new MagicSkillUse(player, player, 2230, 1, 1, 0));
 					partner.broadcastPacket(new MagicSkillUse(partner, partner, 2230, 1, 1, 0));
-					
-					// Fireworks
+
+					// Fireworks - 煙火效果
 					final Skill skill = CommonSkill.LARGE_FIREWORK.getSkill();
 					if (skill != null)
 					{
 						player.doCast(skill);
 						partner.doCast(skill);
 					}
-					
-					Broadcast.toAllOnlinePlayers("Congratulations to " + player.getName() + " and " + partner.getName() + "! They have been married.");
+
+					// 世界公告 - 多重公告增加儀式感
+					Broadcast.toAllOnlinePlayers("========================================");
+					Broadcast.toAllOnlinePlayers("【婚禮公告】");
+					Broadcast.toAllOnlinePlayers("在眾神的見證下，" + player.getName() + " 與 " + partner.getName() + " 正式結為夫妻！");
+					Broadcast.toAllOnlinePlayers("讓我們一起祝福這對新人，願他們的愛情天長地久！");
+					Broadcast.toAllOnlinePlayers("========================================");
+
 					htmltext = sendHtml(partner, "Accepted.html", null, null);
 				}
 				break;
@@ -162,9 +175,9 @@ public class Wedding extends Script
 				partner.setMarryRequest(false);
 				player.setMarryAccepted(false);
 				partner.setMarryAccepted(false);
-				
-				player.sendMessage("You declined your partner's marriage request.");
-				partner.sendMessage("Your partner declined your marriage request.");
+
+				player.sendMessage("你拒絕了伴侶的婚姻請求。");
+				partner.sendMessage("你的伴侶拒絕了你的婚姻請求。");
 				htmltext = sendHtml(partner, "Declined.html", null, null);
 				break;
 			}

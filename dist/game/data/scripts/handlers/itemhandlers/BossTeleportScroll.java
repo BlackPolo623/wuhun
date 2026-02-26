@@ -21,17 +21,45 @@ public class BossTeleportScroll implements IItemHandler
 {
 	private static final int BOSSES_PER_PAGE = 10;
 
-	// [自定義修改] BOSS清單定義（只保留 npcId 和顯示名稱）
-	// 座標和存活狀態全部從 npc_respawns 資料庫讀取
+	// [自定義修改] BOSS清單定義（包含固定傳送座標）
+	// 座標直接從 RaidbossSpawns.xml 中的重生點座標設定
 	private static final int[][] BOSS_LIST =
 	{
-		{50001}, {50002}, {50003}, {50004}, {50005},
-		{50006}, {50007}, {50008}, {50009}, {50010},
-		{50011}, {50012}, {50013}, {50014}, {50015},
-		{50016}, {50017}, {50018}, {50019}, {50020},
-		{50021}, {50022}, {50023}, {50024}, {50025},
-		{50026}, {50027}, {50028}, {50029}, {50030},
-		{50031}, {50032}, {50033}, {50034}, {50035}
+		{50001, 98194, 7095, -3696},      // 怪獸一號
+		{50002, 15740, 123435, -3680},    // 怪獸二號
+		{50003, 77203, 8040, -3384},      // 怪獸三號
+		{50004, 83007, 61463, -3496},     // 怪獸四號
+		{50005, 90776, 69111, -3480},     // 怪獸五號
+		{50006, 91450, 110356, -3800},    // 怪獸六號
+		{50007, 96618, 110316, -3720},    // 怪獸七號
+		{50008, 95713, 28333, -3644},     // 怪獸八號
+		{50009, 108481, 27188, -3480},    // 怪獸九號
+		{50010, 95668, 20366, -3200},     // 怪獸十號
+		{50011, 101758, 26798, -3384},    // 怪獸十一號
+		{50012, -47333, 141058, -2936},   // 怪獸十二號
+		{50013, -51520, 135521, -2944},   // 怪獸十三號
+		{50014, -90595, 106072, -3672},   // 怪獸十四號
+		{50015, -95162, 110310, -3816},   // 怪獸十五號
+		{50016, 125787, 126452, -3939},   // 怪獸十六號
+		{50017, 185059, -9610, -5488},    // 怪獸十七號
+		{50018, -6675, 18505, -5488},     // 怪獸十八號
+		{50019, 49626, 220167, -3592},    // 怪獸十九號
+		{50020, -53267, 128461, -3088},   // 怪獸二十號
+		{50021, -56716, 118924, -3032},   // 怪獸二十一號
+		{50022, 130974, 114453, -3728},   // 怪獸二十二號
+		{50023, 26634, 183290, -3368},    // 怪獸二十三號
+		{50024, 190414, 18382, -3720},    // 怪獸二十四號
+		{50025, 190014, 22378, -3720},    // 怪獸二十五號
+		{50026, 192414, 18382, -3720},    // 怪獸二十六號
+		{50027, 187489, 20482, -3600},    // 怪獸二十七號
+		{50028, 168559, -50182, -3480},   // 怪獸二十八號
+		{50029, 169039, -43177, -3488},   // 怪獸二十九號
+		{50030, 109310, -152650, -1664},  // 怪獸三十號
+		{50031, 116196, -155476, -1512},  // 怪獸三十一號
+		{50032, 120536, -159395, -1536},  // 怪獸三十二號
+		{50033, -44269, 172740, -3536},   // 怪獸三十三號
+		{50034, -40724, 177799, -3976},   // 怪獸三十四號
+		{50035, -42758, 175758, -3712}    // 怪獸三十五號
 	};
 
 	private static final String[] BOSS_NAMES =
@@ -46,41 +74,31 @@ public class BossTeleportScroll implements IItemHandler
 	};
 
 	/**
-	 * BOSS 狀態資訊（優先從世界實體取得，fallback 到資料庫）
+	 * BOSS 狀態資訊（從資料庫讀取重生時間，座標使用固定值）
 	 */
 	private static class BossInfo
 	{
 		public final int npcId;
-		public final Location location;     // 即時座標（來自世界實體）或重生點座標（來自DB）
-		public final long respawnTime;       // DB 中的重生時間戳
-		public final boolean existsInDb;     // 資料庫中是否有記錄
-		public final boolean existsInWorld;  // 世界中是否存在活著的實體
+		public final Location location;     // 固定重生點座標
+		public final long respawnTime;      // DB 中的重生時間戳
+		public final boolean existsInDb;    // 資料庫中是否有記錄
+		public final boolean existsInWorld; // 世界中是否存在活著的實體
 
-		/** 從世界實體建立（確定存活） */
-		public BossInfo(int npcId, Npc npc, long respawnTime)
-		{
-			this.npcId = npcId;
-			this.location = npc.getLocation();
-			this.respawnTime = respawnTime;
-			this.existsInDb = true;
-			this.existsInWorld = true;
-		}
-
-		/** 從資料庫建立（世界中找不到實體） */
-		public BossInfo(int npcId, int x, int y, int z, long respawnTime)
+		/** 從固定座標和資料庫資訊建立 */
+		public BossInfo(int npcId, int x, int y, int z, long respawnTime, boolean existsInWorld)
 		{
 			this.npcId = npcId;
 			this.location = new Location(x, y, z);
 			this.respawnTime = respawnTime;
 			this.existsInDb = true;
-			this.existsInWorld = false;
+			this.existsInWorld = existsInWorld;
 		}
 
 		/** 資料庫中無此BOSS記錄 */
-		public BossInfo(int npcId)
+		public BossInfo(int npcId, int x, int y, int z)
 		{
 			this.npcId = npcId;
-			this.location = null;
+			this.location = new Location(x, y, z);
 			this.respawnTime = 0;
 			this.existsInDb = false;
 			this.existsInWorld = false;
@@ -181,12 +199,15 @@ public class BossTeleportScroll implements IItemHandler
 		for (int i = startIndex; i < endIndex; i++)
 		{
 			int npcId = BOSS_LIST[i][0];
+			int fixedX = BOSS_LIST[i][1];
+			int fixedY = BOSS_LIST[i][2];
+			int fixedZ = BOSS_LIST[i][3];
 			String bossName = BOSS_NAMES[i];
 			int rowNum = (i - startIndex) + 1;
 			String rowColor = (rowNum % 2 == 0) ? "222222" : "111111";
 
-			// [自定義修改] 優先從世界實體偵測BOSS，fallback到資料庫
-			BossInfo info = loadBossInfo(npcId);
+			// [自定義修改] 使用固定座標，只從資料庫讀取重生時間和存活狀態
+			BossInfo info = loadBossInfo(npcId, fixedX, fixedY, fixedZ);
 
 			// 獲取 NPC 等級
 			int level = 1;
@@ -266,19 +287,21 @@ public class BossTeleportScroll implements IItemHandler
 
 	/**
 	 * [自定義修改] 載入BOSS資訊
-	 * 優先從遊戲世界中尋找活著的NPC實體（最可靠），找不到才 fallback 到資料庫
+	 * 使用固定座標，只從資料庫讀取重生時間，從世界檢查存活狀態
 	 * @param npcId BOSS ID
-	 * @return BossInfo 包含即時座標、重生時間、存活狀態
+	 * @param fixedX 固定重生點 X 座標
+	 * @param fixedY 固定重生點 Y 座標
+	 * @param fixedZ 固定重生點 Z 座標
+	 * @return BossInfo 包含固定座標、重生時間、存活狀態
 	 */
-	private static BossInfo loadBossInfo(int npcId)
+	private static BossInfo loadBossInfo(int npcId, int fixedX, int fixedY, int fixedZ)
 	{
-		// 先從資料庫讀取基本資訊（重生時間、重生點座標）
+		// 從資料庫讀取重生時間
 		long dbRespawnTime = 0;
-		int dbX = 0, dbY = 0, dbZ = 0;
 		boolean existsInDb = false;
 
 		try (Connection con = DatabaseFactory.getConnection();
-			 PreparedStatement statement = con.prepareStatement("SELECT x, y, z, respawnTime FROM npc_respawns WHERE id = ?"))
+			 PreparedStatement statement = con.prepareStatement("SELECT respawnTime FROM npc_respawns WHERE id = ?"))
 		{
 			statement.setInt(1, npcId);
 
@@ -286,9 +309,6 @@ public class BossTeleportScroll implements IItemHandler
 			{
 				if (rset.next())
 				{
-					dbX = rset.getInt("x");
-					dbY = rset.getInt("y");
-					dbZ = rset.getInt("z");
 					dbRespawnTime = rset.getLong("respawnTime");
 					existsInDb = true;
 				}
@@ -299,35 +319,39 @@ public class BossTeleportScroll implements IItemHandler
 			e.printStackTrace();
 		}
 
-		if (!existsInDb)
-		{
-			return new BossInfo(npcId);
-		}
-
-		// 從世界中尋找活著的NPC實體
+		// 從世界中檢查是否存活
+		boolean existsInWorld = false;
 		Npc worldNpc = World.getInstance().getNpc(npcId);
 		if ((worldNpc != null) && !worldNpc.isDead() && (worldNpc.getInstanceId() == 0))
 		{
-			// 世界中找到活著的實體（排除副本內的同ID怪物）
-			return new BossInfo(npcId, worldNpc, dbRespawnTime);
+			existsInWorld = true;
 		}
 
-		// 世界中找不到，使用資料庫座標
-		return new BossInfo(npcId, dbX, dbY, dbZ, dbRespawnTime);
+		if (!existsInDb)
+		{
+			// 資料庫無記錄，使用固定座標
+			return new BossInfo(npcId, fixedX, fixedY, fixedZ);
+		}
+
+		// 使用固定座標 + 資料庫重生時間 + 世界存活狀態
+		return new BossInfo(npcId, fixedX, fixedY, fixedZ, dbRespawnTime, existsInWorld);
 	}
 
 	/**
 	 * [自定義修改] 取得BOSS傳送座標（供 BossTeleportHandler 使用）
-	 * 優先取得世界中活著的NPC即時座標，fallback到資料庫重生點座標
+	 * 使用固定重生點座標，不再追蹤 BOSS 即時位置
 	 * @param npcId BOSS ID
-	 * @return 傳送位置,如果資料庫無記錄返回 null
+	 * @return 固定傳送位置
 	 */
 	public static Location getBossLocation(int npcId)
 	{
-		BossInfo info = loadBossInfo(npcId);
-		if (info.existsInDb)
+		// 從 BOSS_LIST 中查找固定座標
+		for (int[] boss : BOSS_LIST)
 		{
-			return info.location;
+			if (boss[0] == npcId)
+			{
+				return new Location(boss[1], boss[2], boss[3]);
+			}
 		}
 		return null;
 	}
@@ -339,7 +363,7 @@ public class BossTeleportScroll implements IItemHandler
 	 */
 	public static boolean isBossAlive(int npcId)
 	{
-		BossInfo info = loadBossInfo(npcId);
-		return info.isAlive();
+		Npc worldNpc = World.getInstance().getNpc(npcId);
+		return (worldNpc != null) && !worldNpc.isDead() && (worldNpc.getInstanceId() == 0);
 	}
 }

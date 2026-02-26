@@ -13,6 +13,14 @@ public class SkillControllerCmd implements IVoicedCommandHandler
 {
 	private static final String[] COMMANDS = {"SKon", "SKoff"};
 
+	// 強制轉換技能組（同組只能啟用一個）- 按等級分組
+	private static final int[][] SKILL_GROUPS = {
+		{101001, 101005}, // 初級組（物理+法師）
+		{101002, 101006}, // 中級組（物理+法師）
+		{101003, 101007}, // 高級組（物理+法師）
+		{101004, 101008}  // 頂級組（物理+法師）
+	};
+
 	@Override
 	public boolean onCommand(String command, Player player, String params)
 	{
@@ -49,6 +57,35 @@ public class SkillControllerCmd implements IVoicedCommandHandler
 
 		if (command.equals("SKon"))
 		{
+			// 檢查是否屬於強制轉換技能組
+			int groupIndex = getSkillGroup(skillId);
+			if (groupIndex >= 0)
+			{
+				// 先關閉同組的其他技能
+				for (int otherSkillId : SKILL_GROUPS[groupIndex])
+				{
+					if (otherSkillId != skillId)
+					{
+						Skill otherSkill = player.getKnownSkill(otherSkillId);
+						if (otherSkill != null)
+						{
+							player.removeSkill(otherSkill, true, true);
+
+							// 同時移除該技能的從屬技能
+							int otherSlaveSkillId = SkillPermission.getSlaveSkill(otherSkillId);
+							if (otherSlaveSkillId > 0)
+							{
+								Skill otherSlaveSkill = player.getKnownSkill(otherSlaveSkillId);
+								if (otherSlaveSkill != null)
+								{
+									player.removeSkill(otherSlaveSkill, true, true);
+								}
+							}
+						}
+					}
+				}
+			}
+
 			Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 			if (skill != null)
 			{
@@ -103,6 +140,26 @@ public class SkillControllerCmd implements IVoicedCommandHandler
 
 		showHtml(player);
 		return true;
+	}
+
+	/**
+	 * 獲取技能所屬的組別索引
+	 * @param skillId 技能ID
+	 * @return 組別索引，如果不屬於任何組則返回-1
+	 */
+	private int getSkillGroup(int skillId)
+	{
+		for (int i = 0; i < SKILL_GROUPS.length; i++)
+		{
+			for (int id : SKILL_GROUPS[i])
+			{
+				if (id == skillId)
+				{
+					return i;
+				}
+			}
+		}
+		return -1;
 	}
 
 	private void showHtml(Player player)

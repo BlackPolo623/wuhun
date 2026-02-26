@@ -34,13 +34,14 @@ public class Offline implements IVoicedCommandHandler
 {
 	private static final String[] VOICED_COMMANDS =
 	{
-		"offline"
+		"offline",
+		"離線商店"
 	};
 	
 	@Override
 	public boolean onCommand(String command, Player player, String target)
 	{
-		if (command.equals("offline") && OfflineTradeConfig.ENABLE_OFFLINE_COMMAND && (OfflineTradeConfig.OFFLINE_TRADE_ENABLE || OfflineTradeConfig.OFFLINE_CRAFT_ENABLE))
+		if (( command.equals("offline")||command.equals("離線商店") )&& OfflineTradeConfig.ENABLE_OFFLINE_COMMAND && (OfflineTradeConfig.OFFLINE_TRADE_ENABLE || OfflineTradeConfig.OFFLINE_CRAFT_ENABLE))
 		{
 			if (player.isPrisoner())
 			{
@@ -50,6 +51,7 @@ public class Offline implements IVoicedCommandHandler
 			
 			if (!player.isInStoreMode())
 			{
+				player.sendMessage("你並沒有開啟商店，無法使用離線商店");
 				player.sendPacket(SystemMessageId.PRIVATE_STORE_ALREADY_CLOSED);
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 				return false;
@@ -57,6 +59,7 @@ public class Offline implements IVoicedCommandHandler
 			
 			if (player.isInInstance() || player.isInVehicle() || !player.canLogout())
 			{
+				player.sendMessage("你現在的狀態無法使用離線商店");
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 				return false;
 			}

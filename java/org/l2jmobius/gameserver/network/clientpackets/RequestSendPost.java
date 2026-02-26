@@ -257,13 +257,13 @@ public class RequestSendPost extends ClientPacket
 			return;
 		}
 		
-		if (MailManager.getInstance().getOutboxSize(player.getObjectId()) >= OUTBOX_SIZE)
+		if (MailManager.getInstance().getOutboxSize(player.getObjectId()) >= OUTBOX_SIZE && !player.isGM())
 		{
 			player.sendPacket(SystemMessageId.THE_MAIL_LIMIT_240_HAS_BEEN_EXCEEDED_AND_THIS_CANNOT_BE_FORWARDED);
 			return;
 		}
 		
-		if (MailManager.getInstance().getInboxSize(receiverId) >= INBOX_SIZE)
+		if (MailManager.getInstance().getInboxSize(receiverId) >= INBOX_SIZE && !player.isGM())
 		{
 			player.sendPacket(SystemMessageId.THE_MAIL_LIMIT_240_HAS_BEEN_EXCEEDED_AND_THIS_CANNOT_BE_FORWARDED);
 			return;
