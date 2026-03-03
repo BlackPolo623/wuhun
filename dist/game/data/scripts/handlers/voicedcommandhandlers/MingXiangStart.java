@@ -23,17 +23,23 @@ public class MingXiangStart implements IVoicedCommandHandler
 				// 停止冥想
 				activeChar.getVariables().set("MINGXIANG_DOING", false);
 				activeChar.setImmobilized(false);
-				// 移除 setBlockActions - 這會阻止使用道具！
 				activeChar.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.V_C_R_PURSUIT_AIRBORNE);
 				activeChar.sendMessage("已停止冥想。");
 				showMainHtml(activeChar);
 			}
 			else
 			{
+				// 【修復漏洞】冥想前檢查是否已開啟商店
+				// 防止玩家先開商店再冥想，然後用 .離線商店 指令同時掛兩個狀態
+				if (activeChar.isInStoreMode())
+				{
+					activeChar.sendMessage("開啟商店中無法進行冥想！請先關閉商店。");
+					return false;
+				}
+
 				// 開始冥想
 				activeChar.getVariables().set("MINGXIANG_DOING", true);
 				activeChar.setImmobilized(true);
-				// 不要使用 setBlockActions！改用其他限制方式
 				activeChar.getEffectList().startAbnormalVisualEffect(AbnormalVisualEffect.V_C_R_PURSUIT_AIRBORNE);
 				activeChar.sendMessage("開始冥想中...");
 				showMainHtml(activeChar);

@@ -29,6 +29,7 @@ import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.stats.BaseStat;
 import org.l2jmobius.gameserver.model.stats.IStatFunction;
 import org.l2jmobius.gameserver.model.stats.Stat;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 
 /**
  * @author UnAfraid
@@ -102,7 +103,15 @@ public class MaxHpFinalizer implements IStatFunction
 				}
 			}
 		}
-		
+
+		// Add permanent HP bonus from potion (洗血藥水)
+		if (isPlayer)
+		{
+			final Player player = creature.asPlayer();
+			final int bonusHp = player.getVariables().getInt(PlayerVariables.BONUS_HP_POTION, 0);
+			maxHp += bonusHp;
+		}
+
 		final double hpLimit;
 		if (isPlayer && !creature.asPlayer().isCursedWeaponEquipped())
 		{

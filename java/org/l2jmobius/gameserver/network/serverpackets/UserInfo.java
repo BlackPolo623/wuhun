@@ -194,11 +194,23 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 				case 2:
 					z = 94;
 					break;
+				case 3:
+					z = 18;// 精灵战士
+					break;
+				case 4:
+					z = 31;// 黑暗精灵战士
+					break;
 				case 5:
 					z = 113;
 					break;
 				case 6:
 					z = 115;
+					break;
+				case 7:
+					z = 53;// 矮人战士
+					break;
+				case 8:
+					z = 125;// 卡迈尔
 					break;
 				case 9:
 					z = 199;
@@ -217,6 +229,9 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 					break;
 				case 14:
 					z = 228;
+					break;
+				case 15:
+					z = 236;// 高等精灵
 					break;
 				case 16:
 					z = 250;

@@ -399,13 +399,13 @@ public class LeonasDungeon extends InstanceScript {
 			final int[][] mobArrays = {MOBS_DIFFICULTY_1, MOBS_DIFFICULTY_2, MOBS_DIFFICULTY_3};
 			final int[] currentMobs = mobArrays[Math.min(difficulty, 3) - 1];
 			final int respawnCount = instance.getParameters().getInt("Mob_" + currentMobs[0] + "_RespawnCount", 0);
-			final int strengthTier = respawnCount + 1; // 第1層 = 初始, 每次重生+1層
+			final int strengthTier = respawnCount + 1;
 
-			for (Player member : instance.getPlayers()) {
-				final int currentScore = instance.getParameters().getInt("Player_" + member.getObjectId() + "_Score", 0);
-				final String message = "目前積分: " + currentScore + " | 怪物強度: 第 " + strengthTier + " 層";
-				member.sendPacket(new ExShowScreenMessage(message, ExShowScreenMessage.TOP_CENTER, 6000));
-			}
+			// 全隊共用積分，broadcastPacket 一次即可
+			final int teamScore = instance.getParameters().getInt("Instance_TeamScore", 0);
+			final int totalKills = instance.getParameters().getInt("Instance_TotalKills", 0);
+			final String message = "全隊積分: " + teamScore + " | 總擊殺: " + totalKills + " | 怪物強度: 第 " + strengthTier + " 層";
+			instance.broadcastPacket(new ExShowScreenMessage(message, ExShowScreenMessage.TOP_CENTER, 6000));
 		}, 60000, 60000); // 每60秒顯示一次
 
 		instance.setParameter("ScoreDisplayTask", scoreDisplayTask);
@@ -546,9 +546,11 @@ public class LeonasDungeon extends InstanceScript {
 				instance.setParameter("RandomBossAlive", false);
 				instance.setParameter("CurrentRandomBoss", null);
 
-				// 記錄擊殺者的隨機BOSS擊殺數
-				final int bossKills = instance.getParameters().getInt("Player_" + killer.getObjectId() + "_BossKills", 0) + 1;
-				instance.getParameters().set("Player_" + killer.getObjectId() + "_BossKills", bossKills);
+				// 記錄所有玩家的隨機BOSS擊殺數（隊伍共享）
+				for (Player member : instance.getPlayers()) {
+					final int bossKills = instance.getParameters().getInt("Player_" + member.getObjectId() + "_BossKills", 0) + 1;
+					instance.getParameters().set("Player_" + member.getObjectId() + "_BossKills", bossKills);
+				}
 
 				// 向副本內所有玩家發送BOSS被擊殺的訊息
 				final String bossName = npc.getName();
@@ -559,21 +561,28 @@ public class LeonasDungeon extends InstanceScript {
 			}
 
 			// 一般怪物的處理
-			// Increment kill count for the killer
+			// 個人擊殺數統計
 			final int kills = instance.getParameters().getInt("Player_" + killer.getObjectId() + "_Kills", 0) + 1;
 			instance.getParameters().set("Player_" + killer.getObjectId() + "_Kills", kills);
 
-			// Add points for kill
-			addScoreToPlayer(killer, instance, POINTS_PER_KILL);
+			// 全隊總擊殺數（用於里程碑觸發）
+			final int totalKills = instance.getParameters().getInt("Instance_TotalKills", 0) + 1;
+			instance.getParameters().set("Instance_TotalKills", totalKills);
 
-			// Check tiered milestone bonuses (階梯式獎勵)
-			if (kills >= 1000) {
-				// 檢查是否剛好達到100的整數倍
-				if ((kills % 100) == 0) {
-					final int tier = kills / 1000; // 1000-1999=1, 2000-2999=2, etc.
-					final int bonusPoints = 5 + (tier - 1) * 2; // 1000檔:5分, 2000檔:7分, 3000檔:9分
-					addScoreToPlayer(killer, instance, bonusPoints);
-					killer.sendMessage("擊殺里程碑！擊殺 " + kills + " 隻怪物，獲得 " + bonusPoints + " 分獎勵！");
+			// 積分共享給全隊
+			for (Player member : instance.getPlayers()) {
+				addScoreToPlayer(member, instance, POINTS_PER_KILL);
+			}
+
+			// 里程碑獎勵：以全隊總擊殺數觸發
+			if (totalKills >= 1000) {
+				if ((totalKills % 100) == 0) {
+					final int tier = totalKills / 1000;
+					final int bonusPoints = 5 + (tier - 1) * 2;
+					for (Player member : instance.getPlayers()) {
+						addScoreToPlayer(member, instance, bonusPoints);
+					}
+					instance.broadcastPacket(new ExShowScreenMessage("擊殺里程碑！全隊共擊殺 " + totalKills + " 隻怪物，全隊獲得 " + bonusPoints + " 分獎勵！", 5000));
 				}
 			}
 
@@ -738,8 +747,12 @@ public class LeonasDungeon extends InstanceScript {
 	}
 
 	private void addScoreToPlayer(Player player, Instance instance, int points) {
+		// 個人分數（用於死亡快照結算）
 		final int currentScore = instance.getParameters().getInt("Player_" + player.getObjectId() + "_Score", 0);
 		instance.getParameters().set("Player_" + player.getObjectId() + "_Score", currentScore + points);
+		// 全隊共用基礎積分
+		final int teamScore = instance.getParameters().getInt("Instance_TeamScore", 0);
+		instance.getParameters().set("Instance_TeamScore", teamScore + points);
 	}
 
 	private int calculateFinalScore(Player player, Instance instance) {
@@ -753,12 +766,12 @@ public class LeonasDungeon extends InstanceScript {
 			return deathScore;
 		}
 
-		final int killScore = instance.getParameters().getInt("Player_" + player.getObjectId() + "_Score", 0);
+		// 全隊共用基礎積分（擊殺 + 里程碑 + BOSS，全隊相同）
+		final int teamScore = instance.getParameters().getInt("Instance_TeamScore", 0);
 		final int kills = instance.getParameters().getInt("Player_" + player.getObjectId() + "_Kills", 0);
 		final int deaths = instance.getParameters().getInt("Player_" + player.getObjectId() + "_Deaths", 0);
-		final int bossKills = instance.getParameters().getInt("Player_" + player.getObjectId() + "_BossKills", 0);
 
-		// Time-based points
+		// 時間積分（全隊相同）
 		final int difficulty = instance.getParameters().getInt("INSTANCE_DIFFICULTY", 1);
 		final long timeInMinutes = (30 * 60000 - instance.getRemainingTime()) / 60000;
 		int pointsPerMinute = POINTS_PER_MINUTE_LOW;
@@ -772,29 +785,20 @@ public class LeonasDungeon extends InstanceScript {
 		}
 		final int timeScore = (int) (timeInMinutes * pointsPerMinute);
 
-		// Random Boss bonus
-		final int bossBonus = bossKills * POINTS_PER_RANDOM_BOSS;
-
-		// Death penalty
+		// 個人扣分項目
 		final int deathPenalty = deaths * POINTS_DEDUCT_PER_DEATH;
-
-		// HP penalty
 		final double hpPercent = (player.getCurrentHp() / player.getMaxHp()) * 100;
 		final int hpPenalty = (hpPercent < POINTS_DEDUCT_HP_THRESHOLD) ? POINTS_DEDUCT_LOW_HP : 0;
 
-		// Final
-		final int rawTotal = killScore + timeScore + bossBonus - deathPenalty - hpPenalty;
+		// 最終 = 全隊共用基礎 + 時間分 - 個人扣分
+		final int rawTotal = teamScore + timeScore - deathPenalty - hpPenalty;
 		final int finalScore = Math.max(0, rawTotal);
 
-		// Send detailed breakdown to player
 		player.sendPacket(new ExShowScreenMessage("結算完成！最終得分: " + finalScore + " 分", ExShowScreenMessage.TOP_CENTER, 8000));
 		player.sendMessage("========== 副本結算明細 ==========");
-		player.sendMessage("難度: " + difficultyName + " | 擊殺數: " + kills + " | 死亡數: " + deaths);
-		player.sendMessage("擊殺積分: +" + killScore + " (含里程碑獎勵)");
+		player.sendMessage("難度: " + difficultyName + " | 個人擊殺數: " + kills + " | 死亡數: " + deaths);
+		player.sendMessage("全隊擊殺積分: +" + teamScore + " (含里程碑/BOSS獎勵)");
 		player.sendMessage("時間積分: +" + timeScore + " (" + timeInMinutes + "分鐘 x " + pointsPerMinute + "分/分鐘)");
-		if (bossBonus > 0) {
-			player.sendMessage("隨機BOSS獎勵: +" + bossBonus + " (" + bossKills + "隻 x " + POINTS_PER_RANDOM_BOSS + "分)");
-		}
 		if (deathPenalty > 0) {
 			player.sendMessage("死亡扣分: -" + deathPenalty + " (" + deaths + "次 x " + POINTS_DEDUCT_PER_DEATH + "分)");
 		}
@@ -815,9 +819,8 @@ public class LeonasDungeon extends InstanceScript {
 	 * 儲存玩家死亡當下的分數快照（不含HP扣分）
 	 */
 	private void saveDeathScoreSnapshot(Player player, Instance instance, int deaths) {
-		final int killScore = instance.getParameters().getInt("Player_" + player.getObjectId() + "_Score", 0);
-		final int bossKills = instance.getParameters().getInt("Player_" + player.getObjectId() + "_BossKills", 0);
-		final int bossBonus = bossKills * POINTS_PER_RANDOM_BOSS;
+		// 死亡快照使用全隊共用基礎積分
+		final int teamScore = instance.getParameters().getInt("Instance_TeamScore", 0);
 		final int difficulty = instance.getParameters().getInt("INSTANCE_DIFFICULTY", 1);
 		final long timeInMinutes = (30 * 60000 - instance.getRemainingTime()) / 60000;
 		int pointsPerMinute = POINTS_PER_MINUTE_LOW;
@@ -829,7 +832,9 @@ public class LeonasDungeon extends InstanceScript {
 		final int timeScore = (int) (timeInMinutes * pointsPerMinute);
 		final int deathPenalty = deaths * POINTS_DEDUCT_PER_DEATH;
 		final int hpPenalty = POINTS_DEDUCT_LOW_HP; // 死亡時HP=0，必然觸發HP扣分
-		final int rawScore = Math.max(0, killScore + timeScore + bossBonus - deathPenalty - hpPenalty);
+		final int rawScore = Math.max(0, teamScore + timeScore - deathPenalty - hpPenalty);
 		instance.getParameters().set("Player_" + player.getObjectId() + "_DeathScore", rawScore);
 	}
 }
+
+

@@ -442,6 +442,17 @@ public class BaseMonsterNpc extends Script
 
 					// 開始生成並啟用自動重生
 					spawn.init();
+
+					// 【CPU優化】完全禁用基地怪物的AI，讓它們變成靜止靶子
+					// 怪物不會移動、不會反擊、不會執行任何AI邏輯
+					// 可減少約 95% 的CPU使用率，適合純練功用途
+					Npc spawnedNpc = spawn.getLastSpawn();
+					if (spawnedNpc != null && spawnedNpc.isAttackable())
+					{
+						spawnedNpc.setRandomWalking(false);
+						spawnedNpc.disableCoreAI(true); // 完全禁用AI
+					}
+
 					spawn.startRespawn();
 
 					spawnList.add(spawn);

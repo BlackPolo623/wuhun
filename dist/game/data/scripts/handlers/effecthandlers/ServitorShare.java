@@ -75,7 +75,7 @@ public class ServitorShare extends AbstractEffect
 			return;
 		}
 
-		final Player player = effected.asPlayer();
+		final Player player = effected.asSummon().getOwner();
 		if (player == null)
 		{
 			return;

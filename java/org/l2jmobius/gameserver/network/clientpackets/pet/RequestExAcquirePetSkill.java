@@ -1,16 +1,16 @@
 /*
  * Copyright (c) 2013 L2jMobius
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -34,6 +34,7 @@ import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 import org.l2jmobius.gameserver.network.holders.PetSkillAcquireHolder;
 import org.l2jmobius.gameserver.network.serverpackets.pet.ExAcquirePetSkillResult;
 import org.l2jmobius.gameserver.network.serverpackets.pet.ExPetSkillList;
+import org.l2jmobius.gameserver.network.serverpackets.pet.PetSummonInfo;
 
 /**
  * @author Berezkin Nikolay, Liamxroy
@@ -42,14 +43,14 @@ public class RequestExAcquirePetSkill extends ClientPacket
 {
 	private int skillId;
 	private int skillLevel;
-	
+
 	@Override
 	protected void readImpl()
 	{
 		skillId = readInt();
 		skillLevel = readInt();
 	}
-	
+
 	@Override
 	protected void runImpl()
 	{
@@ -58,44 +59,63 @@ public class RequestExAcquirePetSkill extends ClientPacket
 		{
 			return;
 		}
-		
+
 		final Pet pet = player.getPet();
 		if (pet == null)
 		{
 			return;
 		}
-		
+
 		final Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 		if (skill == null)
 		{
 			return;
 		}
-		
+
 		final Optional<PetSkillAcquireHolder> reqSkill = PetAcquireList.getInstance().getSkills(pet.getPetData().getType()).stream().filter(it -> (it.getSkillId() == skillId) && (it.getSkillLevel() == skillLevel)).findFirst();
 		if (reqSkill.isPresent())
 		{
+			// Check if pet already knows this skill at this level or higher
+			final Skill knownSkill = pet.getKnownSkill(skillId);
+			if ((knownSkill != null) && (knownSkill.getLevel() >= skillLevel))
+			{
+				// Pet already knows this skill at this level or higher, send failure
+				player.sendPacket(new ExAcquirePetSkillResult(skillId, skillLevel, false));
+				return;
+			}
+
 			// If no items are needed, learning is allowed directly.
 			final List<ItemHolder> requiredItems = reqSkill.get().getItems();
 			if (requiredItems.isEmpty())
 			{
 				pet.addSkill(skill);
 				pet.storePetSkills(skillId, skillLevel);
-				player.sendPacket(new ExPetSkillList(false, pet));
+				player.sendPacket(new PetSummonInfo(pet, 0));
+				player.sendPacket(new ExPetSkillList(true, pet));
 				player.sendPacket(new ExAcquirePetSkillResult(skillId, skillLevel, true));
 				return;
 			}
-			
-			// If items are needed, check and deduct all necessary items.
+
+			// If items are needed, try to deduct any one of them (OR logic)
+			boolean itemDestroyed = false;
 			for (ItemHolder item : requiredItems)
 			{
 				if (player.destroyItemByItemId(ItemProcessType.FEE, item.getId(), item.getCount(), null, true))
 				{
+					itemDestroyed = true;
 					pet.addSkill(skill);
 					pet.storePetSkills(skillId, skillLevel);
-					player.sendPacket(new ExPetSkillList(false, pet));
+					player.sendPacket(new PetSummonInfo(pet, 0));
+					player.sendPacket(new ExPetSkillList(true, pet));
 					player.sendPacket(new ExAcquirePetSkillResult(skillId, skillLevel, true));
 					break;
 				}
+			}
+
+			// If no item could be destroyed, send failure packet
+			if (!itemDestroyed)
+			{
+				player.sendPacket(new ExAcquirePetSkillResult(skillId, skillLevel, false));
 			}
 		}
 	}

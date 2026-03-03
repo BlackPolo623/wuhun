@@ -179,7 +179,7 @@ public class GameServer
 		printSection("Scripting Engine");
 		EventDispatcher.getInstance();
 		ScriptEngine.getInstance();
-		
+
 		printSection("World");
 		World.getInstance();
 		MapRegionManager.getInstance();

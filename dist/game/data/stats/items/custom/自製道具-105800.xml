@@ -73,4 +73,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
+	<item id="105808" name="洗血藥水" type="EtcItem">
+		<set name="icon" val="icon.collection_water_boss" />
+		<set name="immediate_effect" val="false" />
+		<set name="material" val="LIQUID" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="PermanentHpPotion"/>
+	</item>
 </list>

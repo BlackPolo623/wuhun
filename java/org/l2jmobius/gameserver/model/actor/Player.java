@@ -19238,6 +19238,7 @@ public class Player extends Playable
 				break;
 			case 12:
 				race = PlayerTemplateData.getInstance().getTemplate(220).getRace();// 先锋
+			break;
 			case 13:
 				race = PlayerTemplateData.getInstance().getTemplate(224).getRace();// 新刺客
 				break;

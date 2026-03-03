@@ -390,11 +390,9 @@ public class JewelSystemManager
 	 */
 	public long getTotalBonus(Player player)
 	{
-		final PlayerJewelData data = _playerData.get(player.getObjectId());
-		if (data == null)
-		{
-			return 0;
-		}
+		// 修正：使用 getPlayerData() 確保數據已從資料庫載入
+		// 這樣重啟伺服器後，玩家登入時就能正確載入並應用寶玉加成
+		final PlayerJewelData data = getPlayerData(player);
 		return data.calculateTotalBonus();
 	}
 

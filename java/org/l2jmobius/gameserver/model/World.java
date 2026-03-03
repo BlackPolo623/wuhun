@@ -928,12 +928,12 @@ public class World
 	{
 		return _lastPkTime.get();
 	}
-	
+
 	public static World getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		protected static final World INSTANCE = new World();

@@ -1,0 +1,88 @@
+<html><head><title>飼料管理</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+    <tr>
+        <td valign="top" align="center">
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr><td height=15></td></tr>
+                <tr>
+                    <td align=center><font color="LEVEL" size="5"><b>🌾 飼料管理</b></font></td>
+                </tr>
+                <tr><td height=10></td></tr>
+
+                <tr>
+                    <td align=center>
+                        <table width="270" bgcolor="111111" border="0" cellspacing="1" cellpadding="3">
+                            <tr bgcolor="222222">
+                                <td align="center" width="135"><font color="FFCC33">背包中的飼料</font></td>
+                                <td align="center" width="135"><font color="00FF66">%inventory_feed%</font></td>
+                            </tr>
+                            <tr bgcolor="222222">
+                                <td align="center"><font color="FFCC33">已儲存的飼料</font></td>
+                                <td align="center"><font color="FFFF00">%stored_feed%</font></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr><td height=15></td></tr>
+                <tr>
+                    <td align=center><img src="L2UI.SquareGray" width="270" height="1"></td>
+                </tr>
+                <tr><td height=10></td></tr>
+
+                <tr>
+                    <td align=center><font color="LEVEL" size="4">存入飼料</font></td>
+                </tr>
+                <tr><td height=8></td></tr>
+                <tr>
+                    <td align=center>
+                        <table border=0>
+                            <tr>
+                                <td><button action="bypass -h Quest PetHatchingSystem deposit_feed 100" value="存入 100" width=80 height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+                                <td><button action="bypass -h Quest PetHatchingSystem deposit_feed 500" value="存入 500" width=80 height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+                                <td><button action="bypass -h Quest PetHatchingSystem deposit_feed 1000" value="存入 1000" width=80 height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr><td height=10></td></tr>
+                <tr>
+                    <td align=center><font color="LEVEL" size="4">提領飼料</font></td>
+                </tr>
+                <tr><td height=8></td></tr>
+                <tr>
+                    <td align=center>
+                        <table border=0>
+                            <tr>
+                                <td><button action="bypass -h Quest PetHatchingSystem withdraw_feed 100" value="提領 100" width=80 height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+                                <td><button action="bypass -h Quest PetHatchingSystem withdraw_feed 500" value="提領 500" width=80 height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+                                <td><button action="bypass -h Quest PetHatchingSystem withdraw_feed 1000" value="提領 1000" width=80 height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr><td height=10></td></tr>
+                <tr>
+                    <td align=center><img src="L2UI.SquareGray" width="270" height="1"></td>
+                </tr>
+                <tr><td height=8></td></tr>
+                <tr>
+                    <td align=center>
+                        <font color="808080" size="1">※ 孵化時系統會自動使用儲存的飼料提升進階機率</font>
+                    </td>
+                </tr>
+                <tr><td height=10></td></tr>
+                <tr>
+                    <td align=center>
+                        <button action="bypass -h Quest PetHatchingSystem main" value="返回主選單" width="150" height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

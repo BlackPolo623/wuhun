@@ -26,6 +26,7 @@ public class PotentialCube extends Script
     private static final int ITEM_LOCK = 111001;
     private static final int ITEM_COMBINE = 111002;
     private static final int ITEM_FREE = 111003;
+    private static final int ITEM_ADVANCED_LOCK = 111004;
 
     // HTML路徑
     private static final String HTML_PATH = "data/scripts/custom/PotentialCube/";
@@ -62,6 +63,19 @@ public class PotentialCube extends Script
         else if (event.equals("lock_select"))
         {
             showLockSelectPage(player);
+        }
+        else if (event.equals("advanced_lock_select"))
+        {
+            showAdvancedLockSelectPage(player, new ArrayList<>());
+        }
+        else if (event.startsWith("advanced_lock_toggle_"))
+        {
+            int slot = Integer.parseInt(event.substring(21));
+            toggleAdvancedLockSelection(player, slot);
+        }
+        else if (event.equals("advanced_lock_confirm"))
+        {
+            processAdvancedLockReroll(player);
         }
         else if (event.startsWith("lock_reroll_"))
         {
@@ -258,6 +272,181 @@ public class PotentialCube extends Script
         player.sendMessage("========================================");
         player.sendMessage("成功重骰未鎖定的潛能！");
         player.sendMessage("槽位" + lockedSlot + "已保留");
+        player.sendMessage("========================================");
+
+        showMainPage(player);
+    }
+
+    // ==================== 高級鎖定重骰 ====================
+
+    private void showAdvancedLockSelectPage(Player player, List<Integer> selectedSlots)
+    {
+        if (!hasItem(player, ITEM_ADVANCED_LOCK, 1))
+        {
+            player.sendMessage("你沒有高級鎖定潛能方塊！");
+            showMainPage(player);
+            return;
+        }
+
+        Map<Integer, Integer> potentials = PotentialDAO.loadPotentials(player.getObjectId());
+
+        NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
+        html.setFile(player, HTML_PATH + "advanced_lock_select.htm");
+
+        StringBuilder sb = new StringBuilder();
+        for (Map.Entry<Integer, Integer> entry : potentials.entrySet())
+        {
+            int slot = entry.getKey();
+            int skillId = entry.getValue();
+            String skillName = getSkillName(skillId);
+            String color = PotentialData.getInstance().getSkillColor(skillId);
+            boolean isSelected = selectedSlots.contains(slot);
+
+            sb.append("<table width=\"280\">");
+            sb.append("<tr>");
+            sb.append("<td width=\"180\" align=\"left\">");
+            if (isSelected)
+            {
+                sb.append("<font color=\"00FF00\">✓ </font>");
+            }
+            sb.append("<font color=\"").append(color).append("\">")
+                    .append("槽位").append(slot).append(": ").append(skillName).append("</font></td>");
+            sb.append("<td width=\"100\" align=\"right\">");
+
+            if (isSelected)
+            {
+                sb.append("<button action=\"bypass -h Quest PotentialCube advanced_lock_toggle_").append(slot)
+                        .append("\" value=\"取消鎖定\" width=\"90\" height=\"20\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
+            }
+            else if (selectedSlots.size() < 2)
+            {
+                sb.append("<button action=\"bypass -h Quest PotentialCube advanced_lock_toggle_").append(slot)
+                        .append("\" value=\"鎖定此潛能\" width=\"90\" height=\"20\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
+            }
+            else
+            {
+                sb.append("<font color=\"808080\">已滿</font>");
+            }
+
+            sb.append("</td>");
+            sb.append("</tr>");
+            sb.append("</table>");
+            sb.append("<br>");
+        }
+
+        html.replace("%potential_list%", sb.toString());
+        html.replace("%selected_count%", String.valueOf(selectedSlots.size()));
+
+        // 確認按鈕
+        if (selectedSlots.size() == 2)
+        {
+            html.replace("%confirm_button%", "<tr><td align=\"center\"><button action=\"bypass -h Quest PotentialCube advanced_lock_confirm\" value=\"確認重骰\" width=\"200\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\"></td></tr>");
+        }
+        else
+        {
+            html.replace("%confirm_button%", "");
+        }
+
+        player.sendPacket(html);
+    }
+
+    private void toggleAdvancedLockSelection(Player player, int slot)
+    {
+        if (!hasItem(player, ITEM_ADVANCED_LOCK, 1))
+        {
+            player.sendMessage("你沒有高級鎖定潛能方塊！");
+            showMainPage(player);
+            return;
+        }
+
+        // 從變數中讀取當前選擇
+        String selectedData = player.getVariables().getString("ADVANCED_LOCK_SELECTED", "");
+        List<Integer> selectedSlots = new ArrayList<>();
+        if (!selectedData.isEmpty())
+        {
+            for (String s : selectedData.split(","))
+            {
+                selectedSlots.add(Integer.parseInt(s));
+            }
+        }
+
+        if (selectedSlots.contains(slot))
+        {
+            selectedSlots.remove(Integer.valueOf(slot));
+        }
+        else if (selectedSlots.size() < 2)
+        {
+            selectedSlots.add(slot);
+        }
+
+        // 保存選擇
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < selectedSlots.size(); i++)
+        {
+            if (i > 0) sb.append(",");
+            sb.append(selectedSlots.get(i));
+        }
+        player.getVariables().set("ADVANCED_LOCK_SELECTED", sb.toString());
+
+        showAdvancedLockSelectPage(player, selectedSlots);
+    }
+
+    private void processAdvancedLockReroll(Player player)
+    {
+        if (!checkAndConsumeItem(player, ITEM_ADVANCED_LOCK, 1))
+        {
+            player.sendMessage("你沒有高級鎖定潛能方塊！");
+            showMainPage(player);
+            return;
+        }
+
+        // 讀取鎖定的槽位
+        String selectedData = player.getVariables().getString("ADVANCED_LOCK_SELECTED", "");
+        if (selectedData.isEmpty())
+        {
+            player.sendMessage("請選擇要鎖定的兩個槽位！");
+            showMainPage(player);
+            return;
+        }
+
+        List<Integer> lockedSlots = new ArrayList<>();
+        for (String s : selectedData.split(","))
+        {
+            lockedSlots.add(Integer.parseInt(s));
+        }
+
+        if (lockedSlots.size() != 2)
+        {
+            player.sendMessage("請選擇要鎖定的兩個槽位！");
+            showAdvancedLockSelectPage(player, lockedSlots);
+            return;
+        }
+
+        Map<Integer, Integer> potentials = PotentialDAO.loadPotentials(player.getObjectId());
+
+        // 移除舊技能
+        removePotentialSkills(player, potentials);
+
+        // 重新隨機未鎖定的潛能
+        for (PotentialSlotHolder slot : PotentialData.getInstance().getAllSlots())
+        {
+            if (!lockedSlots.contains(slot.getSlotId()))
+            {
+                int skillId = PotentialData.getInstance().getRandomSkillForSlot(slot.getSlotId());
+                potentials.put(slot.getSlotId(), skillId);
+                PotentialDAO.savePotential(player.getObjectId(), slot.getSlotId(), skillId);
+            }
+        }
+
+        // 套用新技能
+        applyPotentialSkills(player, potentials);
+
+        // 清除選擇記錄
+        player.getVariables().remove("ADVANCED_LOCK_SELECTED");
+
+        player.sendMessage("========================================");
+        player.sendMessage("成功重骰未鎖定的潛能！");
+        player.sendMessage("槽位" + lockedSlots.get(0) + "和槽位" + lockedSlots.get(1) + "已保留");
         player.sendMessage("========================================");
 
         showMainPage(player);

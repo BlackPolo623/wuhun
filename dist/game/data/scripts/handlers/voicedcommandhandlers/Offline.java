@@ -48,7 +48,16 @@ public class Offline implements IVoicedCommandHandler
 				player.sendMessage("You can't use .offline as a prisoner.");
 				return false;
 			}
-			
+
+			// 【修復漏洞】檢查玩家是否正在冥想中
+			// 冥想狀態下不可進入離線商店，否則角色會持續留在世界中並繼續獲得冥想獎勵
+			if (player.getVariables().getBoolean("MINGXIANG_DOING", false))
+			{
+				player.sendMessage("冥想中無法使用離線商店！請先停止冥想再開啟離線商店。");
+				player.sendPacket(ActionFailed.STATIC_PACKET);
+				return false;
+			}
+
 			if (!player.isInStoreMode())
 			{
 				player.sendMessage("你並沒有開啟商店，無法使用離線商店");
@@ -56,17 +65,17 @@ public class Offline implements IVoicedCommandHandler
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 				return false;
 			}
-			
+
 			if (player.isInInstance() || player.isInVehicle() || !player.canLogout())
 			{
 				player.sendMessage("你現在的狀態無法使用離線商店");
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 				return false;
 			}
-			
+
 			player.sendPacket(new ConfirmDlg(SystemMessageId.THE_GAME_WILL_BE_CLOSED_CONTINUE));
 		}
-		
+
 		return true;
 	}
 	

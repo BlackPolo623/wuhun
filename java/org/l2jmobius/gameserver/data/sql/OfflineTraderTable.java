@@ -53,7 +53,7 @@ public class OfflineTraderTable
 	private static final Logger LOGGER_ACCOUNTING = Logger.getLogger("accounting");
 	
 	// SQL DEFINITIONS
-	private static final String SAVE_OFFLINE_STATUS = "INSERT INTO character_offline_trade (`charId`,`time`,`type`,`title`) VALUES (?,?,?,?)";
+	private static final String SAVE_OFFLINE_STATUS = "INSERT INTO character_offline_trade (`charId`,`time`,`type`,`title`,`x`,`y`,`z`) VALUES (?,?,?,?,?,?,?)";
 	private static final String SAVE_ITEMS = "INSERT INTO character_offline_trade_items (`charId`,`item`,`count`,`price`) VALUES (?,?,?,?)";
 	private static final String CLEAR_OFFLINE_TABLE = "DELETE FROM character_offline_trade";
 	private static final String CLEAR_OFFLINE_TABLE_PLAYER = "DELETE FROM character_offline_trade WHERE `charId`=?";
@@ -61,6 +61,7 @@ public class OfflineTraderTable
 	private static final String CLEAR_OFFLINE_TABLE_ITEMS_PLAYER = "DELETE FROM character_offline_trade_items WHERE `charId`=?";
 	private static final String LOAD_OFFLINE_STATUS = "SELECT * FROM character_offline_trade";
 	private static final String LOAD_OFFLINE_ITEMS = "SELECT * FROM character_offline_trade_items WHERE `charId`=?";
+	private static final String DELETE_EXPIRED_TRADERS = "DELETE FROM character_offline_trade WHERE `time` < ?";
 	
 	protected OfflineTraderTable()
 	{
@@ -163,8 +164,11 @@ public class OfflineTraderTable
 								break;
 							}
 						}
-						
+
 						stm3.setString(4, title);
+						stm3.setInt(5, pc.getX());
+						stm3.setInt(6, pc.getY());
+						stm3.setInt(7, pc.getZ());
 						stm3.executeUpdate();
 						stm3.clearParameters();
 						// No need to call con.commit() as HikariCP autocommit is true.
@@ -195,6 +199,7 @@ public class OfflineTraderTable
 			while (rs.next())
 			{
 				final long time = rs.getLong("time");
+				// Delete expired traders from database
 				if (OfflineTradeConfig.OFFLINE_MAX_DAYS > 0)
 				{
 					final Calendar cal = Calendar.getInstance();
@@ -202,6 +207,17 @@ public class OfflineTraderTable
 					cal.add(Calendar.DAY_OF_YEAR, OfflineTradeConfig.OFFLINE_MAX_DAYS);
 					if (cal.getTimeInMillis() <= System.currentTimeMillis())
 					{
+						// This trader is expired, delete from database
+						try (PreparedStatement deleteStm = con.prepareStatement(CLEAR_OFFLINE_TABLE_PLAYER))
+						{
+							deleteStm.setInt(1, rs.getInt("charId"));
+							deleteStm.execute();
+						}
+						try (PreparedStatement deleteItemsStm = con.prepareStatement(CLEAR_OFFLINE_TABLE_ITEMS_PLAYER))
+						{
+							deleteItemsStm.setInt(1, rs.getInt("charId"));
+							deleteItemsStm.execute();
+						}
 						continue;
 					}
 				}
@@ -449,6 +465,9 @@ public class OfflineTraderTable
 							stm4.setLong(2, trader.getOfflineStartTime());
 							stm4.setInt(3, trader.isSellingBuffs() ? PrivateStoreType.SELL_BUFFS.getId() : trader.getPrivateStoreType().getId()); // store type
 							stm4.setString(4, title);
+							stm4.setInt(5, trader.getX());
+							stm4.setInt(6, trader.getY());
+							stm4.setInt(7, trader.getZ());
 							stm4.executeUpdate();
 							stm4.clearParameters();
 						}

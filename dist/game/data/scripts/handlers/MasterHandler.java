@@ -523,6 +523,7 @@ public class MasterHandler
 			Maps.class,
 			MercTicket.class,
 			NicknameColor.class,
+			PermanentHpPotion.class,
 			PetFood.class,
 			Recipes.class,
 			RelicSummonCoupon.class,

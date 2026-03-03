@@ -761,9 +761,14 @@ public abstract class Creature extends WorldObject
 			return;
 		}
 
-		// Broadcast MoveToLocation when forced or once per second.
+		// Broadcast MoveToLocation when forced or at interval.
+		// 【優化 - 方案C】怪物（Attackable）移動封包廣播間隔延長為 50 ticks（5秒）。
+		// 玩家角色維持原本 10 ticks（1秒）以確保移動流暢感。
+		// 大量怪物同時追擊時，可減少約 80% 的 forEachVisibleObject 呼叫次數，是 CPU 最大節省點。
+		// 調整參考：20 = 輕度省、30 = 中度省、50 = 最省（方案C）；恢復原始改回 10。
 		final int gameTicks = GameTimeTaskManager.getInstance().getGameTicks();
-		if (!force && (move.moveTimestamp > 0) && ((gameTicks - move.lastBroadcastTime) < 10))
+		final int broadcastInterval = isAttackable() ? 50 : 10;
+		if (!force && (move.moveTimestamp > 0) && ((gameTicks - move.lastBroadcastTime) < broadcastInterval))
 		{
 			return;
 		}

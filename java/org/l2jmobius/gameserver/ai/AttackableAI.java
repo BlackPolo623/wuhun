@@ -68,9 +68,22 @@ import org.l2jmobius.gameserver.util.LocationUtil;
  */
 public class AttackableAI extends CreatureAI
 {
-	private static final int RANDOM_WALK_RATE = 30; // confirmed
-	private static final int MAX_ATTACK_TIMEOUT = 1200; // int ticks, i.e. 2min
-	
+	/**
+	 * 【優化 - 方案C】隨機漫步機率：從 1/30 改為 0（完全停用）。
+	 * 原本每次 AI 思考有 1/30 機率觸發隨機漫步，會產生移動封包廣播。
+	 * 設為 Integer.MAX_VALUE 代表機率趨近於 0，怪物閒置時完全靜止不動，大幅減少廣播次數。
+	 * 若想恢復原始漫步行為，改回 30 即可。
+	 */
+	private static final int RANDOM_WALK_RATE = Integer.MAX_VALUE; // 方案C：停用隨機漫步（原值：30）
+
+	/**
+	 * 【優化 - 方案C】攻擊超時時間：從 1200 ticks（2分鐘）縮短為 300 ticks（30秒）。
+	 * 怪物攻擊目標後，若 30 秒內無法擊殺，放棄追擊並回歸原位。
+	 * 減少怪物長時間追跑玩家所產生的持續移動廣播，有效降低 CPU。
+	 * 若想恢復原始行為（2分鐘），改回 1200 即可。
+	 */
+	private static final int MAX_ATTACK_TIMEOUT = 300; // 方案C：30秒（原值：1200 = 2分鐘）
+
 	/** The delay after which the attacked is stopped. */
 	private int _attackTimeout;
 	/** The Attackable aggro counter. */
