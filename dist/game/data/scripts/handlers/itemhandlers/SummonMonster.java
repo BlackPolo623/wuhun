@@ -9,6 +9,7 @@ import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.model.Spawn;
+import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2jmobius.gameserver.util.Broadcast;
 
@@ -115,9 +116,18 @@ public class SummonMonster implements IItemHandler
 			// 播放召喚特效
 			Broadcast.toSelfAndKnownPlayers(player, new MagicSkillUse(player, player, SUMMON_SKILL_ID, 1, 100, 0));
 
-			// 發送成功訊息
+			// 發送成功訊息給玩家自己
 			player.sendMessage("成功召喚了 " + template.getName() + "！");
 
+			// 廣播訊息給周邊玩家（1250 範圍內的所有玩家）
+			World.getInstance().forEachVisibleObjectInRange(player, Player.class, 1250, nearbyPlayer ->
+			{
+				if ((nearbyPlayer != null) && (nearbyPlayer != player) && nearbyPlayer.isInsideRadius3D(player, 1250))
+				{
+					nearbyPlayer.sendMessage(player.getName() + " 召喚了 " + template.getName() + "！");
+				}
+			});
+			
 			// 消耗道具
 			player.destroyItem(ItemProcessType.NONE, item, 1, null, true);
 

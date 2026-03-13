@@ -37,7 +37,8 @@ public class PromotionRewardNpc extends Script
         else if (event.equals("back"))
         {
             return onFirstTalk(npc,player);
-        } else if (event.equals("shop"))
+        }
+        else if (event.equals("shop"))
         {
             MultisellData.getInstance().separateAndSend(9000121, player, npc, false);
             return null;

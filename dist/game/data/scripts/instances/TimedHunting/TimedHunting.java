@@ -108,6 +108,7 @@ public class TimedHunting extends InstanceScript
 	private static final int[] TEMPLATES =
 	{
 		229, // Transcendent Instance Zone
+		1032, // Ironheart Fortress
 	};
 	private static final Map<Integer, Integer> SKILL_REPLACEMENTS = new HashMap<>();
 	static

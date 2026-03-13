@@ -727,6 +727,7 @@ public abstract class Creature extends WorldObject
 	{
 		packet.sendInBroadcast();
 
+		// 優化：只廣播給玩家，不廣播給其他怪物（減少 CPU 消耗）
 		World.getInstance().forEachVisibleObject(this, Player.class, player ->
 		{
 			if (isVisibleFor(player))
@@ -5482,7 +5483,6 @@ public abstract class Creature extends WorldObject
 								{
 										61000
 								};
-
 						boolean isSpecialMonster = false;
 						for (int monsterId : SPECIAL_MONSTER_IDS)
 						{
@@ -5492,7 +5492,6 @@ public abstract class Creature extends WorldObject
 								break;
 							}
 						}
-
 						if (isSpecialMonster)
 						{
 							int soulRingCount = attackerPlayer.getSoulringCount();
@@ -5500,7 +5499,27 @@ public abstract class Creature extends WorldObject
 							double soulRingBonus = soulRingCount * damagePerSoulRing; // 計算魂環加成
 							actualDamageCap = damageCap + soulRingBonus; // 最終傷害上限 = 基礎上限 + 魂環加成
 						}
-						// 如果不是特定怪物，保持基礎 damageCap
+						// 寵物農場限傷
+						final int[] PET_MONSTER_IDS =
+								{
+										51000
+								};
+						boolean isPetMonster = false;
+						for (int monsterId : PET_MONSTER_IDS)
+						{
+							if (getId() == monsterId)
+							{
+								isPetMonster = true;
+								break;
+							}
+						}
+						if (isPetMonster)
+						{
+							int soulRingCount = attackerPlayer.getSoulringCount();
+							double damagePerSoulRing = 5; // 每個魂環+500傷害上限（PvE）
+							double soulRingBonus = soulRingCount * damagePerSoulRing; // 計算魂環加成
+							actualDamageCap = damageCap + soulRingBonus; // 最終傷害上限 = 基礎上限 + 魂環加成
+						}
 					}
 				}
 				// 套用傷害上限

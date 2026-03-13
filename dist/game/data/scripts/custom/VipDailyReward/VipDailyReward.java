@@ -28,7 +28,8 @@ import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.script.Script;
 
-
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,11 +42,8 @@ public class VipDailyReward extends Script
     // NPC ID
     private static final int VIP_REWARD_NPC = 900008;
     
-    // PlayerVariables key
-    private static final String LAST_REWARD_TIME = "VIP_DAILY_REWARD_TIME";
-    
-    // 每日重置時間（毫秒）- 24小時
-    private static final long REWARD_COOLDOWN = 24 * 60 * 60 * 1000;
+    // PlayerVariables key - 改為儲存日期字串 (格式: yyyy-MM-dd)
+    private static final String LAST_REWARD_DATE = "VIP_DAILY_REWARD_DATE";
     
     // VIP等級獎勵配置
     // 格式: VIP等級 -> {道具ID, 數量}
@@ -142,23 +140,17 @@ public class VipDailyReward extends Script
                     return null;
                 }
                 
-                // 檢查冷卻時間
-                final long lastRewardTime = player.getVariables().getLong(LAST_REWARD_TIME, 0);
-                final long currentTime = System.currentTimeMillis();
-                
-                if ((currentTime - lastRewardTime) < REWARD_COOLDOWN)
+                // 檢查是否為同一天（使用日期比較，每天00:00重置）
+                final String lastRewardDate = player.getVariables().getString(LAST_REWARD_DATE, "");
+                final String currentDate = LocalDate.now(ZoneId.systemDefault()).toString();
+
+                if (currentDate.equals(lastRewardDate))
                 {
-                    final long remainingTime = REWARD_COOLDOWN - (currentTime - lastRewardTime);
-                    final long hours = remainingTime / (60 * 60 * 1000);
-                    final long minutes = (remainingTime % (60 * 60 * 1000)) / (60 * 1000);
-                    
                     player.sendMessage("════════════════════════════════");
                     player.sendMessage("你今天已經領取過獎勵了！");
-                    player.sendMessage("剩餘冷卻時間: " + hours + " 小時 " + minutes + " 分鐘");
+                    player.sendMessage("明天00:00後可以再次領取");
                     player.sendMessage("════════════════════════════════");
                     htmltext = getHtm(player, "data/scripts/custom/VipDailyReward/VipDailyReward_claimed.htm");
-                    htmltext = htmltext.replace("%hours%", String.valueOf(hours));
-                    htmltext = htmltext.replace("%minutes%", String.valueOf(minutes));
                     return htmltext;
                 }
                 
@@ -212,11 +204,11 @@ public class VipDailyReward extends Script
                 
                 player.sendMessage("════════════════════════════════");
                 player.sendMessage("獎勵已發放完畢！");
-                player.sendMessage("明天再來領取更多獎勵吧！");
+                player.sendMessage("明天00:00後可以再次領取！");
                 player.sendMessage("════════════════════════════════");
-                
-                // 更新領取時間
-                player.getVariables().set(LAST_REWARD_TIME, currentTime);
+
+                // 更新領取日期
+                player.getVariables().set(LAST_REWARD_DATE, currentDate);
                 
                 htmltext = getHtm(player, "data/scripts/custom/VipDailyReward/VipDailyReward_success.htm");
                 htmltext = htmltext.replace("%vipTier%", String.valueOf(vipTier));
@@ -237,14 +229,14 @@ public class VipDailyReward extends Script
         }
         
         String htmltext = getHtm(player, "data/scripts/custom/VipDailyReward/VipDailyReward.htm");
-        
+
         final byte vipTier = player.getVipTier();
         final long vipPoints = player.getVipPoints();
-        
-        // 檢查今天是否已領取
-        final long lastRewardTime = player.getVariables().getLong(LAST_REWARD_TIME, 0);
-        final long currentTime = System.currentTimeMillis();
-        final boolean canClaim = (currentTime - lastRewardTime) >= REWARD_COOLDOWN;
+
+        // 檢查今天是否已領取（比較日期）
+        final String lastRewardDate = player.getVariables().getString(LAST_REWARD_DATE, "");
+        final String currentDate = LocalDate.now(ZoneId.systemDefault()).toString();
+        final boolean canClaim = !currentDate.equals(lastRewardDate);
         
         htmltext = htmltext.replace("%vipTier%", String.valueOf(vipTier));
         htmltext = htmltext.replace("%vipPoints%", String.valueOf(vipPoints));

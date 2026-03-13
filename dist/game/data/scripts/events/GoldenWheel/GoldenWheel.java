@@ -57,10 +57,8 @@ public class GoldenWheel extends LongTimeEvent implements IXmlReader
 		{
 			load();
 			PaybackManager.getInstance().init();
-			PaybackManager.getInstance().addLocalString("ru", "minLevel", "Ваш уровень слишком низкий для участия в этом событии");
-			PaybackManager.getInstance().addLocalString("ru", "maxLevel", "Ваш уровень слишком большой для участия в этом событии");
-			PaybackManager.getInstance().addLocalString("en", "minLevel", "Your level so low for be participant in this event");
-			PaybackManager.getInstance().addLocalString("en", "maxLevel", "Your level so high for be participant in this event");
+			PaybackManager.getInstance().addLocalString("tw", "minLevel", "您的等級太低，無法參與此活動");
+			PaybackManager.getInstance().addLocalString("tw", "maxLevel", "您的等級太高，無法參與此活動");
 		}
 	}
 	

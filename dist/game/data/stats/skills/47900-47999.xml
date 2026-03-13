@@ -5473,11 +5473,15 @@
 		</effects>
 	</skill>
 	<skill id="47988" toLevel="1" name="共振颶風">
-	
 		<icon>icon.skill1526</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
-		<affectLimit>2-1</affectLimit>
+		<affectLimit>			
+		    <value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">5-2</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">4-2</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">3-2</value>
+			<value level="1">2-1</value>
+		</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>400</affectRange>
 		<affectScope>RANGE</affectScope>
@@ -5502,12 +5506,23 @@
 		</conditions>
 		<effects>
 			<effect name="MagicalDamage">
-				<power>500</power>
+				<power>					
+				    <value level="1">253</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">276</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">299</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">322</value>
+				</power>
 				<repeatCount>2</repeatCount>
 			</effect>
-			<effect name="MagicalDamage">
-				<power>200</power>
-				<repeatCount>2</repeatCount>
+			<effect name="PhysicalDamage">
+				<pAtkMod>				    
+				    <value level="1">2.7</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">2.78</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">2.84</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">2.89</value>
+				</pAtkMod>
+				<ignoreShieldDefence>true</ignoreShieldDefence>
+				<pDefMod>0.9</pDefMod>
 			</effect>
 		</effects>
 	</skill>

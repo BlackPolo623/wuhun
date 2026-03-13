@@ -172,6 +172,13 @@ public class GiftPackageManagerFrame extends JFrame
         Donate_202602_8000.addReward(111003, 500);
         packages.put(Donate_202602_8000.getPackageId(), Donate_202602_8000);
 
+        GiftPackage Donate_202603_1000 = new GiftPackage(
+                "Donate_202603_1000",
+                "2026年3月禮包傳說寵物蛋",
+                "1000元"
+        );
+        Donate_202603_1000.addReward(112999, 2);
+        packages.put(Donate_202603_1000.getPackageId(), Donate_202603_1000);
 
         // TODO: 新月份禮包在這裡添加
         // 例如：2025年2月禮包

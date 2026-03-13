@@ -24,6 +24,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Logger;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.ai.CreatureAI;
@@ -35,13 +36,15 @@ import org.l2jmobius.gameserver.model.actor.Attackable;
  * 1. 新增 ATTACKABLE_POOL_MAP（反向查找表）：
  *    原本 add() 和 remove() 每次都要掃描所有 POOLS 才能找到目標，
  *    屬於 O(n×m) 複雜度。現在透過 Map 直接定位所屬 Pool，降為 O(1)。
- * 2. TASK_DELAY 從 1000ms 調整為 1500ms：
- *    怪物 AI 每 1.5 秒思考一次（原為 1 秒）。
+ * 2. TASK_DELAY 從 1000ms 調整為 5000ms：
+ *    怪物 AI 每 5 秒思考一次。
  *    伺服器怪物數量龐大時，降低思考頻率可顯著減少 CPU 積壓。
- *    對玩家的實際體驗影響極小（怪物反應延遲約 0.5 秒）。
+ *    對玩家的實際體驗影響極小（怪物反應延遲約 4 秒）。
  */
 public class AttackableThinkTaskManager
 {
+	private static final Logger LOGGER = Logger.getLogger(AttackableThinkTaskManager.class.getName());
+
 	private static final Set<Set<Attackable>> POOLS = ConcurrentHashMap.newKeySet();
 
 	/**
@@ -54,11 +57,8 @@ public class AttackableThinkTaskManager
 	private static final int POOL_SIZE = 1000;
 
 	/**
-	 * 【優化 - 方案C】AI 思考間隔：調整為 5000ms（5 秒）。
-	 * 每個 Pool 的怪物每 5 秒執行一次 AI 思考，減少 80% 的 CPU 呼叫次數。
-	 * 怪物反應會明顯變慢，但對 CPU 節省效果最大。
-	 * 調整參考：2000 = 輕度省、3000 = 中度省、5000 = 最省（方案C）
-	 * 若想恢復原始行為，改回 1000 即可。
+	 * AI 思考間隔：5000ms（5 秒）。
+	 * 每個 Pool 的怪物每 5 秒執行一次 AI 思考。
 	 */
 	private static final int TASK_DELAY = 5000;
 
@@ -89,6 +89,15 @@ public class AttackableThinkTaskManager
 			while (iterator.hasNext())
 			{
 				attackable = iterator.next();
+
+				// 【修復】自動清除已死亡或不再生成的怪物（防止 stopAITask 未被呼叫時的記憶體洩漏）
+				if (attackable.isDead() || !attackable.isSpawned())
+				{
+					iterator.remove();
+					ATTACKABLE_POOL_MAP.remove(attackable);
+					continue;
+				}
+
 				if (attackable.hasAI())
 				{
 					ai = attackable.getAI();
@@ -122,29 +131,45 @@ public class AttackableThinkTaskManager
 	 */
 	public void add(Attackable attackable)
 	{
-		// 【優化】直接查表確認是否已存在，O(1)，取代原本的全 Pool 掃描
+		// 【快速路徑】無鎖檢查：已存在則直接返回（最常見情況，避免不必要的 synchronized 開銷）
 		if (ATTACKABLE_POOL_MAP.containsKey(attackable))
 		{
 			return;
 		}
 
-		// 找有空位的 Pool 放入
-		for (Set<Attackable> pool : POOLS)
+		// 【慢速路徑】加鎖確保原子性：防止多執行緒 race condition 導致同一怪物進入兩個 Pool
+		// 問題根源：add() 若不加鎖，兩個執行緒可能都通過 containsKey() 檢查，
+		// 分別將同一怪物放入不同 Pool，導致 ATTACKABLE_POOL_MAP 只記錄其中一個，
+		// 另一個 Pool 中的殘留項永遠無法被 remove()，造成 Pool 持續累積。
+		synchronized (this)
 		{
-			if (pool.size() < POOL_SIZE)
+			// 雙重檢查：取得鎖後再確認一次（另一個執行緒可能已在等待期間完成了 add）
+			if (ATTACKABLE_POOL_MAP.containsKey(attackable))
 			{
-				pool.add(attackable);
-				ATTACKABLE_POOL_MAP.put(attackable, pool); // 同步更新查找表
 				return;
 			}
-		}
 
-		// 所有 Pool 都滿了，建立新 Pool 並排程新執行緒
-		final Set<Attackable> pool = ConcurrentHashMap.newKeySet(POOL_SIZE);
-		pool.add(attackable);
-		ATTACKABLE_POOL_MAP.put(attackable, pool); // 同步更新查找表
-		ThreadPool.schedulePriorityTaskAtFixedRate(new AttackableThink(pool), TASK_DELAY, TASK_DELAY);
-		POOLS.add(pool);
+			// 找有空位的 Pool 放入
+			for (Set<Attackable> pool : POOLS)
+			{
+				if (pool.size() < POOL_SIZE)
+				{
+					pool.add(attackable);
+					ATTACKABLE_POOL_MAP.put(attackable, pool);
+					return;
+				}
+			}
+
+			// 所有 Pool 都滿了，建立新 Pool 並排程新執行緒
+			final Set<Attackable> pool = ConcurrentHashMap.newKeySet(POOL_SIZE);
+			pool.add(attackable);
+			ATTACKABLE_POOL_MAP.put(attackable, pool);
+			POOLS.add(pool);
+			ThreadPool.schedulePriorityTaskAtFixedRate(new AttackableThink(pool), TASK_DELAY, TASK_DELAY);
+
+			// 記錄 Pool 創建（用於追蹤執行緒洩漏）
+			LOGGER.info("AttackableThinkTaskManager: Created new pool #" + POOLS.size() + " (Total attackables: " + ATTACKABLE_POOL_MAP.size() + ")");
+		}
 	}
 
 	/**

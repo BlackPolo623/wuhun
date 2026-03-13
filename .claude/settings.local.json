@@ -31,7 +31,19 @@
       "Bash(/tmp/append_pet.py:*)",
       "Bash(iconv -f UTF-8 -t UTF-8 -c)",
       "Bash(mysql -u root -p123456 l2jmobius -e \"SHOW CREATE TABLE character_offline_trade\\\\G\")",
-      "Bash(awk 'BEGIN{open=0} /{/{open++} /}/{open--} END{print \"\"括號平衡:\"\", open}' petfarm.java)"
+      "Bash(awk 'BEGIN{open=0} /{/{open++} /}/{open--} END{print \"\"括號平衡:\"\", open}' petfarm.java)",
+      "Bash(ant compile)",
+      "Bash(java -version)",
+      "Bash(xargs grep -l \"daily.*reward\\\\|character_daily\")",
+      "Bash(grep -n \"getBoolean\" *.java)",
+      "Bash(ls -1 *.xml)",
+      "Bash(xargs grep -l \"1032\\\\|Ironheart\\\\|IronHeart\")",
+      "Bash(xargs grep -l \"1032\")",
+      "Bash(xargs grep -l \"Ironheart\\\\|IronHeart\")",
+      "Bash(grep -n \"2020\\\\|2021\\\\|Supply\\\\|Engineer\" \"E:\\\\L2J_Mobius_541_武魂/dist/game/data/instances/TimedHunting/\"*)",
+      "Bash(grep -n \"34543\\\\|19274\\\\|19275\" \"E:\\\\L2J_Mobius_541_武魂/dist/game/data/stats/npcs/\"*)",
+      "Bash(grep -n \"id=\"\"34543\"\"\\\\|id=\"\"19274\"\"\\\\|id=\"\"19275\"\"\" \"E:\\\\L2J_Mobius_541_武魂/dist/game/data/stats/npcs/\"*.xml)",
+      "Bash(xargs grep -l \"characters\\\\|變數\\\\|外形\")"
     ]
   }
 }

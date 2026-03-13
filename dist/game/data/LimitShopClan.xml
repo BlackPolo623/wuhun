@@ -1,4 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/LimitShop.xsd">
+    <!-- 血盟商店 - 名譽鑄幣商品 (Category 100) -->
+    <!-- 格式說明: {血盟等級, 道具ID, 數量, 名譽鑄幣價格, 每日限購次數(0=無限)} -->
+
+    <!-- 血盟等級 1 -->
+    <product id="351" category="100">
+        <ingredient id="-700" count="30" /> <!-- Honor Coin -->
+        <production id="101909" accountDailyLimit="5" />
+    </product>
+
+    <!-- 血盟等級 3 -->
+    <product id="352" category="100">
+        <ingredient id="-700" count="500" /> <!-- Honor Coin -->
+        <production id="101806" accountDailyLimit="1" />
+    </product>
+
+    <!-- 血盟等級 5 -->
+    <product id="353" category="100">
+        <ingredient id="-700" count="80" /> <!-- Honor Coin -->
+        <production id="9589" accountDailyLimit="2" />
+    </product>
+
+    <product id="354" category="100">
+        <ingredient id="-700" count="80" /> <!-- Honor Coin -->
+        <production id="90888" accountDailyLimit="2" />
+    </product>
+
+    <product id="355" category="100">
+        <ingredient id="-700" count="80" /> <!-- Honor Coin -->
+        <production id="90311" accountDailyLimit="2" />
+    </product>
+
+    <!-- 血盟等級 9 -->
+    <product id="356" category="100">
+        <ingredient id="-700" count="150" /> <!-- Honor Coin -->
+        <production id="92031" accountDailyLimit="2" />
+    </product>
+
+    <product id="357" category="100">
+        <ingredient id="-700" count="150" /> <!-- Honor Coin -->
+        <production id="91161" accountDailyLimit="2" />
+    </product>
+
+    <product id="358" category="100">
+        <ingredient id="-700" count="150" /> <!-- Honor Coin -->
+        <production id="91304" accountDailyLimit="2" />
+    </product>
+
+    <!-- 血盟等級 10 -->
+    <product id="359" category="100">
+        <ingredient id="-700" count="50" /> <!-- Honor Coin -->
+        <production id="105801" accountDailyLimit="10" />
+    </product>
+
+    <product id="360" category="100">
+        <ingredient id="-700" count="2000" /> <!-- Honor Coin -->
+        <production id="103999" accountDailyLimit="1" />
+    </product>
+
+    <product id="361" category="100">
+        <ingredient id="-700" count="2000" /> <!-- Honor Coin -->
+        <production id="103828" accountDailyLimit="1" />
+    </product>
+
+    <product id="362" category="100">
+        <ingredient id="-700" count="2000" /> <!-- Honor Coin -->
+        <production id="94042" accountDailyLimit="1" />
+    </product>
+
+    <!-- 血盟等級 12 -->
+    <product id="363" category="100">
+        <ingredient id="-700" count="1000" /> <!-- Honor Coin -->
+        <production id="103069" accountDailyLimit="1" />
+    </product>
+
+    <!-- 血盟等級 15 -->
+    <product id="364" category="100">
+        <ingredient id="-700" count="2000" /> <!-- Honor Coin -->
+        <production id="104364" accountDailyLimit="1" /> <!-- 夏日海洋 -->
+    </product>
+
+    <product id="365" category="100">
+        <ingredient id="-700" count="450" /> <!-- Honor Coin -->
+        <production id="97597" count="225" accountDailyLimit="1" /> <!-- 寶石選擇卷 -->
+    </product>
 
 </list>

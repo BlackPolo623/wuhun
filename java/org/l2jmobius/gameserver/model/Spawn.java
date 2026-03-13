@@ -76,6 +76,8 @@ public class Spawn extends Location
 	private final Deque<Npc> _spawnedNpcs = new ConcurrentLinkedDeque<>();
 	private boolean _randomWalk = false; // Is no random walk
 	private NpcSpawnTemplate _spawnTemplate;
+	/** 【武魂伺服器優化】是否禁用 AI（用於基地怪物） */
+	private boolean _disableAI = false;
 	
 	/**
 	 * Constructor of Spawn.<br>
@@ -264,9 +266,16 @@ public class Spawn extends Location
 		{
 			// Update the current number of SpawnTask in progress or stand by of this Spawn
 			_scheduledCount++;
-			
+
+			// Calculate base respawn delay
+			final int baseDelay = hasRespawnRandom() ? Rnd.get(_respawnMinDelay, _respawnMaxDelay) : _respawnMinDelay;
+
+			// Add random delay (0-5 seconds) to spread out respawns and reduce CPU spikes
+			final int randomSpread = Rnd.get(0, 1100);
+			final int finalDelay = baseDelay + randomSpread;
+
 			// Schedule the next respawn.
-			RespawnTaskManager.getInstance().add(oldNpc, System.currentTimeMillis() + (hasRespawnRandom() ? Rnd.get(_respawnMinDelay, _respawnMaxDelay) : _respawnMinDelay));
+			RespawnTaskManager.getInstance().add(oldNpc, System.currentTimeMillis() + finalDelay);
 		}
 	}
 	
@@ -444,7 +453,14 @@ public class Spawn extends Location
 		
 		// Set is not random walk default value
 		npc.setRandomWalking(_randomWalk);
-		
+
+		// 【武魂伺服器優化】如果 Spawn 設置了禁用 AI，則在每次生成時都應用
+		// 這樣即使怪物死亡重生，AI 仍然保持禁用狀態
+		if (_disableAI && npc.isAttackable())
+		{
+			npc.disableCoreAI(true);
+		}
+
 		// Set the heading of the Npc (random heading if not defined)
 		if (getHeading() == -1)
 		{
@@ -614,7 +630,25 @@ public class Spawn extends Location
 	{
 		_randomWalk = value;
 	}
-	
+
+	/**
+	 * 【武魂伺服器優化】設置是否禁用 AI
+	 * @param value true = 禁用 AI，false = 啟用 AI
+	 */
+	public void setDisableAI(boolean value)
+	{
+		_disableAI = value;
+	}
+
+	/**
+	 * 【武魂伺服器優化】獲取是否禁用 AI
+	 * @return true = AI 已禁用，false = AI 啟用
+	 */
+	public boolean isAIDisabled()
+	{
+		return _disableAI;
+	}
+
 	public void setSpawnTemplate(NpcSpawnTemplate npcSpawnTemplate)
 	{
 		_spawnTemplate = npcSpawnTemplate;

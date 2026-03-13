@@ -48,9 +48,9 @@ public class petfarm extends InstanceScript
 	private static final int INSTANCE_ID_ZONE6 = 613;
 
 	// 傳送座標
-	private static final int X = 10441;
-	private static final int Y = 249385;
-	private static final int Z = -2019;
+	private static final int X = 79010;
+	private static final int Y = -82996;
+	private static final int Z = -3648;
 
 	// 離開座標
 	private static final int EXIT_X = 147931;

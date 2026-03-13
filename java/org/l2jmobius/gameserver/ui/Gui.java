@@ -1,16 +1,16 @@
 /*
  * Copyright (c) 2013 L2jMobius
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -55,7 +55,7 @@ public class Gui
 {
 	private static final Logger LOGGER = Logger.getLogger(Gui.class.getName());
 
-	// NPC编辑器风格的深色主题配色
+	// NPC編輯器風格的深色主題配色
 	private static final Color BG_COLOR = new Color(30, 30, 30);
 	private static final Color FG_COLOR = new Color(240, 240, 240);
 	private static final Color PANEL_BG = new Color(45, 45, 45);
@@ -63,28 +63,28 @@ public class Gui
 	private static final Color BORDER_COLOR = new Color(100, 100, 100);
 	private static final Color BUTTON_BG = new Color(70, 70, 70);
 	private static final String[] SHUTDOWN_OPTIONS =
-	{
-		"Shutdown",
-		"Cancel"
-	};
+			{
+					"Shutdown",
+					"Cancel"
+			};
 	private static final String[] RESTART_OPTIONS =
-	{
-		"Restart",
-		"Cancel"
-	};
+			{
+					"Restart",
+					"Cancel"
+			};
 	private static final String[] ABORT_OPTIONS =
-	{
-		"Abort",
-		"Cancel"
-	};
+			{
+					"Abort",
+					"Cancel"
+			};
 	private static final String[] CONFIRM_OPTIONS =
-	{
-		"Confirm",
-		"Cancel"
-	};
-	
+			{
+					"Confirm",
+					"Cancel"
+			};
+
 	private final JTextArea _txtrConsole;
-	
+
 	public Gui()
 	{
 		applyDarkTheme();
@@ -93,12 +93,12 @@ public class Gui
 		System.setProperty("sun.java2d.opengl", "false");
 		System.setProperty("sun.java2d.d3d", "false");
 		System.setProperty("sun.java2d.noddraw", "true");
-		
+
 		if (InterfaceConfig.DARK_THEME)
 		{
 			DarkTheme.activate();
 		}
-		
+
 		// Initialize console.
 		_txtrConsole = new JTextArea();
 		_txtrConsole.setEditable(false);
@@ -110,19 +110,19 @@ public class Gui
 		_txtrConsole.setForeground(FG_COLOR);
 		_txtrConsole.setCaretColor(FG_COLOR);
 		_txtrConsole.getDocument().addDocumentListener(new LineLimitListener(500));
-		
+
 		/// Initialize menu items.
 		final JMenuBar menuBar = new JMenuBar();
 		menuBar.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 //		menuBar.setBackground(new Color(190, 190, 190));
 //		menuBar.setOpaque(true);
 //		menuBar.setBorderPainted(false);
-		
+
 		final JMenu mnActions = new JMenu("Actions");
 		mnActions.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mnActions.setForeground(Color.WHITE);
 		menuBar.add(mnActions);
-		
+
 		final JMenuItem mntmShutdown = new JMenuItem("Shutdown");
 		mntmShutdown.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmShutdown.addActionListener(_ ->
@@ -145,7 +145,7 @@ public class Gui
 			}
 		});
 		mnActions.add(mntmShutdown);
-		
+
 		final JMenuItem mntmRestart = new JMenuItem("Restart");
 		mntmRestart.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmRestart.addActionListener(_ ->
@@ -168,7 +168,7 @@ public class Gui
 			}
 		});
 		mnActions.add(mntmRestart);
-		
+
 		final JMenuItem mntmAbort = new JMenuItem("Abort");
 		mntmAbort.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmAbort.addActionListener(_ ->
@@ -179,12 +179,12 @@ public class Gui
 			}
 		});
 		mnActions.add(mntmAbort);
-		
+
 		final JMenu mnReload = new JMenu("Reload");
 		mnReload.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mnReload.setForeground(Color.WHITE);
 		menuBar.add(mnReload);
-		
+
 		final JMenuItem mntmConfigs = new JMenuItem("Configs");
 		mntmConfigs.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmConfigs.addActionListener(_ ->
@@ -195,7 +195,7 @@ public class Gui
 			}
 		});
 		mnReload.add(mntmConfigs);
-		
+
 		final JMenuItem mntmAccess = new JMenuItem("Access");
 		mntmAccess.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmAccess.addActionListener(_ ->
@@ -206,7 +206,7 @@ public class Gui
 			}
 		});
 		mnReload.add(mntmAccess);
-		
+
 		final JMenuItem mntmHtml = new JMenuItem("HTML");
 		mntmHtml.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmHtml.addActionListener(_ ->
@@ -217,7 +217,7 @@ public class Gui
 			}
 		});
 		mnReload.add(mntmHtml);
-		
+
 		final JMenuItem mntmMultisells = new JMenuItem("Multisells");
 		mntmMultisells.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmMultisells.addActionListener(_ ->
@@ -228,7 +228,7 @@ public class Gui
 			}
 		});
 		mnReload.add(mntmMultisells);
-		
+
 		final JMenuItem mntmBuylists = new JMenuItem("Buylists");
 		mntmBuylists.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmBuylists.addActionListener(_ ->
@@ -239,7 +239,7 @@ public class Gui
 			}
 		});
 		mnReload.add(mntmBuylists);
-		
+
 		final JMenuItem mntmPrimeShop = new JMenuItem("PrimeShop");
 		mntmPrimeShop.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmPrimeShop.addActionListener(_ ->
@@ -250,12 +250,12 @@ public class Gui
 			}
 		});
 		mnReload.add(mntmPrimeShop);
-		
+
 		final JMenu mnAnnounce = new JMenu("Announce");
 		mnAnnounce.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mnAnnounce.setForeground(Color.WHITE);
 		menuBar.add(mnAnnounce);
-		
+
 		final JMenuItem mntmNormal = new JMenuItem("Normal");
 		mntmNormal.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmNormal.addActionListener(_ ->
@@ -271,7 +271,7 @@ public class Gui
 			}
 		});
 		mnAnnounce.add(mntmNormal);
-		
+
 		final JMenuItem mntmCritical = new JMenuItem("Critical");
 		mntmCritical.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmCritical.addActionListener(_ ->
@@ -287,34 +287,34 @@ public class Gui
 			}
 		});
 		mnAnnounce.add(mntmCritical);
-		
+
 		final JMenu mnLogs = new JMenu("Logs");
 		mnLogs.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mnLogs.setForeground(Color.WHITE);
 		menuBar.add(mnLogs);
-		
+
 		final JMenuItem mntmLogs = new JMenuItem("View");
 		mntmLogs.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmLogs.addActionListener(_ -> new LogPanel(false));
 		mnLogs.add(mntmLogs);
-		
+
 		final JMenuItem mntmDeleteLogs = new JMenuItem("Delete");
 		mntmDeleteLogs.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmDeleteLogs.addActionListener(_ -> new LogPanel(true));
 		mnLogs.add(mntmDeleteLogs);
-		
+
 		final JMenu mnFont = new JMenu("Font");
 		mnFont.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mnFont.setForeground(Color.WHITE);
 		menuBar.add(mnFont);
-		
+
 		final String[] fonts =
-		{
-			"16",
-			"21",
-			"27",
-			"33"
-		};
+				{
+						"16",
+						"21",
+						"27",
+						"33"
+				};
 		for (String font : fonts)
 		{
 			final JMenuItem mntmFont = new JMenuItem(font);
@@ -322,19 +322,19 @@ public class Gui
 			mntmFont.addActionListener(_ -> _txtrConsole.setFont(new Font("Monospaced", Font.PLAIN, Integer.parseInt(font))));
 			mnFont.add(mntmFont);
 		}
-		
+
 		final JMenu mnHelp = new JMenu("Help");
 		mnHelp.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mnHelp.setForeground(Color.WHITE);
 		menuBar.add(mnHelp);
 
 
-		
+
 		final JMenuItem mntmAbout = new JMenuItem("About");
 		mntmAbout.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmAbout.addActionListener(_ -> new frmAbout());
 		mnHelp.add(mntmAbout);
-		
+
 		// Set icons.
 		final List<Image> icons = new ArrayList<>();
 		icons.add(new ImageIcon(".." + File.separator + "images" + File.separator + "l2jmobius_16x16.png").getImage());
@@ -353,7 +353,7 @@ public class Gui
 		layeredPanel.add(systemPanel, 1, 0);
 		layeredPanel.add(toolsPanel, 1, 0);
 		layeredPanel.add(infoPanel, 1, 0);
-		
+
 		// Set frame.
 		final JFrame frame = new JFrame("Mobius - GameServer");
 		frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -386,14 +386,14 @@ public class Gui
 		frame.getContentPane().setPreferredSize(new Dimension(InterfaceConfig.DARK_THEME ? 1600 : 1600, 900));
 		frame.pack();
 		frame.setLocationRelativeTo(null);
-		
+
 		// Redirect output to text area.
 		redirectSystemStreams();
-		
+
 		// Show SplashScreen.
 		new SplashScreen(".." + File.separator + "images" + File.separator + "splash.png", 5000, frame);
 	}
-	
+
 	// Set where the text is redirected. In this case, txtrConsole.
 	void updateTextArea(String text)
 	{
@@ -403,7 +403,7 @@ public class Gui
 			_txtrConsole.setCaretPosition(_txtrConsole.getText().length());
 		});
 	}
-	
+
 	// Method that manages the redirect.
 	private void redirectSystemStreams()
 	{
@@ -414,20 +414,20 @@ public class Gui
 			{
 				updateTextArea(String.valueOf((char) b));
 			}
-			
+
 			@Override
 			public void write(byte[] b, int off, int len)
 			{
 				updateTextArea(new String(b, off, len));
 			}
-			
+
 			@Override
 			public void write(byte[] b)
 			{
 				write(b, 0, b.length);
 			}
 		};
-		
+
 		System.setOut(new PrintStream(out, true));
 		System.setErr(new PrintStream(out, true));
 	}
@@ -438,7 +438,7 @@ public class Gui
 		{
 			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 
-			// Nimbus 基础颜色
+			// Nimbus 基礎顏色
 			UIManager.put("control", PANEL_BG);
 			UIManager.put("nimbusBase", PANEL_BG);
 			UIManager.put("nimbusBlueGrey", PANEL_BG);
@@ -463,7 +463,7 @@ public class Gui
 			UIManager.put("TextArea.background", INPUT_BG);
 			UIManager.put("TextArea.foreground", FG_COLOR);
 
-			// 菜单栏
+			// 菜單欄
 			UIManager.put("MenuBar.background", new Color(190, 190, 190));
 			UIManager.put("MenuBar.foreground", FG_COLOR);
 			UIManager.put("Menu.background", PANEL_BG);
@@ -482,7 +482,7 @@ public class Gui
 			UIManager.put("MenuItem.selectionForeground", FG_COLOR);
 			UIManager.put("Menu:MenuItemAccelerator[MouseOver].textForeground", FG_COLOR);
 
-			// 对话框
+			// 對話框
 			UIManager.put("OptionPane.background", PANEL_BG);
 			UIManager.put("OptionPane.messageBackground", PANEL_BG);
 			UIManager.put("OptionPane.messageForeground", FG_COLOR);
@@ -499,7 +499,7 @@ public class Gui
 			UIManager.put("OptionPane.errorDialog.border.background", PANEL_BG);
 			UIManager.put("OptionPane.warningDialog.border.background", PANEL_BG);
 
-			// 按钮
+			// 按鈕
 			UIManager.put("Button.background", BUTTON_BG);
 			UIManager.put("Button.foreground", FG_COLOR);
 			UIManager.put("Button.select", new Color(90, 90, 90));
@@ -508,14 +508,14 @@ public class Gui
 			UIManager.put("Button[Default+Focused].background", new Color(90, 90, 90));
 			UIManager.put("Button[Enabled].background", BUTTON_BG);
 
-			// 标签
+			// 標籤
 			UIManager.put("Label.background", PANEL_BG);
 			UIManager.put("Label.foreground", FG_COLOR);
 			UIManager.put("Label.disabledForeground", new Color(150, 150, 150));
 			UIManager.put("Label[Enabled].background", PANEL_BG);
 			UIManager.put("Label[Enabled].foreground", FG_COLOR);
 
-			// 组合框
+			// 組合框
 			UIManager.put("ComboBox.background", INPUT_BG);
 			UIManager.put("ComboBox.foreground", FG_COLOR);
 			UIManager.put("ComboBox.selectionBackground", new Color(70, 130, 180));
@@ -525,7 +525,7 @@ public class Gui
 			UIManager.put("List.background", INPUT_BG);
 			UIManager.put("List.foreground", FG_COLOR);
 
-			// 滚动条
+			// 滾動條
 			UIManager.put("ScrollBar.background", PANEL_BG);
 			UIManager.put("ScrollBar.thumb", new Color(100, 100, 100));
 			UIManager.put("ScrollBar.track", INPUT_BG);
@@ -540,7 +540,7 @@ public class Gui
 		}
 		catch (Exception e)
 		{
-			System.err.println("无法设置深色主题: " + e.getMessage());
+			System.err.println("無法設置深色主題: " + e.getMessage());
 		}
 	}
 }

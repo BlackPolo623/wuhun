@@ -261,7 +261,11 @@ public class BaseMonsterNpc extends Script
 			{"古墓-那芙琳隊長", 21614},
 			{"天堂塔-神聖騎士", 22774},
 			{"天堂塔-幻影戰士", 22873},
-			{"鱷魚島-紐司", 22191}
+			{"鱷魚島-紐司", 22191},
+			{"奧塔-復活偵查者", 22561},
+			{"奧塔-永生支配者", 22612},
+			{"庭園-暗黑審判者", 22671},
+			{"寵物農場-烏兔", 51000},
 	};
 
 	private static final Map<Integer, List<Spawn>> SPAWNED_MONSTERS = new ConcurrentHashMap<>();
@@ -389,6 +393,14 @@ public class BaseMonsterNpc extends Script
 			return null;
 		}
 
+		// 檢查是否已有怪物生成中，若有則提示先清除
+		List<Spawn> existingSpawns = SPAWNED_MONSTERS.get(player.getObjectId());
+		if (existingSpawns != null && !existingSpawns.isEmpty())
+		{
+			player.sendMessage("怪物已經生成中！請先點擊【清除全部】後再重新生成。");
+			return showConfigPage(player);
+		}
+
 		List<Map<String, Integer>> configs = PlayerBaseDAO.getAllMonsterConfigs(player.getObjectId());
 
 		if (configs.isEmpty())
@@ -396,9 +408,6 @@ public class BaseMonsterNpc extends Script
 			player.sendMessage("沒有配置任何怪物!");
 			return null;
 		}
-
-		// 先清除已存在的怪物
-		handleDespawnAll(player);
 
 		List<Spawn> spawnList = new java.util.ArrayList<>();
 		int totalSpawned = 0;
@@ -440,19 +449,15 @@ public class BaseMonsterNpc extends Script
 					// 設置重生時間（秒）
 					spawn.setRespawnDelay(RESPAWN_TIME, RESPAWN_RANDOM_TIME);
 
-					// 開始生成並啟用自動重生
-					spawn.init();
-
 					// 【CPU優化】完全禁用基地怪物的AI，讓它們變成靜止靶子
 					// 怪物不會移動、不會反擊、不會執行任何AI邏輯
 					// 可減少約 95% 的CPU使用率，適合純練功用途
-					Npc spawnedNpc = spawn.getLastSpawn();
-					if (spawnedNpc != null && spawnedNpc.isAttackable())
-					{
-						spawnedNpc.setRandomWalking(false);
-						spawnedNpc.disableCoreAI(true); // 完全禁用AI
-					}
+					// 使用 Spawn.setDisableAI() 確保重生後仍然保持 AI 禁用狀態
+					spawn.setRandomWalking(false);
+					spawn.setDisableAI(true);
 
+					// 開始生成並啟用自動重生
+					spawn.init();
 					spawn.startRespawn();
 
 					spawnList.add(spawn);

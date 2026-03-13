@@ -143,6 +143,9 @@ import org.l2jmobius.gameserver.model.events.holders.sieges.OnCastleSiegeOwnerCh
 import org.l2jmobius.gameserver.model.events.holders.sieges.OnCastleSiegeStart;
 import org.l2jmobius.gameserver.model.events.holders.sieges.OnFortSiegeFinish;
 import org.l2jmobius.gameserver.model.events.holders.sieges.OnFortSiegeStart;
+import org.l2jmobius.gameserver.model.events.holders.custom.OnPlayerPetHatch;
+import org.l2jmobius.gameserver.model.events.holders.custom.OnPlayerPetHatchStart;
+import org.l2jmobius.gameserver.model.events.holders.custom.OnPlayerPetUpgrade;
 import org.l2jmobius.gameserver.model.events.returns.ChatFilterReturn;
 import org.l2jmobius.gameserver.model.events.returns.DamageReturn;
 import org.l2jmobius.gameserver.model.events.returns.LocationReturn;
@@ -298,7 +301,12 @@ public enum EventType
 	ON_PLAYER_QUEST_COMPLETE(OnPlayerQuestComplete.class, void.class),
 	ON_PLAYER_SUMMON_AGATHION(OnPlayerSummonAgathion.class, void.class),
 	ON_PLAYER_UNSUMMON_AGATHION(OnPlayerUnsummonAgathion.class, void.class),
-	
+
+	// Pet hatching events
+	ON_PLAYER_PET_HATCH_START(OnPlayerPetHatchStart.class, void.class),
+	ON_PLAYER_PET_HATCH(OnPlayerPetHatch.class, void.class),
+	ON_PLAYER_PET_UPGRADE(OnPlayerPetUpgrade.class, void.class),
+
 	// Trap events
 	ON_TRAP_ACTION(OnTrapAction.class, void.class),
 	

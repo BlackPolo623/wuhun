@@ -8075,61 +8075,14 @@ public class Player extends Playable
 			{
 				player.getAchievementBox().restore();
 			}
-			
-			String currentTitle = player.getVariables().getString("稱號融合系統", null);
-			int fusionLevel = player.getVariables().getInt("fusion_level", 0);
+
 			int soulringCount = player.getSoulringCount();
 			String playerName = player.getName();
 			String announcement;
-			
-			if ((currentTitle != null) && currentTitle.equals("終焉武魂") && (fusionLevel > 0))
-			{
-				// 根據等級獲取稱號名稱
-				String titleName;
-				switch (fusionLevel)
-				{
-					case 1:
-						titleName = "武魂壹♦覺醒";
-						break;
-					case 2:
-						titleName = "武魂貳♦蛻變";
-						break;
-					case 3:
-						titleName = "武魂參♦進化";
-						break;
-					case 4:
-						titleName = "武魂肆♦突破";
-						break;
-					case 5:
-						titleName = "武魂伍♦超越";
-						break;
-					case 6:
-						titleName = "武魂陸♦完美";
-						break;
-					case 7:
-						titleName = "武魂柒♦究極";
-						break;
-					case 8:
-						titleName = "武魂捌♦至尊";
-						break;
-					case 9:
-						titleName = "武魂玖♦神化";
-						break;
-					case 10:
-						titleName = "終焉武魂";
-						break;
-					default:
-						titleName = "未知稱號";
-				}
-				
-				announcement = "歡迎【" + titleName + "】【" + soulringCount + "年魂環】 - " + playerName + " 回到武魂世界！";
-			}
-			else
-			{
+
 				// 沒有稱號
-				announcement = "歡迎【" + soulringCount + "年魂環】玩家 - " + playerName + " 回到武魂世界！";
-			}
-			
+			announcement = "歡迎【" + soulringCount + "年魂環】玩家 - " + playerName + " 回到武魂世界！";
+			LOGGER.info("玩家 - " + playerName + " 回到武魂世界！");
 			Broadcast.toAllOnlinePlayers(new CreatureSay(null, ChatType.WORLD, "登入公告", announcement));
 			player.addtwoclass();
 		}
@@ -17916,7 +17869,6 @@ public class Player extends Playable
 			sentCount++;
 		}
 		
-		LOGGER.info("玩家 " + getName() + " 收藏品封包發送完成：成功 " + sentCount + " 個，跳過 " + skippedCount + " 個");
 	}
 	
 	private void restoreCollectionBonuses()

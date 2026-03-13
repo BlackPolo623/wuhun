@@ -38,16 +38,20 @@ import org.l2jmobius.gameserver.model.stats.Stat;
 public class CreatureStatus
 {
 	protected static final Logger LOGGER = Logger.getLogger(CreatureStatus.class.getName());
-	
+
 	private final Creature _creature;
-	
+
 	private double _currentHp = 0; // Current HP of the Creature
 	private double _currentMp = 0; // Current MP of the Creature
-	
+
 	/** Array containing all clients that need to be notified about hp/mp updates of the Creature */
 	private Set<Creature> _StatusListener;
-	
+
 	private Future<?> _regTask;
+
+	// 優化：減少廣播頻率（每 N 次回復才廣播一次）
+	private int _regenTickCount = 0;
+	private static final int BROADCAST_INTERVAL = 5; // 每 5 次回復才廣播一次
 	
 	protected byte _flagsRegenActive = 0;
 	
@@ -413,7 +417,22 @@ public class CreatureStatus
 		{
 			final double newHp = _currentHp + _creature.getStat().getValue(Stat.REGENERATE_HP_RATE);
 			final double newMp = _currentMp + _creature.getStat().getValue(Stat.REGENERATE_MP_RATE);
-			setCurrentHpMp(newHp, newMp);
+
+			// 優化：減少廣播頻率，只在特定條件下廣播
+			_regenTickCount++;
+			final boolean shouldBroadcast = (_regenTickCount % BROADCAST_INTERVAL == 0) || _creature.isPlayer();
+
+			// 如果是玩家，總是廣播；如果是怪物，每 5 次才廣播一次
+			if (shouldBroadcast)
+			{
+				setCurrentHpMp(newHp, newMp);
+			}
+			else
+			{
+				// 不廣播，只更新數值
+				setCurrentHp(newHp, false);
+				setCurrentMp(newMp, false);
+			}
 		}
 		else
 		{

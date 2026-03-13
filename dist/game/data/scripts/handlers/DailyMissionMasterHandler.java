@@ -33,6 +33,8 @@ import handlers.dailymissionhandlers.LoginMonthDailyMissionHandler;
 import handlers.dailymissionhandlers.LoginWeekendDailyMissionHandler;
 import handlers.dailymissionhandlers.MonsterDailyMissionHandler;
 import handlers.dailymissionhandlers.OlympiadDailyMissionHandler;
+import handlers.dailymissionhandlers.PetHatchDailyMissionHandler;
+import handlers.dailymissionhandlers.PetUpgradeDailyMissionHandler;
 import handlers.dailymissionhandlers.PurgeRewardDailyMissionHandler;
 import handlers.dailymissionhandlers.QuestDailyMissionHandler;
 import handlers.dailymissionhandlers.SiegeDailyMissionHandler;
@@ -62,7 +64,9 @@ public class DailyMissionMasterHandler
 		DailyMissionHandler.getInstance().registerHandler("purge", PurgeRewardDailyMissionHandler::new);
 		DailyMissionHandler.getInstance().registerHandler("useitem", UseItemDailyMissionHandler::new);
 		DailyMissionHandler.getInstance().registerHandler("enchanthenna", EnchantHennaDailyMissionHandler::new);
-		
+		DailyMissionHandler.getInstance().registerHandler("pethatch", PetHatchDailyMissionHandler::new);
+		DailyMissionHandler.getInstance().registerHandler("petupgrade", PetUpgradeDailyMissionHandler::new);
+
 		LOGGER.info(DailyMissionMasterHandler.class.getSimpleName() + ": Loaded " + DailyMissionHandler.getInstance().size() + " handlers.");
 	}
 }

@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.data.holders.PetCollectionData;
 import org.l2jmobius.gameserver.data.holders.PetHatchData;
+import org.l2jmobius.gameserver.data.holders.UnclaimedPetData;
 
 /**
  * 寵物孵化系統 DAO
@@ -361,5 +362,130 @@ public class PetHatchingDAO
 			LOGGER.warning("PetHatchingDAO: Error getting total collected count: " + e.getMessage());
 		}
 		return 0;
+	}
+
+	// ==================== 未領取寵物 ====================
+
+	public static void addUnclaimedPet(int playerId, int petItemId, int tier)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("INSERT INTO pet_unclaimed (player_id, pet_item_id, tier, hatch_time) VALUES (?, ?, ?, ?)"))
+		{
+			ps.setInt(1, playerId);
+			ps.setInt(2, petItemId);
+			ps.setInt(3, tier);
+			ps.setLong(4, System.currentTimeMillis());
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning("PetHatchingDAO: Error adding unclaimed pet: " + e.getMessage());
+		}
+	}
+
+	public static List<UnclaimedPetData> getUnclaimedPets(int playerId)
+	{
+		List<UnclaimedPetData> list = new ArrayList<>();
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM pet_unclaimed WHERE player_id=? ORDER BY hatch_time DESC"))
+		{
+			ps.setInt(1, playerId);
+			try (ResultSet rs = ps.executeQuery())
+			{
+				while (rs.next())
+				{
+					list.add(new UnclaimedPetData(
+						rs.getInt("id"),
+						rs.getInt("player_id"),
+						rs.getInt("pet_item_id"),
+						rs.getInt("tier"),
+						rs.getLong("hatch_time"),
+						rs.getInt("event_fired") == 1
+					));
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning("PetHatchingDAO: Error getting unclaimed pets: " + e.getMessage());
+		}
+		return list;
+	}
+
+	public static UnclaimedPetData getUnclaimedPetById(int playerId, int id)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM pet_unclaimed WHERE player_id=? AND id=?"))
+		{
+			ps.setInt(1, playerId);
+			ps.setInt(2, id);
+			try (ResultSet rs = ps.executeQuery())
+			{
+				if (rs.next())
+				{
+					return new UnclaimedPetData(
+						rs.getInt("id"),
+						rs.getInt("player_id"),
+						rs.getInt("pet_item_id"),
+						rs.getInt("tier"),
+						rs.getLong("hatch_time"),
+						rs.getInt("event_fired") == 1
+					);
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning("PetHatchingDAO: Error getting unclaimed pet by id: " + e.getMessage());
+		}
+		return null;
+	}
+
+	public static void removeUnclaimedPet(int playerId, int id)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("DELETE FROM pet_unclaimed WHERE player_id=? AND id=?"))
+		{
+			ps.setInt(1, playerId);
+			ps.setInt(2, id);
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning("PetHatchingDAO: Error removing unclaimed pet: " + e.getMessage());
+		}
+	}
+
+	public static int getUnclaimedPetsCount(int playerId)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) FROM pet_unclaimed WHERE player_id=?"))
+		{
+			ps.setInt(1, playerId);
+			try (ResultSet rs = ps.executeQuery())
+			{
+				if (rs.next()) return rs.getInt(1);
+			}
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning("PetHatchingDAO: Error getting unclaimed pets count: " + e.getMessage());
+		}
+		return 0;
+	}
+
+	public static void markEventFired(int playerId, int id)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("UPDATE pet_unclaimed SET event_fired=1 WHERE player_id=? AND id=?"))
+		{
+			ps.setInt(1, playerId);
+			ps.setInt(2, id);
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning("PetHatchingDAO: Error marking event fired: " + e.getMessage());
+		}
 	}
 }

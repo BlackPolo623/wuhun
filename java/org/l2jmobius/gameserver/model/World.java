@@ -1,16 +1,16 @@
 /*
  * Copyright (c) 2013 L2jMobius
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -46,6 +46,7 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
+import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.network.Disconnection;
 import org.l2jmobius.gameserver.network.serverpackets.DeleteObject;
 import org.l2jmobius.gameserver.network.serverpackets.LeaveWorld;
@@ -53,20 +54,20 @@ import org.l2jmobius.gameserver.network.serverpackets.LeaveWorld;
 public class World
 {
 	private static final Logger LOGGER = Logger.getLogger(World.class.getName());
-	
+
 	public static volatile int MAX_CONNECTED_COUNT = 0;
 	public static volatile int OFFLINE_TRADE_COUNT = 0;
-	
+
 	/** Gracia border Flying objects not allowed to the east of it. */
 	public static final int GRACIA_MAX_X = -166168;
 	public static final int GRACIA_MAX_Z = 6105;
 	public static final int GRACIA_MIN_Z = -895;
-	
+
 	/** Bit shift, defines number of regions note, shifting by 15 will result in regions corresponding to map tiles shifting by 11 divides one tile to 16x16 regions. */
 	public static final int SHIFT_BY = 11;
-	
+
 	public static final int TILE_SIZE = 32768;
-	
+
 	/** Map dimensions. */
 	public static final int TILE_X_MIN = 11;
 	public static final int TILE_Y_MIN = 10;
@@ -76,18 +77,18 @@ public class World
 	public static final int TILE_ZERO_COORD_Y = 18;
 	public static final int WORLD_X_MIN = (TILE_X_MIN - TILE_ZERO_COORD_X) * TILE_SIZE;
 	public static final int WORLD_Y_MIN = (TILE_Y_MIN - TILE_ZERO_COORD_Y) * TILE_SIZE;
-	
+
 	public static final int WORLD_X_MAX = ((TILE_X_MAX - TILE_ZERO_COORD_X) + 1) * TILE_SIZE;
 	public static final int WORLD_Y_MAX = ((TILE_Y_MAX - TILE_ZERO_COORD_Y) + 1) * TILE_SIZE;
-	
+
 	/** Calculated offset used so top left region is 0,0 */
 	public static final int OFFSET_X = Math.abs(WORLD_X_MIN >> SHIFT_BY);
 	public static final int OFFSET_Y = Math.abs(WORLD_Y_MIN >> SHIFT_BY);
-	
+
 	/** Number of regions. */
 	private static final int REGIONS_X = (WORLD_X_MAX >> SHIFT_BY) + OFFSET_X;
 	private static final int REGIONS_Y = (WORLD_Y_MAX >> SHIFT_BY) + OFFSET_Y;
-	
+
 	/** Map containing all the players in game. */
 	private static final Map<Integer, Player> _allPlayers = new ConcurrentHashMap<>();
 	/** Map containing all the Good players in game. */
@@ -100,17 +101,17 @@ public class World
 	private static final Map<Integer, WorldObject> _allObjects = new ConcurrentHashMap<>();
 	/** Map with the pets instances and their owner ID. */
 	private static final Map<Integer, Pet> _petsInstance = new ConcurrentHashMap<>();
-	
+
 	private static final AtomicInteger _partyNumber = new AtomicInteger();
 	private static final AtomicInteger _memberInPartyNumber = new AtomicInteger();
-	
+
 	private static final Set<Player> _pkPlayers = ConcurrentHashMap.newKeySet(30);
 	private static final AtomicInteger _lastPkTime = new AtomicInteger((int) System.currentTimeMillis() / 1000);
-	
+
 	private static final WorldRegion[][] _worldRegions = new WorldRegion[REGIONS_X + 1][REGIONS_Y + 1];
-	
+
 	private static long _nextPrivateStoreUpdate = 0;
-	
+
 	/** Constructor of World. */
 	protected World()
 	{
@@ -122,7 +123,7 @@ public class World
 				_worldRegions[x][y] = new WorldRegion(x, y);
 			}
 		}
-		
+
 		// Set surrounding regions.
 		for (int rx = 0; rx <= REGIONS_X; rx++)
 		{
@@ -139,20 +140,20 @@ public class World
 						}
 					}
 				}
-				
+
 				WorldRegion[] regionArray = new WorldRegion[surroundingRegions.size()];
 				regionArray = surroundingRegions.toArray(regionArray);
 				_worldRegions[rx][ry].setSurroundingRegions(regionArray);
 			}
 		}
-		
+
 		// When GUI is enabled World is called early. So we need to skip this log.
 		if (!InterfaceConfig.ENABLE_GUI)
 		{
 			LOGGER.info(getClass().getSimpleName() + ": (" + REGIONS_X + " by " + REGIONS_Y + ") World Region Grid set up.");
 		}
 	}
-	
+
 	/**
 	 * Adds an object to the world.<br>
 	 * <br>
@@ -166,12 +167,12 @@ public class World
 	public void addObject(WorldObject object)
 	{
 		_allObjects.putIfAbsent(object.getObjectId(), object);
-		
+
 		// if (_allObjects.putIfAbsent(object.getObjectId(), object) != null)
 		// {
 		// LOGGER.warning(getClass().getSimpleName() + ": Object " + object + " already exists in the world. Stack Trace: " + CommonUtil.getTraceString(Thread.currentThread().getStackTrace()));
 		// }
-		
+
 		if (object.isPlayer())
 		{
 			final Player newPlayer = object.asPlayer();
@@ -179,7 +180,7 @@ public class World
 			{
 				return;
 			}
-			
+
 			final Player existingPlayer = _allPlayers.putIfAbsent(object.getObjectId(), newPlayer);
 			if (existingPlayer != null)
 			{
@@ -193,7 +194,7 @@ public class World
 			}
 		}
 	}
-	
+
 	/**
 	 * Removes an object from the world.<br>
 	 * <br>
@@ -215,9 +216,9 @@ public class World
 			{
 				return;
 			}
-			
+
 			_allPlayers.remove(object.getObjectId());
-			
+
 			if (FactionSystemConfig.FACTION_SYSTEM_ENABLED)
 			{
 				if (player.isGood())
@@ -231,7 +232,7 @@ public class World
 			}
 		}
 	}
-	
+
 	/**
 	 * <b><u>Example of use</u>:</b>
 	 * <ul>
@@ -244,12 +245,12 @@ public class World
 	{
 		return _allObjects.get(objectId);
 	}
-	
+
 	public Collection<WorldObject> getVisibleObjects()
 	{
 		return _allObjects.values();
 	}
-	
+
 	/**
 	 * Get the count of all visible objects in world.
 	 * @return count off all World objects
@@ -258,22 +259,22 @@ public class World
 	{
 		return _allObjects.size();
 	}
-	
+
 	public Collection<Player> getPlayers()
 	{
 		return _allPlayers.values();
 	}
-	
+
 	public Collection<Player> getAllGoodPlayers()
 	{
 		return _allGoodPlayers.values();
 	}
-	
+
 	public Collection<Player> getAllEvilPlayers()
 	{
 		return _allEvilPlayers.values();
 	}
-	
+
 	/**
 	 * <b>If you have access to player objectId use {@link #getPlayer(int playerObjId)}</b>
 	 * @param name Name of the player to get Instance
@@ -283,7 +284,7 @@ public class World
 	{
 		return getPlayer(CharInfoTable.getInstance().getIdByName(name));
 	}
-	
+
 	/**
 	 * @param objectId of the player to get Instance
 	 * @return the player instance corresponding to the given object ID.
@@ -292,7 +293,7 @@ public class World
 	{
 		return _allPlayers.get(objectId);
 	}
-	
+
 	/**
 	 * @param ownerId ID of the owner
 	 * @return the pet instance from the given ownerId.
@@ -301,7 +302,7 @@ public class World
 	{
 		return _petsInstance.get(ownerId);
 	}
-	
+
 	public synchronized Collection<Player> getSellingOrBuyingPlayers()
 	{
 		final long currentTime = System.currentTimeMillis();
@@ -317,10 +318,10 @@ public class World
 				}
 			}
 		}
-		
+
 		return _allStoreModeBuySellPlayers.values();
 	}
-	
+
 	/**
 	 * Add the given pet instance from the given ownerId.
 	 * @param ownerId ID of the owner
@@ -331,7 +332,7 @@ public class World
 	{
 		return _petsInstance.put(ownerId, pet);
 	}
-	
+
 	/**
 	 * Remove the given pet instance.
 	 * @param ownerId ID of the owner
@@ -340,7 +341,7 @@ public class World
 	{
 		_petsInstance.remove(ownerId);
 	}
-	
+
 	/**
 	 * This operation is quite heave as it iterates all world visible objects.
 	 * @param npcId the id of the NPC to find.
@@ -355,10 +356,10 @@ public class World
 				return wo.asNpc();
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	/**
 	 * Add a WorldObject in the world. <b><u>Concept</u>:</b> WorldObject (including Player) are identified in <b>_visibleObjects</b> of his current WorldRegion and in <b>_knownObjects</b> of other surrounding Creatures<br>
 	 * Player are identified in <b>_allPlayers</b> of World, in <b>_allPlayers</b> of his current WorldRegion and in <b>_knownPlayer</b> of other surrounding Creatures <b><u> Actions</u>:</b>
@@ -381,45 +382,57 @@ public class World
 		{
 			return;
 		}
-		
+
+		// Cache type checks and conversions outside the loop
+		final boolean objectIsPlayer = object.isPlayer();
+		final boolean objectIsCreature = object.isCreature();
+		final boolean objectIsMonster = object.isMonster();
+		final Player objectAsPlayer = objectIsPlayer ? object.asPlayer() : null;
+		final Creature objectAsCreature = objectIsCreature ? object.asCreature() : null;
+		final CreatureAI objectAI = objectAsCreature != null ? objectAsCreature.getAI() : null;
+
 		forEachVisibleObject(object, WorldObject.class, wo ->
 		{
-			if (object.isPlayer() && wo.isVisibleFor(object.asPlayer()))
+			// Handle object -> wo visibility
+			if (objectIsPlayer && wo.isVisibleFor(objectAsPlayer))
 			{
-				wo.sendInfo(object.asPlayer());
+				wo.sendInfo(objectAsPlayer);
 				if (wo.isCreature())
 				{
-					final CreatureAI ai = wo.asCreature().getAI();
-					if (ai != null)
+					final CreatureAI woAI = wo.asCreature().getAI();
+					if (woAI != null)
 					{
-						ai.describeStateToPlayer(object.asPlayer());
-						if (wo.isMonster() && (ai.getIntention() == Intention.IDLE))
-						{
-							ai.setIntention(Intention.ACTIVE);
-						}
+						woAI.describeStateToPlayer(objectAsPlayer);
+						// 移除立即喚醒機制，讓 AI Task 自然處理（避免重生時的連鎖反應）
+						// if (wo.isMonster() && (woAI.getIntention() == Intention.IDLE))
+						// {
+						// 	woAI.setIntention(Intention.ACTIVE);
+						// }
 					}
 				}
 			}
-			
-			if (wo.isPlayer() && object.isVisibleFor(wo.asPlayer()))
+
+			// Handle wo -> object visibility
+			if (wo.isPlayer())
 			{
-				object.sendInfo(wo.asPlayer());
-				if (object.isCreature())
+				final Player woAsPlayer = wo.asPlayer();
+				if (object.isVisibleFor(woAsPlayer))
 				{
-					final CreatureAI ai = object.asCreature().getAI();
-					if (ai != null)
+					object.sendInfo(woAsPlayer);
+					if (objectAI != null)
 					{
-						ai.describeStateToPlayer(wo.asPlayer());
-						if (object.isMonster() && (ai.getIntention() == Intention.IDLE))
-						{
-							ai.setIntention(Intention.ACTIVE);
-						}
+						objectAI.describeStateToPlayer(woAsPlayer);
+						// 移除立即喚醒機制，讓 AI Task 自然處理（避免重生時的連鎖反應）
+						// if (objectIsMonster && (objectAI.getIntention() == Intention.IDLE))
+						// {
+						// 	objectAI.setIntention(Intention.ACTIVE);
+						// }
 					}
 				}
 			}
 		});
 	}
-	
+
 	public static void addFactionPlayerToWorld(Player player)
 	{
 		if (player.isGood())
@@ -431,7 +444,7 @@ public class World
 			_allEvilPlayers.put(player.getObjectId(), player);
 		}
 	}
-	
+
 	/**
 	 * Remove a WorldObject from the world. <b><u>Concept</u>:</b> WorldObject (including Player) are identified in <b>_visibleObjects</b> of his current WorldRegion and in <b>_knownObjects</b> of other surrounding Creatures<br>
 	 * Player are identified in <b>_allPlayers</b> of World, in <b>_allPlayers</b> of his current WorldRegion and in <b>_knownPlayer</b> of other surrounding Creatures <b><u> Actions</u>:</b>
@@ -452,60 +465,83 @@ public class World
 		{
 			return;
 		}
-		
+
 		oldRegion.removeVisibleObject(object);
-		
+
+		// Cache type checks and conversions
+		final boolean objectIsCreature = object.isCreature();
+		final boolean objectIsPlayer = object.isPlayer();
+		final Creature objectCreature = objectIsCreature ? object.asCreature() : null;
+		final CreatureAI objectAI = objectCreature != null ? objectCreature.getAI() : null;
+
 		// Go through all surrounding WorldRegion Creatures
 		final WorldRegion[] surroundingRegions = oldRegion.getSurroundingRegions();
-		for (int i = 0; i < surroundingRegions.length; i++)
+		final int regionCount = surroundingRegions.length;
+		for (int i = 0; i < regionCount; i++)
 		{
 			final Collection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
 			if (visibleObjects.isEmpty())
 			{
 				continue;
 			}
-			
+
 			for (WorldObject wo : visibleObjects)
 			{
 				if (wo == object)
 				{
 					continue;
 				}
-				
-				if (object.isCreature())
+
+				// 【CPU優化】跳過已死亡或正在消失的對象，避免無意義的 AI 通知
+				final boolean woIsDead = wo.isCreature() && wo.asCreature().isDead();
+				final boolean woIsDecaying = wo.isNpc() && wo.asNpc().isDecayed();
+
+				// Handle object forgetting wo
+				if (objectIsCreature)
 				{
-					final Creature objectCreature = object.asCreature();
-					final CreatureAI ai = objectCreature.getAI();
-					if (ai != null)
+					// 【CPU優化】只對活著的對象發送 AI 通知
+					if (!woIsDead && !woIsDecaying)
 					{
-						ai.notifyAction(Action.FORGET_OBJECT, wo);
+						if (objectAI != null)
+						{
+							objectAI.notifyAction(Action.FORGET_OBJECT, wo);
+						}
+
+						if (objectCreature.getTarget() == wo)
+						{
+							objectCreature.setTarget(null);
+						}
 					}
-					
-					if (objectCreature.getTarget() == wo)
-					{
-						objectCreature.setTarget(null);
-					}
-					
-					if (object.isPlayer())
+
+					// 【重要】無論對象死活，玩家都必須收到 DeleteObject 封包才能看到屍體消失
+					if (objectIsPlayer)
 					{
 						object.sendPacket(new DeleteObject(wo));
 					}
 				}
-				
+
+				// Handle wo forgetting object
 				if (wo.isCreature())
 				{
 					final Creature woCreature = wo.asCreature();
-					final CreatureAI ai = woCreature.getAI();
-					if (ai != null)
+					final boolean objectIsDead = objectIsCreature && objectCreature.isDead();
+
+					// 【CPU優化】只對活著的對象發送 AI 通知
+					if (!woIsDead && !woIsDecaying && !objectIsDead)
 					{
-						ai.notifyAction(Action.FORGET_OBJECT, object);
+						final CreatureAI woAI = woCreature.getAI();
+						if (woAI != null)
+						{
+							woAI.notifyAction(Action.FORGET_OBJECT, object);
+						}
+
+						if (woCreature.getTarget() == object)
+						{
+							woCreature.setTarget(null);
+						}
 					}
-					
-					if (woCreature.getTarget() == object)
-					{
-						woCreature.setTarget(null);
-					}
-					
+
+					// 【重要】無論對象死活，玩家都必須收到 DeleteObject 封包才能看到屍體消失
 					if (wo.isPlayer())
 					{
 						wo.sendPacket(new DeleteObject(object));
@@ -514,7 +550,7 @@ public class World
 			}
 		}
 	}
-	
+
 	public void switchRegion(WorldObject object, WorldRegion newRegion)
 	{
 		final WorldRegion oldRegion = object.getWorldRegion();
@@ -522,7 +558,17 @@ public class World
 		{
 			return;
 		}
-		
+
+		// Cache type checks and conversions
+		final boolean objectIsCreature = object.isCreature();
+		final boolean objectIsPlayer = object.isPlayer();
+		final boolean objectIsMonster = object.isMonster();
+		final Creature objectCreature = objectIsCreature ? object.asCreature() : null;
+		final Player objectPlayer = objectIsPlayer ? object.asPlayer() : null;
+		final CreatureAI objectAI = objectCreature != null ? objectCreature.getAI() : null;
+		final Instance objectInstance = object.getInstanceWorld();
+
+		// Handle objects leaving old region
 		final WorldRegion[] oldSurroundingRegions = oldRegion.getSurroundingRegions();
 		for (int i = 0; i < oldSurroundingRegions.length; i++)
 		{
@@ -531,54 +577,54 @@ public class World
 			{
 				continue;
 			}
-			
+
 			final Collection<WorldObject> visibleObjects = worldRegion.getVisibleObjects();
 			if (visibleObjects.isEmpty())
 			{
 				continue;
 			}
-			
+
 			for (WorldObject wo : visibleObjects)
 			{
 				if (wo == object)
 				{
 					continue;
 				}
-				
-				if (object.isCreature())
+
+				// Handle object forgetting wo
+				if (objectIsCreature)
 				{
-					final Creature objectCreature = object.asCreature();
-					final CreatureAI ai = objectCreature.getAI();
-					if (ai != null)
+					if (objectAI != null)
 					{
-						ai.notifyAction(Action.FORGET_OBJECT, wo);
+						objectAI.notifyAction(Action.FORGET_OBJECT, wo);
 					}
-					
+
 					if (objectCreature.getTarget() == wo)
 					{
 						objectCreature.setTarget(null);
 					}
-					
-					if (object.isPlayer())
+
+					if (objectIsPlayer)
 					{
 						object.sendPacket(new DeleteObject(wo));
 					}
 				}
-				
+
+				// Handle wo forgetting object
 				if (wo.isCreature())
 				{
 					final Creature woCreature = wo.asCreature();
-					final CreatureAI ai = woCreature.getAI();
-					if (ai != null)
+					final CreatureAI woAI = woCreature.getAI();
+					if (woAI != null)
 					{
-						ai.notifyAction(Action.FORGET_OBJECT, object);
+						woAI.notifyAction(Action.FORGET_OBJECT, object);
 					}
-					
+
 					if (woCreature.getTarget() == object)
 					{
 						woCreature.setTarget(null);
 					}
-					
+
 					if (wo.isPlayer())
 					{
 						wo.sendPacket(new DeleteObject(object));
@@ -586,7 +632,8 @@ public class World
 				}
 			}
 		}
-		
+
+		// Handle objects entering new region
 		final WorldRegion[] newSurroundingRegions = newRegion.getSurroundingRegions();
 		for (int i = 0; i < newSurroundingRegions.length; i++)
 		{
@@ -595,49 +642,51 @@ public class World
 			{
 				continue;
 			}
-			
+
 			final Collection<WorldObject> visibleObjects = worldRegion.getVisibleObjects();
 			if (visibleObjects.isEmpty())
 			{
 				continue;
 			}
-			
+
 			for (WorldObject wo : visibleObjects)
 			{
-				if ((wo == object) || (wo.getInstanceWorld() != object.getInstanceWorld()))
+				if ((wo == object) || (wo.getInstanceWorld() != objectInstance))
 				{
 					continue;
 				}
-				
-				if (object.isPlayer() && wo.isVisibleFor(object.asPlayer()))
+
+				// Handle object seeing wo
+				if (objectIsPlayer && wo.isVisibleFor(objectPlayer))
 				{
-					wo.sendInfo(object.asPlayer());
+					wo.sendInfo(objectPlayer);
 					if (wo.isCreature())
 					{
-						final CreatureAI ai = wo.asCreature().getAI();
-						if (ai != null)
+						final CreatureAI woAI = wo.asCreature().getAI();
+						if (woAI != null)
 						{
-							ai.describeStateToPlayer(object.asPlayer());
-							if (wo.isMonster() && (ai.getIntention() == Intention.IDLE))
+							woAI.describeStateToPlayer(objectPlayer);
+							if (wo.isMonster() && (woAI.getIntention() == Intention.IDLE))
 							{
-								ai.setIntention(Intention.ACTIVE);
+								woAI.setIntention(Intention.ACTIVE);
 							}
 						}
 					}
 				}
-				
-				if (wo.isPlayer() && object.isVisibleFor(wo.asPlayer()))
+
+				// Handle wo seeing object
+				if (wo.isPlayer())
 				{
-					object.sendInfo(wo.asPlayer());
-					if (object.isCreature())
+					final Player woPlayer = wo.asPlayer();
+					if (object.isVisibleFor(woPlayer))
 					{
-						final CreatureAI ai = object.asCreature().getAI();
-						if (ai != null)
+						object.sendInfo(woPlayer);
+						if (objectAI != null)
 						{
-							ai.describeStateToPlayer(wo.asPlayer());
-							if (object.isMonster() && (ai.getIntention() == Intention.IDLE))
+							objectAI.describeStateToPlayer(woPlayer);
+							if (objectIsMonster && (objectAI.getIntention() == Intention.IDLE))
 							{
-								ai.setIntention(Intention.ACTIVE);
+								objectAI.setIntention(Intention.ACTIVE);
 							}
 						}
 					}
@@ -645,17 +694,17 @@ public class World
 			}
 		}
 	}
-	
+
 	public <T extends WorldObject> List<T> getVisibleObjects(WorldObject object, Class<T> clazz)
 	{
-		final List<T> result = new LinkedList<>();
+		final List<T> result = new ArrayList<>();
 		forEachVisibleObject(object, clazz, result::add);
 		return result;
 	}
-	
+
 	public <T extends WorldObject> List<T> getVisibleObjects(WorldObject object, Class<T> clazz, Predicate<T> predicate)
 	{
-		final List<T> result = new LinkedList<>();
+		final List<T> result = new ArrayList<>();
 		forEachVisibleObject(object, clazz, o ->
 		{
 			if (predicate.test(o))
@@ -663,59 +712,126 @@ public class World
 				result.add(o);
 			}
 		});
-		
+
 		return result;
 	}
-	
+
 	public <T extends WorldObject> void forEachVisibleObject(WorldObject object, Class<T> clazz, Consumer<T> c)
 	{
 		if (object == null)
 		{
 			return;
 		}
-		
+
 		final WorldRegion worldRegion = getRegion(object);
 		if (worldRegion == null)
 		{
 			return;
 		}
-		
+
+		// Cache instance world to avoid repeated method calls
+		final Instance objectInstance = object.getInstanceWorld();
 		final WorldRegion[] surroundingRegions = worldRegion.getSurroundingRegions();
-		for (int i = 0; i < surroundingRegions.length; i++)
+		final int regionCount = surroundingRegions.length;
+
+		// Early exit optimization for common class types
+		final boolean isPlayerClass = clazz == Player.class;
+		final boolean isCreatureClass = clazz == Creature.class;
+		final boolean isNpcClass = clazz == Npc.class;
+		final boolean isWorldObjectClass = clazz == WorldObject.class;
+
+		// Fast path for WorldObject.class - no type checking needed
+		if (isWorldObjectClass)
 		{
-			final Collection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
-			if (visibleObjects.isEmpty())
+			for (int i = 0; i < regionCount; i++)
 			{
-				continue;
+				final Collection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
+				if (visibleObjects.isEmpty())
+				{
+					continue;
+				}
+
+				for (WorldObject wo : visibleObjects)
+				{
+					if ((wo != object) && (wo.getInstanceWorld() == objectInstance))
+					{
+						c.accept(clazz.cast(wo));
+					}
+				}
 			}
-			
-			for (WorldObject wo : visibleObjects)
+			return;
+		}
+
+		// Optimized path for common types
+		if (isPlayerClass || isCreatureClass || isNpcClass)
+		{
+			for (int i = 0; i < regionCount; i++)
 			{
-				if ((wo == object) || !clazz.isInstance(wo))
+				final Collection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
+				if (visibleObjects.isEmpty())
 				{
 					continue;
 				}
-				
-				if (wo.getInstanceWorld() != object.getInstanceWorld())
+
+				for (WorldObject wo : visibleObjects)
+				{
+					if (wo == object)
+					{
+						continue;
+					}
+
+					// Fast type check for common types
+					if ((isPlayerClass && !wo.isPlayer()) ||
+							(isNpcClass && !wo.isNpc()) ||
+							(isCreatureClass && !wo.isCreature()))
+					{
+						continue;
+					}
+
+					// Instance check with cached value
+					if (wo.getInstanceWorld() != objectInstance)
+					{
+						continue;
+					}
+
+					c.accept(clazz.cast(wo));
+				}
+			}
+		}
+		else
+		{
+			// Generic path for other types
+			for (int i = 0; i < regionCount; i++)
+			{
+				final Collection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
+				if (visibleObjects.isEmpty())
 				{
 					continue;
 				}
-				
-				c.accept(clazz.cast(wo));
+
+				for (WorldObject wo : visibleObjects)
+				{
+					if ((wo == object) || !clazz.isInstance(wo) || (wo.getInstanceWorld() != objectInstance))
+					{
+						continue;
+					}
+
+					c.accept(clazz.cast(wo));
+				}
 			}
 		}
 	}
-	
+
 	public <T extends WorldObject> List<T> getVisibleObjectsInRange(WorldObject object, Class<T> clazz, int range)
 	{
-		final List<T> result = new LinkedList<>();
+		final List<T> result = new ArrayList<>();
 		forEachVisibleObjectInRange(object, clazz, range, result::add);
 		return result;
 	}
-	
+
 	public <T extends WorldObject> List<T> getVisibleObjectsInRange(WorldObject object, Class<T> clazz, int range, Predicate<T> predicate)
 	{
-		final List<T> result = new LinkedList<>();
+		final List<T> result = new ArrayList<>();
 		forEachVisibleObjectInRange(object, clazz, range, o ->
 		{
 			if (predicate.test(o))
@@ -723,52 +839,141 @@ public class World
 				result.add(o);
 			}
 		});
-		
+
 		return result;
 	}
-	
+
 	public <T extends WorldObject> void forEachVisibleObjectInRange(WorldObject object, Class<T> clazz, int range, Consumer<T> c)
 	{
 		if (object == null)
 		{
 			return;
 		}
-		
+
 		final WorldRegion worldRegion = getRegion(object);
 		if (worldRegion == null)
 		{
 			return;
 		}
-		
+
+		// Cache values to avoid repeated method calls
+		final Instance objectInstance = object.getInstanceWorld();
 		final WorldRegion[] surroundingRegions = worldRegion.getSurroundingRegions();
-		for (int i = 0; i < surroundingRegions.length; i++)
+		final int regionCount = surroundingRegions.length;
+		final long rangeSq = (long) range * range; // Use long to avoid overflow, squared distance to avoid sqrt
+
+		// Cache object coordinates
+		final int objX = object.getX();
+		final int objY = object.getY();
+		final int objZ = object.getZ();
+
+		// Early exit optimization for common class types
+		final boolean isPlayerClass = clazz == Player.class;
+		final boolean isCreatureClass = clazz == Creature.class;
+		final boolean isNpcClass = clazz == Npc.class;
+		final boolean isWorldObjectClass = clazz == WorldObject.class;
+
+		// Fast path for WorldObject.class
+		if (isWorldObjectClass)
 		{
-			final Collection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
-			if (visibleObjects.isEmpty())
+			for (int i = 0; i < regionCount; i++)
 			{
-				continue;
+				final Collection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
+				if (visibleObjects.isEmpty())
+				{
+					continue;
+				}
+
+				for (WorldObject wo : visibleObjects)
+				{
+					if ((wo == object) || (wo.getInstanceWorld() != objectInstance))
+					{
+						continue;
+					}
+
+					// Inline distance calculation with squared comparison
+					final long dx = wo.getX() - objX;
+					final long dy = wo.getY() - objY;
+					final long dz = wo.getZ() - objZ;
+					if ((dx * dx + dy * dy + dz * dz) <= rangeSq)
+					{
+						c.accept(clazz.cast(wo));
+					}
+				}
 			}
-			
-			for (WorldObject wo : visibleObjects)
+			return;
+		}
+
+		// Optimized path for common types
+		if (isPlayerClass || isCreatureClass || isNpcClass)
+		{
+			for (int i = 0; i < regionCount; i++)
 			{
-				if ((wo == object) || !clazz.isInstance(wo))
+				final Collection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
+				if (visibleObjects.isEmpty())
 				{
 					continue;
 				}
-				
-				if (wo.getInstanceWorld() != object.getInstanceWorld())
+
+				for (WorldObject wo : visibleObjects)
+				{
+					if (wo == object)
+					{
+						continue;
+					}
+
+					// Fast type check for common types
+					if ((isPlayerClass && !wo.isPlayer()) ||
+							(isNpcClass && !wo.isNpc()) ||
+							(isCreatureClass && !wo.isCreature()))
+					{
+						continue;
+					}
+
+					// Instance check with cached value
+					if (wo.getInstanceWorld() != objectInstance)
+					{
+						continue;
+					}
+
+					// Inline distance calculation with squared comparison
+					final long dx = wo.getX() - objX;
+					final long dy = wo.getY() - objY;
+					final long dz = wo.getZ() - objZ;
+					if ((dx * dx + dy * dy + dz * dz) <= rangeSq)
+					{
+						c.accept(clazz.cast(wo));
+					}
+				}
+			}
+		}
+		else
+		{
+			// Generic path for other types
+			for (int i = 0; i < regionCount; i++)
+			{
+				final Collection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
+				if (visibleObjects.isEmpty())
 				{
 					continue;
 				}
-				
-				if (wo.calculateDistance3D(object) <= range)
+
+				for (WorldObject wo : visibleObjects)
 				{
-					c.accept(clazz.cast(wo));
+					if ((wo == object) || !clazz.isInstance(wo) || (wo.getInstanceWorld() != objectInstance))
+					{
+						continue;
+					}
+
+					if (wo.calculateDistance3D(object) <= range)
+					{
+						c.accept(clazz.cast(wo));
+					}
 				}
 			}
 		}
 	}
-	
+
 	/**
 	 * Calculate the current WorldRegions of the object according to its position (x,y). <b><u>Example of use</u>:</b>
 	 * <li>Set position of a new WorldObject (drop, spawn...)</li>
@@ -788,7 +993,7 @@ public class World
 			return null;
 		}
 	}
-	
+
 	public WorldRegion getRegion(int x, int y)
 	{
 		try
@@ -801,7 +1006,7 @@ public class World
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Returns the whole 3d array containing the world regions used by ZoneData.java to setup zones inside the world regions
 	 * @return
@@ -810,7 +1015,7 @@ public class World
 	{
 		return _worldRegions;
 	}
-	
+
 	public synchronized void disposeOutOfBoundsObject(WorldObject object)
 	{
 		if (object.isPlayer())
@@ -829,7 +1034,7 @@ public class World
 				final Npc npc = object.asNpc();
 				LOGGER.warning("Deleting npc " + object.getName() + " NPCID[" + npc.getId() + "] from invalid location X:" + object.getX() + " Y:" + object.getY() + " Z:" + object.getZ());
 				npc.deleteMe();
-				
+
 				final Spawn spawn = npc.getSpawn();
 				if (spawn != null)
 				{
@@ -841,44 +1046,44 @@ public class World
 				LOGGER.warning("Deleting object " + object.getName() + " OID[" + object.getObjectId() + "] from invalid location X:" + object.getX() + " Y:" + object.getY() + " Z:" + object.getZ());
 				object.asCreature().deleteMe();
 			}
-			
+
 			if (object.getWorldRegion() != null)
 			{
 				object.getWorldRegion().removeVisibleObject(object);
 			}
 		}
 	}
-	
+
 	public void incrementParty()
 	{
 		_partyNumber.incrementAndGet();
 	}
-	
+
 	public void decrementParty()
 	{
 		_partyNumber.decrementAndGet();
 	}
-	
+
 	public void incrementPartyMember()
 	{
 		_memberInPartyNumber.incrementAndGet();
 	}
-	
+
 	public void decrementPartyMember()
 	{
 		_memberInPartyNumber.decrementAndGet();
 	}
-	
+
 	public int getPartyCount()
 	{
 		return _partyNumber.get();
 	}
-	
+
 	public int getPartyMemberCount()
 	{
 		return _memberInPartyNumber.get();
 	}
-	
+
 	public synchronized void addPkPlayer(Player player)
 	{
 		if (_pkPlayers.size() > 29)
@@ -893,7 +1098,7 @@ public class World
 					lowestPkCount = pk.getPkKills();
 				}
 			}
-			
+
 			if ((lowestPk != null) && (lowestPkCount < player.getPkKills()))
 			{
 				_pkPlayers.remove(lowestPk);
@@ -903,27 +1108,27 @@ public class World
 				return;
 			}
 		}
-		
+
 		_pkPlayers.add(player);
 		_lastPkTime.set((int) System.currentTimeMillis() / 1000);
 	}
-	
+
 	public void removePkPlayer(Player player)
 	{
 		_pkPlayers.remove(player);
 		_lastPkTime.set((int) System.currentTimeMillis() / 1000);
 	}
-	
+
 	public Set<Player> getPkPlayers()
 	{
 		if (!FeatureConfig.PK_PENALTY_LIST)
 		{
 			return Collections.emptySet();
 		}
-		
+
 		return _pkPlayers;
 	}
-	
+
 	public int getLastPkTime()
 	{
 		return _lastPkTime.get();

@@ -46,7 +46,16 @@ public class PrivateStore implements IPlayerActionHandler
 			LOGGER.warning("Incorrect private store type: " + data.getOptionId());
 			return;
 		}
-		
+
+		// 【修復漏洞】檢查玩家是否正在冥想中
+		// 冥想狀態下不可開啟商店，否則角色會同時獲得冥想獎勵和商店收益
+		if (player.getVariables().getBoolean("MINGXIANG_DOING", false))
+		{
+			player.sendMessage("冥想中無法開啟商店！請先停止冥想再開啟商店。");
+			player.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+
 		// Player shouldn't be able to set stores if he/she is alike dead (dead or fake death)
 		if (!player.canOpenPrivateStore())
 		{
@@ -54,7 +63,7 @@ public class PrivateStore implements IPlayerActionHandler
 			{
 				player.sendPacket(SystemMessageId.YOU_CANNOT_OPEN_A_PRIVATE_STORE_HERE);
 			}
-			
+
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}

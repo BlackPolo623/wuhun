@@ -4,71 +4,75 @@
     <tr>
         <td valign="top" align="center">
             <table border=0 cellpadding=0 cellspacing=0>
-                <tr><td height=20></td></tr>
-                <tr>
-                    <td align=center><font color="LEVEL" size="6"><b>寵物孵化系統</b></font></td>
-                </tr>
                 <tr><td height=15></td></tr>
+
+                <tr>
+                    <td align=center><font color="LEVEL" size="5"><b>寵物孵化系統(離線不會中斷孵化)</b></font></td>
+                </tr>
+                <tr><td height=10></td></tr>
 
                 <tr>
                     <td align=center>
                         <table width="270" bgcolor="111111" border="0" cellspacing="1" cellpadding="3">
                             <tr bgcolor="222222">
-                                <td align="center" colspan="2"><font color="FFCC33">歡迎使用寵物孵化系統</font></td>
+                                <td align="center" width="135"><font color="FFCC33">飼料儲存量</font></td>
+                                <td align="center" width="135"><font color="00FF66">%stored_feed%</font></td>
                             </tr>
                             <tr bgcolor="222222">
-                                <td align="center" width="135"><font color="AAAAAA">蛋的種類</font></td>
-                                <td align="center" width="135"><font color="FFFFFF">一般/特殊/稀有/罕見/傳說</font></td>
+                                <td align="center"><font color="FFCC33">孵化中的蛋</font></td>
+                                <td align="center"><font color="FFFF00">%hatching_count%</font></td>
                             </tr>
                             <tr bgcolor="222222">
-                                <td align="center"><font color="AAAAAA">飼料ID</font></td>
-                                <td align="center"><font color="FFFF00">113000</font></td>
+                                <td align="center"><font color="FFCC33">總孵化次數</font></td>
+                                <td align="center"><font color="FFFFFF">%total_hatches%</font></td>
+                            </tr>
+                            <tr bgcolor="222222">
+                                <td align="center"><font color="FFCC33">未領取寵物</font></td>
+                                <td align="center"><font color="FF9900">%unclaimed_count%</font></td>
                             </tr>
                         </table>
                     </td>
                 </tr>
 
-                <tr><td height=15></td></tr>
+                <tr><td height=10></td></tr>
                 <tr>
                     <td align=center><img src="L2UI.SquareGray" width="270" height="1"></td>
                 </tr>
-                <tr><td height=15></td></tr>
+                <tr><td height=10></td></tr>
 
                 <tr>
                     <td align=center><font color="LEVEL" size="4">功能選單</font></td>
                 </tr>
-                <tr><td height=10></td></tr>
-
-                <tr>
-                    <td align=center>
-                        <button action="bypass -h Quest PetHatchingSystem hatch_menu" value="🥚 孵化管理" width="200" height="31" back="BranchSys3.icon2.ArmyTrainingInfo_down" fore="BranchSys3.icon2.ArmyTrainingInfo">
-                    </td>
-                </tr>
                 <tr><td height=8></td></tr>
 
                 <tr>
                     <td align=center>
-                        <button action="bypass -h Quest PetHatchingSystem feed_menu" value="🌾 飼料管理" width="200" height="31" back="BranchSys3.icon2.ArmyTrainingInfo_down" fore="BranchSys3.icon2.ArmyTrainingInfo">
+                        <button action="bypass -h Quest PetHatchingSystem hatch_menu" value="孵化管理" width="200" height="31" back="BranchSys3.icon2.ArmyTrainingInfo_down" fore="BranchSys3.icon2.ArmyTrainingInfo">
                     </td>
                 </tr>
-                <tr><td height=8></td></tr>
+                <tr><td height=5></td></tr>
 
                 <tr>
                     <td align=center>
-                        <button action="bypass -h Quest PetHatchingSystem collection_page_0" value="📚 寵物收藏" width="200" height="31" back="BranchSys3.icon2.ArmyTrainingInfo_down" fore="BranchSys3.icon2.ArmyTrainingInfo">
+                        <button action="bypass -h Quest PetHatchingSystem unclaimed_pets" value="領取寵物" width="200" height="31" back="BranchSys3.icon2.ArmyTrainingInfo_down" fore="BranchSys3.icon2.ArmyTrainingInfo">
+                    </td>
+                </tr>
+                <tr><td height=5></td></tr>
+
+                <tr>
+                    <td align=center>
+                        <button action="bypass -h Quest PetHatchingSystem feed_menu" value="飼料管理" width="200" height="31" back="BranchSys3.icon2.ArmyTrainingInfo_down" fore="BranchSys3.icon2.ArmyTrainingInfo">
+                    </td>
+                </tr>
+                <tr><td height=5></td></tr>
+
+                <tr>
+                    <td align=center>
+                        <button action="bypass -h Quest PetHatchingSystem collection_page_0" value="寵物收藏" width="200" height="31" back="BranchSys3.icon2.ArmyTrainingInfo_down" fore="BranchSys3.icon2.ArmyTrainingInfo">
                     </td>
                 </tr>
 
-                <tr><td height=15></td></tr>
-                <tr>
-                    <td align=center><img src="L2UI.SquareGray" width="270" height="1"></td>
-                </tr>
                 <tr><td height=10></td></tr>
-                <tr>
-                    <td align=center>
-                        <font color="808080" size="1">※ 離線時蛋會繼續孵化，完成後以信件寄出</font>
-                    </td>
-                </tr>
             </table>
         </td>
     </tr>

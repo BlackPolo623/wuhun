@@ -117,6 +117,7 @@ public class LimitShopClanData implements IXmlReader
 							ingredientEnchants[3] = 0;
 							ingredientEnchants[4] = 0;
 							int productionId = 0;
+							long productionCount = 1;
 							int accountDailyLimit = 0;
 							int accountWeeklyLimit = 0;
 							int accountMonthlyLimit = 0;
@@ -212,6 +213,7 @@ public class LimitShopClanData implements IXmlReader
 								else if ("production".equalsIgnoreCase(b.getNodeName()))
 								{
 									productionId = parseInteger(attrs, "id");
+									productionCount = parseLong(attrs, "count", 1L);
 									accountDailyLimit = parseInteger(attrs, "accountDailyLimit", 0);
 									accountWeeklyLimit = parseInteger(attrs, "accountWeeklyLimit", 0);
 									accountMonthlyLimit = parseInteger(attrs, "accountMonthlyLimit", 0);
@@ -219,7 +221,7 @@ public class LimitShopClanData implements IXmlReader
 								}
 							}
 
-							_products.add(new LimitShopProductHolder(id, category, minLevel, maxLevel, ingredientIds, ingredientQuantities, ingredientEnchants, productionId, 1, 100, false, 0, 0, 0, 0, false, 0, 0, 0, false, 0, 0, 0, false, 0, 0, false, accountDailyLimit, accountWeeklyLimit, accountMonthlyLimit, accountBuyLimit, relayGroup, relayStage, relayTotal, prerequisite));						}
+							_products.add(new LimitShopProductHolder(id, category, minLevel, maxLevel, ingredientIds, ingredientQuantities, ingredientEnchants, productionId, productionCount, 100, false, 0, 0, 0, 0, false, 0, 0, 0, false, 0, 0, 0, false, 0, 0, false, accountDailyLimit, accountWeeklyLimit, accountMonthlyLimit, accountBuyLimit, relayGroup, relayStage, relayTotal, prerequisite));						}
 					}
 				}
 			}

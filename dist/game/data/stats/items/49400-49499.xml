@@ -887,7 +887,7 @@
 			<item id="49440" min="1" max="1" chance="100" name="海馬-雙手鈍器(魔法)" /> 
 		</capsuled_items>
 	</item>
-	<item id="49451" name="龍蝦格鬥兵器禮盒" type="EtcItem">
+	<item id="49451" name="隨機無限成長晶華禮盒" type="EtcItem">
 		<set name="icon" val="icon.etc_raid_d_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -895,8 +895,18 @@
 		<set name="is_sellable" val="true" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="49441" min="1" max="1" chance="100" name="龍蝦-格鬥兵器" /> 
+			<item id="108000" min="1" max="1" chance="12"  />
+			<item id="108001" min="1" max="1" chance="12"  />
+			<item id="108002" min="1" max="1" chance="12"  />
+			<item id="108003" min="1" max="1" chance="12"  />
+			<item id="108004" min="1" max="1" chance="12"  />
+			<item id="108005" min="1" max="1" chance="12"  />
+			<item id="108006" min="1" max="1" chance="12"  />
+			<item id="108007" min="1" max="1" chance="12"  />
+			<item id="108008" min="1" max="1" chance="12"  />
 		</capsuled_items>
 	</item>
 	<item id="49452" name="大蟹弓禮盒" type="EtcItem">

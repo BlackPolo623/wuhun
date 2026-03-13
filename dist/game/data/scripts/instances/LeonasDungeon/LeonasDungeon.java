@@ -501,6 +501,14 @@ public class LeonasDungeon extends InstanceScript {
 
 	@Override
 	public void onInstanceDestroy(Instance instance) {
+		// 【修復CPU洩漏】停止所有怪物的重生任務
+		// 副本結束時，必須停止所有怪物的 Spawn，否則它們會繼續占用 CPU
+		for (Npc npc : instance.getNpcs()) {
+			if (npc != null && npc.getSpawn() != null) {
+				npc.getSpawn().stopRespawn();
+			}
+		}
+
 		final ScheduledFuture<?> task = instance.getParameters().getObject("RankingPointTask", ScheduledFuture.class);
 		if ((task != null) && !task.isDone()) {
 			task.cancel(true);

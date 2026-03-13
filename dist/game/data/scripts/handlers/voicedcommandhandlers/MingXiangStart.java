@@ -30,7 +30,7 @@ public class MingXiangStart implements IVoicedCommandHandler
 			else
 			{
 				// 【修復漏洞】冥想前檢查是否已開啟商店
-				// 防止玩家先開商店再冥想，然後用 .離線商店 指令同時掛兩個狀態
+				// 防止玩家先開商店再冥想，然後利用商店+冥想同時獲得兩種獎勵
 				if (activeChar.isInStoreMode())
 				{
 					activeChar.sendMessage("開啟商店中無法進行冥想！請先關閉商店。");
