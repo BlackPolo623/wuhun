@@ -41,6 +41,7 @@ public class EtcItem extends ItemTemplate
 	private boolean _isInfinite;
 	private boolean _isMineral = false;
 	private boolean _isEnsoulStone = false;
+	private long _expAmount = 0;
 	
 	/**
 	 * Constructor for EtcItem.
@@ -78,6 +79,7 @@ public class EtcItem extends ItemTemplate
 		}
 		
 		_isInfinite = set.getBoolean("is_infinite", false);
+		_expAmount = set.getLong("exp_amount", 0);
 	}
 	
 	/**
@@ -179,5 +181,10 @@ public class EtcItem extends ItemTemplate
 	public void setEnsoulStone()
 	{
 		_isEnsoulStone = true;
+	}
+
+	public long getExpAmount()
+	{
+		return _expAmount;
 	}
 }

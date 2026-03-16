@@ -39,3 +39,18 @@ CREATE TABLE IF NOT EXISTS `pet_collection` (
   PRIMARY KEY (`player_id`, `pet_item_id`),
   INDEX `idx_player` (`player_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='寵物收藏系統';
+
+-- 未領取寵物暫存表
+CREATE TABLE IF NOT EXISTS `pet_unclaimed` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `player_id` INT NOT NULL,
+  `pet_item_id` INT NOT NULL COMMENT '孵化出的寵物道具ID',
+  `tier` TINYINT NOT NULL DEFAULT 0 COMMENT '0=一般,1=特殊,2=稀有,3=罕見,4=傳說',
+  `hatch_time` BIGINT NOT NULL DEFAULT 0 COMMENT '孵化完成時間戳(毫秒)',
+  `event_fired` TINYINT NOT NULL DEFAULT 0 COMMENT '是否已觸發孵化事件(0=否,1=是)',
+  PRIMARY KEY (`id`),
+  INDEX `idx_player` (`player_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='未領取寵物暫存';
+
+-- 若表已存在但缺少 event_fired 欄位，執行以下語句補上：
+-- ALTER TABLE `pet_unclaimed` ADD COLUMN `event_fired` TINYINT NOT NULL DEFAULT 0 COMMENT '是否已觸發孵化事件(0=否,1=是)';

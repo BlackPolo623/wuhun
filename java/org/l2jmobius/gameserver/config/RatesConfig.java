@@ -22,8 +22,10 @@ package org.l2jmobius.gameserver.config;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.logging.Logger;
 
 import org.l2jmobius.commons.util.ConfigReader;
@@ -115,6 +117,8 @@ public class RatesConfig
 	 */
 	public static boolean ADENA_DROP_ENABLED;
 	public static List<AdenaDropRange> ADENA_DROP_RANGES = new ArrayList<>();
+	/** 不套用自動金幣掉落的怪物 NPC ID 名單 */
+	public static Set<Integer> ADENA_DROP_EXCLUDE_NPC_IDS = new HashSet<>();
 	public static class AdenaDropRange
 	{
 		public final int minLevel;
@@ -337,6 +341,25 @@ public class RatesConfig
 		if (ADENA_DROP_ENABLED && ADENA_DROP_RANGES.isEmpty())
 		{
 			LOGGER.warning("已啟用金幣掉落但未配置任何區間！");
+		}
+
+		// 讀取排除自動金幣掉落的 NPC ID 名單
+		ADENA_DROP_EXCLUDE_NPC_IDS.clear();
+		final String excludeIds = config.getString("AdenaDropExcludeNpcIds", "").trim();
+		if (!excludeIds.isEmpty())
+		{
+			for (String idStr : excludeIds.split(","))
+			{
+				try
+				{
+					ADENA_DROP_EXCLUDE_NPC_IDS.add(Integer.parseInt(idStr.trim()));
+				}
+				catch (NumberFormatException e)
+				{
+					LOGGER.warning("AdenaDropExcludeNpcIds 包含無效的 NPC ID: " + idStr.trim());
+				}
+			}
+			LOGGER.info("自動金幣掉落排除名單：" + ADENA_DROP_EXCLUDE_NPC_IDS.size() + " 隻怪物");
 		}
 	}
 }

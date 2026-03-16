@@ -23,7 +23,7 @@ package handlers.bypasshandlers;
 import org.l2jmobius.gameserver.handler.IBypassHandler;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.network.serverpackets.equipmentupgrade.ExShowUpgradeSystem;
+import org.l2jmobius.gameserver.network.serverpackets.equipmentupgradenormal.ExShowUpgradeSystemNormal;
 
 /**
  * @author Mobius
@@ -45,7 +45,7 @@ public class UpgradeEquipment implements IBypassHandler
 			return false;
 		}
 		
-		player.sendPacket(new ExShowUpgradeSystem());
+		player.sendPacket(new ExShowUpgradeSystemNormal(1, 1));
 		return true;
 	}
 	

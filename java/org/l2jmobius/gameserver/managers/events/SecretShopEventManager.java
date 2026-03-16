@@ -67,7 +67,7 @@ public class SecretShopEventManager
 	private static final int CLAN_REWARD_ITEM_ID = 94834;
 	private static final int CLAN_REWARD_ITEM_COUNT = 1000;
 	
-	private static final int TICKET_AMOUNT_PER_GAME = 1;
+	private static final int TICKET_AMOUNT_PER_GAME = 10;
 	
 	private static final ConcurrentHashMap<Player, PlayerTicketData> PLAYER_REWARD_QUEUES = new ConcurrentHashMap<>();
 	private static final Set<Player> LIST_TO_UPDATE = ConcurrentHashMap.newKeySet();

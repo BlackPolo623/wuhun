@@ -30,9 +30,12 @@ public enum ArmorType implements ItemType
 	HEAVY,
 	MAGIC,
 	SIGIL,
-	
+
 	// L2J CUSTOM
-	SHIELD;
+	SHIELD,
+
+	/** 通用裝備：無論技能限定重/輕/法，均可觸發被動條件 */
+	UNIVERSAL;
 	
 	final int _mask;
 	

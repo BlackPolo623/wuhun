@@ -39,22 +39,28 @@ public class UnsummonPet implements IPlayerActionHandler
 		else if (pet.asPet().isUncontrollable())
 		{
 			player.sendPacket(SystemMessageId.WHEN_YOUR_GUARDIAN_S_SATIETY_REACHES_0_YOU_CANNOT_CONTROL_IT);
+			player.sendMessage("【無法召回】寵物的飽食度已歸零，完全失控，請先餵食後再嘗試召回。");
 		}
 		else if (pet.isBetrayed())
 		{
 			player.sendPacket(SystemMessageId.WHEN_YOUR_GUARDIAN_S_SATIETY_REACHES_0_YOU_CANNOT_CONTROL_IT);
+			player.sendMessage("【無法召回】寵物處於背叛狀態，無法控制，請先餵食恢復狀態後再嘗試。");
 		}
 		else if (pet.isDead())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_SUMMON_A_DEAD_GUARDIAN);
+			player.sendMessage("【無法召回】寵物已死亡，無法召回。");
 		}
 		else if (pet.isAttackingNow() || pet.isInCombat() || pet.isMovementDisabled())
 		{
 			player.sendPacket(SystemMessageId.A_GUARDIAN_CANNOT_BE_UNSUMMONED_WHILE_IN_COMBAT);
+			player.sendMessage("【無法召回】寵物正在戰鬥中或行動被封鎖，請等待戰鬥結束後再召回。");
 		}
 		else if (pet.isHungry())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_RETURN_A_HUNGRY_GUARDIAN);
+			player.sendMessage("【無法召回】寵物目前處於飢餓狀態（飽食度不足），請先餵食後再嘗試召回。");
+			player.sendMessage("提示：若開啟自動使用功能，安全區內不會自動餵食，請手動餵食。");
 		}
 		else
 		{

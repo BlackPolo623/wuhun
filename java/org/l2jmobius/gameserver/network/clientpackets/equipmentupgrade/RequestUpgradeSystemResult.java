@@ -20,6 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.clientpackets.equipmentupgrade;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.data.holders.EquipmentUpgradeHolder;
 import org.l2jmobius.gameserver.data.xml.EquipmentUpgradeData;
@@ -99,19 +101,30 @@ public class RequestUpgradeSystemResult extends ClientPacket
 		
 		// Store old item enchantment info.
 		final ItemInfo itemEnchantment = new ItemInfo(existingItem);
-		
-		// Get materials.
-		player.destroyItem(ItemProcessType.FEE, _objectId, 1, player, true);
+
+		// Consume materials and adena (always, regardless of success/failure).
 		for (ItemHolder material : upgradeHolder.getMaterials())
 		{
 			player.destroyItemByItemId(ItemProcessType.FEE, material.getId(), material.getCount(), player, true);
 		}
-		
+
 		if (adena > 0)
 		{
 			player.reduceAdena(ItemProcessType.FEE, adena, player, true);
 		}
-		
+
+		// RNG check - failure: consume materials only, original item kept, no result given.
+		final double chance = upgradeHolder.getChance();
+		if ((chance < 100.0) && (ThreadLocalRandom.current().nextDouble(100.0) >= chance))
+		{
+			ThreadPool.schedule(() -> player.sendPacket(new ExUpgradeSystemResult(0, 0)), 500);
+			player.sendItemList();
+			return;
+		}
+
+		// Success: consume original item.
+		player.destroyItem(ItemProcessType.FEE, _objectId, 1, player, true);
+
 		// Give item.
 		final Item addedItem = player.addItem(ItemProcessType.REWARD, upgradeHolder.getResultItemId(), 1, player, true);
 		if (upgradeHolder.isAnnounce())

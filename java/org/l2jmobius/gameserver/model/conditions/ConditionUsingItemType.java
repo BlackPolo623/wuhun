@@ -65,6 +65,16 @@ public class ConditionUsingItemType extends Condition
 		{
 			final Item chest = inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
 			final Item legs = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
+
+			// 通用裝備模式：只要胸甲或腿甲任意一件是 UNIVERSAL，
+			// 無論技能限定輕裝/重裝/法師，被動條件均視為滿足。
+			final int universalMask = ArmorType.UNIVERSAL.mask();
+			if (((chest != null) && (chest.getTemplate().getItemMask() == universalMask)) //
+				|| ((legs != null) && (legs.getTemplate().getItemMask() == universalMask)))
+			{
+				return true;
+			}
+
 			if ((chest == null) && (legs == null))
 			{
 				return (ArmorType.NONE.mask() & _mask) == ArmorType.NONE.mask();

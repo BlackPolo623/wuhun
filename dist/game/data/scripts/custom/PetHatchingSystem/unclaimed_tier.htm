@@ -1,4 +1,4 @@
-<html><head><title>未領取寵物</title></head>
+<html><head><title>未領取寵物 - %tier_name%</title></head>
 <body scroll="no">
 <table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
     <tr>
@@ -7,13 +7,15 @@
                 <tr><td height=15></td></tr>
 
                 <tr>
-                    <td align=center><font color="LEVEL" size="5"><b>未領取寵物</b></font></td>
+                    <td align=center>
+                        <font color="LEVEL" size="5"><b>%tier_name% 寵物</b></font>
+                    </td>
                 </tr>
-                <tr><td height=10></td></tr>
+                <tr><td height=5></td></tr>
 
                 <tr>
                     <td align=center>
-                        <font color="AAAAAA">共有 <font color="FF9900">%unclaimed_count%</font> 隻寵物待領取</font>
+                        <font color="AAAAAA">待領取 <font color="FF9900">%tier_count%</font> 隻</font>
                     </td>
                 </tr>
                 <tr><td height=8></td></tr>
@@ -25,13 +27,14 @@
 
                 <tr>
                     <td align=center>
-                        <table width="270" bgcolor="111111" border="0" cellspacing="1" cellpadding="4">
+                        <table width="270" bgcolor="111111" border="0" cellspacing="1" cellpadding="3">
                             <tr bgcolor="333333">
-                                <td width="90" align="center"><font color="AAAAAA">階級</font></td>
-                                <td width="80" align="center"><font color="AAAAAA">待領取數量</font></td>
-                                <td width="100" align="center"><font color="AAAAAA">操作</font></td>
+                                <td width="30" align="center"><font color="AAAAAA">#</font></td>
+                                <td width="130" align="center"><font color="AAAAAA">寵物名稱</font></td>
+                                <td width="50" align="center"><font color="AAAAAA">數量</font></td>
+                                <td width="60" align="center"><font color="AAAAAA">操作</font></td>
                             </tr>
-                            %tier_rows%
+                            %pets_list%
                         </table>
                     </td>
                 </tr>
@@ -44,14 +47,7 @@
 
                 <tr>
                     <td align=center>
-                        <font color="808080" size="1">※ 點擊「查看」可領取各階級的寵物</font>
-                    </td>
-                </tr>
-                <tr><td height=10></td></tr>
-
-                <tr>
-                    <td align=center>
-                        <button action="bypass -h Quest PetHatchingSystem main" value="返回主選單" width="150" height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+                        <button action="bypass -h Quest PetHatchingSystem unclaimed_pets" value="返回分類列表" width="150" height=25 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
                     </td>
                 </tr>
             </table>

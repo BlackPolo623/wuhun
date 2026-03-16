@@ -22,6 +22,7 @@ package org.l2jmobius.gameserver.model.actor;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -99,6 +100,20 @@ import org.l2jmobius.gameserver.util.Broadcast;
 
 public class Attackable extends Npc
 {
+	// ==================== 每周掉落限制設定 ====================
+	/** 受每周限制的道具 ID（不限來源怪物，任何怪物掉落皆計入） */
+	private static final int WEEKLY_LIMIT_ITEM_ID = 92476;
+	/**
+	 * 每位玩家每周可取得道具 92476 的上限數量（不限來源怪物）。
+	 * 【在此修改上限值】
+	 */
+	private static final int WEEKLY_LIMIT_COUNT = 800000;
+	/** 玩家變數 Key：本周已取得數量 */
+	private static final String VAR_WEEKLY_COUNT = "WeeklyDrop_" + WEEKLY_LIMIT_ITEM_ID;
+	/** 玩家變數 Key：本輪重置時間戳（最近一個週一 00:00 的毫秒時間戳） */
+	private static final String VAR_WEEKLY_RESET = "WeeklyDropReset_" + WEEKLY_LIMIT_ITEM_ID;
+	// =========================================================
+
 	// Raid
 	private boolean _isRaid = false;
 	private boolean _isRaidMinion = false;
@@ -1293,25 +1308,61 @@ public class Attackable extends Npc
 			List<Integer> announceItems = null;
 			for (ItemHolder drop : deathItems)
 			{
-				final ItemTemplate item = ItemData.getInstance().getTemplate(drop.getId());
-				
+				// ==================== 每周掉落限制檢查 ====================
+				// 限制玩家每周取得道具 92476 的總量（不限來源怪物）
+				ItemHolder effectiveDrop = drop;
+				if (drop.getId() == WEEKLY_LIMIT_ITEM_ID)
+				{
+					checkAndResetWeeklyDrop(player);
+					final int alreadyGot = player.getVariables().getInt(VAR_WEEKLY_COUNT, 0);
+					final int canGet = WEEKLY_LIMIT_COUNT - alreadyGot;
+					if (canGet <= 0)
+					{
+						// 已達上限，每次嘗試取得都通知玩家
+						player.sendMessage("本週特殊道具已達取得上限（" + WEEKLY_LIMIT_COUNT + " 個），下周一 00:00 重置後可繼續獲取。");
+						continue;
+					}
+					final long capped = Math.min(drop.getCount(), canGet);
+					final int newTotal = alreadyGot + (int) capped;
+					player.getVariables().set(VAR_WEEKLY_COUNT, newTotal);
+					if (capped < drop.getCount())
+					{
+						effectiveDrop = new ItemHolder(drop.getId(), capped);
+					}
+					// 通知邏輯：優先判斷本次是否剛好到達上限（只通知一次）
+					// 否則每跨越 30000 的倍數通知一次里程碑（可正確處理非整數跳躍）
+					final int NOTIFY_INTERVAL = 30000;
+					if (newTotal >= WEEKLY_LIMIT_COUNT)
+					{
+						player.sendMessage("本週特殊道具已達取得上限（" + WEEKLY_LIMIT_COUNT + " 個），下周一 00:00 重置後可繼續獲取。");
+					}
+					else if ((newTotal / NOTIFY_INTERVAL) > (alreadyGot / NOTIFY_INTERVAL))
+					{
+						final int milestone = (newTotal / NOTIFY_INTERVAL) * NOTIFY_INTERVAL;
+						player.sendMessage("【本週特殊道具】已累計取得 " + milestone + " / " + WEEKLY_LIMIT_COUNT + " 個。");
+					}
+				}
+				// ==================== 每周掉落限制結束 ====================
+
+				final ItemTemplate item = ItemData.getInstance().getTemplate(effectiveDrop.getId());
+
 				// Check if the autoLoot mode is active
 				if (PlayerConfig.AUTO_LOOT_ITEM_IDS.contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && PlayerConfig.AUTO_LOOT) || (_isRaid && PlayerConfig.AUTO_LOOT_RAIDS))) || (item.hasExImmediateEffect() && PlayerConfig.AUTO_LOOT_HERBS))
 				{
-					player.doAutoLoot(this, drop); // Give the item(s) to the Player that has killed the Attackable
+					player.doAutoLoot(this, effectiveDrop); // Give the item(s) to the Player that has killed the Attackable
 				}
 				else
 				{
-					dropItem(player, drop); // drop the item on the ground
+					dropItem(player, effectiveDrop); // drop the item on the ground
 				}
-				
+
 				// Broadcast message if RaidBoss was defeated
 				if (_isRaid && !_isRaidMinion)
 				{
 					final SystemMessage sm = new SystemMessage(SystemMessageId.C1_DIED_AND_DROPPED_S2_X_S3);
 					sm.addString(getName());
 					sm.addItemName(item);
-					sm.addLong(drop.getCount());
+					sm.addLong(effectiveDrop.getCount());
 					broadcastPacket(sm);
 					if (RaidDropAnnounceData.getInstance().isAnnounce(item.getId()))
 					{
@@ -1371,7 +1422,46 @@ public class Attackable extends Npc
 			}
 		}
 	}
-	
+
+	// ==================== 每周掉落限制輔助方法 ====================
+
+	/**
+	 * 取得本週期起始時間（最近一個週一 00:00 的毫秒時間戳）。
+	 * 若今天就是週一，則返回今天凌晨 00:00。
+	 */
+	private static long getCurrentWeekStartTime()
+	{
+		final Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.HOUR_OF_DAY, 0);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.SECOND, 0);
+		cal.set(Calendar.MILLISECOND, 0);
+		// Calendar.MONDAY = 2；計算距上個週一的天數
+		final int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
+		final int daysSinceMonday = (dayOfWeek - Calendar.MONDAY + 7) % 7;
+		cal.add(Calendar.DAY_OF_MONTH, -daysSinceMonday);
+		return cal.getTimeInMillis();
+	}
+
+	/**
+	 * 若已進入新的一週（本週一 00:00 之後），重置玩家的每週掉落計數器。
+	 * 每次嘗試掉落限制道具前呼叫，確保跨周時自動重置。
+	 *
+	 * @param player 要檢查的玩家
+	 */
+	private static void checkAndResetWeeklyDrop(Player player)
+	{
+		final long lastReset = player.getVariables().getLong(VAR_WEEKLY_RESET, 0);
+		final long thisWeekStart = getCurrentWeekStartTime();
+		if (lastReset < thisWeekStart)
+		{
+			player.getVariables().set(VAR_WEEKLY_COUNT, 0);
+			player.getVariables().set(VAR_WEEKLY_RESET, thisWeekStart);
+		}
+	}
+
+	// ==================== 每周掉落限制輔助方法結束 ====================
+
 	/**
 	 * @return the active weapon of this Attackable (= null).
 	 */

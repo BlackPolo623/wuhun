@@ -62,7 +62,7 @@ public class PAttackFinalizer implements IStatFunction
 			baseValue *= NpcConfig.RAID_PATTACK_MULTIPLIER;
 		}
 		
-		baseValue *= BaseStat.STR.calcBonus(creature) * creature.getLevelMod();
+		baseValue *= BaseStat.STR.calcBonus(creature) * (creature.isPet() ? 1.0 : creature.getLevelMod());
 		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue), 0, creature.isPlayable() ? PlayerConfig.MAX_PATK : Double.MAX_VALUE);
 	}
 	

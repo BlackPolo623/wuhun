@@ -56,6 +56,6 @@ public class RequestUpgradeSystemProbList extends ClientPacket
 			return;
 		}
 		
-		player.sendPacket(new ExUpgradeSystemProbList(_type, _upgradeId, holder.getChance(), holder.getChanceToReceiveBonusItems()));
+		player.sendPacket(new ExUpgradeSystemProbList(_type, _upgradeId, holder.getChance() / 10000.0, holder.getChanceToReceiveBonusItems() / 10000.0));
 	}
 }

@@ -793,7 +793,7 @@ public class NpcData implements IXmlReader
 						}
 
 						// ★★★ 新增：自動金幣掉落配置 ★★★
-						if (RatesConfig.ADENA_DROP_ENABLED && type.contains("Monster") && !RatesConfig.ADENA_DROP_RANGES.isEmpty())
+						if (RatesConfig.ADENA_DROP_ENABLED && type.contains("Monster") && !RatesConfig.ADENA_DROP_RANGES.isEmpty() && !RatesConfig.ADENA_DROP_EXCLUDE_NPC_IDS.contains(npcId))
 						{
 							// 檢查是否已經有金幣掉落
 							boolean hasAdenaDrop = false;

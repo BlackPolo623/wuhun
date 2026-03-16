@@ -310,32 +310,44 @@
 	<item id="102016" name="守護者要素(上級)" additionalName="Sealed" type="EtcItem">
 		<set name="icon" val="icon.r_soul_stone_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="handler" val="ItemSkills" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="true" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="true" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="102016" level="1" />
+		</skills>
 	</item>
 	<item id="102017" name="守護者要素(中級)" additionalName="Sealed" type="EtcItem">
 		<set name="icon" val="icon.r_soul_stone_i02" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="handler" val="ItemSkills" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="true" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="true" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="102017" level="1" />
+		</skills>
 	</item>
 	<item id="102018" name="守護者要素(下級)" additionalName="Sealed" type="EtcItem">
 		<set name="icon" val="icon.r_soul_stone_i04" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="handler" val="ItemSkills" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="true" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="true" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="102018" level="1" />
+		</skills>
 	</item>
 	<item id="102019" name="守護者要素(上級)-寵物" additionalName="Sealed" type="EtcItem">
 		<set name="icon" val="icon.r_soul_stone_i00" />

@@ -70,6 +70,8 @@ public class CreatureStat
 	
 	private final Map<Stat, Double> _statsAdd = new EnumMap<>(Stat.class);
 	private final Map<Stat, Double> _statsMul = new EnumMap<>(Stat.class);
+	/** Final flat additions that bypass all multipliers (e.g. pet stat sharing to player). */
+	private final Map<Stat, Double> _statsFinalAdd = new EnumMap<>(Stat.class);
 	private final Map<Stat, Map<MoveType, Double>> _moveTypeStats = new ConcurrentHashMap<>();
 	private final Map<Integer, Double> _reuseStat = new ConcurrentHashMap<>();
 	private final Map<Integer, Double> _mpConsumeStat = new ConcurrentHashMap<>();
@@ -1161,7 +1163,19 @@ public class CreatureStat
 	{
 		_statsMul.merge(stat, value, stat::functionMul);
 	}
-	
+
+	/**
+	 * Merges a final flat stat value that bypasses all multipliers.<br>
+	 * Applied AFTER finalize(), so it is NOT amplified by any stat bonuses.<br>
+	 * Intended for pet stat sharing: share a % of pet's stat directly to the player.
+	 * @param stat the stat to modify
+	 * @param value the flat value to add (not multiplied by anything)
+	 */
+	public void mergeFinalAdd(Stat stat, double value)
+	{
+		_statsFinalAdd.merge(stat, value, Double::sum);
+	}
+
 	/**
 	 * @param stat
 	 * @return the add value
@@ -1274,9 +1288,11 @@ public class CreatureStat
 	public double getValue(Stat stat, double baseValue)
 	{
 		final Double val = _fixedValue.get(stat);
-		return val != null ? val.doubleValue() : stat.finalize(_creature, OptionalDouble.of(baseValue));
+		final double computed = val != null ? val.doubleValue() : stat.finalize(_creature, OptionalDouble.of(baseValue));
+		final Double finalAdd = _statsFinalAdd.get(stat);
+		return finalAdd != null ? computed + finalAdd : computed;
 	}
-	
+
 	/**
 	 * @param stat
 	 * @return the final value of the stat
@@ -1284,13 +1300,16 @@ public class CreatureStat
 	public double getValue(Stat stat)
 	{
 		final Double val = _fixedValue.get(stat);
-		return val != null ? val.doubleValue() : stat.finalize(_creature, OptionalDouble.empty());
+		final double computed = val != null ? val.doubleValue() : stat.finalize(_creature, OptionalDouble.empty());
+		final Double finalAdd = _statsFinalAdd.get(stat);
+		return finalAdd != null ? computed + finalAdd : computed;
 	}
 	
 	protected void resetStats()
 	{
 		_statsAdd.clear();
 		_statsMul.clear();
+		_statsFinalAdd.clear();
 		_vampiricSum = 0;
 		_mpVampiricSum = 0;
 		

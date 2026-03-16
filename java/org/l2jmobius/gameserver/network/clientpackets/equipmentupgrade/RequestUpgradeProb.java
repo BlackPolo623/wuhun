@@ -54,6 +54,6 @@ public class RequestUpgradeProb extends ClientPacket
 			return;
 		}
 		
-		player.sendPacket(new ExUpgradeProb(_upgradeId, 100));
+		player.sendPacket(new ExUpgradeProb(_upgradeId, holder.getChance() / 10000.0)); // XML 填 0~100，封包×10000，故÷10000使傳送值=XML值
 	}
 }

@@ -1616,18 +1616,20 @@ public abstract class Creature extends WorldObject
 		final int ssGrade = (shotConsumed && (weapon != null)) ? weapon.getItemGrade().ordinal() : 0;
 
 		// Check if hit isn't missed
+		double realDamage = 0;
 		if (!miss)
 		{
 			shld = Formulas.calcShldUse(this, target);
 			crit = Formulas.calcCrit(_stat.getCriticalHit(), this, target, null);
-			damage = (int) Formulas.calcAutoAttackDamage(this, target, shld, crit, shotConsumed, shotBlessed);
+			realDamage = Formulas.calcAutoAttackDamage(this, target, shld, crit, shotConsumed, shotBlessed);
 			if (halfDamage)
 			{
-				damage /= 2;
+				realDamage /= 2;
 			}
+			damage = (int) Math.min(realDamage, Integer.MAX_VALUE);
 		}
 
-		return new Hit(target, damage, miss, crit, shld, shotConsumed, ssGrade);
+		return new Hit(target, damage, realDamage, miss, crit, shld, shotConsumed, ssGrade);
 	}
 
 	public void doCast(Skill skill)
@@ -4505,7 +4507,7 @@ public abstract class Creature extends WorldObject
 	public void onHitTarget(Creature target, Weapon weapon, Hit hit)
 	{
 		// reduce targets HP
-		doAttack(hit.getDamage(), target, null, false, false, hit.isCritical(), false);
+		doAttack(hit.getRealDamage(), target, null, false, false, hit.isCritical(), false);
 
 		// Notify to scripts when the attack has been done.
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_CREATURE_ATTACK, this))
@@ -5524,6 +5526,17 @@ public abstract class Creature extends WorldObject
 				}
 				// 套用傷害上限
 				amount = Math.min(amount, actualDamageCap);
+			}
+		}
+		// ========================================
+		// 最終減傷系統 - 套用於被攻擊者，先於最終傷害計算
+		// ========================================
+		{
+			double finalDamageReduce = getStat().getValue(Stat.FINAL_DAMAGE_REDUCE, 0);
+			if (finalDamageReduce > 0)
+			{
+				finalDamageReduce = Math.min(finalDamageReduce, 99.99); // 上限 99.99%，防止無敵
+				amount *= (1.0 - (finalDamageReduce / 100.0));
 			}
 		}
 		// ========================================

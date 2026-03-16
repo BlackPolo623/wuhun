@@ -97,7 +97,7 @@ public class MDefenseFinalizer implements IStatFunction
 		}
 		
 		final double bonus = creature.getMEN() > 0 ? BaseStat.MEN.calcBonus(creature) : 1;
-		baseValue *= bonus * creature.getLevelMod();
+		baseValue *= bonus * (creature.isPet() ? 1.0 : creature.getLevelMod());
 		return defaultValue(creature, stat, baseValue);
 	}
 	

@@ -44,6 +44,7 @@ public class FusionSystem extends Script
 	// Announcement threshold (enchant level)
 	private static final int ANNOUNCE_THRESHOLD = 40;
 	private static final int MAX_FUSED_ENCHANT = 100;
+	private static final int FUSION_PAGE_SIZE = 12;
 
 	public FusionSystem()
 	{
@@ -73,7 +74,14 @@ public class FusionSystem extends Script
 		else if (event.startsWith("chooseEquipment_"))
 		{
 			int objectId = Integer.parseInt(event.substring(16));
-			showFusionConfirmPage(player, objectId);
+			showFusionConfirmPage(player, objectId, 0);
+		}
+		else if (event.startsWith("confirmPage_"))
+		{
+			String[] parts = event.substring(12).split("_");
+			int equipObjId = Integer.parseInt(parts[0]);
+			int page = Integer.parseInt(parts[1]);
+			showFusionConfirmPage(player, equipObjId, page);
 		}
 		else if (event.startsWith("confirmFusion_"))
 		{
@@ -123,7 +131,7 @@ public class FusionSystem extends Script
 	/**
 	 * Show fusion confirmation page
 	 */
-	private void showFusionConfirmPage(Player player, int equipmentObjectId)
+	private void showFusionConfirmPage(Player player, int equipmentObjectId, int page)
 	{
 		Item equipment = player.getInventory().getItemByObjectId(equipmentObjectId);
 		if (equipment == null || !isValidFusionItem(equipment))
@@ -159,8 +167,9 @@ public class FusionSystem extends Script
 		// Replace material info
 		html.replace("%material_list%", generateMaterialList(player));
 
-		// Generate fusible item list
-		html.replace("%target_list%", generateTargetItemList(player, equipment, sameItems));
+		// Generate fusible item list (with pagination)
+		html.replace("%target_list%", generateTargetItemList(player, equipment, sameItems, page));
+		html.replace("%page_nav%", generateTargetPageNav(equipment.getObjectId(), sameItems.size(), page));
 
 		player.sendPacket(html);
 	}
@@ -229,16 +238,20 @@ public class FusionSystem extends Script
 	/**
 	 * Generate fusible target item list
 	 */
-	private String generateTargetItemList(Player player, Item sourceItem, List<Item> targetItems)
+	private String generateTargetItemList(Player player, Item sourceItem, List<Item> targetItems, int page)
 	{
 		if (targetItems.isEmpty())
 		{
 			return "<tr bgcolor=\"222222\"><td colspan=\"3\" align=\"center\" height=\"50\"><font color=\"808080\">沒有可融合的裝備</font></td></tr>";
 		}
 
+		int start = page * FUSION_PAGE_SIZE;
+		int end = Math.min(start + FUSION_PAGE_SIZE, targetItems.size());
+		List<Item> pageItems = targetItems.subList(start, end);
+
 		StringBuilder sb = new StringBuilder();
 
-		for (Item target : targetItems)
+		for (Item target : pageItems)
 		{
 			int enchantLevel = target.getEnchantLevel();
 			int rebirth = target.getVariables().getInt(ItemVariables.zbzscsu, 0);
@@ -447,6 +460,40 @@ public class FusionSystem extends Script
 	}
 
 	// ==================== Helper Methods ====================
+
+	/**
+	 * Generate page navigation buttons for target item list
+	 */
+	private String generateTargetPageNav(int equipObjId, int totalItems, int currentPage)
+	{
+		int totalPages = (int) Math.ceil((double) totalItems / FUSION_PAGE_SIZE);
+		if (totalPages <= 1)
+		{
+			return "";
+		}
+
+		StringBuilder sb = new StringBuilder();
+		sb.append("<table width=\"280\"><tr><td align=\"center\">");
+
+		if (currentPage > 0)
+		{
+			sb.append("<button value=\"上一頁\" action=\"bypass -h Quest FusionSystem confirmPage_")
+				.append(equipObjId).append("_").append(currentPage - 1)
+				.append("\" width=\"80\" height=\"22\" back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">");
+		}
+
+		sb.append("<font color=\"AAAAAA\"> ").append(currentPage + 1).append(" / ").append(totalPages).append(" </font>");
+
+		if (currentPage < totalPages - 1)
+		{
+			sb.append("<button value=\"下一頁\" action=\"bypass -h Quest FusionSystem confirmPage_")
+				.append(equipObjId).append("_").append(currentPage + 1)
+				.append("\" width=\"80\" height=\"22\" back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">");
+		}
+
+		sb.append("</td></tr></table>");
+		return sb.toString();
+	}
 
 	/**
 	 * Check if item is valid for fusion

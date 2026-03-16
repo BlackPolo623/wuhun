@@ -138,10 +138,6 @@ public class PetHatchDailyMissionHandler extends AbstractDailyMissionHandler
 			// 發送封包更新客戶端顯示
 			player.sendPacket(new ExOneDayReceiveRewardList(player, true));
 		}
-		else
-		{
-			LOGGER.info("PetHatchDailyMissionHandler: Status is not NOT_AVAILABLE, skipping");
-		}
 	}
 
 	private void onPetHatch(OnPlayerPetHatch event)

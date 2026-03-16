@@ -169,9 +169,50 @@ public class PetHatchingSystem extends Script
 		{
 			return handleCollectionMenu(player, Integer.parseInt(event.substring(16)));
 		}
+		else if (event.startsWith("unclaimed_tier_page_"))
+		{
+			// format: unclaimed_tier_page_<tier>_<page>
+			try
+			{
+				String[] parts = event.substring(20).split("_");
+				int tier = Integer.parseInt(parts[0]);
+				int page = parts.length > 1 ? Integer.parseInt(parts[1]) : 0;
+				return handleUnclaimedPetsByTier(player, tier, page);
+			}
+			catch (NumberFormatException e)
+			{
+				return handleUnclaimedPets(player);
+			}
+		}
+		else if (event.startsWith("unclaimed_tier_"))
+		{
+			// format: unclaimed_tier_<tier>
+			try
+			{
+				int tier = Integer.parseInt(event.substring(15));
+				return handleUnclaimedPetsByTier(player, tier, 0);
+			}
+			catch (NumberFormatException e)
+			{
+				return handleUnclaimedPets(player);
+			}
+		}
+		else if (event.startsWith("claim_pet_byid "))
+		{
+			// format: claim_pet_byid <petItemId> <tier>
+			String[] parts = event.substring(15).trim().split(" ");
+			int petItemId = Integer.parseInt(parts[0]);
+			int tier = parts.length > 1 ? Integer.parseInt(parts[1]) : 0;
+			return handleClaimPetByItemId(player, petItemId, tier);
+		}
 		else if (event.startsWith("claim_pet "))
 		{
-			return handleClaimPet(player, Integer.parseInt(event.substring(10)));
+			// format: claim_pet <unclaimedId> <tier> <page>
+			String[] parts = event.substring(10).trim().split(" ");
+			int unclaimedId = Integer.parseInt(parts[0]);
+			int tier = parts.length > 1 ? Integer.parseInt(parts[1]) : 0;
+			int page = parts.length > 2 ? Integer.parseInt(parts[2]) : 0;
+			return handleClaimPet(player, unclaimedId, tier, page);
 		}
 		else if (event.startsWith("select_egg "))
 		{
@@ -217,6 +258,16 @@ public class PetHatchingSystem extends Script
 		else if (event.equals("shop"))
 		{
 			MultisellData.getInstance().separateAndSend(9000371, player, npc, false);
+			return null;
+		}
+		else if (event.equals("exchange_coins"))
+		{
+			MultisellData.getInstance().separateAndSend(90003701, player, npc, false);
+			return null;
+		}
+		else if (event.equals("buy_supplies"))
+		{
+			MultisellData.getInstance().separateAndSend(90003702, player, npc, false);
 			return null;
 		}
 		return showMainMenu(player);
@@ -490,6 +541,14 @@ public class PetHatchingSystem extends Script
 	{
 		int playerId = player.getObjectId();
 		int page = (petItemId - COLLECTION_PET_START_ID) / 20;
+
+		// 召喚中的寵物不可收藏，防止把已召喚的寵物道具存入收藏
+		if (player.getPet() != null)
+		{
+			player.sendMessage("請先收回召喚中的寵物，再進行收藏！");
+			return handleCollectionMenu(player, page);
+		}
+
 		if (petItemId < COLLECTION_PET_START_ID || petItemId > COLLECTION_PET_END_ID)
 		{
 			player.sendMessage("無效的寵物道具!"); return handleCollectionMenu(player, 0);
@@ -528,56 +587,161 @@ public class PetHatchingSystem extends Script
 
 	// ==================== 新增方法 ====================
 
+	private static final int UNCLAIMED_PAGE_SIZE = 12;
+
+	/** 分類總覽頁：每個階級一行，顯示待領取數量 */
 	private String handleUnclaimedPets(Player player)
 	{
 		int playerId = player.getObjectId();
 		List<org.l2jmobius.gameserver.data.holders.UnclaimedPetData> unclaimedPets = PetHatchingDAO.getUnclaimedPets(playerId);
 
+		// 統計每個階級的數量
+		int[] tierCounts = new int[5];
+		for (org.l2jmobius.gameserver.data.holders.UnclaimedPetData petData : unclaimedPets)
+		{
+			if (petData.tier >= 0 && petData.tier < 5)
+			{
+				tierCounts[petData.tier]++;
+			}
+		}
+
 		NpcHtmlMessage html = new NpcHtmlMessage();
 		html.setFile(player, "data/scripts/custom/PetHatchingSystem/unclaimed_pets.htm");
 		html.replace("%unclaimed_count%", String.valueOf(unclaimedPets.size()));
 
-		StringBuilder petsHtml = new StringBuilder();
-		if (unclaimedPets.isEmpty())
+		// 建立各階級分類列
+		String[] tierColors = {"AAAAAA", "88CCFF", "AAFFAA", "FFAA44", "FF88FF"};
+		StringBuilder tierRows = new StringBuilder();
+		for (int tier = 0; tier < 5; tier++)
 		{
-			petsHtml.append("<tr bgcolor=\"222222\"><td colspan=3 align=center><font color=\"AAAAAA\">目前沒有未領取的寵物</font></td></tr>");
-		}
-		else
-		{
-			for (org.l2jmobius.gameserver.data.holders.UnclaimedPetData petData : unclaimedPets)
+			int count = tierCounts[tier];
+			tierRows.append("<tr bgcolor=\"222222\">");
+			tierRows.append("<td width=90 align=center><font color=\"").append(tierColors[tier]).append("\">").append(getTierName(tier)).append("</font></td>");
+			if (count > 0)
 			{
-				String petName = org.l2jmobius.gameserver.data.xml.ItemData.getInstance().getTemplate(petData.petItemId) != null
-					? org.l2jmobius.gameserver.data.xml.ItemData.getInstance().getTemplate(petData.petItemId).getName()
-					: "未知寵物";
-
-				petsHtml.append("<tr bgcolor=\"222222\">");
-				petsHtml.append("<td width=80 align=center><font color=\"FFCC00\">").append(getTierName(petData.tier)).append("</font></td>");
-				petsHtml.append("<td width=120 align=center>").append(petName).append("</td>");
-				petsHtml.append("<td width=70 align=center><button value=\"領取\" action=\"bypass -h Quest PetHatchingSystem claim_pet ").append(petData.id).append("\" width=60 height=22 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
-				petsHtml.append("</tr>");
+				tierRows.append("<td width=80 align=center><font color=\"FF9900\">").append(count).append(" 隻</font></td>");
+				tierRows.append("<td width=100 align=center><button value=\"查看\" action=\"bypass -h Quest PetHatchingSystem unclaimed_tier_").append(tier).append("\" width=70 height=22 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
 			}
+			else
+			{
+				tierRows.append("<td width=80 align=center><font color=\"555555\">-</font></td>");
+				tierRows.append("<td width=100 align=center><font color=\"555555\">-</font></td>");
+			}
+			tierRows.append("</tr>");
 		}
+		html.replace("%tier_rows%", tierRows.toString());
 
-		html.replace("%pets_list%", petsHtml.toString());
 		player.sendPacket(html);
 		return null;
 	}
 
-	private String handleClaimPet(Player player, int unclaimedId)
+	/** 階級詳細頁：列出1~20號各種寵物，顯示各自的待領取數量 */
+	private String handleUnclaimedPetsByTier(Player player, int tier, int page)
 	{
 		int playerId = player.getObjectId();
-		org.l2jmobius.gameserver.data.holders.UnclaimedPetData petData = PetHatchingDAO.getUnclaimedPetById(playerId, unclaimedId);
+		List<org.l2jmobius.gameserver.data.holders.UnclaimedPetData> allPets = PetHatchingDAO.getUnclaimedPets(playerId);
 
+		// 統計該階級每種 petItemId 各有幾隻
+		java.util.Map<Integer, Integer> countByItemId = new java.util.LinkedHashMap<>();
+		int startItemId = getPetStartIdByTier(tier);
+		int endItemId = getPetEndIdByTier(tier);
+		for (int itemId = startItemId; itemId <= endItemId; itemId++)
+		{
+			countByItemId.put(itemId, 0);
+		}
+		int totalCount = 0;
+		for (org.l2jmobius.gameserver.data.holders.UnclaimedPetData petData : allPets)
+		{
+			if (petData.tier == tier && countByItemId.containsKey(petData.petItemId))
+			{
+				countByItemId.put(petData.petItemId, countByItemId.get(petData.petItemId) + 1);
+				totalCount++;
+			}
+		}
+
+		NpcHtmlMessage html = new NpcHtmlMessage();
+		html.setFile(player, "data/scripts/custom/PetHatchingSystem/unclaimed_tier.htm");
+		html.replace("%tier_name%", getTierName(tier));
+		html.replace("%tier_count%", String.valueOf(totalCount));
+
+		// 列出 1~20 號
+		StringBuilder petsHtml = new StringBuilder();
+		int slot = 1;
+		for (java.util.Map.Entry<Integer, Integer> entry : countByItemId.entrySet())
+		{
+			int itemId = entry.getKey();
+			int count = entry.getValue();
+			String petName = org.l2jmobius.gameserver.data.xml.ItemData.getInstance().getTemplate(itemId) != null
+				? org.l2jmobius.gameserver.data.xml.ItemData.getInstance().getTemplate(itemId).getName()
+				: getTierName(tier) + slot + "號";
+
+			petsHtml.append("<tr bgcolor=\"222222\">");
+			petsHtml.append("<td width=30 align=center><font color=\"888888\">").append(slot).append("</font></td>");
+			petsHtml.append("<td width=130 align=center>").append(petName).append("</td>");
+			if (count > 0)
+			{
+				petsHtml.append("<td width=50 align=center><font color=\"FF9900\">").append(count).append("</font></td>");
+				// claim_pet_byid <itemId> <tier>，領取一隻該種寵物
+				petsHtml.append("<td width=60 align=center><button value=\"領取\" action=\"bypass -h Quest PetHatchingSystem claim_pet_byid ").append(itemId).append(" ").append(tier).append("\" width=55 height=22 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
+			}
+			else
+			{
+				petsHtml.append("<td width=50 align=center><font color=\"444444\">-</font></td>");
+				petsHtml.append("<td width=60 align=center><font color=\"444444\">-</font></td>");
+			}
+			petsHtml.append("</tr>");
+			slot++;
+		}
+		html.replace("%pets_list%", petsHtml.toString());
+		html.replace("%page_nav%", "");
+
+		player.sendPacket(html);
+		return null;
+	}
+
+	/** 依 itemId 領取一隻指定種類的寵物 */
+	private String handleClaimPet(Player player, int unclaimedId, int tier, int page)
+	{
+		// 舊格式保留（事件路由仍可能觸發），轉為依 tier 回頁
+		int playerId = player.getObjectId();
+		org.l2jmobius.gameserver.data.holders.UnclaimedPetData petData = PetHatchingDAO.getUnclaimedPetById(playerId, unclaimedId);
 		if (petData == null)
 		{
 			player.sendMessage("該寵物不存在或已被領取!");
-			return handleUnclaimedPets(player);
+			return handleUnclaimedPetsByTier(player, tier, 0);
 		}
-
 		player.addItem(ItemProcessType.NONE, petData.petItemId, 1, player, true);
 		PetHatchingDAO.removeUnclaimedPet(playerId, unclaimedId);
 		player.sendMessage("成功領取" + getTierName(petData.tier) + "寵物!");
-		return handleUnclaimedPets(player);
+		return handleUnclaimedPetsByTier(player, tier, 0);
+	}
+
+	/** 依 petItemId 領取一隻（從該種類任選一筆 unclaimed） */
+	private String handleClaimPetByItemId(Player player, int petItemId, int tier)
+	{
+		int playerId = player.getObjectId();
+		List<org.l2jmobius.gameserver.data.holders.UnclaimedPetData> allPets = PetHatchingDAO.getUnclaimedPets(playerId);
+
+		org.l2jmobius.gameserver.data.holders.UnclaimedPetData target = null;
+		for (org.l2jmobius.gameserver.data.holders.UnclaimedPetData petData : allPets)
+		{
+			if (petData.petItemId == petItemId)
+			{
+				target = petData;
+				break;
+			}
+		}
+
+		if (target == null)
+		{
+			player.sendMessage("該寵物不存在或已被領取!");
+			return handleUnclaimedPetsByTier(player, tier, 0);
+		}
+
+		player.addItem(ItemProcessType.NONE, target.petItemId, 1, player, true);
+		PetHatchingDAO.removeUnclaimedPet(playerId, target.id);
+		player.sendMessage("成功領取" + getTierName(target.tier) + "寵物!");
+		return handleUnclaimedPetsByTier(player, tier, 0);
 	}
 
 	private String handleSelectEgg(Player player, int slotIndex)
@@ -600,7 +764,7 @@ public class PetHatchingSystem extends Script
 		html.replace("%slot_number%", String.valueOf(slotIndex + 1));
 
 		StringBuilder eggListHtml = new StringBuilder();
-		String[] tierNames = {"一般蛋", "特殊蛋", "稀有蛋", "史詩蛋", "傳說蛋"};
+		String[] tierNames = {"一般蛋", "特殊蛋", "稀有蛋", "罕見蛋", "傳說蛋"};
 		for (int tier = 0; tier <= 4; tier++)
 		{
 			int eggId = getEggIdByTier(tier);
@@ -667,15 +831,27 @@ public class PetHatchingSystem extends Script
 			feedConsumed = feedToUse;
 		}
 
+		// 傳說蛋（最高等級）無法進階，進階機率固定為 0
+		if (eggTier >= 4)
+		{
+			currentChance = 0;
+			feedConsumed = 0;
+		}
+
 		PetHatchingDAO.saveHatchData(playerId, slotIndex, eggItemId, eggTier, System.currentTimeMillis(), hatchTime, feedConsumed, currentChance);
 		startHatchingTask(playerId, slotIndex, eggTier, hatchTime);
 
 		// 【事件】觸發開始孵化事件（玩家必定在線）
-		System.out.println("[PetHatchingSystem] Firing OnPlayerPetHatchStart event for player " + player.getName() + ", eggTier=" + eggTier);
 		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerPetHatchStart(player, eggTier));
-		System.out.println("[PetHatchingSystem] Event fired successfully");
 
-		player.sendMessage("開始孵化" + getTierName(eggTier) + "蛋! 進階機率: " + currentChance + "%");
+		if (eggTier >= 4)
+		{
+			player.sendMessage("開始孵化" + getTierName(eggTier) + "蛋！（已是最高等級，孵化完成後將直接獲得寵物）");
+		}
+		else
+		{
+			player.sendMessage("開始孵化" + getTierName(eggTier) + "蛋! 進階機率: " + currentChance + "%");
+		}
 		return handleHatchMenu(player);
 	}
 
@@ -706,21 +882,44 @@ public class PetHatchingSystem extends Script
 
 		html.replace("%progress%", progress + "%");
 		html.replace("%remaining_time%", formatTime(remaining));
-		html.replace("%upgrade_chance%", String.valueOf(data.upgradeChance));
-		html.replace("%used_feed%", String.valueOf(data.feedConsumed));
 		html.replace("%hatch_time%", String.valueOf(data.hatchDuration));
-		html.replace("%base_chance%", String.valueOf(BASE_UPGRADE_CHANCE));
 
-		// 【VIP加成】VIP會員的最高進階率額外+5%
-		int maxChance = getMaxUpgradeChance(data.eggTier);
-		if (player.getVipTier() > 0)
+		if (data.eggTier >= 4)
 		{
-			maxChance += VIP_UPGRADE_BONUS;
+			// 傳說蛋為最高等級，不顯示進階相關資訊
+			html.replace("%upgrade_chance_row%",
+				"<tr bgcolor=\"222222\">" +
+				"<td align=\"center\"><font color=\"FFCC33\">進階機率</font></td>" +
+				"<td align=\"center\"><font color=\"888888\">無（已是最高等級）</font></td>" +
+				"</tr>");
+			html.replace("%upgrade_desc%",
+				"<tr><td><font color=\"888888\" size=\"1\">• 傳說為最高等級，孵化完成後將直接獲得傳說寵物</font></td></tr>");
+			html.replace("%used_feed%", "0");
 		}
-		html.replace("%max_chance%", String.valueOf(maxChance));
+		else
+		{
+			// 一般 / 特殊 / 稀有 / 史詩：正常顯示進階機率區塊
+			html.replace("%upgrade_chance_row%",
+				"<tr bgcolor=\"222222\">" +
+				"<td align=\"center\"><font color=\"FFCC33\">進階機率</font></td>" +
+				"<td align=\"center\"><font color=\"FF9900\">" + data.upgradeChance + "%</font></td>" +
+				"</tr>");
 
-		int feedPerPercent = getFeedPerPercent(data.eggTier);
-		html.replace("%feed_per_percent%", String.valueOf(feedPerPercent));
+			// 【VIP加成】VIP會員的最高進階率額外+5%
+			int maxChance = getMaxUpgradeChance(data.eggTier);
+			if (player.getVipTier() > 0)
+			{
+				maxChance += VIP_UPGRADE_BONUS;
+			}
+			int feedPerPercent = getFeedPerPercent(data.eggTier);
+			html.replace("%upgrade_desc%",
+				"<tr><td><font color=\"AAAAAA\" size=\"1\">• 基礎進階率：" + BASE_UPGRADE_CHANCE + "%</font></td></tr>" +
+				"<tr><td height=3></td></tr>" +
+				"<tr><td><font color=\"AAAAAA\" size=\"1\">• 最高進階率：" + maxChance + "%</font></td></tr>" +
+				"<tr><td height=3></td></tr>" +
+				"<tr><td><font color=\"AAAAAA\" size=\"1\">• 每 " + feedPerPercent + " 飼料提升 1% 進階率</font></td></tr>");
+			html.replace("%used_feed%", String.valueOf(data.feedConsumed));
+		}
 
 		player.sendPacket(html);
 		return null;
@@ -951,7 +1150,7 @@ public class PetHatchingSystem extends Script
 			case 0: return "一般";
 			case 1: return "特殊";
 			case 2: return "稀有";
-			case 3: return "史詩";
+			case 3: return "罕見";
 			case 4: return "傳說";
 			default: return "未知";
 		}
@@ -1004,6 +1203,32 @@ public class PetHatchingSystem extends Script
 			case 2: return RARE_FEED_PER_PERCENT;
 			case 3: return EPIC_FEED_PER_PERCENT;
 			default: return 999;
+		}
+	}
+
+	private int getPetStartIdByTier(int tier)
+	{
+		switch (tier)
+		{
+			case 0: return NORMAL_PET_START_ID;
+			case 1: return SPECIAL_PET_START_ID;
+			case 2: return RARE_PET_START_ID;
+			case 3: return EPIC_PET_START_ID;
+			case 4: return LEGENDARY_PET_START_ID;
+			default: return NORMAL_PET_START_ID;
+		}
+	}
+
+	private int getPetEndIdByTier(int tier)
+	{
+		switch (tier)
+		{
+			case 0: return NORMAL_PET_END_ID;
+			case 1: return SPECIAL_PET_END_ID;
+			case 2: return RARE_PET_END_ID;
+			case 3: return EPIC_PET_END_ID;
+			case 4: return LEGENDARY_PET_END_ID;
+			default: return NORMAL_PET_END_ID;
 		}
 	}
 

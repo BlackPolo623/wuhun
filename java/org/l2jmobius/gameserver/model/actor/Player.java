@@ -5736,6 +5736,19 @@ public class Player extends Playable
 				return false;
 			}
 			
+			// ★ 掠奪之地 死亡掉落 ★
+			// 玩家在副本（Template ID=900）內死亡時，指定道具（ID=57）全數掉落
+			// 若有修改 ID，請同步修改 PlunderLands.java 的 TEMPLATE_ID / RANK_ITEM_ID
+			final Instance _customArenaInstance = getInstanceWorld();
+			if ((_customArenaInstance != null) && (_customArenaInstance.getTemplateId() == 900))
+			{
+				final Item _customArenaDropItem = _inventory.getItemByItemId(57);
+				if ((_customArenaDropItem != null) && (_customArenaDropItem.getCount() > 0))
+				{
+					dropItem(ItemProcessType.DROP, _customArenaDropItem, killer, true, false);
+				}
+			}
+
 			// Issues drop of Cursed Weapon.
 			if (isCursedWeaponEquipped())
 			{
@@ -6478,11 +6491,23 @@ public class Player extends Playable
 	public void setPet(Pet pet)
 	{
 		_pet = pet;
+		// 寵物上/下線時重新計算玩家能力（ServitorShare 被動技能需感知寵物狀態變化）
+		getStat().recalculateStats(true);
 	}
-	
+
 	public void addServitor(Summon servitor)
 	{
 		_servitors.put(servitor.getObjectId(), servitor);
+		// 召喚獸召喚時重新計算玩家能力（ServitorShare 被動技能需感知召喚獸狀態變化）
+		getStat().recalculateStats(true);
+	}
+
+	@Override
+	public void removeServitor(int objectId)
+	{
+		super.removeServitor(objectId);
+		// 召喚獸消失時重新計算玩家能力（清除 ServitorShare 的貢獻）
+		getStat().recalculateStats(true);
 	}
 	
 	/**

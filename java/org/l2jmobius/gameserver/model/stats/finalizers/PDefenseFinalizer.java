@@ -95,7 +95,7 @@ public class PDefenseFinalizer implements IStatFunction
 			baseValue *= NpcConfig.RAID_PDEFENCE_MULTIPLIER;
 		}
 		
-		if (creature.getLevel() > 0)
+		if (creature.getLevel() > 0 && !creature.isPet())
 		{
 			baseValue *= creature.getLevelMod();
 		}

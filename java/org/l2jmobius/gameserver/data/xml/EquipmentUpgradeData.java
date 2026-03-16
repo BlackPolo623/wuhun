@@ -96,6 +96,7 @@ public class EquipmentUpgradeData implements IXmlReader
 			final int resultItemId = Integer.parseInt(resultItem[0]);
 			final int resultItemEnchant = Integer.parseInt(resultItem[1]);
 			final boolean announce = set.getBoolean("announce", false);
+			final double chance = Math.min(100.0, Math.max(0.0, set.getDouble("chance", 100.0)));
 			
 			// Validating required item existence.
 			if (ItemData.getInstance().getTemplate(requiredItemId) == null)
@@ -104,7 +105,7 @@ public class EquipmentUpgradeData implements IXmlReader
 			}
 			else // Creating and storing the upgrade entry.
 			{
-				final EquipmentUpgradeHolder upgrade = new EquipmentUpgradeHolder(id, requiredItemId, requiredItemEnchant, materialList, adena, resultItemId, resultItemEnchant, announce);
+				final EquipmentUpgradeHolder upgrade = new EquipmentUpgradeHolder(id, requiredItemId, requiredItemEnchant, materialList, adena, resultItemId, resultItemEnchant, announce, chance);
 				_upgrades.put(id, upgrade);
 			}
 		}));

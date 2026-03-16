@@ -22,36 +22,55 @@ package handlers.effecthandlers;
 
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
+import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.instance.Pet;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.skill.Skill;
 
 /**
- * @author Geremy
+ * Give Pet XP effect implementation.
+ * 使用後對當前召喚的寵物增加固定經驗值。
+ * 在技能 XML 中以 <xp> 標籤設定增加量。
  */
 public class GivePetXp extends AbstractEffect
 {
-	private final int _xp;
-	
+	private final long _xp;
+
 	public GivePetXp(StatSet params)
 	{
-		_xp = params.getInt("xp", 0);
+		_xp = params.getLong("xp", 0);
 	}
-	
+
 	@Override
 	public boolean isInstant()
 	{
 		return true;
 	}
-	
+
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effector.hasPet())
+		if (!effector.isPlayer())
 		{
 			return;
 		}
-		
-		effected.asPlayer().getPet().addExpAndSp(_xp, 0);
+
+		final Player player = effector.asPlayer();
+		final Pet pet = player.getPet();
+
+		if (pet == null)
+		{
+			player.sendMessage("請先召喚你的寵物，才能使用此道具！");
+			return;
+		}
+
+		if (_xp <= 0)
+		{
+			return;
+		}
+
+		pet.addExpAndSp(_xp, 0);
+		player.sendMessage("成功為寵物增加了 " + String.format("%,d", _xp) + " 點經驗值！");
 	}
 }

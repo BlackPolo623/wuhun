@@ -60,6 +60,7 @@ import org.l2jmobius.gameserver.util.MathUtil;
 public enum Stat
 {
 	FINAL_DAMAGE_RATE("FinalDamage"),
+	FINAL_DAMAGE_REDUCE("FinalDamageReduce"),
 	// HP, MP & CP
 	HP_LIMIT("hpLimit"),
 	MAX_HP("maxHp", new MaxHpFinalizer()),

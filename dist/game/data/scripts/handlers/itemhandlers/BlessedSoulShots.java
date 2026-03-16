@@ -204,7 +204,7 @@ public class BlessedSoulShots implements IItemHandler
 		// Pet uses the power of spirit.
 		if ((pet != null) && !pet.isChargedShot(ShotType.SOULSHOTS))
 		{
-			activeOwner.sendMessage("Your pet uses soulshot."); // activeOwner.sendPacket(SystemMessageId.YOUR_PET_USES_SPIRITSHOT);
+			//activeOwner.sendMessage("Your pet uses soulshot."); // activeOwner.sendPacket(SystemMessageId.YOUR_PET_USES_SPIRITSHOT);
 			pet.chargeShot(ShotType.SOULSHOTS);
 			
 			// Visual effect change if player has equipped Ruby level 3 or higher
@@ -222,7 +222,7 @@ public class BlessedSoulShots implements IItemHandler
 		{
 			if (!s.isChargedShot(ShotType.SOULSHOTS))
 			{
-				activeOwner.sendMessage("Your servitor uses soulshot."); // activeOwner.sendPacket(SystemMessageId.YOUR_PET_USES_SPIRITSHOT);
+				//activeOwner.sendMessage("Your servitor uses soulshot."); // activeOwner.sendPacket(SystemMessageId.YOUR_PET_USES_SPIRITSHOT);
 				s.chargeShot(ShotType.SOULSHOTS);
 				
 				// Visual effect change if player has equipped Ruby level 3 or higher

@@ -45,6 +45,7 @@ public class chenghao extends Script
 	@Override
 	public String onFirstTalk(Npc npc, Player player)
 	{
+		checkAndReapplySkills(player);
 		showAllSeriesPage(player, 0);
 		return null;
 	}
@@ -900,6 +901,157 @@ public class chenghao extends Script
 			}
 		}
 		player.sendPacket(new SkillList());
+	}
+
+	/**
+	 * 檢查並重新套用玩家所有稱號技能，確保等級正確。
+	 * 規則：
+	 *   - 已融合且達到最高等級 → 永久啟用（技能等級 = 當前融合等級）
+	 *   - 已融合、配戴中、但尚未滿級 → 啟用配戴等級
+	 *   - 其餘情況（未融合 / 未配戴且未滿級）→ 不應有此技能
+	 * 檢查完畢後透過 sendMessage 報告結果。
+	 */
+	private void checkAndReapplySkills(Player player)
+	{
+		final String equippedSeriesId = player.getVariables().getString(TitleSystem.VAR_PREFIX + "equipped", null);
+		final int equippedLevelVar = player.getVariables().getInt(TitleSystem.VAR_PREFIX + "equipped_level", 0);
+
+		int fixedCount = 0;
+		final StringBuilder fixLog = new StringBuilder();
+		boolean hasFusedSeries = false;
+
+		for (TitleSeries series : TitleSystem.getAllSeries())
+		{
+			final boolean fused = isSeriesFused(player, series);
+			final String levelKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_level";
+			final int currentLevel = fused ? player.getVariables().getInt(levelKey, 0) : 0;
+
+			if (fused)
+			{
+				hasFusedSeries = true;
+			}
+
+			// 決定此系列應該持有的技能等級
+			final int expectedLevel;
+			final String reason;
+
+			if (fused && (currentLevel >= series.getMaxLevel()))
+			{
+				// 已滿級 → 永久技能，無論是否配戴都應存在
+				expectedLevel = currentLevel;
+				reason = "永久（已滿級 Lv." + currentLevel + "）";
+			}
+			else if (fused && series.getSeriesId().equals(equippedSeriesId))
+			{
+				// 配戴中但未滿級 → 使用玩家選擇的配戴等級
+				int eLevel = equippedLevelVar > 0 ? equippedLevelVar : currentLevel;
+				if (eLevel > currentLevel)
+				{
+					eLevel = currentLevel;
+				}
+				expectedLevel = eLevel;
+				reason = "配戴中（Lv." + eLevel + "）";
+			}
+			else
+			{
+				// 未融合 / 未滿級且未配戴 → 不應擁有技能
+				expectedLevel = 0;
+				reason = fused ? "未配戴且未滿級" : "尚未融合";
+			}
+
+			// 取得玩家目前實際擁有的技能等級
+			final Skill currentSkill = player.getKnownSkill(series.getFinalSkillId());
+			final int actualLevel = currentSkill != null ? currentSkill.getLevel() : 0;
+
+			if (actualLevel == expectedLevel)
+			{
+				continue; // 狀態正確，不需修正
+			}
+
+			// 需要修正
+			fixedCount++;
+			if (expectedLevel == 0)
+			{
+				// 移除多餘技能
+				player.removeSkill(series.getFinalSkillId());
+				fixLog.append("【").append(series.getSeriesName()).append("】移除多餘技能（").append(reason).append("）\n");
+			}
+			else
+			{
+				// 補上或修正技能等級
+				final Skill skill = SkillData.getInstance().getSkill(series.getFinalSkillId(), expectedLevel);
+				if (skill != null)
+				{
+					player.addSkill(skill, true);
+					if (actualLevel == 0)
+					{
+						fixLog.append("【").append(series.getSeriesName()).append("】補上缺失技能 Lv.").append(expectedLevel).append("（").append(reason).append("）\n");
+					}
+					else
+					{
+						fixLog.append("【").append(series.getSeriesName()).append("】修正 Lv.").append(actualLevel).append(" → Lv.").append(expectedLevel).append("（").append(reason).append("）\n");
+					}
+				}
+			}
+		}
+
+		// 有異常才需要重新整理技能欄
+		if (fixedCount > 0)
+		{
+			player.sendPacket(new SkillList());
+		}
+
+		// 玩家尚未融合任何系列 → 不顯示訊息
+		if (!hasFusedSeries)
+		{
+			return;
+		}
+
+		// ===== 報告 =====
+		player.sendMessage("========== 稱號技能檢查 ==========");
+		if (fixedCount == 0)
+		{
+			player.sendMessage("所有稱號技能狀態正常。");
+		}
+		else
+		{
+			player.sendMessage("發現並修正 " + fixedCount + " 個異常：");
+			for (String line : fixLog.toString().split("\n"))
+			{
+				if (!line.isEmpty())
+				{
+					player.sendMessage(line);
+				}
+			}
+		}
+
+		// 顯示各系列目前狀態
+		player.sendMessage("--- 稱號技能現況 ---");
+		for (TitleSeries series : TitleSystem.getAllSeries())
+		{
+			if (!isSeriesFused(player, series))
+			{
+				continue;
+			}
+			final String levelKey = TitleSystem.VAR_PREFIX + series.getSeriesId() + "_level";
+			final int level = player.getVariables().getInt(levelKey, 0);
+			final Skill sk = player.getKnownSkill(series.getFinalSkillId());
+			final String status;
+			if (level >= series.getMaxLevel())
+			{
+				status = "永久 Lv." + level;
+			}
+			else if (series.getSeriesId().equals(equippedSeriesId))
+			{
+				status = "配戴中 Lv." + (sk != null ? sk.getLevel() : 0);
+			}
+			else
+			{
+				status = "未啟用（Lv." + level + " 可配戴）";
+			}
+			player.sendMessage(series.getSeriesName() + "：" + status);
+		}
+		player.sendMessage("===================================");
 	}
 
 	public static void main(String[] args)

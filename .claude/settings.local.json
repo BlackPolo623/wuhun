@@ -43,7 +43,16 @@
       "Bash(grep -n \"2020\\\\|2021\\\\|Supply\\\\|Engineer\" \"E:\\\\L2J_Mobius_541_武魂/dist/game/data/instances/TimedHunting/\"*)",
       "Bash(grep -n \"34543\\\\|19274\\\\|19275\" \"E:\\\\L2J_Mobius_541_武魂/dist/game/data/stats/npcs/\"*)",
       "Bash(grep -n \"id=\"\"34543\"\"\\\\|id=\"\"19274\"\"\\\\|id=\"\"19275\"\"\" \"E:\\\\L2J_Mobius_541_武魂/dist/game/data/stats/npcs/\"*.xml)",
-      "Bash(xargs grep -l \"characters\\\\|變數\\\\|外形\")"
+      "Bash(xargs grep -l \"characters\\\\|變數\\\\|外形\")",
+      "Bash(mkdir \"E:\\\\L2J_Mobius_541_武魂\\\\dist\\\\game\\\\data\\\\scripts\\\\instances\\\\PlunderLands\")",
+      "Bash(move \"E:\\\\L2J_Mobius_541_武魂\\\\dist\\\\game\\\\data\\\\scripts\\\\instances\\\\CustomArena\\\\main.htm\" \"E:\\\\L2J_Mobius_541_武魂\\\\dist\\\\game\\\\data\\\\scripts\\\\instances\\\\PlunderLands\\\\main.htm\")",
+      "Bash(del /Q \"E:\\\\L2J_Mobius_541_武魂\\\\dist\\\\game\\\\data\\\\scripts\\\\instances\\\\CustomArena\\\\CustomArena.java\")",
+      "Bash(rmdir \"E:\\\\L2J_Mobius_541_武魂\\\\dist\\\\game\\\\data\\\\scripts\\\\instances\\\\CustomArena\")",
+      "Bash(mkdir -p \"E:/L2J_Mobius_541_武魂/dist/game/data/scripts/instances/PlunderLands\")",
+      "Bash(cp \"E:/L2J_Mobius_541_武魂/dist/game/data/scripts/instances/CustomArena/main.htm\" \"E:/L2J_Mobius_541_武魂/dist/game/data/scripts/instances/PlunderLands/main.htm\")",
+      "Bash(rm -f \"E:/L2J_Mobius_541_武魂/dist/game/data/scripts/instances/CustomArena/CustomArena.java\" \"E:/L2J_Mobius_541_武魂/dist/game/data/scripts/instances/CustomArena/main.htm\")",
+      "Bash(rmdir \"E:/L2J_Mobius_541_武魂/dist/game/data/scripts/instances/CustomArena\")",
+      "Bash(grep -l \"Feed\" \"E:\\\\L2J_Mobius_541_武魂\\\\dist\\\\game\\\\data\\\\scripts\\\\handlers\\\\effecthandlers\"/*.java)"
     ]
   }
 }

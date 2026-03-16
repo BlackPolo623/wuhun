@@ -101,24 +101,53 @@ public class SoulRingAbility extends Script
 		{
 			showPvpPage(player, npc);
 		}
-		else if (event.startsWith("add_") || event.startsWith("sub_"))
+		else if (event.startsWith("addN_") || event.startsWith("subN_"))
 		{
-			String[] parts = event.split("_", 2);
-			String action = parts[0];
-			String statName = parts[1];
+			final boolean isAdd = event.startsWith("addN_");
+			// 格式：addN_STAT_NAME $amount（空格分隔輸入值）
+			final String[] spaceParts = event.split(" ", 2);
+			// spaceParts[0] = "addN_PVE_PHYS_ATK"，statName = "PVE_PHYS_ATK"
+			final String statName = spaceParts[0].substring(5);
+
+			int amount = 0;
+			if (spaceParts.length >= 2 && !spaceParts[1].trim().isEmpty())
+			{
+				try
+				{
+					amount = Integer.parseInt(spaceParts[1].trim());
+				}
+				catch (NumberFormatException e)
+				{
+					player.sendMessage("請輸入有效的整數數字");
+					if (statName.startsWith("PVP"))
+						showPvpPage(player, npc);
+					else if (statName.contains("RAID"))
+						showPveRaidPage(player, npc);
+					else
+						showPveNormalPage(player, npc);
+					return null;
+				}
+			}
+
+			if (amount <= 0)
+			{
+				player.sendMessage("請先輸入要加點的數字");
+				if (statName.startsWith("PVP"))
+					showPvpPage(player, npc);
+				else if (statName.contains("RAID"))
+					showPveRaidPage(player, npc);
+				else
+					showPveNormalPage(player, npc);
+				return null;
+			}
 
 			try
 			{
-				SoulRingStat soulStat = SoulRingStat.valueOf(statName);
-
-				if (action.equals("add"))
-				{
-					addPoint(player, soulStat);
-				}
-				else if (action.equals("sub"))
-				{
-					removePoint(player, soulStat);
-				}
+				final SoulRingStat soulStat = SoulRingStat.valueOf(statName);
+				if (isAdd)
+					addPoints(player, soulStat, amount);
+				else
+					removePoints(player, soulStat, amount);
 			}
 			catch (IllegalArgumentException e)
 			{
@@ -127,17 +156,11 @@ public class SoulRingAbility extends Script
 
 			// 根據能力類型返回對應頁面
 			if (statName.startsWith("PVP"))
-			{
 				showPvpPage(player, npc);
-			}
 			else if (statName.contains("RAID"))
-			{
 				showPveRaidPage(player, npc);
-			}
 			else
-			{
 				showPveNormalPage(player, npc);
-			}
 		}
 		else if (event.equals("reset"))
 		{
@@ -239,47 +262,45 @@ public class SoulRingAbility extends Script
 			final double bonus = points * PERCENT_PER_POINT;
 			final int totalUsed = getTotalUsedPoints(player);
 			final int soulRingLevel = player.getVariables().getInt(SOUL_RING_VAR, 0);
+			final String varName = "amt" + (i - startIndex);
 
-			sb.append("<tr>");
+			// 第一行：能力名稱與當前數值（獨立 table，不依賴外層欄位）
+			sb.append("<table width=\"280\" border=\"0\"><tr>");
+			sb.append("<td align=\"center\" height=\"22\">");
+			sb.append("<font color=\"LEVEL\">").append(soulStat.getDisplayName()).append("</font>  ");
+			sb.append("<font color=\"00FF00\">").append(points).append("</font>點");
+			sb.append("  (<font color=\"FFFF00\">+").append(String.format("%.1f", bonus)).append("%</font>)");
+			sb.append("</td>");
+			sb.append("</tr></table>");
+
+			// 第二行：[ - ]  輸入框  [ + ]（獨立 table，固定三欄）
+			sb.append("<table width=\"280\" border=\"0\"><tr height=\"28\">");
 
 			// 減少按鈕
-			sb.append("<td width=\"35\" align=\"center\">");
+			sb.append("<td width=\"55\" align=\"center\">");
 			if (points > 0)
-			{
-				// 可以減少：正常按鈕
-				sb.append("<button value=\"-\" action=\"bypass -h Quest SoulRingAbility sub_").append(soulStat.name())
-						.append("\" width=\"30\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
-			}
+				sb.append("<button value=\"-\" action=\"bypass -h Quest SoulRingAbility subN_").append(soulStat.name())
+						.append(" $").append(varName).append("\" width=\"40\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
 			else
-			{
-				// 無法減少：灰色按鈕
-				sb.append("<button value=\"-\" action=\"\" width=\"30\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF_Grayed\">");
-			}
+				sb.append("<button value=\"-\" action=\"\" width=\"40\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF_Grayed\">");
 			sb.append("</td>");
 
-			// 能力資訊
+			// 輸入框
 			sb.append("<td width=\"170\" align=\"center\">");
-			sb.append("<font color=\"LEVEL\">").append(soulStat.getDisplayName()).append("</font><br1>");
-			sb.append("<font color=\"00FF00\">").append(points).append("</font> 點 ");
-			sb.append("(<font color=\"FFFF00\">+").append(String.format("%.1f", bonus)).append("%</font>)");
+			sb.append("<edit var=\"").append(varName).append("\" width=\"140\" height=\"16\" maxlen=\"5\">");
 			sb.append("</td>");
 
 			// 增加按鈕
-			sb.append("<td width=\"35\" align=\"center\">");
+			sb.append("<td width=\"55\" align=\"center\">");
 			if (points < MAX_POINTS_PER_STAT && totalUsed < soulRingLevel)
-			{
-				// 可以增加：正常按鈕
-				sb.append("<button value=\"+\" action=\"bypass -h Quest SoulRingAbility add_").append(soulStat.name())
-						.append("\" width=\"30\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
-			}
+				sb.append("<button value=\"+\" action=\"bypass -h Quest SoulRingAbility addN_").append(soulStat.name())
+						.append(" $").append(varName).append("\" width=\"40\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
 			else
-			{
-				// 無法增加：灰色按鈕
-				sb.append("<button value=\"+\" action=\"\" width=\"30\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF_Grayed\">");
-			}
+				sb.append("<button value=\"+\" action=\"\" width=\"40\" height=\"25\" back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF_Grayed\">");
 			sb.append("</td>");
 
-			sb.append("</tr>");
+			sb.append("</tr></table>");
+			sb.append("<img src=\"L2UI.SquareGray\" width=\"280\" height=\"1\">");
 		}
 
 		return sb.toString();
@@ -292,28 +313,33 @@ public class SoulRingAbility extends Script
 		player.sendPacket(html);
 	}
 
-	private void addPoint(Player player, SoulRingStat soulStat)
+	private void addPoints(Player player, SoulRingStat soulStat, int amount)
 	{
 		final int soulRingLevel = player.getVariables().getInt(SOUL_RING_VAR, 0);
 		final int totalUsed = getTotalUsedPoints(player);
 		final int currentPoints = player.getVariables().getInt(soulStat.getVarName(), 0);
 
-		if (totalUsed >= soulRingLevel)
+		final int canAddByTotal = soulRingLevel - totalUsed;       // 剩餘總點數
+		final int canAddByCap = MAX_POINTS_PER_STAT - currentPoints; // 距離單項上限
+		final int canAdd = Math.min(canAddByTotal, canAddByCap);
+
+		if (canAdd <= 0)
 		{
-			player.sendPacket(new CreatureSay(null, ChatType.GENERAL, SYSTEM_NAME, "沒有剩餘點數可分配"));
+			if (totalUsed >= soulRingLevel)
+				player.sendPacket(new CreatureSay(null, ChatType.GENERAL, SYSTEM_NAME, "沒有剩餘點數可分配"));
+			else
+				player.sendPacket(new CreatureSay(null, ChatType.GENERAL, SYSTEM_NAME, "該能力已達到最大值"));
 			return;
 		}
 
-		if (currentPoints >= MAX_POINTS_PER_STAT)
-		{
-			player.sendPacket(new CreatureSay(null, ChatType.GENERAL, SYSTEM_NAME, "該能力已達到最大值"));
-			return;
-		}
+		final int actualAdd = Math.min(amount, canAdd);
+		player.getVariables().set(soulStat.getVarName(), currentPoints + actualAdd);
 
-		player.getVariables().set(soulStat.getVarName(), currentPoints + 1);
+		if (actualAdd < amount)
+			player.sendMessage("已加 " + actualAdd + " 點（超出可用點數或能力上限，已自動調整）");
 	}
 
-	private void removePoint(Player player, SoulRingStat soulStat)
+	private void removePoints(Player player, SoulRingStat soulStat, int amount)
 	{
 		final int currentPoints = player.getVariables().getInt(soulStat.getVarName(), 0);
 
@@ -323,7 +349,11 @@ public class SoulRingAbility extends Script
 			return;
 		}
 
-		player.getVariables().set(soulStat.getVarName(), currentPoints - 1);
+		final int actualRemove = Math.min(amount, currentPoints);
+		player.getVariables().set(soulStat.getVarName(), currentPoints - actualRemove);
+
+		if (actualRemove < amount)
+			player.sendMessage("已扣 " + actualRemove + " 點（已到達0，無法再扣）");
 	}
 
 	private void resetAllPoints(Player player)

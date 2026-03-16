@@ -47,6 +47,7 @@ import org.l2jmobius.gameserver.model.effects.EffectType;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.item.OnItemUse;
+import org.l2jmobius.gameserver.model.commission.CommissionItemType;
 import org.l2jmobius.gameserver.model.item.EtcItem;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.enums.ItemSkillType;
@@ -137,6 +138,15 @@ public class AutoUseTaskManager
 							continue ITEMS;
 						}
 						
+						// 寵物食品（PET_SUPPLIES）只有在寵物飢餓時才自動使用，防止連續不停消耗
+						if (template.getCommissionItemType() == CommissionItemType.PET_SUPPLIES)
+						{
+							if ((pet == null) || pet.isDead() || !pet.isHungry())
+							{
+								continue ITEMS;
+							}
+						}
+						
 						final List<ItemSkillHolder> skills = template.getSkills(ItemSkillType.NORMAL);
 						if (skills != null)
 						{
@@ -148,8 +158,10 @@ public class AutoUseTaskManager
 									continue ITEMS;
 								}
 								
-								// Check item skills that affect pets.
-								if ((pet != null) && !pet.isDead() && (pet.isAffectedBySkill(skill.getId()) || pet.hasSkillReuse(skill.getReuseHashCode()) || !skill.checkCondition(pet, pet, false)))
+								// Check item skills that affect pets (only for skills that actually target pets/summons).
+								if ((pet != null) && !pet.isDead() &&
+									(skill.getTargetType() == TargetType.PET || skill.getTargetType() == TargetType.SUMMON) &&
+									(pet.isAffectedBySkill(skill.getId()) || pet.hasSkillReuse(skill.getReuseHashCode()) || !skill.checkCondition(pet, pet, false)))
 								{
 									continue ITEMS;
 								}

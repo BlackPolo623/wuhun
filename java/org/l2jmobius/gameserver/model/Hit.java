@@ -28,14 +28,16 @@ public class Hit
 	private final WeakReference<WorldObject> _target;
 	private final int _targetId;
 	private final int _damage;
+	private final double _realDamage;
 	private final int _ssGrade;
 	private int _flags = 0;
-	
-	public Hit(WorldObject target, int damage, boolean miss, boolean crit, byte shld, boolean soulshot, int ssGrade)
+
+	public Hit(WorldObject target, int damage, double realDamage, boolean miss, boolean crit, byte shld, boolean soulshot, int ssGrade)
 	{
 		_target = new WeakReference<>(target);
 		_targetId = target.getObjectId();
 		_damage = damage;
+		_realDamage = realDamage;
 		_ssGrade = ssGrade;
 		
 		if (miss)
@@ -78,6 +80,11 @@ public class Hit
 	public int getDamage()
 	{
 		return _damage;
+	}
+
+	public double getRealDamage()
+	{
+		return _realDamage;
 	}
 	
 	public int getFlags()

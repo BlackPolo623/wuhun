@@ -37,8 +37,9 @@ public class EquipmentUpgradeHolder
 	private final int _resultItemId;
 	private final int _resultItemEnchant;
 	private final boolean _announce;
-	
-	public EquipmentUpgradeHolder(int id, int requiredItemId, int requiredItemEnchant, List<ItemHolder> materials, long adena, int resultItemId, int resultItemEnchant, boolean announce)
+	private final double _chance;
+
+	public EquipmentUpgradeHolder(int id, int requiredItemId, int requiredItemEnchant, List<ItemHolder> materials, long adena, int resultItemId, int resultItemEnchant, boolean announce, double chance)
 	{
 		_id = id;
 		_requiredItemId = requiredItemId;
@@ -48,6 +49,7 @@ public class EquipmentUpgradeHolder
 		_resultItemId = resultItemId;
 		_resultItemEnchant = resultItemEnchant;
 		_announce = announce;
+		_chance = chance;
 	}
 	
 	public int getId()
@@ -88,5 +90,11 @@ public class EquipmentUpgradeHolder
 	public boolean isAnnounce()
 	{
 		return _announce;
+	}
+
+	/** 升級成功機率，0～100，預設 100（保底） */
+	public double getChance()
+	{
+		return _chance;
 	}
 }

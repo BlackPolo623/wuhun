@@ -112,7 +112,7 @@ public class EquipmentUpgradeNormalData implements IXmlReader
 			final StatSet headerSet = new StatSet(parseAttributes(upgradeNode));
 			final int id = headerSet.getInt("id");
 			final int type = headerSet.getInt("type");
-			final double chance = headerSet.getDouble("chance");
+			final double chance = headerSet.getDouble("chance"); // 儲存原始百分比(e.g. 5=5%)，傳送時在 RequestUpgradeSystemProbList 中÷10000
 			final long commission = _commission == 0 ? 0 : ((headerSet.getLong("commission") / 100) * _commission);
 			forEach(upgradeNode, "upgradeItem", upgradeItemNode ->
 			{
