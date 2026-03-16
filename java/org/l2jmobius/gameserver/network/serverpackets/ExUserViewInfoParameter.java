@@ -61,15 +61,15 @@ public class ExUserViewInfoParameter extends ServerPacket
 		
 		// P. Atk. (num.)
 		buffer.writeShort(index++);
-		buffer.writeInt(_player.getPAtk());
-		
+		buffer.writeInt((int) Math.min(_player.getPAtk(), (long) Integer.MAX_VALUE));
+
 		// M. Atk. (%)
 		buffer.writeShort(index++);
 		buffer.writeInt(0);
-		
+
 		// M. Atk. (num)
 		buffer.writeShort(index++);
-		buffer.writeInt(_player.getMAtk());
+		buffer.writeInt((int) Math.min(_player.getMAtk(), (long) Integer.MAX_VALUE));
 		
 		// Soulshot Damage - Activation
 		buffer.writeShort(index++);
@@ -218,15 +218,15 @@ public class ExUserViewInfoParameter extends ServerPacket
 		
 		// P. Def. (num.)
 		buffer.writeShort(index++);
-		buffer.writeInt(_player.getPDef());
-		
+		buffer.writeInt((int) Math.min(_player.getPDef(), (long) Integer.MAX_VALUE));
+
 		// M. Def. (%)
 		buffer.writeShort(index++);
 		buffer.writeInt(0);
-		
+
 		// M. Def. (num.)
 		buffer.writeShort(index++);
-		buffer.writeInt(_player.getMDef());
+		buffer.writeInt((int) Math.min(_player.getMDef(), (long) Integer.MAX_VALUE));
 		
 		// Soulshot Damage Resistance
 		buffer.writeShort(index++);

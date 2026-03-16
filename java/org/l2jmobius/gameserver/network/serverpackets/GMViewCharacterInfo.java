@@ -126,16 +126,16 @@ public class GMViewCharacterInfo extends ServerPacket
 		buffer.writeByte(_player.getInventory().canEquipCloak()); // CT2.3
 		buffer.writeByte(0);
 		buffer.writeShort(0);
-		buffer.writeInt(_player.getPAtk());
+		buffer.writeInt((int) Math.min(_player.getPAtk(), (long) Integer.MAX_VALUE));
 		buffer.writeInt(_player.getPAtkSpd());
-		buffer.writeInt(_player.getPDef());
+		buffer.writeInt((int) Math.min(_player.getPDef(), (long) Integer.MAX_VALUE));
 		buffer.writeInt(_player.getEvasionRate());
 		buffer.writeInt(_player.getAccuracy());
 		buffer.writeInt(_player.getCriticalHit());
-		buffer.writeInt(_player.getMAtk());
+		buffer.writeInt((int) Math.min(_player.getMAtk(), (long) Integer.MAX_VALUE));
 		buffer.writeInt(_player.getMAtkSpd());
 		buffer.writeInt(_player.getPAtkSpd());
-		buffer.writeInt(_player.getMDef());
+		buffer.writeInt((int) Math.min(_player.getMDef(), (long) Integer.MAX_VALUE));
 		buffer.writeInt(_player.getMagicEvasionRate());
 		buffer.writeInt(_player.getMagicAccuracy());
 		buffer.writeInt(_player.getMCriticalHit());

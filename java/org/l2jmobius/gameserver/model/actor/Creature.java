@@ -5070,7 +5070,7 @@ public abstract class Creature extends WorldObject
 		return _stat.getMaxRecoverableCp();
 	}
 
-	public int getMAtk()
+	public long getMAtk()
 	{
 		return _stat.getMAtk();
 	}
@@ -5110,12 +5110,12 @@ public abstract class Creature extends WorldObject
 		return _stat.getMCriticalHit();
 	}
 
-	public int getMDef()
+	public long getMDef()
 	{
 		return _stat.getMDef();
 	}
 
-	public int getPAtk()
+	public long getPAtk()
 	{
 		return _stat.getPAtk();
 	}
@@ -5145,7 +5145,7 @@ public abstract class Creature extends WorldObject
 		return _stat.getPAtkSpd();
 	}
 
-	public int getPDef()
+	public long getPDef()
 	{
 		return _stat.getPDef();
 	}
@@ -5333,7 +5333,7 @@ public abstract class Creature extends WorldObject
 				}
 				else
 				{
-					reflectedDamage = Math.min(reflectedDamage, target.getStat().getPDef());
+					reflectedDamage = (int) Math.min((long) reflectedDamage, target.getStat().getPDef());
 				}
 			}
 
@@ -5535,7 +5535,7 @@ public abstract class Creature extends WorldObject
 			double finalDamageReduce = getStat().getValue(Stat.FINAL_DAMAGE_REDUCE, 0);
 			if (finalDamageReduce > 0)
 			{
-				finalDamageReduce = Math.min(finalDamageReduce, 99.99); // 上限 99.99%，防止無敵
+				finalDamageReduce = Math.min(finalDamageReduce, 99.999); // 上限 99.99%，防止無敵
 				amount *= (1.0 - (finalDamageReduce / 100.0));
 			}
 		}

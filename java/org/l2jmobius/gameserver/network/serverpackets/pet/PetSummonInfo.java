@@ -167,13 +167,13 @@ public class PetSummonInfo extends ServerPacket
 		buffer.writeLong(_summon.getExpForNextLevel()); // 100% absoulte value
 		buffer.writeInt(_summon.isPet() ? _summon.getInventory().getTotalWeight() : 0); // weight
 		buffer.writeInt(_summon.getMaxLoad()); // max weight it can carry
-		buffer.writeInt(_summon.getPAtk()); // patk
-		buffer.writeInt(_summon.getPDef()); // pdef
+		buffer.writeInt((int) Math.min(_summon.getPAtk(), (long) Integer.MAX_VALUE)); // patk
+		buffer.writeInt((int) Math.min(_summon.getPDef(), (long) Integer.MAX_VALUE)); // pdef
 		buffer.writeInt(_summon.getAccuracy()); // accuracy
 		buffer.writeInt(_summon.getEvasionRate()); // evasion
 		buffer.writeInt(_summon.getCriticalHit()); // critical
-		buffer.writeInt(_summon.getMAtk()); // matk
-		buffer.writeInt(_summon.getMDef()); // mdef
+		buffer.writeInt((int) Math.min(_summon.getMAtk(), (long) Integer.MAX_VALUE)); // matk
+		buffer.writeInt((int) Math.min(_summon.getMDef(), (long) Integer.MAX_VALUE)); // mdef
 		buffer.writeInt(_summon.getMagicAccuracy()); // magic accuracy
 		buffer.writeInt(_summon.getMagicEvasionRate()); // magic evasion
 		buffer.writeInt(_summon.getMCriticalHit()); // mcritical

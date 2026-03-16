@@ -419,7 +419,7 @@ public class CreatureStat
 	 * <b><u>Example of use</u>: Calculate Magic damage
 	 * @return
 	 */
-	public int getMAtk()
+	public long getMAtk()
 	{
 		double matk = getValue(Stat.MAGIC_ATTACK);
 		double wuxian = 0;
@@ -464,13 +464,7 @@ public class CreatureStat
 			}
 		}
 
-		// 防止整數溢出：所有生物的魔攻都不能超過 Integer.MAX_VALUE
-		if (matk >= Integer.MAX_VALUE)
-		{
-			matk = Integer.MAX_VALUE;
-		}
-
-		return (int) matk;
+		return (long) matk;
 	}
 	
 	public int getWeaponBonusMAtk()
@@ -506,7 +500,7 @@ public class CreatureStat
 	 * <b><u>Example of use </u>: Calculate Magic damage.
 	 * @return the MDef (base+modifier) of the Creature against a skill in function of abnormal effects in progress.
 	 */
-	public int getMDef()
+	public long getMDef()
 	{
 		double mdef = getValue(Stat.MAGICAL_DEFENCE);
 		double wuxian = 0;
@@ -548,13 +542,7 @@ public class CreatureStat
 			}
 		}
 
-		// 防止整數溢出：所有生物的魔防都不能超過 Integer.MAX_VALUE
-		if (mdef >= Integer.MAX_VALUE)
-		{
-			mdef = Integer.MAX_VALUE;
-		}
-
-		return (int) mdef;
+		return (long) mdef;
 	}
 	
 	/**
@@ -628,7 +616,7 @@ public class CreatureStat
 	/**
 	 * @return the PAtk (base+modifier) of the Creature.
 	 */
-	public int getPAtk()
+	public long getPAtk()
 	{
 		double patk = getValue(Stat.PHYSICAL_ATTACK);
 		double wuxian = 0;
@@ -673,13 +661,7 @@ public class CreatureStat
 			}
 		}
 
-		// 防止整數溢出：所有生物的物攻都不能超過 Integer.MAX_VALUE
-		if (patk >= Integer.MAX_VALUE)
-		{
-			patk = Integer.MAX_VALUE;
-		}
-
-		return (int) patk;
+		return (long) patk;
 	}
 	
 	public int getWeaponBonusPAtk()
@@ -706,7 +688,7 @@ public class CreatureStat
 	/**
 	 * @return the PDef (base+modifier) of the Creature.
 	 */
-	public int getPDef()
+	public long getPDef()
 	{
 		double pdef = getValue(Stat.PHYSICAL_DEFENCE);
 		double wuxian = 0;
@@ -749,13 +731,7 @@ public class CreatureStat
 			}
 		}
 
-		// 防止整數溢出：所有生物的防禦都不能超過 Integer.MAX_VALUE
-		if (pdef >= Integer.MAX_VALUE)
-		{
-			pdef = Integer.MAX_VALUE;
-		}
-
-		return (int) pdef;
+		return (long) pdef;
 	}
 	
 	/**

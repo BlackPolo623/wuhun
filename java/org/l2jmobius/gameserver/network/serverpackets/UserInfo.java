@@ -339,7 +339,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeShort(_player.getActiveWeaponItem() != null ? 40 : 20);
 			buffer.writeLong(_player.getPAtk());
 			buffer.writeInt(_player.getPAtkSpd());
-			buffer.writeInt(_player.getPDef());
+			buffer.writeInt((int) Math.min(_player.getPDef(), (long) Integer.MAX_VALUE));
 			buffer.writeInt(_player.getEvasionRate());
 			buffer.writeInt(_player.getAccuracy());
 			buffer.writeInt(_player.getCriticalHit());
@@ -347,7 +347,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeInt(_player.getMAtkSpd());
 			buffer.writeInt(_player.getPAtkSpd()); // Seems like atk speed - 1
 			buffer.writeInt(_player.getMagicEvasionRate());
-			buffer.writeInt(_player.getMDef());
+			buffer.writeInt((int) Math.min(_player.getMDef(), (long) Integer.MAX_VALUE));
 			buffer.writeInt(_player.getMagicAccuracy());
 			buffer.writeInt(_player.getMCriticalHit());
 			buffer.writeInt(_player.getWeaponBonusPAtk()); // 270

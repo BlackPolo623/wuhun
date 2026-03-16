@@ -206,6 +206,25 @@ public class NpcViewMod implements IBypassHandler
 		return COMMANDS;
 	}
 	
+	/**
+	 * 將大數字格式化為易讀的中文單位字串。
+	 * >= 1億  → X.XX億
+	 * >= 1萬  → X.X萬
+	 * 其他    → 原始數字
+	 */
+	private static String formatLargeStat(long value)
+	{
+		if (value >= 100_000_000L)
+		{
+			return String.format("%.2f億", value / 100_000_000.0);
+		}
+		if (value >= 10_000L)
+		{
+			return String.format("%.1f萬", value / 10_000.0);
+		}
+		return String.valueOf(value);
+	}
+
 	public static void sendNpcView(Player player, Npc npc)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage();
@@ -253,10 +272,10 @@ public class NpcViewMod implements IBypassHandler
 		
 		html.replace("%atktype%", StringUtil.capitalizeFirst(npc.getAttackType().name().toLowerCase()));
 		html.replace("%atkrange%", npc.getStat().getPhysicalAttackRange());
-		html.replace("%patk%", npc.getPAtk());
-		html.replace("%pdef%", npc.getPDef());
-		html.replace("%matk%", npc.getMAtk());
-		html.replace("%mdef%", npc.getMDef());
+		html.replace("%patk%", formatLargeStat(npc.getPAtk()));
+		html.replace("%pdef%", formatLargeStat(npc.getPDef()));
+		html.replace("%matk%", formatLargeStat(npc.getMAtk()));
+		html.replace("%mdef%", formatLargeStat(npc.getMDef()));
 		html.replace("%atkspd%", npc.getPAtkSpd());
 		html.replace("%castspd%", npc.getMAtkSpd());
 		html.replace("%critrate%", npc.getStat().getCriticalHit());

@@ -1408,13 +1408,13 @@ public class Pet extends Summon
 	}
 	
 	@Override
-	public int getMAtk()
+	public long getMAtk()
 	{
 		return getStat().getMAtk();
 	}
-	
+
 	@Override
-	public int getMDef()
+	public long getMDef()
 	{
 		return getStat().getMDef();
 	}
