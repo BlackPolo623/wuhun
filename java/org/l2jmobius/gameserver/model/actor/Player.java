@@ -2630,7 +2630,15 @@ public class Player extends Playable
 		{
 			return;
 		}
-		
+
+		// 檢查是否在鏡像副本中，禁止穿脫裝備
+		final Instance instance = getInstanceWorld();
+		if ((instance != null) && (instance.getTemplateId() == org.l2jmobius.gameserver.config.custom.MirrorInstanceConfig.MIRROR_INSTANCE_TEMPLATE_ID))
+		{
+			sendMessage("副本內裝備已鎖定，請勿嘗試更換裝備！");
+			return;
+		}
+
 		// Check if the item is in the inventory.
 		final ItemLocation itemLocation = item.getItemLocation();
 		if ((itemLocation != ItemLocation.INVENTORY) && (itemLocation != ItemLocation.PAPERDOLL))

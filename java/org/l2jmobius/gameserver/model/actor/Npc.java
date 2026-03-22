@@ -163,7 +163,8 @@ public class Npc extends Creature
 	private boolean _isTalkable = getTemplate().isTalkable();
 	private final boolean _isQuestMonster = getTemplate().isQuestMonster();
 	private final boolean _isFakePlayer = getTemplate().isFakePlayer();
-	
+	private FakePlayerHolder _customFakePlayerHolder = null;
+
 	private int _currentLHandId; // normally this shouldn't change from the template, but there exist exceptions
 	private int _currentRHandId; // normally this shouldn't change from the template, but there exist exceptions
 	private int _currentEnchant; // normally this shouldn't change from the template, but there exist exceptions
@@ -1846,7 +1847,25 @@ public class Npc extends Creature
 	{
 		return _isFakePlayer;
 	}
-	
+
+	/**
+	 * Sets a per-instance custom FakePlayerHolder that overrides the template's holder for appearance.
+	 * Used by mirror/clone instances to display player equipment.
+	 * @param holder the custom holder, or null to revert to template
+	 */
+	public void setCustomFakePlayerHolder(FakePlayerHolder holder)
+	{
+		_customFakePlayerHolder = holder;
+	}
+
+	/**
+	 * @return the effective FakePlayerHolder for this NPC: custom one if set, otherwise from template.
+	 */
+	public FakePlayerHolder getEffectiveFakePlayerHolder()
+	{
+		return _customFakePlayerHolder != null ? _customFakePlayerHolder : getTemplate().getFakePlayerInfo();
+	}
+
 	/**
 	 * @return The player's object Id this NPC is cloning.
 	 */

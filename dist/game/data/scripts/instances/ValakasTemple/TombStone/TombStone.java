@@ -52,7 +52,6 @@ public class TombStone extends Script
 		addAttackId(SEALED_TOMB_STONE);
 		addKillId(SEALED_TOMB_STONE);
 		addSpawnId(DUMMY_TOMB_STORE);
-		addSpawnId(DUMMY_TOMB_STORE);
 		addInstanceDestroyId(ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID);
 	}
 	
@@ -80,33 +79,32 @@ public class TombStone extends Script
 		{
 			return;
 		}
-		
+
 		if (world.getStatus() != ValakasTemple.KILL_TOMB)
 		{
 			npc.setImmobilized(true);
 			return;
 		}
-		
+
 		final Npc dummyStone = DUMMY_STONE_NPC.get(world.getId());
-		switch (npc.getCurrentHpPercent())
+		final int currentState = world.getParameters().getInt(DUMMY_TOMB_STATE, TOMB_100);
+		final double hpPercent = npc.getCurrentHpPercent();
+
+		// Fixed: Use range checks instead of exact case values
+		if ((hpPercent <= 66) && (hpPercent > 50) && (currentState == TOMB_100))
 		{
-			case 66:
-			{
-				dummyStone.setDisplayEffect(TOMB_066);
-				world.getParameters().set(DUMMY_TOMB_STATE, TOMB_066);
-				break;
-			}
-			case 50:
-			{
-				world.spawnGroup("raid_boss_tomb");
-				break; // was fallthrough
-			}
-			case 33:
-			{
-				dummyStone.setDisplayEffect(TOMB_033);
-				world.getParameters().set(DUMMY_TOMB_STATE, TOMB_033);
-				break;
-			}
+			dummyStone.setDisplayEffect(TOMB_066);
+			world.getParameters().set(DUMMY_TOMB_STATE, TOMB_066);
+		}
+		else if ((hpPercent <= 50) && (hpPercent > 33) && (currentState == TOMB_066))
+		{
+			world.spawnGroup("raid_boss_tomb");
+			// Don't change state here, wait for 33% threshold
+		}
+		else if ((hpPercent <= 33) && (currentState == TOMB_066))
+		{
+			dummyStone.setDisplayEffect(TOMB_033);
+			world.getParameters().set(DUMMY_TOMB_STATE, TOMB_033);
 		}
 	}
 	

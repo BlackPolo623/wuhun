@@ -39,6 +39,7 @@ import org.l2jmobius.gameserver.config.custom.FakePlayersConfig;
 import org.l2jmobius.gameserver.config.custom.FindPvpConfig;
 import org.l2jmobius.gameserver.config.custom.FreeMountsConfig;
 import org.l2jmobius.gameserver.config.custom.MerchantZeroSellPriceConfig;
+import org.l2jmobius.gameserver.config.custom.MirrorInstanceConfig;
 import org.l2jmobius.gameserver.config.custom.MultilingualSupportConfig;
 import org.l2jmobius.gameserver.config.custom.NoblessMasterConfig;
 import org.l2jmobius.gameserver.config.custom.NpcStatMultipliersConfig;
@@ -122,6 +123,7 @@ public class ConfigLoader
 		FindPvpConfig.load();
 		FreeMountsConfig.load();
 		MerchantZeroSellPriceConfig.load();
+		MirrorInstanceConfig.load();
 		MultilingualSupportConfig.load();
 		NoblessMasterConfig.load();
 		NpcStatMultipliersConfig.load();

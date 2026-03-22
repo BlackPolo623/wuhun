@@ -5533,11 +5533,39 @@ public abstract class Creature extends WorldObject
 		// ========================================
 		{
 			double finalDamageReduce = getStat().getValue(Stat.FINAL_DAMAGE_REDUCE, 0);
+
+			// 【鏡像副本】攻擊者的「無視最終減傷」屬性
+			// 說明：攻擊者通關鏡像副本後，可以降低目標的最終減傷效果
+			// 例：BOSS有99.99%減傷，玩家有0.50%無視減傷 → BOSS實際減傷變成99.49%
+			if ((attacker != null) && attacker.isPlayer())
+			{
+				double ignoreFdr = attacker.asPlayer().getVariables().getDouble("MIRROR_FDR_BONUS", 0.0);
+				finalDamageReduce = Math.max(0, finalDamageReduce - ignoreFdr); // 降低目標的減傷
+			}
+
 			if (finalDamageReduce > 0)
 			{
 				finalDamageReduce = Math.min(finalDamageReduce, 99.999); // 上限 99.99%，防止無敵
 				amount *= (1.0 - (finalDamageReduce / 100.0));
 			}
+		}
+		// ========================================
+		// 屬性加成系統（武器屬性 / 元素屬性強化）
+		// 計算位置：最終減傷之後、最終增傷之前
+		// 說明：屬性加成在此階段套用，可穿透 FinalDamageReduce，對高減傷目標仍有效果
+		// 反射傷害（reflect=true）跳過，避免重複計算
+		//
+		// 目前公式（原版 ±25% 範圍，待規劃調整）：
+		//   攻擊屬性值 - 防禦屬性值 = diff
+		//   diff > 0：加成 = min(1.025 + √(diff³/2) × 0.0001, 1.25)  → 最高 +25%
+		//   diff < 0：減成 = max(0.975 - √((-diff)³/2) × 0.0001, 0.75) → 最低 -25%
+		//   diff = 0：無加成
+		//
+		// TODO：此處可重新設計計算公式、強度範圍、或區分 PvP/PvE 的屬性加成邏輯
+		// ========================================
+		if (!reflect && (attacker != null))
+		{
+			amount *= Formulas.calcAttributeBonus(attacker, this, skill);
 		}
 		// ========================================
 		// 最終傷害系統 - 統一適用於所有攻擊

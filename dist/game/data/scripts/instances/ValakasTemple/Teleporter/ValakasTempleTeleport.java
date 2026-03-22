@@ -27,22 +27,31 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.script.InstanceScript;
+import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 
 import instances.ValakasTemple.ValakasTemple;
 
 /**
- * @author Index (modified: Party entry + weekly limit)
+ * @author Index (simplified version)
  */
 public class ValakasTempleTeleport extends InstanceScript
 {
 	public static final int PARME_NPC_ID = 34258;
+
+	// ========================================
+	// 設定區：可自行調整
+	// ========================================
+	/** 每週最大進入次數（覆蓋 ValakasTempleManager 的設定） */
+	private static final int MAX_WEEKLY_ENTRIES = 100;
+	// ========================================
 
 	private ValakasTempleTeleport()
 	{
 		super(ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID);
 		addTalkId(PARME_NPC_ID);
 		addFirstTalkId(PARME_NPC_ID);
+		addStartNpc(PARME_NPC_ID);
 	}
 
 	@Override
@@ -52,10 +61,10 @@ public class ValakasTempleTeleport extends InstanceScript
 		final int remaining = manager.getRemainingEntries(player);
 		final String resetTime = manager.getNextResetString();
 
-		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId(), 1);
-		html.setFile(player, "data/scripts/instances/ValakasTemple/Teleporter/" + PARME_NPC_ID + "-01.htm");
+		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
+		html.setFile(player, "data/scripts/instances/ValakasTemple/Teleporter/34258.htm");
 		html.replace("%remaining%", String.valueOf(remaining));
-		html.replace("%maxEntries%", String.valueOf(ValakasTempleManager.MAX_WEEKLY_ENTRIES));
+		html.replace("%maxEntries%", String.valueOf(MAX_WEEKLY_ENTRIES));
 		html.replace("%resetTime%", resetTime);
 		player.sendPacket(html);
 		return null;
@@ -64,27 +73,10 @@ public class ValakasTempleTeleport extends InstanceScript
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		switch (event)
+		if (event.equals("enterInstance"))
 		{
-			case "VALAKAS_TEMPLE_ENTER_HTML":
-			{
-				return PARME_NPC_ID + "-01.htm";
-			}
-			case "VALAKAS_TEMPLE_SHOW_INFO":
-			{
-				return PARME_NPC_ID + "-02.htm";
-			}
-			case "VALAKAS_TEMPLE_SHOW_DEFAULT_PAGE":
-			{
-				return getHtm(player, "data/html/default/" + PARME_NPC_ID + ".htm");
-			}
-			case "VALAKAS_TEMPLE_ENTER_TO_INSTANCE":
-			{
-				handleEnter(npc, player);
-				break;
-			}
+			handleEnter(npc, player);
 		}
-
 		return super.onEvent(event, npc, player);
 	}
 
@@ -106,14 +98,14 @@ public class ValakasTempleTeleport extends InstanceScript
 			{
 				enterInstance(player, npc, ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID);
 			}
-			player.sendMessage("系統：你以 GM/管理員身份進入了巴拉卡斯神殿。");
+			player.sendPacket(new ExShowScreenMessage("以 GM 身份進入巴拉卡斯神殿", 3000));
 			return;
 		}
 
 		// 必須組隊
 		if (!player.isInParty())
 		{
-			player.sendMessage("你必須組隊才能進入巴拉卡斯神殿。");
+			player.sendPacket(new ExShowScreenMessage("你必須組隊才能進入巴拉卡斯神殿", 3000));
 			return;
 		}
 
@@ -121,7 +113,7 @@ public class ValakasTempleTeleport extends InstanceScript
 		if (!manager.canEnter(player))
 		{
 			final int remaining = manager.getRemainingEntries(player);
-			player.sendMessage("你本週的進入次數已用完。剩餘次數: " + remaining + "/" + ValakasTempleManager.MAX_WEEKLY_ENTRIES);
+			player.sendPacket(new ExShowScreenMessage("你本週的進入次數已用完 (" + remaining + "/" + MAX_WEEKLY_ENTRIES + ")", 3000));
 			return;
 		}
 
@@ -133,12 +125,12 @@ public class ValakasTempleTeleport extends InstanceScript
 		{
 			if (!member.isInsideRadius3D(npc, 1500))
 			{
-				player.sendMessage("隊員 " + member.getName() + " 距離太遠，請靠近傳送員。");
+				player.sendPacket(new ExShowScreenMessage("隊員 " + member.getName() + " 距離太遠", 3000));
 				return;
 			}
 			if (member.getLevel() < 76)
 			{
-				player.sendMessage("隊員 " + member.getName() + " 等級不足（需要76級以上）。");
+				player.sendPacket(new ExShowScreenMessage("隊員 " + member.getName() + " 等級不足（需要76級）", 3000));
 				return;
 			}
 		}
@@ -153,7 +145,7 @@ public class ValakasTempleTeleport extends InstanceScript
 			}
 			else
 			{
-				member.sendMessage("你本週的進入次數已用完，無法進入巴拉卡斯神殿。");
+				member.sendPacket(new ExShowScreenMessage("你本週的進入次數已用完", 3000));
 			}
 		}
 	}

@@ -64,6 +64,16 @@ public class FakePlayerHolder
 	
 	public FakePlayerHolder(StatSet set)
 	{
+		this(set, true);
+	}
+
+	/**
+	 * Creates a FakePlayerHolder from a StatSet.
+	 * @param set the stat set with appearance data
+	 * @param registerInData whether to register this holder in the global FakePlayerData (false for dynamic/per-instance holders)
+	 */
+	public FakePlayerHolder(StatSet set, boolean registerInData)
+	{
 		_playerClass = PlayerClass.getPlayerClass(set.getInt("classId", 1));
 		_hair = set.getInt("hair", 1);
 		_hairColor = set.getInt("hairColor", 1);
@@ -96,15 +106,18 @@ public class FakePlayerHolder
 		_privateStoreType = set.getInt("privateStoreType", 0);
 		_privateStoreMessage = set.getString("privateStoreMessage", "");
 		_talkable = set.getBoolean("fakePlayerTalkable", true);
-		
-		// Populate FakePlayerData mappings.
-		final String name = set.getString("name", "");
-		FakePlayerData.getInstance().addFakePlayerId(name, set.getInt("id", 0)); // Map name to npcId.
-		final String lowercaseName = name.toLowerCase();
-		FakePlayerData.getInstance().addFakePlayerName(lowercaseName, name); // Map lowercase name to original name.
-		if (_talkable)
+
+		if (registerInData)
 		{
-			FakePlayerData.getInstance().addTalkableFakePlayerName(lowercaseName);
+			// Populate FakePlayerData mappings.
+			final String name = set.getString("name", "");
+			FakePlayerData.getInstance().addFakePlayerId(name, set.getInt("id", 0)); // Map name to npcId.
+			final String lowercaseName = name.toLowerCase();
+			FakePlayerData.getInstance().addFakePlayerName(lowercaseName, name); // Map lowercase name to original name.
+			if (_talkable)
+			{
+				FakePlayerData.getInstance().addTalkableFakePlayerName(lowercaseName);
+			}
 		}
 	}
 	

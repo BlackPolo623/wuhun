@@ -39,6 +39,7 @@ import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureTe
 import org.l2jmobius.gameserver.model.events.holders.instance.OnInstanceStatusChange;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.instancezone.InstanceTemplate;
+import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.spawns.NpcSpawnTemplate;
 import org.l2jmobius.gameserver.model.spawns.SpawnGroup;
@@ -52,6 +53,20 @@ import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
  */
 public class ValakasTemple extends InstanceScript
 {
+	// Reward Chest Configuration
+	private static final int REWARD_CHEST_NPC_ID = 910001; // Reward Chest
+	private static final int REWARD_ITEMS_COUNT = 3; // Number of items each player can receive
+	private static final int[][] REWARD_ITEMS =
+	{
+		// {itemId, count, chance (0-100)}
+		{57, 10000, 50},    // Adena x10000 - 50% chance
+		{6673, 100, 30},    // Ancient Adena x100 - 30% chance
+		{9546, 5, 15},      // Fire Stone x5 - 15% chance
+		{9547, 5, 10},      // Water Stone x5 - 10% chance
+		{9548, 5, 5},       // Earth Stone x5 - 5% chance
+	};
+	private static final String PLAYER_REWARDED_VAR = "VALAKAS_TEMPLE_REWARDED";
+
 	private static final int INSTANCE_CREATE = 0;
 	private static final int SAVE_HERMIT = 1;
 	private static final int KILL_OBSERVATION_DEVICE_CENTER = 2;
@@ -97,6 +112,8 @@ public class ValakasTemple extends InstanceScript
 		addKillId(HUGE_IFRIT);
 		addKillId(LAST_IFRIT);
 		addKillId(MONSTER_IDs);
+		addFirstTalkId(REWARD_CHEST_NPC_ID);
+		addTalkId(REWARD_CHEST_NPC_ID);
 	}
 	
 	public void onInstanceStatusChange(OnInstanceStatusChange event)
@@ -228,7 +245,15 @@ public class ValakasTemple extends InstanceScript
 				}
 				else if (world.getStatus() == KILL_LEFT_OR_RIGHT)
 				{
-					world.setStatus(KILL_OBSERVATION_DEVICE_TOMB);
+					// Fixed: Check if all left/right monsters are killed before advancing
+					final String groupName = npc.getSpawn().getNpcSpawnTemplate().getGroup().getName();
+					if (groupName.equalsIgnoreCase("monsters_from_gate_left") || groupName.equalsIgnoreCase("monsters_from_gate_right"))
+					{
+						if (world.getAliveNpcs(MONSTER_IDs).isEmpty())
+						{
+							world.setStatus(KILL_OBSERVATION_DEVICE_TOMB);
+						}
+					}
 				}
 				break;
 			}
@@ -382,8 +407,29 @@ public class ValakasTemple extends InstanceScript
 	private static void setElevenStatusForInstance(Instance world)
 	{
 		// FINISH_INSTANCE
-		world.spawnGroup("hermit_03");
-		world.finishInstance();
+		world.spawnGroup("reward_chest");
+		world.getPlayers().forEach(player -> player.sendPacket(new ExShowScreenMessage("副本將在5分鐘後關閉，請盡快領取獎勵！", 10000)));
+
+		// Schedule instance destruction after 5 minutes
+		ThreadPool.schedule(() ->
+		{
+			final Location exitLoc = world.getTemplateParameters().getLocation("exit");
+			world.getPlayers().forEach(player ->
+			{
+				if (player != null)
+				{
+					if (exitLoc != null)
+					{
+						player.teleToLocation(exitLoc, false);
+					}
+					else
+					{
+						player.teleToLocation(new Location(142598, -151085, -7598), false);
+					}
+				}
+			});
+			world.destroy();
+		}, 300_000); // 5 minutes
 	}
 	
 	private static void removeEventsFromInstance(Instance world)
@@ -415,8 +461,7 @@ public class ValakasTemple extends InstanceScript
 	
 	private static void sendMessageOnScreen(Instance world, NpcStringId npcId)
 	{
-		final ExShowScreenMessage screenMessage = new ExShowScreenMessage(npcId, ExShowScreenMessage.TOP_CENTER, 10000, true);
-		world.getPlayers().forEach(player -> player.sendPacket(screenMessage));
+		world.getPlayers().forEach(player -> player.sendPacket(new ExShowScreenMessage(npcId, ExShowScreenMessage.TOP_CENTER, 10000, true)));
 	}
 	
 	@RegisterEvent(EventType.ON_CREATURE_TELEPORTED)
@@ -427,21 +472,117 @@ public class ValakasTemple extends InstanceScript
 		{
 			return;
 		}
-		
+
 		final Player player = event.getCreature().asPlayer();
 		final Instance world = player.getInstanceWorld();
 		if ((world == null) || (world.getTemplateId() != VALAKAS_TEMPLE_INSTANCE_ID))
 		{
 			return;
 		}
-		
+
 		if ((world.getStatus() == KILL_LAST_IFRIT) && !world.getParameters().getBoolean(IS_REMOVED_EVENTS, false))
 		{
 			player.sendPacket(new OnEventTrigger(ValakasTemple.EVENT_ID_PLAYER_CIRCLE, true));
 			player.sendPacket(new OnEventTrigger(ValakasTemple.EVENT_ID_BOSS_CIRCLE, true));
 		}
 	}
-	
+
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		final Instance world = player.getInstanceWorld();
+		if ((world == null) || (world.getTemplateId() != VALAKAS_TEMPLE_INSTANCE_ID))
+		{
+			return null;
+		}
+
+		if (world.getStatus() != FINISH_INSTANCE)
+		{
+			return "RewardChest/no-reward.htm";
+		}
+
+		if (player.getVariables().getBoolean(PLAYER_REWARDED_VAR, false))
+		{
+			return "RewardChest/already-rewarded.htm";
+		}
+
+		return "RewardChest/reward.htm";
+	}
+
+	@Override
+	public String onEvent(String event, Npc npc, Player player)
+	{
+		if (event.equals("claim_reward"))
+		{
+			final Instance world = player.getInstanceWorld();
+			if ((world == null) || (world.getTemplateId() != VALAKAS_TEMPLE_INSTANCE_ID))
+			{
+				return null;
+			}
+
+			if (world.getStatus() != FINISH_INSTANCE)
+			{
+				return "RewardChest/no-reward.htm";
+			}
+
+			if (player.getVariables().getBoolean(PLAYER_REWARDED_VAR, false))
+			{
+				return "RewardChest/already-rewarded.htm";
+			}
+
+			// Give rewards
+			giveRewards(player);
+			player.getVariables().set(PLAYER_REWARDED_VAR, true);
+
+			// Teleport player out after 15 seconds
+			ThreadPool.schedule(() ->
+			{
+				if ((player != null) && (player.getInstanceWorld() == world))
+				{
+					final Location exitLoc = world.getTemplateParameters().getLocation("exit");
+					if (exitLoc != null)
+					{
+						player.teleToLocation(exitLoc, false);
+					}
+					else
+					{
+						player.teleToLocation(new Location(142598, -151085, -7598), false);
+					}
+				}
+			}, 15_000);
+
+			return "RewardChest/rewarded.htm";
+		}
+
+		return super.onEvent(event, npc, player);
+	}
+
+	private void giveRewards(Player player)
+	{
+		for (int i = 0; i < REWARD_ITEMS_COUNT; i++)
+		{
+			int totalChance = 0;
+			for (int[] reward : REWARD_ITEMS)
+			{
+				totalChance += reward[2]; // reward[2] is chance
+			}
+
+			final int random = getRandom(totalChance);
+			int currentChance = 0;
+
+			for (int[] reward : REWARD_ITEMS)
+			{
+				currentChance += reward[2]; // reward[2] is chance
+				if (random < currentChance)
+				{
+					// reward[0] = itemId, reward[1] = count, reward[2] = chance
+					giveItems(player, reward[0], reward[1]);
+					break;
+				}
+			}
+		}
+	}
+
 	public static void main(String[] args)
 	{
 		new ValakasTemple();

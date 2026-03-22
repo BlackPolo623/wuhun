@@ -113,6 +113,7 @@ import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.managers.events.BlackCouponManager;
 import org.l2jmobius.gameserver.managers.events.EventDropManager;
 import org.l2jmobius.gameserver.managers.events.LeonasDungeonManager;
+import org.l2jmobius.gameserver.managers.events.ValakasTempleManager;
 import org.l2jmobius.gameserver.managers.games.MonsterRaceManager;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.drops.WorldDropManager;
@@ -327,6 +328,7 @@ public class GameServer
 		
 		printSection("Instance");
 		InstanceManager.getInstance();
+		ValakasTempleManager.getInstance();
 		
 		printSection("Olympiad");
 		Olympiad.getInstance();

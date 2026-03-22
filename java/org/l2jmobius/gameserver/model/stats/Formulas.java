@@ -115,7 +115,7 @@ public class Formulas
 		final double weaponTraitMod = calcWeaponTraitBonus(attacker, target);
 		final double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true);
 		final double weaknessMod = calcWeaknessBonus(attacker, target, skill.getTraitType());
-		final double attributeMod = calcAttributeBonus(attacker, target, skill);
+		// [屬性加成] 已移至 Creature.reduceCurrentHp()，在最終減傷之後、最終增傷之前套用
 		final double randomMod = attacker.getRandomDamageMultiplier();
 		final double pvpPveMod = calculatePvpPveBonus(attacker, target, skill, true);
 		
@@ -149,7 +149,7 @@ public class Formulas
 		// ATTACK CALCULATION 77 * [(skillpower+patk) * 0.666 * cdbonus * cdPosBonusHalf * cdVulnHalf * ss + isBack0.2Side0.05 * (skillpower+patk*ss) * random + 6 * cd_patk] / pdef
 		// ````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^
 		final double baseMod = (77 * (((skillPower + attacker.getPAtk()) * 0.666) + (isPosition * (skillPower + attacker.getPAtk()) * randomMod) + (6 * cdPatk))) / defence;
-		final double damage = baseMod * ssmod * cdMult * weaponTraitMod * generalTraitMod * weaknessMod * attributeMod * randomMod * pvpPveMod * balanceMod;
+		final double damage = baseMod * ssmod * cdMult * weaponTraitMod * generalTraitMod * weaknessMod * randomMod * pvpPveMod * balanceMod;
 		
 		return damage;
 	}
@@ -177,7 +177,7 @@ public class Formulas
 		// Trait, elements
 		final double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true);
 		final double weaknessMod = calcWeaknessBonus(attacker, target, skill.getTraitType());
-		final double attributeMod = calcAttributeBonus(attacker, target, skill);
+		// [屬性加成] 已移至 Creature.reduceCurrentHp()，在最終減傷之後、最終增傷之前套用
 		final double randomMod = attacker.getRandomDamageMultiplier();
 		final double pvpPveMod = calculatePvpPveBonus(attacker, target, skill, mcrit);
 		
@@ -229,7 +229,7 @@ public class Formulas
 		}
 		
 		// NasSeKa rev. 10196: generalTraitMod == 0 ? 1 : generalTraitMod (no invulnerable traits).
-		damage = damage * critMod * (generalTraitMod == 0 ? 1 : generalTraitMod) * weaknessMod * attributeMod * randomMod * pvpPveMod;
+		damage = damage * critMod * (generalTraitMod == 0 ? 1 : generalTraitMod) * weaknessMod * randomMod * pvpPveMod;
 		damage *= attacker.getStat().getValue(Stat.MAGICAL_SKILL_POWER, 1);
 		damage += critMagicAdd;
 		
@@ -1041,8 +1041,8 @@ public class Formulas
 			double counterdmg = ((target.getPAtk() * 873) / attacker.getPDef()); // Old: (((target.getPAtk(attacker) * 10.0) * 70.0) / attacker.getPDef(target));
 			counterdmg *= calcWeaponTraitBonus(attacker, target);
 			counterdmg *= calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true);
-			counterdmg *= calcAttributeBonus(attacker, target, skill);
-			
+			// [屬性加成] 已移至 Creature.reduceCurrentHp()，在最終減傷之後、最終增傷之前套用
+
 			attacker.reduceCurrentHp(counterdmg, target, skill);
 		}
 	}
@@ -1476,10 +1476,10 @@ public class Formulas
 		// ````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 		attack = ((((attack * cAtk * ssBonus) + cAtkAdd) * critMod) * (isRanged ? 154 : 77)) + (attack * (1 - critMod) * ssBonus * (isRanged ? 154 : 77));
 		
-		// DAMAGE CALCULATION (ATTACK / DEFENCE) * trait bonus * attr bonus * pvp bonus * pve bonus
+		// DAMAGE CALCULATION (ATTACK / DEFENCE) * trait bonus * pvp bonus * pve bonus
+		// [屬性加成] 已移至 Creature.reduceCurrentHp()，在最終減傷之後、最終增傷之前套用
 		double damage = attack / defence;
 		damage *= calcAttackTraitBonus(attacker, target);
-		damage *= calcAttributeBonus(attacker, target, null);
 		damage *= calculatePvpPveBonus(attacker, target, null, crit);
 		damage *= attacker.getStat().getMul(Stat.AUTO_ATTACK_DAMAGE_BONUS);
 		

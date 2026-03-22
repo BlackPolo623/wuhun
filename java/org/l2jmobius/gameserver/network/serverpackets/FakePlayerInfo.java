@@ -76,7 +76,7 @@ public class FakePlayerInfo extends ServerPacket
 		_swimWalkSpd = (int) Math.round(npc.getSwimWalkSpeed() / _moveMultiplier);
 		_flyRunSpd = npc.isFlying() ? _runSpd : 0;
 		_flyWalkSpd = npc.isFlying() ? _walkSpd : 0;
-		_fpcHolder = npc.getTemplate().getFakePlayerInfo();
+		_fpcHolder = npc.getEffectiveFakePlayerHolder();
 		_abnormalVisualEffects = _npc.getEffectList().getCurrentAbnormalVisualEffects();
 		_clan = ClanTable.getInstance().getClan(_fpcHolder.getClanId());
 	}

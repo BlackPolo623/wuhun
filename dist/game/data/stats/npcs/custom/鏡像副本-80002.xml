@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
+	<!-- 鏡像副本 - 鏡像怪物 FakePlayer NPC 模板 -->
+	<!-- 外觀會在運行時由腳本動態替換為玩家外觀 -->
+	<npc id="80002" level="93" type="Monster" name="鏡像戰士">
+		<stats str="103" int="40" dex="53" wit="37" con="84" men="39">
+			<vitals hp="100000000" hpRegen="1.0" mp="3863" mpRegen="1.0" />
+			<attack physical="5000000" magical="5000000" random="10" critical="4" accuracy="177" attackSpeed="500" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="500000" magical="500000" />
+			<speed>
+				<walk ground="85" />
+				<run ground="130" />
+			</speed>
+			<hitTime>100</hitTime>
+		</stats>
+		<ai aggroRange="600" clanHelpRange="0" isAggressive="true" />
+		<status talkable="false" randomAnimation="false" randomWalk="false" undying="false" attackable="true" />
+		<!-- 預設外觀（運行時由腳本動態替換為玩家裝備） -->
+		<fakePlayer
+			classId="88"
+			hair="1"
+			hairColor="0"
+			face="0"
+			nameColor="16777215"
+			titleColor="16777079"
+			equipHead="0"
+			equipRHand="0"
+			equipLHand="0"
+			equipGloves="0"
+			equipChest="0"
+			equipLegs="0"
+			equipFeet="0"
+			equipCloak="0"
+			equipHair="0"
+			equipHair2="0"
+			agathionId="0"
+			weaponEnchantLevel="0"
+			armorEnchantLevel="0"
+			recommends="0"
+			nobleLevel="0"
+			hero="false"
+			clanId="0"
+			pledgeStatus="0"
+			sitting="false"
+			privateStoreType="0"
+			privateStoreMessage=""
+			fakePlayerTalkable="false"
+			fishing="false"
+			baitLocationX="0"
+			baitLocationY="0"
+			baitLocationZ="0"
+		/>
+		<collision>
+			<radius normal="9" />
+			<height normal="25" />
+		</collision>
+	</npc>
+</list>

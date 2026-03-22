@@ -114,7 +114,7 @@ public class PhysicalDamageWeaponBonus extends AbstractEffect
 		final double defenceIgnoreRemoval = effected.getStat().getValue(Stat.DEFENCE_IGNORE_REMOVAL, 1);
 		final double defenceIgnoreRemovalAdd = effected.getStat().getValue(Stat.DEFENCE_IGNORE_REMOVAL_ADD, 0);
 		final double pDefMod = Math.min(1, (defenceIgnoreRemoval - 1) + (_pDefMod));
-		final int pDef = effected.getPDef();
+		final long pDef = effected.getPDef();
 		double ignoredPDef = pDef - (pDef * pDefMod);
 		if (ignoredPDef > 0)
 		{
@@ -182,11 +182,11 @@ public class PhysicalDamageWeaponBonus extends AbstractEffect
 			{
 				if (effector.isChargedShot(ShotType.SOULSHOTS))
 				{
-					ssmod = Math.max(1, 2 + (effector.getStat().getValue(Stat.SHOTS_BONUS) / 100) - (effected.getStat().getValue(Stat.SOULSHOT_RESISTANCE, 0) / 100)); // 2.04 for dual weapon?
+					ssmod = Math.max(1, (2 + (effector.getStat().getValue(Stat.SHOTS_BONUS) / 100)) - (effected.getStat().getValue(Stat.SOULSHOT_RESISTANCE, 0) / 100)); // 2.04 for dual weapon?
 				}
 				else if (effector.isChargedShot(ShotType.BLESSED_SOULSHOTS))
 				{
-					ssmod = Math.max(1, 4 + (effector.getStat().getValue(Stat.SHOTS_BONUS) / 100) - (effected.getStat().getValue(Stat.SOULSHOT_RESISTANCE, 0) / 100));
+					ssmod = Math.max(1, (4 + (effector.getStat().getValue(Stat.SHOTS_BONUS) / 100)) - (effected.getStat().getValue(Stat.SOULSHOT_RESISTANCE, 0) / 100));
 				}
 			}
 			

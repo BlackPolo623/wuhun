@@ -18,6 +18,7 @@ import org.l2jmobius.gameserver.managers.MailManager;
 import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.holders.creature.PetEvolveHolder;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.holders.custom.OnPlayerPetHatch;
 import org.l2jmobius.gameserver.model.events.holders.custom.OnPlayerPetHatchStart;
@@ -28,6 +29,7 @@ import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.enums.MailType;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2jmobius.gameserver.model.item.instance.Item;
 
 /**
  * 寵物孵化系統
@@ -560,6 +562,34 @@ public class PetHatchingSystem extends Script
 		long count = player.getInventory().getInventoryItemCount(petItemId, -1);
 		if (count <= 0) { player.sendMessage("你沒有該寵物!"); return handleCollectionMenu(player, page); }
 		if (count > 1) { player.sendMessage("你有多個該寵物，為避免存入練好的寵物，請先處理多餘的!"); return handleCollectionMenu(player, page); }
+
+		// 檢查寵物是否有經驗值或等級不是初始狀態
+		final Item petItem = player.getInventory().getItemByItemId(petItemId);
+		if (petItem != null)
+		{
+			final PetEvolveHolder evolveData = player.getPetEvolve(petItem.getObjectId());
+			if (evolveData != null)
+			{
+				if (evolveData.getExp() > 0)
+				{
+					player.sendMessage("該寵物經驗並非初始狀態，無法收藏！請使用全新未培養的寵物。");
+					return handleCollectionMenu(player, page);
+				}
+				if (evolveData.getLevel() > 1)
+				{
+					player.sendMessage("該寵物等級已提升，無法收藏！請使用全新未培養的寵物。");
+					return handleCollectionMenu(player, page);
+				}
+			}
+
+			// 檢查寵物身上是否有裝備
+			if (PetHatchingDAO.hasPetEquipment(petItem.getObjectId()))
+			{
+				player.sendMessage("該寵物身上還有裝備，無法收藏！請先取下寵物的所有裝備。");
+				return handleCollectionMenu(player, page);
+			}
+		}
+
 		if (!player.destroyItemByItemId(ItemProcessType.NONE, petItemId, 1, player, true))
 		{
 			player.sendMessage("扣除寵物失敗!"); return handleCollectionMenu(player, page);

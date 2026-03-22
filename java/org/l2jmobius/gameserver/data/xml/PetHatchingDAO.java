@@ -488,4 +488,25 @@ public class PetHatchingDAO
 			LOGGER.warning("PetHatchingDAO: Error marking event fired: " + e.getMessage());
 		}
 	}
+
+	// ==================== 寵物裝備檢查 ====================
+
+	public static boolean hasPetEquipment(int petItemObjectId)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) FROM items WHERE owner_id=? AND loc='PET_EQUIP' AND loc_data=?"))
+		{
+			ps.setInt(1, petItemObjectId);
+			ps.setInt(2, petItemObjectId);
+			try (ResultSet rs = ps.executeQuery())
+			{
+				if (rs.next()) return rs.getInt(1) > 0;
+			}
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning("PetHatchingDAO: Error checking pet equipment: " + e.getMessage());
+		}
+		return false;
+	}
 }

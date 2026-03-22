@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	神匠強化系統配置
+	series: 系列名稱
+	slot: 裝備部位 (HEAD=4, CHEST=8, LEGS=9, GLOVES=6, FEET=10, BACK=12, BELT=13, RFINGER=11, LFINGER=12, REAR=5, LEAR=6, NECK=3)
+	itemIdMin/itemIdMax: 該系列該部位的道具ID範圍
+	maxEnchant: 最大強化值
+	material: 所需素材道具ID
+	materialCount: 所需素材數量
+	successRate: 成功機率 (0-100)
+-->
+<divineCraft>
+	<series name="火龍系列" id="dragon">
+		<slot type="HEAD" itemIdMin="130000" itemIdMax="130100" maxEnchant="100">
+			<enchantCost material="130000" materialCount="1" successRate="80" />
+		</slot>
+		<slot type="CHEST" itemIdMin="130000" itemIdMax="130100" maxEnchant="100">
+			<enchantCost material="130000" materialCount="1" successRate="80" />
+		</slot>
+		<slot type="LEGS" itemIdMin="130000" itemIdMax="130100" maxEnchant="100">
+			<enchantCost material="130000" materialCount="1" successRate="80" />
+		</slot>
+		<slot type="GLOVES" itemIdMin="130000" itemIdMax="130100" maxEnchant="100">
+			<enchantCost material="130000" materialCount="1" successRate="80" />
+		</slot>
+		<slot type="FEET" itemIdMin="130000" itemIdMax="130100" maxEnchant="100">
+			<enchantCost material="130000" materialCount="1" successRate="80" />
+		</slot>
+		<slot type="BACK" itemIdMin="130000" itemIdMax="130100" maxEnchant="100">
+			<enchantCost material="130000" materialCount="1" successRate="80" />
+		</slot>
+	</series>
+	<!-- 新增系列範例：
+	<series name="冰霜系列" id="frost">
+		<slot type="HEAD" itemIdMin="131000" itemIdMax="131009" maxEnchant="50">
+			<enchantCost material="131100" materialCount="2" successRate="70" />
+		</slot>
+	</series>
+	-->
+</divineCraft>

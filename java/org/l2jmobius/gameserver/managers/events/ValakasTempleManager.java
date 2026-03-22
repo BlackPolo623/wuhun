@@ -50,7 +50,7 @@ public class ValakasTempleManager
 	// 設定區：可自行調整
 	// ========================================
 	/** 每週最大進入次數 */
-	public static final int MAX_WEEKLY_ENTRIES = 1;
+	public static final int MAX_WEEKLY_ENTRIES = 100;
 	/**
 	 * 重置日（輸入數字）：
 	 * 1 = 週一, 2 = 週二, 3 = 週三, 4 = 週四

@@ -445,13 +445,13 @@ public class Cubic extends Creature
 	}
 	
 	@Override
-	public int getPAtk()
+	public long getPAtk()
 	{
 		return _template.getBasePAtk();
 	}
 	
 	@Override
-	public int getMAtk()
+	public long getMAtk()
 	{
 		return _template.getBaseMAtk();
 	}

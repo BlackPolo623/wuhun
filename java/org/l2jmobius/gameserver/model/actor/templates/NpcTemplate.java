@@ -315,17 +315,27 @@ public class NpcTemplate extends CreatureTemplate
 	{
 		return _name;
 	}
-	
+
+	public void setName(String name)
+	{
+		_name = name;
+	}
+
 	public boolean isUsingServerSideName()
 	{
 		return _usingServerSideName;
 	}
-	
+
 	public String getTitle()
 	{
 		return _title;
 	}
-	
+
+	public void setTitle(String title)
+	{
+		_title = title;
+	}
+
 	public boolean isUsingServerSideTitle()
 	{
 		return _usingServerSideTitle;
@@ -345,7 +355,12 @@ public class NpcTemplate extends CreatureTemplate
 	{
 		return _sex;
 	}
-	
+
+	public void setSex(Sex sex)
+	{
+		_sex = sex;
+	}
+
 	public int getChestId()
 	{
 		return _chestId;
