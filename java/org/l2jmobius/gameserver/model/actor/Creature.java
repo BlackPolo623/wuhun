@@ -5543,9 +5543,20 @@ public abstract class Creature extends WorldObject
 				finalDamageReduce = Math.max(0, finalDamageReduce - ignoreFdr); // 降低目標的減傷
 			}
 
+			// 【技能】攻擊者的「無視最終減傷」屬性（來自技能效果 IgnoreFinalDamageReduce）
+			// 例：BOSS有99%減傷，攻擊者有10%無視減傷 → BOSS實際減傷變成89%
+			if (attacker != null)
+			{
+				double ignoreSkillFdr = attacker.getStat().getValue(Stat.IGNORE_FINAL_DAMAGE_REDUCE, 0);
+				if (ignoreSkillFdr > 0)
+				{
+					finalDamageReduce = Math.max(0, finalDamageReduce - ignoreSkillFdr);
+				}
+			}
+
 			if (finalDamageReduce > 0)
 			{
-				finalDamageReduce = Math.min(finalDamageReduce, 99.999); // 上限 99.99%，防止無敵
+				finalDamageReduce = Math.min(finalDamageReduce, 99.999); // 上限 99.999%，防止無敵
 				amount *= (1.0 - (finalDamageReduce / 100.0));
 			}
 		}

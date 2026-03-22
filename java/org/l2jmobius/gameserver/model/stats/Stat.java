@@ -61,6 +61,7 @@ public enum Stat
 {
 	FINAL_DAMAGE_RATE("FinalDamage"),
 	FINAL_DAMAGE_REDUCE("FinalDamageReduce"),
+	IGNORE_FINAL_DAMAGE_REDUCE("IgnoreFinalDamageReduce"), // 無視最終減傷
 	// HP, MP & CP
 	HP_LIMIT("hpLimit"),
 	MAX_HP("maxHp", new MaxHpFinalizer()),

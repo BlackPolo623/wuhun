@@ -91,9 +91,10 @@ public class FakePlayerInfo extends ServerPacket
 		buffer.writeInt(_z);
 		buffer.writeInt(0); // vehicleId
 		buffer.writeInt(_objId);
-		buffer.writeString(_npc.getName());
-		buffer.writeShort(_npc.getRace().ordinal());
-		buffer.writeByte(_npc.getTemplate().getSex() == Sex.FEMALE);
+		// 從 FakePlayerHolder 讀取 name/race/sex，避免依賴共享 NpcTemplate（修復多副本外觀互相覆蓋的問題）
+		buffer.writeString(_fpcHolder.getName().isEmpty() ? _npc.getName() : _fpcHolder.getName());
+		buffer.writeShort((_fpcHolder.getRace() != null ? _fpcHolder.getRace() : _npc.getRace()).ordinal());
+		buffer.writeByte((_fpcHolder.getSex() != null ? _fpcHolder.getSex() : _npc.getTemplate().getSex()) == Sex.FEMALE);
 		buffer.writeInt(_fpcHolder.getPlayerClass().getRootClass().getId());
 		buffer.writeInt(0); // Inventory.PAPERDOLL_UNDER
 		buffer.writeInt(_fpcHolder.getEquipHead());
@@ -144,7 +145,8 @@ public class FakePlayerInfo extends ServerPacket
 		buffer.writeInt(_fpcHolder.getHair());
 		buffer.writeInt(_fpcHolder.getHairColor());
 		buffer.writeInt(_fpcHolder.getFace());
-		buffer.writeString(_npc.getTemplate().getTitle());
+		// 從 FakePlayerHolder 讀取 title，避免依賴共享 NpcTemplate
+		buffer.writeString(_fpcHolder.getTitle().isEmpty() ? _npc.getTemplate().getTitle() : _fpcHolder.getTitle());
 		if (_clan != null)
 		{
 			buffer.writeInt(_clan.getId());

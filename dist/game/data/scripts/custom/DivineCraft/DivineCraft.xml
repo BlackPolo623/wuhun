@@ -1,39 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 	神匠強化系統配置
-	series: 系列名稱
-	slot: 裝備部位 (HEAD=4, CHEST=8, LEGS=9, GLOVES=6, FEET=10, BACK=12, BELT=13, RFINGER=11, LFINGER=12, REAR=5, LEAR=6, NECK=3)
-	itemIdMin/itemIdMax: 該系列該部位的道具ID範圍
-	maxEnchant: 最大強化值
-	material: 所需素材道具ID
-	materialCount: 所需素材數量
-	successRate: 成功機率 (0-100)
+	series: 系列設定
+		- name: 系列顯示名稱
+		- id: 系列唯一識別碼
+		- maxEnchant: 該系列的最大強化值
+		- destroyChance: 強化失敗時裝備消失的機率 (0-100)
+		- protectionItemId: 防爆道具ID (可選，若不設定則無法使用防爆道具)
+	successRates: 強化成功率區間設定
+		- range: 定義強化等級區間的成功率
+			- min: 區間最小值
+			- max: 區間最大值
+			- rate: 該區間的成功率 (0-100)
+		- 未設定的區間默認成功率為 5%
+	slot: 裝備部位
+		- type: 部位類型 (HEAD, CHEST, LEGS, GLOVES, FEET, BACK, BELT, RFINGER, LFINGER, REAR, LEAR, NECK)
+		- itemIdMin/itemIdMax: 該系列該部位的道具ID範圍
+	material: 可用的強化素材（可設定多個）
+		- itemId: 素材道具ID
+		- count: 所需素材數量
 -->
 <divineCraft>
-	<series name="火龍系列" id="dragon">
-		<slot type="HEAD" itemIdMin="130000" itemIdMax="130100" maxEnchant="100">
-			<enchantCost material="130000" materialCount="1" successRate="80" />
+	<series name="火龍系列" id="FireDragon" maxEnchant="100" destroyChance="15" protectionItemId="130002">
+		<successRates>
+			<range min="1" max="50" rate="80" />
+			<range min="51" max="100" rate="30" />
+		</successRates>
+		<slot type="HEAD" itemIdMin="130000" itemIdMax="130100">
+			<material itemId="130000" count="1" />
 		</slot>
-		<slot type="CHEST" itemIdMin="130000" itemIdMax="130100" maxEnchant="100">
-			<enchantCost material="130000" materialCount="1" successRate="80" />
+		<slot type="CHEST" itemIdMin="130000" itemIdMax="130100">
+			<material itemId="130000" count="1" />
 		</slot>
-		<slot type="LEGS" itemIdMin="130000" itemIdMax="130100" maxEnchant="100">
-			<enchantCost material="130000" materialCount="1" successRate="80" />
+		<slot type="LEGS" itemIdMin="130000" itemIdMax="130100">
+			<material itemId="130000" count="1" />
 		</slot>
-		<slot type="GLOVES" itemIdMin="130000" itemIdMax="130100" maxEnchant="100">
-			<enchantCost material="130000" materialCount="1" successRate="80" />
+		<slot type="GLOVES" itemIdMin="130000" itemIdMax="130100">
+			<material itemId="130000" count="1" />
 		</slot>
-		<slot type="FEET" itemIdMin="130000" itemIdMax="130100" maxEnchant="100">
-			<enchantCost material="130000" materialCount="1" successRate="80" />
+		<slot type="FEET" itemIdMin="130000" itemIdMax="130100">
+			<material itemId="130000" count="1" />
 		</slot>
-		<slot type="BACK" itemIdMin="130000" itemIdMax="130100" maxEnchant="100">
-			<enchantCost material="130000" materialCount="1" successRate="80" />
+		<slot type="BACK" itemIdMin="130000" itemIdMax="130100">
+			<material itemId="130000" count="1" />
 		</slot>
 	</series>
 	<!-- 新增系列範例：
-	<series name="冰霜系列" id="frost">
-		<slot type="HEAD" itemIdMin="131000" itemIdMax="131009" maxEnchant="50">
-			<enchantCost material="131100" materialCount="2" successRate="70" />
+	<series name="冰霜系列" id="frost" maxEnchant="50" destroyChance="30" protectionItemId="131200">
+		<successRates>
+			<range min="1" max="25" rate="70" />
+			<range min="26" max="50" rate="40" />
+		</successRates>
+		<slot type="HEAD" itemIdMin="131000" itemIdMax="131009">
+			<material itemId="131100" count="2" />
+			<material itemId="131101" count="1" />
 		</slot>
 	</series>
 	-->

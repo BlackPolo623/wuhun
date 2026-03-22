@@ -48,22 +48,50 @@ public class DivineCraft extends Script
 	}
 
 	// 系列資料結構
+	private static class MaterialOption
+	{
+		int itemId;
+		long count;
+	}
+
+	private static class SuccessRateRange
+	{
+		int min;
+		int max;
+		int rate;
+	}
+
 	private static class SlotConfig
 	{
 		String slotType;
 		int itemIdMin;
 		int itemIdMax;
-		int maxEnchant;
-		int material;
-		long materialCount;
-		int successRate;
+		List<MaterialOption> materials = new ArrayList<>();
 	}
 
 	private static class SeriesConfig
 	{
 		String name;
 		String id;
+		int maxEnchant;
+		int destroyChance;
+		int protectionItemId;
+		List<SuccessRateRange> successRates = new ArrayList<>();
 		List<SlotConfig> slots = new ArrayList<>();
+
+		// 根據當前強化等級獲取成功率
+		int getSuccessRate(int currentEnchant)
+		{
+			int nextLevel = currentEnchant + 1;
+			for (SuccessRateRange range : successRates)
+			{
+				if (nextLevel >= range.min && nextLevel <= range.max)
+				{
+					return range.rate;
+				}
+			}
+			return 5; // 默認成功率
+		}
 	}
 
 	private static final List<SeriesConfig> SERIES_LIST = new ArrayList<>();
@@ -100,6 +128,28 @@ public class DivineCraft extends Script
 				SeriesConfig series = new SeriesConfig();
 				series.name = seriesEl.getAttribute("name");
 				series.id = seriesEl.getAttribute("id");
+				series.maxEnchant = Integer.parseInt(seriesEl.getAttribute("maxEnchant"));
+				series.destroyChance = Integer.parseInt(seriesEl.getAttribute("destroyChance"));
+
+				String protectionItemIdStr = seriesEl.getAttribute("protectionItemId");
+				series.protectionItemId = protectionItemIdStr.isEmpty() ? 0 : Integer.parseInt(protectionItemIdStr);
+
+				// 讀取成功率區間
+				NodeList ratesNodes = seriesEl.getElementsByTagName("successRates");
+				if (ratesNodes.getLength() > 0)
+				{
+					Element ratesEl = (Element) ratesNodes.item(0);
+					NodeList rangeNodes = ratesEl.getElementsByTagName("range");
+					for (int j = 0; j < rangeNodes.getLength(); j++)
+					{
+						Element rangeEl = (Element) rangeNodes.item(j);
+						SuccessRateRange range = new SuccessRateRange();
+						range.min = Integer.parseInt(rangeEl.getAttribute("min"));
+						range.max = Integer.parseInt(rangeEl.getAttribute("max"));
+						range.rate = Integer.parseInt(rangeEl.getAttribute("rate"));
+						series.successRates.add(range);
+					}
+				}
 
 				NodeList slotNodes = seriesEl.getElementsByTagName("slot");
 				for (int j = 0; j < slotNodes.getLength(); j++)
@@ -109,12 +159,16 @@ public class DivineCraft extends Script
 					slot.slotType = slotEl.getAttribute("type");
 					slot.itemIdMin = Integer.parseInt(slotEl.getAttribute("itemIdMin"));
 					slot.itemIdMax = Integer.parseInt(slotEl.getAttribute("itemIdMax"));
-					slot.maxEnchant = Integer.parseInt(slotEl.getAttribute("maxEnchant"));
 
-					Element costEl = (Element) slotEl.getElementsByTagName("enchantCost").item(0);
-					slot.material = Integer.parseInt(costEl.getAttribute("material"));
-					slot.materialCount = Long.parseLong(costEl.getAttribute("materialCount"));
-					slot.successRate = Integer.parseInt(costEl.getAttribute("successRate"));
+					NodeList materialNodes = slotEl.getElementsByTagName("material");
+					for (int k = 0; k < materialNodes.getLength(); k++)
+					{
+						Element matEl = (Element) materialNodes.item(k);
+						MaterialOption mat = new MaterialOption();
+						mat.itemId = Integer.parseInt(matEl.getAttribute("itemId"));
+						mat.count = Long.parseLong(matEl.getAttribute("count"));
+						slot.materials.add(mat);
+					}
 
 					series.slots.add(slot);
 				}
@@ -215,7 +269,7 @@ public class DivineCraft extends Script
 				int enchant = equipped.getEnchantLevel();
 				String itemDisplay = "<font color=00FF00>" + equipped.getName() + (enchant > 0 ? " +" + enchant : "") + "</font>";
 				String btn;
-				if (enchant >= slotCfg.maxEnchant)
+				if (enchant >= series.maxEnchant)
 				{
 					btn = "<font color=FFFF00>已滿強化</font>";
 				}
@@ -244,33 +298,58 @@ public class DivineCraft extends Script
 			return showSeriesPage(player, seriesId);
 		}
 
-		long playerMat = player.getInventory().getInventoryItemCount(slotCfg.material, -1);
 		int enchant = equipped.getEnchantLevel();
-		boolean canEnchant = playerMat >= slotCfg.materialCount && enchant < slotCfg.maxEnchant;
+		int currentSuccessRate = series.getSuccessRate(enchant);
 
-		// 取得素材名稱
-		String materialName;
-		org.l2jmobius.gameserver.model.item.ItemTemplate matTemplate = org.l2jmobius.gameserver.data.xml.ItemData.getInstance().getTemplate(slotCfg.material);
-		materialName = matTemplate != null ? matTemplate.getName() : "道具ID " + slotCfg.material;
-
-		// 身上數量顯示
-		String matCountDisplay;
-		if (playerMat >= slotCfg.materialCount)
+		// 尋找玩家擁有的第一個可用素材
+		MaterialOption availableMat = null;
+		for (MaterialOption mat : slotCfg.materials)
 		{
-			matCountDisplay = "<font color=00FF00>" + playerMat + "（足夠）</font>";
+			long playerMat = player.getInventory().getInventoryItemCount(mat.itemId, -1);
+			if (playerMat >= mat.count)
+			{
+				availableMat = mat;
+				break;
+			}
+		}
+
+		// 建立素材列表顯示
+		StringBuilder matListHtml = new StringBuilder();
+		for (MaterialOption mat : slotCfg.materials)
+		{
+			long playerMat = player.getInventory().getInventoryItemCount(mat.itemId, -1);
+			org.l2jmobius.gameserver.model.item.ItemTemplate matTemplate = org.l2jmobius.gameserver.data.xml.ItemData.getInstance().getTemplate(mat.itemId);
+			String matName = matTemplate != null ? matTemplate.getName() : "道具ID " + mat.itemId;
+
+			String color = playerMat >= mat.count ? "00FF00" : "FF4444";
+			String status = playerMat >= mat.count ? "（足夠）" : "（不足）";
+			matListHtml.append("<font color=").append(color).append(">").append(matName).append(" x").append(mat.count);
+			matListHtml.append(" - 擁有: ").append(playerMat).append(status).append("</font><br1>");
+		}
+
+		// 防爆道具資訊
+		String protectionInfo = "";
+		if (series.protectionItemId > 0)
+		{
+			long protectionCount = player.getInventory().getInventoryItemCount(series.protectionItemId, -1);
+			org.l2jmobius.gameserver.model.item.ItemTemplate protTemplate = org.l2jmobius.gameserver.data.xml.ItemData.getInstance().getTemplate(series.protectionItemId);
+			String protName = protTemplate != null ? protTemplate.getName() : "防爆道具";
+			String protColor = protectionCount > 0 ? "00FF00" : "FFAA00";
+			protectionInfo = "<br><font color=" + protColor + ">防爆道具: " + protName + " x" + protectionCount + "</font><br>";
+			protectionInfo += "<font color=AAAAAA>失敗消失機率: " + series.destroyChance + "%（有防爆道具時不消失）</font>";
 		}
 		else
 		{
-			matCountDisplay = "<font color=FF4444>" + playerMat + "（不足）</font>";
+			protectionInfo = "<br><font color=AAAAAA>失敗消失機率: " + series.destroyChance + "%</font>";
 		}
 
 		// 強化按鈕
 		String enchantButton;
-		if (enchant >= slotCfg.maxEnchant)
+		if (enchant >= series.maxEnchant)
 		{
 			enchantButton = "<font color=FFFF00>此裝備已達最大強化值！</font>";
 		}
-		else if (!canEnchant)
+		else if (availableMat == null)
 		{
 			enchantButton = "<font color=FF4444>素材不足，無法強化！</font>";
 		}
@@ -283,11 +362,11 @@ public class DivineCraft extends Script
 		msg.setFile(player, "data/scripts/custom/DivineCraft/enchant.htm");
 		msg.replace("%itemName%", equipped.getName() + (enchant > 0 ? " +" + enchant : ""));
 		msg.replace("%currentEnchant%", String.valueOf(enchant));
-		msg.replace("%maxEnchant%", String.valueOf(slotCfg.maxEnchant));
-		msg.replace("%successRate%", String.valueOf(slotCfg.successRate));
-		msg.replace("%materialName%", materialName);
-		msg.replace("%materialCount%", String.valueOf(slotCfg.materialCount));
-		msg.replace("%playerMatCount%", matCountDisplay);
+		msg.replace("%maxEnchant%", String.valueOf(series.maxEnchant));
+		msg.replace("%successRate%", String.valueOf(currentSuccessRate));
+		msg.replace("%materialName%", "可用素材");
+		msg.replace("%materialCount%", protectionInfo);
+		msg.replace("%playerMatCount%", matListHtml.toString());
 		msg.replace("%enchantButton%", enchantButton);
 		msg.replace("%seriesId%", seriesId);
 		player.sendPacket(msg);
@@ -306,24 +385,39 @@ public class DivineCraft extends Script
 			return showSeriesPage(player, seriesId);
 		}
 
-		if (equipped.getEnchantLevel() >= slotCfg.maxEnchant)
+		if (equipped.getEnchantLevel() >= series.maxEnchant)
 		{
 			player.sendMessage("此裝備已達最大強化值！");
 			return showEnchantPage(player, seriesId, slotType);
 		}
 
-		long playerMat = player.getInventory().getInventoryItemCount(slotCfg.material, -1);
-		if (playerMat < slotCfg.materialCount)
+		// 尋找玩家擁有的第一個可用素材
+		MaterialOption useMat = null;
+		for (MaterialOption mat : slotCfg.materials)
+		{
+			long playerMat = player.getInventory().getInventoryItemCount(mat.itemId, -1);
+			if (playerMat >= mat.count)
+			{
+				useMat = mat;
+				break;
+			}
+		}
+
+		if (useMat == null)
 		{
 			player.sendMessage("素材不足，無法強化！");
 			return showEnchantPage(player, seriesId, slotType);
 		}
 
 		// 扣除素材
-		player.destroyItemByItemId(org.l2jmobius.gameserver.model.item.enums.ItemProcessType.NONE, slotCfg.material, slotCfg.materialCount, player, true);
+		player.destroyItemByItemId(org.l2jmobius.gameserver.model.item.enums.ItemProcessType.NONE, useMat.itemId, useMat.count, player, true);
+
+		// 獲取當前強化等級的成功率
+		int currentEnchant = equipped.getEnchantLevel();
+		int successRate = series.getSuccessRate(currentEnchant);
 
 		// 判斷成功失敗
-		if (Rnd.get(100) < slotCfg.successRate)
+		if (Rnd.get(100) < successRate)
 		{
 			equipped.setEnchantLevel(equipped.getEnchantLevel() + 1);
 			equipped.updateDatabase();
@@ -333,6 +427,34 @@ public class DivineCraft extends Script
 		else
 		{
 			player.sendMessage("強化失敗！素材已消耗。");
+
+			// 判斷是否裝備消失
+			if (Rnd.get(100) < series.destroyChance)
+			{
+				// 檢查是否有防爆道具
+				boolean hasProtection = false;
+				if (series.protectionItemId > 0)
+				{
+					long protectionCount = player.getInventory().getInventoryItemCount(series.protectionItemId, -1);
+					if (protectionCount > 0)
+					{
+						// 扣除一個防爆道具
+						player.destroyItemByItemId(org.l2jmobius.gameserver.model.item.enums.ItemProcessType.NONE, series.protectionItemId, 1, player, true);
+						hasProtection = true;
+						player.sendMessage("防爆道具已消耗，裝備未消失！");
+					}
+				}
+
+				// 如果沒有防爆道具，裝備消失
+				if (!hasProtection)
+				{
+					player.getInventory().unEquipItemInSlot(SLOT_MAP.get(slotType));
+					player.destroyItem(org.l2jmobius.gameserver.model.item.enums.ItemProcessType.NONE, equipped, player, true);
+					player.broadcastUserInfo();
+					player.sendMessage("裝備已消失！");
+					return showSeriesPage(player, seriesId);
+				}
+			}
 		}
 
 		return showEnchantPage(player, seriesId, slotType);

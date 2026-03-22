@@ -495,6 +495,7 @@ public class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("ReplaceSkillByCombatPower", ReplaceSkillByCombatPower::new);
 		EffectHandler.getInstance().registerHandler("FinalDamage", FinalDamage::new);
 		EffectHandler.getInstance().registerHandler("FinalDamageReduce", FinalDamageReduce::new);
+		EffectHandler.getInstance().registerHandler("IgnoreFinalDamageReduce", IgnoreFinalDamageReduce::new);
 		EffectHandler.getInstance().registerHandler("ChangeWeapon", ChangeWeapon::new);
 		EffectHandler.getInstance().registerHandler("ChangeWeaponRadius", ChangeWeaponRadius::new);
 		EffectHandler.getInstance().registerHandler("ChangeWeaponCount", ChangeWeaponCount::new);

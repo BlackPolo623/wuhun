@@ -22,13 +22,19 @@ package org.l2jmobius.gameserver.model.actor.holders.npc;
 
 import org.l2jmobius.gameserver.data.xml.FakePlayerData;
 import org.l2jmobius.gameserver.model.StatSet;
+import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerClass;
+import org.l2jmobius.gameserver.model.actor.enums.player.Sex;
 
 /**
  * @author Mobius
  */
 public class FakePlayerHolder
 {
+	private final String _name;
+	private final String _title;
+	private final Race _race;
+	private final Sex _sex;
 	private final PlayerClass _playerClass;
 	private final int _hair;
 	private final int _hairColor;
@@ -74,6 +80,10 @@ public class FakePlayerHolder
 	 */
 	public FakePlayerHolder(StatSet set, boolean registerInData)
 	{
+		_name = set.getString("name", "");
+		_title = set.getString("title", "");
+		_race = set.getEnum("race", Race.class, Race.HUMAN);
+		_sex = set.getEnum("sex", Sex.class, Sex.MALE);
 		_playerClass = PlayerClass.getPlayerClass(set.getInt("classId", 1));
 		_hair = set.getInt("hair", 1);
 		_hairColor = set.getInt("hairColor", 1);
@@ -110,15 +120,34 @@ public class FakePlayerHolder
 		if (registerInData)
 		{
 			// Populate FakePlayerData mappings.
-			final String name = set.getString("name", "");
-			FakePlayerData.getInstance().addFakePlayerId(name, set.getInt("id", 0)); // Map name to npcId.
-			final String lowercaseName = name.toLowerCase();
-			FakePlayerData.getInstance().addFakePlayerName(lowercaseName, name); // Map lowercase name to original name.
+			FakePlayerData.getInstance().addFakePlayerId(_name, set.getInt("id", 0)); // Map name to npcId.
+			final String lowercaseName = _name.toLowerCase();
+			FakePlayerData.getInstance().addFakePlayerName(lowercaseName, _name); // Map lowercase name to original name.
 			if (_talkable)
 			{
 				FakePlayerData.getInstance().addTalkableFakePlayerName(lowercaseName);
 			}
 		}
+	}
+	
+	public String getName()
+	{
+		return _name;
+	}
+	
+	public String getTitle()
+	{
+		return _title;
+	}
+	
+	public Race getRace()
+	{
+		return _race;
+	}
+	
+	public Sex getSex()
+	{
+		return _sex;
 	}
 	
 	public PlayerClass getPlayerClass()
