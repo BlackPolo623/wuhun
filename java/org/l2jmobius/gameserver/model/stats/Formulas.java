@@ -1613,17 +1613,16 @@ public class Formulas
 		
 		return 900000 / creature.getStat().getPAtkSpd();
 	}
-	//魂環加成
-	private static final double SOUL_RING_PERCENT_PER_POINT = 0.3;
-	// 輔助方法：計算魂環加成
+	// 輔助方法：計算魂環加成（percentPerPoint 從 XML 讀取，向下相容）
 	private static double getSoulRingBonus(Player player, String varName)
 	{
 		if (player != null)
 		{
 			final int points = player.getVariables().getInt(varName, 0);
-			return 1.0 + (points * SOUL_RING_PERCENT_PER_POINT / 100.0);
+			final double ppp = org.l2jmobius.gameserver.data.xml.SoulRingAbilityData.getInstance().getPercentPerPoint(varName);
+			return 1.0 + (points * ppp / 100.0);
 		}
-		return 1.0 ;
+		return 1.0;
 	}
 	
 	public static double calculatePvpPveBonus(Creature attacker, Creature target, Skill skill, boolean crit)

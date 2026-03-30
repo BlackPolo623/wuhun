@@ -4,12 +4,32 @@
 		<set name="icon" val="icon.bm_unique_soul_of_undead" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
-		<set name="is_tradable" val="true" />
-		<set name="is_dropable" val="false" />
+		<set name="is_tradable" val="true"/>
+		<set name="is_dropable" val="true" />
 		<set name="is_sellable" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="130001" name="火龍斗篷" additionalName="Sealed" type="Armor">
+	<item id="130001" name="火龍強化卷軸" type="EtcItem">
+		<set name="icon" val="icon.L_scrl_of_ench_wp" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true"/>
+		<set name="is_dropable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="130002" name="火龍防爆卷軸" type="EtcItem">
+		<set name="icon" val="icon.bless_scroll_back" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="price" val="7000000" />
+		<set name="is_tradable" val="true"/>
+		<set name="is_dropable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="130009" name="火龍斗篷" additionalName="Sealed" type="Armor">
 		<set name="icon" val="icon.nobless_cloak_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="back" />
@@ -17,7 +37,7 @@
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="0" />
 		<set name="is_tradable" val="true" />
-		<set name="is_dropable" val="false" />
+		<set name="is_dropable" val="true" />
 		<set name="is_sellable" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="enchant_enabled" val="true" />
@@ -132,12 +152,13 @@
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
+		<set name="armor_type" val="UNIVERSAL" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="0" />
 		<set name="is_tradable" val="true" />
-		<set name="is_dropable" val="false" />
+		<set name="is_dropable" val="true" />
 		<set name="is_sellable" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
@@ -146,21 +167,18 @@
 			<stat type="pDef">100000</stat>
 			<stat type="mDef">100000</stat>
 		</stats>
-		<skills>
-			<skill id="130010" level="1" />
-		</skills>
 	</item>
 	<item id="130011" name="巴拉卡斯胸甲" additionalName="" type="Armor">
 		<set name="icon" val="icon.armor_t902_u_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="LIGHT" />
+		<set name="armor_type" val="UNIVERSAL" />
 		<set name="bodypart" val="chest" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="0" />
 		<set name="is_tradable" val="true" />
-		<set name="is_dropable" val="false" />
+		<set name="is_dropable" val="true" />
 		<set name="is_sellable" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
@@ -169,21 +187,18 @@
 			<stat type="pDef">100000</stat>
 			<stat type="mDef">100000</stat>
 		</stats>
-		<skills>
-			<skill id="130011" level="1" />
-		</skills>
 	</item>
 	<item id="130012" name="巴拉卡斯脛甲" additionalName="" type="Armor">
 		<set name="icon" val="icon.armor_t902_l_i00" />
 		<set name="default_action" val="EQUIP" />
-		<set name="armor_type" val="LIGHT" />
+		<set name="armor_type" val="UNIVERSAL" />
 		<set name="bodypart" val="legs" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="0" />
 		<set name="is_tradable" val="true" />
-		<set name="is_dropable" val="false" />
+		<set name="is_dropable" val="true" />
 		<set name="is_sellable" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
@@ -192,20 +207,18 @@
 			<stat type="pDef">100000</stat>
 			<stat type="mDef">100000</stat>
 		</stats>
-		<skills>
-			<skill id="130012" level="1" />
-		</skills>
 	</item>
 	<item id="130013" name="巴拉卡斯手套" additionalName="" type="Armor">
 		<set name="icon" val="icon.armor_t901_g_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="UNIVERSAL" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="0" />
 		<set name="is_tradable" val="true" />
-		<set name="is_dropable" val="false" />
+		<set name="is_dropable" val="true" />
 		<set name="is_sellable" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
@@ -214,20 +227,18 @@
 			<stat type="pDef">100000</stat>
 			<stat type="mDef">100000</stat>
 		</stats>
-		<skills>
-			<skill id="130013" level="1" />
-		</skills>
 	</item>
 	<item id="130014" name="巴拉卡斯長靴" additionalName="" type="Armor">
 		<set name="icon" val="icon.armor_t901_b_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="UNIVERSAL" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="A" />
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="0" />
 		<set name="is_tradable" val="true" />
-		<set name="is_dropable" val="false" />
+		<set name="is_dropable" val="true" />
 		<set name="is_sellable" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
@@ -236,8 +247,106 @@
 			<stat type="pDef">100000</stat>
 			<stat type="mDef">100000</stat>
 		</stats>
-		<skills>
-			<skill id="130014" level="1" />
-		</skills>
+	</item>
+
+	<item id="130015" name="火龍之魂頭盔" additionalName="" type="Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="armor_type" val="UNIVERSAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">1000000</stat>
+			<stat type="mDef">1000000</stat>
+		</stats>
+	</item>
+	<item id="130016" name="火龍之魂胸甲" additionalName="" type="Armor">
+		<set name="icon" val="icon.armor_t902_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="UNIVERSAL" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">1000000</stat>
+			<stat type="mDef">1000000</stat>
+		</stats>
+	</item>
+	<item id="130017" name="火龍之魂脛甲" additionalName="" type="Armor">
+		<set name="icon" val="icon.armor_t902_l_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="UNIVERSAL" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">1000000</stat>
+			<stat type="mDef">1000000</stat>
+		</stats>
+	</item>
+	<item id="130018" name="火龍之魂手套" additionalName="" type="Armor">
+		<set name="icon" val="icon.armor_t901_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="UNIVERSAL" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">1000000</stat>
+			<stat type="mDef">1000000</stat>
+		</stats>
+	</item>
+	<item id="130019" name="火龍之魂長靴" additionalName="" type="Armor">
+		<set name="icon" val="icon.armor_t901_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="UNIVERSAL" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="ensoulNormalSlots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<stats>
+			<stat type="pDef">1000000</stat>
+			<stat type="mDef">1000000</stat>
+		</stats>
 	</item>
 </list>

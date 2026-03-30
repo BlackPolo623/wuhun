@@ -55,17 +55,45 @@ public class ValakasTemple extends InstanceScript
 {
 	// Reward Chest Configuration
 	private static final int REWARD_CHEST_NPC_ID = 910001; // Reward Chest
-	private static final int REWARD_ITEMS_COUNT = 3; // Number of items each player can receive
-	private static final int[][] REWARD_ITEMS =
+	public static final int REWARD_ITEMS_COUNT = 10;       // 正常通關副本的抽獎次數
+	public static final int SWEEP_REWARD_ITEMS_COUNT = 5; // 掃蕩的抽獎次數
+	public static final int[][] REWARD_ITEMS =
 	{
-		// {itemId, count, chance (0-100)}
-		{57, 10000, 50},    // Adena x10000 - 50% chance
-		{6673, 100, 30},    // Ancient Adena x100 - 30% chance
-		{9546, 5, 15},      // Fire Stone x5 - 15% chance
-		{9547, 5, 10},      // Water Stone x5 - 10% chance
-		{9548, 5, 5},       // Earth Stone x5 - 5% chance
+		{130000, 1, 60},
+		{130000, 3, 20},
+		{130000, 5, 10},
+		{130001, 1, 2},
+		{130002, 1, 2},
+			{130009, 1, 1},
+			{1300010, 1, 1},
+			{1300011, 1, 1},
+			{1300012, 1, 1},
+			{1300013, 1, 1},
+			{1300014, 1, 1},
 	};
 	private static final String PLAYER_REWARDED_VAR = "VALAKAS_TEMPLE_REWARDED";
+	/** 玩家通關記錄變數：通關一次後設為 true，掃蕩功能需要此資格 */
+	public static final String PLAYER_CLEARED_VAR = "VALAKAS_TEMPLE_CLEARED";
+
+	// ========================================
+	// 保底機制設定（僅正常通關有效，掃蕩不計入）
+	// ========================================
+	/** 累計幾次正常通關後觸發保底（觸發後計數歸零） */
+	public static final int PITY_THRESHOLD = 10;
+	/** 保底專用獎池（觸發時從此池抽 1 件，與一般獎勵疊加） */
+	public static final int[][] PITY_REWARD_ITEMS =
+	{
+		// {itemId, count, chance} — 請填入你想要的保底道具
+			{130009, 1, 15},
+			{1300010, 1, 15},
+			{1300011, 1, 15},
+			{1300012, 1, 15},
+			{1300013, 1, 15},
+			{1300014, 1, 15},
+	};
+	/** 玩家變數：記錄累計正常通關次數（未觸發保底的次數） */
+	private static final String PLAYER_PITY_COUNT_VAR = "VALAKAS_TEMPLE_PITY_COUNT";
+	// ========================================
 
 	private static final int INSTANCE_CREATE = 0;
 	private static final int SAVE_HERMIT = 1;
@@ -410,6 +438,9 @@ public class ValakasTemple extends InstanceScript
 		world.spawnGroup("reward_chest");
 		world.getPlayers().forEach(player -> player.sendPacket(new ExShowScreenMessage("副本將在5分鐘後關閉，請盡快領取獎勵！", 10000)));
 
+		// 標記所有副本內玩家已通關（解鎖掃蕩功能）
+		world.getPlayers().forEach(player -> player.getVariables().set(PLAYER_CLEARED_VAR, true));
+
 		// Schedule instance destruction after 5 minutes
 		ThreadPool.schedule(() ->
 		{
@@ -532,6 +563,7 @@ public class ValakasTemple extends InstanceScript
 
 			// Give rewards
 			giveRewards(player);
+			checkAndApplyPity(player);
 			player.getVariables().set(PLAYER_REWARDED_VAR, true);
 
 			// Teleport player out after 15 seconds
@@ -580,6 +612,42 @@ public class ValakasTemple extends InstanceScript
 					break;
 				}
 			}
+		}
+	}
+
+	/**
+	 * 保底機制：累計正常通關次數，達到閾值時從保底獎池抽 1 件並重置計數。
+	 * 掃蕩不呼叫此方法，因此不計入也不觸發保底。
+	 */
+	private void checkAndApplyPity(Player player)
+	{
+		final int count = player.getVariables().getInt(PLAYER_PITY_COUNT_VAR, 0) + 1;
+		if (count >= PITY_THRESHOLD)
+		{
+			// 觸發保底：從保底獎池抽 1 件
+			int totalChance = 0;
+			for (int[] reward : PITY_REWARD_ITEMS)
+			{
+				totalChance += reward[2];
+			}
+			final int random = getRandom(totalChance);
+			int currentChance = 0;
+			for (int[] reward : PITY_REWARD_ITEMS)
+			{
+				currentChance += reward[2];
+				if (random < currentChance)
+				{
+					giveItems(player, reward[0], reward[1]);
+					break;
+				}
+			}
+			player.getVariables().set(PLAYER_PITY_COUNT_VAR, 0);
+			player.sendPacket(new ExShowScreenMessage("保底觸發！已獲得保底獎勵！", 6000));
+		}
+		else
+		{
+			player.getVariables().set(PLAYER_PITY_COUNT_VAR, count);
+			player.sendPacket(new ExShowScreenMessage("累計通關 " + count + "/" + PITY_THRESHOLD + " 次，還差 " + (PITY_THRESHOLD - count) + " 次觸發保底。", 5000));
 		}
 	}
 

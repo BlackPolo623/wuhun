@@ -23,26 +23,28 @@
 <divineCraft>
 	<series name="火龍系列" id="FireDragon" maxEnchant="100" destroyChance="15" protectionItemId="130002">
 		<successRates>
-			<range min="1" max="50" rate="80" />
-			<range min="51" max="100" rate="30" />
+			<range min="1" max="30" rate="70" />
+			<range min="31" max="50" rate="50" />
+			<range min="51" max="70" rate="30" />
+			<range min="71" max="100" rate="10" />
 		</successRates>
 		<slot type="HEAD" itemIdMin="130000" itemIdMax="130100">
-			<material itemId="130000" count="1" />
+			<material itemId="130001" count="1" />
 		</slot>
 		<slot type="CHEST" itemIdMin="130000" itemIdMax="130100">
-			<material itemId="130000" count="1" />
+			<material itemId="130001" count="1" />
 		</slot>
 		<slot type="LEGS" itemIdMin="130000" itemIdMax="130100">
-			<material itemId="130000" count="1" />
+			<material itemId="130001" count="1" />
 		</slot>
 		<slot type="GLOVES" itemIdMin="130000" itemIdMax="130100">
-			<material itemId="130000" count="1" />
+			<material itemId="130001" count="1" />
 		</slot>
 		<slot type="FEET" itemIdMin="130000" itemIdMax="130100">
-			<material itemId="130000" count="1" />
+			<material itemId="130001" count="1" />
 		</slot>
 		<slot type="BACK" itemIdMin="130000" itemIdMax="130100">
-			<material itemId="130000" count="1" />
+			<material itemId="130001" count="1" />
 		</slot>
 	</series>
 	<!-- 新增系列範例：

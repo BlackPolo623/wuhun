@@ -168,7 +168,7 @@ public class AttackableThinkTaskManager
 			ThreadPool.schedulePriorityTaskAtFixedRate(new AttackableThink(pool), TASK_DELAY, TASK_DELAY);
 
 			// 記錄 Pool 創建（用於追蹤執行緒洩漏）
-			LOGGER.info("AttackableThinkTaskManager: Created new pool #" + POOLS.size() + " (Total attackables: " + ATTACKABLE_POOL_MAP.size() + ")");
+			//LOGGER.info("AttackableThinkTaskManager: Created new pool #" + POOLS.size() + " (Total attackables: " + ATTACKABLE_POOL_MAP.size() + ")");
 		}
 	}
 

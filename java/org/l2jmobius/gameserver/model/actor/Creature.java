@@ -3499,6 +3499,7 @@ public abstract class Creature extends WorldObject
 			return false;
 		}
 
+
 		final int xPrev = getX();
 		final int yPrev = getY();
 		final int zPrev = getZ(); // the z coordinate may be modified by coordinate synchronizations
@@ -5280,14 +5281,24 @@ public abstract class Creature extends WorldObject
 			if ((skill == null) || PlayerConfig.VAMPIRIC_ATTACK_WORKS_WITH_SKILLS)
 			{
 				final double absorbHpPercent = getStat().getValue(Stat.ABSORB_DAMAGE_PERCENT, 0);
-				if ((absorbHpPercent > 0) && (Rnd.nextDouble() < _stat.getValue(Stat.ABSORB_DAMAGE_CHANCE)))
+				// 吸血觸發機率：基礎10% + 魂環吸血機率加成（每點+1%，上限由XML設定）
+				double vampiricChance = 0.05;
+				if (isPlayer())
+				{
+					final int soulVampiricPts = asPlayer().getVariables().getInt("SoulRing_SpecialVampiric", 0);
+					vampiricChance += soulVampiricPts / 100.0;
+				}
+				if ((absorbHpPercent > 0) && (Rnd.nextDouble() < vampiricChance))
 				{
 					int absorbDamage = (int) Math.min(absorbHpPercent * damage, _stat.getMaxRecoverableHp() - _status.getCurrentHp());
 					absorbDamage = Math.min(absorbDamage, (int) target.getCurrentHp());
 					absorbDamage *= target.getStat().getValue(Stat.ABSORB_DAMAGE_DEFENCE, 1);
 					if (absorbDamage > 0)
 					{
-						setCurrentHp(_status.getCurrentHp() + absorbDamage);
+						int soulringVampiric = (asPlayer().getSoulringCount() + 15000);
+						absorbDamage = Math.min(absorbDamage,soulringVampiric);
+						double finalabsorbDamage = Rnd.get((absorbDamage * 0.8 ), (absorbDamage * 1.2));
+						setCurrentHp(_status.getCurrentHp() + finalabsorbDamage);
 					}
 				}
 			}
@@ -5452,105 +5463,95 @@ public abstract class Creature extends WorldObject
 			final double damageCap = _stat.getValue(Stat.DAMAGE_LIMIT);
 			if (damageCap > 0)
 			{
-				double actualDamageCap = damageCap; // 預設使用基礎傷害上限
+				double actualDamageCap = damageCap;
 
 				// ========================================
 				// PvP限傷區 - 玩家對玩家（含魂環加成）
+				// 每個魂環提升的傷害上限加成
+				// ★ 調整此值可改變 PvP 魂環加成
 				// ========================================
 				if (attacker.isPlayable() && isPlayable())
 				{
-					// 獲取攻擊者（處理玩家和召喚獸）
 					final Player attackerPlayer = attacker.isPlayer() ? attacker.asPlayer() : attacker.asSummon().getOwner();
-
 					if (attackerPlayer != null)
 					{
-						// 魂環系統 - PvP時才生效
-						int soulRingCount = attackerPlayer.getSoulringCount();
-						double damagePerSoulRing = 10; // 每個魂環+10傷害上限
-						double soulRingBonus = soulRingCount * damagePerSoulRing; // 計算魂環加成
-						actualDamageCap = damageCap + soulRingBonus; // 最終傷害上限 = 基礎上限 + 魂環加成
+						final int soulRingCount = attackerPlayer.getSoulringCount();
+						final double damagePerSoulRing = 10.0; // ★ PvP：每個魂環加成值
+						actualDamageCap = damageCap + (soulRingCount * damagePerSoulRing);
 					}
 				}
 				// ========================================
-				// PvE限傷區 - 玩家對怪物（無魂環加成）
+				// PvE限傷區 - 玩家對怪物（含特定怪物魂環加成）
+				// 在下方 switch 中新增怪物 ID 及對應加成值
+				// ★ 新增怪物：加一行 case NPCID: damagePerSoulRing = 加成值; break;
 				// ========================================
-				// 如果目標是怪物，actualDamageCap 保持基礎 damageCap
 				else if (attacker.isPlayable() && (isMonster() || isRaid()))
 				{
 					final Player attackerPlayer = attacker.isPlayer() ? attacker.asPlayer() : attacker.asSummon().getOwner();
-
 					if (attackerPlayer != null)
 					{
-						final int[] SPECIAL_MONSTER_IDS =
-								{
-										61000
-								};
-						boolean isSpecialMonster = false;
-						for (int monsterId : SPECIAL_MONSTER_IDS)
+						final int soulRingCount = attackerPlayer.getSoulringCount();
+						double damagePerSoulRing = 0.0;
+						switch (getId())
 						{
-							if (getId() == monsterId)
-							{
-								isSpecialMonster = true;
-								break;
-							}
+							case 61000: damagePerSoulRing = 500.0; break;
+							case 51000: damagePerSoulRing =   5.0; break;
+							// ★ 新增怪物範例（取消註解並填入 ID 與加成）：
+							// case 99999: damagePerSoulRing = 100.0; break;
 						}
-						if (isSpecialMonster)
+						if (damagePerSoulRing > 0)
 						{
-							int soulRingCount = attackerPlayer.getSoulringCount();
-							double damagePerSoulRing = 500; // 每個魂環+500傷害上限（PvE）
-							double soulRingBonus = soulRingCount * damagePerSoulRing; // 計算魂環加成
-							actualDamageCap = damageCap + soulRingBonus; // 最終傷害上限 = 基礎上限 + 魂環加成
-						}
-						// 寵物農場限傷
-						final int[] PET_MONSTER_IDS =
-								{
-										51000
-								};
-						boolean isPetMonster = false;
-						for (int monsterId : PET_MONSTER_IDS)
-						{
-							if (getId() == monsterId)
-							{
-								isPetMonster = true;
-								break;
-							}
-						}
-						if (isPetMonster)
-						{
-							int soulRingCount = attackerPlayer.getSoulringCount();
-							double damagePerSoulRing = 5; // 每個魂環+500傷害上限（PvE）
-							double soulRingBonus = soulRingCount * damagePerSoulRing; // 計算魂環加成
-							actualDamageCap = damageCap + soulRingBonus; // 最終傷害上限 = 基礎上限 + 魂環加成
+							actualDamageCap = damageCap + (soulRingCount * damagePerSoulRing);
 						}
 					}
 				}
-				// 套用傷害上限
 				amount = Math.min(amount, actualDamageCap);
 			}
 		}
 		// ========================================
 		// 最終減傷系統 - 套用於被攻擊者，先於最終傷害計算
+		// 條件：攻擊者是玩家時才套用（怪物打玩家不生效）
 		// ========================================
 		{
-			double finalDamageReduce = getStat().getValue(Stat.FINAL_DAMAGE_REDUCE, 0);
+			double finalDamageReduce = 0;
+
+			// 只有攻擊者是玩家（或召喚獸）時，才讀取被攻擊者的最終減傷
+			final boolean attackerIsPlayer = (attacker != null) && (attacker.isPlayer() || attacker.isSummon());
+			if (attackerIsPlayer)
+			{
+				finalDamageReduce = getStat().getValue(Stat.FINAL_DAMAGE_REDUCE, 0);
+
+				// 魂環特殊能力：最終減傷加成（每點+1%，疊加到現有減傷）
+				if (isPlayer())
+				{
+					finalDamageReduce += asPlayer().getVariables().getInt("SoulRing_SpecialFinalDmgReduce", 0);
+				}
+			}
 
 			// 【鏡像副本】攻擊者的「無視最終減傷」屬性
-			// 說明：攻擊者通關鏡像副本後，可以降低目標的最終減傷效果
-			// 例：BOSS有99.99%減傷，玩家有0.50%無視減傷 → BOSS實際減傷變成99.49%
 			if ((attacker != null) && attacker.isPlayer())
 			{
 				double ignoreFdr = attacker.asPlayer().getVariables().getDouble("MIRROR_FDR_BONUS", 0.0);
-				finalDamageReduce = Math.max(0, finalDamageReduce - ignoreFdr); // 降低目標的減傷
+				finalDamageReduce = Math.max(0, finalDamageReduce - ignoreFdr);
 			}
 
 			// 【技能】攻擊者的「無視最終減傷」屬性（來自技能效果 IgnoreFinalDamageReduce）
-			// 例：BOSS有99%減傷，攻擊者有10%無視減傷 → BOSS實際減傷變成89%
 			if (attacker != null)
 			{
 				double ignoreSkillFdr = attacker.getStat().getValue(Stat.IGNORE_FINAL_DAMAGE_REDUCE, 0);
 				if (ignoreSkillFdr > 0)
 				{
 					finalDamageReduce = Math.max(0, finalDamageReduce - ignoreSkillFdr);
+				}
+			}
+
+			// 魂環特殊能力：無視最終減傷（每點+1%，疊加到現有無視值）
+			if ((attacker != null) && attacker.isPlayer())
+			{
+				final int soulIgnoreFdr = attacker.asPlayer().getVariables().getInt("SoulRing_SpecialIgnoreFdr", 0);
+				if (soulIgnoreFdr > 0)
+				{
+					finalDamageReduce = Math.max(0, finalDamageReduce - soulIgnoreFdr);
 				}
 			}
 
@@ -5585,6 +5586,12 @@ public abstract class Creature extends WorldObject
 		{
 			// 從攻擊者屬性獲取最終傷害加成百分比
 			double finalDamageBonus = attacker.getStat().getValue(Stat.FINAL_DAMAGE_RATE, 0);
+
+			// 魂環特殊能力：最終傷害加成（每點+1%）
+			if (attacker.isPlayer())
+			{
+				finalDamageBonus += attacker.asPlayer().getVariables().getInt("SoulRing_SpecialFinalDmg", 0);
+			}
 
 			// 套用最終傷害倍率：最終傷害 = 原傷害 × (100% + 加成%)
 			if (finalDamageBonus != 0)

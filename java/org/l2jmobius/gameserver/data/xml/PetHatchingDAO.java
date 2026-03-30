@@ -494,10 +494,9 @@ public class PetHatchingDAO
 	public static boolean hasPetEquipment(int petItemObjectId)
 	{
 		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) FROM items WHERE owner_id=? AND loc='PET_EQUIP' AND loc_data=?"))
+			PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) FROM items WHERE owner_id=? AND loc='PET_EQUIP'"))
 		{
 			ps.setInt(1, petItemObjectId);
-			ps.setInt(2, petItemObjectId);
 			try (ResultSet rs = ps.executeQuery())
 			{
 				if (rs.next()) return rs.getInt(1) > 0;
@@ -506,7 +505,68 @@ public class PetHatchingDAO
 		catch (Exception e)
 		{
 			LOGGER.warning("PetHatchingDAO: Error checking pet equipment: " + e.getMessage());
+			return true; // 保守處理：查詢失敗時阻止收藏
 		}
 		return false;
+	}
+
+	/**
+	 * 直接從資料庫查詢寵物是否有訓練痕跡（exp > 0 或 level > 1）。
+	 * 不依賴記憶體快取，避免快取未載入時的檢查漏洞。
+	 * 查詢失敗時保守回傳 true，阻止收藏。
+	 */
+	public static boolean isPetTrained(int petItemObjectId)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT level, exp FROM pets WHERE item_obj_id=?"))
+		{
+			ps.setInt(1, petItemObjectId);
+			try (ResultSet rs = ps.executeQuery())
+			{
+				if (rs.next())
+				{
+					int level = rs.getInt("level");
+					long exp = rs.getLong("exp");
+					return (exp > 0) || (level > 1);
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning("PetHatchingDAO: isPetTrained query failed for objectId " + petItemObjectId + ": " + e.getMessage());
+			return true; // 保守處理：查詢失敗時阻止收藏
+		}
+		return false; // pets 表無記錄 = 從未召喚過 = 全新寵物
+	}
+
+	/**
+	 * 洗白寵物：刪除寵物身上所有裝備，並清除 pets 表中的訓練記錄。
+	 * 呼叫後寵物道具本身仍在玩家身上，需由呼叫方刪除舊道具並給予新道具。
+	 */
+	public static void resetPetData(int petItemObjectId)
+	{
+		try (Connection con = DatabaseFactory.getConnection())
+		{
+			// 刪除寵物身上的所有裝備（loc='PET_EQUIP'）和背包道具（loc='PET'）
+			try (PreparedStatement ps = con.prepareStatement("DELETE FROM items WHERE owner_id=? AND loc IN ('PET_EQUIP', 'PET')"))
+			{
+				ps.setInt(1, petItemObjectId);
+				int deleted = ps.executeUpdate();
+				if (deleted > 0)
+				{
+					LOGGER.info("PetHatchingDAO: resetPetData deleted " + deleted + " items for pet objectId=" + petItemObjectId);
+				}
+			}
+			// 刪除 pets 表的訓練記錄（讓寵物回到全新狀態）
+			try (PreparedStatement ps = con.prepareStatement("DELETE FROM pets WHERE item_obj_id=?"))
+			{
+				ps.setInt(1, petItemObjectId);
+				ps.executeUpdate();
+			}
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning("PetHatchingDAO: resetPetData failed for objectId " + petItemObjectId + ": " + e.getMessage());
+		}
 	}
 }

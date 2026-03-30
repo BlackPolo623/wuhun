@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
-	<!-- 鏡像副本 - 鏡像怪物 FakePlayer NPC 模板 -->
-	<!-- 外觀會在運行時由腳本動態替換為玩家外觀 -->
 	<npc id="80002" level="93" type="Monster" name="鏡像戰士">
-		<stats str="103" int="40" dex="53" wit="37" con="84" men="39">
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
 			<vitals hp="100000000" hpRegen="1.0" mp="3863" mpRegen="1.0" />
 			<attack physical="5000000" magical="5000000" random="10" critical="4" accuracy="177" attackSpeed="500" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="500000" magical="500000" />
@@ -15,6 +13,9 @@
 		</stats>
 		<ai aggroRange="600" clanHelpRange="0" isAggressive="true" />
 		<status talkable="false" randomAnimation="false" randomWalk="false" undying="false" attackable="true" />
+		<skillList>
+			<skill id="102006" level="1" />
+		</skillList>
 		<!-- 預設外觀（運行時由腳本動態替換為玩家裝備） -->
 		<fakePlayer
 			classId="88"
@@ -54,5 +55,6 @@
 			<radius normal="9" />
 			<height normal="25" />
 		</collision>
+
 	</npc>
 </list>

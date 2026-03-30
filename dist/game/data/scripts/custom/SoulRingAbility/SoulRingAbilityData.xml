@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    魂環能力系統設定檔
+    每個 <stat> 節點可設定：
+      percentPerPoint  每點增加幾%效果（例：0.3 = 每點 +0.3%）
+      maxPoints        此能力最多可點幾點
+      pointCost        加 1 點此能力消耗幾個魂環點（例：5 = 每點花5點）
+-->
+<soulRingAbility xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/SoulRingAbilityData.xsd">
+
+    <!-- ==================== 普通PVE能力 ==================== -->
+    <category id="pve_normal" name="普通PVE能力">
+        <stat id="PVE_PHYS_ATK"       name="PVE物理攻擊傷害"   var="SoulRing_PvePhysAtk"       percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVE_PHYS_SKILL"     name="PVE物理技能傷害"   var="SoulRing_PvePhysSkill"     percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVE_MAGIC_SKILL"    name="PVE魔法技能傷害"   var="SoulRing_PveMagicSkill"    percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVE_PHYS_DEF"       name="PVE物理攻擊防禦"   var="SoulRing_PvePhysDef"       percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVE_PHYS_SKILL_DEF" name="PVE物理技能防禦"   var="SoulRing_PvePhysSkillDef"  percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVE_MAGIC_DEF"      name="PVE魔法技能防禦"   var="SoulRing_PveMagicDef"      percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+    </category>
+
+    <!-- ==================== 首領PVE能力 ==================== -->
+    <category id="pve_raid" name="首領PVE能力">
+        <stat id="PVE_RAID_PHYS_ATK"       name="首領物理攻擊傷害"   var="SoulRing_RaidPhysAtk"      percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVE_RAID_PHYS_SKILL"     name="首領物理技能傷害"   var="SoulRing_RaidPhysSkill"    percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVE_RAID_MAGIC_SKILL"    name="首領魔法技能傷害"   var="SoulRing_RaidMagicSkill"   percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVE_RAID_PHYS_DEF"       name="首領物理攻擊防禦"   var="SoulRing_RaidPhysDef"      percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVE_RAID_PHYS_SKILL_DEF" name="首領物理技能防禦"   var="SoulRing_RaidPhysSkillDef" percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVE_RAID_MAGIC_DEF"      name="首領魔法技能防禦"   var="SoulRing_RaidMagicDef"     percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+    </category>
+
+    <!-- ==================== PVP能力 ==================== -->
+    <category id="pvp" name="PVP能力">
+        <stat id="PVP_PHYS_ATK"       name="PVP物理攻擊傷害"   var="SoulRing_PvpPhysAtk"      percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVP_PHYS_SKILL"     name="PVP物理技能傷害"   var="SoulRing_PvpPhysSkill"    percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVP_MAGIC_SKILL"    name="PVP魔法技能傷害"   var="SoulRing_PvpMagicSkill"   percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVP_PHYS_DEF"       name="PVP物理攻擊防禦"   var="SoulRing_PvpPhysDef"      percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVP_PHYS_SKILL_DEF" name="PVP物理技能防禦"   var="SoulRing_PvpPhysSkillDef" percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+        <stat id="PVP_MAGIC_DEF"      name="PVP魔法技能防禦"   var="SoulRing_PvpMagicDef"     percentPerPoint="0.3" maxPoints="350" pointCost="1"/>
+    </category>
+
+    <!-- ==================== 特殊能力 ==================== -->
+    <!--
+        特殊能力說明：
+          SPECIAL_FINAL_DMG        最終傷害加成%（疊加攻擊者 FINAL_DAMAGE_RATE）
+          SPECIAL_FINAL_DMG_REDUCE 最終減傷加成%（疊加防禦者 FINAL_DAMAGE_REDUCE）
+          SPECIAL_IGNORE_FDR       無視最終減傷%（疊加攻擊者 IGNORE_FINAL_DAMAGE_REDUCE）
+          SPECIAL_VAMPIRIC_CHANCE  吸血機率加成%（每點+1%，不顯示基礎值）
+    -->
+    <category id="special" name="特殊能力">
+        <stat id="SPECIAL_FINAL_DMG"        name="最終傷害"     var="SoulRing_SpecialFinalDmg"       percentPerPoint="1.0" maxPoints="30" pointCost="350"/>
+        <stat id="SPECIAL_FINAL_DMG_REDUCE" name="最終減傷"     var="SoulRing_SpecialFinalDmgReduce" percentPerPoint="1.0" maxPoints="50" pointCost="140"/>
+        <stat id="SPECIAL_IGNORE_FDR"       name="無視最終減傷" var="SoulRing_SpecialIgnoreFdr"      percentPerPoint="1.0" maxPoints="30" pointCost="210"/>
+        <stat id="SPECIAL_VAMPIRIC_CHANCE"  name="吸血機率"     var="SoulRing_SpecialVampiric"       percentPerPoint="1.0" maxPoints="20" pointCost="350"/>
+    </category>
+
+</soulRingAbility>

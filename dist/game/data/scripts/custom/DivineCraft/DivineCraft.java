@@ -109,7 +109,7 @@ public class DivineCraft extends Script
 		SERIES_LIST.clear();
 		try
 		{
-			File file = new File("./dist/game/" + XML_PATH);
+			File file = new File("./" + XML_PATH);
 			if (!file.exists())
 			{
 				LOGGER.warning("DivineCraft: 找不到配置文件 " + XML_PATH);

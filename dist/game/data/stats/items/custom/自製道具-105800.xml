@@ -83,4 +83,40 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="PermanentHpPotion"/>
 	</item>
+	<item id="105809" name="翅膀72557" additionalName="Sealed" type="Armor">
+		<set name="icon" val="BranchIcon.icon.g_bm_shadow_agathion_charm" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="0" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="59890" level="1" type="ON_EQUIP" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="50565" level="10"/>
+		</skills>
+	</item>
+	<item id="105810" name="翅膀72558" additionalName="Sealed" type="Armor">
+		<set name="icon" val="BranchIcon.icon.g_bm_alpha_agathion_charm" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="0" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="59891" level="1" type="ON_EQUIP" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="50565" level="10"/>
+		</skills>
+	</item>
 </list>

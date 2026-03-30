@@ -40,6 +40,7 @@ import org.l2jmobius.gameserver.config.custom.FindPvpConfig;
 import org.l2jmobius.gameserver.config.custom.FreeMountsConfig;
 import org.l2jmobius.gameserver.config.custom.MerchantZeroSellPriceConfig;
 import org.l2jmobius.gameserver.config.custom.MirrorInstanceConfig;
+import org.l2jmobius.gameserver.config.custom.MultiLayerDungeonConfig;
 import org.l2jmobius.gameserver.config.custom.MultilingualSupportConfig;
 import org.l2jmobius.gameserver.config.custom.NoblessMasterConfig;
 import org.l2jmobius.gameserver.config.custom.NpcStatMultipliersConfig;
@@ -124,6 +125,7 @@ public class ConfigLoader
 		FreeMountsConfig.load();
 		MerchantZeroSellPriceConfig.load();
 		MirrorInstanceConfig.load();
+		MultiLayerDungeonConfig.load();
 		MultilingualSupportConfig.load();
 		NoblessMasterConfig.load();
 		NpcStatMultipliersConfig.load();

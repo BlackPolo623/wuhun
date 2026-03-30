@@ -195,6 +195,8 @@ public class GameServer
 		ActionData.getInstance();
 		CategoryData.getInstance();
 		DynamicExpRateData.getInstance();
+		SoulRingAbilityData.getInstance();
+		MultiLayerRewardData.getInstance();
 		SecondaryAuthData.getInstance();
 		SayuneData.getInstance();
 		ClanRewardData.getInstance();

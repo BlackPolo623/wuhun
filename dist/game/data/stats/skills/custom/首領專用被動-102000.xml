@@ -63,12 +63,15 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="102006" toLevel="1" name="首領最終減傷">
+	<skill id="102006" toLevel="1" name="鏡像最終減傷">
 		<icon>icon.ev_prestige_rune</icon>
 		<operateType>P</operateType>
 		<effects>
 			<effect name="FinalDamageReduce">
-				<amount>99.2</amount>
+				<amount>50.0</amount>
+			</effect>
+			<effect name="VampiricDefence">
+				<amount>-70</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -82,6 +85,30 @@
 					<value level="2">10</value>
 					<value level="3">15</value>
 				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="102008" toLevel="1" name="火龍副本小怪">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="FinalDamageReduce">
+				<amount>140.0</amount>
+			</effect>
+			<effect name="VampiricDefence">
+				<amount>-95</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="102009" toLevel="1" name="火龍副本首領">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="FinalDamageReduce">
+				<amount>150.0</amount>
+			</effect>
+			<effect name="VampiricDefence">
+				<amount>-99.99999</amount>
 			</effect>
 		</effects>
 	</skill>

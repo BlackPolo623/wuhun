@@ -37,21 +37,34 @@ public class AdminEnchant implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =
 	{
-		"admin_seteh", // 6
-		"admin_setec", // 10
-		"admin_seteg", // 9
-		"admin_setel", // 11
-		"admin_seteb", // 12
-		"admin_setew", // 7
-		"admin_setes", // 8
-		"admin_setle", // 1
-		"admin_setre", // 2
-		"admin_setlf", // 4
-		"admin_setrf", // 5
-		"admin_seten", // 3
-		"admin_setun", // 0
-		"admin_setba", // 13
-		"admin_setbe",
+		"admin_seteh", // 6  頭盔
+		"admin_setec", // 10 胸甲
+		"admin_seteg", // 9  手套
+		"admin_setel", // 11 腿甲
+		"admin_seteb", // 12 鞋子
+		"admin_setew", // 7  武器
+		"admin_setes", // 8  副手/盾
+		"admin_setle", // 1  右耳環
+		"admin_setre", // 2  左耳環
+		"admin_setlf", // 4  右戒指
+		"admin_setrf", // 5  左戒指
+		"admin_seten", // 3  項鍊
+		"admin_setun", // 0  內衣
+		"admin_setba", // 13 披風
+		"admin_setbe", //    腰帶
+		"admin_sethr", // 2  頭飾1
+		"admin_seth2", // 3  頭飾2
+		"admin_seta1", // 17 壺精1
+		"admin_seta2", // 18 壺精2
+		"admin_seta3", // 19 壺精3
+		"admin_seta4", // 20 壺精4
+		"admin_seta5", // 21 壺精5
+		"admin_setd1", // 22 護身符1
+		"admin_setd2", // 23 護身符2
+		"admin_setd3", // 24 護身符3
+		"admin_setd4", // 25 護身符4
+		"admin_setd5", // 26 護身符5
+		"admin_setd6", // 27 護身符6
 		"admin_enchant"
 	};
 	
@@ -125,7 +138,59 @@ public class AdminEnchant implements IAdminCommandHandler
 			{
 				slot = Inventory.PAPERDOLL_BELT;
 			}
-			
+			else if (command.startsWith("admin_sethr"))
+			{
+				slot = Inventory.PAPERDOLL_HAIR;
+			}
+			else if (command.startsWith("admin_seth2"))
+			{
+				slot = Inventory.PAPERDOLL_HAIR2;
+			}
+			else if (command.startsWith("admin_seta1"))
+			{
+				slot = Inventory.PAPERDOLL_AGATHION1;
+			}
+			else if (command.startsWith("admin_seta2"))
+			{
+				slot = Inventory.PAPERDOLL_AGATHION2;
+			}
+			else if (command.startsWith("admin_seta3"))
+			{
+				slot = Inventory.PAPERDOLL_AGATHION3;
+			}
+			else if (command.startsWith("admin_seta4"))
+			{
+				slot = Inventory.PAPERDOLL_AGATHION4;
+			}
+			else if (command.startsWith("admin_seta5"))
+			{
+				slot = Inventory.PAPERDOLL_AGATHION5;
+			}
+			else if (command.startsWith("admin_setd1"))
+			{
+				slot = Inventory.PAPERDOLL_DECO1;
+			}
+			else if (command.startsWith("admin_setd2"))
+			{
+				slot = Inventory.PAPERDOLL_DECO2;
+			}
+			else if (command.startsWith("admin_setd3"))
+			{
+				slot = Inventory.PAPERDOLL_DECO3;
+			}
+			else if (command.startsWith("admin_setd4"))
+			{
+				slot = Inventory.PAPERDOLL_DECO4;
+			}
+			else if (command.startsWith("admin_setd5"))
+			{
+				slot = Inventory.PAPERDOLL_DECO5;
+			}
+			else if (command.startsWith("admin_setd6"))
+			{
+				slot = Inventory.PAPERDOLL_DECO6;
+			}
+
 			if (slot != -1)
 			{
 				try

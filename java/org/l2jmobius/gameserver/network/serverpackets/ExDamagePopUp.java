@@ -55,7 +55,7 @@ public class ExDamagePopUp extends ServerPacket
 	private final int _target;
 	private final int _damage;
 	private final byte _type;
-	
+
 	public ExDamagePopUp(int caster, int target, int damage, byte type)
 	{
 		_caster = caster;

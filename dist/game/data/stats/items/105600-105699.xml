@@ -853,9 +853,16 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="true" />
-		<set name="is_dropable" val="false" />
+		<set name="is_dropable" val="true" />
 		<set name="is_sellable" val="true" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="94621" min="1" max="1" chance="25" minEnchant="0" maxEnchant="10"/>
+			<item id="98205" min="1" max="1" chance="25"  minEnchant="0" maxEnchant="10"/>
+			<item id="102672" min="1" max="1" chance="25"  minEnchant="0" maxEnchant="10"/>
+			<item id="102673" min="1" max="1" chance="25"  minEnchant="0" maxEnchant="10"/>
+		</capsuled_items>
 	</item>
 	<item id="105681" name="闇鴉武士職業支援組合包(限時)" additionalName="Sealed" type="EtcItem">
 		<set name="icon" val="icon.etc_grave_goods_i00" />

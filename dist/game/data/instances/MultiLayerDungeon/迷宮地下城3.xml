@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="302" name="多層副本 - 迷宮地下城3" maxWorlds="100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<time duration="30" empty="5" eject="5" />
+
+	<locations>
+		<enter type="FIXED">
+			<location x="120000" y="220000" z="-3000" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+
+	<conditions>
+		<condition type="Party" />
+		<condition type="PartyLeader" />
+		<condition type="GroupMin">
+			<param name="limit" value="2" />
+		</condition>
+		<condition type="GroupMax">
+			<param name="limit" value="7" />
+		</condition>
+		<condition type="Level">
+			<param name="min" value="76" />
+			<param name="max" value="999" />
+		</condition>
+		<condition type="Distance" />
+	</conditions>
+
+	<spawnlist>
+		<!-- 怪物群組 -->
+		<group name="monsters">
+			<npc id="22011" x="120100" y="220100" z="-3000" heading="0" respawnTime="0sec" />
+			<npc id="22012" x="120200" y="220200" z="-3000" heading="0" respawnTime="0sec" />
+			<npc id="22013" x="120300" y="220300" z="-3000" heading="0" respawnTime="0sec" />
+			<npc id="22014" x="120400" y="220400" z="-3000" heading="0" respawnTime="0sec" />
+			<npc id="22015" x="120150" y="220150" z="-3000" heading="0" respawnTime="0sec" />
+		</group>
+
+		<!-- 寶箱群組（不自動生成） -->
+		<group name="treasure_chest" spawnByDefault="false">
+			<npc id="900043" x="120500" y="220500" z="-3000" heading="0" respawnTime="0sec" />
+		</group>
+
+		<!-- 傳送NPC群組（不自動生成） -->
+		<group name="teleport_npc" spawnByDefault="false">
+			<npc id="900044" x="120600" y="220600" z="-3000" heading="0" respawnTime="0sec" />
+		</group>
+	</spawnlist>
+</instance>

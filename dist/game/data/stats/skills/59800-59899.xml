@@ -1056,15 +1056,37 @@
 		<hitTime>1000</hitTime>
 		<isMagic>4</isMagic>
 	</skill>
-	<skill id="59890" toLevel="1" name="召喚闇影壺精">
+	<skill id="59890" toLevel="1" name="翅膀72557">
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>51200</npcId>
+			</effect>
+		</effects>
 	</skill>
-	<skill id="59891" toLevel="1" name="召喚阿爾法壺精">
+	<skill id="59891" toLevel="1" name="翅膀72558">
 		<icon>icon.etc_summon_aga_agit_i00</icon>
 		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
 		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="SummonAgathion">
+				<npcId>51201</npcId>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="59892" toLevel="1" name="召喚潔塔壺精">
 		<icon>icon.etc_summon_aga_agit_i00</icon>

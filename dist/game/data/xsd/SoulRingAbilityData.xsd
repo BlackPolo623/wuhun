@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="soulRingAbility">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="category" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="stat" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute type="xs:string"  name="id"              use="required"/>
+									<xs:attribute type="xs:string"  name="name"            use="required"/>
+									<xs:attribute type="xs:string"  name="var"             use="required"/>
+									<xs:attribute type="xs:double"  name="percentPerPoint" use="required"/>
+									<xs:attribute type="xs:integer" name="maxPoints"       use="required"/>
+									<xs:attribute type="xs:integer" name="pointCost"       use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute type="xs:string" name="id"   use="required"/>
+						<xs:attribute type="xs:string" name="name" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

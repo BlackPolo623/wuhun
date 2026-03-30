@@ -18,7 +18,6 @@ import org.l2jmobius.gameserver.managers.MailManager;
 import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.holders.creature.PetEvolveHolder;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.holders.custom.OnPlayerPetHatch;
 import org.l2jmobius.gameserver.model.events.holders.custom.OnPlayerPetHatchStart;
@@ -248,6 +247,32 @@ public class PetHatchingSystem extends Script
 		else if (event.startsWith("withdraw_feed "))
 		{
 			return handleWithdrawFeed(player, Integer.parseInt(event.substring(14)));
+		}
+		else if (event.equals("show_resetable_pets"))
+		{
+			return handleShowResetablePets(player, 0);
+		}
+		else if (event.startsWith("show_resetable_pets_"))
+		{
+			return handleShowResetablePets(player, Integer.parseInt(event.substring(20)));
+		}
+		else if (event.startsWith("confirm_reset_pet "))
+		{
+			// format: confirm_reset_pet <objectId> <petItemId> <page>
+			String[] parts = event.substring(18).trim().split(" ");
+			int objectId = Integer.parseInt(parts[0]);
+			int petItemId = Integer.parseInt(parts[1]);
+			int page = parts.length > 2 ? Integer.parseInt(parts[2]) : 0;
+			return handleConfirmResetPet(player, objectId, petItemId, page);
+		}
+		else if (event.startsWith("force_reset_pet "))
+		{
+			// format: force_reset_pet <objectId> <petItemId> <page>
+			String[] parts = event.substring(16).trim().split(" ");
+			int objectId = Integer.parseInt(parts[0]);
+			int petItemId = Integer.parseInt(parts[1]);
+			int page = parts.length > 2 ? Integer.parseInt(parts[2]) : 0;
+			return handleForceResetPet(player, objectId, petItemId, page);
 		}
 		else if (event.startsWith("store_pet "))
 		{
@@ -539,6 +564,174 @@ public class PetHatchingSystem extends Script
 		return handleFeedMenu(player);
 	}
 
+	// ==================== 寵物洗白 ====================
+
+	private static final int RESETABLE_PAGE_SIZE = 8;
+
+	/**
+	 * 列出玩家背包中所有「無法收藏」的寵物（有訓練記錄或有裝備），支援分頁。
+	 */
+	private String handleShowResetablePets(Player player, int page)
+	{
+		// 先收集所有需要洗白的寵物
+		java.util.List<int[]> resetableList = new java.util.ArrayList<>(); // [petItemId, objectId, reason(0=trained,1=equip,2=both)]
+		for (int petItemId = COLLECTION_PET_START_ID; petItemId <= COLLECTION_PET_END_ID; petItemId++)
+		{
+			if (player.getInventory().getInventoryItemCount(petItemId, -1) <= 0)
+				continue;
+			final Item petItem = player.getInventory().getItemByItemId(petItemId);
+			if (petItem == null)
+				continue;
+			int objectId = petItem.getObjectId();
+			boolean trained = PetHatchingDAO.isPetTrained(objectId);
+			boolean hasEquip = PetHatchingDAO.hasPetEquipment(objectId);
+			if (!trained && !hasEquip)
+				continue;
+			int reason = (trained && hasEquip) ? 2 : (trained ? 0 : 1);
+			resetableList.add(new int[]{petItemId, objectId, reason});
+		}
+
+		int total = resetableList.size();
+		int totalPages = total == 0 ? 1 : (int) Math.ceil((double) total / RESETABLE_PAGE_SIZE);
+		if (page < 0) page = 0;
+		if (page >= totalPages) page = totalPages - 1;
+
+		// 建立當頁列表
+		StringBuilder rows = new StringBuilder();
+		if (total == 0)
+		{
+			rows.append("<tr><td align=center colspan=3><font color=\"00FF00\">沒有需要洗白的寵物！所有寵物都可以正常收藏。</font></td></tr>");
+		}
+		else
+		{
+			int start = page * RESETABLE_PAGE_SIZE;
+			int end = Math.min(start + RESETABLE_PAGE_SIZE, total);
+			for (int i = start; i < end; i++)
+			{
+				int[] entry = resetableList.get(i);
+				int petItemId = entry[0];
+				int objectId  = entry[1];
+				int reason    = entry[2];
+
+				String itemName = "未知寵物";
+				org.l2jmobius.gameserver.model.item.ItemTemplate template = org.l2jmobius.gameserver.data.xml.ItemData.getInstance().getTemplate(petItemId);
+				if (template != null)
+					itemName = template.getName();
+
+				String reasonStr;
+				if (reason == 2)
+					reasonStr = "<font color=\"FF6666\">訓練記錄+裝備</font>";
+				else if (reason == 0)
+					reasonStr = "<font color=\"FFAA44\">有訓練記錄</font>";
+				else
+					reasonStr = "<font color=\"FFFF44\">有裝備</font>";
+
+				rows.append("<tr bgcolor=\"222222\">");
+				rows.append("<td width=120 align=center>").append(itemName).append("</td>");
+				rows.append("<td width=110 align=center>").append(reasonStr).append("</td>");
+				rows.append("<td width=60 align=center>");
+				rows.append("<button value=\"洗白\" action=\"bypass -h Quest PetHatchingSystem confirm_reset_pet ").append(objectId).append(" ").append(petItemId).append(" ").append(page).append("\" width=50 height=22 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">");
+				rows.append("</td>");
+				rows.append("</tr>");
+			}
+		}
+
+		// 建立分頁按鈕
+		StringBuilder pageButtons = new StringBuilder();
+		if (totalPages > 1)
+		{
+			pageButtons.append("<table border=0 cellpadding=0 cellspacing=2><tr>");
+			if (page > 0)
+				pageButtons.append("<td><button value=\"&lt; 上一頁\" action=\"bypass -h Quest PetHatchingSystem show_resetable_pets_").append(page - 1).append("\" width=80 height=22 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
+			pageButtons.append("<td><font color=\"AAAAAA\"> ").append(page + 1).append("/").append(totalPages).append(" </font></td>");
+			if (page < totalPages - 1)
+				pageButtons.append("<td><button value=\"下一頁 &gt;\" action=\"bypass -h Quest PetHatchingSystem show_resetable_pets_").append(page + 1).append("\" width=80 height=22 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
+			pageButtons.append("</tr></table>");
+		}
+
+		NpcHtmlMessage html = new NpcHtmlMessage();
+		html.setFile(player, "data/scripts/custom/PetHatchingSystem/resetable_pets.htm");
+		html.replace("%resetable_list%", rows.toString());
+		html.replace("%count%", String.valueOf(total));
+		html.replace("%page_buttons%", pageButtons.toString());
+		player.sendPacket(html);
+		return null;
+	}
+
+	/**
+	 * 顯示洗白確認頁面，告知玩家將執行的動作。
+	 */
+	private String handleConfirmResetPet(Player player, int objectId, int petItemId, int page)
+	{
+		// 再次驗證此道具仍在背包且 objectId 吻合
+		final Item petItem = player.getInventory().getItemByItemId(petItemId);
+		if (petItem == null || petItem.getObjectId() != objectId)
+		{
+			player.sendMessage("找不到該寵物，請重新整理列表。");
+			return handleShowResetablePets(player, page);
+		}
+
+		String itemName = "未知寵物";
+		org.l2jmobius.gameserver.model.item.ItemTemplate template = org.l2jmobius.gameserver.data.xml.ItemData.getInstance().getTemplate(petItemId);
+		if (template != null)
+			itemName = template.getName();
+
+		boolean hasEquip = PetHatchingDAO.hasPetEquipment(objectId);
+
+		NpcHtmlMessage html = new NpcHtmlMessage();
+		html.setFile(player, "data/scripts/custom/PetHatchingSystem/confirm_reset_pet.htm");
+		html.replace("%pet_name%", itemName);
+		html.replace("%equip_line%", hasEquip
+			? "<tr bgcolor=\"222222\"><td align=center><font color=\"FF6666\">‧ 刪除寵物身上所有裝備（無法找回）</font></td></tr>"
+			: "");
+		html.replace("%confirm_bypass%", "bypass -h Quest PetHatchingSystem force_reset_pet " + objectId + " " + petItemId + " " + page);
+		html.replace("%back_bypass%", "bypass -h Quest PetHatchingSystem show_resetable_pets_" + page);
+		player.sendPacket(html);
+		return null;
+	}
+
+	/**
+	 * 執行洗白：刪除裝備、清除訓練記錄，換發全新寵物道具。
+	 */
+	private String handleForceResetPet(Player player, int objectId, int petItemId, int page)
+	{
+		// 防止召喚中的寵物被洗白
+		if (player.getPet() != null && player.getPet().getControlObjectId() == objectId)
+		{
+			player.sendMessage("請先收回召喚中的寵物再進行洗白！");
+			return handleShowResetablePets(player, page);
+		}
+
+		// 驗證道具仍在背包且 objectId 吻合
+		final Item petItem = player.getInventory().getItemByItemId(petItemId);
+		if (petItem == null || petItem.getObjectId() != objectId)
+		{
+			player.sendMessage("找不到該寵物，操作取消。");
+			return handleShowResetablePets(player, page);
+		}
+
+		// 執行資料庫洗白（刪除裝備 + 刪除 pets 記錄）
+		PetHatchingDAO.resetPetData(objectId);
+
+		// 從背包移除舊寵物道具
+		if (!player.destroyItem(ItemProcessType.NONE, petItem, player, true))
+		{
+			player.sendMessage("移除舊寵物道具失敗，請聯繫管理員。");
+			return handleShowResetablePets(player, page);
+		}
+
+		// 給予全新的同種寵物道具
+		player.addItem(ItemProcessType.NONE, petItemId, 1, player, true);
+
+		String itemName = "寵物";
+		org.l2jmobius.gameserver.model.item.ItemTemplate template = org.l2jmobius.gameserver.data.xml.ItemData.getInstance().getTemplate(petItemId);
+		if (template != null)
+			itemName = template.getName();
+
+		player.sendMessage("洗白完成！[" + itemName + "] 已恢復為全新狀態，可以進行收藏了。");
+		return handleShowResetablePets(player, page);
+	}
+
 	private String handleStorePet(Player player, int petItemId)
 	{
 		int playerId = player.getObjectId();
@@ -563,23 +756,14 @@ public class PetHatchingSystem extends Script
 		if (count <= 0) { player.sendMessage("你沒有該寵物!"); return handleCollectionMenu(player, page); }
 		if (count > 1) { player.sendMessage("你有多個該寵物，為避免存入練好的寵物，請先處理多餘的!"); return handleCollectionMenu(player, page); }
 
-		// 檢查寵物是否有經驗值或等級不是初始狀態
+		// 檢查寵物是否有訓練痕跡或裝備（直接查資料庫，不依賴記憶體快取）
 		final Item petItem = player.getInventory().getItemByItemId(petItemId);
 		if (petItem != null)
 		{
-			final PetEvolveHolder evolveData = player.getPetEvolve(petItem.getObjectId());
-			if (evolveData != null)
+			if (PetHatchingDAO.isPetTrained(petItem.getObjectId()))
 			{
-				if (evolveData.getExp() > 0)
-				{
-					player.sendMessage("該寵物經驗並非初始狀態，無法收藏！請使用全新未培養的寵物。");
-					return handleCollectionMenu(player, page);
-				}
-				if (evolveData.getLevel() > 1)
-				{
-					player.sendMessage("該寵物等級已提升，無法收藏！請使用全新未培養的寵物。");
-					return handleCollectionMenu(player, page);
-				}
+				player.sendMessage("該寵物曾被培養過，無法收藏！請使用全新未培養的寵物。");
+				return handleCollectionMenu(player, page);
 			}
 
 			// 檢查寵物身上是否有裝備
