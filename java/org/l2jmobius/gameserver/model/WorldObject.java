@@ -676,9 +676,9 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 	{
 		if ((region == null) && (_worldRegion != null))
 		{
-			_worldRegion.removeVisibleObject(this);
+			World.getInstance().removeVisibleObject(this, _worldRegion);
 		}
-		
+
 		_worldRegion = region;
 	}
 	

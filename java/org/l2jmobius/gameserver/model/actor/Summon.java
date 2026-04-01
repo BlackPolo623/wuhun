@@ -54,6 +54,7 @@ import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerSummon
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.item.EtcItem;
 import org.l2jmobius.gameserver.model.item.Weapon;
+import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.ActionType;
 import org.l2jmobius.gameserver.model.itemcontainer.PetInventory;
@@ -447,13 +448,7 @@ public abstract class Summon extends Playable
 		// Pet will be deleted along with all his items.
 		if (getInventory() != null)
 		{
-			// Pet related - Removed on Essence.
-			// getInventory().destroyAllItems("pet deleted", _owner, this);
-			// Pet related - Added the following.
-			for (Item item : getInventory().getItems())
-			{
-				World.getInstance().removeObject(item);
-			}
+			getInventory().destroyAllItems(ItemProcessType.DESTROY, _owner, this);
 		}
 		
 		decayMe();
@@ -862,8 +857,8 @@ public abstract class Summon extends Playable
 				}
 				else
 				{
-					sendPacket(new ExDamagePopUp(getObjectId(), target.getObjectId(), damage, ExDamagePopUp.NORMAL_ATTACK));
-					target.sendPacket(new ExDamagePopUp(getObjectId(), target.getObjectId(), damage, ExDamagePopUp.NORMAL_ATTACK));
+					sendPacket(new ExDamagePopUp(getObjectId(), target.getObjectId(), damage, ExDamagePopUp.PHYSICAL_CRITICAL));
+					target.sendPacket(new ExDamagePopUp(getObjectId(), target.getObjectId(), damage, ExDamagePopUp.PHYSICAL_CRITICAL));
 				}
 				
 				sm = new SystemMessage(SystemMessageId.C1_HAS_DEALT_S3_DAMAGE_TO_C2);

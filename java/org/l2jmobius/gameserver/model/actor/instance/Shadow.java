@@ -214,8 +214,8 @@ public class Shadow extends Attackable
 				}
 				else
 				{
-					sendPacket(new ExDamagePopUp(getObjectId(), target.getObjectId(), damage, ExDamagePopUp.NORMAL_ATTACK));
-					target.sendPacket(new ExDamagePopUp(getObjectId(), target.getObjectId(), damage, ExDamagePopUp.NORMAL_ATTACK));
+					sendPacket(new ExDamagePopUp(getObjectId(), target.getObjectId(), damage, ExDamagePopUp.PHYSICAL_CRITICAL));
+					target.sendPacket(new ExDamagePopUp(getObjectId(), target.getObjectId(), damage, ExDamagePopUp.PHYSICAL_CRITICAL));
 				}
 				
 				sm = new SystemMessage(SystemMessageId.C1_HAS_DEALT_S3_DAMAGE_TO_C2);

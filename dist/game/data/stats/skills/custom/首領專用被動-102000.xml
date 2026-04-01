@@ -112,4 +112,46 @@
 			</effect>
 		</effects>
 	</skill>
+
+	<!-- 吸血觸發機率加成示範技能 -->
+	<!-- amount 單位為 %：5 = 5%，0.1 = 0.1%，0.01 = 0.01% -->
+	<skill id="102010" toLevel="1" name="吸血機率+0.01%">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="VampiricChanceAdd">
+				<amount>0.01</amount>
+			</effect>
+		</effects>
+	</skill>
+
+	<skill id="102011" toLevel="1" name="吸血機率+0.1%">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="VampiricChanceAdd">
+				<amount>0.1</amount>
+			</effect>
+		</effects>
+	</skill>
+
+	<skill id="102012" toLevel="1" name="吸血機率+1%">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="VampiricChanceAdd">
+				<amount>1</amount>
+			</effect>
+		</effects>
+	</skill>
+
+	<skill id="102013" toLevel="1" name="吸血機率+5%">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="VampiricChanceAdd">
+				<amount>5</amount>
+			</effect>
+		</effects>
+	</skill>
 </list>

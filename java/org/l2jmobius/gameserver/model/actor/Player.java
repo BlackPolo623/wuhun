@@ -14041,8 +14041,8 @@ public class Player extends Playable
 			}
 			else
 			{
-				sendPacket(new ExDamagePopUp(getObjectId(), target.getObjectId(), damage, ExDamagePopUp.NORMAL_ATTACK));
-				target.sendPacket(new ExDamagePopUp(getObjectId(), target.getObjectId(), damage, ExDamagePopUp.NORMAL_ATTACK));
+				sendPacket(new ExDamagePopUp(getObjectId(), target.getObjectId(), damage, ExDamagePopUp.PHYSICAL_CRITICAL));
+				target.sendPacket(new ExDamagePopUp(getObjectId(), target.getObjectId(), damage, ExDamagePopUp.PHYSICAL_CRITICAL));
 			}
 			
 			final SystemMessage sm;

@@ -161,24 +161,30 @@ public class BaseBossNpc extends Script
 			return null;
 		}
 
+		// 計算每種材料最多可製作幾次
+		int maxCraft = Integer.MAX_VALUE;
 		for (int[] material : CRAFT_MATERIALS)
 		{
-			if (player.getInventory().getInventoryItemCount(material[0], 0) < material[1])
-			{
-				player.sendMessage("材料不足！");
-				return showMainPage(player);
-			}
+			long playerCount = player.getInventory().getInventoryItemCount(material[0], 0);
+			int canCraft = (int) (playerCount / material[1]);
+			maxCraft = Math.min(maxCraft, canCraft);
+		}
+
+		if (maxCraft <= 0)
+		{
+			player.sendMessage("材料不足！");
+			return showMainPage(player);
 		}
 
 		for (int[] material : CRAFT_MATERIALS)
 		{
-			takeItems(player, material[0], material[1]);
+			takeItems(player, material[0], (long) material[1] * maxCraft);
 		}
 
-		giveItems(player, SUMMON_TICKET_ID, 1);
+		giveItems(player, SUMMON_TICKET_ID, maxCraft);
 
 		player.sendMessage("========================================");
-		player.sendMessage("成功製作BOSS召喚券！");
+		player.sendMessage("成功批量製作BOSS召喚券 x" + maxCraft + " 張！");
 		player.sendMessage("========================================");
 
 		return showMainPage(player);

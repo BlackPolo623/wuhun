@@ -5274,30 +5274,33 @@ public abstract class Creature extends WorldObject
 			}
 		}
 
-		// Absorb HP from the damage inflicted
+		// 吸血
 		final boolean isPvP = isPlayable() && (target.isPlayable() || target.isFakePlayer());
 		if (!isPvP || PvpConfig.VAMPIRIC_ATTACK_AFFECTS_PVP)
 		{
 			if ((skill == null) || PlayerConfig.VAMPIRIC_ATTACK_WORKS_WITH_SKILLS)
 			{
-				final double absorbHpPercent = getStat().getValue(Stat.ABSORB_DAMAGE_PERCENT, 0);
-				// 吸血觸發機率：基礎10% + 魂環吸血機率加成（每點+1%，上限由XML設定）
-				double vampiricChance = 0.05;
+				// 吸血觸發機率：基礎5% + 技能加成(ABSORB_DAMAGE_CHANCE, %單位) + 魂環吸血機率加成
+				double vampiricChance = 0.05 + getStat().getValue(Stat.ABSORB_DAMAGE_CHANCE, 0) / 100.0;
 				if (isPlayer())
 				{
 					final int soulVampiricPts = asPlayer().getVariables().getInt("SoulRing_SpecialVampiric", 0);
 					vampiricChance += soulVampiricPts / 100.0;
 				}
-				if ((absorbHpPercent > 0) && (Rnd.nextDouble() < vampiricChance))
+				if (Rnd.nextDouble() < vampiricChance)
 				{
-					int absorbDamage = (int) Math.min(absorbHpPercent * damage, _stat.getMaxRecoverableHp() - _status.getCurrentHp());
+					int absorbDamage = (int) Math.min(damage, _stat.getMaxRecoverableHp() - _status.getCurrentHp());
 					absorbDamage = Math.min(absorbDamage, (int) target.getCurrentHp());
 					absorbDamage *= target.getStat().getValue(Stat.ABSORB_DAMAGE_DEFENCE, 1);
+					absorbDamage = Math.min(absorbDamage, (int) damage); // 回血上限不超過本次造成的傷害
 					if (absorbDamage > 0)
 					{
-						int soulringVampiric = (asPlayer().getSoulringCount() + 15000);
-						absorbDamage = Math.min(absorbDamage,soulringVampiric);
-						double finalabsorbDamage = Rnd.get((absorbDamage * 0.8 ), (absorbDamage * 1.2));
+						if (isPlayer())
+						{
+							final int soulringVampiric = asPlayer().getSoulringCount() + 5000;
+							absorbDamage = Math.min(absorbDamage, soulringVampiric);
+						}
+						double finalabsorbDamage = Rnd.get((absorbDamage * 0.8), (absorbDamage * 1.2));
 						setCurrentHp(_status.getCurrentHp() + finalabsorbDamage);
 					}
 				}

@@ -1049,7 +1049,7 @@ public class World
 
 			if (object.getWorldRegion() != null)
 			{
-				object.getWorldRegion().removeVisibleObject(object);
+				removeVisibleObject(object, object.getWorldRegion());
 			}
 		}
 	}

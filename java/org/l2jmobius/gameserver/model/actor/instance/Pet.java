@@ -788,9 +788,8 @@ public class Pet extends Summon
 	@Override
 	public void deleteMe(Player owner)
 	{
-		// Pet related - Removed on Essence.
-		// _inventory.transferItemsToOwner();
-		
+		_inventory.transferItemsToOwner();
+
 		super.deleteMe(owner);
 		
 		// Pet related - Removed on Essence.
