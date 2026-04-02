@@ -268,7 +268,7 @@
 			<skill id="4416" level="6" /> 
 		</skillList>
 	</npc>
-	<npc id="18727" level="87" type="Folk" name="封印石碑">
+	<npc id="18727" level="87" type="Monster" name="封印石碑">
 		<race>ETC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
@@ -323,7 +323,7 @@
 			<height normal="7" />
 		</collision>
 	</npc>
-	<npc id="18730" level="80" type="Folk" name="監視裝置">
+	<npc id="18730" level="80" type="Monster" name="監視裝置">
 		<race>ETC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
@@ -336,7 +336,7 @@
 			</speed>
 			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" />
+		<status attackable="true" />
 		<collision>
 			<radius normal="57" />
 			<height normal="67.5" />

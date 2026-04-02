@@ -986,9 +986,71 @@ public class Formulas
 	 */
 	public static double calcAttributeBonus(Creature attacker, Creature target, Skill skill)
 	{
+		if (attacker.isPlayable())
+		{
+			// ★ 攻擊者為玩家（含召喚獸）
+			return calcAttributeBonusInternal(attacker, target, skill);
+		}
+		else
+		{
+			// ★ 攻擊者為怪物／NPC
+			return calcAttributeBonusInternal(attacker, target, skill);
+		}
+	}
+
+	private static double calcAttributeBonusInternal(Creature attacker, Creature target, Skill skill)
+	{
+		final int diff = getAttributeDiff(attacker, target, skill);
+		if (diff > 0)
+		{
+			return Math.min(1.025 + (Math.sqrt(Math.pow(diff, 3) / 2) * 0.0001), 1.25);
+		}
+		else if (diff < 0)
+		{
+			return Math.max(0.975 - (Math.sqrt(Math.pow(-diff, 3) / 2) * 0.0001), 0.75);
+		}
+		return 1;
+	}
+
+	/**
+	 * 計算屬性平傷加減（加法，非倍率）。
+	 * 僅在特定攻防組合下生效，其餘情況回傳 0。
+	 *
+	 * 玩家 → 玩家：每點 diff ★ +3 / -3 傷害
+	 * 怪物 → 玩家：每點 diff ★ +20 / -20 傷害
+	 */
+	public static double calcAttributeFlatBonus(Creature attacker, Creature target, Skill skill)
+	{
+		if (attacker.isPlayable())
+		{
+			// ★ 攻擊者為玩家（含召喚獸）vs 被攻擊者為玩家
+			if (target.isPlayer())
+			{
+				return getAttributeDiff(attacker, target, skill) * 3.0;
+			}
+			// 玩家 → 怪物：不套用屬性平傷
+			return 0;
+		}
+		else
+		{
+			// ★ 攻擊者為怪物／NPC vs 被攻擊者為玩家
+			if (target.isPlayer())
+			{
+				return getAttributeDiff(attacker, target, skill) * 20.0;
+			}
+			// 怪物 → 怪物：不套用屬性平傷
+			return 0;
+		}
+	}
+
+	/**
+	 * 取得攻擊屬性與防禦屬性的差值（攻 - 守）。
+	 * 正數表示攻擊優勢，負數表示防禦優勢。
+	 */
+	private static int getAttributeDiff(Creature attacker, Creature target, Skill skill)
+	{
 		int attackAttribute;
 		int defenceAttribute;
-		
 		if ((skill != null) && (skill.getAttributeType() != AttributeType.NONE))
 		{
 			attackAttribute = attacker.getAttackElementValue(skill.getAttributeType()) + skill.getAttributeValue();
@@ -999,18 +1061,7 @@ public class Formulas
 			attackAttribute = attacker.getAttackElementValue(attacker.getAttackElement());
 			defenceAttribute = target.getDefenseElementValue(attacker.getAttackElement());
 		}
-		
-		final int diff = attackAttribute - defenceAttribute;
-		if (diff > 0)
-		{
-			return Math.min(1.025 + (Math.sqrt(Math.pow(diff, 3) / 2) * 0.0001), 1.25);
-		}
-		else if (diff < 0)
-		{
-			return Math.max(0.975 - (Math.sqrt(Math.pow(-diff, 3) / 2) * 0.0001), 0.75);
-		}
-		
-		return 1;
+		return attackAttribute - defenceAttribute;
 	}
 	
 	public static void calcCounterAttack(Creature attacker, Creature target, Skill skill, boolean crit)

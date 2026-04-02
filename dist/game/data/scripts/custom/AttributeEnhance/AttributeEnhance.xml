@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    屬性強化系統設定檔
+    ==========================================
+    NPC ID 請在 AttributeEnhance.java 的 NPC_ID 常數修改。
+
+    【屬性邏輯說明】
+      武器屬性 = 攻擊屬性（直接加成）
+        Fire=火攻擊 / Water=水攻擊 / Wind=風攻擊
+        Earth=地攻擊 / Holy=光攻擊 / Dark=暗攻擊
+
+      防具/飾品屬性 = 防禦「對立」屬性的攻擊
+        Fire屬性 → 抵抗水系攻擊
+        Water屬性 → ��抗火系攻擊
+        Wind屬性 → 抵抗地系攻擊
+        Earth屬性 → 抵抗風系攻擊
+        Holy屬性 → 抵抗暗系攻擊
+        Dark屬性 → 抵抗光系攻擊
+
+    【參數說明】
+      slot       : 部位名稱（見各分區說明）
+      element    : 屬性名稱（Fire/Water/Wind/Earth/Holy/Dark）
+      itemId     : 消耗的道具ID
+      minGain    : 每次成功強化最少增加點數
+      maxGain    : 每次成功強化最多增加點數
+      maxValue   : 該屬性的點數上限
+      successRate: 成功機率（0.0 = 0%，1.0 = 100%）
+-->
+<attributeEnhance>
+
+    <!-- ==================== 防具系統 ====================
+         slot 可填：head / chest / legs / gloves / boots
+         每部位最多可強化三種不同的屬性
+    -->
+    <armorStones>
+        <!-- 頭盔 -->
+        <stone slot="head" element="Fire"  itemId="105817" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="head" element="Water" itemId="105818" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="head" element="Earth" itemId="105819" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="head" element="Wind"  itemId="105820" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="head" element="Dark"  itemId="105821" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="head" element="Holy"  itemId="105822" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+
+        <!-- 胸甲 -->
+        <stone slot="chest" element="Fire"  itemId="105817" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="chest" element="Water" itemId="105818" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="chest" element="Earth" itemId="105819" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="chest" element="Wind"  itemId="105820" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="chest" element="Dark"  itemId="105821" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="chest" element="Holy"  itemId="105822" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+
+        <!-- 腿甲 -->
+        <stone slot="legs" element="Fire"  itemId="105817" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="legs" element="Water" itemId="105818" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="legs" element="Earth" itemId="105819" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="legs" element="Wind"  itemId="105820" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="legs" element="Dark"  itemId="105821" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="legs" element="Holy"  itemId="105822" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+
+        <!-- 手套 -->
+        <stone slot="gloves" element="Fire"  itemId="105817" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="gloves" element="Water" itemId="105818" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="gloves" element="Earth" itemId="105819" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="gloves" element="Wind"  itemId="105820" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="gloves" element="Dark"  itemId="105821" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="gloves" element="Holy"  itemId="105822" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+
+        <!-- 鞋子 -->
+        <stone slot="boots" element="Fire"  itemId="105817" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="boots" element="Water" itemId="105818" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="boots" element="Earth" itemId="105819" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="boots" element="Wind"  itemId="105820" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="boots" element="Dark"  itemId="105821" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+        <stone slot="boots" element="Holy"  itemId="105822" minGain="1" maxGain="2" maxValue="2500" successRate="0.65"/>
+    </armorStones>
+
+    <!-- ==================== 武器系統 ====================
+         slot 可填：weapon（主武器）/ offhand（副手）
+         武器只能有一種攻擊屬性，換屬性時舊屬性會被覆蓋
+    -->
+    <weaponStones>
+        <!-- 主武器 -->
+        <stone slot="weapon" element="Fire"  itemId="105811" minGain="1" maxGain="3" maxValue="6000" successRate="0.7"/>
+        <stone slot="weapon" element="Water" itemId="105812" minGain="1" maxGain="3" maxValue="6000" successRate="0.7"/>
+        <stone slot="weapon" element="Earth"  itemId="105813" minGain="1" maxGain="3" maxValue="6000" successRate="0.7"/>
+        <stone slot="weapon" element="Wind" itemId="105814" minGain="1" maxGain="3" maxValue="6000" successRate="0.7"/>
+        <stone slot="weapon" element="Dark"  itemId="105815" minGain="1" maxGain="3" maxValue="6000" successRate="0.7"/>
+        <stone slot="weapon" element="Holy"  itemId="105816" minGain="1" maxGain="3" maxValue="6000" successRate="0.7"/>
+
+        <!-- 副手 -->
+        <stone slot="offhand" element="Fire"  itemId="105811" minGain="1" maxGain="3" maxValue="6000" successRate="0.7"/>
+        <stone slot="offhand" element="Water" itemId="105812" minGain="1" maxGain="3" maxValue="6000" successRate="0.7"/>
+        <stone slot="offhand" element="Earth"  itemId="105813" minGain="1" maxGain="3" maxValue="6000" successRate="0.7"/>
+        <stone slot="offhand" element="Wind" itemId="105814" minGain="1" maxGain="3" maxValue="6000" successRate="0.7"/>
+        <stone slot="offhand" element="Dark"  itemId="105815" minGain="1" maxGain="3" maxValue="6000" successRate="0.7"/>
+        <stone slot="offhand" element="Holy"  itemId="105816" minGain="1" maxGain="3" maxValue="6000" successRate="0.7"/>
+    </weaponStones>
+
+    <!-- ==================== 飾品系統 ====================
+         所有飾品（項鍊/右耳/左耳/右戒/左戒）共用同一個道具
+         每次使用道具隨機洗出 minSlots~maxSlots 種屬性
+         每種屬性值在 minValue~maxValue 之間隨機
+         使用後會清除原有全部屬性再重新賦予
+    -->
+    <jewelryStone itemId="105823" minSlots="1" maxSlots="6" minValue="20" maxValue="1500"/>
+
+</attributeEnhance>

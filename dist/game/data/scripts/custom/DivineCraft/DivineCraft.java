@@ -2,6 +2,7 @@ package custom.DivineCraft;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +11,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.cache.HtmCache;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.instance.Item;
@@ -26,7 +28,7 @@ import org.w3c.dom.NodeList;
  */
 public class DivineCraft extends Script
 {
-	private static final int NPC_ID = 900042;
+	private static final int NPC_ID = 900046;
 	private static final String XML_PATH = "data/scripts/custom/DivineCraft/DivineCraft.xml";
 
 	// PAPERDOLL slot 對應
@@ -95,6 +97,11 @@ public class DivineCraft extends Script
 	}
 
 	private static final List<SeriesConfig> SERIES_LIST = new ArrayList<>();
+
+	// 預載 HTM 內容，避免每次請求時從磁碟讀取
+	private static String MAIN_HTM    = "";
+	private static String SERIES_HTM  = "";
+	private static String ENCHANT_HTM = "";
 
 	private DivineCraft()
 	{
@@ -180,6 +187,12 @@ public class DivineCraft extends Script
 		{
 			LOGGER.warning("DivineCraft: 載入配置失敗: " + e.getMessage());
 		}
+
+		// 預載 HTM 檔案到記憶體，避免玩家請求時觸發磁碟讀取
+		final String basePath = "data/scripts/custom/DivineCraft/";
+		MAIN_HTM    = HtmCache.getInstance().getHtm(null, basePath + "main.htm");
+		SERIES_HTM  = HtmCache.getInstance().getHtm(null, basePath + "series.htm");
+		ENCHANT_HTM = HtmCache.getInstance().getHtm(null, basePath + "enchant.htm");
 	}
 
 	@Override
@@ -226,13 +239,16 @@ public class DivineCraft extends Script
 		StringBuilder sb = new StringBuilder();
 		for (SeriesConfig series : SERIES_LIST)
 		{
+			sb.append("<table width=270 cellpadding=3 cellspacing=0>");
+			sb.append("<tr><td align=center>");
 			sb.append("<button value=\"").append(series.name).append("\"");
 			sb.append(" action=\"bypass -h Quest DivineCraft series ").append(series.id).append("\"");
-			sb.append(" width=200 height=28 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"><br>");
+			sb.append(" width=200 height=28 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">");
+			sb.append("</td></tr></table>");
 		}
 
 		NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
-		msg.setFile(player, "data/scripts/custom/DivineCraft/main.htm");
+		msg.setHtml(MAIN_HTM);
 		msg.replace("%seriesButtons%", sb.toString());
 		player.sendPacket(msg);
 		return null;
@@ -246,42 +262,56 @@ public class DivineCraft extends Script
 			return showMainMenu(player);
 		}
 
-		NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
-		msg.setFile(player, "data/scripts/custom/DivineCraft/series.htm");
-		msg.replace("%seriesName%", series.name);
+		StringBuilder slotListHtml = new StringBuilder();
+		int rowIdx = 0;
 
 		for (String slotType : SLOT_MAP.keySet())
 		{
 			SlotConfig slotCfg = findSlotInSeries(series, slotType);
 			Item equipped = player.getInventory().getPaperdollItem(SLOT_MAP.get(slotType));
-			String cellContent;
+
+			String rowColor = (rowIdx % 2 == 0) ? "1A1A2A" : "1A2A1A";
+			String slotName = getSlotName(slotType);
+			String itemDisplay;
+			String actionDisplay;
 
 			if (slotCfg == null)
 			{
-				cellContent = "<font color=808080>（此系列無此部位）</font>";
+				itemDisplay = "<font color=808080>（此系列無此部位）</font>";
+				actionDisplay = "-";
 			}
 			else if (equipped == null || equipped.getId() < slotCfg.itemIdMin || equipped.getId() > slotCfg.itemIdMax)
 			{
-				cellContent = "<font color=FF4444>非" + series.name + "裝備</font>";
+				itemDisplay = "<font color=FF4444>非" + series.name + "裝備</font>";
+				actionDisplay = "-";
 			}
 			else
 			{
 				int enchant = equipped.getEnchantLevel();
-				String itemDisplay = "<font color=00FF00>" + equipped.getName() + (enchant > 0 ? " +" + enchant : "") + "</font>";
-				String btn;
+				itemDisplay = "<font color=00FF88>" + equipped.getName() + (enchant > 0 ? " +" + enchant : "") + "</font>";
+
 				if (enchant >= series.maxEnchant)
 				{
-					btn = "<font color=FFFF00>已滿強化</font>";
+					actionDisplay = "<font color=FFFF00>已滿</font>";
 				}
 				else
 				{
-					btn = "<button value=\"強化\" action=\"bypass -h Quest DivineCraft enchant_page " + seriesId + " " + slotType + "\" width=55 height=22 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">";
+					actionDisplay = "<button value=\"強化\" action=\"bypass -h Quest DivineCraft enchant_page " + seriesId + " " + slotType + "\" width=60 height=20 back=\"L2UI_CT1.Button_DF_Small_Down\" fore=\"L2UI_CT1.Button_DF_Small\">";
 				}
-				cellContent = "<table width=190 border=0><tr><td width=130>" + itemDisplay + "</td><td width=60 align=center>" + btn + "</td></tr></table>";
 			}
-			msg.replace("%slot_" + slotType + "%", cellContent);
+
+			slotListHtml.append("<tr bgcolor=").append(rowColor).append(">")
+				.append("<td align=center><font color=AAAAAA>").append(slotName).append("</font></td>")
+				.append("<td>").append(itemDisplay).append("</td>")
+				.append("<td align=center>").append(actionDisplay).append("</td>")
+				.append("</tr>");
+			rowIdx++;
 		}
 
+		NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
+		msg.setHtml(SERIES_HTM);
+		msg.replace("%seriesName%", series.name);
+		msg.replace("%slotList%", slotListHtml.toString());
 		player.sendPacket(msg);
 		return null;
 	}
@@ -301,31 +331,55 @@ public class DivineCraft extends Script
 		int enchant = equipped.getEnchantLevel();
 		int currentSuccessRate = series.getSuccessRate(enchant);
 
-		// 尋找玩家擁有的第一個可用素材
+		// 一次性掃描背包，收集所有素材數量，避免重複遍歷
+		final Map<Integer, Long> matCounts = new HashMap<>();
+		for (MaterialOption mat : slotCfg.materials)
+		{
+			matCounts.put(mat.itemId, player.getInventory().getInventoryItemCount(mat.itemId, -1));
+		}
+
+		// 從快取結果找可用素材（不再掃背包）
 		MaterialOption availableMat = null;
 		for (MaterialOption mat : slotCfg.materials)
 		{
-			long playerMat = player.getInventory().getInventoryItemCount(mat.itemId, -1);
-			if (playerMat >= mat.count)
+			if (matCounts.get(mat.itemId) >= mat.count)
 			{
 				availableMat = mat;
 				break;
 			}
 		}
 
-		// 建立素材列表顯示
+		// 建立素材列表顯示（直接查快取，不再掃背包）
 		StringBuilder matListHtml = new StringBuilder();
+		matListHtml.append("<table width=270 bgcolor=111111 cellpadding=3 cellspacing=1>");
+		matListHtml.append("<tr bgcolor=0A0A0A>")
+			.append("<td width=110><font color=AAAAAA>素材名稱</font></td>")
+			.append("<td width=50 align=center><font color=AAAAAA>需求</font></td>")
+			.append("<td width=50 align=center><font color=AAAAAA>擁有</font></td>")
+			.append("<td width=60 align=center><font color=AAAAAA>狀態</font></td>")
+			.append("</tr>");
+
+		int rowIdx = 0;
 		for (MaterialOption mat : slotCfg.materials)
 		{
-			long playerMat = player.getInventory().getInventoryItemCount(mat.itemId, -1);
+			long playerMat = matCounts.get(mat.itemId);
 			org.l2jmobius.gameserver.model.item.ItemTemplate matTemplate = org.l2jmobius.gameserver.data.xml.ItemData.getInstance().getTemplate(mat.itemId);
 			String matName = matTemplate != null ? matTemplate.getName() : "道具ID " + mat.itemId;
 
-			String color = playerMat >= mat.count ? "00FF00" : "FF4444";
-			String status = playerMat >= mat.count ? "（足夠）" : "（不足）";
-			matListHtml.append("<font color=").append(color).append(">").append(matName).append(" x").append(mat.count);
-			matListHtml.append(" - 擁有: ").append(playerMat).append(status).append("</font><br1>");
+			boolean enough = playerMat >= mat.count;
+			String rowColor = (rowIdx % 2 == 0) ? "1A1A2A" : "1A2A1A";
+			String statusColor = enough ? "00FF88" : "FF4444";
+			String statusText = enough ? "足夠" : "不足";
+
+			matListHtml.append("<tr bgcolor=").append(rowColor).append(">")
+				.append("<td><font color=FFFFFF>").append(matName).append("</font></td>")
+				.append("<td align=center><font color=FFCC33>").append(mat.count).append("</font></td>")
+				.append("<td align=center><font color=AAAAAA>").append(playerMat).append("</font></td>")
+				.append("<td align=center><font color=").append(statusColor).append(">").append(statusText).append("</font></td>")
+				.append("</tr>");
+			rowIdx++;
 		}
+		matListHtml.append("</table>");
 
 		// 防爆道具資訊
 		String protectionInfo = "";
@@ -334,13 +388,18 @@ public class DivineCraft extends Script
 			long protectionCount = player.getInventory().getInventoryItemCount(series.protectionItemId, -1);
 			org.l2jmobius.gameserver.model.item.ItemTemplate protTemplate = org.l2jmobius.gameserver.data.xml.ItemData.getInstance().getTemplate(series.protectionItemId);
 			String protName = protTemplate != null ? protTemplate.getName() : "防爆道具";
-			String protColor = protectionCount > 0 ? "00FF00" : "FFAA00";
-			protectionInfo = "<br><font color=" + protColor + ">防爆道具: " + protName + " x" + protectionCount + "</font><br>";
-			protectionInfo += "<font color=AAAAAA>失敗消失機率: " + series.destroyChance + "%（有防爆道具時不消失）</font>";
+			String protColor = protectionCount > 0 ? "00FF88" : "FF4444";
+
+			protectionInfo = "<table width=270 bgcolor=2A0A0A cellpadding=3 cellspacing=1>";
+			protectionInfo += "<tr><td align=center><font color=" + protColor + ">防爆道具: " + protName + " x" + protectionCount + "</font></td></tr>";
+			protectionInfo += "<tr><td align=center><font color=FFAAAA size=1>失敗消失機率: " + series.destroyChance + "%（有防爆道具時不消失）</font></td></tr>";
+			protectionInfo += "</table>";
 		}
 		else
 		{
-			protectionInfo = "<br><font color=AAAAAA>失敗消失機率: " + series.destroyChance + "%</font>";
+			protectionInfo = "<table width=270 bgcolor=2A0A0A cellpadding=3 cellspacing=1>";
+			protectionInfo += "<tr><td align=center><font color=FFAAAA size=1>失敗消失機率: " + series.destroyChance + "%</font></td></tr>";
+			protectionInfo += "</table>";
 		}
 
 		// 強化按鈕
@@ -359,14 +418,13 @@ public class DivineCraft extends Script
 		}
 
 		NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
-		msg.setFile(player, "data/scripts/custom/DivineCraft/enchant.htm");
+		msg.setHtml(ENCHANT_HTM);
 		msg.replace("%itemName%", equipped.getName() + (enchant > 0 ? " +" + enchant : ""));
 		msg.replace("%currentEnchant%", String.valueOf(enchant));
 		msg.replace("%maxEnchant%", String.valueOf(series.maxEnchant));
 		msg.replace("%successRate%", String.valueOf(currentSuccessRate));
-		msg.replace("%materialName%", "可用素材");
-		msg.replace("%materialCount%", protectionInfo);
-		msg.replace("%playerMatCount%", matListHtml.toString());
+		msg.replace("%materialList%", matListHtml.toString());
+		msg.replace("%protectionInfo%", protectionInfo);
 		msg.replace("%enchantButton%", enchantButton);
 		msg.replace("%seriesId%", seriesId);
 		player.sendPacket(msg);

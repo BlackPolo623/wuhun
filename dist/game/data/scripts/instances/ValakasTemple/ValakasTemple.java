@@ -39,7 +39,6 @@ import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureTe
 import org.l2jmobius.gameserver.model.events.holders.instance.OnInstanceStatusChange;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.instancezone.InstanceTemplate;
-import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.model.spawns.NpcSpawnTemplate;
 import org.l2jmobius.gameserver.model.spawns.SpawnGroup;
@@ -54,27 +53,71 @@ import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
 public class ValakasTemple extends InstanceScript
 {
 	// Reward Chest Configuration
-	private static final int REWARD_CHEST_NPC_ID = 910001; // Reward Chest
-	public static final int REWARD_ITEMS_COUNT = 10;       // 正常通關副本的抽獎次數
+	private static final int REWARD_CHEST_NPC_ID = 920001; // Reward Chest
+	public static final int REWARD_ITEMS_COUNT = 10; // 正常通關副本的抽獎次數
 	public static final int SWEEP_REWARD_ITEMS_COUNT = 5; // 掃蕩的抽獎次數
 	public static final int[][] REWARD_ITEMS =
 	{
-		{130000, 1, 60},
-		{130000, 3, 20},
-		{130000, 5, 10},
-		{130001, 1, 2},
-		{130002, 1, 2},
-			{130009, 1, 1},
-			{1300010, 1, 1},
-			{1300011, 1, 1},
-			{1300012, 1, 1},
-			{1300013, 1, 1},
-			{1300014, 1, 1},
+		{
+			130000,
+			1,
+			60
+		},
+		{
+			130000,
+			3,
+			20
+		},
+		{
+			130000,
+			5,
+			10
+		},
+		{
+			130001,
+			1,
+			2
+		},
+		{
+			130002,
+			1,
+			2
+		},
+		{
+			130009,
+			1,
+			1
+		},
+		{
+			1300010,
+			1,
+			1
+		},
+		{
+			1300011,
+			1,
+			1
+		},
+		{
+			1300012,
+			1,
+			1
+		},
+		{
+			1300013,
+			1,
+			1
+		},
+		{
+			1300014,
+			1,
+			1
+		},
 	};
 	private static final String PLAYER_REWARDED_VAR = "VALAKAS_TEMPLE_REWARDED";
 	/** 玩家通關記錄變數：通關一次後設為 true，掃蕩功能需要此資格 */
 	public static final String PLAYER_CLEARED_VAR = "VALAKAS_TEMPLE_CLEARED";
-
+	
 	// ========================================
 	// 保底機制設定（僅正常通關有效，掃蕩不計入）
 	// ========================================
@@ -84,17 +127,41 @@ public class ValakasTemple extends InstanceScript
 	public static final int[][] PITY_REWARD_ITEMS =
 	{
 		// {itemId, count, chance} — 請填入你想要的保底道具
-			{130009, 1, 15},
-			{1300010, 1, 15},
-			{1300011, 1, 15},
-			{1300012, 1, 15},
-			{1300013, 1, 15},
-			{1300014, 1, 15},
+		{
+			130009,
+			1,
+			15
+		},
+		{
+			1300010,
+			1,
+			15
+		},
+		{
+			1300011,
+			1,
+			15
+		},
+		{
+			1300012,
+			1,
+			15
+		},
+		{
+			1300013,
+			1,
+			15
+		},
+		{
+			1300014,
+			1,
+			15
+		},
 	};
 	/** 玩家變數：記錄累計正常通關次數（未觸發保底的次數） */
 	private static final String PLAYER_PITY_COUNT_VAR = "VALAKAS_TEMPLE_PITY_COUNT";
 	// ========================================
-
+	
 	private static final int INSTANCE_CREATE = 0;
 	private static final int SAVE_HERMIT = 1;
 	private static final int KILL_OBSERVATION_DEVICE_CENTER = 2;
@@ -257,31 +324,13 @@ public class ValakasTemple extends InstanceScript
 				{
 					world.setStatus(KILL_OBSERVATION_DEVICE_CENTER);
 				}
-				else if (world.getStatus() == KILL_MONSTERS_CENTER)
+				else if ((world.getStatus() == KILL_MONSTERS_CENTER) && world.getAliveNpcs(MONSTER_IDs).isEmpty())
 				{
-					if (npc.getSpawn().getNpcSpawnTemplate().getGroup().getName().equalsIgnoreCase("monsters_from_gate_center"))
-					{
-						if (world.getParameters().getInt(KILL_COUNT_VAR, 0) == world.getParameters().getInt("NPC_CENTER_MONSTERS", 0))
-						{
-							world.setStatus(KILL_IFRIT_CENTER);
-						}
-						else
-						{
-							world.getParameters().increaseInt(KILL_COUNT_VAR, 0, 1);
-						}
-					}
+					world.setStatus(KILL_IFRIT_CENTER);
 				}
 				else if (world.getStatus() == KILL_LEFT_OR_RIGHT)
 				{
-					// Fixed: Check if all left/right monsters are killed before advancing
-					final String groupName = npc.getSpawn().getNpcSpawnTemplate().getGroup().getName();
-					if (groupName.equalsIgnoreCase("monsters_from_gate_left") || groupName.equalsIgnoreCase("monsters_from_gate_right"))
-					{
-						if (world.getAliveNpcs(MONSTER_IDs).isEmpty())
-						{
-							world.setStatus(KILL_OBSERVATION_DEVICE_TOMB);
-						}
-					}
+					world.setStatus(KILL_OBSERVATION_DEVICE_TOMB);
 				}
 				break;
 			}
@@ -294,14 +343,6 @@ public class ValakasTemple extends InstanceScript
 		final InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(VALAKAS_TEMPLE_INSTANCE_ID);
 		for (SpawnTemplate spawn : template.getSpawns())
 		{
-			if (world.getParameters().getInt("NPC_CENTER_MONSTERS", 0) == 0)
-			{
-				for (NpcSpawnTemplate spawns : spawn.getGroupsByName("monsters_from_gate_center").get(0).getSpawns())
-				{
-					world.setParameter("NPC_CENTER_MONSTERS", spawns.getCount() + 1);
-				}
-			}
-			
 			final List<Location> locations = new ArrayList<>(7);
 			for (SpawnGroup group : spawn.getGroupsByName("clones"))
 			{
@@ -437,10 +478,10 @@ public class ValakasTemple extends InstanceScript
 		// FINISH_INSTANCE
 		world.spawnGroup("reward_chest");
 		world.getPlayers().forEach(player -> player.sendPacket(new ExShowScreenMessage("副本將在5分鐘後關閉，請盡快領取獎勵！", 10000)));
-
+		
 		// 標記所有副本內玩家已通關（解鎖掃蕩功能）
 		world.getPlayers().forEach(player -> player.getVariables().set(PLAYER_CLEARED_VAR, true));
-
+		
 		// Schedule instance destruction after 5 minutes
 		ThreadPool.schedule(() ->
 		{
@@ -503,21 +544,21 @@ public class ValakasTemple extends InstanceScript
 		{
 			return;
 		}
-
+		
 		final Player player = event.getCreature().asPlayer();
 		final Instance world = player.getInstanceWorld();
 		if ((world == null) || (world.getTemplateId() != VALAKAS_TEMPLE_INSTANCE_ID))
 		{
 			return;
 		}
-
+		
 		if ((world.getStatus() == KILL_LAST_IFRIT) && !world.getParameters().getBoolean(IS_REMOVED_EVENTS, false))
 		{
 			player.sendPacket(new OnEventTrigger(ValakasTemple.EVENT_ID_PLAYER_CIRCLE, true));
 			player.sendPacket(new OnEventTrigger(ValakasTemple.EVENT_ID_BOSS_CIRCLE, true));
 		}
 	}
-
+	
 	@Override
 	public String onFirstTalk(Npc npc, Player player)
 	{
@@ -526,20 +567,20 @@ public class ValakasTemple extends InstanceScript
 		{
 			return null;
 		}
-
+		
 		if (world.getStatus() != FINISH_INSTANCE)
 		{
 			return "RewardChest/no-reward.htm";
 		}
-
+		
 		if (player.getVariables().getBoolean(PLAYER_REWARDED_VAR, false))
 		{
 			return "RewardChest/already-rewarded.htm";
 		}
-
+		
 		return "RewardChest/reward.htm";
 	}
-
+	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
@@ -550,22 +591,22 @@ public class ValakasTemple extends InstanceScript
 			{
 				return null;
 			}
-
+			
 			if (world.getStatus() != FINISH_INSTANCE)
 			{
 				return "RewardChest/no-reward.htm";
 			}
-
+			
 			if (player.getVariables().getBoolean(PLAYER_REWARDED_VAR, false))
 			{
 				return "RewardChest/already-rewarded.htm";
 			}
-
+			
 			// Give rewards
 			giveRewards(player);
 			checkAndApplyPity(player);
 			player.getVariables().set(PLAYER_REWARDED_VAR, true);
-
+			
 			// Teleport player out after 15 seconds
 			ThreadPool.schedule(() ->
 			{
@@ -582,13 +623,13 @@ public class ValakasTemple extends InstanceScript
 					}
 				}
 			}, 15_000);
-
+			
 			return "RewardChest/rewarded.htm";
 		}
-
+		
 		return super.onEvent(event, npc, player);
 	}
-
+	
 	private void giveRewards(Player player)
 	{
 		for (int i = 0; i < REWARD_ITEMS_COUNT; i++)
@@ -598,10 +639,10 @@ public class ValakasTemple extends InstanceScript
 			{
 				totalChance += reward[2]; // reward[2] is chance
 			}
-
+			
 			final int random = getRandom(totalChance);
 			int currentChance = 0;
-
+			
 			for (int[] reward : REWARD_ITEMS)
 			{
 				currentChance += reward[2]; // reward[2] is chance
@@ -614,10 +655,9 @@ public class ValakasTemple extends InstanceScript
 			}
 		}
 	}
-
+	
 	/**
-	 * 保底機制：累計正常通關次數，達到閾值時從保底獎池抽 1 件並重置計數。
-	 * 掃蕩不呼叫此方法，因此不計入也不觸發保底。
+	 * 保底機制：累計正常通關次數，達到閾值時從保底獎池抽 1 件並重置計數。 掃蕩不呼叫此方法，因此不計入也不觸發保底。
 	 */
 	private void checkAndApplyPity(Player player)
 	{
@@ -650,7 +690,7 @@ public class ValakasTemple extends InstanceScript
 			player.sendPacket(new ExShowScreenMessage("累計通關 " + count + "/" + PITY_THRESHOLD + " 次，還差 " + (PITY_THRESHOLD - count) + " 次觸發保底。", 5000));
 		}
 	}
-
+	
 	public static void main(String[] args)
 	{
 		new ValakasTemple();

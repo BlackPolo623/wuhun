@@ -5564,25 +5564,7 @@ public abstract class Creature extends WorldObject
 				amount *= (1.0 - (finalDamageReduce / 100.0));
 			}
 		}
-		// ========================================
-		// 屬性加成系統（武器屬性 / 元素屬性強化）
-		// 計算位置：最終減傷之後、最終增傷之前
-		// 說明：屬性加成在此階段套用，可穿透 FinalDamageReduce，對高減傷目標仍有效果
-		// 反射傷害（reflect=true）跳過，避免重複計算
-		//
-		// 目前公式（原版 ±25% 範圍，待規劃調整）：
-		//   攻擊屬性值 - 防禦屬性值 = diff
-		//   diff > 0：加成 = min(1.025 + √(diff³/2) × 0.0001, 1.25)  → 最高 +25%
-		//   diff < 0：減成 = max(0.975 - √((-diff)³/2) × 0.0001, 0.75) → 最低 -25%
-		//   diff = 0：無加成
-		//
-		// TODO：此處可重新設計計算公式、強度範圍、或區分 PvP/PvE 的屬性加成邏輯
-		// ========================================
-		if (!reflect && (attacker != null))
-		{
-			amount *= Formulas.calcAttributeBonus(attacker, this, skill);
-		}
-		// ========================================
+			// ========================================
 		// 最終傷害系統 - 統一適用於所有攻擊
 		// ========================================
 		if (attacker != null)
@@ -5602,6 +5584,25 @@ public abstract class Creature extends WorldObject
 				amount *= (1.0 + (finalDamageBonus / 100.0));
 			}
 		}
+		// ========================================
+		// 屬性平傷系統（最終計算 - 所有加成/減傷之後）
+		// 反射傷害（reflect=true）跳過，避免重複計算
+		//
+		// 公式：diff = 攻擊屬性 - 對應防禦屬性
+		//   玩家 → 玩家：amount += diff × 3   （正增傷，負減傷）
+		//   怪物 → 玩家：amount += diff × 20  （正增傷，負減傷）
+		//   其他組合：不套用
+		// 傷害下限：最低為 0（不會打負數）
+		// ========================================
+		if (!reflect && (attacker != null))
+		{
+			amount += Formulas.calcAttributeFlatBonus(attacker, this, skill);
+			if (amount < 0)
+			{
+				amount = 0;
+			}
+		}
+
 		// ========================================
 		// PvP魂環保護機制
 		// ========================================

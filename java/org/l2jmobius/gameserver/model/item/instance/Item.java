@@ -1445,12 +1445,12 @@ public class Item extends WorldObject
 		{
 			return;
 		}
-		
+
 		synchronized (_elementals)
 		{
 			_elementals.clear();
 		}
-		
+
 		try (Connection con = DatabaseFactory.getConnection();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM item_elementals WHERE itemId = ?"))
 		{
@@ -1460,6 +1460,23 @@ public class Item extends WorldObject
 		catch (Exception e)
 		{
 			LOGGER.log(Level.SEVERE, "Item could not remove all elemental enchant for " + this + " from DB: ", e);
+		}
+	}
+
+	/**
+	 * Clear attack attribute from weapon
+	 */
+	public void clearAttackAttribute()
+	{
+		if (!isWeapon() || (_elementals == null))
+		{
+			return;
+		}
+
+		final AttributeHolder atk = getAttackAttribute();
+		if (atk != null)
+		{
+			clearAttribute(atk.getType());
 		}
 	}
 	
