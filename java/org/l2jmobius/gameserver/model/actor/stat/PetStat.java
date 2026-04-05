@@ -56,10 +56,10 @@ public class PetStat extends SummonStat
 		{
 			return false;
 		}
-		
+
+		// addExp() 內部已呼叫 updateAndBroadcastStatus(1)，此處不重複呼叫
 		final SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_GUARDIAN_HAS_ACQUIRED_S1_XP);
 		sm.addLong(finalExp);
-		pet.updateAndBroadcastStatus(1);
 		pet.sendPacket(sm);
 		return true;
 	}

@@ -27,6 +27,7 @@ import java.util.Objects;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.managers.InstanceManager;
+import org.l2jmobius.gameserver.managers.events.ValakasTempleManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -52,10 +53,12 @@ import org.l2jmobius.gameserver.network.serverpackets.OnEventTrigger;
  */
 public class ValakasTemple extends InstanceScript
 {
+	// ========================================
 	// Reward Chest Configuration
-	private static final int REWARD_CHEST_NPC_ID = 920001; // Reward Chest
-	public static final int REWARD_ITEMS_COUNT = 10; // 正常通關副本的抽獎次數
-	public static final int SWEEP_REWARD_ITEMS_COUNT = 5; // 掃蕩的抽獎次數
+	// ========================================
+	private static final int REWARD_CHEST_NPC_ID = 920001;
+	public static final int REWARD_ITEMS_COUNT = 10;
+	public static final int SWEEP_REWARD_ITEMS_COUNT = 5;
 	public static final int[][] REWARD_ITEMS =
 	{
 		{
@@ -115,18 +118,14 @@ public class ValakasTemple extends InstanceScript
 		},
 	};
 	private static final String PLAYER_REWARDED_VAR = "VALAKAS_TEMPLE_REWARDED";
-	/** 玩家通關記錄變數：通關一次後設為 true，掃蕩功能需要此資格 */
 	public static final String PLAYER_CLEARED_VAR = "VALAKAS_TEMPLE_CLEARED";
 	
 	// ========================================
-	// 保底機制設定（僅正常通關有效，掃蕩不計入）
+	// Pity System
 	// ========================================
-	/** 累計幾次正常通關後觸發保底（觸發後計數歸零） */
 	public static final int PITY_THRESHOLD = 10;
-	/** 保底專用獎池（觸發時從此池抽 1 件，與一般獎勵疊加） */
 	public static final int[][] PITY_REWARD_ITEMS =
 	{
-		// {itemId, count, chance} — 請填入你想要的保底道具
 		{
 			130009,
 			1,
@@ -158,17 +157,17 @@ public class ValakasTemple extends InstanceScript
 			15
 		},
 	};
-	/** 玩家變數：記錄累計正常通關次數（未觸發保底的次數） */
 	private static final String PLAYER_PITY_COUNT_VAR = "VALAKAS_TEMPLE_PITY_COUNT";
-	// ========================================
 	
+	// ========================================
+	// Instance Status Constants
+	// ========================================
 	private static final int INSTANCE_CREATE = 0;
 	private static final int SAVE_HERMIT = 1;
 	private static final int KILL_OBSERVATION_DEVICE_CENTER = 2;
 	private static final int KILL_MONSTERS_CENTER = 3;
 	private static final int KILL_IFRIT_CENTER = 4;
 	private static final int KILL_LEFT_OR_RIGHT = 5;
-	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int KILL_OBSERVATION_DEVICE_TOMB = 6;
 	public static final int KILL_TOMB = 7;
 	public static final int GOTO_DUMMY_IFRIT = 8;
@@ -186,8 +185,12 @@ public class ValakasTemple extends InstanceScript
 	private static final int BOSS_DOOR_ID = 24130002;
 	private static final String IS_REMOVED_EVENTS = "IS_REMOVED_EVENTS";
 	
+	// ========================================
+	// NPC IDs
+	// ========================================
 	private static final int OBSERVATION_DEVICE = 18730;
 	private static final int HUGE_IFRIT = 25964;
+	private static final int DUMMY_IFRIT_NPC = 18727;
 	private static final int LAST_IFRIT = 25966;
 	private static final int[] MONSTER_IDs =
 	{
@@ -205,6 +208,7 @@ public class ValakasTemple extends InstanceScript
 		addInstanceCreatedId(VALAKAS_TEMPLE_INSTANCE_ID);
 		addKillId(OBSERVATION_DEVICE);
 		addKillId(HUGE_IFRIT);
+		addKillId(DUMMY_IFRIT_NPC);
 		addKillId(LAST_IFRIT);
 		addKillId(MONSTER_IDs);
 		addFirstTalkId(REWARD_CHEST_NPC_ID);
@@ -219,7 +223,6 @@ public class ValakasTemple extends InstanceScript
 		{
 			case INSTANCE_CREATE:
 			{
-				// onInstanceCreated(instance, null);
 				break;
 			}
 			case KILL_OBSERVATION_DEVICE_CENTER:
@@ -239,6 +242,7 @@ public class ValakasTemple extends InstanceScript
 			}
 			case KILL_LEFT_OR_RIGHT:
 			{
+				// 25964 死後：直接刷左右兩隻 18730（完全同原版）
 				setFifthStatusForInstance(world);
 				break;
 			}
@@ -249,6 +253,7 @@ public class ValakasTemple extends InstanceScript
 			}
 			case KILL_TOMB:
 			{
+				// 墓碑區 18730 死後：解除 18727 無敵
 				setSeventhStatusForInstance(world);
 				break;
 			}
@@ -294,10 +299,12 @@ public class ValakasTemple extends InstanceScript
 				}
 				else if ((world.getStatus() == KILL_OBSERVATION_DEVICE_TOMB) && (npc.getScriptValue() == TOMB_SPECTATOR))
 				{
+					// 墓碑區看守 18730 死亡 → 解除 18727 無敵
 					world.setStatus(KILL_TOMB);
 				}
 				else
 				{
+					// 擊殺左或右的 18730 → 刷對應側小怪（原版邏輯）
 					spawnMonsterLeftOrRight(world, npc.getScriptValue());
 				}
 				break;
@@ -306,8 +313,14 @@ public class ValakasTemple extends InstanceScript
 			{
 				if (world.getStatus() == KILL_IFRIT_CENTER)
 				{
+					// 擊殺 25964 → 觸發 setFifthStatusForInstance，刷左右兩隻 18730
 					world.setStatus(KILL_LEFT_OR_RIGHT);
 				}
+				break;
+			}
+			case DUMMY_IFRIT_NPC:
+			{
+				// 18727 無敵解除後被擊殺，不觸發副本狀態變化
 				break;
 			}
 			case LAST_IFRIT:
@@ -330,7 +343,11 @@ public class ValakasTemple extends InstanceScript
 				}
 				else if (world.getStatus() == KILL_LEFT_OR_RIGHT)
 				{
-					world.setStatus(KILL_OBSERVATION_DEVICE_TOMB);
+					// 左右小怪全死 → 解鎖墓碑區
+					if (world.getAliveNpcs(MONSTER_IDs).isEmpty())
+					{
+						world.setStatus(KILL_OBSERVATION_DEVICE_TOMB);
+					}
 				}
 				break;
 			}
@@ -351,13 +368,25 @@ public class ValakasTemple extends InstanceScript
 					locations.add(clone.getSpawnLocation());
 				}
 			}
-			
 			world.setParameter("TELEPORT_CLONES", locations);
 		}
 		
-		// INSTANCE_CREATE -> SAVE_HERMIT
 		world.setStatus(SAVE_HERMIT);
-		world.spawnGroup("tomb"); // Make sure no one do not want to speed run it.
+		
+		// 刷出 tomb group（18727 封印石碑 + 18728 封印裝置）
+		// 18727 立刻設為無敵，防止玩家跳過流程直接擊殺
+		final List<Npc> tombNpcs = world.spawnGroup("tomb");
+		if (tombNpcs != null)
+		{
+			for (Npc tombNpc : tombNpcs)
+			{
+				if (tombNpc.getId() == DUMMY_IFRIT_NPC)
+				{
+					tombNpc.setInvul(true);
+				}
+			}
+		}
+		
 		final List<Npc> monstersNearHermit = world.getNpcsOfGroup("hermit_attackers_01");
 		final Npc hermitInInstance = world.getNpcOfGroup("hermit_01", Objects::nonNull);
 		if ((monstersNearHermit == null) || monstersNearHermit.isEmpty())
@@ -377,30 +406,30 @@ public class ValakasTemple extends InstanceScript
 		super.onInstanceCreated(world, player);
 	}
 	
+	// Status 2: 中央 18730 死 → 刷門+18730
 	private static void setSecondStatusForInstance(Instance world)
 	{
-		// KILL_OBSERVATION_DEVICE_CENTER
 		world.spawnGroup("gate_of_legion_center");
 		world.spawnGroup("spectator_center");
 	}
 	
+	// Status 3: 中央 18730 死 → 刷中央小怪
 	private static void setThirdStatusForInstance(Instance world)
 	{
-		// KILL_MONSTERS_CENTER
 		ThreadPool.schedule(() -> world.spawnGroup("monsters_from_gate_center"), 6_000);
 		ThreadPool.schedule(() -> world.spawnGroup("monsters_from_gate_center_02"), 6_000);
 	}
 	
+	// Status 4: 中央小怪死 → 刷 25964
 	private static void setFourthStatusForInstance(Instance world)
 	{
-		// KILL_IFRIT_CENTER
 		world.spawnGroup("raid_boss_center");
 		sendMessageOnScreen(world, NpcStringId.WHO_YOU_ARE_HOW_DARE_YOU_INVADE_THE_TEMPLE_OF_THE_GREAT_VALAKAS);
 	}
 	
+	// Status 5: 25964 死 → 刷左右兩隻 18730（完全還原原版邏輯）
 	private static void setFifthStatusForInstance(Instance world)
 	{
-		// KILL_LEFT_OR_RIGHT
 		world.spawnGroup("gate_of_legion_left");
 		final Npc npcLeft = world.spawnGroup("spectator_left").get(0);
 		npcLeft.setScriptValue(LEFT_SPECTATOR);
@@ -409,46 +438,50 @@ public class ValakasTemple extends InstanceScript
 		npcRight.setScriptValue(RIGHT_SPECTATOR);
 	}
 	
+	// Status 6: 左右小怪全死 → 刷墓碑區 18730
 	private static void setSixthStatusForInstance(Instance world)
 	{
-		// KILL_OBSERVATION_DEVICE_TOMB
 		final Npc tombSpectator = world.spawnGroup("spectator_tomb").get(0);
 		tombSpectator.setScriptValue(TOMB_SPECTATOR);
 		world.spawnGroup("gate_of_legion_tomb");
 	}
 	
+	// Status 7: 墓碑區 18730 死 → 解除 18727 無敵 + 刷墓碑小怪
 	private static void setSeventhStatusForInstance(Instance world)
 	{
-		// KILL_TOMB
+		for (Npc npc : world.getNpcs())
+		{
+			if (npc.getId() == DUMMY_IFRIT_NPC)
+			{
+				npc.setInvul(false);
+				npc.broadcastInfo();
+			}
+		}
 		ThreadPool.schedule(() -> world.spawnGroup("monsters_from_gate_tomb"), 6_000);
 	}
 	
+	// Status 8: GOTO_DUMMY_IFRIT
 	private static void setEightStatusForInstance(Instance world)
 	{
-		// GOTO_DUMMY_IFRIT
 		final Npc dummyIfrit = world.spawnGroup("dummy_ifrit").get(0);
 		dummyIfrit.setImmobilized(true);
 		world.spawnGroup("hermit_02");
 	}
 	
+	// Status 9: OPEN_GATE_TIMER
 	private static void setNineStatusForInstance(Instance world)
 	{
-		// OPEN_GATE_TIMER
 		world.getPlayers().forEach(player -> player.sendPacket(new OnEventTrigger(ValakasTemple.EVENT_ID_PLAYER_CIRCLE, true)));
 		ThreadPool.schedule(() -> world.setStatus(KILL_LAST_IFRIT), 15_000);
 	}
 	
+	// Status 10: KILL_LAST_IFRIT
 	private static void setTenStatusForInstance(Instance world)
 	{
-		// KILL_LAST_IFRIT
-		// Enable boss circle.
 		ThreadPool.schedule(() -> removeEventsFromInstance(world), 15_000);
 		world.getPlayers().forEach(player -> player.sendPacket(new OnEventTrigger(ValakasTemple.EVENT_ID_BOSS_CIRCLE, true)));
 		
-		// Make list of players inside.
 		final List<Player> players = new ArrayList<>(world.getPlayers());
-		
-		// Make list "random" - no matter how players been teleported, but clones will be get random ids.
 		Collections.shuffle(players);
 		final List<Location> locations = world.getParameters().getList("TELEPORT_CLONES", Location.class);
 		for (Player player : players)
@@ -456,7 +489,6 @@ public class ValakasTemple extends InstanceScript
 			player.teleToLocation(getRandomEntry(locations), false);
 		}
 		
-		// Spawn and get clones instances.
 		final List<Npc> cloneNpcs = world.spawnGroup("clones");
 		int counter = 0;
 		for (Npc clone : cloneNpcs)
@@ -465,7 +497,6 @@ public class ValakasTemple extends InstanceScript
 			{
 				break;
 			}
-			
 			clone.setCloneObjId(players.get(counter).getObjectId());
 			clone.setName(players.get(counter).getAppearance().getVisibleName());
 			clone.broadcastInfo();
@@ -473,16 +504,13 @@ public class ValakasTemple extends InstanceScript
 		}
 	}
 	
+	// Status 11: FINISH_INSTANCE
 	private static void setElevenStatusForInstance(Instance world)
 	{
-		// FINISH_INSTANCE
 		world.spawnGroup("reward_chest");
 		world.getPlayers().forEach(player -> player.sendPacket(new ExShowScreenMessage("副本將在5分鐘後關閉，請盡快領取獎勵！", 10000)));
-		
-		// 標記所有副本內玩家已通關（解鎖掃蕩功能）
 		world.getPlayers().forEach(player -> player.getVariables().set(PLAYER_CLEARED_VAR, true));
 		
-		// Schedule instance destruction after 5 minutes
 		ThreadPool.schedule(() ->
 		{
 			final Location exitLoc = world.getTemplateParameters().getLocation("exit");
@@ -496,12 +524,12 @@ public class ValakasTemple extends InstanceScript
 					}
 					else
 					{
-						player.teleToLocation(new Location(142598, -151085, -7598), false);
+						player.teleToLocation(new Location(82507, 148619, -3488), false);
 					}
 				}
 			});
 			world.destroy();
-		}, 300_000); // 5 minutes
+		}, 300_000);
 	}
 	
 	private static void removeEventsFromInstance(Instance world)
@@ -525,6 +553,7 @@ public class ValakasTemple extends InstanceScript
 		ThreadPool.schedule(() -> world.spawnGroup("monsters_from_gate_last"), 15000);
 	}
 	
+	// 擊殺左或右的 18730 後刷對應側小怪（完全同原版）
 	private static void spawnMonsterLeftOrRight(Instance world, int side)
 	{
 		final String spawnGroupName = side == LEFT_SPECTATOR ? "monsters_from_gate_left" : "monsters_from_gate_right";
@@ -533,7 +562,8 @@ public class ValakasTemple extends InstanceScript
 	
 	private static void sendMessageOnScreen(Instance world, NpcStringId npcId)
 	{
-		world.getPlayers().forEach(player -> player.sendPacket(new ExShowScreenMessage(npcId, ExShowScreenMessage.TOP_CENTER, 10000, true)));
+		final ExShowScreenMessage screenMessage = new ExShowScreenMessage(npcId, ExShowScreenMessage.TOP_CENTER, 10000, true);
+		world.getPlayers().forEach(player -> player.sendPacket(screenMessage));
 	}
 	
 	@RegisterEvent(EventType.ON_CREATURE_TELEPORTED)
@@ -573,7 +603,8 @@ public class ValakasTemple extends InstanceScript
 			return "RewardChest/no-reward.htm";
 		}
 		
-		if (player.getVariables().getBoolean(PLAYER_REWARDED_VAR, false))
+		final String instanceRewardedKey = PLAYER_REWARDED_VAR + "_" + world.getId();
+		if (player.getVariables().getBoolean(instanceRewardedKey, false))
 		{
 			return "RewardChest/already-rewarded.htm";
 		}
@@ -597,17 +628,19 @@ public class ValakasTemple extends InstanceScript
 				return "RewardChest/no-reward.htm";
 			}
 			
-			if (player.getVariables().getBoolean(PLAYER_REWARDED_VAR, false))
+			final String instanceRewardedKey = PLAYER_REWARDED_VAR + "_" + world.getId();
+			if (player.getVariables().getBoolean(instanceRewardedKey, false))
 			{
 				return "RewardChest/already-rewarded.htm";
 			}
 			
-			// Give rewards
+			// 扣取本週次數
+			ValakasTempleManager.getInstance().incrementEntryCount(player);
+			
 			giveRewards(player);
 			checkAndApplyPity(player);
-			player.getVariables().set(PLAYER_REWARDED_VAR, true);
+			player.getVariables().set(instanceRewardedKey, true);
 			
-			// Teleport player out after 15 seconds
 			ThreadPool.schedule(() ->
 			{
 				if ((player != null) && (player.getInstanceWorld() == world))
@@ -619,7 +652,7 @@ public class ValakasTemple extends InstanceScript
 					}
 					else
 					{
-						player.teleToLocation(new Location(142598, -151085, -7598), false);
+						player.teleToLocation(new Location(82507, 148619, -3488), false);
 					}
 				}
 			}, 15_000);
@@ -637,7 +670,7 @@ public class ValakasTemple extends InstanceScript
 			int totalChance = 0;
 			for (int[] reward : REWARD_ITEMS)
 			{
-				totalChance += reward[2]; // reward[2] is chance
+				totalChance += reward[2];
 			}
 			
 			final int random = getRandom(totalChance);
@@ -645,10 +678,9 @@ public class ValakasTemple extends InstanceScript
 			
 			for (int[] reward : REWARD_ITEMS)
 			{
-				currentChance += reward[2]; // reward[2] is chance
+				currentChance += reward[2];
 				if (random < currentChance)
 				{
-					// reward[0] = itemId, reward[1] = count, reward[2] = chance
 					giveItems(player, reward[0], reward[1]);
 					break;
 				}
@@ -656,15 +688,11 @@ public class ValakasTemple extends InstanceScript
 		}
 	}
 	
-	/**
-	 * 保底機制：累計正常通關次數，達到閾值時從保底獎池抽 1 件並重置計數。 掃蕩不呼叫此方法，因此不計入也不觸發保底。
-	 */
 	private void checkAndApplyPity(Player player)
 	{
 		final int count = player.getVariables().getInt(PLAYER_PITY_COUNT_VAR, 0) + 1;
 		if (count >= PITY_THRESHOLD)
 		{
-			// 觸發保底：從保底獎池抽 1 件
 			int totalChance = 0;
 			for (int[] reward : PITY_REWARD_ITEMS)
 			{

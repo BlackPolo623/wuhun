@@ -529,9 +529,6 @@
 		<reuseDelay>60000</reuseDelay>
 		<stayAfterDeath>true</stayAfterDeath>
 		<conditions>
-			<condition name="HasVitalityPoints">
-				<amount>35000</amount>
-			</condition>
 			<condition name="OpNotAffectedBySkill">
 				<skillId>51437</skillId> 
 			</condition>
@@ -540,15 +537,11 @@
 			</condition>
 		</conditions>
 		<effects>
-			<effect name="VitalityPointsRate">
-				<amount>100</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="ExpModify">
-				<amount>200</amount>
+				<amount>100</amount>
 			</effect>
 			<effect name="SpModify">
-				<amount>200</amount>
+				<amount>100</amount>
 			</effect>
 		</effects>
 	</skill>

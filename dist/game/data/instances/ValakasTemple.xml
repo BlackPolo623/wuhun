@@ -5,7 +5,9 @@
 		<enter type="FIXED">
 			<location x="142598" y="-151085" z="-7598" />
 		</enter>
-		<exit type="ORIGIN" />
+		<exit type="FIXED">
+			<location x="82507" y="148619" z="-3488" />
+		</exit>
 	</locations>
 	<conditions>
 		<condition type="Party" />
@@ -69,6 +71,9 @@
 		</group>
 		<group name="raid_boss_center" spawnByDefault="false">
 			<npc id="25964" x="146952" y="-148856" z="-8760" /> <!-- Ifrit - Valakas' Follower -->
+		</group>
+		<group name="spectator_after_huge_ifrit" spawnByDefault="false">
+			<npc id="18730" x="148843" y="-150200" z="-9080" /> <!-- Observation Device - 擊殺25964後中繼觸發點 -->
 		</group>
 		<group name="spectator_left" spawnByDefault="false">
 			<npc id="18730" x="148843" y="-153129" z="-9080" /> <!-- Observation Device -->

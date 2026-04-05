@@ -1023,17 +1023,21 @@ public class Formulas
 	{
 		if (attacker.isPlayable())
 		{
-			// ★ 攻擊者為玩家（含召喚獸）vs 被攻擊者為玩家
+			// ★ 玩家（含召喚獸）→ 玩家
 			if (target.isPlayer())
 			{
 				return getAttributeDiff(attacker, target, skill) * 3.0;
 			}
-			// 玩家 → 怪物：不套用屬性平傷
+			// ★ 玩家（含召喚獸）→ 怪物／Raid（非可操控角色）
+			if (!target.isPlayable())
+			{
+				return getAttributeDiff(attacker, target, skill) * 20.0;
+			}
 			return 0;
 		}
 		else
 		{
-			// ★ 攻擊者為怪物／NPC vs 被攻擊者為玩家
+			// ★ 怪物／NPC → 玩家
 			if (target.isPlayer())
 			{
 				return getAttributeDiff(attacker, target, skill) * 20.0;

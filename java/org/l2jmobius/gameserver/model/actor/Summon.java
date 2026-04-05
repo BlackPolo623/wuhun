@@ -97,6 +97,8 @@ public abstract class Summon extends Playable
 	protected boolean _restoreSummon = true;
 	private int _summonPoints = 0;
 	private ScheduledFuture<?> _abnormalEffectTask;
+	private volatile ScheduledFuture<?> _updateBroadcastTask;
+	private volatile int _pendingBroadcastValue;
 	
 	// @formatter:off
 	private static final int[] PASSIVE_SUMMONS =
@@ -930,18 +932,37 @@ public abstract class Summon extends Playable
 		{
 			return;
 		}
-		
-		if (isSpawned())
+
+		// 記錄最新的廣播值（0 = 完整初始資訊，1 = 更新）
+		// 若 100ms 內有多次呼叫（如同一次擊殺同時觸發多個 stat 更新），取資訊量較多的值（較小值）
+		if (value < _pendingBroadcastValue)
 		{
-			sendPacket(new PetSummonInfo(this, value));
-			sendPacket(new PetStatusUpdate(this));
-			broadcastNpcInfo(value);
-			
-			final Party party = _owner.getParty();
-			if (party != null)
+			_pendingBroadcastValue = value;
+		}
+		else if (_updateBroadcastTask == null)
+		{
+			_pendingBroadcastValue = value;
+		}
+
+		if (_updateBroadcastTask == null)
+		{
+			_updateBroadcastTask = ThreadPool.schedule(() ->
 			{
-				party.broadcastToPartyMembers(_owner, new ExPartyPetWindowUpdate(this));
-			}
+				if (isSpawned() && (_owner != null))
+				{
+					final int broadcastValue = _pendingBroadcastValue;
+					sendPacket(new PetSummonInfo(this, broadcastValue));
+					sendPacket(new PetStatusUpdate(this));
+					broadcastNpcInfo(broadcastValue);
+
+					final Party party = _owner.getParty();
+					if (party != null)
+					{
+						party.broadcastToPartyMembers(_owner, new ExPartyPetWindowUpdate(this));
+					}
+				}
+				_updateBroadcastTask = null;
+			}, 100);
 		}
 	}
 	

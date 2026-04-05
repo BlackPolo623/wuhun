@@ -71,6 +71,13 @@ public class SummonMonster implements IItemHandler
 			return false;
 		}
 
+		// 檢查是否在副本內
+		if (player.isInInstance())
+		{
+			player.sendMessage("無法在副本內使用此道具，請至野外區域使用。");
+			return false;
+		}
+
 		// 檢查玩家是否在和平區域
 		if (player.isInsideZone(org.l2jmobius.gameserver.model.zone.ZoneId.PEACE))
 		{
@@ -91,12 +98,6 @@ public class SummonMonster implements IItemHandler
 			spawn.setAmount(1); // 召喚 1 隻
 			spawn.setHeading(player.getHeading());
 			spawn.setRespawnDelay(0); // 重生延遲設為 0
-
-			// 如果在副本中，設置副本ID
-			if (player.isInInstance())
-			{
-				spawn.setInstanceId(player.getInstanceId());
-			}
 
 			// 添加到 SpawnTable（非永久）
 			SpawnTable.getInstance().addSpawn(spawn);

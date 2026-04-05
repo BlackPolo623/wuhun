@@ -483,8 +483,8 @@ public class PlayerStat extends PlayableStat
 			// 給予獎勵
 			player.addItem(ItemProcessType.NONE, 105801, Rnd.get(1, 3), null, true);
 			
-			// 更新玩家資訊
-			player.broadcastUserInfo();
+			// 更新玩家資訊（精確類型，避免觸發多餘的 BoostStat 廣播）
+			player.broadcastUserInfo(UserInfoType.BASIC_INFO, UserInfoType.BASE_STATS, UserInfoType.MAX_HPCPMP, UserInfoType.CURRENT_HPMPCP_EXP_SP, UserInfoType.STATS);
 			player.checkItemRestriction();
 			
 			// 發送成功訊息

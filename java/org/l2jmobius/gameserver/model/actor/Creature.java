@@ -5539,7 +5539,8 @@ public abstract class Creature extends WorldObject
 			}
 
 			// 【技能】攻擊者的「無視最終減傷」屬性（來自技能效果 IgnoreFinalDamageReduce）
-			if (attacker != null)
+			// 僅攻擊者為玩家或召喚獸時生效，怪物對玩家不套用
+			if (attackerIsPlayer)
 			{
 				double ignoreSkillFdr = attacker.getStat().getValue(Stat.IGNORE_FINAL_DAMAGE_REDUCE, 0);
 				if (ignoreSkillFdr > 0)
@@ -5560,7 +5561,7 @@ public abstract class Creature extends WorldObject
 
 			if (finalDamageReduce > 0)
 			{
-				finalDamageReduce = Math.min(finalDamageReduce, 99.999); // 上限 99.999%，防止無敵
+				finalDamageReduce = Math.min(finalDamageReduce, 99.99999); // 上限 99.999%，防止無敵
 				amount *= (1.0 - (finalDamageReduce / 100.0));
 			}
 		}

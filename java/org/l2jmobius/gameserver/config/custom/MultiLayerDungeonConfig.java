@@ -196,11 +196,11 @@ public class MultiLayerDungeonConfig
 		LAYER_5_CASTSPD_MULTIPLIER = config.getDouble("Layer5CastSpdMultiplier", 1.0);
 
 		// 最終減傷 (%) — 上限 99.999，0.0 表示不套用
-		LAYER_1_FINAL_DAMAGE_REDUCE = Math.min(config.getDouble("Layer1FinalDamageReduce", 0.0), 99.999);
-		LAYER_2_FINAL_DAMAGE_REDUCE = Math.min(config.getDouble("Layer2FinalDamageReduce", 0.0), 99.999);
-		LAYER_3_FINAL_DAMAGE_REDUCE = Math.min(config.getDouble("Layer3FinalDamageReduce", 0.0), 99.999);
-		LAYER_4_FINAL_DAMAGE_REDUCE = Math.min(config.getDouble("Layer4FinalDamageReduce", 0.0), 99.999);
-		LAYER_5_FINAL_DAMAGE_REDUCE = Math.min(config.getDouble("Layer5FinalDamageReduce", 0.0), 99.999);
+		LAYER_1_FINAL_DAMAGE_REDUCE = Math.min(config.getDouble("Layer1FinalDamageReduce", 0.0), 99.99999);
+		LAYER_2_FINAL_DAMAGE_REDUCE = Math.min(config.getDouble("Layer2FinalDamageReduce", 0.0), 99.99999);
+		LAYER_3_FINAL_DAMAGE_REDUCE = Math.min(config.getDouble("Layer3FinalDamageReduce", 0.0), 99.99999);
+		LAYER_4_FINAL_DAMAGE_REDUCE = Math.min(config.getDouble("Layer4FinalDamageReduce", 0.0), 99.99999);
+		LAYER_5_FINAL_DAMAGE_REDUCE = Math.min(config.getDouble("Layer5FinalDamageReduce", 0.0), 99.99999);
 	}
 
 	/**
