@@ -63,11 +63,19 @@ public class TombStone extends Script
 		{
 			return;
 		}
-		
+
 		npc.setDisplayEffect(TOMB_100);
 		npc.setUndying(true);
 		npc.setTargetable(false);
 		npc.setImmobilized(true);
+
+		// 清理舊的 NPC（防止副本異常時殘留）
+		final Npc oldNpc = DUMMY_STONE_NPC.remove(world.getId());
+		if ((oldNpc != null) && !oldNpc.isDecayed())
+		{
+			oldNpc.deleteMe();
+		}
+
 		DUMMY_STONE_NPC.put(world.getId(), npc);
 	}
 	

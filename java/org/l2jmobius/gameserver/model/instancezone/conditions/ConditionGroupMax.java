@@ -33,13 +33,18 @@ public class ConditionGroupMax extends Condition
 	public ConditionGroupMax(InstanceTemplate template, StatSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
 		super(template, parameters, true, showMessageAndHtml);
-		setSystemMessage(SystemMessageId.YOU_CANNOT_ENTER_DUE_TO_THE_PARTY_HAVING_EXCEEDED_THE_LIMIT);
+		// 不使用系統訊息，改用自訂訊息
 	}
-	
+
 	@Override
 	protected boolean test(Player player, Npc npc, List<Player> group)
 	{
-		return group.size() <= getLimit();
+		if (group.size() > getLimit())
+		{
+			player.sendMessage("隊伍人數超過限制！最多只能 " + getLimit() + " 人進入副本。");
+			return false;
+		}
+		return true;
 	}
 	
 	public int getLimit()

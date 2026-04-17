@@ -18630,20 +18630,23 @@
     </npc>
 
     <!-- RaidBoss #521 -->
-    <npc id="25964" level="87" type="RaidBoss" name="伊佛" title="Valakas' Adept" element="FIRE">
+    <npc id="25964" level="87" type="RaidBoss" name="伊佛" title="巴拉卡斯的使徒" usingServerSideTitle="true" element="FIRE">
         <race>HUMANOID</race>
         <sex>MALE</sex>
-        <acquire exp="1000000" sp="1135"/>
-        <stats str="60" int="76" dex="73" wit="70" con="57" men="80">
-            <vitals hp="20000000.4096545" hpRegen="10.2" mp="3554.8" mpRegen="3.6"/>
-            <attack physical="8905.0086" magical="6080.96658" random="10" critical="4" accuracy="5" attackSpeed="253"
-                    type="SWORD" range="40" distance="80" width="120"/>
-            <defence physical="3992.40732" magical="2921.47044"/>
+        <acquire exp="2500000000" sp="125" />
+        <stats str="50" int="50" dex="50" wit="50" con="50" men="50">
+            <vitals hp="100000000" hpRegen="50000" mp="20000" mpRegen="20000" />
+            <attack physical="1000000000" magical="1000000000" random="10" critical="50" accuracy="99" attackSpeed="800" type="SWORD" range="40" distance="80" width="120" />
+            <defence physical="800000000" magical="800000000" />
             <speed>
-                <walk ground="39"/>
-                <run ground="170"/>
+                <walk ground="13" />
+                <run ground="170" />
             </speed>
             <hitTime>600</hitTime>
+            <attribute>
+                <attack type="FIRE" value="3000"/>
+                <defence fire="3000"/>
+            </attribute>
         </stats>
         <status attackable="true"/>
         <collision>
@@ -18651,10 +18654,15 @@
             <height normal="74.25"/>
         </collision>
         <skillList>
-            <skill id="4494" level="1"/>
-            <skill id="4416" level="6"/>
-            <skill id="48044" level="1"/>
+            <skill id="102009" level="1"/>
         </skillList>
+        <dropLists>
+            <drop>
+                <item id="130000" min="1" max="10" chance="50"/>
+                <item id="130001" min="1" max="3" chance="10"/>
+                <item id="130002" min="1" max="3" chance="3"/>
+            </drop>
+        </dropLists>
     </npc>
 
     <!-- RaidBoss #522 -->
@@ -18683,22 +18691,27 @@
             <skill id="4416" level="9"/>
             <skill id="48044" level="1"/>
         </skillList>
+
     </npc>
 
     <!-- RaidBoss #523 -->
-    <npc id="25966" level="95" type="RaidBoss" name="伊佛利特" usingServerSideName="true" title="巴拉卡斯的轉生之軀" usingServerSideTitle="true" element="FIRE">
+    <npc id="25966" level="95" type="RaidBoss" name="伊佛利特" usingServerSideName="true" title="巴拉卡斯轉生之魂" usingServerSideTitle="true" element="FIRE">
         <race>DEMONIC</race>
         <sex>MALE</sex>
-        <acquire exp="2000000" sp="1135"/>
-        <stats str="100" int="100" dex="100" wit="100" con="100" men="100">
-            <vitals hp="300000000" hpRegen="20000000" mp="3554.8" mpRegen="3.6"/>
-            <attack physical="300000000" magical="300000000" random="10" critical="500" accuracy="500" attackSpeed="5000" type="SWORD" range="40" distance="80" width="120"/>
-            <defence physical="3000000" magical="3000000"/>
+        <acquire exp="5500000000" sp="125" />
+        <stats str="50" int="50" dex="50" wit="50" con="50" men="50">
+            <vitals hp="70000000" hpRegen="50000" mp="20000" mpRegen="20000" />
+            <attack physical="1500000000" magical="1500000000" random="10" critical="50" accuracy="99" attackSpeed="800" type="SWORD" range="40" distance="80" width="120" />
+            <defence physical="1000000000" magical="1000000000" />
             <speed>
-                <walk ground="50"/>
-                <run ground="170"/>
+                <walk ground="13" />
+                <run ground="170" />
             </speed>
             <hitTime>600</hitTime>
+            <attribute>
+                <attack type="FIRE" value="3000"/>
+                <defence fire="3000"/>
+            </attribute>
         </stats>
         <status attackable="true"/>
         <collision>
@@ -18706,11 +18719,15 @@
             <height normal="61.5"/>
         </collision>
         <skillList>
-            <skill id="4494" level="1"/>
-            <skill id="4416" level="9"/>
-            <skill id="48044" level="1"/>
-            <skill id="102006" level="1"/>
+            <skill id="102009" level="1"/>
         </skillList>
+        <dropLists>
+            <drop>
+                <item id="130000" min="1" max="10" chance="50"/>
+                <item id="130001" min="1" max="3" chance="10"/>
+                <item id="130002" min="1" max="3" chance="3"/>
+            </drop>
+        </dropLists>
     </npc>
 
     <!-- RaidBoss #524 -->
@@ -25014,16 +25031,20 @@
     <npc id="29191" level="90" type="RaidBoss" name="巴拉卡斯" title="Fire Dragon">
         <race>DRAGON</race>
         <sex>MALE</sex>
-        <stats str="60" int="76" dex="73" wit="70" con="57" men="80">
-            <vitals hp="15945600" hpRegen="10.2" mp="18000" mpRegen="3.6"/>
-            <attack physical="14444" magical="986" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
-                    range="40" distance="80" width="120"/>
-            <defence physical="9532" magical="418"/>
+        <acquire exp="5500000000" sp="125" />
+        <stats str="50" int="50" dex="50" wit="50" con="50" men="50">
+            <vitals hp="150000000" hpRegen="20000000" mp="20000" mpRegen="20000" />
+            <attack physical="2000000000" magical="2000000000" random="10" critical="50" accuracy="99" attackSpeed="800" type="SWORD" range="40" distance="80" width="120" />
+            <defence physical="1500000000" magical="1500000000" />
             <speed>
-                <walk ground="120"/>
-                <run ground="300"/>
+                <walk ground="13" />
+                <run ground="170" />
             </speed>
             <hitTime>600</hitTime>
+            <attribute>
+                <attack type="FIRE" value="3000"/>
+                <defence fire="3000"/>
+            </attribute>
         </stats>
         <status attackable="true"/>
         <collision>
@@ -25031,8 +25052,15 @@
             <height normal="335"/>
         </collision>
         <skillList>
-            <skill id="4416" level="10"/>
+            <skill id="102009" level="1"/>
         </skillList>
+        <dropLists>
+            <drop>
+                <item id="130000" min="1" max="10" chance="50"/>
+                <item id="130001" min="1" max="3" chance="10"/>
+                <item id="130002" min="1" max="3" chance="3"/>
+            </drop>
+        </dropLists>
     </npc>
 
     <!-- RaidBoss #751 -->

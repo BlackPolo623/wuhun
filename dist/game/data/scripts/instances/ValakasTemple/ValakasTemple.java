@@ -22,12 +22,13 @@ package instances.ValakasTemple;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.managers.InstanceManager;
-import org.l2jmobius.gameserver.managers.events.ValakasTempleManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -57,65 +58,43 @@ public class ValakasTemple extends InstanceScript
 	// Reward Chest Configuration
 	// ========================================
 	private static final int REWARD_CHEST_NPC_ID = 920001;
-	public static final int REWARD_ITEMS_COUNT = 10;
-	public static final int SWEEP_REWARD_ITEMS_COUNT = 5;
+	public static final int REWARD_ITEMS_COUNT = 8;
+	public static final int SWEEP_REWARD_ITEMS_COUNT = 6;
 	public static final int[][] REWARD_ITEMS =
 	{
-		{
-			130000,
-			1,
-			60
-		},
-		{
-			130000,
-			3,
-			20
-		},
-		{
-			130000,
-			5,
-			10
-		},
-		{
-			130001,
-			1,
-			2
-		},
-		{
-			130002,
-			1,
-			2
-		},
-		{
-			130009,
-			1,
-			1
-		},
-		{
-			1300010,
-			1,
-			1
-		},
-		{
-			1300011,
-			1,
-			1
-		},
-		{
-			1300012,
-			1,
-			1
-		},
-		{
-			1300013,
-			1,
-			1
-		},
-		{
-			1300014,
-			1,
-			1
-		},
+			{130000, 1, 50},
+			{130000, 3, 50},
+			{130000, 5, 50},
+			{130000, 10, 50},
+			{130000, 15, 10},
+			{130000, 20, 5},
+			{57, 100000000, 30},
+			{57, 500000000, 20},
+			{57, 1000000000, 10},
+			{91663, 10000, 10},
+			{91663, 20000, 5},
+			{91663, 40000, 3},
+			{91663, 80000, 1},
+			{108000, 100, 15},
+			{108001, 100, 15},
+			{108002, 100, 15},
+			{108003, 100, 15},
+			{108004, 100, 15},
+			{108005, 100, 15},
+			{108006, 100, 15},
+			{108007, 100, 15},
+			{108008, 100, 15},
+			{105503, 1, 8},
+			{105503, 2, 7},
+			{105503, 3, 6},
+		{130001, 1, 3},
+		{130002, 1, 3},
+		{130009, 1, 2},
+		{130010, 1, 2},
+		{130011, 1, 2},
+		{130012, 1, 2},
+		{130013, 1, 2},
+		{130014, 1, 2},
 	};
 	private static final String PLAYER_REWARDED_VAR = "VALAKAS_TEMPLE_REWARDED";
 	public static final String PLAYER_CLEARED_VAR = "VALAKAS_TEMPLE_CLEARED";
@@ -123,41 +102,46 @@ public class ValakasTemple extends InstanceScript
 	// ========================================
 	// Pity System
 	// ========================================
-	public static final int PITY_THRESHOLD = 10;
+	public static final int PITY_THRESHOLD = 5;
 	public static final int[][] PITY_REWARD_ITEMS =
 	{
-		{
-			130009,
-			1,
-			15
-		},
-		{
-			1300010,
-			1,
-			15
-		},
-		{
-			1300011,
-			1,
-			15
-		},
-		{
-			1300012,
-			1,
-			15
-		},
-		{
-			1300013,
-			1,
-			15
-		},
-		{
-			1300014,
-			1,
-			15
-		},
+			{108000, 200, 1},
+			{108001, 200, 1},
+			{108002, 200, 1},
+			{108003, 200, 1},
+			{108004, 200, 1},
+			{108005, 200, 1},
+			{108006, 200, 1},
+			{108007, 200, 1},
+			{108008, 200, 1},
+		{130009, 1, 1},
+		{130010, 1, 1},
+		{130011, 1, 1},
+		{130012, 1, 1},
+		{130013, 1, 1},
+		{130014, 1, 1},
 	};
 	private static final String PLAYER_PITY_COUNT_VAR = "VALAKAS_TEMPLE_PITY_COUNT";
+
+	// Pre-calculated total chances to avoid recomputing on every reward draw
+	private static final int TOTAL_REWARD_CHANCE;
+	private static final int TOTAL_PITY_CHANCE;
+	static
+	{
+		int total = 0;
+		for (int[] reward : REWARD_ITEMS)
+		{
+			total += reward[2];
+		}
+		TOTAL_REWARD_CHANCE = total;
+
+		total = 0;
+		for (int[] reward : PITY_REWARD_ITEMS)
+		{
+			total += reward[2];
+		}
+		TOTAL_PITY_CHANCE = total;
+	}
 	
 	// ========================================
 	// Instance Status Constants
@@ -206,6 +190,7 @@ public class ValakasTemple extends InstanceScript
 		super(VALAKAS_TEMPLE_INSTANCE_ID);
 		setInstanceStatusChangeId(this::onInstanceStatusChange, VALAKAS_TEMPLE_INSTANCE_ID);
 		addInstanceCreatedId(VALAKAS_TEMPLE_INSTANCE_ID);
+		addInstanceDestroyId(VALAKAS_TEMPLE_INSTANCE_ID);
 		addKillId(OBSERVATION_DEVICE);
 		addKillId(HUGE_IFRIT);
 		addKillId(DUMMY_IFRIT_NPC);
@@ -357,6 +342,15 @@ public class ValakasTemple extends InstanceScript
 	@Override
 	public void onInstanceCreated(Instance world, Player player)
 	{
+		// 進入副本時清除隊長與所有隊員的已領取旗標，確保每場都能正常領取
+		player.getVariables().remove(PLAYER_REWARDED_VAR);
+		if (player.isInParty())
+		{
+			for (Player member : player.getParty().getMembers())
+			{
+				member.getVariables().remove(PLAYER_REWARDED_VAR);
+			}
+		}
 		final InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(VALAKAS_TEMPLE_INSTANCE_ID);
 		for (SpawnTemplate spawn : template.getSpawns())
 		{
@@ -508,9 +502,9 @@ public class ValakasTemple extends InstanceScript
 	private static void setElevenStatusForInstance(Instance world)
 	{
 		world.spawnGroup("reward_chest");
-		world.getPlayers().forEach(player -> player.sendPacket(new ExShowScreenMessage("副本將在5分鐘後關閉，請盡快領取獎勵！", 10000)));
+		world.getPlayers().forEach(player -> player.sendPacket(new ExShowScreenMessage("副本將在3分鐘後關閉，請盡快領取獎勵！", 10000)));
 		world.getPlayers().forEach(player -> player.getVariables().set(PLAYER_CLEARED_VAR, true));
-		
+
 		ThreadPool.schedule(() ->
 		{
 			final Location exitLoc = world.getTemplateParameters().getLocation("exit");
@@ -526,10 +520,12 @@ public class ValakasTemple extends InstanceScript
 					{
 						player.teleToLocation(new Location(82507, 148619, -3488), false);
 					}
+					// 傳送出去時立即從 allowed 列表移除，避免殘留
+					world.removeAllowed(player);
 				}
 			});
 			world.destroy();
-		}, 300_000);
+		}, 180_000); // 從 5 分鐘改為 3 分鐘
 	}
 	
 	private static void removeEventsFromInstance(Instance world)
@@ -550,7 +546,7 @@ public class ValakasTemple extends InstanceScript
 	{
 		world.openCloseDoor(BOSS_DOOR_ID, true);
 		world.spawnGroup("raid_boss_last");
-		ThreadPool.schedule(() -> world.spawnGroup("monsters_from_gate_last"), 15000);
+
 	}
 	
 	// 擊殺左或右的 18730 後刷對應側小怪（完全同原版）
@@ -581,7 +577,7 @@ public class ValakasTemple extends InstanceScript
 		{
 			return;
 		}
-		
+
 		if ((world.getStatus() == KILL_LAST_IFRIT) && !world.getParameters().getBoolean(IS_REMOVED_EVENTS, false))
 		{
 			player.sendPacket(new OnEventTrigger(ValakasTemple.EVENT_ID_PLAYER_CIRCLE, true));
@@ -603,7 +599,7 @@ public class ValakasTemple extends InstanceScript
 			return "RewardChest/no-reward.htm";
 		}
 		
-		final String instanceRewardedKey = PLAYER_REWARDED_VAR + "_" + world.getId();
+		final String instanceRewardedKey = PLAYER_REWARDED_VAR;
 		if (player.getVariables().getBoolean(instanceRewardedKey, false))
 		{
 			return "RewardChest/already-rewarded.htm";
@@ -628,32 +624,39 @@ public class ValakasTemple extends InstanceScript
 				return "RewardChest/no-reward.htm";
 			}
 			
-			final String instanceRewardedKey = PLAYER_REWARDED_VAR + "_" + world.getId();
+			final String instanceRewardedKey = PLAYER_REWARDED_VAR;
 			if (player.getVariables().getBoolean(instanceRewardedKey, false))
 			{
 				return "RewardChest/already-rewarded.htm";
 			}
-			
-			// 扣取本週次數
-			ValakasTempleManager.getInstance().incrementEntryCount(player);
-			
-			giveRewards(player);
-			checkAndApplyPity(player);
+
+			// 注意：進入次數已在進入副本時由 ConditionWeeklyEntry 扣除，此處不再重複扣除
+
+			// 先設旗標，防止玩家快速點擊重複領取
 			player.getVariables().set(instanceRewardedKey, true);
+
+			// 非同步給予道具，避免 DB 寫入卡住遊戲主線程
+			ThreadPool.execute(() ->
+			{
+				giveRewards(player);
+				checkAndApplyPity(player);
+			});
 			
 			ThreadPool.schedule(() ->
 			{
-				if ((player != null) && (player.getInstanceWorld() == world))
+				if (player.getInstanceWorld() == world)
 				{
 					final Location exitLoc = world.getTemplateParameters().getLocation("exit");
 					if (exitLoc != null)
 					{
-						player.teleToLocation(exitLoc, false);
+						player.teleToLocation(exitLoc, false, null);
 					}
 					else
 					{
-						player.teleToLocation(new Location(82507, 148619, -3488), false);
+						player.teleToLocation(new Location(82507, 148619, -3488), false, null);
 					}
+					// 傳送出去時立即從 allowed 列表移除
+					world.removeAllowed(player);
 				}
 			}, 15_000);
 			
@@ -665,26 +668,24 @@ public class ValakasTemple extends InstanceScript
 	
 	private void giveRewards(Player player)
 	{
+		final Map<Integer, Long> batchMap = new LinkedHashMap<>();
 		for (int i = 0; i < REWARD_ITEMS_COUNT; i++)
 		{
-			int totalChance = 0;
-			for (int[] reward : REWARD_ITEMS)
-			{
-				totalChance += reward[2];
-			}
-			
-			final int random = getRandom(totalChance);
+			final int random = getRandom(TOTAL_REWARD_CHANCE);
 			int currentChance = 0;
-			
 			for (int[] reward : REWARD_ITEMS)
 			{
 				currentChance += reward[2];
 				if (random < currentChance)
 				{
-					giveItems(player, reward[0], reward[1]);
+					batchMap.merge(reward[0], (long) reward[1], Long::sum);
 					break;
 				}
 			}
+		}
+		for (Map.Entry<Integer, Long> entry : batchMap.entrySet())
+		{
+			giveItems(player, entry.getKey(), entry.getValue());
 		}
 	}
 	
@@ -693,12 +694,7 @@ public class ValakasTemple extends InstanceScript
 		final int count = player.getVariables().getInt(PLAYER_PITY_COUNT_VAR, 0) + 1;
 		if (count >= PITY_THRESHOLD)
 		{
-			int totalChance = 0;
-			for (int[] reward : PITY_REWARD_ITEMS)
-			{
-				totalChance += reward[2];
-			}
-			final int random = getRandom(totalChance);
+			final int random = getRandom(TOTAL_PITY_CHANCE);
 			int currentChance = 0;
 			for (int[] reward : PITY_REWARD_ITEMS)
 			{
@@ -718,7 +714,15 @@ public class ValakasTemple extends InstanceScript
 			player.sendPacket(new ExShowScreenMessage("累計通關 " + count + "/" + PITY_THRESHOLD + " 次，還差 " + (PITY_THRESHOLD - count) + " 次觸發保底。", 5000));
 		}
 	}
-	
+
+	@Override
+	public void onInstanceDestroy(Instance instance)
+	{
+		// 副本銷毀時清理所有排程任務，防止 timer 洩漏
+		cancelQuestTimers("CHECK_STATUS");
+		super.onInstanceDestroy(instance);
+	}
+
 	public static void main(String[] args)
 	{
 		new ValakasTemple();

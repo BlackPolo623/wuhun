@@ -23,10 +23,11 @@ package instances.ValakasTemple.Teleporter;
 import java.util.List;
 
 import org.l2jmobius.gameserver.data.xml.ItemData;
-import org.l2jmobius.gameserver.managers.events.ValakasTempleManager;
+import org.l2jmobius.gameserver.managers.events.InstanceEntryManager;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.groups.Party;
+import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.script.InstanceScript;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -44,8 +45,6 @@ public class ValakasTempleTeleport extends InstanceScript
 	// ========================================
 	// 設定區：可自行調整
 	// ========================================
-	/** 每週最大進入次數（覆蓋 ValakasTempleManager 的設定） */
-	private static final int MAX_WEEKLY_ENTRIES = 100;
 	/** 掃蕩消耗的道具 ID（請修改為你要設定的道具） */
 	private static final int SWEEP_ITEM_ID = 109005;
 	/** 掃蕩每次消耗的道具數量 */
@@ -63,14 +62,16 @@ public class ValakasTempleTeleport extends InstanceScript
 	@Override
 	public String onFirstTalk(Npc npc, Player player)
 	{
-		final ValakasTempleManager manager = ValakasTempleManager.getInstance();
-		final int remaining = manager.getRemainingEntries(player);
-		final String resetTime = manager.getNextResetString();
+		final InstanceEntryManager manager = InstanceEntryManager.getInstance();
+		final int instanceId = ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID;
+		final int remaining = manager.getRemainingEntries(instanceId, player);
+		final int maxEntries = manager.getMaxEntries(instanceId);
+		final String resetTime = manager.getNextResetString(instanceId);
 
 		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 		html.setFile(player, "data/scripts/instances/ValakasTemple/Teleporter/34258.htm");
 		html.replace("%remaining%", String.valueOf(remaining));
-		html.replace("%maxEntries%", String.valueOf(MAX_WEEKLY_ENTRIES));
+		html.replace("%maxEntries%", String.valueOf(maxEntries));
 		html.replace("%resetTime%", resetTime);
 		player.sendPacket(html);
 		return null;
@@ -100,7 +101,8 @@ public class ValakasTempleTeleport extends InstanceScript
 
 	private void handleEnter(Npc npc, Player player)
 	{
-		final ValakasTempleManager manager = ValakasTempleManager.getInstance();
+		final InstanceEntryManager manager = InstanceEntryManager.getInstance();
+		final int instanceId = ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID;
 
 		// GM 可直接進入（單人或帶隊）
 		if (player.isGM())
@@ -109,12 +111,12 @@ public class ValakasTempleTeleport extends InstanceScript
 			{
 				for (Player member : player.getParty().getMembers())
 				{
-					enterInstance(member, npc, ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID);
+					enterInstance(member, npc, instanceId);
 				}
 			}
 			else
 			{
-				enterInstance(player, npc, ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID);
+				enterInstance(player, npc, instanceId);
 			}
 			player.sendPacket(new ExShowScreenMessage("以 GM 身份進入巴拉卡斯神殿", 3000));
 			return;
@@ -128,10 +130,11 @@ public class ValakasTempleTeleport extends InstanceScript
 		}
 
 		// 檢查自己的次數
-		if (!manager.canEnter(player))
+		if (!manager.canEnter(instanceId, player))
 		{
-			final int remaining = manager.getRemainingEntries(player);
-			player.sendPacket(new ExShowScreenMessage("你本週的進入次數已用完 (" + remaining + "/" + MAX_WEEKLY_ENTRIES + ")", 3000));
+			final int remaining = manager.getRemainingEntries(instanceId, player);
+			final int maxEntries = manager.getMaxEntries(instanceId);
+			player.sendPacket(new ExShowScreenMessage("你本週的進入次數已用完 (" + remaining + "/" + maxEntries + ")", 3000));
 			return;
 		}
 
@@ -156,10 +159,9 @@ public class ValakasTempleTeleport extends InstanceScript
 		// 全部符合條件，逐一傳送
 		for (Player member : members)
 		{
-			if (manager.canEnter(member))
+			if (manager.canEnter(instanceId, member))
 			{
-				enterInstance(member, npc, ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID);
-				manager.incrementEntryCount(member);
+				enterInstance(member, npc, instanceId);
 			}
 			else
 			{
@@ -182,10 +184,11 @@ public class ValakasTempleTeleport extends InstanceScript
 			return null;
 		}
 
-		final ValakasTempleManager manager = ValakasTempleManager.getInstance();
+		final InstanceEntryManager manager = InstanceEntryManager.getInstance();
+		final int instanceId = ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID;
 
 		// ② 週次數已用完
-		if (!manager.canEnter(player))
+		if (!manager.canEnter(instanceId, player))
 		{
 			player.sendPacket(new ExShowScreenMessage("本週掃蕩次數已用完，請等待每週重置後再試。", 4000));
 			return onFirstTalk(npc, player);
@@ -204,8 +207,8 @@ public class ValakasTempleTeleport extends InstanceScript
 		html.setFile(player, "data/scripts/instances/ValakasTemple/Teleporter/34258-sweep.htm");
 		html.replace("%sweep_item_name%", getItemName(SWEEP_ITEM_ID));
 		html.replace("%sweep_item_count%", String.valueOf(SWEEP_ITEM_COUNT));
-		html.replace("%remaining%", String.valueOf(manager.getRemainingEntries(player)));
-		html.replace("%maxEntries%", String.valueOf(MAX_WEEKLY_ENTRIES));
+		html.replace("%remaining%", String.valueOf(manager.getRemainingEntries(instanceId, player)));
+		html.replace("%maxEntries%", String.valueOf(manager.getMaxEntries(instanceId)));
 		player.sendPacket(html);
 		return null;
 	}
@@ -222,9 +225,10 @@ public class ValakasTempleTeleport extends InstanceScript
 			return onFirstTalk(npc, player);
 		}
 
-		final ValakasTempleManager manager = ValakasTempleManager.getInstance();
+		final InstanceEntryManager manager = InstanceEntryManager.getInstance();
+		final int instanceId = ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID;
 
-		if (!manager.canEnter(player))
+		if (!manager.canEnter(instanceId, player))
 		{
 			player.sendMessage("本週掃蕩次數已用完。");
 			return onFirstTalk(npc, player);
@@ -244,7 +248,7 @@ public class ValakasTempleTeleport extends InstanceScript
 		}
 
 		// 消耗一次週次數
-		manager.incrementEntryCount(player);
+		manager.incrementEntryCount(instanceId, player);
 
 		// 發放與通關副本相同的獎勵（相同機率表）
 		for (int i = 0; i < ValakasTemple.SWEEP_REWARD_ITEMS_COUNT; i++)
@@ -267,14 +271,16 @@ public class ValakasTempleTeleport extends InstanceScript
 			}
 		}
 
-		player.sendPacket(new ExShowScreenMessage("掃蕩完成！獎勵已發放至背包，剩餘次數：" + manager.getRemainingEntries(player) + "/" + MAX_WEEKLY_ENTRIES, 5000));
-		return onFirstTalk(npc, player);
+		final int remaining = manager.getRemainingEntries(instanceId, player);
+		final int maxEntries = manager.getMaxEntries(instanceId);
+		player.sendPacket(new ExShowScreenMessage("掃蕩完成！獎勵已發放至背包，剩餘次數：" + remaining + "/" + maxEntries, 5000));
+		return handleShowSweep(npc, player);
 	}
 
 	/** 取得道具名稱，找不到時回傳 ID 字串。 */
 	private static String getItemName(int itemId)
 	{
-		final org.l2jmobius.gameserver.model.item.ItemTemplate template = ItemData.getInstance().getTemplate(itemId);
+		final ItemTemplate template = ItemData.getInstance().getTemplate(itemId);
 		return template != null ? template.getName() : "道具ID " + itemId;
 	}
 

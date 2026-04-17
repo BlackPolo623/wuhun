@@ -22,7 +22,6 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import org.l2jmobius.gameserver.config.custom.ChampionMonstersConfig;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -135,27 +134,27 @@ public class AdminKill implements IAdminCommandHandler
 			{
 				target.stopAllEffects(); // e.g. invincibility effect
 			}
-			
 			target.reduceCurrentHp(target.getMaxHp() + target.getMaxCp() + 1, activeChar, null);
+			return;
 		}
-		else if (ChampionMonstersConfig.CHAMPION_ENABLE && target.isChampion())
+
+		// 移除無敵狀態
+		if (target.isInvul())
 		{
-			target.reduceCurrentHp((target.getMaxHp() * ChampionMonstersConfig.CHAMPION_HP) + 1, activeChar, null);
+			target.setInvul(false);
 		}
-		else
+
+		// 直接觸發死亡，繞過傷害計算、冠軍HP倍率、抗性等流程
+		if (!target.isDead())
 		{
-			boolean targetIsInvul = false;
-			if (target.isInvul())
-			{
-				targetIsInvul = true;
-				target.setInvul(false);
-			}
-			
-			target.reduceCurrentHp(target.getMaxHp() + 1, activeChar, null);
-			if (targetIsInvul)
-			{
-				target.setInvul(true);
-			}
+			target.doDie(activeChar);
+		}
+
+		// 若仍未死亡（undying 或特殊保護），強制 HP 歸零後再次觸發
+		if (!target.isDead())
+		{
+			target.setCurrentHp(0);
+			target.doDie(activeChar);
 		}
 	}
 	

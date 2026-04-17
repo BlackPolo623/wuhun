@@ -13,7 +13,13 @@ import org.l2jmobius.gameserver.data.holders.PetCollectionData;
 import org.l2jmobius.gameserver.data.holders.PetHatchData;
 import org.l2jmobius.gameserver.data.xml.MultisellData;
 import org.l2jmobius.gameserver.data.xml.PetHatchingDAO;
+import org.l2jmobius.gameserver.data.xml.PetSnapshotData;
+import org.l2jmobius.gameserver.data.xml.PetSnapshotData.PetSnapshotEntry;
 import org.l2jmobius.gameserver.data.xml.SkillData;
+import org.l2jmobius.gameserver.model.actor.Summon;
+import org.l2jmobius.gameserver.model.effects.AbstractEffect;
+import org.l2jmobius.gameserver.model.stats.Stat;
+import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.managers.MailManager;
 import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -165,6 +171,9 @@ public class PetHatchingSystem extends Script
 			case "hatch_menu": return handleHatchMenu(player);
 			case "feed_menu": return handleFeedMenu(player);
 			case "unclaimed_pets": return handleUnclaimedPets(player);
+			case "snapshot_menu": return handleSnapshotMenu(player);
+			case "save_snapshot": return handleSaveSnapshot(player);
+			case "clear_snapshot": return handleClearSnapshot(player);
 		}
 		if (event.startsWith("collection_page_"))
 		{
@@ -491,6 +500,238 @@ public class PetHatchingSystem extends Script
 		}
 		sb.append("</tr>");
 		return sb.toString();
+	}
+
+	// ==================== 魂契系統 ====================
+
+	/**
+	 * 顯示魂契功能頁面
+	 */
+	private String handleSnapshotMenu(Player player)
+	{
+		final int playerId = player.getObjectId();
+		final PetSnapshotEntry snap = PetSnapshotData.getInstance().getSnapshot(playerId);
+
+		final NpcHtmlMessage html = new NpcHtmlMessage();
+		html.setFile(player, "data/scripts/custom/PetHatchingSystem/snapshot_menu.htm");
+
+		if (snap == null)
+		{
+			// 無魂契：顯示提示與締結按鈕
+			html.replace("%snapshot_status%", "<font color=\"AAAAAA\">未締結</font>");
+			html.replace("%snapshot_info%",
+				"<tr bgcolor=\"222222\">" +
+				"<td align=\"center\" colspan=\"2\"><font color=\"808080\" size=\"1\">請先在和平區召喚寵物後締結魂契</font></td>" +
+				"</tr>");
+			html.replace("%snapshot_button%",
+				"<button value=\"締結魂契\" action=\"bypass -h Quest PetHatchingSystem save_snapshot\" " +
+				"width=150 height=25 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">");
+		}
+		else
+		{
+			// 有魂契：顯示數據（含共享%）與解除按鈕
+			final String petName = getPetItemName(snap.petItemId);
+			final java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy/MM/dd HH:mm");
+			final String timeStr = sdf.format(new java.util.Date(snap.snapshotTime));
+
+			// 取得玩家目前的 ServitorShare 共享比率
+			final java.util.Map<Stat, Float> shareRates = getServitorShareRates(player);
+
+			html.replace("%snapshot_status%", "<font color=\"00FF66\">啟用中</font>");
+			html.replace("%snapshot_info%",
+				"<tr bgcolor=\"222222\">" +
+				"<td align=\"center\" width=\"135\"><font color=\"FFCC33\">契約寵物</font></td>" +
+				"<td align=\"center\" width=\"135\"><font color=\"FFFF00\">" + petName + "</font></td>" +
+				"</tr>" +
+				"<tr bgcolor=\"222222\">" +
+				"<td align=\"center\"><font color=\"FFCC33\">締結時間</font></td>" +
+				"<td align=\"center\"><font color=\"FFFFFF\">" + timeStr + "</font></td>" +
+				"</tr>" +
+				"<tr bgcolor=\"222222\">" +
+				"<td align=\"center\"><font color=\"FFCC33\">物理攻擊</font>" +
+				formatShareRate(shareRates, Stat.PHYSICAL_ATTACK) + "</td>" +
+				"<td align=\"center\"><font color=\"00FF66\">" + (int) snap.patk + "</font></td>" +
+				"</tr>" +
+				"<tr bgcolor=\"222222\">" +
+				"<td align=\"center\"><font color=\"FFCC33\">魔法攻擊</font>" +
+				formatShareRate(shareRates, Stat.MAGIC_ATTACK) + "</td>" +
+				"<td align=\"center\"><font color=\"00FF66\">" + (int) snap.matk + "</font></td>" +
+				"</tr>" +
+				"<tr bgcolor=\"222222\">" +
+				"<td align=\"center\"><font color=\"FFCC33\">物理防禦</font>" +
+				formatShareRate(shareRates, Stat.PHYSICAL_DEFENCE) + "</td>" +
+				"<td align=\"center\"><font color=\"00FF66\">" + (int) snap.pdef + "</font></td>" +
+				"</tr>" +
+				"<tr bgcolor=\"222222\">" +
+				"<td align=\"center\"><font color=\"FFCC33\">魔法防禦</font>" +
+				formatShareRate(shareRates, Stat.MAGICAL_DEFENCE) + "</td>" +
+				"<td align=\"center\"><font color=\"00FF66\">" + (int) snap.mdef + "</font></td>" +
+				"</tr>");
+			html.replace("%snapshot_button%",
+				"<button value=\"解除魂契\" action=\"bypass -h Quest PetHatchingSystem clear_snapshot\" " +
+				"width=150 height=25 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">");
+		}
+
+		player.sendPacket(html);
+		return null;
+	}
+
+	/**
+	 * 締結魂契：
+	 * 1. 清除寵物臨時 Buff
+	 * 2. 讀取 4 個 stat 數值
+	 * 3. 儲存至 DB + 記憶體
+	 * 4. 強制收回寵物
+	 */
+	private String handleSaveSnapshot(Player player)
+	{
+		// 條件檢查
+		if (!player.isInsideZone(ZoneId.PEACE))
+		{
+			player.sendMessage("請在和平區域才能締結魂契！");
+			return handleSnapshotMenu(player);
+		}
+		if (!player.hasPet())
+		{
+			player.sendMessage("請先召喚您的寵物，才能締結魂契！");
+			return handleSnapshotMenu(player);
+		}
+		if (PetSnapshotData.getInstance().hasSnapshot(player.getObjectId()))
+		{
+			player.sendMessage("您已存在魂契，請先解除後再重新締結！");
+			return handleSnapshotMenu(player);
+		}
+
+		final Summon pet = player.getPet();
+		final Item controlItem = player.getInventory().getItemByObjectId(pet.getControlObjectId());
+		final int petItemId = controlItem != null ? controlItem.getId() : 0;
+
+		// 清除臨時 Buff，確保數值只含裝備 + 被動（排除臨時加成）
+		pet.stopAllEffects();
+
+		// 讀取 4 個屬性的最終值
+		final double patk = pet.getStat().getValue(Stat.PHYSICAL_ATTACK);
+		final double matk = pet.getStat().getValue(Stat.MAGIC_ATTACK);
+		final double pdef = pet.getStat().getValue(Stat.PHYSICAL_DEFENCE);
+		final double mdef = pet.getStat().getValue(Stat.MAGICAL_DEFENCE);
+
+		// 儲存魂契數據
+		PetSnapshotData.getInstance().saveSnapshot(player.getObjectId(), petItemId, patk, matk, pdef, mdef);
+
+		// 強制收回寵物
+		pet.unSummon(player);
+
+		// 玩家 stat 立即重新計算，套用魂契效果
+		player.getStat().recalculateStats(true);
+
+		player.sendMessage("魂契締結成功！");
+		player.sendMessage("寵物能力已刻印於您的身上。");
+		player.sendMessage("無需召喚寵物即可共享力量。");
+
+
+		return handleSnapshotMenu(player);
+	}
+
+	/**
+	 * 解除魂契：清除 DB + 記憶體快取，重新計算玩家 stat
+	 */
+	private String handleClearSnapshot(Player player)
+	{
+		if (!PetSnapshotData.getInstance().hasSnapshot(player.getObjectId()))
+		{
+			player.sendMessage("您尚未締結魂契！");
+			return handleSnapshotMenu(player);
+		}
+
+		PetSnapshotData.getInstance().clearSnapshot(player.getObjectId());
+		player.getStat().recalculateStats(true);
+
+		player.sendMessage("魂契已解除。寵物能力共享效果已移除。");
+		player.sendMessage("您現在可以在和平區重新召喚寵物。");
+
+		return handleSnapshotMenu(player);
+	}
+
+	/**
+	 * 取得寵物道具名稱（輔助方法）
+	 */
+	private String getPetItemName(int petItemId)
+	{
+		if (petItemId <= 0) return "未知";
+		final org.l2jmobius.gameserver.model.item.ItemTemplate template =
+			org.l2jmobius.gameserver.data.xml.ItemData.getInstance().getTemplate(petItemId);
+		return template != null ? template.getName() : "寵物 #" + petItemId;
+	}
+
+	/**
+	 * 取得玩家目前所有 ServitorShare 技能各屬性的共享比率（累加）。
+	 *
+	 * 實作說明：
+	 * 遍歷玩家所有已學習的技能（包含被動技能），從每個技能的 GENERAL 效果列表中
+	 * 找出所有 ServitorShare 實例，讀取其 _sharedStats 並累加到結果中。
+	 *
+	 * 這樣可以支援多個技能都有 ServitorShare 效果的情況，例如：
+	 * - 收藏獎勵技能（COLLECTION_REWARD_SKILL_ID）
+	 * - 其他職業被動技能
+	 * - 裝備賦予的技能
+	 *
+	 * 最終回傳的 Map 中，每個 Stat 的值是所有技能該 Stat 共享比率的總和。
+	 */
+	private java.util.Map<Stat, Float> getServitorShareRates(Player player)
+	{
+		final java.util.Map<Stat, Float> result = new java.util.EnumMap<>(Stat.class);
+
+		// 遍歷玩家所有技能（包含被動、主動、裝備技能等）
+		for (Skill skill : player.getAllSkills())
+		{
+			if (skill == null)
+			{
+				continue;
+			}
+
+			// 取得技能的 GENERAL 效果列表
+			final java.util.List<AbstractEffect> effects = skill.getEffects(org.l2jmobius.gameserver.model.skill.EffectScope.GENERAL);
+			if (effects == null || effects.isEmpty())
+			{
+				continue;
+			}
+
+			// 檢查是否有 ServitorShare 效果
+			for (AbstractEffect effect : effects)
+			{
+				if (effect instanceof handlers.effecthandlers.ServitorShare)
+				{
+					final java.util.Map<Stat, Float> rates = ((handlers.effecthandlers.ServitorShare) effect).getSharedStats();
+					if (rates != null && !rates.isEmpty())
+					{
+						// 累加每個 Stat 的共享比率
+						for (java.util.Map.Entry<Stat, Float> entry : rates.entrySet())
+						{
+							final Stat stat = entry.getKey();
+							final Float rate = entry.getValue();
+							result.merge(stat, rate, Float::sum);
+						}
+					}
+				}
+			}
+		}
+
+		return result;
+	}
+
+	/**
+	 * 格式化共享%顯示文字。
+	 * 若該 Stat 有共享比率，回傳 " (X%)" 灰色文字；否則回傳空字串。
+	 */
+	private String formatShareRate(java.util.Map<Stat, Float> shareRates, Stat stat)
+	{
+		final Float rate = shareRates.get(stat);
+		if (rate == null || rate <= 0) return "";
+		// 將 0.0~1.0 轉為整數百分比（不足1%則顯示小數）
+		final float pct = rate * 100f;
+		final String pctStr = (pct == (int) pct) ? String.valueOf((int) pct) :
+			String.format("%.1f", pct);
+		return " <font color=\"AAAAAA\">(" + pctStr + "%)</font>";
 	}
 
 	// ==================== 業務邏輯 ====================
@@ -1335,21 +1576,20 @@ public class PetHatchingSystem extends Script
 	}
 
 	/**
-	 * 玩家登入時檢查並補發離線期間完成的孵化事件
+	 * 玩家登入時：補發離線期間完成的孵化事件。
+	 * 注意：魂契快照的 loadSnapshot 已移至核心 EnterWorld.java 執行，此處不重複。
 	 */
 	private void onPlayerLogin(Player player)
 	{
 		int playerId = player.getObjectId();
-		List<org.l2jmobius.gameserver.data.holders.UnclaimedPetData> unclaimedPets = PetHatchingDAO.getUnclaimedPets(playerId);
 
-		// 為每個未領取且未觸發過事件的寵物補發孵化完成事件
+		// 孵化事件補發
+		List<org.l2jmobius.gameserver.data.holders.UnclaimedPetData> unclaimedPets = PetHatchingDAO.getUnclaimedPets(playerId);
 		for (org.l2jmobius.gameserver.data.holders.UnclaimedPetData petData : unclaimedPets)
 		{
-			// 只有未觸發過事件的才補發
 			if (!petData.eventFired)
 			{
 				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerPetHatch(player, petData.petItemId, petData.tier, false));
-				// 標記為已觸發事件
 				PetHatchingDAO.markEventFired(playerId, petData.id);
 			}
 		}

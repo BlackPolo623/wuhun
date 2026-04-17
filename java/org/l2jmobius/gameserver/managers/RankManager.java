@@ -54,18 +54,19 @@ public class RankManager
 	public static final long CURRENT_TIME = System.currentTimeMillis();
 	public static final int PLAYER_LIMIT = 500;
 	
-	private static final String SELECT_CHARACTERS = "SELECT charId,char_name,level,race,base_class, clanid FROM characters WHERE (" + CURRENT_TIME + " - cast(lastAccess as signed) < " + TIME_LIMIT + ") AND accesslevel = 0 AND level > 39 ORDER BY exp DESC, onlinetime DESC LIMIT " + PLAYER_LIMIT;
+	private static final String SELECT_CHARACTERS = "SELECT c.charId, c.char_name, c.level, c.race, c.base_class, c.clanid, COALESCE(CAST(cv.val AS UNSIGNED), 0) AS soulring FROM characters c LEFT JOIN character_variables cv ON c.charId = cv.charId AND cv.var = '魂環' WHERE (" + CURRENT_TIME + " - cast(c.lastAccess as signed) < " + TIME_LIMIT + ") AND c.accesslevel = 0 AND c.level > 39 ORDER BY soulring DESC, c.onlinetime DESC LIMIT " + PLAYER_LIMIT;
 	private static final String SELECT_CHARACTERS_PVP = "SELECT charId,char_name,level,race,base_class, clanid, deaths, kills, pvpkills FROM characters WHERE (" + CURRENT_TIME + " - cast(lastAccess as signed) < " + TIME_LIMIT + ") AND accesslevel = 0 AND level > 39 ORDER BY kills DESC, onlinetime DESC LIMIT " + PLAYER_LIMIT;
-	private static final String SELECT_CHARACTERS_BY_RACE = "SELECT charId FROM characters WHERE (" + CURRENT_TIME + " - cast(lastAccess as signed) < " + TIME_LIMIT + ") AND accesslevel = 0 AND level > 39 AND race = ? ORDER BY exp DESC, onlinetime DESC LIMIT " + PLAYER_LIMIT;
+	private static final String SELECT_CHARACTERS_BY_RACE = "SELECT c.charId, COALESCE(CAST(cv.val AS UNSIGNED), 0) AS soulring FROM characters c LEFT JOIN character_variables cv ON c.charId = cv.charId AND cv.var = '魂環' WHERE (" + CURRENT_TIME + " - cast(c.lastAccess as signed) < " + TIME_LIMIT + ") AND c.accesslevel = 0 AND c.level > 39 AND c.race = ? ORDER BY soulring DESC, c.onlinetime DESC LIMIT " + PLAYER_LIMIT;
 	private static final String SELECT_PETS = "SELECT characters.charId, pets.exp, characters.char_name, pets.level as petLevel, characters.race as char_race, characters.level as char_level, characters.clanId, pet_evolves.index, pet_evolves.level as evolveLevel, pets.item_obj_id, item_id FROM characters, items, pets, pet_evolves WHERE pets.ownerId = characters.charId AND pet_evolves.itemObjId = items.object_id AND pet_evolves.itemObjId = pets.item_obj_id AND (" + CURRENT_TIME + " - cast(characters.lastAccess as signed) < " + TIME_LIMIT + ") AND characters.accesslevel = 0 AND pets.level > 39 ORDER BY pets.exp DESC, characters.onlinetime DESC LIMIT " + PLAYER_LIMIT;
 	private static final String SELECT_CLANS = "SELECT characters.level, characters.char_name, clan_data.clan_id, clan_data.clan_level, clan_data.clan_name, clan_data.reputation_score, clan_data.exp FROM characters, clan_data WHERE characters.charId = clan_data.leader_id AND characters.clanid = clan_data.clan_id AND dissolving_expiry_time = 0 AND characters.accesslevel = 0 ORDER BY exp DESC LIMIT " + PLAYER_LIMIT;
 	
 	private static final String GET_CURRENT_CYCLE_DATA = "SELECT characters.char_name, characters.level, characters.base_class, characters.clanid, olympiad_nobles.charId, olympiad_nobles.olympiad_points, olympiad_nobles.competitions_won, olympiad_nobles.competitions_lost, olympiad_nobles.competitions_drawn FROM characters, olympiad_nobles WHERE characters.charId = olympiad_nobles.charId ORDER BY olympiad_nobles.olympiad_points DESC LIMIT " + PLAYER_LIMIT;
 	private static final String GET_HEROES = "SELECT characters.charId, characters.char_name, characters.race, characters.sex, characters.base_class, characters.level, characters.clanid, olympiad_nobles_eom.competitions_won, olympiad_nobles_eom.competitions_lost, olympiad_nobles_eom.competitions_drawn, olympiad_nobles_eom.olympiad_points, heroes.legend_count, heroes.count FROM heroes, characters, olympiad_nobles_eom WHERE characters.charId = heroes.charId AND characters.charId = olympiad_nobles_eom.charId AND heroes.played = 1 AND characters.accesslevel = 0 ORDER BY olympiad_nobles_eom.olympiad_points DESC, characters.base_class ASC LIMIT " + RankManager.PLAYER_LIMIT;
-	private static final String GET_CHARACTERS_BY_CLASS = "SELECT charId FROM characters WHERE (" + CURRENT_TIME + " - cast(lastAccess as signed) < " + TIME_LIMIT + ") AND accesslevel = 0 AND level > 39 AND characters.base_class = ? ORDER BY exp DESC, onlinetime DESC LIMIT " + PLAYER_LIMIT;
+	private static final String GET_CHARACTERS_BY_CLASS = "SELECT c.charId, COALESCE(CAST(cv.val AS UNSIGNED), 0) AS soulring FROM characters c LEFT JOIN character_variables cv ON c.charId = cv.charId AND cv.var = '魂環' WHERE (" + CURRENT_TIME + " - cast(c.lastAccess as signed) < " + TIME_LIMIT + ") AND c.accesslevel = 0 AND c.level > 39 AND c.base_class = ? ORDER BY soulring DESC, c.onlinetime DESC LIMIT " + PLAYER_LIMIT;
 	
 	private final Map<Integer, StatSet> _mainList = new ConcurrentHashMap<>();
 	private Map<Integer, StatSet> _snapshotList = new ConcurrentHashMap<>();
+	private Map<Integer, Integer> _snapshotCharIdToRank = new ConcurrentHashMap<>();
 	private final Map<Integer, StatSet> _mainOlyList = new ConcurrentHashMap<>();
 	private Map<Integer, StatSet> _snapshotOlyList = new ConcurrentHashMap<>();
 	private final List<HeroInfo> _mainHeroList = new LinkedList<>();
@@ -123,6 +124,14 @@ public class RankManager
 		// Load charIds All
 		_snapshotList = _mainList;
 		_mainList.clear();
+
+		// 重建 snapshot charId → rank 反向索引
+		final Map<Integer, Integer> newSnapshotIndex = new ConcurrentHashMap<>();
+		for (Map.Entry<Integer, StatSet> entry : _snapshotList.entrySet())
+		{
+			newSnapshotIndex.put(entry.getValue().getInt("charId"), entry.getKey());
+		}
+		_snapshotCharIdToRank = newSnapshotIndex;
 		_snapshotOlyList = _mainOlyList;
 		_mainOlyList.clear();
 		_snapshotHeroList = _mainHeroList;
@@ -148,6 +157,7 @@ public class RankManager
 					stats.set("charId", charId);
 					stats.set("name", result.getString("char_name"));
 					stats.set("level", result.getInt("level"));
+					stats.set("soulring", result.getInt("soulring"));
 					stats.set("classId", result.getInt("base_class"));
 					final int race = result.getInt("race");
 					stats.set("race", race);
@@ -446,6 +456,11 @@ public class RankManager
 	public Map<Integer, StatSet> getSnapshotList()
 	{
 		return _snapshotList;
+	}
+
+	public Map<Integer, Integer> getSnapshotCharIdToRank()
+	{
+		return _snapshotCharIdToRank;
 	}
 	
 	public Map<Integer, StatSet> getOlyRankList()

@@ -68,7 +68,8 @@ public class TriggerSkillByDamageDealt extends AbstractEffect
 	private final boolean _allowReflect;
 	private final int _skillLevelScaleTo;
 	private final List<SkillHolder> _triggerSkills;
-	
+	private final boolean _isonlypvp;
+
 	public TriggerSkillByDamageDealt(StatSet params)
 	{
 		_minAttackerLevel = params.getInt("minAttackerLevel", 1);
@@ -86,8 +87,9 @@ public class TriggerSkillByDamageDealt extends AbstractEffect
 		_onlyPhysicalSkill = params.getBoolean("onlyPhysicalSkill", false);
 		_allowReflect = params.getBoolean("allowReflect", false);
 		_skillLevelScaleTo = params.getInt("skillLevelScaleTo", 0);
-		
-		if (params.getString("allowWeapons", "ALL").equalsIgnoreCase("ALL"))
+        _isonlypvp =  params.getBoolean("isonlypvp", false);
+
+        if (params.getString("allowWeapons", "ALL").equalsIgnoreCase("ALL"))
 		{
 			_allowWeapons = 0;
 		}
@@ -188,7 +190,12 @@ public class TriggerSkillByDamageDealt extends AbstractEffect
 		{
 			return;
 		}
-		
+
+		if(_isonlypvp && !event.getTarget().isPlayer())
+		{
+			return;
+		}
+
 		WorldObject target = null;
 		try
 		{

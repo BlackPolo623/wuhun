@@ -2172,16 +2172,20 @@
 	<npc id="22490" level="87" type="Monster" name="火焰高崙" element="FIRE">
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<acquire exp="12489" sp="125" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="248372.8" hpRegen="10.2" mp="11290.8" mpRegen="3.6" />
-			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="2383" magical="1045" />
+		<acquire exp="1000000000" sp="125" />
+		<stats str="50" int="50" dex="50" wit="50" con="50" men="50">
+			<vitals hp="30000000" hpRegen="50000" mp="20000" mpRegen="20000" />
+			<attack physical="400000000" magical="400000000" random="10" critical="4" accuracy="5" attackSpeed="500" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="600000000" magical="600000000" />
 			<speed>
 				<walk ground="13" />
 				<run ground="170" />
 			</speed>
 			<hitTime>600</hitTime>
+			<attribute>
+				<attack type="FIRE" value="2000"/>
+				<defence fire="2000"/>
+			</attribute>
 		</stats>
 		<status attackable="true" />
 		<collision>
@@ -2189,23 +2193,33 @@
 			<height normal="45" />
 		</collision>
 		<skillList>
-			<skill id="4416" level="1" /> 
-			<skill id="48044" level="1" /> 
+			<skill id="102008" level="1" />
 		</skillList>
+		<dropLists>
+			<drop>
+				<item id="130000" min="1" max="1" chance="10"/>
+				<item id="130001" min="1" max="1" chance="1"/>
+				<item id="130002" min="1" max="1" chance="0.3"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="22491" level="87" type="Monster" name="火焰司塔卡拓" element="FIRE">
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<acquire exp="12489" sp="125" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="248372.8" hpRegen="10.2" mp="11290.8" mpRegen="3.6" />
-			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="2383" magical="1045" />
+		<acquire exp="1000000000" sp="125" />
+		<stats str="50" int="50" dex="50" wit="50" con="50" men="50">
+			<vitals hp="30000000" hpRegen="50000" mp="20000" mpRegen="20000" />
+			<attack physical="1500000000" magical="1500000000" random="10" critical="4" accuracy="5" attackSpeed="999" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="800000000" magical="800000000" />
 			<speed>
-				<walk ground="25" />
+				<walk ground="13" />
 				<run ground="170" />
 			</speed>
 			<hitTime>600</hitTime>
+			<attribute>
+				<attack type="FIRE" value="2000"/>
+				<defence fire="2000"/>
+			</attribute>
 		</stats>
 		<status attackable="true" />
 		<collision>
@@ -2213,23 +2227,33 @@
 			<height normal="40" />
 		</collision>
 		<skillList>
-			<skill id="4416" level="1" /> 
-			<skill id="48044" level="1" /> 
+			<skill id="102008" level="1" />
 		</skillList>
+		<dropLists>
+			<drop>
+				<item id="130000" min="1" max="1" chance="10"/>
+				<item id="130001" min="1" max="1" chance="1"/>
+				<item id="130002" min="1" max="1" chance="0.3"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="22492" level="87" type="Monster" name="火焰天蠍" element="FIRE">
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<acquire exp="12489" sp="125" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="248372.8" hpRegen="10.2" mp="11290.8" mpRegen="3.6" />
-			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="2383" magical="1045" />
+		<acquire exp="1000000000" sp="125" />
+		<stats str="50" int="50" dex="50" wit="50" con="50" men="50">
+			<vitals hp="30000000" hpRegen="50000" mp="20000" mpRegen="20000" />
+			<attack physical="600000000" magical="1000000000" random="10" critical="4" accuracy="5" attackSpeed="500" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="500000000" magical="500000000" />
 			<speed>
-				<walk ground="37" />
+				<walk ground="13" />
 				<run ground="170" />
 			</speed>
 			<hitTime>600</hitTime>
+			<attribute>
+				<attack type="FIRE" value="2000"/>
+				<defence fire="2000"/>
+			</attribute>
 		</stats>
 		<status attackable="true" />
 		<collision>
@@ -2237,23 +2261,33 @@
 			<height normal="52.8" />
 		</collision>
 		<skillList>
-			<skill id="4416" level="1" /> 
-			<skill id="48044" level="1" /> 
+			<skill id="102008" level="1" />
 		</skillList>
+		<dropLists>
+			<drop>
+				<item id="130000" min="1" max="1" chance="10"/>
+				<item id="130001" min="1" max="1" chance="1"/>
+				<item id="130002" min="1" max="1" chance="0.3"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="22493" level="87" type="Monster" name="火焰聖甲蟲" element="FIRE">
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<acquire exp="12489" sp="125" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="248372.8" hpRegen="10.2" mp="11290.8" mpRegen="3.6" />
-			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="2383" magical="1045" />
+		<acquire exp="1000000000" sp="125" />
+		<stats str="50" int="50" dex="50" wit="50" con="50" men="50">
+			<vitals hp="30000000" hpRegen="50000" mp="20000" mpRegen="20000" />
+			<attack physical="800000000" magical="800000000" random="10" critical="4" accuracy="5" attackSpeed="500" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="400000000" magical="400000000" />
 			<speed>
-				<walk ground="45" />
+				<walk ground="13" />
 				<run ground="170" />
 			</speed>
 			<hitTime>600</hitTime>
+			<attribute>
+				<attack type="FIRE" value="2000"/>
+				<defence fire="2000"/>
+			</attribute>
 		</stats>
 		<status attackable="true" />
 		<collision>
@@ -2261,23 +2295,33 @@
 			<height normal="22" />
 		</collision>
 		<skillList>
-			<skill id="4416" level="1" /> 
-			<skill id="48044" level="1" /> 
+			<skill id="102008" level="1" />
 		</skillList>
+		<dropLists>
+			<drop>
+				<item id="130000" min="1" max="1" chance="10"/>
+				<item id="130001" min="1" max="1" chance="1"/>
+				<item id="130002" min="1" max="1" chance="0.3"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="22494" level="87" type="Monster" name="火焰火蜥蜴" element="FIRE">
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<acquire exp="12489" sp="125" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="248372.8" hpRegen="10.2" mp="11290.8" mpRegen="3.6" />
-			<attack physical="3611" magical="2465" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="2383" magical="1045" />
+		<acquire exp="1000000000" sp="125" />
+		<stats str="50" int="50" dex="50" wit="50" con="50" men="50">
+			<vitals hp="30000000" hpRegen="50000" mp="20000" mpRegen="20000" />
+			<attack physical="600000000" magical="1000000000" random="10" critical="4" accuracy="5" attackSpeed="500" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="500000000" magical="500000000" />
 			<speed>
-				<walk ground="39" />
+				<walk ground="13" />
 				<run ground="170" />
 			</speed>
 			<hitTime>600</hitTime>
+			<attribute>
+				<attack type="FIRE" value="2000"/>
+				<defence fire="2000"/>
+			</attribute>
 		</stats>
 		<status attackable="true" />
 		<collision>
@@ -2285,9 +2329,15 @@
 			<height normal="25" />
 		</collision>
 		<skillList>
-			<skill id="4416" level="1" /> 
-			<skill id="48044" level="1" /> 
+			<skill id="102008" level="1" />
 		</skillList>
+		<dropLists>
+			<drop>
+				<item id="130000" min="1" max="1" chance="10"/>
+				<item id="130001" min="1" max="1" chance="1"/>
+				<item id="130002" min="1" max="1" chance="0.3"/>
+			</drop>
+		</dropLists>
 	</npc>
 	<npc id="22495" level="87" type="Monster" name="骨炭巡守" element="EARTH">
 		<race>UNDEAD</race>

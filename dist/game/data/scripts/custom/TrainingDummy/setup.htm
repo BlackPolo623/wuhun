@@ -1,0 +1,86 @@
+<html>
+<body>
+
+<center>
+<br>
+<font color="LEVEL">訓練木樁生成器</font>
+<br>
+<img src="L2UI.SquareGray" width="280" height="1">
+</center>
+
+<table width="280" border="0" cellpadding="0" cellspacing="0">
+<tr><td height="4"></td></tr>
+<tr>
+  <td width="110" align="right"><font color="AAAAAA">類型：</font></td>
+  <td width="10"></td>
+  <td><font color="FF9900">模擬玩家 (PvP)</font></td>
+</tr>
+<tr><td height="2"></td></tr>
+<tr>
+  <td align="right"><font color="AAAAAA">自動消失：</font></td>
+  <td></td>
+  <td><font color="B09979">5 分鐘後</font></td>
+</tr>
+<tr><td height="6"></td></tr>
+</table>
+
+<img src="L2UI.SquareGray" width="280" height="1">
+
+<table width="280" border="0" cellpadding="0" cellspacing="0">
+<tr bgcolor="1A1A2A"><td align="center" height="20">
+  <font color="B09979">快速預設　</font><font color="888888">（P.Def 與 M.Def 套用相同數值）</font>
+</td></tr>
+</table>
+
+<table width="280" border="0" cellpadding="0" cellspacing="0">
+<tr><td height="4"></td></tr>
+<tr><td align="center">
+  <table border="0" cellspacing="3">
+  <tr>
+    <td><button value="無 (0)" action="bypass -h Quest TrainingDummy spawn_0_0" width="52" height="22" back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+    <td><button value="1萬" action="bypass -h Quest TrainingDummy spawn_10000_10000" width="46" height="22" back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+    <td><button value="100萬" action="bypass -h Quest TrainingDummy spawn_1000000_1000000" width="52" height="22" back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+    <td><button value="1億" action="bypass -h Quest TrainingDummy spawn_100000000_100000000" width="46" height="22" back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+    <td><button value="30億" action="bypass -h Quest TrainingDummy spawn_3000000000_3000000000" width="52" height="22" back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+  </tr>
+  </table>
+</td></tr>
+<tr><td height="4"></td></tr>
+</table>
+
+<img src="L2UI.SquareGray" width="280" height="1">
+
+<table width="280" border="0" cellpadding="0" cellspacing="0">
+<tr bgcolor="1A2A1A"><td align="center" height="20">
+  <font color="B09979">自訂數值</font>
+</td></tr>
+</table>
+
+<table width="280" border="0" cellpadding="3" cellspacing="0">
+<tr><td height="4"></td></tr>
+<tr>
+  <td width="90" align="right"><font color="AAAAAA">物理防禦</font></td>
+  <td width="8"></td>
+  <td><edit var="pdef_input" width="150" height="15"></td>
+</tr>
+<tr><td height="2"></td></tr>
+<tr>
+  <td align="right"><font color="AAAAAA">魔法防禦</font></td>
+  <td></td>
+  <td><edit var="mdef_input" width="150" height="15"></td>
+</tr>
+<tr><td height="6"></td></tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>
+    <button value="生成木樁" action="bypass -h Quest TrainingDummy spawn $pdef_input $mdef_input" width="150" height="25" back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+  </td>
+</tr>
+<tr><td height="4"></td></tr>
+</table>
+
+<img src="L2UI.SquareGray" width="280" height="1">
+
+</body>
+</html>

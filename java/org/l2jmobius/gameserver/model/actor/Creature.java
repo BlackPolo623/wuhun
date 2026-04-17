@@ -5572,7 +5572,6 @@ public abstract class Creature extends WorldObject
 		{
 			// 從攻擊者屬性獲取最終傷害加成百分比
 			double finalDamageBonus = attacker.getStat().getValue(Stat.FINAL_DAMAGE_RATE, 0);
-
 			// 魂環特殊能力：最終傷害加成（每點+1%）
 			if (attacker.isPlayer())
 			{

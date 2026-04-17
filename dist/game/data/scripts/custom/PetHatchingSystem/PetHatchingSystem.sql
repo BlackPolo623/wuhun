@@ -54,3 +54,18 @@ CREATE TABLE IF NOT EXISTS `pet_unclaimed` (
 
 -- 若表已存在但缺少 event_fired 欄位，執行以下語句補上：
 -- ALTER TABLE `pet_unclaimed` ADD COLUMN `event_fired` TINYINT NOT NULL DEFAULT 0 COMMENT '是否已觸發孵化事件(0=否,1=是)';
+-- ====================================
+-- 魂契系統數據表
+-- ====================================
+
+CREATE TABLE IF NOT EXISTS `pet_snapshot` (
+  `player_id`     INT NOT NULL,
+  `pet_item_id`   INT NOT NULL DEFAULT 0 COMMENT '快照時的寵物道具ID',
+  `patk`          DOUBLE NOT NULL DEFAULT 0 COMMENT '物理攻擊',
+  `matk`          DOUBLE NOT NULL DEFAULT 0 COMMENT '魔法攻擊',
+  `pdef`          DOUBLE NOT NULL DEFAULT 0 COMMENT '物理防禦',
+  `mdef`          DOUBLE NOT NULL DEFAULT 0 COMMENT '魔法防禦',
+  `snapshot_time` BIGINT NOT NULL DEFAULT 0 COMMENT '締結時間戳(毫秒)',
+  PRIMARY KEY (`player_id`),
+  INDEX `idx_player` (`player_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='魂契數據（寵物能力刻印）';

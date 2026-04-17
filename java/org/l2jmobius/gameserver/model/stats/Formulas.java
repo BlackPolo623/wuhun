@@ -188,7 +188,7 @@ public class Formulas
 		// 新公式:   77 * ((mAtk * levelMod) + power) * MAGIC_DAMAGE_RATIO / mDef
 		// MAGIC_DAMAGE_RATIO 用來控制魔法相對物理的傷害比例，0.75 = 魔法為物理的75%（少25%）
 		// 可調整: 0.75=少25% / 0.85=少15% / 1.0=完全相同
-		final double MAGIC_DAMAGE_RATIO = 1.7;
+		final double MAGIC_DAMAGE_RATIO = 2.2;
 		final double skillPowerAdd = attacker.getStat().getValue(Stat.SKILL_POWER_ADD, 0);
 		double damage = ((77 * ((mAtk * attacker.getLevelMod()) + power + skillPowerAdd)) / mDef) * MAGIC_DAMAGE_RATIO * shotsBonus;
 		
@@ -1062,6 +1062,11 @@ public class Formulas
 		}
 		else
 		{
+			// 攻擊者無屬性時，屬性系統不介入，diff = 0
+			if (attacker.getAttackElement() == AttributeType.NONE)
+			{
+				return 0;
+			}
 			attackAttribute = attacker.getAttackElementValue(attacker.getAttackElement());
 			defenceAttribute = target.getDefenseElementValue(attacker.getAttackElement());
 		}

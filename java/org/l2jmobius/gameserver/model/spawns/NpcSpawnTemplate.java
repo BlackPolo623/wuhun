@@ -57,6 +57,7 @@ public class NpcSpawnTemplate implements Cloneable, IParameterized<StatSet>
 	private final Duration _respawnTimeRandom;
 	private final SchedulingPattern _respawnPattern;
 	private final int _chaseRange;
+	private final int _spawnRadius;
 	private List<ChanceLocation> _locations;
 	private SpawnTerritory _zone;
 	private StatSet _parameters;
@@ -78,6 +79,7 @@ public class NpcSpawnTemplate implements Cloneable, IParameterized<StatSet>
 		_respawnTimeRandom = template._respawnTimeRandom;
 		_respawnPattern = template._respawnPattern;
 		_chaseRange = template._chaseRange;
+		_spawnRadius = template._spawnRadius;
 		_spawnAnimation = template._spawnAnimation;
 		_saveInDB = template._saveInDB;
 		_dbName = template._dbName;
@@ -98,6 +100,7 @@ public class NpcSpawnTemplate implements Cloneable, IParameterized<StatSet>
 		final String pattern = set.getString("respawnPattern", null);
 		_respawnPattern = (pattern == null) || pattern.isEmpty() ? null : new SchedulingPattern(pattern);
 		_chaseRange = set.getInt("chaseRange", 0);
+		_spawnRadius = set.getInt("spawnRadius", 0);
 		_spawnAnimation = set.getBoolean("spawnAnimation", false);
 		_saveInDB = set.getBoolean("dbSave", false);
 		_dbName = set.getString("dbName", null);
@@ -292,6 +295,10 @@ public class NpcSpawnTemplate implements Cloneable, IParameterized<StatSet>
 			{
 				if (locRandom <= (cumulativeChance += loc.getChance()))
 				{
+					if (_spawnRadius > 0)
+					{
+						return new Location(loc.getX() + Rnd.get(-_spawnRadius, _spawnRadius), loc.getY() + Rnd.get(-_spawnRadius, _spawnRadius), loc.getZ(), loc.getHeading());
+					}
 					return loc;
 				}
 			}

@@ -62,7 +62,7 @@ public class AttributeEnhance extends Script
 	// Fire 屬性防具 → 防禦 Water 攻擊，依此類推
 	private static final String[] ARMOR_DESC =
 	{
-		"火(抗水)", "水(抗火)", "風(抗地)", "地(抗風)", "聖(抗暗)", "暗(抗聖)"
+		"火抗性", "水抗性", "風抗性", "地抗性", "聖抗性", "暗抗性"
 	};
 
 	// ── 部位對應 ──────────────────────────────────────────
@@ -284,6 +284,12 @@ public class AttributeEnhance extends Script
 			doArmorEnhance(player, p[2], Integer.parseInt(p[3]));
 			showArmor(player, p[2]);
 		}
+		else if (event.startsWith("armor_reset_"))
+		{
+			final String slot = event.substring("armor_reset_".length());
+			doArmorReset(player, slot);
+			showArmor(player, slot);
+		}
 		else if (event.startsWith("weapon_enhance_"))
 		{
 			// weapon_enhance_<slot>_<elemOrd>
@@ -302,6 +308,17 @@ public class AttributeEnhance extends Script
 			final String slot = event.substring("weapon_reset_".length());
 			doWeaponReset(player, slot);
 			showWeapon(player, slot);
+		}
+		else if (event.startsWith("status_detail_"))
+		{
+			try
+			{
+				showStatusDetail(player, Integer.parseInt(event.substring("status_detail_".length())));
+			}
+			catch (NumberFormatException e)
+			{
+				showStatus(player);
+			}
 		}
 
 		return null;
@@ -342,6 +359,19 @@ public class AttributeEnhance extends Script
 
 		// 強化按鈕（防具：只顯示已有屬性的強化選項）
 		sb.append(buildArmorEnhanceButtons(player, item, ARMOR_STONES.get(curSlot), curSlot));
+
+		// 清洗屬性按鈕
+		sb.append("<table width=270 bgcolor=222233 cellpadding=3 cellspacing=0>");
+		sb.append("<tr><td align=center><font color=LEVEL><b>清洗屬性</b></font></td></tr>");
+		sb.append("</table>");
+		sb.append("<table width=270 bgcolor=2A0A0A cellpadding=3 cellspacing=1>");
+		sb.append("<tr><td align=center><font color=FFAAAA size=1>※ 清洗後將移除所有防禦屬性</font></td></tr>");
+		sb.append("</table>");
+		sb.append("<table width=270 cellpadding=3 cellspacing=0>");
+		sb.append("<tr><td align=center>");
+		sb.append("<button value=\"清洗屬性\" action=\"bypass -h Quest AttributeEnhance armor_reset_").append(curSlot).append("\"");
+		sb.append(" width=120 height=24 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"/>");
+		sb.append("</td></tr></table>");
 
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setHtml(ARMOR_HTM);
@@ -505,34 +535,92 @@ public class AttributeEnhance extends Script
 		}
 		sb.append("</table><br>");
 
-		// 防禦屬性（防具 + 飾品）
+		// 防禦屬性（防具 + 飾品）按元素加總
 		sb.append("<table width=270 bgcolor=111111 cellpadding=3 cellspacing=1>");
 		sb.append("<tr bgcolor=002233><td align=center colspan=3><font color=88CCFF><b>防具/飾品防禦屬性</b></font></td></tr>");
-		sb.append("<tr bgcolor=0A0A0A><td width=70><font color=AAAAAA>部位</font></td>")
-		  .append("<td width=80><font color=AAAAAA>屬性</font></td>")
-		  .append("<td><font color=AAAAAA>數值</font></td></tr>");
+		sb.append("<tr bgcolor=0A0A0A><td width=90><font color=AAAAAA>屬性</font></td>")
+		  .append("<td width=100><font color=AAAAAA>總數值</font></td>")
+		  .append("<td width=80></td></tr>");
 
 		final String[] defSlots = { "head", "chest", "legs", "gloves", "boots", "neck", "rear", "lear", "rfinger", "lfinger" };
-		for (String s : defSlots)
+		boolean anyDef = false;
+		for (AttributeType elem : ALL_ELEMENTS)
 		{
-			final Item it = getEquipped(player, s);
-			if (it == null) continue;
-			for (AttributeType elem : ALL_ELEMENTS)
+			final int ord = (int) elem.getClientId();
+			int total = 0;
+			for (String s : defSlots)
 			{
+				final Item it = getEquipped(player, s);
+				if (it == null) continue;
 				final AttributeHolder ah = it.getAttribute(elem);
-				if (ah == null || ah.getValue() <= 0) continue;
-				final int ord = (int) elem.getClientId();
-				sb.append("<tr bgcolor=0A1A2A>")
-				  .append("<td><font color=FFCC33>").append(SLOT_ZH.get(s)).append("</font></td>")
-				  .append("<td><font color=").append(ELEMENT_COLOR[ord]).append(">").append(ARMOR_DESC[ord]).append("</font></td>")
-				  .append("<td><font color=FFFFFF>").append(ah.getValue()).append("</font></td></tr>");
+				if (ah != null) total += ah.getValue();
 			}
+			if (total <= 0) continue;
+			anyDef = true;
+			sb.append("<tr bgcolor=0A1A2A>")
+			  .append("<td><font color=").append(ELEMENT_COLOR[ord]).append(">").append(ARMOR_DESC[ord]).append("</font></td>")
+			  .append("<td><font color=FFFFFF>").append(total).append("</font></td>")
+			  .append("<td align=center><button value=\"詳情\" action=\"bypass -h Quest AttributeEnhance status_detail_").append(ord).append("\"")
+			  .append(" width=55 height=20 back=\"L2UI_CT1.Button_DF_Small_Down\" fore=\"L2UI_CT1.Button_DF_Small\"/></td>")
+			  .append("</tr>");
+		}
+		if (!anyDef)
+		{
+			sb.append("<tr><td align=center colspan=3><font color=888888>無防禦屬性</font></td></tr>");
 		}
 		sb.append("</table>");
 
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setHtml(STATUS_HTM);
 		html.replace("%status_table%", sb.toString());
+		player.sendPacket(html);
+	}
+
+	// ── 頁面：防禦屬性詳情 ───────────────────────────────
+	private void showStatusDetail(Player player, int elemOrd)
+	{
+		if (elemOrd < 0 || elemOrd >= ALL_ELEMENTS.length) return;
+
+		final AttributeType elem = ALL_ELEMENTS[elemOrd];
+		final String[] defSlots = { "head", "chest", "legs", "gloves", "boots", "neck", "rear", "lear", "rfinger", "lfinger" };
+
+		final StringBuilder sb = new StringBuilder();
+		sb.append("<html><body><title>防禦屬性詳情</title><center>");
+
+		sb.append("<table width=270 bgcolor=002233 cellpadding=3 cellspacing=0>");
+		sb.append("<tr><td align=center><font color=").append(ELEMENT_COLOR[elemOrd]).append("><b>")
+		  .append(ARMOR_DESC[elemOrd]).append(" 詳情</b></font></td></tr>");
+		sb.append("</table>");
+
+		sb.append("<table width=270 bgcolor=111111 cellpadding=3 cellspacing=1>");
+		sb.append("<tr bgcolor=0A0A0A>")
+		  .append("<td width=90><font color=AAAAAA>部位</font></td>")
+		  .append("<td><font color=AAAAAA>數值</font></td></tr>");
+
+		int total = 0;
+		for (String s : defSlots)
+		{
+			final Item it = getEquipped(player, s);
+			if (it == null) continue;
+			final AttributeHolder ah = it.getAttribute(elem);
+			if (ah == null || ah.getValue() <= 0) continue;
+			total += ah.getValue();
+			sb.append("<tr bgcolor=0A1A2A>")
+			  .append("<td><font color=FFCC33>").append(SLOT_ZH.get(s)).append("</font></td>")
+			  .append("<td><font color=FFFFFF>").append(ah.getValue()).append("</font></td></tr>");
+		}
+
+		sb.append("<tr bgcolor=002233>")
+		  .append("<td><font color=88CCFF><b>合計</b></font></td>")
+		  .append("<td><font color=FFFFFF><b>").append(total).append("</b></font></td></tr>");
+		sb.append("</table><br>");
+
+		sb.append("<button value=\"返回總覽\" action=\"bypass -h Quest AttributeEnhance status\"");
+		sb.append(" width=100 height=24 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"/>");
+		sb.append("</center></body></html>");
+
+		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
+		html.setHtml(sb.toString());
 		player.sendPacket(html);
 	}
 
@@ -671,6 +759,39 @@ public class AttributeEnhance extends Script
 		player.getInventory().equipItem(item);
 		sendInventoryUpdate(player, item);
 		player.sendMessage(result.toString());
+	}
+
+	// ── 清洗邏輯：防具屬性重置 ───────────────────────────
+	private void doArmorReset(Player player, String slot)
+	{
+		final Item item = getEquipped(player, slot);
+		if (item == null) { player.sendMessage("該部位未裝備任何道具。"); return; }
+
+		// 檢查是否有任何防禦屬性
+		boolean hasDefAttr = false;
+		for (AttributeType elem : ALL_ELEMENTS)
+		{
+			final AttributeHolder ah = item.getAttribute(elem);
+			if (ah != null && ah.getValue() > 0)
+			{
+				hasDefAttr = true;
+				break;
+			}
+		}
+
+		if (!hasDefAttr)
+		{
+			player.sendMessage("該防具沒有防禦屬性，無需清洗。");
+			return;
+		}
+
+		// 清除所有防禦屬性
+		final int paperdoll = SLOT_MAP.get(slot);
+		player.getInventory().unEquipItemInSlot(paperdoll);
+		item.clearAllAttributes();
+		player.getInventory().equipItem(item);
+		sendInventoryUpdate(player, item);
+		player.sendMessage(SLOT_ZH.get(slot) + " 的防禦屬性已清洗完成。");
 	}
 
 	// ── 清洗邏輯：武器屬性重置 ───────────────────────────

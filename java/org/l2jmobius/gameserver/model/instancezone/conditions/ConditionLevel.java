@@ -35,18 +35,27 @@ public class ConditionLevel extends Condition
 	public ConditionLevel(InstanceTemplate template, StatSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
 		super(template, parameters, onlyLeader, showMessageAndHtml);
-		
+
 		// Load params
 		_min = Math.min(PlayerConfig.PLAYER_MAXIMUM_LEVEL, parameters.getInt("min", 1));
 		_max = Math.min(PlayerConfig.PLAYER_MAXIMUM_LEVEL, parameters.getInt("max", Integer.MAX_VALUE));
-		
-		// Set message
-		setSystemMessage(SystemMessageId.C1_DOES_NOT_MEET_LEVEL_REQUIREMENTS_AND_CANNOT_ENTER, (msg, player) -> msg.addString(player.getName()));
+
+		// 不使用系統訊息，改用自訂訊息
 	}
-	
+
 	@Override
 	protected boolean test(Player player, Npc npc)
 	{
-		return (player.getLevel() >= _min) && (player.getLevel() <= _max);
+		if (player.getLevel() < _min)
+		{
+			player.sendMessage(player.getName() + " 的等級不足！需要 " + _min + " 級以上才能進入副本。");
+			return false;
+		}
+		if (player.getLevel() > _max)
+		{
+			player.sendMessage(player.getName() + " 的等級過高！需要 " + _max + " 級以下才能進入副本。");
+			return false;
+		}
+		return true;
 	}
 }

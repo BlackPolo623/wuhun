@@ -1305,6 +1305,7 @@
 															</xs:element>
 															<xs:element name="targetType" type="xs:string" />
 															<xs:element name="isCritical" type="xs:boolean" />
+															<xs:element name="isonlypvp" type="xs:boolean" />
 															<xs:element name="allowWeapons" type="xs:string" />
 															<xs:element name="skillId">
 																<xs:complexType mixed="true">
@@ -3718,6 +3719,8 @@
 															<xs:element name="ignoreShieldDefence" type="xs:boolean" />
 															<xs:element name="pDefMod" type="xs:decimal" />
 															<xs:element name="criticalChance" type="xs:unsignedByte" />
+															<xs:element name="repeatCount" type="xs:unsignedByte" />
+				==
 															<xs:element name="abnormalType" type="xs:string" />
 															<xs:element name="abnormalPower">
 																<xs:complexType mixed="true">

@@ -36,9 +36,28 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="true" />
-		<set name="is_dropable" val="false" />
+		<set name="is_dropable" val="true" />
 		<set name="is_sellable" val="true" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="105811" min="1" max="3" chance="5"/>
+			<item id="105812" min="1" max="3" chance="5"/>
+			<item id="105813" min="1" max="3" chance="5"/>
+			<item id="105814" min="1" max="3" chance="5"/>
+			<item id="105815" min="1" max="3" chance="5"/>
+			<item id="105816" min="1" max="3" chance="5"/>
+			<item id="105817" min="1" max="3" chance="5"/>
+			<item id="105818" min="1" max="3" chance="5"/>
+			<item id="105819" min="1" max="3" chance="5"/>
+			<item id="105820" min="1" max="3" chance="5"/>
+			<item id="105821" min="1" max="3" chance="5"/>
+			<item id="105822" min="1" max="3" chance="5"/>
+			<item id="105823" min="1" max="3" chance="5"/>
+			<item id="105504" min="1" max="1" chance="5"/>
+		</capsuled_items>
 	</item>
 	<item id="105504" name="燦爛的巴拉卡斯寶箱" additionalName="Sealed" type="EtcItem">
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
@@ -46,9 +65,17 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="true" />
-		<set name="is_dropable" val="false" />
+		<set name="is_dropable" val="true" />
 		<set name="is_sellable" val="true" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="105680" min="1" max="1" chance="20"/>
+			<item id="97859" min="1" max="1" chance="30"/>
+			<item id="98040" min="1" max="1" chance="50"/>
+		</capsuled_items>
 	</item>
 	<item id="105505" name="巴拉卡斯寶箱" additionalName="Sealed" type="EtcItem">
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />

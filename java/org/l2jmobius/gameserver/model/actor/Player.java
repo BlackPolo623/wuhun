@@ -12911,6 +12911,16 @@ public class Player extends Playable
 			LOGGER.log(Level.WARNING, "Failed to save jewel system data for player: " + getName(), e);
 		}
 
+		// 【魂契系統】玩家下線，從記憶體快取移除（資料已在 DB 持久保存，不需刪除）
+		try
+		{
+			org.l2jmobius.gameserver.data.xml.PetSnapshotData.getInstance().unloadSnapshot(getObjectId());
+		}
+		catch (Exception e)
+		{
+			LOGGER.log(Level.WARNING, "Failed to unload pet snapshot for player: " + getName(), e);
+		}
+
 		if (getReputation() < 0)
 		{
 			World.getInstance().removePkPlayer(this);

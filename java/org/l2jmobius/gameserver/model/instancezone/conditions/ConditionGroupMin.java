@@ -33,13 +33,18 @@ public class ConditionGroupMin extends Condition
 	public ConditionGroupMin(InstanceTemplate template, StatSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
 		super(template, parameters, true, showMessageAndHtml);
-		setSystemMessage(SystemMessageId.YOU_MUST_HAVE_A_MINIMUM_OF_S1_PEOPLE_TO_ENTER_THIS_INSTANCE_ZONE, (msg, _) -> msg.addInt(getLimit()));
+		// 不使用系統訊息，改用自訂訊息
 	}
-	
+
 	@Override
 	protected boolean test(Player player, Npc npc, List<Player> group)
 	{
-		return group.size() >= getLimit();
+		if (group.size() < getLimit())
+		{
+			player.sendMessage("隊伍人數不足！至少需要 " + getLimit() + " 人才能進入副本。");
+			return false;
+		}
+		return true;
 	}
 	
 	public int getLimit()

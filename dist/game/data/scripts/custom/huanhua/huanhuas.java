@@ -29,20 +29,20 @@ public class huanhuas extends Script
 	{
 		RACE_CONFIG.put(1, "人類戰士");
 		RACE_CONFIG.put(2, "人類法師");
-		RACE_CONFIG.put(3, "白精靈");
-		RACE_CONFIG.put(4, "黑精靈");
-		RACE_CONFIG.put(5, "獸人戰士");
-		RACE_CONFIG.put(6, "獸人法師");
+		RACE_CONFIG.put(3, "精靈");
+		RACE_CONFIG.put(4, "黑暗精靈");
+		RACE_CONFIG.put(5, "半獸人戰士");
+		RACE_CONFIG.put(6, "半獸人法師");
 		RACE_CONFIG.put(7, "矮人");
-		RACE_CONFIG.put(8, "鳥人");
-		RACE_CONFIG.put(9, "死亡騎士人類");
-		RACE_CONFIG.put(10, "死亡騎士精靈");
-		RACE_CONFIG.put(11, "死亡騎士黑精靈");
-		RACE_CONFIG.put(12, "獸人先鋒");
-		RACE_CONFIG.put(15, "高等精靈");
-		RACE_CONFIG.put(16, "狼人");
-		RACE_CONFIG.put(17, "血薔薇");
-		RACE_CONFIG.put(18, "暗鴉武士");
+		RACE_CONFIG.put(8, "闇天使");
+//		RACE_CONFIG.put(9, "死亡騎士人類");
+//		RACE_CONFIG.put(10, "死亡騎士精靈");
+//		RACE_CONFIG.put(11, "死亡騎士黑精靈");
+//		RACE_CONFIG.put(12, "獸人先鋒");
+//		RACE_CONFIG.put(15, "高等精靈");
+//		RACE_CONFIG.put(16, "狼人");
+//		RACE_CONFIG.put(17, "血薔薇");
+//		RACE_CONFIG.put(18, "暗鴉武士");
 	}
 
 	// ==================== 系統代碼 ====================

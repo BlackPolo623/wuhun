@@ -113,7 +113,8 @@ import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.managers.events.BlackCouponManager;
 import org.l2jmobius.gameserver.managers.events.EventDropManager;
 import org.l2jmobius.gameserver.managers.events.LeonasDungeonManager;
-import org.l2jmobius.gameserver.managers.events.ValakasTempleManager;
+import org.l2jmobius.gameserver.managers.events.InstanceEntryManager;
+// import org.l2jmobius.gameserver.managers.events.ValakasTempleManager; // 已廢棄，改用 InstanceEntryManager
 import org.l2jmobius.gameserver.managers.games.MonsterRaceManager;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.drops.WorldDropManager;
@@ -327,11 +328,12 @@ public class GameServer
 		EventDropManager.getInstance();
 		LeonasDungeonManager.getInstance();
 		JewelSystemManager.getInstance();
-		
+
 		printSection("Instance");
 		InstanceManager.getInstance();
-		ValakasTempleManager.getInstance();
-		
+		InstanceEntryManager.getInstance(); // 通用副本次數管理器
+		// ValakasTempleManager.getInstance(); // 已廢棄，改用 InstanceEntryManager
+
 		printSection("Olympiad");
 		Olympiad.getInstance();
 		Hero.getInstance();

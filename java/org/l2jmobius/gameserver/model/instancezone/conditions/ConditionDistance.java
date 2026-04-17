@@ -31,13 +31,18 @@ public class ConditionDistance extends Condition
 	public ConditionDistance(InstanceTemplate template, StatSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
 		super(template, parameters, onlyLeader, showMessageAndHtml);
-		setSystemMessage(SystemMessageId.C1_IS_TOO_FAR_FROM_THE_INSTANCE_ZONE_ENTRANCE, (message, player) -> message.addString(player.getName()));
+		// 不使用系統訊息，改用自訂訊息
 	}
-	
+
 	@Override
 	public boolean test(Player player, Npc npc)
 	{
 		final int distance = getParameters().getInt("distance", 1000);
-		return player.isInsideRadius3D(npc, distance);
+		if (!player.isInsideRadius3D(npc, distance))
+		{
+			player.sendMessage(player.getName() + " 距離副本入口太遠！請靠近入口 NPC。");
+			return false;
+		}
+		return true;
 	}
 }

@@ -1,0 +1,147 @@
+<html>
+<body>
+
+<center>
+<br>
+<font color="LEVEL">訓練木樁　傷害統計</font>
+<br>
+<img src="L2UI.SquareGray" width="280" height="1">
+</center>
+
+<table width="280" border="0" cellpadding="0" cellspacing="0">
+<tr><td height="4"></td></tr>
+<tr>
+  <td width="140" align="right"><font color="AAAAAA">P.Def 設定：</font></td>
+  <td width="10"></td>
+  <td><font color="FFFF88">%pdef%</font></td>
+</tr>
+<tr><td height="2"></td></tr>
+<tr>
+  <td align="right"><font color="AAAAAA">M.Def 設定：</font></td>
+  <td></td>
+  <td><font color="FFFF88">%mdef%</font></td>
+</tr>
+<tr><td height="2"></td></tr>
+<tr>
+  <td align="right"><font color="AAAAAA">已計時：</font></td>
+  <td></td>
+  <td><font color="AAAAAA">%elapsed% 秒</font></td>
+</tr>
+<tr><td height="2"></td></tr>
+<tr>
+  <td align="right"><font color="AAAAAA">剩餘時間：</font></td>
+  <td></td>
+  <td><font color="%remain_color%">%remaining% 秒</font></td>
+</tr>
+<tr><td height="6"></td></tr>
+</table>
+
+<img src="L2UI.SquareGray" width="280" height="1">
+
+<table width="280" border="0" cellpadding="0" cellspacing="0">
+<tr bgcolor="112211"><td align="center" height="20"><font color="B09979">總計傷害</font></td></tr>
+</table>
+
+<table width="280" border="0" cellpadding="0" cellspacing="0">
+<tr><td height="3"></td></tr>
+<tr>
+  <td width="165" align="right"><font color="AAAAAA">總傷害（物＋魔）：</font></td>
+  <td width="10"></td>
+  <td><font color="00FF88">%total_dmg%</font></td>
+</tr>
+<tr><td height="2"></td></tr>
+<tr>
+  <td align="right"><font color="AAAAAA">總打擊次數：</font></td>
+  <td></td>
+  <td><font color="CCCCCC">%total_hits%</font></td>
+</tr>
+<tr><td height="2"></td></tr>
+<tr>
+  <td align="right"><font color="AAAAAA">每秒傷害 (DPS)：</font></td>
+  <td></td>
+  <td><font color="FFFF00">%dps%</font></td>
+</tr>
+<tr><td height="6"></td></tr>
+</table>
+
+<img src="L2UI.SquareGray" width="280" height="1">
+
+<table width="280" border="0" cellpadding="0" cellspacing="0">
+<tr bgcolor="2A1A00"><td align="center" height="20"><font color="FF9900">物理傷害</font></td></tr>
+</table>
+
+<table width="280" border="0" cellpadding="0" cellspacing="0">
+<tr><td height="3"></td></tr>
+<tr>
+  <td width="165" align="right"><font color="AAAAAA">物理總傷害：</font></td>
+  <td width="10"></td>
+  <td><font color="FF9900">%phys_dmg%</font></td>
+</tr>
+<tr><td height="2"></td></tr>
+<tr>
+  <td align="right"><font color="AAAAAA">物理打擊次數：</font></td>
+  <td></td>
+  <td><font color="CCCCCC">%phys_hits%</font></td>
+</tr>
+<tr><td height="2"></td></tr>
+<tr>
+  <td align="right"><font color="AAAAAA">單次最高物理：</font></td>
+  <td></td>
+  <td><font color="FF6666">%max_phys%</font></td>
+</tr>
+<tr><td height="2"></td></tr>
+<tr>
+  <td align="right"><font color="AAAAAA">平均物理傷害：</font></td>
+  <td></td>
+  <td><font color="CCCCCC">%avg_phys%</font></td>
+</tr>
+<tr><td height="6"></td></tr>
+</table>
+
+<img src="L2UI.SquareGray" width="280" height="1">
+
+<table width="280" border="0" cellpadding="0" cellspacing="0">
+<tr bgcolor="001A2A"><td align="center" height="20"><font color="88AAFF">技能 / 魔法傷害</font></td></tr>
+</table>
+
+<table width="280" border="0" cellpadding="0" cellspacing="0">
+<tr><td height="3"></td></tr>
+<tr>
+  <td width="165" align="right"><font color="AAAAAA">技能總傷害：</font></td>
+  <td width="10"></td>
+  <td><font color="88AAFF">%magic_dmg%</font></td>
+</tr>
+<tr><td height="2"></td></tr>
+<tr>
+  <td align="right"><font color="AAAAAA">技能打擊次數：</font></td>
+  <td></td>
+  <td><font color="CCCCCC">%magic_hits%</font></td>
+</tr>
+<tr><td height="2"></td></tr>
+<tr>
+  <td align="right"><font color="AAAAAA">單次最高技能：</font></td>
+  <td></td>
+  <td><font color="AABBFF">%max_magic%</font></td>
+</tr>
+<tr><td height="2"></td></tr>
+<tr>
+  <td align="right"><font color="AAAAAA">平均技能傷害：</font></td>
+  <td></td>
+  <td><font color="CCCCCC">%avg_magic%</font></td>
+</tr>
+<tr><td height="6"></td></tr>
+</table>
+
+<img src="L2UI.SquareGray" width="280" height="1">
+
+<table width="280" border="0" cellpadding="0" cellspacing="0">
+<tr><td height="6"></td></tr>
+<tr><td align="center">
+  <button value="重新整理" action="bypass -h Quest TrainingDummy view_stats" width="100" height="22" back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+  %owner_buttons%
+</td></tr>
+<tr><td height="4"></td></tr>
+</table>
+
+</body>
+</html>

@@ -235,12 +235,12 @@ public class chenghao extends Script
 
 		List<TitleSeries> allSeries = TitleSystem.getAllSeries();
 		int totalSeries = allSeries.size();
-		int totalPages = Math.max(1, (totalSeries + 4) / 5);
+		int totalPages = Math.max(1, (totalSeries + 9) / 10);
 		if (page < 0) page = 0;
 		if (page >= totalPages) page = totalPages - 1;
 
-		int start = page * 5;
-		int end = Math.min(start + 5, totalSeries);
+		int start = page * 10;
+		int end = Math.min(start + 10, totalSeries);
 
 		StringBuilder seriesList = new StringBuilder();
 		for (int i = start; i < end; i++)
@@ -852,7 +852,7 @@ public class chenghao extends Script
 		{
 			if (series.getSeriesId().equals(seriesId))
 			{
-				return index / 5;
+				return index / 10;
 			}
 			index++;
 		}

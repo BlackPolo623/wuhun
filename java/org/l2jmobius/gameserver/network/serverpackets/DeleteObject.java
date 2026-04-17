@@ -47,6 +47,6 @@ public class DeleteObject extends ServerPacket
 	{
 		ServerPackets.DELETE_OBJECT.writeId(this, buffer);
 		buffer.writeInt(_objectId);
-		buffer.writeByte(0); // c2
+		buffer.writeByte(1); // c2
 	}
 }

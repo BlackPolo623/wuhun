@@ -24,6 +24,8 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.l2jmobius.gameserver.data.xml.PetSnapshotData;
+import org.l2jmobius.gameserver.data.xml.PetSnapshotData.PetSnapshotEntry;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -42,12 +44,24 @@ import org.l2jmobius.gameserver.model.stats.Stat;
  * 特性：共享的數值使用 mergeFinalAdd()，在所有加乘計算完成後才加入，
  *       不受玩家本身任何 buff / 裝備加成的影響。
  *
- * @author Mobius (original), Custom (pet-to-player rewrite)
+ * 魂契支援：若玩家無召喚寵物但已締結魂契，改從魂契數據讀取
+ *           物攻 / 魔攻 / 物防 / 魔防 四項數值進行共享計算。
+ *
+ * @author Mobius (original), Custom (pet-to-player rewrite, 魂契 support)
  */
 public class ServitorShare extends AbstractEffect
 {
 	/** stat → 共享百分比（0.0 ~ 1.0），從 XML 值 / 100 換算而來 */
 	private final Map<Stat, Float> _sharedStats = new EnumMap<>(Stat.class);
+
+	/**
+	 * 取得此效果的共享比率表（唯讀）。
+	 * 供 PetHatchingSystem 等外部模組顯示共享%數值使用。
+	 */
+	public Map<Stat, Float> getSharedStats()
+	{
+		return java.util.Collections.unmodifiableMap(_sharedStats);
+	}
 
 	public ServitorShare(StatSet params)
 	{
@@ -127,7 +141,35 @@ public class ServitorShare extends AbstractEffect
 			}
 		}
 
-		// 若沒有任何召喚物，什麼都不加（等同技能效果為 0）
+		// === 魂契 fallback：無召喚物時改讀魂契數據 ===
+		if (!applied)
+		{
+			final PetSnapshotEntry snap = PetSnapshotData.getInstance().getSnapshot(player.getObjectId());
+			if (snap != null)
+			{
+				applySnapshotStat(playerStatObj, Stat.PHYSICAL_ATTACK,   snap.patk);
+				applySnapshotStat(playerStatObj, Stat.MAGIC_ATTACK,      snap.matk);
+				applySnapshotStat(playerStatObj, Stat.PHYSICAL_DEFENCE,  snap.pdef);
+				applySnapshotStat(playerStatObj, Stat.MAGICAL_DEFENCE,   snap.mdef);
+			}
+		}
+	}
+
+	/**
+	 * 將魂契的單項屬性數值乘上技能共享比率後，以 mergeFinalAdd 加算到玩家身上。
+	 * 若此技能 XML 未設定該 stat 的共享%，則略過。
+	 */
+	private void applySnapshotStat(CreatureStat playerStat, Stat stat, double value)
+	{
+		if (value <= 0)
+		{
+			return;
+		}
+		final Float rate = _sharedStats.get(stat);
+		if (rate != null)
+		{
+			playerStat.mergeFinalAdd(stat, value * rate);
+		}
 	}
 
 	@Override

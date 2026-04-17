@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30688</npc> <!-- Fishing Guildsman -->
+	</npcs>
+
+	<!-- Lv1 → Lv2 | 成功率 90% | 期望消耗 ~1.1 枚 -->
+	<item>
+		<ingredient id="102337" count="1" /> <!-- 武魂古文Lv1 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102338" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv2 -->
+		<production id="102338" count="1" chance="90"/> <!-- 成功：武魂古文Lv2 -->
+		<production id="102337" count="1" chance="10"/> <!-- 失敗：維持Lv1 -->
+	</item>
+
+	<!-- Lv2 → Lv3 | 成功率 85% | 期望消耗 ~1.2 枚 -->
+	<item>
+		<ingredient id="102338" count="1" /> <!-- 武魂古文Lv2 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102339" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv3 -->
+		<production id="102339" count="1" chance="85"/> <!-- 成功：武魂古文Lv3 -->
+		<production id="102338" count="1" chance="15"/> <!-- 失敗：維持Lv2 -->
+	</item>
+
+	<!-- Lv3 → Lv4 | 成功率 80% | 期望消耗 ~1.3 枚 -->
+	<item>
+		<ingredient id="102339" count="1" /> <!-- 武魂古文Lv3 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102340" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv4 -->
+		<production id="102340" count="1" chance="80"/> <!-- 成功：武魂古文Lv4 -->
+		<production id="102339" count="1" chance="20"/> <!-- 失敗：維持Lv3 -->
+	</item>
+
+	<!-- Lv4 → Lv5 | 成功率 75% | 期望消耗 ~1.3 枚 -->
+	<item>
+		<ingredient id="102340" count="1" /> <!-- 武魂古文Lv4 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102341" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv5 -->
+		<production id="102341" count="1" chance="75"/> <!-- 成功：武魂古文Lv5 -->
+		<production id="102340" count="1" chance="25"/> <!-- 失敗：維持Lv4 -->
+	</item>
+
+	<!-- Lv5 → Lv6 | 成功率 65% | 期望消耗 ~1.5 枚 -->
+	<item>
+		<ingredient id="102341" count="1" /> <!-- 武魂古文Lv5 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102342" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv6 -->
+		<production id="102342" count="1" chance="65"/> <!-- 成功：武魂古文Lv6 -->
+		<production id="102341" count="1" chance="35"/> <!-- 失敗：維持Lv5 -->
+	</item>
+
+	<!-- Lv6 → Lv7 | 成功率 55% | 期望消耗 ~1.8 枚 -->
+	<item>
+		<ingredient id="102342" count="1" /> <!-- 武魂古文Lv6 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102343" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv7 -->
+		<production id="102343" count="1" chance="55"/> <!-- 成功：武魂古文Lv7 -->
+		<production id="102342" count="1" chance="45"/> <!-- 失敗：維持Lv6 -->
+	</item>
+
+	<!-- Lv7 → Lv8 | 成功率 40% | 期望消耗 ~2.5 枚 -->
+	<item>
+		<ingredient id="102343" count="1" /> <!-- 武魂古文Lv7 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102344" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv8 -->
+		<production id="102344" count="1" chance="40"/> <!-- 成功：武魂古文Lv8 -->
+		<production id="102343" count="1" chance="60"/> <!-- 失敗：維持Lv7 -->
+	</item>
+
+	<!-- Lv8 → Lv9 | 成功率 25% | 期望消耗 ~4.0 枚 -->
+	<item>
+		<ingredient id="102344" count="1" /> <!-- 武魂古文Lv8 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102345" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv9 -->
+		<production id="102345" count="1" chance="25"/> <!-- 成功：武魂古文Lv9 -->
+		<production id="102344" count="1" chance="75"/> <!-- 失敗：維持Lv8 -->
+	</item>
+
+	<!-- Lv9 → Lv10 | 成功率 12% | 期望消耗 ~8.3 枚 -->
+	<item>
+		<ingredient id="102345" count="1" /> <!-- 武魂古文Lv9 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102346" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv10 -->
+		<production id="102346" count="1" chance="12"/> <!-- 成功：武魂古文Lv10 -->
+		<production id="102345" count="1" chance="88"/> <!-- 失敗：維持Lv9 -->
+	</item>
+
+	<!-- Lv10 → Lv11 | 成功率 8% | 期望消耗 ~12.5 枚 -->
+	<item>
+		<ingredient id="102346" count="1" /> <!-- 武魂古文Lv10 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102347" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv11 -->
+		<production id="102347" count="1" chance="8"/>  <!-- 成功：武魂古文Lv11 -->
+		<production id="102346" count="1" chance="92"/> <!-- 失敗：維持Lv10 -->
+	</item>
+
+	<!-- Lv11 → Lv12 | 成功率 5% | 期望消耗 ~20 枚 -->
+	<item>
+		<ingredient id="102347" count="1" /> <!-- 武魂古文Lv11 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102348" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv12 -->
+		<production id="102348" count="1" chance="5"/>  <!-- 成功：武魂古文Lv12 -->
+		<production id="102347" count="1" chance="95"/> <!-- 失敗：維持Lv11 -->
+	</item>
+
+	<!-- Lv12 → Lv13 | 成功率 4% | 期望消耗 ~25 枚 -->
+	<item>
+		<ingredient id="102348" count="1" /> <!-- 武魂古文Lv12 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102349" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv13 -->
+		<production id="102349" count="1" chance="4"/>  <!-- 成功：武魂古文Lv13 -->
+		<production id="102348" count="1" chance="96"/> <!-- 失敗：維持Lv12 -->
+	</item>
+
+	<!-- Lv13 → Lv14 | 成功率 3% | 期望消耗 ~33 枚 -->
+	<item>
+		<ingredient id="102349" count="1" /> <!-- 武魂古文Lv13 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102350" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv14 -->
+		<production id="102350" count="1" chance="3"/>  <!-- 成功：武魂古文Lv14 -->
+		<production id="102349" count="1" chance="97"/> <!-- 失敗：維持Lv13 -->
+	</item>
+
+	<!-- Lv14 → Lv15 | 成功率 3% | 期望消耗 ~33 枚 -->
+	<item>
+		<ingredient id="102350" count="1" /> <!-- 武魂古文Lv14 -->
+		<ingredient id="102352" count="1" /> <!-- 武魂古文鑄幣 -->
+		<production id="102351" count="1" chance="0"/>  <!-- ICON展示：武魂古文Lv15 -->
+		<production id="102351" count="1" chance="3"/>  <!-- 成功：武魂古文Lv15 -->
+		<production id="102350" count="1" chance="97"/> <!-- 失敗：維持Lv14 -->
+	</item>
+
+</list>

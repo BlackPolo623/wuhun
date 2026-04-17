@@ -50,6 +50,7 @@ import org.l2jmobius.gameserver.data.xml.BeautyShopData;
 import org.l2jmobius.gameserver.data.xml.ClanHallData;
 import org.l2jmobius.gameserver.data.xml.EnchantItemGroupsData;
 import org.l2jmobius.gameserver.data.xml.MableGameData;
+import org.l2jmobius.gameserver.data.xml.PetSnapshotData;
 import org.l2jmobius.gameserver.data.xml.SkillTreeData;
 import org.l2jmobius.gameserver.managers.AdenLaboratoryManager;
 import org.l2jmobius.gameserver.managers.AntiFeedManager;
@@ -1041,6 +1042,9 @@ public class EnterWorld extends ClientPacket
 		
 		// Remove variable used by hunting zone system.
 		player.getVariables().remove(PlayerVariables.LAST_HUNTING_ZONE_ID);
+
+		// 【魂契系統】從資料庫載入玩家的魂契數據到記憶體快取
+		PetSnapshotData.getInstance().loadSnapshot(player.getObjectId());
 	}
 	
 	private void notifyClanMembers(Player player)

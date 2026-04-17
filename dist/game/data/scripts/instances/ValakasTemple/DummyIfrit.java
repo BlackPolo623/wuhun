@@ -48,19 +48,23 @@ public class DummyIfrit extends Script
 		{
 			return null;
 		}
-		
+
 		if (world.getStatus() == ValakasTemple.GOTO_DUMMY_IFRIT)
 		{
 			if (World.getInstance().getVisibleObjectsInRange(npc, Player.class, 400).isEmpty())
 			{
+				// 先取消舊的 timer，避免累積
+				cancelQuestTimer("CHECK_STATUS", npc, null);
 				startQuestTimer("CHECK_STATUS", 2_000, npc, null);
 			}
 			else
 			{
+				// 玩家進入範圍，取消 timer 並推進狀態
+				cancelQuestTimer("CHECK_STATUS", npc, null);
 				world.setStatus(ValakasTemple.OPEN_GATE_TIMER);
 			}
 		}
-		
+
 		return super.onEvent(event, npc, player);
 	}
 	

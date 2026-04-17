@@ -132,17 +132,81 @@ public class GiftPackageManagerFrame extends JFrame
     private static Map<String, GiftPackage> initializePackages()
     {
         Map<String, GiftPackage> packages = new LinkedHashMap<>();
-        
+
+        // ========== 武魂古文升級禮包系列 ==========
+
+        GiftPackage Rune_1000 = new GiftPackage(
+            "Donate_202604_Rune_1000",
+            "初級古文升級禮包",
+            "NT.1000 | 古文升級禮包無法補差額購買"
+        );
+        Rune_1000.addReward(102337, 1);   // 武魂古文Lv1
+        Rune_1000.addReward(102352, 10);  // 武魂古文鑄幣 x10
+        packages.put(Rune_1000.getPackageId(), Rune_1000);
+
+        GiftPackage Rune_2500 = new GiftPackage(
+            "Donate_202604_Rune_2500",
+            "中級古文升級禮包",
+            "NT.2500 | 古文升級禮包無法補差額購買"
+        );
+        Rune_2500.addReward(102337, 1);   // 武魂古文Lv1
+        Rune_2500.addReward(102352, 25);  // 武魂古文鑄幣 x25
+        packages.put(Rune_2500.getPackageId(), Rune_2500);
+
+        GiftPackage Rune_5000 = new GiftPackage(
+            "Donate_202604_Rune_5000",
+            "高級古文升級禮包",
+            "NT.5000 | 古文升級禮包無法補差額購買"
+        );
+        Rune_5000.addReward(102337, 1);   // 武魂古文Lv1
+        Rune_5000.addReward(102352, 50);  // 武魂古文鑄幣 x50
+        packages.put(Rune_5000.getPackageId(), Rune_5000);
+
+        GiftPackage Rune_10000 = new GiftPackage(
+            "Donate_202604_Rune_10000",
+            "頂級古文升級禮包",
+            "NT.10000 | 古文升級禮包無法補差額購買"
+        );
+        Rune_10000.addReward(102337, 1);   // 武魂古文Lv1
+        Rune_10000.addReward(102352, 100); // 武魂古文鑄幣 x100
+        packages.put(Rune_10000.getPackageId(), Rune_10000);
+
+        GiftPackage Rune_15000 = new GiftPackage(
+            "Donate_202604_Rune_15000",
+            "終極古文升級禮包",
+            "NT.15000 | 古文升級禮包無法補差額購買"
+        );
+        Rune_15000.addReward(102337, 1);   // 武魂古文Lv1
+        Rune_15000.addReward(102352, 150); // 武魂古文鑄幣 x150
+        packages.put(Rune_15000.getPackageId(), Rune_15000);
+
+        GiftPackage RuneCoin_S = new GiftPackage(
+            "Donate_202604_RuneCoin_1200",
+            "武魂古文鑄幣補充小包",
+            "NT.1200 | 須購買過任一古文升級禮包才有購買資格"
+        );
+        RuneCoin_S.addReward(102352, 10); // 武魂古文鑄幣 x10
+        packages.put(RuneCoin_S.getPackageId(), RuneCoin_S);
+
+        GiftPackage RuneCoin_L = new GiftPackage(
+            "Donate_202604_RuneCoin_2400",
+            "武魂古文鑄幣補充大包",
+            "NT.2400 | 須購買過任一古文升級禮包才有購買資格"
+        );
+        RuneCoin_L.addReward(102352, 20); // 武魂古文鑄幣 x20
+        packages.put(RuneCoin_L.getPackageId(), RuneCoin_L);
+
         // ========== 2025年2月禮包 ==========
-        
+
         // 基礎禮包
         GiftPackage Donate_202602_2000 = new GiftPackage(
-            "Donate_202602_2000",
-            "2026年2月禮包初階轉換禮包",
-            "2000元"
+                "Donate_202602_2000",
+                "2026年2月禮包初" +
+                        "階轉換禮包",
+                "2000元"
         );
-        Donate_202602_2000.addReward(109001, 1);
-        Donate_202602_2000.addReward(111003, 200);
+        Donate_202602_2000.addReward(102337, 1);
+        Donate_202602_2000.addReward(102352, 25);
         packages.put(Donate_202602_2000.getPackageId(), Donate_202602_2000);
 
         GiftPackage Donate_202602_4000 = new GiftPackage(
@@ -179,6 +243,7 @@ public class GiftPackageManagerFrame extends JFrame
         );
         Donate_202603_1000.addReward(112999, 2);
         packages.put(Donate_202603_1000.getPackageId(), Donate_202603_1000);
+
 
         // TODO: 新月份禮包在這裡添加
         // 例如：2025年2月禮包

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="231" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+	<time duration="60" empty="5" eject="5" />
+	<locations>
+		<enter type="FIXED">
+			<location x="84748" y="-17525" z="-1848" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
+	<conditions>
+		<condition type="Party" />
+		<condition type="GroupMin">
+			<param name="limit" value="3" />
+		</condition>
+		<condition type="GroupMax">
+			<param name="limit" value="9" />
+		</condition>
+		<condition type="Level">
+			<param name="min" value="90" />
+		</condition>
+		<condition type="WeeklyEntry">
+			<param name="maxEntries" value="300" />
+		</condition>
+	</conditions>
+	<spawnlist>
+		<group name="blazzing_dragon" spawnByDefault="true">
+			<npc id="29191" x="83629" y="-16569" z="-1872" heading="49151" /> <!-- Blazing Dragon - Fire Dragon -->
+		</group>
+		<group name="reward_chest" spawnByDefault="false">
+			<npc id="920001" x="84315" y="-16365" z="-1883" heading="49151" /> <!-- Reward Chest -->
+		</group>
+	</spawnlist>
+</instance>

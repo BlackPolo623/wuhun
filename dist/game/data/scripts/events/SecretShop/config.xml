@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<event name="Secret Shop" active="25 10 2024-10 04 2026" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/eventConfig.xsd">
+<event name="Secret Shop" active="25 10 2024-09 04 2026" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/eventConfig.xsd">
+	<destroyItemsOnEnd>
+		<item id="94871"/>
+	</destroyItemsOnEnd>
 	<messages>
 		<add type="onEnd" text="神秘商店活動！已經結束下次請早！" />
 		<add type="onEnter" text="神秘商店活動！正式開跑！" />

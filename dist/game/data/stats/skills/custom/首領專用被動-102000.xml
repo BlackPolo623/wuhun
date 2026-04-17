@@ -93,22 +93,31 @@
 		<operateType>P</operateType>
 		<effects>
 			<effect name="FinalDamageReduce">
-				<amount>140.0</amount>
+				<amount>145</amount>
+			</effect>
+			<effect name="FinalDamage">
+				<amount>25</amount>
 			</effect>
 			<effect name="VampiricDefence">
-				<amount>-95</amount>
+				<amount>-90</amount>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="102009" toLevel="1" name="火龍副本首領">
+	<skill id="102009" toLevel="2" name="火龍副本首領">
 		<icon>icon.ev_prestige_rune</icon>
 		<operateType>P</operateType>
 		<effects>
 			<effect name="FinalDamageReduce">
-				<amount>150.0</amount>
+				<amount>
+					<value level="1">165</value>
+					<value level="2">175</value>
+				</amount>
+			</effect>
+			<effect name="FinalDamage">
+				<amount>100</amount>
 			</effect>
 			<effect name="VampiricDefence">
-				<amount>-99.99999</amount>
+				<amount>-97</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -125,33 +134,4 @@
 		</effects>
 	</skill>
 
-	<skill id="102011" toLevel="1" name="吸血機率+0.1%">
-		<icon>icon.ev_prestige_rune</icon>
-		<operateType>P</operateType>
-		<effects>
-			<effect name="VampiricChanceAdd">
-				<amount>0.1</amount>
-			</effect>
-		</effects>
-	</skill>
-
-	<skill id="102012" toLevel="1" name="吸血機率+1%">
-		<icon>icon.ev_prestige_rune</icon>
-		<operateType>P</operateType>
-		<effects>
-			<effect name="VampiricChanceAdd">
-				<amount>1</amount>
-			</effect>
-		</effects>
-	</skill>
-
-	<skill id="102013" toLevel="1" name="吸血機率+5%">
-		<icon>icon.ev_prestige_rune</icon>
-		<operateType>P</operateType>
-		<effects>
-			<effect name="VampiricChanceAdd">
-				<amount>5</amount>
-			</effect>
-		</effects>
-	</skill>
 </list>

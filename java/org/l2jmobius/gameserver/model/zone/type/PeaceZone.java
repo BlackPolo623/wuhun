@@ -23,6 +23,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
+import org.l2jmobius.commons.threads.ThreadPool;
 
 /**
  * A Peace Zone
@@ -74,16 +75,33 @@ public class PeaceZone extends ZoneType
 		{
 			creature.setInsideZone(ZoneId.PEACE, false);
 		}
-		
+
 		if (!getAllowStore())
 		{
 			creature.setInsideZone(ZoneId.NO_STORE, false);
 		}
-		
+
 		// Send player info to nearby players.
 		if (creature.isPlayer() && !creature.isTeleporting())
 		{
 			creature.broadcastInfo();
+		}
+
+		// 【魂契系統】玩家離開和平區時，若有召喚寵物則自動收回
+		// 延遲 500ms 執行，確保 zone flag 已完整更新後再判斷
+		if (creature.isPlayer())
+		{
+			final Player player = creature.asPlayer();
+			ThreadPool.schedule(() ->
+			{
+				if (player.isOnline() && player.hasPet() && !player.isInsideZone(ZoneId.PEACE))
+				{
+					player.getPet().unSummon(player);
+					player.sendMessage("野外地區不允許攜帶寵物，寵物已自動收回。");
+					player.sendMessage("【魂契】功能已開放，締結後寵物能力可在野外持續生效。");
+					player.sendMessage("請至孵化NPC與您的寵物締結魂契。");
+				}
+			}, 500);
 		}
 	}
 	

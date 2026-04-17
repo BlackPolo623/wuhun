@@ -867,7 +867,7 @@
 			<item id="93414" min="1" max="1" chance="25" name="文字W(限時)" /> 
 		</capsuled_items>
 	</item>
-	<item id="103181" name="L.I.N.E.A.G.E.2文字禮盒(限時)" additionalName="Sealed" type="EtcItem">
+	<item id="103181" name="W.U.H.U.N文字禮盒(限時)" additionalName="Sealed" type="EtcItem">
 		<set name="icon" val="icon.event_hero_treasure_box_gold" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -877,14 +877,13 @@
 		<set name="is_sellable" val="true" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="3882" min="1" max="1" chance="14" name="文字L(限時)" />
-			<item id="3881" min="1" max="1" chance="14" name="文字I(限時)" /> 
-			<item id="3883" min="1" max="1" chance="14" name="文字N(限時)" /> 
-			<item id="3875" min="1" max="1" chance="14" name="文字A(限時)" /> 
-			<item id="3879" min="1" max="1" chance="14" name="文字G(限時)" /> 
-			<item id="3888" min="1" max="1" chance="15" name="文字II(限時)" /> 
-			<item id="3877" min="1" max="1" chance="15" name="文字E(限時)" /> 
+			<item id="93414" min="1" max="1" chance="30" name="文字W(限時)" />
+			<item id="93413" min="1" max="1" chance="10" name="文字U(限時)" />
+			<item id="3880" min="1" max="1" chance="30" name="文字H(限時)" />
+			<item id="3883" min="1" max="1" chance="30" name="文字N(限時)" />
 		</capsuled_items>
 	</item>
 	<item id="103182" name="金屬活字(限時)" additionalName="Sealed" type="EtcItem">
