@@ -506,7 +506,7 @@ public class PlunderLands extends InstanceScript
 		final StringBuilder rows = new StringBuilder();
 		if (total == 0)
 		{
-			rows.append("<tr><td colspan=\"3\"><center><font color=\"888888\">目前副本內沒有玩家。</font></center></td></tr>");
+			rows.append("<tr><td colspan=\"3\"><center><font color=\"888888\">目前無玩家。</font></center></td></tr>");
 		}
 		else
 		{
