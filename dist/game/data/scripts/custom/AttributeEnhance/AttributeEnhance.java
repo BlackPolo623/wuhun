@@ -76,7 +76,6 @@ public class AttributeEnhance extends Script
 		SLOT_MAP.put("gloves",  Inventory.PAPERDOLL_GLOVES);
 		SLOT_MAP.put("boots",   Inventory.PAPERDOLL_FEET);
 		SLOT_MAP.put("weapon",  Inventory.PAPERDOLL_RHAND);
-		SLOT_MAP.put("offhand", Inventory.PAPERDOLL_LHAND);
 		SLOT_MAP.put("neck",    Inventory.PAPERDOLL_NECK);
 		SLOT_MAP.put("rear",    Inventory.PAPERDOLL_REAR);
 		SLOT_MAP.put("lear",    Inventory.PAPERDOLL_LEAR);
@@ -89,7 +88,6 @@ public class AttributeEnhance extends Script
 		SLOT_ZH.put("gloves",  "手套");
 		SLOT_ZH.put("boots",   "鞋子");
 		SLOT_ZH.put("weapon",  "主武器");
-		SLOT_ZH.put("offhand", "副手");
 		SLOT_ZH.put("neck",    "項鍊");
 		SLOT_ZH.put("rear",    "右耳環");
 		SLOT_ZH.put("lear",    "左耳環");
@@ -98,7 +96,7 @@ public class AttributeEnhance extends Script
 	}
 
 	private static final String[] ARMOR_SLOTS   = { "head", "chest", "legs", "gloves", "boots" };
-	private static final String[] WEAPON_SLOTS  = { "weapon", "offhand" };
+	private static final String[] WEAPON_SLOTS  = { "weapon" };
 	private static final String[] JEWELRY_SLOTS = { "neck", "rear", "lear", "rfinger", "lfinger" };
 
 	// ── 設定資料 ──────────────────────────────────────────

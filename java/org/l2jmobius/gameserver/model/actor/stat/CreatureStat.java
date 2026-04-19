@@ -425,45 +425,46 @@ public class CreatureStat
 		double wuxian = 0;
 		double zbzs = 0;
 		String s = "matk";
-
+		
 		if (_creature instanceof Player)
 		{
 			if (!_creature.isFakePlayer())
 			{
 				Player player = _creature.asPlayer();
-
+				
 				wuxian += player.getwxsz(s);
 				zbzs = player.getWeaponZscs(); // 直接獲取武器轉生緩存
-
+				
 				zbzs *= Custom.zhuangbeijcz;
-
+				
 				if (wuxian >= Custom.WUXIANXIANDING)
 				{
 					wuxian = Custom.WUXIANXIANDING;
 				}
 				wuxian *= Custom.wuxianjiacheng;
-
+				
 				if (zbzs >= Custom.zhuangbeizsjczd)
 				{
 					zbzs = Custom.zhuangbeizsjczd;
 				}
-
+				
 				if (wuxian > 0)
 				{
 					matk *= 1 + (wuxian / 10000);
 				}
 				matk += zbzs;
-
+				
 				// 寶玉系統加成
 				matk += player.getJewelBonus();
-
-				if (matk >= PlayerConfig.MAX_MATK)
+				double limit = getValue(Stat.unlock_Limit, 1);
+				
+				if (matk >= (PlayerConfig.MAX_MATK * limit))
 				{
-					matk = PlayerConfig.MAX_MATK;
+					matk = PlayerConfig.MAX_MATK * limit;
 				}
 			}
 		}
-
+		
 		return (long) matk;
 	}
 	
@@ -478,13 +479,13 @@ public class CreatureStat
 	public int getMAtkSpd()
 	{
 		double mAtkSpd = getValue(Stat.MAGIC_ATTACK_SPEED);
-
+		
 		// 防止整數溢出：所有生物的施法速度都不能超過 Integer.MAX_VALUE
 		if (mAtkSpd >= Integer.MAX_VALUE)
 		{
 			mAtkSpd = Integer.MAX_VALUE;
 		}
-
+		
 		return (int) mAtkSpd;
 	}
 	
@@ -506,42 +507,43 @@ public class CreatureStat
 		double wuxian = 0;
 		double zbzs = 0;
 		String s = "mdef";
-
+		
 		if (_creature instanceof Player)
 		{
 			if (!_creature.isFakePlayer())
 			{
 				Player player = _creature.asPlayer();
-
+				
 				wuxian += player.getwxsz(s);
 				zbzs = player.getAccessoryZscs() + player.getOffHandZscs(); // 飾品 + 副手
-
+				
 				zbzs *= Custom.zhuangbeijcz;
-
+				
 				if (wuxian >= Custom.WUXIANXIANDING)
 				{
 					wuxian = Custom.WUXIANXIANDING;
 				}
 				wuxian *= Custom.wuxianjiacheng;
-
+				
 				if (zbzs >= Custom.zhuangbeizsjczd)
 				{
 					zbzs = Custom.zhuangbeizsjczd;
 				}
-
+				
 				if (wuxian > 0)
 				{
 					mdef *= 1 + (wuxian / 10000);
 				}
 				mdef += zbzs;
-
-				if (mdef >= PlayerConfig.MAX_MATK)
+				double limit = getValue(Stat.unlock_Limit, 1);
+				
+				if (mdef >= (PlayerConfig.MAX_MATK * limit))
 				{
-					mdef = PlayerConfig.MAX_MATK;
+					mdef = PlayerConfig.MAX_MATK * limit;
 				}
 			}
 		}
-
+		
 		return (long) mdef;
 	}
 	
@@ -622,45 +624,45 @@ public class CreatureStat
 		double wuxian = 0;
 		double zbzs = 0;
 		String s = "patk";
-
+		
 		if (_creature instanceof Player)
 		{
 			if (!_creature.isFakePlayer())
 			{
 				Player player = _creature.asPlayer();
-
+				
 				wuxian += player.getwxsz(s);
 				zbzs = player.getWeaponZscs(); // 主手 + 副手
-
+				
 				zbzs *= Custom.zhuangbeijcz;
-
+				
 				if (wuxian >= Custom.WUXIANXIANDING)
 				{
 					wuxian = Custom.WUXIANXIANDING;
 				}
 				wuxian *= Custom.wuxianjiacheng;
-
+				
 				if (zbzs >= Custom.zhuangbeizsjczd)
 				{
 					zbzs = Custom.zhuangbeizsjczd;
 				}
-
+				
 				if (wuxian > 0)
 				{
 					patk *= 1 + (wuxian / 10000);
 				}
 				patk += zbzs;
-
+				
 				// 寶玉系統加成
 				patk += player.getJewelBonus();
-
-				if (patk >= PlayerConfig.MAX_PATK)
+				double limit = getValue(Stat.unlock_Limit, 1);
+				if (patk >= (PlayerConfig.MAX_PATK * limit))
 				{
-					patk = PlayerConfig.MAX_PATK;
+					patk = PlayerConfig.MAX_PATK * limit;
 				}
 			}
 		}
-
+		
 		return (long) patk;
 	}
 	
@@ -675,13 +677,13 @@ public class CreatureStat
 	public int getPAtkSpd()
 	{
 		double pAtkSpd = getValue(Stat.PHYSICAL_ATTACK_SPEED);
-
+		
 		// 防止整數溢出：所有生物的攻速都不能超過 Integer.MAX_VALUE
 		if (pAtkSpd >= Integer.MAX_VALUE)
 		{
 			pAtkSpd = Integer.MAX_VALUE;
 		}
-
+		
 		return (int) pAtkSpd;
 	}
 	
@@ -694,43 +696,44 @@ public class CreatureStat
 		double wuxian = 0;
 		double zbzs = 0;
 		String s = "pdef";
-
+		
 		if (_creature instanceof Player)
 		{
 			if (!_creature.isFakePlayer())
 			{
 				Player player = _creature.asPlayer();
-
+				
 				// ✅ 優化：直接讀取緩存
 				wuxian += player.getwxsz(s);
 				zbzs = player.getArmorZscs() + player.getOffHandZscs(); // 防具 + 副手
-
+				
 				zbzs *= Custom.zhuangbeijcz;
-
+				
 				if (wuxian >= Custom.WUXIANXIANDING)
 				{
 					wuxian = Custom.WUXIANXIANDING;
 				}
 				wuxian *= Custom.wuxianjiacheng;
-
+				
 				if (zbzs >= Custom.zhuangbeizsjczd)
 				{
 					zbzs = Custom.zhuangbeizsjczd;
 				}
-
+				
 				if (wuxian > 0)
 				{
 					pdef *= 1 + (wuxian / 10000);
 				}
 				pdef += zbzs;
-
-				if (pdef >= PlayerConfig.MAX_PATK)
+				double limit = getValue(Stat.unlock_Limit, 1);
+				
+				if (pdef >= (PlayerConfig.MAX_PATK * limit))
 				{
-					pdef = PlayerConfig.MAX_PATK;
+					pdef = PlayerConfig.MAX_PATK * limit;
 				}
 			}
 		}
-
+		
 		return (long) pdef;
 	}
 	
@@ -1139,7 +1142,7 @@ public class CreatureStat
 	{
 		_statsMul.merge(stat, value, stat::functionMul);
 	}
-
+	
 	/**
 	 * Merges a final flat stat value that bypasses all multipliers.<br>
 	 * Applied AFTER finalize(), so it is NOT amplified by any stat bonuses.<br>
@@ -1151,7 +1154,7 @@ public class CreatureStat
 	{
 		_statsFinalAdd.merge(stat, value, Double::sum);
 	}
-
+	
 	/**
 	 * @param stat
 	 * @return the add value
@@ -1268,7 +1271,7 @@ public class CreatureStat
 		final Double finalAdd = _statsFinalAdd.get(stat);
 		return finalAdd != null ? computed + finalAdd : computed;
 	}
-
+	
 	/**
 	 * @param stat
 	 * @return the final value of the stat

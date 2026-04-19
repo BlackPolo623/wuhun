@@ -152,6 +152,7 @@ import org.l2jmobius.gameserver.managers.MentorManager;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.managers.RecipeManager;
 import org.l2jmobius.gameserver.managers.RevengeHistoryManager;
+import org.l2jmobius.gameserver.managers.MorphManager;
 import org.l2jmobius.gameserver.managers.ScriptManager;
 import org.l2jmobius.gameserver.managers.SellBuffsManager;
 import org.l2jmobius.gameserver.managers.SiegeManager;
@@ -340,6 +341,7 @@ import org.l2jmobius.gameserver.model.siege.Fort;
 import org.l2jmobius.gameserver.model.siege.MercenaryPledgeHolder;
 import org.l2jmobius.gameserver.model.siege.Siege;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
+import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
 import org.l2jmobius.gameserver.model.skill.AmmunitionSkillList;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.CommonSkill;
@@ -10464,6 +10466,15 @@ public class Player extends Playable
 	}
 	
 	/**
+	 * Returns morph-system AVEs that must persist across every EffectList rebuild.
+	 */
+	@Override
+	public Set<AbnormalVisualEffect> getPersistentAbnormalVisualEffects()
+	{
+		return MorphManager.getInstance().getActiveMorphAves(this);
+	}
+
+	/**
 	 * Send a Server->Client packet ExUserInfoAbnormalVisualEffect to this Player and broadcast char info.<br>
 	 */
 	@Override
@@ -12402,7 +12413,13 @@ public class Player extends Playable
 			sendPacket(new ExReadyItemAutoPeel(false, 0));
 			removeRequest(AutoPeelRequest.class);
 		}
-		
+
+		// 傳送後自動取消變身效果
+		if (org.l2jmobius.gameserver.managers.MorphManager.getInstance().hasActiveVisualMorph(this))
+		{
+			org.l2jmobius.gameserver.managers.MorphManager.getInstance().cancelMorphManually(this);
+		}
+
 		super.onTeleported();
 		
 		if (isInAirShip())
@@ -13017,7 +13034,7 @@ public class Player extends Playable
 		}
 		
 		// Exit timed hunting zone.
-		if (isInTimedHuntingZone())
+		if (isInTimedHuntingZone() && (getInstanceWorld() == null))
 		{
 			teleToLocation(TeleportWhereType.TOWN);
 			storeCharBase();
@@ -15203,6 +15220,36 @@ public class Player extends Playable
 		}
 	}
 	
+	/**
+	 * 变身收藏系统：返回当前激活变身的 NPC ID 作为外观 ID（供 CharInfo 发送给周围玩家）。
+	 * 原生变身系统优先。
+	 */
+	@Override
+	public int getTransformationDisplayId()
+	{
+		final int nativeId = super.getTransformationDisplayId();
+		if (nativeId != 0)
+		{
+			return nativeId;
+		}
+		return MorphManager.getInstance().getActiveVisualNpcId(this);
+	}
+
+	/**
+	 * 变身收藏系统：返回客户端 transform_data 中的 transform_id（供 ExUserInfoAbnormalVisualEffect 通知自身客户端渲染外观）。
+	 * 原生变身系统优先。
+	 */
+	@Override
+	public int getTransformationId()
+	{
+		final int nativeId = super.getTransformationId();
+		if (nativeId != 0)
+		{
+			return nativeId;
+		}
+		return MorphManager.getInstance().getActiveVisualTransformId(this);
+	}
+
 	@Override
 	public float getCollisionRadius()
 	{
@@ -15210,17 +15257,16 @@ public class Player extends Playable
 		{
 			return NpcData.getInstance().getTemplate(getMountNpcId()).getFCollisionRadius();
 		}
-		
+
 		final float defaultCollisionRadius = _appearance.isFemale() ? getBaseTemplate().getFCollisionRadiusFemale() : getBaseTemplate().getFCollisionRadius();
 		final Transform transform = getTransformation();
-		if (transform == null)
+		if (transform != null)
 		{
-			return defaultCollisionRadius;
+			return transform.getCollisionRadius(this, defaultCollisionRadius);
 		}
-		
-		return transform.getCollisionRadius(this, defaultCollisionRadius);
+		return MorphManager.getInstance().getVisualCollisionRadius(this, defaultCollisionRadius);
 	}
-	
+
 	@Override
 	public float getCollisionHeight()
 	{
@@ -15228,15 +15274,14 @@ public class Player extends Playable
 		{
 			return NpcData.getInstance().getTemplate(getMountNpcId()).getFCollisionHeight();
 		}
-		
+
 		final float defaultCollisionHeight = _appearance.isFemale() ? getBaseTemplate().getFCollisionHeightFemale() : getBaseTemplate().getFCollisionHeight();
 		final Transform transform = getTransformation();
-		if (transform == null)
+		if (transform != null)
 		{
-			return defaultCollisionHeight;
+			return transform.getCollisionHeight(this, defaultCollisionHeight);
 		}
-		
-		return transform.getCollisionHeight(this, defaultCollisionHeight);
+		return MorphManager.getInstance().getVisualCollisionHeight(this, defaultCollisionHeight);
 	}
 	
 	public int getClientX()
@@ -17366,9 +17411,13 @@ public class Player extends Playable
 					
 					abortCast();
 					stopMove(null);
-					teleToLocation(MapRegionManager.getInstance().getTeleToLocation(this, TeleportWhereType.TOWN));
-					sendPacket(SystemMessageId.THE_HUNTING_ZONE_S_USE_TIME_HAS_EXPIRED_SO_YOU_WERE_MOVED_OUTSIDE);
-					setInstance(null);
+					// 若玩家在副本內（例如使用限時獵場地區的自訂副本），不因時間耗盡而傳出
+					if (getInstanceWorld() == null)
+					{
+						teleToLocation(MapRegionManager.getInstance().getTeleToLocation(this, TeleportWhereType.TOWN));
+						sendPacket(SystemMessageId.THE_HUNTING_ZONE_S_USE_TIME_HAS_EXPIRED_SO_YOU_WERE_MOVED_OUTSIDE);
+						setInstance(null);
+					}
 				}
 			}
 		}, 60000, 60000);

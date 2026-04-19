@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    變身系統配置文件 TransformMorph.xml
+    =====================================================================
+    結構：以 <grade> 為主導，<morph> 寫在 grade 內部。
+    每個 morph 在該階級的完整定義放在一起，非常直觀。
+
+    <list>
+        <grade level="階級編號">
+
+            <morph id="變身唯一ID"
+                   name="變身名稱"
+                   npcId="變身外觀NPC ID"
+                   itemId="激活此變身此階級的道具ID"
+                   collisionRadius="碰撞半徑"
+                   collisionHeight="身高"
+                   abnormalEffects="特效1,特效2">
+                <stat name="屬性名" value="數值" operation="add或mul"/>
+            </morph>
+
+            <morph id="另一個變身" ...>
+                ...
+            </morph>
+
+        </grade>
+
+        <grade level="2">
+            ...
+        </grade>
+    </list>
+
+    ─── 可用 stat name（支持英文或中文）───────────────────────────────────
+        英文              中文              說明
+        pAtk         /  物理攻擊        物理攻擊力
+        mAtk         /  魔法攻擊        魔法攻擊力
+        pDef         /  物理防禦        物理防禦力
+        mDef         /  魔法防禦        魔法防禦力
+        pSkillPow    /  物理技能威力     物理技能傷害倍率
+        mSkillPow    /  魔法技能威力     魔法技能傷害倍率
+        atkSpd       /  攻擊速度        物理攻擊速度
+        castSpd      /  施法速度        魔法施法速度
+        speed        /  移動速度        角色移動速度
+        critRate     /  暴擊率          暴擊觸發率
+        critDmg      /  暴擊傷害        暴擊傷害加成      (mul)
+        mCritRate    /  魔法暴擊率       魔法暴擊觸發率
+        mCritDmg     /  魔法暴擊傷害    魔法暴擊傷害加成  (mul)
+        maxHp        /  最大HP          最大生命值
+        maxMp        /  最大MP          最大魔力值
+        maxCp        /  最大CP          最大CP
+        hpRegen      /  HP回復          生命值自然回復
+        mpRegen      /  MP回復          魔力值自然回復
+        cpRegen      /  CP回復          CP自然回復
+        healEffect   /  治療效果         治療技能效果
+        accuracy     /  命中             命中值
+        evasion      /  閃避             閃避值
+        str          /  力量             STR基礎屬性
+        con          /  體質             CON基礎屬性
+        dex          /  敏捷             DEX基礎屬性
+        int          /  智力             INT基礎屬性
+        wit          /  精神             WIT基礎屬性
+        men          /  意志             MEN基礎屬性
+        pvpPDmg      /  PVP物理傷害      PVP物理傷害加成  (mul)
+        pvpMDmg      /  PVP魔法傷害      PVP魔法傷害加成  (mul)
+        pvpPSkillDmg /  PVP物理技能傷害  PVP物理技能加成  (mul)
+        pvpPDef      /  PVP物理防禦       PVP物理防禦
+        pvpMDef      /  PVP魔法防禦       PVP魔法防禦
+        pvePDmg      /  PVE物理傷害       PVE物理傷害加成 (mul)
+        pveMDmg      /  PVE魔法傷害       PVE魔法傷害加成 (mul)
+        pvePSkillDmg /  PVE物理技能傷害   PVE物理技能加成 (mul)
+        fireAtk      /  火屬性攻擊        火元素攻擊力
+        waterAtk     /  水屬性攻擊        水元素攻擊力
+        windAtk      /  風屬性攻擊        風元素攻擊力
+        earthAtk     /  土屬性攻擊        土元素攻擊力
+        holyAtk      /  神聖攻擊          神聖元素攻擊力
+        darkAtk      /  暗黑攻擊          暗黑元素攻擊力
+        fireRes      /  火屬性抗性        火元素抗性
+        waterRes     /  水屬性抗性        水元素抗性
+        windRes      /  風屬性抗性        風元素抗性
+        earthRes     /  土屬性抗性        土元素抗性
+        holyRes      /  神聖抗性          神聖元素抗性
+        darkRes      /  暗黑抗性          暗黑元素抗性
+        expRate      /  經驗獲取           經驗獲取倍率  (mul)
+        dropRate     /  掉落率             掉落率        (mul)
+        dropAmount   /  掉落數量           掉落數量      (mul)
+        spoilRate    /  採集率             採集率        (mul)
+
+    ─── operation 說明 ──────────────────────────────────────────────────
+        add  固定數值加成，如 value="500"  = +500 物理攻擊
+        mul  百分比乘算，  如 value="10"   = +10%（內部轉換為 factor=1.10）
+
+    ─── 可用 abnormalEffects（AbnormalVisualEffect 枚舉名，多個逗號分隔）──
+        DOT_FIRE     DOT_WATER    DOT_WIND     DOT_SOIL
+        DOT_POISON   DOT_BLEEDING DOT_MP       DOT_FIRE_AREA
+        FREEZING     STUN         SLEEP        SILENCE
+        ROOT         PARALYZE     FLESH_STONE  BLIND
+        STEALTH      SEIZURE1     SEIZURE2     SHAKE
+        GHOST_STUN   MAGIC_SQUARE DANCE_ROOT   FLOATING_ROOT
+        BIG_HEAD     BIG_BODY     CHANGE_TEXTURE
+        ULTIMATE_DEFENCE          VP_UP
+        （完整列表見 AbnormalVisualEffect.java）
+    ===================================================================== -->
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/TransformMorph.xsd">
+
+    <!-- ================================================================
+         階級 1：初階
+         ================================================================ -->
+    <grade level="1">
+
+        <!-- 變身 001：兔子
+             npcId      = 客戶端 NPC 模板 ID，決定別人看到你的外觀
+             transformId = 客戶端 transform_data 的 transform_id，決定自己看到自己的外觀 -->
+        <morph id="1"
+               name="兔子"
+               npcId="27094"
+               transformId="30001"
+               itemId="140001"
+               collisionRadius="10"
+               collisionHeight="23"
+               abnormalEffects="STUN">
+            <stat name="物理攻擊" value="100000" operation="add"/>
+        </morph>
+
+    </grade>
+
+    <!-- ================================================================
+         階級 2：進階
+         ================================================================ -->
+    <grade level="2">
+
+
+    </grade>
+
+    <!-- ================================================================
+         階級 3：精英
+         ================================================================ -->
+    <grade level="3">
+
+
+    </grade>
+
+    <!-- ================================================================
+         階級 4：傳說
+         ================================================================ -->
+    <grade level="4">
+
+
+    </grade>
+
+    <!-- 在此繼續添加更多階級或在現有階級內增加更多變身 -->
+
+</list>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="grade" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="morph" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="stat" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="name"      type="xs:string"  use="required"/>
+                        <xs:attribute name="value"     type="xs:string"  use="required"/>
+                        <xs:attribute name="operation" type="xs:string"  use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="id"               type="xs:integer" use="required"/>
+                  <xs:attribute name="name"             type="xs:string"  use="required"/>
+                  <xs:attribute name="npcId"            type="xs:integer" use="required"/>
+                  <xs:attribute name="itemId"           type="xs:integer" use="required"/>
+                  <xs:attribute name="transformId"      type="xs:integer" use="optional"/>
+                  <xs:attribute name="collisionRadius"  type="xs:string"  use="optional"/>
+                  <xs:attribute name="collisionHeight"  type="xs:string"  use="optional"/>
+                  <xs:attribute name="abnormalEffects"  type="xs:string"  use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="level" type="xs:integer" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

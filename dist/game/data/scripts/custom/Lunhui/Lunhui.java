@@ -174,7 +174,7 @@ public class Lunhui extends Script
 				
 				removePlayerFromInstance(currentInstance, player);
 				
-				player.sendPacket(new CreatureSay(null, ChatType.WORLD, "系統", "✓ 已自動清除副本狀態"));
+				player.sendPacket(new CreatureSay(null, ChatType.WORLD, "系統", "已自動清除副本狀態"));
 				LOGGER.info("Auto-cleared instance state for player: " + player.getName());
 			}
 			catch (Exception e)

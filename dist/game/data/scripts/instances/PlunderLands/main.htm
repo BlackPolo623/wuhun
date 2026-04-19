@@ -1,35 +1,103 @@
-<html><head><title>掠奪之地</title><body>
-<table border=0 cellspacing=0 cellpadding=0 width=292 height=358>
-<tr><td>
-<table border=0 cellspacing=5 cellpadding=0 width=292>
-<tr><td>
-<font color="AAAAAA">
-這是一個掠奪副本，所有玩家可以互相看到彼此。
-<br><br>
-在副本內死亡時，身上持有的指定道具將<font color="FF4444">全數掉落</font>於原地。
-<br><br>
-請謹慎行動！
-</font>
+<html>
+<head><title>掠奪之地</title></head>
+<body scroll="no">
+
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td height=8></td></tr>
+</table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td align=center>
+  <font color="FF4444" size="3"><b>掠奪之地</b></font>
 </td></tr>
 </table>
-<br>
-<center>
 
-<button action="bypass -h Quest PlunderLands enter"
-	value="進入副本"
-	width=220 height=31
-	back="BranchSys3.icon2.ArmyTrainingInfo_down"
-	fore="BranchSys3.icon2.ArmyTrainingInfo">
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td height=6></td></tr>
+</table>
 
-<br>
-
-<button action="bypass -h Quest PlunderLands showPlayers_0"
-	value="查看副本內玩家資訊"
-	width=220 height=31
-	back="BranchSys3.icon2.ArmyTrainingInfo_down"
-	fore="BranchSys3.icon2.ArmyTrainingInfo">
-
-</center>
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td align=center>
+  <img src="L2UI.SquareGray" width="270" height="1">
 </td></tr>
 </table>
-</body></html>
+
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td height=8></td></tr>
+</table>
+
+<table border=0 cellpadding=4 cellspacing=1 width=270 bgcolor="111111">
+  <tr bgcolor="2A0000">
+    <td width=90><font color="FF9966">擊殺進度</font></td>
+    <td><font color="FFFFFF">%kill_progress%</font></td>
+  </tr>
+  <tr bgcolor="1A1A1A">
+    <td width=90><font color="FF9966">下次開放</font></td>
+    <td><font color="FFFFFF">%next_time%</font></td>
+  </tr>
+</table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td height=8></td></tr>
+</table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td align=center>
+  <img src="L2UI.SquareGray" width="270" height="1">
+</td></tr>
+</table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td height=8></td></tr>
+</table>
+
+<table border=0 cellpadding=4 cellspacing=1 width=270 bgcolor="111111">
+  <tr bgcolor="2A0000">
+    <td align=center colspan=2><font color="FF9966">副本規則</font></td>
+  </tr>
+  <tr bgcolor="1A1A1A">
+    <td><font color="AAAAAA">・ 所有玩家共用同一個世界</font></td>
+  </tr>
+  <tr bgcolor="1A1A1A">
+    <td><font color="AAAAAA">・ 整個副本為 </font><font color="FF4444">PVP 區域</font><font color="AAAAAA">，可自由攻擊玩家</font></td>
+  </tr>
+  <tr bgcolor="1A1A1A">
+    <td><font color="AAAAAA">・ 死亡時指定道具將</font><font color="FF4444">全數掉落</font></td>
+  </tr>
+  <tr bgcolor="1A1A1A">
+    <td><font color="AAAAAA">・ 掉落道具可被其他玩家撿取</font></td>
+  </tr>
+</table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td height=12></td></tr>
+</table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=270>
+<tr><td align=center>
+  <button action="bypass -h Quest PlunderLands enter"
+    value="進入掠奪之地"
+    width=200 height=28
+    back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td></tr>
+</table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td height=6></td></tr>
+</table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=270>
+<tr><td align=center>
+  <button action="bypass -h Quest PlunderLands showRank_0"
+    value="查看副本內玩家持有量"
+    width=200 height=28
+    back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td></tr>
+</table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td height=8></td></tr>
+</table>
+
+</body>
+</html>

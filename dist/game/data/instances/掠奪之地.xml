@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<instance id="900" name="掠奪之地" maxWorlds="3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+<instance id="1000" name="掠奪之地" maxWorlds="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
 	<time duration="6000" empty="0" />
 	<locations>
 		<enter type="FIXED">
-			<location x="19057" y="225854" z="-14769" />
+			<location x="16752" y="214188" z="-15174" />
 		</enter>
 		<exit type="ORIGIN" />
 	</locations>
 	<conditions>
-		<condition type="CommandChannel" />
 		<condition type="Distance" />
 	</conditions>
 	<spawnlist>
+		<group name="boss" spawnByDefault="false">
+			<npc id="61001" x="16784" y="215563" z="-15174" heading="48836" /> <!-- Reward Chest -->
+		</group>
+		<group name="normal" spawnByDefault="true">
 		<npc id="22741" x="19057" y="225854" z="-14769" heading="25850" respawnTime="15sec" /> <!-- Harid Lizardman Warrior -->
 		<npc id="22742" x="19378" y="225807" z="-14769" heading="64046" respawnTime="15sec" /> <!-- Harid Lizardman Shaman -->
 		<npc id="22740" x="19374" y="225809" z="-14769" heading="58673" respawnTime="15sec" /> <!-- Harid Lizardman Berserker -->
@@ -617,5 +620,6 @@
 		<npc id="22743" x="16363" y="225443" z="-14769" heading="48069" respawnTime="15sec" /> <!-- Harid Lizardman -->
 		<npc id="22745" x="16363" y="225443" z="-14769" heading="48069" respawnTime="15sec" /> <!-- Tantar Herbalist - Harid Watchman -->
 		<npc id="22744" x="16340" y="225351" z="-14769" heading="46596" respawnTime="15sec" /> <!-- Tantar Warrior - Harid Watchman -->
+		</group>
 	</spawnlist>
 </instance>

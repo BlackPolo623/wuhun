@@ -1349,6 +1349,13 @@ public class EffectList
 		
 		if (broadcast)
 		{
+			// Merge persistent AVEs (e.g. morph system) that must survive a full EffectList rebuild.
+			final Set<AbnormalVisualEffect> persistent = _owner.getPersistentAbnormalVisualEffects();
+			if (!persistent.isEmpty())
+			{
+				abnormalVisualEffectFlags.addAll(persistent);
+			}
+
 			// Check if there is change in AbnormalVisualEffect
 			if (!abnormalVisualEffectFlags.equals(_abnormalVisualEffects))
 			{

@@ -3,6 +3,7 @@ package handlers.itemhandlers;
 import org.l2jmobius.gameserver.handler.IItemHandler;
 import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -27,6 +28,14 @@ public class SkillController implements IItemHandler
 		}
 
 		Player player = playable.asPlayer();
+
+		// 掠奪之地副本內禁止使用技能控制器
+		final Instance instanceWorld = player.getInstanceWorld();
+		if ((instanceWorld != null) && (instanceWorld.getTemplateId() == 1000))
+		{
+			player.sendMessage("掠奪之地內無法使用技能控制器！");
+			return false;
+		}
 
 		if (player.isDead() || player.isInCombat() || player.isCastingNow() || player.isAttackingNow())
 		{

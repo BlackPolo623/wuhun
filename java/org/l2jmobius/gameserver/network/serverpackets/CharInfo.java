@@ -27,6 +27,7 @@ import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.config.OlympiadConfig;
 import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
+import org.l2jmobius.gameserver.managers.MorphManager;
 import org.l2jmobius.gameserver.managers.RankManager;
 import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -332,7 +333,8 @@ public class CharInfo extends ServerPacket
 		buffer.writeInt(_appearance.getTitleColor()); // Confirmed
 		buffer.writeByte(_player.isCursedWeaponEquipped() ? CursedWeaponsManager.getInstance().getLevel(_player.getCursedWeaponEquippedId()) : 0);
 		buffer.writeInt(_clan != null ? _clan.getReputationScore() : 0);
-		buffer.writeInt(_player.getTransformationDisplayId()); // Confirmed
+		int debugTransformId = MorphManager.getInstance().getActiveVisualTransformId(_player);
+		buffer.writeInt(debugTransformId > 0 ? debugTransformId : _player.getTransformationDisplayId()); // Confirmed
 		buffer.writeInt(_player.getAgathionId()); // Confirmed
 		buffer.writeByte(0); // nPvPRestrainStatus
 		buffer.writeInt((int) Math.round(_player.getCurrentCp())); // Confirmed

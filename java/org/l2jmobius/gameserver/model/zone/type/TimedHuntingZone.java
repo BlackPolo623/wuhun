@@ -106,7 +106,7 @@ public class TimedHuntingZone extends ZoneType
 				break;
 			}
 			
-			if (!player.isGM())
+			if (!player.isGM() && (player.getInstanceWorld() == null))
 			{
 				player.teleToLocation(MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN));
 			}

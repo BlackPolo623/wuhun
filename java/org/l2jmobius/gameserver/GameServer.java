@@ -63,6 +63,7 @@ import org.l2jmobius.gameserver.handler.ConditionHandler;
 import org.l2jmobius.gameserver.handler.DailyMissionHandler;
 import org.l2jmobius.gameserver.handler.EffectHandler;
 import org.l2jmobius.gameserver.handler.SkillConditionHandler;
+import org.l2jmobius.gameserver.listeners.MorphListener;
 import org.l2jmobius.gameserver.managers.AirShipManager;
 import org.l2jmobius.gameserver.managers.AntiFeedManager;
 import org.l2jmobius.gameserver.managers.BoatManager;
@@ -112,8 +113,8 @@ import org.l2jmobius.gameserver.managers.WorldExchangeManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.managers.events.BlackCouponManager;
 import org.l2jmobius.gameserver.managers.events.EventDropManager;
-import org.l2jmobius.gameserver.managers.events.LeonasDungeonManager;
 import org.l2jmobius.gameserver.managers.events.InstanceEntryManager;
+import org.l2jmobius.gameserver.managers.events.LeonasDungeonManager;
 // import org.l2jmobius.gameserver.managers.events.ValakasTempleManager; // 已廢棄，改用 InstanceEntryManager
 import org.l2jmobius.gameserver.managers.games.MonsterRaceManager;
 import org.l2jmobius.gameserver.model.World;
@@ -181,7 +182,7 @@ public class GameServer
 		printSection("Scripting Engine");
 		EventDispatcher.getInstance();
 		ScriptEngine.getInstance();
-
+		
 		printSection("World");
 		World.getInstance();
 		MapRegionManager.getInstance();
@@ -328,12 +329,12 @@ public class GameServer
 		EventDropManager.getInstance();
 		LeonasDungeonManager.getInstance();
 		JewelSystemManager.getInstance();
-
+		
 		printSection("Instance");
 		InstanceManager.getInstance();
 		InstanceEntryManager.getInstance(); // 通用副本次數管理器
 		// ValakasTempleManager.getInstance(); // 已廢棄，改用 InstanceEntryManager
-
+		
 		printSection("Olympiad");
 		Olympiad.getInstance();
 		Hero.getInstance();
@@ -432,10 +433,10 @@ public class GameServer
 		{
 			CustomMailManager.getInstance();
 		}
-
+		
 		// 武魂網頁商城郵件管理器
 		wuhun.web.shop.WebShopMailManager.getInstance();
-
+		
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_SERVER_START))
 		{
 			EventDispatcher.getInstance().notifyEventAsync(new OnServerStart());
@@ -443,6 +444,8 @@ public class GameServer
 		
 		PunishmentManager.getInstance();
 		WorldDropManager.getInstance();
+		MorphListener.init();
+		MorphData.getInstance();
 		
 		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
 		LOGGER.info("IdManager: Free ObjectID's remaining: " + IdManager.getInstance().getAvailableIdCount());
@@ -492,7 +495,7 @@ public class GameServer
 		LoginServerThread.getInstance().start();
 		
 		Toolkit.getDefaultToolkit().beep();
-
+		
 		System.out.println("-------------------------------------");
 		System.out.println("伺服器已經開啟！");
 		System.out.println("-------------------------------------");

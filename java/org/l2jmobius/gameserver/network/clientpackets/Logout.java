@@ -91,7 +91,7 @@ public class Logout extends ClientPacket
 			
 			player.setInstance(null);
 		}
-		else if (player.isInTimedHuntingZone())
+		else if (player.isInTimedHuntingZone() && (player.getInstanceWorld() == null))
 		{
 			location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
 		}

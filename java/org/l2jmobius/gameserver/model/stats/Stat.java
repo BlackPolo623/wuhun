@@ -379,6 +379,7 @@ public enum Stat
 	ChangeWeaponCount("ChangeWeaponRadius"),
 	ELIXIR_USAGE_LIMIT("elixirUsageLimit"),
 	RESURRECTION_FEE_MODIFIER("resurrectionFeeModifier"),
+	unlock_Limit("unlocklimit"),
 	COMBAT_POWER("combatPower");
 	
 	public static final int NUM_STATS = values().length;

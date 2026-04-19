@@ -33,6 +33,7 @@ import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
+import org.l2jmobius.gameserver.managers.MorphManager;
 import org.l2jmobius.gameserver.managers.PremiumManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
@@ -1037,6 +1038,14 @@ public class PlayerStat extends PlayableStat
 		return super.getReuseTime(skill) + addedReuse;
 	}
 	
+	@Override
+	protected void resetStats()
+	{
+		super.resetStats();
+		// 注入变身属性加成（在属性重算写锁内执行，直接 mergeAdd/mergeMul）
+		MorphManager.getInstance().pumpMorphStats(getActiveChar(), this);
+	}
+
 	@Override
 	public void recalculateStats(boolean broadcast)
 	{

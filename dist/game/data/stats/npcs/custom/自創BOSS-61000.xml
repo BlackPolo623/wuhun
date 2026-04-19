@@ -18,4 +18,30 @@
 			<skill id="102000" level="1"/>
 		</skillList>
 	</npc>
+	<npc id="61001" displayId="29258" level="90" type="GrandBoss" name="掠奪女神" usingServerSideName="true" title="★★★掠奪之地★★★" usingServerSideTitle="true">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="100000000000" sp="100000000000" />
+		<stats str="150" int="150" dex="150" wit="150" con="150" men="150">
+			<vitals hp="9999999999" hpRegen="10000000" mp="18000" mpRegen="3.6"/>
+			<speed>
+				<walk ground="40"/>
+				<run ground="180"/>
+			</speed>
+			<attack physical="5500000" magical="5500000" critical="4" attackSpeed="1000" range="40"/>
+			<defence physical="750000" magical="750000"/>
+		</stats>
+		<collision>
+			<radius normal="66"/>
+			<height normal="125.4"/>
+		</collision>
+		<skillList>
+			<skill id="102003" level="1" />
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="102337" min="1" max="1" chance="10"/>
+			</drop>
+		</dropLists>
+	</npc>
 </list>

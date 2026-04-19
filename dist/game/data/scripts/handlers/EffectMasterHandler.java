@@ -500,6 +500,7 @@ public class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("ChangeWeapon", ChangeWeapon::new);
 		EffectHandler.getInstance().registerHandler("ChangeWeaponRadius", ChangeWeaponRadius::new);
 		EffectHandler.getInstance().registerHandler("ChangeWeaponCount", ChangeWeaponCount::new);
+		EffectHandler.getInstance().registerHandler("unlock_Limit", unlock_Limit::new);
 		LOGGER.info(EffectMasterHandler.class.getSimpleName() + ": Loaded " + EffectHandler.getInstance().size() + " effect handlers.");
 	}
 }

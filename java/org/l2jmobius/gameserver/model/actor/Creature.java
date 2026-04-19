@@ -134,6 +134,7 @@ import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.options.OptionSkillHolder;
 import org.l2jmobius.gameserver.model.options.OptionSkillType;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
+import org.l2jmobius.gameserver.model.skill.AbnormalVisualEffect;
 import org.l2jmobius.gameserver.model.skill.BuffFinishTask;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.CommonSkill;
@@ -1497,6 +1498,19 @@ public abstract class Creature extends WorldObject
 			shotConsumed = hit.isShotUsed();
 		}
 		double wc = getWeaponChange();
+		// 掠奪之地（副本模板 1000）內禁用武器轉換範圍攻擊
+		if (isPlayer())
+		{
+			final Instance iw = asPlayer().getInstanceWorld();
+			if ((iw != null) && (iw.getTemplateId() == 1000))
+			{
+				wc = 0;
+			}
+		}
+		if (target.isPlayer())
+		{
+			wc = 0;
+		}
 		if (wc >= 1)
 		{
 			// H5 Changes: without Polearm Mastery (skill 216) max simultaneous attacks is 3 (1 by default + 2 in skill 3599).
@@ -2985,6 +2999,16 @@ public abstract class Creature extends WorldObject
 	public void updateAbnormalVisualEffects()
 	{
 		// overridden
+	}
+
+	/**
+	 * Returns persistent abnormal visual effects that must survive EffectList rebuild.<br>
+	 * Override in subclasses (e.g. Player) to inject morph or other permanent AVEs.
+	 * @return set of permanent AVEs, never null
+	 */
+	public Set<AbnormalVisualEffect> getPersistentAbnormalVisualEffects()
+	{
+		return java.util.Collections.emptySet();
 	}
 
 	/**
