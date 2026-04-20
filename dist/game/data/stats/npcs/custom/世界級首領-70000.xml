@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
-    <npc id="70000" displayId="29258" level="90" type="GrandBoss" name="深淵巨獸" usingServerSideName="true" title="★★★世界首領★★★" usingServerSideTitle="true">
+    <npc id="70000" displayId="29258" level="90" type="GrandBoss" name="深淵巨獸" usingServerSideName="true" title="★初代世界首領★" usingServerSideTitle="true">
         <race>ELEMENTAL</race>
         <sex>MALE</sex>
         <acquire exp="100000000000" sp="100000000000" />
@@ -66,4 +66,60 @@
         </dropLists>
     </npc>
 
+    <npc id="70001" displayId="29259" level="90" type="RaidBoss" name="伊絲蒂娜" usingServerSideName="true" title="★二代世界首領★" usingServerSideTitle="true" >
+        <race>DRAGON</race>
+        <sex>MALE</sex>
+        <acquire exp="5500000000" sp="125" />
+        <stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+            <vitals hp="1000000000" hpRegen="1000000" mp="20000" mpRegen="20000" />
+            <attack physical="2000000000" magical="2000000000" random="10" critical="50" accuracy="99" attackSpeed="800" type="SWORD" range="40" distance="80" width="120" />
+            <defence physical="1000000000" magical="700000000" />
+            <speed>
+                <walk ground="13" />
+                <run ground="170" />
+            </speed>
+            <hitTime>600</hitTime>
+            <attribute>
+                <attack type="DARK" value="3000"/>
+                <defence dark="3000"/>
+            </attribute>
+        </stats>
+        <status attackable="true"/>
+        <collision>
+            <radius normal="190"/>
+            <height normal="335"/>
+        </collision>
+        <skillList>
+            <skill id="102010" level="1"/>
+        </skillList>
+        <dropLists>
+            <drop>
+                <item id="105839" min="1" max="1" chance="100"/>
+                <item id="105840" min="1" max="1" chance="100"/>
+                <item id="105841" min="1" max="1" chance="100"/>
+                <item id="105842" min="1" max="1" chance="100"/>
+                <item id="105843" min="1" max="1" chance="100"/>
+                <item id="105839" min="1" max="1" chance="50"/>
+                <item id="105840" min="1" max="1" chance="50"/>
+                <item id="105841" min="1" max="1" chance="50"/>
+                <item id="105842" min="1" max="1" chance="50"/>
+                <item id="105843" min="1" max="1" chance="50"/>
+                <item id="105839" min="1" max="1" chance="30"/>
+                <item id="105840" min="1" max="1" chance="30"/>
+                <item id="105841" min="1" max="1" chance="30"/>
+                <item id="105842" min="1" max="1" chance="30"/>
+                <item id="105843" min="1" max="1" chance="30"/>
+                <item id="105839" min="1" max="1" chance="10"/>
+                <item id="105840" min="1" max="1" chance="10"/>
+                <item id="105841" min="1" max="1" chance="10"/>
+                <item id="105842" min="1" max="1" chance="10"/>
+                <item id="105843" min="1" max="1" chance="10"/>
+                <item id="105839" min="1" max="1" chance="5"/>
+                <item id="105840" min="1" max="1" chance="5"/>
+                <item id="105841" min="1" max="1" chance="5"/>
+                <item id="105842" min="1" max="1" chance="5"/>
+                <item id="105843" min="1" max="1" chance="5"/>
+            </drop>
+        </dropLists>
+    </npc>
 </list>

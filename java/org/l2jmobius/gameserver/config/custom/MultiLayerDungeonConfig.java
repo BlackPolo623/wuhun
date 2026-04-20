@@ -122,7 +122,7 @@ public class MultiLayerDungeonConfig
 
 		MAX_LAYERS = config.getInt("MaxLayers", 5);
 		ENTRANCE_NPC_ID = config.getInt("EntranceNpcId", 900043);
-		TREASURE_CHEST_NPC_ID = config.getInt("TreasureChestNpcId", 900050);
+		TREASURE_CHEST_NPC_ID = config.getInt("TreasureChestNpcId", 920001);
 		TELEPORT_NPC_ID = config.getInt("TeleportNpcId", 900045);
 		EXIT_DELAY = config.getInt("ExitDelay", 60) * 1000L;
 

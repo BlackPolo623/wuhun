@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- ================================================================
+         SacrificeData.xsd — 祭祀系統 XML Schema
+         對應：data/custom/sacrifice/SacrificeData.xml
+         ================================================================ -->
+
+    <!-- 根元素 -->
+    <xs:element name="list">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="altar" type="AltarType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <!-- altar id 唯一性約束 -->
+        <xs:unique name="uniqueAltarId">
+            <xs:selector xpath="altar"/>
+            <xs:field xpath="@id"/>
+        </xs:unique>
+    </xs:element>
+
+    <!-- ================================================================
+         祭壇定義
+         ================================================================ -->
+    <xs:complexType name="AltarType">
+        <xs:sequence>
+            <!-- 消耗材料（至少 1 種） -->
+            <xs:element name="material" type="MaterialType" minOccurs="1" maxOccurs="unbounded"/>
+            <!-- 屬性加成（至少 1 條） -->
+            <xs:element name="stat" type="StatType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+
+        <!-- 必填屬性 -->
+        <xs:attribute name="id"            type="xs:positiveInteger" use="required"/>
+        <xs:attribute name="name"          type="xs:string"          use="required"/>
+        <xs:attribute name="chancePercent" type="ChancePercentType"  use="required"/>
+        <xs:attribute name="upgradeRate"   type="xs:decimal"         use="required"/>
+        <xs:attribute name="maxLevel"      type="xs:positiveInteger" use="required"/>
+    </xs:complexType>
+
+    <!-- ================================================================
+         材料定義
+         ================================================================ -->
+    <xs:complexType name="MaterialType">
+        <xs:attribute name="itemId" type="xs:positiveInteger" use="required"/>
+        <xs:attribute name="count"  type="xs:positiveInteger" use="required"/>
+    </xs:complexType>
+
+    <!-- ================================================================
+         屬性加成定義
+         ================================================================ -->
+    <xs:complexType name="StatType">
+        <xs:attribute name="name"      type="xs:string"      use="required"/>
+        <xs:attribute name="value"     type="xs:decimal"        use="required"/>
+        <xs:attribute name="operation" type="OperationType"     use="required"/>
+    </xs:complexType>
+
+    <!-- ================================================================
+         簡單類型
+         ================================================================ -->
+
+    <!-- 成功概率（1~100 整數） -->
+    <xs:simpleType name="ChancePercentType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- operation：add 或 mul -->
+    <xs:simpleType name="OperationType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="add"/>
+            <xs:enumeration value="mul"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- 支持的 stat name（英文 + 中文雙寫法） -->
+    <xs:simpleType name="StatNameType">
+        <xs:restriction base="xs:string">
+            <!-- 物理攻防 -->
+            <xs:enumeration value="pAtk"/>          <xs:enumeration value="物理攻擊"/>
+            <xs:enumeration value="mAtk"/>          <xs:enumeration value="魔法攻擊"/>
+            <xs:enumeration value="pDef"/>          <xs:enumeration value="物理防禦"/>
+            <xs:enumeration value="mDef"/>          <xs:enumeration value="魔法防禦"/>
+            <xs:enumeration value="pSkillPow"/>     <xs:enumeration value="物理技能威力"/>
+            <xs:enumeration value="mSkillPow"/>     <xs:enumeration value="魔法技能威力"/>
+            <!-- 速度 -->
+            <xs:enumeration value="atkSpd"/>        <xs:enumeration value="攻擊速度"/>
+            <xs:enumeration value="mAtkSpd"/>       <xs:enumeration value="施法速度"/>
+            <xs:enumeration value="speed"/>         <xs:enumeration value="moveSpd"/>
+            <xs:enumeration value="移動速度"/>
+            <!-- 暴擊 -->
+            <xs:enumeration value="critRate"/>      <xs:enumeration value="暴擊率"/>
+            <xs:enumeration value="critDmg"/>       <xs:enumeration value="暴擊傷害"/>
+            <xs:enumeration value="mCritRate"/>     <xs:enumeration value="魔法暴擊率"/>
+            <xs:enumeration value="mCritPower"/>    <xs:enumeration value="魔法暴擊傷害"/>
+            <!-- HP / MP / CP -->
+            <xs:enumeration value="maxHp"/>         <xs:enumeration value="最大HP"/>
+            <xs:enumeration value="maxMp"/>         <xs:enumeration value="最大MP"/>
+            <xs:enumeration value="maxCp"/>         <xs:enumeration value="最大CP"/>
+            <xs:enumeration value="hpRegen"/>       <xs:enumeration value="HP回復"/>
+            <xs:enumeration value="mpRegen"/>       <xs:enumeration value="MP回復"/>
+            <xs:enumeration value="cpRegen"/>       <xs:enumeration value="CP回復"/>
+            <xs:enumeration value="healEffect"/>    <xs:enumeration value="治療效果"/>
+            <!-- 命中 / 閃避 -->
+            <xs:enumeration value="accuracy"/>      <xs:enumeration value="命中"/>
+            <xs:enumeration value="evasion"/>       <xs:enumeration value="閃避"/>
+            <!-- 六維基礎 -->
+            <xs:enumeration value="str"/>           <xs:enumeration value="力量"/>
+            <xs:enumeration value="con"/>           <xs:enumeration value="體質"/>
+            <xs:enumeration value="dex"/>           <xs:enumeration value="敏捷"/>
+            <xs:enumeration value="int"/>           <xs:enumeration value="智力"/>
+            <xs:enumeration value="wit"/>           <xs:enumeration value="精神"/>
+            <xs:enumeration value="men"/>           <xs:enumeration value="意志"/>
+            <!-- PVP 傷害 / 防禦 -->
+            <xs:enumeration value="pvpPDmg"/>       <xs:enumeration value="PVP物理傷害"/>
+            <xs:enumeration value="pvpMDmg"/>       <xs:enumeration value="PVP魔法傷害"/>
+            <xs:enumeration value="pvpPSkillDmg"/>  <xs:enumeration value="PVP物理技能傷害"/>
+            <xs:enumeration value="pvpPDef"/>       <xs:enumeration value="PVP物理防禦"/>
+            <xs:enumeration value="pvpMDef"/>       <xs:enumeration value="PVP魔法防禦"/>
+            <xs:enumeration value="pvpSkillDef"/>   <xs:enumeration value="PVP物理技能防禦"/>
+            <!-- PVE 傷害 -->
+            <xs:enumeration value="pvePDmg"/>       <xs:enumeration value="PVE物理傷害"/>
+            <xs:enumeration value="pveMDmg"/>       <xs:enumeration value="PVE魔法傷害"/>
+            <xs:enumeration value="pvePSkillDmg"/>  <xs:enumeration value="PVE物理技能傷害"/>
+            <!-- 元素攻擊 -->
+            <xs:enumeration value="fireAtk"/>       <xs:enumeration value="火屬性攻擊"/>
+            <xs:enumeration value="waterAtk"/>      <xs:enumeration value="水屬性攻擊"/>
+            <xs:enumeration value="windAtk"/>       <xs:enumeration value="風屬性攻擊"/>
+            <xs:enumeration value="earthAtk"/>      <xs:enumeration value="土屬性攻擊"/>
+            <xs:enumeration value="holyAtk"/>       <xs:enumeration value="神聖攻擊"/>
+            <xs:enumeration value="darkAtk"/>       <xs:enumeration value="暗黑攻擊"/>
+            <!-- 元素抗性 -->
+            <xs:enumeration value="fireRes"/>       <xs:enumeration value="火屬性抗性"/>
+            <xs:enumeration value="waterRes"/>      <xs:enumeration value="水屬性抗性"/>
+            <xs:enumeration value="windRes"/>       <xs:enumeration value="風屬性抗性"/>
+            <xs:enumeration value="earthRes"/>      <xs:enumeration value="土屬性抗性"/>
+            <xs:enumeration value="holyRes"/>       <xs:enumeration value="神聖抗性"/>
+            <xs:enumeration value="darkRes"/>       <xs:enumeration value="暗黑抗性"/>
+            <!-- 經驗 / 掉落 -->
+            <xs:enumeration value="expRate"/>       <xs:enumeration value="經驗獲取"/>
+            <xs:enumeration value="dropRate"/>      <xs:enumeration value="掉落率"/>
+            <xs:enumeration value="dropAmount"/>    <xs:enumeration value="掉落數量"/>
+            <xs:enumeration value="spoilRate"/>     <xs:enumeration value="採集率"/>
+            <xs:enumeration value="limit"/>         <xs:enumeration value="突破限制"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

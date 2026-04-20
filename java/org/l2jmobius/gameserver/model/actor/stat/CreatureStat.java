@@ -456,7 +456,7 @@ public class CreatureStat
 				
 				// 寶玉系統加成
 				matk += player.getJewelBonus();
-				double limit = getValue(Stat.unlock_Limit, 1);
+				double limit = 1.0 + getAdd(Stat.unlock_Limit) / 100.0;
 				
 				if (matk >= (PlayerConfig.MAX_MATK * limit))
 				{
@@ -535,7 +535,7 @@ public class CreatureStat
 					mdef *= 1 + (wuxian / 10000);
 				}
 				mdef += zbzs;
-				double limit = getValue(Stat.unlock_Limit, 1);
+				double limit = 1.0 + getAdd(Stat.unlock_Limit) / 100.0;
 				
 				if (mdef >= (PlayerConfig.MAX_MATK * limit))
 				{
@@ -655,7 +655,7 @@ public class CreatureStat
 				
 				// 寶玉系統加成
 				patk += player.getJewelBonus();
-				double limit = getValue(Stat.unlock_Limit, 1);
+				double limit = 1.0 + getAdd(Stat.unlock_Limit) / 100.0;
 				if (patk >= (PlayerConfig.MAX_PATK * limit))
 				{
 					patk = PlayerConfig.MAX_PATK * limit;
@@ -725,7 +725,7 @@ public class CreatureStat
 					pdef *= 1 + (wuxian / 10000);
 				}
 				pdef += zbzs;
-				double limit = getValue(Stat.unlock_Limit, 1);
+				double limit = 1.0 + getAdd(Stat.unlock_Limit) / 100.0;
 				
 				if (pdef >= (PlayerConfig.MAX_PATK * limit))
 				{

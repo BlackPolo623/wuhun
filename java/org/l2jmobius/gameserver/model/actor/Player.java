@@ -5747,15 +5747,17 @@ public class Player extends Playable
 			}
 			
 			// ★ 掠奪之地 死亡掉落 ★
-			// 玩家在副本（Template ID=900）內死亡時，指定道具（ID=57）全數掉落
+			// 玩家在副本（Template ID=1000）內死亡時，指定道具（ID=103991）掉落 70%
 			// 若有修改 ID，請同步修改 PlunderLands.java 的 TEMPLATE_ID / RANK_ITEM_ID
 			final Instance _customArenaInstance = getInstanceWorld();
-			if ((_customArenaInstance != null) && (_customArenaInstance.getTemplateId() == 900))
+			if ((_customArenaInstance != null) && (_customArenaInstance.getTemplateId() == 1000))
 			{
-				final Item _customArenaDropItem = _inventory.getItemByItemId(57);
+				final Item _customArenaDropItem = _inventory.getItemByItemId(103991);
 				if ((_customArenaDropItem != null) && (_customArenaDropItem.getCount() > 0))
 				{
-					dropItem(ItemProcessType.DROP, _customArenaDropItem, killer, true, false);
+					final long _customArenaDropCount = Math.max(1, _customArenaDropItem.getCount() * 70 / 100);
+					dropItem(ItemProcessType.DROP, _customArenaDropItem.getObjectId(), _customArenaDropCount, getX(), getY(), getZ(), killer, false, false);
+					sendMessage("你在【掠奪之地】內被擊殺，掉落了 " + _customArenaDropCount + " 個道具！");
 				}
 			}
 

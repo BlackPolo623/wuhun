@@ -20,8 +20,9 @@ import java.lang.reflect.Method;
 import java.util.logging.Logger;
 
 import org.l2jmobius.gameserver.handler.MorphScrollHandler;
-
+import org.l2jmobius.gameserver.handler.SacrificeHandler;
 import org.l2jmobius.gameserver.managers.MorphManager;
+import org.l2jmobius.gameserver.managers.SacrificeManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.Containers;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -65,8 +66,9 @@ public class MorphListener
 			Containers.Global().addListener(new AnnotationEventListener(
 				Containers.Global(), EventType.ON_PLAYER_LOGOUT, logoutMethod, instance, 0));
 
-			// 初始化 BypassHandler 註冊（MorphScrollHandler 構造器內自動註冊）
+			// 初始化 BypassHandler 註冊（構造器內自動完成）
 			MorphScrollHandler.getInstance();
+			SacrificeHandler.getInstance();
 
 			LOGGER.info("MorphListener: Listener initialized successfully.");
 		}
@@ -90,8 +92,10 @@ public class MorphListener
 			return;
 		}
 
-		// 從 DB 加載變身收藏記錄到內存緩存（屬性/外觀僅在玩家主動通過捲軸應用變身後生效）
+		// 從 DB 加載變身收藏記錄到內存緩存
 		MorphManager.getInstance().loadPlayer(player);
+		// 從 DB 加載祭祀等級到內存緩存
+		SacrificeManager.getInstance().loadPlayer(player);
 
 		LOGGER.fine("MorphListener: Loaded morph collection for player " + player.getName());
 	}
@@ -109,5 +113,7 @@ public class MorphListener
 
 		// 清除內存緩存（DB 數據已在激活/升級時實時寫入，無需此處再存）
 		MorphManager.getInstance().unloadPlayer(player.getObjectId());
+		// 清除祭祀緩存
+		SacrificeManager.getInstance().unloadPlayer(player.getObjectId());
 	}
 }

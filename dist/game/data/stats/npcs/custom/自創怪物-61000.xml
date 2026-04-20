@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
+	<npc id="61000" displayId="29295" level="90" type="RaidBoss" name="歐塔比斯" title="六道輪迴的負責人" usingServerSideTitle="true">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="20000000" hpRegen="60000" mp="18000" mpRegen="3.6"/>
+			<attack physical="10000" magical="10000" random="10" critical="10" accuracy="99" attackSpeed="500" type="SWORD" range="40" distance="80" width="120"/>
+			<defence physical="1000" magical="1000"/>
+			<hitTime>600</hitTime>
+		</stats>
+		<status attackable="false"/>
+		<collision>
+			<radius normal="45"/>
+			<height normal="136.5"/>
+		</collision>
+		<skillList>
+			<skill id="102000" level="1"/>
+		</skillList>
+	</npc>
+	<npc id="61001" displayId="29256" level="90" type="GrandBoss" name="可洛克" usingServerSideName="true" title="★★★掠奪死神★★★" usingServerSideTitle="true">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="100000000000" sp="100000000000" />
+		<stats str="150" int="150" dex="150" wit="150" con="150" men="150">
+			<vitals hp="500000000" hpRegen="10000000" mp="18000" mpRegen="3.6"/>
+			<speed>
+				<walk ground="40"/>
+				<run ground="180"/>
+			</speed>
+			<attack physical="2000000000" magical="2000000000" random="10" critical="50" accuracy="99" attackSpeed="800" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="800000000" magical="500000000" />
+		</stats>
+		<collision>
+			<radius normal="66"/>
+			<height normal="125.4"/>
+		</collision>
+		<skillList>
+			<skill id="102011" level="1" />
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="105839" min="1" max="1" chance="100"/>
+				<item id="105840" min="1" max="1" chance="100"/>
+				<item id="105841" min="1" max="1" chance="100"/>
+				<item id="105842" min="1" max="1" chance="100"/>
+				<item id="105843" min="1" max="1" chance="100"/>
+				<item id="105839" min="1" max="1" chance="50"/>
+				<item id="105840" min="1" max="1" chance="50"/>
+				<item id="105841" min="1" max="1" chance="50"/>
+				<item id="105842" min="1" max="1" chance="50"/>
+				<item id="105843" min="1" max="1" chance="50"/>
+				<item id="105839" min="1" max="1" chance="30"/>
+				<item id="105840" min="1" max="1" chance="30"/>
+				<item id="105841" min="1" max="1" chance="30"/>
+				<item id="105842" min="1" max="1" chance="30"/>
+				<item id="105843" min="1" max="1" chance="30"/>
+				<item id="105839" min="1" max="1" chance="10"/>
+				<item id="105840" min="1" max="1" chance="10"/>
+				<item id="105841" min="1" max="1" chance="10"/>
+				<item id="105842" min="1" max="1" chance="10"/>
+				<item id="105843" min="1" max="1" chance="10"/>
+				<item id="105839" min="1" max="1" chance="5"/>
+				<item id="105840" min="1" max="1" chance="5"/>
+				<item id="105841" min="1" max="1" chance="5"/>
+				<item id="105842" min="1" max="1" chance="5"/>
+				<item id="105843" min="1" max="1" chance="5"/>
+			</drop>
+		</dropLists>
+	</npc>
+	<npc id="61002" displayId="29256" level="90" type="GrandBoss" name="死之使者" usingServerSideName="true" title="掠奪之地" usingServerSideTitle="true">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="300000000" />
+		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+			<vitals hp="50000000" hpRegen="1000000" mp="18000" mpRegen="3.6"/>
+			<speed>
+				<walk ground="40"/>
+				<run ground="180"/>
+			</speed>
+			<attack physical="1000000000" magical="1000000000" random="10" critical="50" accuracy="99" attackSpeed="800" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="300000000" magical="100000000" />
+		</stats>
+		<collision>
+			<radius normal="66"/>
+			<height normal="125.4"/>
+		</collision>
+		<skillList>
+			<skill id="102012" level="1" />
+		</skillList>
+		<dropLists>
+			<drop>
+				<item id="103991" min="1" max="1" chance="100"/>
+			</drop>
+		</dropLists>
+	</npc>
+</list>

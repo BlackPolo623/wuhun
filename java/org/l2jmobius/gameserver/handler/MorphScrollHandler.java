@@ -316,7 +316,15 @@ public class MorphScrollHandler implements IBypassHandler, IItemHandler
 				}
 				else
 				{
-					sb.append("<font color=\"AAFFAA\">+").append((int) stat.getValue()).append("</font>");
+					final double v = stat.getValue();
+					if ((v > 0) && (v < 1.0))
+					{
+						sb.append("<font color=\"AAFFAA\">+").append(String.format("%.2f", v)).append("</font>");
+					}
+					else
+					{
+						sb.append("<font color=\"AAFFAA\">+").append((long) v).append("</font>");
+					}
 				}
 				sb.append("</td>");
 				sb.append("<td width=10></td>");
@@ -684,7 +692,15 @@ public class MorphScrollHandler implements IBypassHandler, IItemHandler
 				}
 				else
 				{
-					sb.append("<font color=\"AAFFAA\">+").append((int) stat.getValue()).append("</font>");
+					final double v = stat.getValue();
+					if ((v > 0) && (v < 1.0))
+					{
+						sb.append("<font color=\"AAFFAA\">+").append(String.format("%.2f", v)).append("</font>");
+					}
+					else
+					{
+						sb.append("<font color=\"AAFFAA\">+").append((long) v).append("</font>");
+					}
 				}
 				sb.append("</td>");
 				sb.append("<td width=10></td>");

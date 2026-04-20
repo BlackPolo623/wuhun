@@ -1042,8 +1042,10 @@ public class PlayerStat extends PlayableStat
 	protected void resetStats()
 	{
 		super.resetStats();
-		// 注入变身属性加成（在属性重算写锁内执行，直接 mergeAdd/mergeMul）
+		// 注入变身屬性加成（在屬性重算寫鎖內執行，直接 mergeAdd/mergeMul）
 		MorphManager.getInstance().pumpMorphStats(getActiveChar(), this);
+		// 注入祭祀屬性加成
+		org.l2jmobius.gameserver.managers.SacrificeManager.getInstance().pumpSacrificeStats(getActiveChar(), this);
 	}
 
 	@Override

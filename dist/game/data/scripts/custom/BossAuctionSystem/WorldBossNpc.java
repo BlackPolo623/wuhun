@@ -161,7 +161,7 @@ public class WorldBossNpc extends Script
 
 		// 獲取配置資訊
 		String spawnDays = WorldBossConfig.getSpawnDays().toString();
-		String spawnTime = WorldBossConfig.getSpawnTime();
+		String spawnTime = String.join(", ", WorldBossConfig.getSpawnTimes());
 		int lifetime = WorldBossConfig.getBossLifetime();
 
 		html.replace("%spawn_days%", spawnDays.replace("[", "").replace("]", ""));

@@ -192,8 +192,27 @@ public class MorphStatEntry
 		m.put("掉落數量", Stat.BONUS_DROP_AMOUNT);
 		m.put("spoilRate", Stat.BONUS_SPOIL_RATE);
 		m.put("採集率", Stat.BONUS_SPOIL_RATE);
-		m.put("limit", Stat.unlock_Limit);
+		m.put("unlocklimit", Stat.unlock_Limit);
 		m.put("突破限制", Stat.unlock_Limit);
+
+		// ── 最終傷害 / 最終減傷 / 無視最終減傷 ───────────────────────────────
+		m.put("finalDmg", Stat.FINAL_DAMAGE_RATE);
+		m.put("finalDamage", Stat.FINAL_DAMAGE_RATE);
+		m.put("最終傷害", Stat.FINAL_DAMAGE_RATE);
+		m.put("finalDef", Stat.FINAL_DAMAGE_REDUCE);
+		m.put("finalDamageReduce", Stat.FINAL_DAMAGE_REDUCE);
+		m.put("最終減傷", Stat.FINAL_DAMAGE_REDUCE);
+		m.put("ignoreFinalDef", Stat.IGNORE_FINAL_DAMAGE_REDUCE);
+		m.put("ignoreFinalDamageReduce", Stat.IGNORE_FINAL_DAMAGE_REDUCE);
+		m.put("無視最終減傷", Stat.IGNORE_FINAL_DAMAGE_REDUCE);
+
+		// ── 吸血 ──────────────────────────────────────────────────────────────
+		m.put("absorbChance", Stat.ABSORB_DAMAGE_CHANCE);
+		m.put("vampiricChance", Stat.ABSORB_DAMAGE_CHANCE);
+		m.put("吸血機率", Stat.ABSORB_DAMAGE_CHANCE);
+		m.put("absorbPercent", Stat.ABSORB_DAMAGE_PERCENT);
+		m.put("vampiricPercent", Stat.ABSORB_DAMAGE_PERCENT);
+		m.put("吸血量", Stat.ABSORB_DAMAGE_PERCENT);
 
 		STAT_PARSE_MAP = Collections.unmodifiableMap(m);
 	}
@@ -282,7 +301,16 @@ public class MorphStatEntry
 		m.put(Stat.BONUS_DROP_RATE, "掉落率");
 		m.put(Stat.BONUS_DROP_AMOUNT, "掉落數量");
 		m.put(Stat.BONUS_SPOIL_RATE, "回收率");
-		m.put(Stat.unlock_Limit, "攻防限制");
+		m.put(Stat.unlock_Limit, "突破限制");
+
+		// 最終傷害 / 最終減傷 / 無視最終減傷
+		m.put(Stat.FINAL_DAMAGE_RATE, "最終傷害");
+		m.put(Stat.FINAL_DAMAGE_REDUCE, "最終減傷");
+		m.put(Stat.IGNORE_FINAL_DAMAGE_REDUCE, "無視最終減傷");
+
+		// 吸血
+		m.put(Stat.ABSORB_DAMAGE_CHANCE, "吸血機率");
+		m.put(Stat.ABSORB_DAMAGE_PERCENT, "吸血量");
 
 		STAT_DISPLAY_MAP = Collections.unmodifiableMap(m);
 	}
@@ -349,6 +377,11 @@ public class MorphStatEntry
 		if (isMultiply())
 		{
 			return getDisplayName() + " +" + (int) _value + "%";
+		}
+		if ((_value > 0) && (_value < 1.0))
+		{
+			// 小數百分比單位的屬性（如吸血機率 0.02 = +0.02%）
+			return getDisplayName() + " +" + String.format("%.2f", _value) + "%";
 		}
 		return getDisplayName() + " +" + (int) _value;
 	}

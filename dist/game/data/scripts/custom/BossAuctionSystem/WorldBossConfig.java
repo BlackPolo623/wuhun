@@ -24,7 +24,7 @@ public class WorldBossConfig
 	private static Location _respawnLocation = new Location(83400, 148600, -3400);
 	private static List<Integer> _bossNpcIds = new ArrayList<>();
 	private static List<Integer> _spawnDays = new ArrayList<>();
-	private static String _spawnTime = "20:00";
+	private static List<String> _spawnTimes = new ArrayList<>();
 	private static int _bossLifetime = 120;
 	private static boolean _announceSpawn = true;
 	private static boolean _announceKill = true;
@@ -90,7 +90,25 @@ public class WorldBossConfig
 				}
 			}
 
-			_spawnTime = properties.getProperty("SpawnTime", "20:00");
+			// 解析召喚時間（支援多個，逗號分隔）
+			_spawnTimes.clear();
+			for (String t : properties.getProperty("SpawnTime", "20:00").split(","))
+			{
+				String trimmed = t.trim();
+				if (trimmed.matches("\\d{1,2}:\\d{2}"))
+				{
+					_spawnTimes.add(trimmed);
+				}
+				else
+				{
+					LOGGER.warning("【世界首領】無效的召喚時間格式: " + trimmed);
+				}
+			}
+			if (_spawnTimes.isEmpty())
+			{
+				_spawnTimes.add("20:00");
+			}
+
 			_bossLifetime = Integer.parseInt(properties.getProperty("BossLifetime", "120"));
 			_announceSpawn = Boolean.parseBoolean(properties.getProperty("AnnounceSpawn", "true"));
 			_announceKill = Boolean.parseBoolean(properties.getProperty("AnnounceKill", "true"));
@@ -99,7 +117,7 @@ public class WorldBossConfig
 			LOGGER.info("  - 重生點: " + _respawnLocation);
 			LOGGER.info("  - 首領列表: " + _bossNpcIds);
 			LOGGER.info("  - 召喚日期: " + _spawnDays);
-			LOGGER.info("  - 召喚時間: " + _spawnTime);
+			LOGGER.info("  - 召喚時間: " + _spawnTimes);
 		}
 		catch (Exception e)
 		{
@@ -127,9 +145,9 @@ public class WorldBossConfig
 		return _spawnDays;
 	}
 
-	public static String getSpawnTime()
+	public static List<String> getSpawnTimes()
 	{
-		return _spawnTime;
+		return _spawnTimes;
 	}
 
 	public static int getBossLifetime()

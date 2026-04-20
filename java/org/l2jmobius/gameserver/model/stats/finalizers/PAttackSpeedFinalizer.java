@@ -49,7 +49,7 @@ public class PAttackSpeedFinalizer implements IStatFunction
 		
 		final double dexBonus = creature.getDEX() > 0 ? BaseStat.DEX.calcBonus(creature) : 1;
 		baseValue *= dexBonus;
-		double limit = creature.getStat().getValue(Stat.unlock_Limit, 1);
+		double limit = 1.0 + creature.getStat().getAdd(Stat.unlock_Limit) / 100.0;
 		return validateValue(creature, defaultValue(creature, stat, baseValue), 1, creature.isPlayable() ? PlayerConfig.MAX_PATK_SPEED * limit : Double.MAX_VALUE);
 	}
 	

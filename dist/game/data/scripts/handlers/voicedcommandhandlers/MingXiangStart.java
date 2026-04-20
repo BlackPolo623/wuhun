@@ -66,7 +66,7 @@ public class MingXiangStart implements IVoicedCommandHandler
 		}
 		else
 		{
-			sb.append("<font color=00FF00>▶ 冥想中...</font><br><br>");
+			sb.append("<font color=00FF00>冥想中...</font><br><br>");
 			sb.append("<button action=\"bypass voice .WXStart\" value=\"停止冥想\" width=120 height=28 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">");
 		}
 

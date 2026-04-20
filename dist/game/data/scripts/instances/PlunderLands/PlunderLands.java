@@ -59,7 +59,7 @@ public class PlunderLands extends InstanceScript
 	private static final int NPC_ID = 900039;
 
 	/** 排行榜依此道具 ID 的持有數量排名 */
-	private static final int RANK_ITEM_ID = 57;
+	private static final int RANK_ITEM_ID = 103991;
 
 	/** 排行榜每頁顯示人數 */
 	private static final int PLAYERS_PER_PAGE = 12;

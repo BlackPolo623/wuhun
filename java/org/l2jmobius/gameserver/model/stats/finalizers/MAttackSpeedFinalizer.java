@@ -49,7 +49,7 @@ public class MAttackSpeedFinalizer implements IStatFunction
 		
 		final double witBonus = creature.getWIT() > 0 ? BaseStat.WIT.calcBonus(creature) : 1;
 		baseValue *= witBonus;
-		double limit = creature.getStat().getValue(Stat.unlock_Limit, 1);
+		double limit = 1.0 + creature.getStat().getAdd(Stat.unlock_Limit) / 100.0;
 		return validateValue(creature, defaultValue(creature, stat, baseValue), 1, creature.isPlayable() ? PlayerConfig.MAX_MATK_SPEED * limit : Double.MAX_VALUE);
 	}
 	

@@ -92,41 +92,42 @@ public class WorldBossManager extends Script
 	}
 
 	/**
-	 * 計算下次召喚時間
+	 * 計算下次召喚時間（支援多個時間點，回傳最近的一個）
 	 */
 	private LocalDateTime calculateNextSpawnTime(LocalDateTime from)
 	{
-		String[] timeParts = WorldBossConfig.getSpawnTime().split(":");
-		int hour = Integer.parseInt(timeParts[0]);
-		int minute = Integer.parseInt(timeParts[1]);
-
-		LocalTime spawnTime = LocalTime.of(hour, minute);
+		List<String> spawnTimes = WorldBossConfig.getSpawnTimes();
 		List<Integer> spawnDays = WorldBossConfig.getSpawnDays();
 
-		LocalDateTime candidate = from;
+		LocalDateTime earliest = null;
 
-		// 如果今天的時間已過,從明天開始找
-		if (from.toLocalTime().isAfter(spawnTime))
+		for (String timeStr : spawnTimes)
 		{
-			candidate = from.plusDays(1).with(spawnTime);
-		}
-		else
-		{
-			candidate = from.with(spawnTime);
-		}
+			String[] parts = timeStr.split(":");
+			LocalTime spawnTime = LocalTime.of(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]));
 
-		// 找到最近的召喚日期
-		for (int i = 0; i < 7; i++)
-		{
-			int dayOfWeek = candidate.getDayOfWeek().getValue(); // 1=Monday, 7=Sunday
-			if (spawnDays.contains(dayOfWeek))
+			// 今天此時間點是否已過
+			LocalDateTime candidate = from.toLocalTime().isAfter(spawnTime)
+				? from.toLocalDate().plusDays(1).atTime(spawnTime)
+				: from.toLocalDate().atTime(spawnTime);
+
+			// 往後找最近符合召喚日期的那天（最多找 7 天）
+			for (int i = 0; i < 7; i++)
 			{
-				return candidate;
+				if (spawnDays.contains(candidate.getDayOfWeek().getValue()))
+				{
+					break;
+				}
+				candidate = candidate.plusDays(1);
 			}
-			candidate = candidate.plusDays(1);
+
+			if ((earliest == null) || candidate.isBefore(earliest))
+			{
+				earliest = candidate;
+			}
 		}
 
-		return candidate;
+		return earliest;
 	}
 
 	/**
