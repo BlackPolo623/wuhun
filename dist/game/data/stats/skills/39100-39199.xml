@@ -313,20 +313,25 @@
 		<coolTime>500</coolTime>
 		<hitTime>500</hitTime>
 	</skill>
-	<skill id="39123" toLevel="1" name="梅莉莎HP藥水">
+	<skill id="39123" toLevel="3" name="特級瞬間回復HP藥水">
 		<icon>icon.etc_bm_hero_red_potion</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
 		<hitCancelTime>0</hitCancelTime>
-		<isMagic>2</isMagic> 
+		<isMagic>2</isMagic>
+		<coolTime>100</coolTime>
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>49663</itemConsumeId>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="HpCpHeal">
-				<power>5000</power>
+				<power>
+					<value level="1">2000</value>
+					<value level="2">10000</value>
+					<value level="3">30000</value>
+				</power>
 			</effect>
 		</effects>
 	</skill>

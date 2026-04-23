@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>900039</npc>
+	</npcs>
+
+	<item>  <!-- 古文LV1製作 -->
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105844" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105844" count="1" chance="100"/> <!-- 古文LV1 -->
+	</item>
+
+	<item>  <!-- 古文LV1 -> LV2 (90%) -->
+		<ingredient id="105844" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105845" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105845" count="1" chance="90"/>  <!-- 古文LV2 -->
+		<production id="105844" count="1" chance="10"/>  <!-- 失敗保留LV1 -->
+	</item>
+
+	<item>  <!-- 古文LV2 -> LV3 (70%) -->
+		<ingredient id="105845" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105846" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105846" count="1" chance="70"/>  <!-- 古文LV3 -->
+		<production id="105845" count="1" chance="30"/>  <!-- 失敗保留LV2 -->
+	</item>
+
+	<item>  <!-- 古文LV3 -> LV4 (55%) -->
+		<ingredient id="105846" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105847" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105847" count="1" chance="55"/>  <!-- 古文LV4 -->
+		<production id="105846" count="1" chance="45"/>  <!-- 失敗保留LV3 -->
+	</item>
+
+	<item>  <!-- 古文LV4 -> LV5 (40%) -->
+		<ingredient id="105847" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105848" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105848" count="1" chance="40"/>  <!-- 古文LV5 -->
+		<production id="105847" count="1" chance="60"/>  <!-- 失敗保留LV4 -->
+	</item>
+
+	<item>  <!-- 古文LV5 -> LV6 (30%) -->
+		<ingredient id="105848" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105849" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105849" count="1" chance="30"/>  <!-- 古文LV6 -->
+		<production id="105848" count="1" chance="70"/>  <!-- 失敗保留LV5 -->
+	</item>
+
+	<item>  <!-- 古文LV6 -> LV7 (20%) -->
+		<ingredient id="105849" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105850" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105850" count="1" chance="20"/>  <!-- 古文LV7 -->
+		<production id="105849" count="1" chance="80"/>  <!-- 失敗保留LV6 -->
+	</item>
+
+	<item>  <!-- 古文LV7 -> LV8 (15%) -->
+		<ingredient id="105850" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105851" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105851" count="1" chance="15"/>  <!-- 古文LV8 -->
+		<production id="105850" count="1" chance="85"/>  <!-- 失敗保留LV7 -->
+	</item>
+
+	<item>  <!-- 古文LV8 -> LV9 (10%) -->
+		<ingredient id="105851" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105852" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105852" count="1" chance="10"/>  <!-- 古文LV9 -->
+		<production id="105851" count="1" chance="90"/>  <!-- 失敗保留LV8 -->
+	</item>
+
+	<item>  <!-- 古文LV9 -> LV10 (8%) -->
+		<ingredient id="105852" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105853" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105853" count="1" chance="8"/>   <!-- 古文LV10 -->
+		<production id="105852" count="1" chance="92"/>  <!-- 失敗保留LV9 -->
+	</item>
+
+	<item>  <!-- 古文LV10 -> LV11 (6%) -->
+		<ingredient id="105853" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105854" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105854" count="1" chance="6"/>   <!-- 古文LV11 -->
+		<production id="105853" count="1" chance="94"/>  <!-- 失敗保留LV10 -->
+	</item>
+
+	<item>  <!-- 古文LV11 -> LV12 (5%) -->
+		<ingredient id="105854" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105855" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105855" count="1" chance="5"/>   <!-- 古文LV12 -->
+		<production id="105854" count="1" chance="95"/>  <!-- 失敗保留LV11 -->
+	</item>
+
+	<item>  <!-- 古文LV12 -> LV13 (4%) -->
+		<ingredient id="105855" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105856" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105856" count="1" chance="4"/>   <!-- 古文LV13 -->
+		<production id="105855" count="1" chance="96"/>  <!-- 失敗保留LV12 -->
+	</item>
+
+	<item>  <!-- 古文LV13 -> LV14 (3%) -->
+		<ingredient id="105856" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105857" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105857" count="1" chance="3"/>   <!-- 古文LV14 -->
+		<production id="105856" count="1" chance="97"/>  <!-- 失敗保留LV13 -->
+	</item>
+
+	<item>  <!-- 古文LV14 -> LV15 (2%) -->
+		<ingredient id="105857" count="1" />
+		<ingredient id="103991" count="800" />
+		<ingredient id="97145" count="200000" />
+		<production id="105858" count="1" chance="0"/>   <!-- 展示用 -->
+		<production id="105858" count="1" chance="2"/>   <!-- 古文LV15 -->
+		<production id="105857" count="1" chance="98"/>  <!-- 失敗保留LV14 -->
+	</item>
+
+</list>

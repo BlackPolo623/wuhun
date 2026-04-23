@@ -3383,64 +3383,85 @@
     <npc id="18933" level="87" type="RaidBoss" name="芙蕾雅" title="Ice Queen">
         <race>ETC</race>
         <sex>MALE</sex>
-        <stats str="60" int="76" dex="73" wit="70" con="57" men="80">
-            <vitals hp="3600000" hpRegen="10.2" mp="18000" mpRegen="3.6"/>
-            <attack physical="1112" magical="7592" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
-                    range="40" distance="80" width="120"/>
-            <defence physical="6208" magical="3424"/>
+        <acquire exp="3500000000" sp="125" />
+        <stats str="50" int="50" dex="50" wit="50" con="50" men="50">
+            <vitals hp="150000000" hpRegen="1000000" mp="20000" mpRegen="20000" />
+            <attack physical="2000000000" magical="2000000000" random="10" critical="50" accuracy="99" attackSpeed="800" type="SWORD" range="40" distance="80" width="120" />
+            <defence physical="1000000000" magical="700000000" />
             <speed>
-                <walk ground="45"/>
-                <run ground="120"/>
+                <walk ground="13" />
+                <run ground="170" />
             </speed>
             <hitTime>600</hitTime>
+            <attribute>
+                <attack type="WATER" value="3000"/>
+                <defence water="3000"/>
+            </attribute>
         </stats>
         <status attackable="true"/>
         <collision>
             <radius normal="50"/>
             <height normal="98.5"/>
         </collision>
+        <skillList>
+            <skill id="102013" level="1"/>
+        </skillList>
     </npc>
     <!-- RaidBoss #130 -->
     <npc id="18934" level="87" type="RaidBoss" name="酷寒芙蕾雅" title="Ice Queen">
         <race>ETC</race>
         <sex>MALE</sex>
-        <stats str="60" int="76" dex="73" wit="70" con="57" men="80">
-            <vitals hp="4800000" hpRegen="10.2" mp="18000" mpRegen="3.6"/>
-            <attack physical="1112" magical="7592" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
-                    range="40" distance="80" width="120"/>
-            <defence physical="6208" magical="3424"/>
+        <acquire exp="5500000000" sp="125" />
+        <stats str="100" int="100" dex="100" wit="100" con="100" men="100">
+            <vitals hp="150000000" hpRegen="2000000" mp="20000" mpRegen="20000" />
+            <attack physical="2000000000" magical="2000000000" random="10" critical="50" accuracy="99" attackSpeed="800" type="SWORD" range="40" distance="80" width="120" />
+            <defence physical="1000000000" magical="700000000" />
             <speed>
-                <walk ground="54"/>
-                <run ground="120"/>
+                <walk ground="13" />
+                <run ground="170" />
             </speed>
             <hitTime>600</hitTime>
+            <attribute>
+                <attack type="WATER" value="4000"/>
+                <defence water="4000"/>
+            </attribute>
         </stats>
         <status attackable="true"/>
         <collision>
             <radius normal="39.6"/>
             <height normal="62.7"/>
         </collision>
+        <skillList>
+            <skill id="102013" level="2"/>
+        </skillList>
     </npc>
     <!-- RaidBoss #131 -->
     <npc id="18935" level="87" type="RaidBoss" name="極端的芙蕾雅" title="Ice Queen">
         <race>ETC</race>
         <sex>MALE</sex>
-        <stats str="60" int="76" dex="73" wit="70" con="57" men="80">
-            <vitals hp="6000000" hpRegen="10.2" mp="18000" mpRegen="3.6"/>
-            <attack physical="1112" magical="7592" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD"
-                    range="40" distance="80" width="120"/>
-            <defence physical="6208" magical="3424"/>
+        <acquire exp="7500000000" sp="125" />
+        <stats str="150" int="150" dex="150" wit="150" con="150" men="150">
+            <vitals hp="150000000" hpRegen="3000000" mp="20000" mpRegen="20000" />
+            <attack physical="2000000000" magical="2000000000" random="10" critical="50" accuracy="99" attackSpeed="800" type="SWORD" range="40" distance="80" width="120" />
+            <defence physical="1000000000" magical="700000000" />
             <speed>
-                <walk ground="45"/>
-                <run ground="120"/>
+                <walk ground="13" />
+                <run ground="170" />
             </speed>
             <hitTime>600</hitTime>
+            <attribute>
+                <attack type="WATER" value="5000"/>
+                <defence water="5000"/>
+            </attribute>
         </stats>
         <status attackable="true"/>
         <collision>
             <radius normal="50"/>
             <height normal="98.5"/>
         </collision>
+        <skillList>
+            <skill id="102013" level="3"/>
+        </skillList>
     </npc>
     <!-- RaidBoss #132 -->
     <npc id="18962" level="85" type="RaidBoss" name="克拉特斯" title="Ancient Pirate Captain">

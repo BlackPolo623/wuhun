@@ -103,11 +103,6 @@ private void showPremiumInfo(Player player)
 	sb.append("<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"292\" height=\"358\">");
 	sb.append("<tr><td valign=\"top\" align=\"center\">");
 
-	// 標題區域
-	sb.append("<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">");
-	sb.append("<tr><td align=\"center\" width=\"290\" height=\"90\" background=\"L2UI_EPIC.HtmlWnd.HtmlWnd_PremiumManagerWnd_Store_IMG\"></td></tr>");
-	sb.append("</table>");
-
 	sb.append("<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">");
 	sb.append("<tr><td height=\"20\"></td></tr>");
 	sb.append("<tr><td align=\"center\"><font color=\"LEVEL\" size=\"6\"><b>會員系統</b></font></td></tr>");

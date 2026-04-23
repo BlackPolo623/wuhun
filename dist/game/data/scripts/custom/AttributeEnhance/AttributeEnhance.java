@@ -277,9 +277,11 @@ public class AttributeEnhance extends Script
 		}
 		else if (event.startsWith("armor_enhance_"))
 		{
-			// armor_enhance_<slot>_<elemOrd>
-			final String[] p = event.split("_", 4);
-			doArmorEnhance(player, p[2], Integer.parseInt(p[3]));
+			// armor_enhance_<slot>_<elemOrd> <count>
+			final String[] parts = event.split(" ", 2);
+			final String[] p = parts[0].split("_", 4);
+			final int count = (parts.length >= 2 && !parts[1].trim().isEmpty()) ? Math.max(1, Math.min(safeParseInt(parts[1].trim()), 9999)) : 1;
+			for (int i = 0; i < count; i++) doArmorEnhance(player, p[2], Integer.parseInt(p[3]));
 			showArmor(player, p[2]);
 		}
 		else if (event.startsWith("armor_reset_"))
@@ -290,9 +292,11 @@ public class AttributeEnhance extends Script
 		}
 		else if (event.startsWith("weapon_enhance_"))
 		{
-			// weapon_enhance_<slot>_<elemOrd>
-			final String[] p = event.split("_", 4);
-			doWeaponEnhance(player, p[2], Integer.parseInt(p[3]));
+			// weapon_enhance_<slot>_<elemOrd> <count>
+			final String[] parts = event.split(" ", 2);
+			final String[] p = parts[0].split("_", 4);
+			final int count = (parts.length >= 2 && !parts[1].trim().isEmpty()) ? Math.max(1, Math.min(safeParseInt(parts[1].trim()), 9999)) : 1;
+			for (int i = 0; i < count; i++) doWeaponEnhance(player, p[2], Integer.parseInt(p[3]));
 			showWeapon(player, p[2]);
 		}
 		else if (event.startsWith("jewelry_roll_"))
@@ -915,10 +919,11 @@ public class AttributeEnhance extends Script
 
 		sb.append("<table width=270 bgcolor=111111 cellpadding=3 cellspacing=1>");
 		sb.append("<tr bgcolor=0A0A0A>")
-		  .append("<td width=80><font color=AAAAAA>屬性</font></td>")
+		  .append("<td width=70><font color=AAAAAA>屬性</font></td>")
 		  .append("<td width=55><font color=AAAAAA>擁有</font></td>")
-		  .append("<td width=55><font color=AAAAAA>成功率</font></td>")
-		  .append("<td width=80></td></tr>");
+		  .append("<td width=50><font color=AAAAAA>成功率</font></td>")
+		  .append("<td width=60><font color=AAAAAA>次數</font></td>")
+		  .append("<td width=35></td></tr>");
 
 		int rowIndex = 0;
 		for (int ord : displayAttrs)
@@ -931,9 +936,10 @@ public class AttributeEnhance extends Script
 			  .append("<td><font color=").append(ELEMENT_COLOR[ord]).append(">").append(ARMOR_DESC[ord]).append("</font></td>")
 			  .append("<td align=center><font color=").append(has > 0 ? "00FF88" : "FF4444").append(">").append(has).append("個</font></td>")
 			  .append("<td align=center><font color=FFFF00>").append((int) (cfg.successRate * 100)).append("%</font></td>")
+			  .append("<td align=center><edit var=\"acnt_").append(slot).append("_").append(ord).append("\" width=55 height=15></td>")
 			  .append("<td align=center><button value=\"強化\" action=\"bypass -h Quest AttributeEnhance armor_enhance_")
-			  .append(slot).append("_").append(ord).append("\"")
-			  .append(" width=65 height=20 back=\"L2UI_CT1.Button_DF_Small_Down\" fore=\"L2UI_CT1.Button_DF_Small\"/></td>")
+			  .append(slot).append("_").append(ord).append(" $acnt_").append(slot).append("_").append(ord).append("\"")
+			  .append(" width=32 height=20 back=\"L2UI_CT1.Button_DF_Small_Down\" fore=\"L2UI_CT1.Button_DF_Small\"/></td>")
 			  .append("</tr>");
 			rowIndex++;
 		}
@@ -974,10 +980,11 @@ public class AttributeEnhance extends Script
 
 		sb.append("<table width=270 bgcolor=111111 cellpadding=3 cellspacing=1>");
 		sb.append("<tr bgcolor=0A0A0A>")
-		  .append("<td width=80><font color=AAAAAA>屬性</font></td>")
+		  .append("<td width=70><font color=AAAAAA>屬性</font></td>")
 		  .append("<td width=55><font color=AAAAAA>擁有</font></td>")
-		  .append("<td width=55><font color=AAAAAA>成功率</font></td>")
-		  .append("<td width=80></td></tr>");
+		  .append("<td width=50><font color=AAAAAA>成功率</font></td>")
+		  .append("<td width=60><font color=AAAAAA>次數</font></td>")
+		  .append("<td width=35></td></tr>");
 
 		int rowIndex = 0;
 		for (int ord : displayAttrs)
@@ -990,9 +997,10 @@ public class AttributeEnhance extends Script
 			  .append("<td><font color=").append(ELEMENT_COLOR[ord]).append(">").append(WEAPON_DESC[ord]).append("</font></td>")
 			  .append("<td align=center><font color=").append(has > 0 ? "00FF88" : "FF4444").append(">").append(has).append("個</font></td>")
 			  .append("<td align=center><font color=FFFF00>").append((int) (cfg.successRate * 100)).append("%</font></td>")
+			  .append("<td align=center><edit var=\"wcnt_").append(slot).append("_").append(ord).append("\" width=55 height=15></td>")
 			  .append("<td align=center><button value=\"強化\" action=\"bypass -h Quest AttributeEnhance weapon_enhance_")
-			  .append(slot).append("_").append(ord).append("\"")
-			  .append(" width=65 height=20 back=\"L2UI_CT1.Button_DF_Small_Down\" fore=\"L2UI_CT1.Button_DF_Small\"/></td>")
+			  .append(slot).append("_").append(ord).append(" $wcnt_").append(slot).append("_").append(ord).append("\"")
+			  .append(" width=32 height=20 back=\"L2UI_CT1.Button_DF_Small_Down\" fore=\"L2UI_CT1.Button_DF_Small\"/></td>")
 			  .append("</tr>");
 			rowIndex++;
 		}
@@ -1009,10 +1017,11 @@ public class AttributeEnhance extends Script
 		sb.append("</table>");
 		sb.append("<table width=270 bgcolor=111111 cellpadding=3 cellspacing=1>");
 		sb.append("<tr bgcolor=0A0A0A>")
-		  .append("<td width=80><font color=AAAAAA>屬性</font></td>")
+		  .append("<td width=70><font color=AAAAAA>屬性</font></td>")
 		  .append("<td width=55><font color=AAAAAA>擁有</font></td>")
-		  .append("<td width=55><font color=AAAAAA>成功率</font></td>")
-		  .append("<td width=80></td></tr>");
+		  .append("<td width=50><font color=AAAAAA>成功率</font></td>")
+		  .append("<td width=60><font color=AAAAAA>次數</font></td>")
+		  .append("<td width=35></td></tr>");
 
 		for (int i = 0; i < 6; i++)
 		{
@@ -1020,13 +1029,15 @@ public class AttributeEnhance extends Script
 			if (cfg == null) continue;
 			final long    has      = player.getInventory().getInventoryItemCount(cfg.itemId, -1);
 			final String  rowColor = (i % 2 == 0) ? "1A1A2A" : "1A2A1A";
+			final String  varName  = actionPrefix + "_" + slot + "_" + i;
 			sb.append("<tr bgcolor=").append(rowColor).append(">")
 			  .append("<td><font color=").append(ELEMENT_COLOR[i]).append(">").append(descs[i]).append("</font></td>")
 			  .append("<td align=center><font color=").append(has > 0 ? "00FF88" : "FF4444").append(">").append(has).append("個</font></td>")
 			  .append("<td align=center><font color=FFFF00>").append((int) (cfg.successRate * 100)).append("%</font></td>")
+			  .append("<td align=center><edit var=\"").append(varName).append("\" width=55 height=15></td>")
 			  .append("<td align=center><button value=\"強化\" action=\"bypass -h Quest AttributeEnhance ")
-			  .append(actionPrefix).append("_").append(slot).append("_").append(i).append("\"")
-			  .append(" width=65 height=20 back=\"L2UI_CT1.Button_DF_Small_Down\" fore=\"L2UI_CT1.Button_DF_Small\"/></td>")
+			  .append(actionPrefix).append("_").append(slot).append("_").append(i).append(" $").append(varName).append("\"")
+			  .append(" width=32 height=20 back=\"L2UI_CT1.Button_DF_Small_Down\" fore=\"L2UI_CT1.Button_DF_Small\"/></td>")
 			  .append("</tr>");
 		}
 		sb.append("</table>");
@@ -1041,6 +1052,13 @@ public class AttributeEnhance extends Script
 			+ "<td width=6></td>"
 			+ "<td width=70><font color=FFFFFF>" + current + "/" + max + "</font></td>"
 			+ "</tr></table>";
+	}
+
+	/** 安全解析整數，失敗回傳 1 */
+	private static int safeParseInt(String s)
+	{
+		try { return Integer.parseInt(s.trim()); }
+		catch (NumberFormatException e) { return 1; }
 	}
 
 	/** 從設定取最大值，若無設定用預設值 */

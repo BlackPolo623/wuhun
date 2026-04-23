@@ -136,9 +136,6 @@ public class Heal extends AbstractEffect
 			}
 		}
 
-		// 全域補血倍率調整（所有補血效果 x3）
-		amount *= 3;
-
 		// Prevents overheal
 		amount = Math.min(amount, Math.max(0, effected.getMaxRecoverableHp() - effected.getCurrentHp()));
 		if (amount != 0)

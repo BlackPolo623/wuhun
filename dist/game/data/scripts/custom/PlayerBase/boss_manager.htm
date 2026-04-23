@@ -1,27 +1,56 @@
-<html><head><title>BOSS管理</title></head>
+<html><head><title>BOSS召喚管理</title></head>
 <body scroll="no">
 <table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
 <tr><td valign="top" align="center">
-<table border=0 cellpadding=0 cellspacing=0 width="272">
-<tr><td height="10"></td></tr>
 
-<tr><td align="center"><font color="FFCC33">擁有召喚券：%ticket_count% 張 / 最大可製作量：%max_craft% 張</font></td></tr>
-<tr><td height="5"></td></tr>
-<tr><td align="center"><font color="808080" size="1">材料：<br1>%material_list%</font></td></tr>
-<tr><td height="5"></td></tr>
-<tr><td align="center">製作數量：<edit var="craft_count" width=60 height=15></td></tr>
-<tr><td height="10"></td></tr>
-<tr><td align=center><button action="bypass -h Quest BaseBossNpc craft_ticket_confirm $craft_count" value="確定製作" width=150 height=31 back="BranchSys3.icon2.ArmyTrainingInfo_down" fore="BranchSys3.icon2.ArmyTrainingInfo"></td></tr>
-<tr><td height="10"></td></tr>
-</table>
-<table width="280" bgcolor="111111" border="0" cellspacing="1" cellpadding="2">
-<tr bgcolor="333333">
-<td width=150 align=center><font color="FFCC33">BOSS名稱</font></td>
-<td width=60 align=center><font color="FFCC33">消耗</font></td>
-<td width=70 align=center><font color="FFCC33">操作</font></td>
-</tr>
-%boss_list%
-</table>
+  <table border=0><tr><td height=6></td></tr></table>
 
-</td></tr></table>
+  <table width=280 bgcolor=111111 cellpadding=3 cellspacing=1>
+    <tr bgcolor=2A1A00>
+      <td width=140><font color="AAAAAA">擁有召喚券</font></td>
+      <td width=140 align=right><font color="FFFF44">%ticket_count% 張</font></td>
+    </tr>
+    <tr bgcolor=1A1A1A>
+      <td><font color="AAAAAA">可製作數量</font></td>
+      <td align=right><font color="00FF88">%max_craft% 張</font></td>
+    </tr>
+  </table>
+
+  <table border=0><tr><td height=4></td></tr></table>
+
+  <table width=280 bgcolor=111111 cellpadding=3 cellspacing=1>
+    <tr bgcolor=1A1000>
+      <td align=center><font color="FFAAAA" size="1">製作材料：%material_list%</font></td>
+    </tr>
+  </table>
+
+  <table border=0><tr><td height=6></td></tr></table>
+
+  <table width=280 bgcolor=111111 cellpadding=4 cellspacing=1>
+    <tr bgcolor=1A2A1A>
+      <td>
+        <font color="FFCC33"><b>製作 BOSS 召喚券</b></font><br>
+        <font color="AAAAAA" size="1">輸入數量後按製作</font>
+      </td>
+      <td width=80 align=center>
+        <edit var="craft_count" width=58 height=16><br>
+        <button value="製　作" action="bypass -h Quest BaseBossNpc craft_ticket_confirm $craft_count"
+          width=68 height=22 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+      </td>
+    </tr>
+  </table>
+
+  <table border=0><tr><td height=10></td></tr></table>
+
+  <table width=280 cellpadding=3>
+    <tr>
+      <td align=center>
+        <button value="選擇並召喚 BOSS" action="bypass -h Quest BaseBossNpc show_boss_list"
+          width=220 height=28 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+      </td>
+    </tr>
+  </table>
+
+</td></tr>
+</table>
 </body></html>

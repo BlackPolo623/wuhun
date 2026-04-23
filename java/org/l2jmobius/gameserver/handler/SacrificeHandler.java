@@ -255,11 +255,11 @@ public class SacrificeHandler implements IBypassHandler
 		final String statSectionTitle;
 		if (maxed)
 		{
-			statSectionTitle = "&nbsp;▶ 當前屬性加成（Lv." + currentLevel + "）";
+			statSectionTitle = "當前屬性加成（Lv." + currentLevel + "）";
 		}
 		else
 		{
-			statSectionTitle = "&nbsp;▶ 屬性加成預覽";
+			statSectionTitle = "屬性加成預覽";
 		}
 
 		// ── %statHeader% ───────────────────────────────────────────────────

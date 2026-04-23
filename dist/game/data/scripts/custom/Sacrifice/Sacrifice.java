@@ -357,18 +357,13 @@ public class Sacrifice extends Script
 	private static void appendStatValue(StringBuilder sb, MorphStatEntry stat, double value, String color)
 	{
 		sb.append("<font color=\"").append(color).append("\">");
-		if (stat.isMultiply())
+		if (stat.isShowPercent())
 		{
-			sb.append("+").append(String.format("%.1f", value)).append("%");
-		}
-		else if ((value > 0) && (value < 1.0))
-		{
-			// 小數百分比單位的屬性（如吸血機率 0.02 = +0.02%）
 			sb.append("+").append(String.format("%.2f", value)).append("%");
 		}
 		else
 		{
-			sb.append("+").append((long) value);
+			sb.append("+").append(String.format("%.2f", value));
 		}
 		sb.append("</font>");
 	}

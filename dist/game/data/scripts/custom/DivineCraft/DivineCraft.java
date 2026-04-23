@@ -47,6 +47,7 @@ public class DivineCraft extends Script
 		SLOT_MAP.put("LFINGER", Inventory.PAPERDOLL_LFINGER);
 		SLOT_MAP.put("REAR",    Inventory.PAPERDOLL_REAR);
 		SLOT_MAP.put("LEAR",    Inventory.PAPERDOLL_LEAR);
+		SLOT_MAP.put("RHAND",    Inventory.PAPERDOLL_RHAND);
 	}
 
 	// 系列資料結構
@@ -540,6 +541,7 @@ public class DivineCraft extends Script
 	{
 		switch (slotType)
 		{
+			case "RHAND":    return "主武器";
 			case "HEAD":    return "頭盔";
 			case "CHEST":   return "胸甲";
 			case "LEGS":    return "脛甲";

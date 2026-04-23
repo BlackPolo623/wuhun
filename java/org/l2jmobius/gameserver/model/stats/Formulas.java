@@ -1023,14 +1023,28 @@ public class Formulas
 	{
 		if (attacker.isPlayable())
 		{
+			// 判斷攻擊者是否完全無屬性（技能無屬性 且 武器無屬性）
+			final boolean attackerHasNoAttribute = ((skill == null) || (skill.getAttributeType() == AttributeType.NONE)) && (attacker.getAttackElement() == AttributeType.NONE);
+
 			// ★ 玩家（含召喚獸）→ 玩家
 			if (target.isPlayer())
 			{
+				if (attackerHasNoAttribute)
+				{
+					// 無屬性攻擊：取目標最高屬性防禦的 20% 作為有效防禦值，產生減傷
+					final int highestDef = getHighestAttributeDefense(target);
+					return -(highestDef * 0.20) * 3.0;
+				}
 				return getAttributeDiff(attacker, target, skill) * 3.0;
 			}
 			// ★ 玩家（含召喚獸）→ 怪物／Raid（非可操控角色）
 			if (!target.isPlayable())
 			{
+				// 無屬性攻擊者打怪物：不套用屬性減傷
+				if (attackerHasNoAttribute)
+				{
+					return 0;
+				}
 				return getAttributeDiff(attacker, target, skill) * 20.0;
 			}
 			return 0;
@@ -1045,6 +1059,27 @@ public class Formulas
 			// 怪物 → 怪物：不套用屬性平傷
 			return 0;
 		}
+	}
+
+	/**
+	 * 取得目標所有屬性防禦中的最高值。
+	 */
+	private static int getHighestAttributeDefense(Creature target)
+	{
+		int max = 0;
+		for (AttributeType type : AttributeType.values())
+		{
+			if (type == AttributeType.NONE)
+			{
+				continue;
+			}
+			final int def = target.getDefenseElementValue(type);
+			if (def > max)
+			{
+				max = def;
+			}
+		}
+		return max;
 	}
 
 	/**

@@ -103,6 +103,30 @@ public class TitleSystem
 				FireDragonRates         // 成功率陣列
 		));
 
+		double[] IceQueenRates = {1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1};
+
+		SERIES_LIST.add(new TitleSeries(
+				"IceQueen",           // 系列ID
+				"冰之女皇系列",              // 系列名稱
+				"冰之女皇征服者",                // 最終稱號名稱
+				100006,                   // 最終技能ID
+				10,                       // 最大等級（可合成10次）
+				18933, 18935,             // BOSS ID範圍：50001~50035
+				IceQueenRates         // 成功率陣列
+		));
+
+		double[] PlunderRates = {1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1};
+
+		SERIES_LIST.add(new TitleSeries(
+				"Plunder",           // 系列ID
+				"掠奪系列",              // 系列名稱
+				"掠奪死神",                // 最終稱號名稱
+				100007,                   // 最終技能ID
+				10,                       // 最大等級（可合成10次）
+				61001, 61001,             // BOSS ID範圍：50001~50035
+				PlunderRates         // 成功率陣列
+		));
+
 		// ==================== 未來新增其他系列範例 ====================
 
 		// 冰凍系列（假設有20個BOSS，可升5級，100%成功率）

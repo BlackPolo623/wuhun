@@ -90,7 +90,9 @@ public class MorphStatEntry
 		m.put("魔法暴擊率", Stat.MAGIC_CRITICAL_RATE);
 		// 魔法暴擊傷害
 		m.put("mCritPower", Stat.MAGIC_CRITICAL_DAMAGE);
-		m.put("魔法暴擊傷害", Stat.MAGIC_CRITICAL_DAMAGE);
+		m.put("魔法技能暴傷", Stat.MAGIC_CRITICAL_DAMAGE);
+		m.put("pCritPower", Stat.PHYSICAL_SKILL_CRITICAL_DAMAGE);
+		m.put("物理技能暴傷", Stat.PHYSICAL_SKILL_CRITICAL_DAMAGE);
 
 		// ── HP / MP / CP ──────────────────────────────────────────────────
 		m.put("maxHp", Stat.MAX_HP);
@@ -110,7 +112,22 @@ public class MorphStatEntry
 		m.put("CP回復", Stat.REGENERATE_CP_RATE);
 		// 治療效果
 		m.put("healEffect", Stat.HEAL_EFFECT);
-		m.put("治療效果", Stat.HEAL_EFFECT);
+		m.put("治療效果增幅", Stat.HEAL_EFFECT);
+		m.put("healEffectadd", Stat.HEAL_EFFECT_ADD);
+		m.put("治療效果增加", Stat.HEAL_EFFECT_ADD);
+		// 藥水額外回覆量
+		m.put("additionalPotionHp",  Stat.ADDITIONAL_POTION_HP);
+		m.put("藥水HP加成",           Stat.ADDITIONAL_POTION_HP);
+		m.put("additionalPotionMp",  Stat.ADDITIONAL_POTION_MP);
+		m.put("藥水MP加成",           Stat.ADDITIONAL_POTION_MP);
+		m.put("additionalPotionCp",  Stat.ADDITIONAL_POTION_CP);
+		m.put("藥水CP加成",           Stat.ADDITIONAL_POTION_CP);
+		m.put("additionalPotionHpPer", Stat.ADDITIONAL_POTION_HP_PER);
+		m.put("藥水HP加成%",           Stat.ADDITIONAL_POTION_HP_PER);
+		m.put("additionalPotionMpPer", Stat.ADDITIONAL_POTION_MP_PER);
+		m.put("藥水MP加成%",           Stat.ADDITIONAL_POTION_MP_PER);
+		m.put("additionalPotionCpPer", Stat.ADDITIONAL_POTION_CP_PER);
+		m.put("藥水CP加成%",           Stat.ADDITIONAL_POTION_CP_PER);
 
 		// ── 命中 / 閃避 ────────────────────────────────────────────────────
 		m.put("accuracy", Stat.ACCURACY_COMBAT);
@@ -245,6 +262,7 @@ public class MorphStatEntry
 		m.put(Stat.CRITICAL_DAMAGE, "暴擊傷害");
 		m.put(Stat.MAGIC_CRITICAL_RATE, "魔法暴擊率");
 		m.put(Stat.MAGIC_CRITICAL_DAMAGE, "魔法暴擊傷害");
+		m.put(Stat.PHYSICAL_SKILL_CRITICAL_DAMAGE,"物理技能暴傷");
 
 		// HP/MP/CP
 		m.put(Stat.MAX_HP, "最大HP");
@@ -253,7 +271,14 @@ public class MorphStatEntry
 		m.put(Stat.REGENERATE_HP_RATE, "HP回復");
 		m.put(Stat.REGENERATE_MP_RATE, "MP回復");
 		m.put(Stat.REGENERATE_CP_RATE, "CP回復");
-		m.put(Stat.HEAL_EFFECT, "治療效果");
+		m.put(Stat.HEAL_EFFECT, "治療效果增幅");
+		m.put(Stat.HEAL_EFFECT_ADD,"治療效果增加");
+		m.put(Stat.ADDITIONAL_POTION_HP,     "藥水HP加成");
+		m.put(Stat.ADDITIONAL_POTION_MP,     "藥水MP加成");
+		m.put(Stat.ADDITIONAL_POTION_CP,     "藥水CP加成");
+		m.put(Stat.ADDITIONAL_POTION_HP_PER, "藥水HP增幅");
+		m.put(Stat.ADDITIONAL_POTION_MP_PER, "藥水MP增幅");
+		m.put(Stat.ADDITIONAL_POTION_CP_PER, "藥水CP增幅");
 
 		// 命中/閃避
 		m.put(Stat.ACCURACY_COMBAT, "命中");
@@ -320,6 +345,7 @@ public class MorphStatEntry
 	private final Stat _stat;
 	private final double _value;
 	private final Operation _operation;
+	private final boolean _showPercent;
 
 	// ── 構造器 ────────────────────────────────────────────────────────────
 
@@ -328,6 +354,15 @@ public class MorphStatEntry
 		_stat = stat;
 		_value = value;
 		_operation = operation;
+		_showPercent = false;
+	}
+
+	public MorphStatEntry(Stat stat, double value, Operation operation, boolean showPercent)
+	{
+		_stat = stat;
+		_value = value;
+		_operation = operation;
+		_showPercent = showPercent;
 	}
 
 	// ── Getters ──────────────────────────────────────────────────────────
@@ -353,6 +388,12 @@ public class MorphStatEntry
 		return _operation == Operation.MUL;
 	}
 
+	/** 是否強制以百分比顯示（由 XML showPercent="true" 控制） */
+	public boolean isShowPercent()
+	{
+		return _showPercent;
+	}
+
 	/**
 	 * MUL 時，將 value 轉換為 FuncMul factor。 value=10 → 1.10（+10%）
 	 */
@@ -374,15 +415,10 @@ public class MorphStatEntry
 	 */
 	public String toDisplayString()
 	{
-		if (isMultiply())
+		if (_showPercent)
 		{
-			return getDisplayName() + " +" + (int) _value + "%";
-		}
-		if ((_value > 0) && (_value < 1.0))
-		{
-			// 小數百分比單位的屬性（如吸血機率 0.02 = +0.02%）
 			return getDisplayName() + " +" + String.format("%.2f", _value) + "%";
 		}
-		return getDisplayName() + " +" + (int) _value;
+		return getDisplayName() + " +" + String.format("%.2f", _value);
 	}
 }

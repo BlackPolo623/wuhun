@@ -45,7 +45,7 @@ public class unlock_Limit extends AbstractStatEffect
 				}
 				case PER:
 				{
-					effected.getStat().mergeMul(_mulStat, _amount / 100);
+					effected.getStat().mergeAdd(_addStat, _amount);
 					break;
 				}
 			}

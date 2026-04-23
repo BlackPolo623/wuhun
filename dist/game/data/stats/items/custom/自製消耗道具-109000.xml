@@ -63,4 +63,139 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="MorphScrollHandler" />
 	</item>
+	<item id="109007" name="一星卡片袋" additionalName="Sealed" type="EtcItem">
+		<set name="icon" val="icon.card_event_devil_pocket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="1440" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="105824" min="1" max="1" chance="20" />
+			<item id="105825" min="1" max="1" chance="20" />
+			<item id="105826" min="1" max="1" chance="20" />
+			<item id="105827" min="1" max="1" chance="20" />
+			<item id="105828" min="1" max="1" chance="20" />
+		</capsuled_items>
+	</item>
+	<item id="109008" name="二星卡片袋" additionalName="Sealed" type="EtcItem">
+		<set name="icon" val="icon.card_event_devil_pocket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="1440" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="105829" min="1" max="1" chance="20" />
+			<item id="105830" min="1" max="1" chance="20" />
+			<item id="105831" min="1" max="1" chance="20" />
+			<item id="105832" min="1" max="1" chance="20" />
+			<item id="105833" min="1" max="1" chance="20" />
+		</capsuled_items>
+	</item>
+	<item id="109009" name="三星卡片袋" additionalName="Sealed" type="EtcItem">
+		<set name="icon" val="icon.card_event_devil_pocket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="1440" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="105834" min="1" max="1" chance="20" />
+			<item id="105835" min="1" max="1" chance="20" />
+			<item id="105836" min="1" max="1" chance="20" />
+			<item id="105837" min="1" max="1" chance="20" />
+			<item id="105838" min="1" max="1" chance="20" />
+		</capsuled_items>
+	</item>
+	<item id="109010" name="閃耀卡片袋" additionalName="Sealed" type="EtcItem">
+		<set name="icon" val="icon.card_event_devil_pocket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="105839" min="1" max="1" chance="20" />
+			<item id="105840" min="1" max="1" chance="20" />
+			<item id="105841" min="1" max="1" chance="20" />
+			<item id="105842" min="1" max="1" chance="20" />
+			<item id="105843" min="1" max="1" chance="20" />
+		</capsuled_items>
+	</item>
+	<item id="109011" name="頂級瞬間恢復藥水" type="EtcItem">
+		<set name="icon" val="BranchSys.icon.br_vitality_potion_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="handler" val="ItemSkills" />
+		<set name="material" val="LIQUID" />
+		<set name="price" val="30" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="shared_reuse_group" val="91912" />
+		<set name="reuse_delay" val="200" />
+		<skills>
+			<skill id="39123" level="2" />
+		</skills>
+	</item>
+	<item id="109012" name="特級瞬間恢復藥水" type="EtcItem">
+		<set name="icon" val="BranchSys.icon.br_vitality_potion_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="immediate_effect" val="true" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="handler" val="ItemSkills" />
+		<set name="material" val="LIQUID" />
+		<set name="price" val="30" />
+		<set name="is_sellable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="shared_reuse_group" val="91912" />
+		<set name="reuse_delay" val="200" />
+		<skills>
+			<skill id="39123" level="3" />
+		</skills>
+	</item>
+	<item id="109013" name="特級鬥志藥水" type="EtcItem">
+		<set name="icon" val="icon.etc_cp_potion_i01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="POTION" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="0" />
+		<set name="price" val="500" />
+		<set name="reuse_delay" val="500" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="is_event_restricted" val="true" />
+		<set name="commissionItemType" val="POTION" />
+		<skills>
+			<skill id="2166" level="3" />
+		</skills>
+	</item>
 </list>

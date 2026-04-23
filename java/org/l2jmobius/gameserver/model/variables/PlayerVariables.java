@@ -134,7 +134,22 @@ public class PlayerVariables extends AbstractVariables
 	public static final String FAVORITE_CHARACTER_STYLES = "FAVORITE_CHARACTER_STYLES_";
 	public static final String ACTIVE_CHARACTER_STYLE = "ACTIVE_CHARACTER_STYLE_";
 	public static final String FIRST_LOGIN_BUFF = "FIRST_LOGIN_BUFF";
-	
+
+	// Auto Potion personal settings.
+	public static final String AP_ENABLED = "AP_ENABLED";
+	public static final String AP_HP_ENABLED = "AP_HP_ENABLED";
+	public static final String AP_HP_PERCENT = "AP_HP_PERCENT";
+	public static final String AP_HP_INTERVAL = "AP_HP_INTERVAL";
+	public static final String AP_HP_ITEMS = "AP_HP_ITEMS";
+	public static final String AP_MP_ENABLED = "AP_MP_ENABLED";
+	public static final String AP_MP_PERCENT = "AP_MP_PERCENT";
+	public static final String AP_MP_INTERVAL = "AP_MP_INTERVAL";
+	public static final String AP_MP_ITEMS = "AP_MP_ITEMS";
+	public static final String AP_CP_ENABLED = "AP_CP_ENABLED";
+	public static final String AP_CP_PERCENT = "AP_CP_PERCENT";
+	public static final String AP_CP_INTERVAL = "AP_CP_INTERVAL";
+	public static final String AP_CP_ITEMS = "AP_CP_ITEMS";
+
 	// Private variables.
 	private final AtomicBoolean _scheduledSave = new AtomicBoolean(false);
 	private final int _objectId;

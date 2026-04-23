@@ -32,65 +32,70 @@
 			<defence physical="800000000" magical="500000000" />
 		</stats>
 		<collision>
-			<radius normal="66"/>
-			<height normal="125.4"/>
+			<radius normal="46.2"/>
+			<height normal="139.8"/>
 		</collision>
 		<skillList>
 			<skill id="102011" level="1" />
 		</skillList>
 		<dropLists>
 			<drop>
-				<item id="105839" min="1" max="1" chance="100"/>
-				<item id="105840" min="1" max="1" chance="100"/>
-				<item id="105841" min="1" max="1" chance="100"/>
-				<item id="105842" min="1" max="1" chance="100"/>
-				<item id="105843" min="1" max="1" chance="100"/>
-				<item id="105839" min="1" max="1" chance="50"/>
-				<item id="105840" min="1" max="1" chance="50"/>
-				<item id="105841" min="1" max="1" chance="50"/>
-				<item id="105842" min="1" max="1" chance="50"/>
-				<item id="105843" min="1" max="1" chance="50"/>
-				<item id="105839" min="1" max="1" chance="30"/>
-				<item id="105840" min="1" max="1" chance="30"/>
-				<item id="105841" min="1" max="1" chance="30"/>
-				<item id="105842" min="1" max="1" chance="30"/>
-				<item id="105843" min="1" max="1" chance="30"/>
-				<item id="105839" min="1" max="1" chance="10"/>
-				<item id="105840" min="1" max="1" chance="10"/>
-				<item id="105841" min="1" max="1" chance="10"/>
-				<item id="105842" min="1" max="1" chance="10"/>
-				<item id="105843" min="1" max="1" chance="10"/>
-				<item id="105839" min="1" max="1" chance="5"/>
-				<item id="105840" min="1" max="1" chance="5"/>
-				<item id="105841" min="1" max="1" chance="5"/>
-				<item id="105842" min="1" max="1" chance="5"/>
-				<item id="105843" min="1" max="1" chance="5"/>
+				<item id="103903" min="1" max="1" chance="100"/>
+				<item id="104523" min="1" max="1" chance="100"/>
+
+				<item id="105834" min="1" max="1" chance="100"/>
+				<item id="105835" min="1" max="1" chance="100"/>
+				<item id="105836" min="1" max="1" chance="100"/>
+				<item id="105837" min="1" max="1" chance="100"/>
+				<item id="105838" min="1" max="1" chance="100"/>
+				<item id="105834" min="1" max="1" chance="30"/>
+				<item id="105835" min="1" max="1" chance="30"/>
+				<item id="105836" min="1" max="1" chance="30"/>
+				<item id="105837" min="1" max="1" chance="30"/>
+				<item id="105838" min="1" max="1" chance="30"/>
+				<item id="105834" min="1" max="1" chance="10"/>
+				<item id="105835" min="1" max="1" chance="10"/>
+				<item id="105836" min="1" max="1" chance="10"/>
+				<item id="105837" min="1" max="1" chance="10"/>
+				<item id="105838" min="1" max="1" chance="10"/>
+				<item id="105839" min="1" max="1" chance="3"/>
+				<item id="105840" min="1" max="1" chance="3"/>
+				<item id="105841" min="1" max="1" chance="3"/>
+				<item id="105842" min="1" max="1" chance="3"/>
+				<item id="105843" min="1" max="1" chance="3"/>
 			</drop>
 		</dropLists>
 	</npc>
-	<npc id="61002" displayId="29256" level="90" type="GrandBoss" name="死之使者" usingServerSideName="true" title="掠奪之地" usingServerSideTitle="true">
+	<npc id="61002" displayId="26038" level="90" type="Monster" name="死之使者" usingServerSideName="true" title="掠奪之地" usingServerSideTitle="true">
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire exp="300000000" />
-		<stats str="100" int="100" dex="100" wit="100" con="100" men="100">
-			<vitals hp="50000000" hpRegen="1000000" mp="18000" mpRegen="3.6"/>
+		<stats str="50" int="50" dex="50" wit="50" con="50" men="50">
+			<vitals hp="50000000" hpRegen="10000" mp="18000" mpRegen="3.6"/>
 			<speed>
 				<walk ground="40"/>
 				<run ground="180"/>
 			</speed>
 			<attack physical="1000000000" magical="1000000000" random="10" critical="50" accuracy="99" attackSpeed="800" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="300000000" magical="100000000" />
+			<defence physical="250000000" magical="200000000" />
 		</stats>
 		<collision>
-			<radius normal="66"/>
-			<height normal="125.4"/>
+			<radius normal="24" />
+			<height normal="45" />
 		</collision>
 		<skillList>
 			<skill id="102012" level="1" />
 		</skillList>
 		<dropLists>
 			<drop>
+				<item id="57" min="10000" max="100000" chance="70"/>
 				<item id="103991" min="1" max="1" chance="100"/>
+				<item id="109008" min="1" max="1" chance="0.00003"/>
+				<item id="105829" min="1" max="1" chance="0.00003"/>
+				<item id="105830" min="1" max="1" chance="0.00003"/>
+				<item id="105831" min="1" max="1" chance="0.00003"/>
+				<item id="105832" min="1" max="1" chance="0.00003"/>
+				<item id="105833" min="1" max="1" chance="0.00003"/>
 			</drop>
 		</dropLists>
 	</npc>

@@ -52,9 +52,10 @@
          屬性加成定義
          ================================================================ -->
     <xs:complexType name="StatType">
-        <xs:attribute name="name"      type="xs:string"      use="required"/>
-        <xs:attribute name="value"     type="xs:decimal"        use="required"/>
-        <xs:attribute name="operation" type="OperationType"     use="required"/>
+        <xs:attribute name="name"        type="xs:string"      use="required"/>
+        <xs:attribute name="value"       type="xs:decimal"     use="required"/>
+        <xs:attribute name="operation"   type="OperationType"  use="required"/>
+        <xs:attribute name="showPercent" type="xs:boolean"     use="optional" default="false"/>
     </xs:complexType>
 
     <!-- ================================================================

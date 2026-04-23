@@ -46,7 +46,14 @@
         hpRegen        /  HP回復           生命值自然回復
         mpRegen        /  MP回復           魔力值自然回復
         cpRegen        /  CP回復           CP自然回復
-        healEffect     /  治療效果          治療技能效果
+        healEffect     /  治療效果增幅      治療技能效果（非藥水）
+        healEffectadd  /  治療效果增加      治療技能固定加值（非藥水）
+        additionalPotionHp  / 藥水HP加成   藥水/靈藥HP回覆固定加值
+        additionalPotionMp  / 藥水MP加成   藥水/靈藥MP回覆固定加值
+        additionalPotionCp  / 藥水CP加成   藥水/靈藥CP回覆固定加值
+        additionalPotionHpPer / 藥水HP加成% 藥水/靈藥HP回覆百分比加成
+        additionalPotionMpPer / 藥水MP加成% 藥水/靈藥MP回覆百分比加成
+        additionalPotionCpPer / 藥水CP加成% 藥水/靈藥CP回覆百分比加成
         accuracy       /  命中              命中值
         evasion        /  閃避              閃避值
         str            /  力量              STR基礎屬性
@@ -81,17 +88,18 @@
         spoilRate      /  採集率              採集率           (mul)
     ===================================================================== -->
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/SacrificeData.xsd">
-    <altar id="1" name="阿斯泰爾祭壇" chancePercent="100" upgradeRate="1.0" maxLevel="20">
+    <altar id="1" name="阿斯泰爾祭壇" chancePercent="100" upgradeRate="1.0" maxLevel="100">
 
         <material itemId="105824"    count="1"/>
         <material itemId="105829"    count="1"/>
         <material itemId="105834"    count="1"/>
         <material itemId="105839"    count="1"/>
 
-        <stat name="absorbChance"    value="0.02"  operation="add"/>
+        <stat name="unlocklimit"       value="0.2"  operation="add" showPercent="true"/>
+        <stat name="additionalPotionHp" value="150"  operation="add" showPercent="false"/>
     </altar>
 
-    <altar id="2" name="阿瑪戴歐祭壇" chancePercent="100" upgradeRate="1.0" maxLevel="20">
+    <altar id="2" name="阿瑪戴歐祭壇" chancePercent="100" upgradeRate="1.0" maxLevel="100">
 
         <material itemId="105825"    count="1"/>
         <material itemId="105830"    count="1"/>
@@ -99,10 +107,11 @@
         <material itemId="105840"    count="1"/>
 
 
-        <stat name="absorbChance"    value="0.02"  operation="add"/>
+        <stat name="finalDmg"          value="0.5"  operation="add" showPercent="true"/>
+        <stat name="additionalPotionHp" value="150"  operation="add" showPercent="false"/>
     </altar>
 
-    <altar id="3" name="利歐納爾祭壇" chancePercent="100" upgradeRate="1.0" maxLevel="20">
+    <altar id="3" name="利歐納爾祭壇" chancePercent="100" upgradeRate="1.0" maxLevel="100">
 
         <material itemId="105826"    count="1"/>
         <material itemId="105831"    count="1"/>
@@ -110,10 +119,11 @@
         <material itemId="105841"    count="1"/>
 
 
-        <stat name="absorbChance"    value="0.02"  operation="add"/>
+        <stat name="finalDef"          value="0.5"  operation="add" showPercent="true"/>
+        <stat name="additionalPotionHp" value="150"  operation="add" showPercent="false"/>
     </altar>
 
-    <altar id="4" name="齊格海特祭壇" chancePercent="100" upgradeRate="1.0" maxLevel="20">
+    <altar id="4" name="齊格海特祭壇" chancePercent="100" upgradeRate="1.0" maxLevel="100">
 
         <material itemId="105827"    count="1"/>
         <material itemId="105832"    count="1"/>
@@ -121,10 +131,11 @@
         <material itemId="105842"    count="1"/>
 
 
-        <stat name="absorbChance"    value="0.02"  operation="add"/>
+        <stat name="ignoreFinalDef"    value="0.3"  operation="add" showPercent="true"/>
+        <stat name="additionalPotionHp" value="150"  operation="add" showPercent="false"/>
     </altar>
 
-    <altar id="5" name="艾卡迪雅祭壇" chancePercent="100" upgradeRate="1.0" maxLevel="20">
+    <altar id="5" name="艾卡迪雅祭壇" chancePercent="100" upgradeRate="1.0" maxLevel="100">
 
         <material itemId="105828"    count="1"/>
         <material itemId="105833"    count="1"/>
@@ -132,7 +143,8 @@
         <material itemId="105843"    count="1"/>
 
 
-        <stat name="absorbChance"    value="0.02"  operation="add"/>
+        <stat name="absorbChance"      value="0.06" operation="add" showPercent="true"/>
+        <stat name="additionalPotionHp" value="150"  operation="add" showPercent="false"/>
     </altar>
 
 </list>

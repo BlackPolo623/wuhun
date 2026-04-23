@@ -276,7 +276,7 @@ public class MorphScrollHandler implements IBypassHandler, IItemHandler
 		// 視覺特效
 		if (entry.hasAbnormalEffects())
 		{
-			sb.append("<table width=290 bgcolor=222233><tr><td height=18><font color=\"FFFF00\">&nbsp;▶ 視覺特效</font></td></tr></table>");
+			sb.append("<table width=290 bgcolor=222233><tr><td height=18><font color=\"FFFF00\">視覺特效</font></td></tr></table>");
 			sb.append("<table width=290 bgcolor=1A1A1A><tr><td align=center height=20>");
 			boolean first = true;
 			for (var ave : entry.getAbnormalEffects())
@@ -292,7 +292,7 @@ public class MorphScrollHandler implements IBypassHandler, IItemHandler
 		}
 
 		// 屬性加成
-		sb.append("<table width=290 bgcolor=222233><tr><td height=18><font color=\"FFFF00\">&nbsp;▶ 變身屬性加成</font></td></tr></table>");
+		sb.append("<table width=290 bgcolor=222233><tr><td height=18><font color=\"FFFF00\">變身屬性加成</font></td></tr></table>");
 		if (entry.hasStats())
 		{
 			sb.append("<table width=290 bgcolor=2A2A2A><tr>");
@@ -544,7 +544,7 @@ public class MorphScrollHandler implements IBypassHandler, IItemHandler
 			{
 				sb.append("<table width=270 bgcolor=002244><tr><td height=22 align=center>");
 				sb.append("<font color=\"88AAFF\">已收藏【").append(MorphManager.getGradeName(curLv)).append("】&nbsp;&nbsp;</font>");
-				sb.append("<button value=\"▶ 應用外觀\" action=\"bypass morph_apply ").append(morphId).append(" 1\" width=80 height=18 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">");
+				sb.append("<button value=\"應用外觀\" action=\"bypass morph_apply ").append(morphId).append(" 1\" width=80 height=18 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">");
 				sb.append("</td></tr></table>");
 			}
 		}
@@ -638,7 +638,7 @@ public class MorphScrollHandler implements IBypassHandler, IItemHandler
 		}
 		sb.append("<br>");
 
-		sb.append("<table width=270 bgcolor=222233><tr><td height=18><font color=\"FFFF00\">&nbsp;▶ 基本信息</font></td></tr></table>");
+		sb.append("<table width=270 bgcolor=222233><tr><td height=18><font color=\"FFFF00\">基本信息</font></td></tr></table>");
 		sb.append("<table width=270><tr>");
 		sb.append("<td width=10></td>");
 		sb.append("<td width=120><font color=\"AAAAAA\">外觀 NPC ID</font></td>");
@@ -652,7 +652,7 @@ public class MorphScrollHandler implements IBypassHandler, IItemHandler
 
 		if (entry.hasAbnormalEffects())
 		{
-			sb.append("<table width=270 bgcolor=222233><tr><td height=18><font color=\"FFFF00\">&nbsp;▶ 視覺特效</font></td></tr></table>");
+			sb.append("<table width=270 bgcolor=222233><tr><td height=18><font color=\"FFFF00\">視覺特效</font></td></tr></table>");
 			sb.append("<table width=270><tr><td width=10></td><td>");
 			boolean first = true;
 			for (var ave : entry.getAbnormalEffects())
@@ -668,7 +668,7 @@ public class MorphScrollHandler implements IBypassHandler, IItemHandler
 			sb.append("<br>");
 		}
 
-		sb.append("<table width=270 bgcolor=222233><tr><td height=18><font color=\"FFFF00\">&nbsp;▶ 屬性加成</font></td></tr></table>");
+		sb.append("<table width=270 bgcolor=222233><tr><td height=18><font color=\"FFFF00\">屬性加成</font></td></tr></table>");
 		if (entry.hasStats())
 		{
 			sb.append("<table width=270 bgcolor=2A2A2A><tr>");

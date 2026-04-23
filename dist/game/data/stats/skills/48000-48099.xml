@@ -39,18 +39,69 @@
 		<icon>icon.skill_piggy_bless</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="48003" toLevel="1" name="巴溫之預言">
+	<skill id="48003" toLevel="1" name="巴溫之預言-突破限制2%">
 		<icon>icon.ev22_baium_buff</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>14400</abnormalTime>
+		<basicProperty>NONE</basicProperty>
+		<castRange>400</castRange>
+		<effectRange>600</effectRange>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<mpConsume>72</mpConsume>
+		<reuseDelay>10000</reuseDelay>
+		<effects>
+			<effect name="unlock_Limit">
+				<amount>2</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
-	<skill id="48004" toLevel="1" name="貝希莫斯之預言">
+	<skill id="48004" toLevel="1" name="貝希莫斯之預言-吸血機率2%">
 		<icon>icon.ev22_behemoth_buff</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>14400</abnormalTime>
+		<basicProperty>NONE</basicProperty>
+		<castRange>400</castRange>
+		<effectRange>600</effectRange>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<mpConsume>72</mpConsume>
+		<reuseDelay>10000</reuseDelay>
+		<effects>
+			<effect name="VampiricChanceAdd">
+				<amount>2</amount>
+			</effect>
+		</effects>
 	</skill>
-	<skill id="48005" toLevel="1" name="格拉奇恩斯之預言">
+	<skill id="48005" toLevel="1" name="格拉奇恩斯之預言-金幣掉落50%">
 		<icon>icon.ev22_glacies_buff</icon>
-		<operateType>A1</operateType>
-	</skill>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>14400</abnormalTime>
+		<basicProperty>NONE</basicProperty>
+		<castRange>400</castRange>
+		<effectRange>600</effectRange>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<mpConsume>72</mpConsume>
+		<reuseDelay>10000</reuseDelay>
+		<effects>
+			<effect name="BonusDropAdena">
+				<amount>50</amount>
+			</effect>
+		</effects>	</skill>
 	<skill id="48006" toLevel="25" name="一般攻擊致命攻擊傷害增加">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>

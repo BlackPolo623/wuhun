@@ -910,7 +910,7 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="NicknameColor" />
 	</item>
-	<item id="49663" name="特級HP藥水" type="EtcItem">
+	<item id="49663" name="特級瞬間回復HP藥水(普通)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_vitality_potion_i01" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="immediate_effect" val="true" />
@@ -922,7 +922,7 @@
 		<set name="is_freightable" val="true" />
 		<set name="is_stackable" val="true" />
 		<set name="shared_reuse_group" val="91912" />
-		<set name="reuse_delay" val="300" />
+		<set name="reuse_delay" val="200" />
 		<skills>
 			<skill id="39123" level="1" /> 
 		</skills>

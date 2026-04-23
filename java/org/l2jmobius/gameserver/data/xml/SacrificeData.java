@@ -241,7 +241,10 @@ public class SacrificeData implements IXmlReader
 		final Node opAttr = attrs.getNamedItem("operation");
 		final Operation op = (opAttr != null) && "mul".equalsIgnoreCase(opAttr.getNodeValue()) ? Operation.MUL : Operation.ADD;
 
-		return new MorphStatEntry(stat, value, op);
+		final Node showPctAttr = attrs.getNamedItem("showPercent");
+		final boolean showPercent = (showPctAttr != null) && "true".equalsIgnoreCase(showPctAttr.getNodeValue());
+
+		return new MorphStatEntry(stat, value, op, showPercent);
 	}
 
 	// ── 查詢接口 ─────────────────────────────────────────────────────────

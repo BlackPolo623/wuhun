@@ -1,0 +1,41 @@
+<html>
+<head><title>自動喝水 - %typeCN% 設定</title></head>
+<body>
+<br>
+<center>
+
+<table width=290 bgcolor=001A33><tr>
+<td width=60 align=center><font color="AAAAAA">%typeCN% 當前</font></td>
+<td width=165>%gauge%</td>
+<td width=65 align=center><font color="FFFFFF">%currentPct%%</font></td>
+</tr></table>
+
+<table width=290 bgcolor=000000><tr><td height=4></td></tr></table>
+<table width=290 bgcolor=002244><tr><td height=20 align=center><font color="AAAAAA">── 觸發設定 ──</font></td></tr></table>
+
+%threshBlock%
+
+<table width=290 bgcolor=000000><tr><td height=4></td></tr></table>
+<table width=290 bgcolor=002244><tr><td height=20 align=center><font color="AAAAAA">── 藥水優先順序 ──</font></td></tr></table>
+
+%slotsBlock%
+
+<table width=290 bgcolor=000000><tr><td height=5></td></tr></table>
+
+<table width=290><tr>
+<td width=145 align=center>
+<button value="%toggleVal%" action="bypass -h voice .%toggleBypass%" width=130 height=22 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td>
+<td width=145 align=center>
+<button value="儲存設定" action="bypass -h voice .%saveBypass%" width=130 height=22 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td>
+</tr></table>
+
+<table width=290 bgcolor=000000><tr><td height=4></td></tr></table>
+<table width=290><tr><td align=center>
+<button value="◀ 返回主頁" action="bypass -h voice .ap_main" width=130 height=22 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td></tr></table>
+
+<table width=290 bgcolor=000000><tr><td height=8></td></tr></table>
+</center>
+</body></html>

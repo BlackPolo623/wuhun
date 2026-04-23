@@ -141,24 +141,7 @@
 	<skill id="102011" toLevel="1" name="掠奪首領-可洛克">
 		<icon>icon.ev_prestige_rune</icon>
 		<operateType>P</operateType>
-		<abnormalVisualEffect>KAMAEL_WHITE_TRANSFORM_2</abnormalVisualEffect>
-		<effects>
-			<effect name="FinalDamageReduce">
-				<amount>
-					<value level="1">150</value>
-				</amount>
-			</effect>
-			<effect name="FinalDamage">
-				<amount>200</amount>
-			</effect>
-			<effect name="VampiricDefence">
-				<amount>-99</amount>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="102012" toLevel="1" name="掠奪之地怪物">
-		<icon>icon.ev_prestige_rune</icon>
-		<operateType>P</operateType>
+		<abnormalVisualEffect>ARENA_UNSEAL_E</abnormalVisualEffect>
 		<effects>
 			<effect name="FinalDamageReduce">
 				<amount>
@@ -169,7 +152,61 @@
 				<amount>200</amount>
 			</effect>
 			<effect name="VampiricDefence">
+				<amount>-99</amount>
+			</effect>
+			<effect name="IgnoreFinalDamageReduce">
+				<amount>
+					<value level="1">30</value>
+				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="102012" toLevel="1" name="掠奪之地怪物">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="FinalDamageReduce">
+				<amount>
+					<value level="1">150</value>
+				</amount>
+			</effect>
+			<effect name="IgnoreFinalDamageReduce">
+				<amount>
+					<value level="1">15</value>
+				</amount>
+			</effect>
+			<effect name="FinalDamage">
+				<amount>200</amount>
+			</effect>
+			<effect name="VampiricDefence">
 				<amount>-50</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="102013" toLevel="3" name="冰凍女王 - 芙蕾雅">
+		<icon>icon.ev_prestige_rune</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="FinalDamageReduce">
+				<amount>
+					<value level="1">165</value>
+					<value level="2">170</value>
+					<value level="3">175</value>
+				</amount>
+			</effect>
+			<effect name="FinalDamage">
+				<amount>
+					<value level="1">100</value>
+					<value level="2">150</value>
+					<value level="3">200</value>
+				</amount>
+			</effect>
+			<effect name="VampiricDefence">
+				<amount>
+					<value level="1">-80</value>
+					<value level="2">-90</value>
+					<value level="3">-95</value>
+				</amount>
 			</effect>
 		</effects>
 	</skill>

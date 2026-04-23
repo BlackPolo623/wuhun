@@ -183,7 +183,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 				buffer.writeSizedString(_player.getName());
 			}
 			
-			buffer.writeByte(_player.isGM());
+			buffer.writeByte(1);
 			int j = _player.getVariables().getInt("外形幻化", 0);
 			int z = 0;
 			switch (j)

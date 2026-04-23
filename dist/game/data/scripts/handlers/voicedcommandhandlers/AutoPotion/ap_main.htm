@@ -1,0 +1,97 @@
+<html>
+<head><title>自動喝水</title></head>
+<body>
+<br>
+<center>
+
+<table width=290 bgcolor=001A33><tr>
+<td width=145 align=center><font color="AAAAAA">身分</font></td>
+<td width=145 align=center>%premiumText%</td>
+</tr></table>
+<table width=290 bgcolor=1A0000><tr>
+<td width=145 align=center><font color="AAAAAA">功能狀態</font></td>
+<td width=145 align=center><font color="%statusColor%">%statusText%</font></td>
+</tr></table>
+
+<table width=290 bgcolor=000000><tr><td height=5></td></tr></table>
+
+<table width=290 bgcolor=002244><tr>
+<td height=20 align=center><font color="888888">── 快捷開關 ──</font></td>
+</tr></table>
+
+<table width=290 bgcolor=111111><tr>
+<td width=96 align=center><font color="AAAAAA">HP：</font><font color="%hpStatusColor%">%hpStatusText%</font></td>
+<td width=96 align=center><font color="AAAAAA">MP：</font><font color="%mpStatusColor%">%mpStatusText%</font></td>
+<td width=98 align=center><font color="AAAAAA">CP：</font><font color="%cpStatusColor%">%cpStatusText%</font></td>
+</tr></table>
+<table width=290><tr>
+<td width=96 align=center>
+<button value="%hpSwText%" action="bypass -h voice .ap_toggle_hp" width=88 height=22 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td>
+<td width=96 align=center>
+<button value="%mpSwText%" action="bypass -h voice .ap_toggle_mp" width=88 height=22 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td>
+<td width=98 align=center>
+<button value="%cpSwText%" action="bypass -h voice .ap_toggle_cp" width=88 height=22 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td>
+</tr></table>
+
+<table width=290 bgcolor=000000><tr><td height=5></td></tr></table>
+
+<table width=290 bgcolor=002244><tr>
+<td height=20 align=center><font color="888888">── 即時狀態 ──</font></td>
+</tr></table>
+<table width=290 bgcolor=1A0808><tr>
+<td width=22 align=center><font color="FF4444">HP</font></td>
+<td width=125>%hpGauge%</td>
+<td width=48 align=center><font color="FFFFFF">%hpPct%%</font></td>
+<td width=95><font color="666666">閾值：<font color="FFFF44">%hpThresh%%</font></font></td>
+</tr></table>
+<table width=290 bgcolor=08081A><tr>
+<td width=22 align=center><font color="4488FF">MP</font></td>
+<td width=125>%mpGauge%</td>
+<td width=48 align=center><font color="FFFFFF">%mpPct%%</font></td>
+<td width=95><font color="666666">閾值：<font color="FFFF44">%mpThresh%%</font></font></td>
+</tr></table>
+<table width=290 bgcolor=1A1000><tr>
+<td width=22 align=center><font color="FFAA00">CP</font></td>
+<td width=125>%cpGauge%</td>
+<td width=48 align=center><font color="FFFFFF">%cpPct%%</font></td>
+<td width=95><font color="666666">閾值：<font color="FFFF44">%cpThresh%%</font></font></td>
+</tr></table>
+
+<table width=290 bgcolor=000000><tr><td height=5></td></tr></table>
+
+<table width=290 bgcolor=002244><tr>
+<td height=20 align=center><font color="888888">── 詳細設定 ──</font></td>
+</tr></table>
+<table width=290><tr>
+<td width=96 align=center>
+<button value="HP 設定" action="bypass -h voice .ap_hp" width=88 height=22 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td>
+<td width=96 align=center>
+<button value="MP 設定" action="bypass -h voice .ap_mp" width=88 height=22 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td>
+<td width=98 align=center>
+<button value="CP 設定" action="bypass -h voice .ap_cp" width=88 height=22 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td>
+</tr></table>
+
+<table width=290 bgcolor=000000><tr><td height=4></td></tr></table>
+
+<table width=290><tr>
+<td width=145 align=center>
+<button value="開啟功能" action="bypass -h voice .ap_on" width=130 height=22 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td>
+<td width=145 align=center>
+<button value="關閉功能" action="bypass -h voice .ap_off" width=130 height=22 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+</td>
+</tr></table>
+
+<table width=290 bgcolor=111111><tr>
+<td height=20 align=center>%apStatusSummary%</td>
+</tr></table>
+
+<table width=290 bgcolor=000000><tr><td height=8></td></tr></table>
+</center>
+</body></html>

@@ -25,49 +25,54 @@ public class BaseBossNpc extends Script
 	};
 
 	private static final Object[][] BOSS_LIST = {
-			{"蕾歐娜-一號", 50041, 10},
-			{"蕾歐娜-二號", 50042, 10},
-			{"蕾歐娜-三號", 50043, 10},
-			{"蕾歐娜-四號", 50044, 10},
-			{"冰凍君主-初級", 29136, 2},
-			{"冰凍君主-中級", 29137, 3},
-			{"冰凍君主-高級", 29138, 36},
-			{"冰凍君主-頂級", 29139, 54},
-			{"實驗體首領一號", 50001, 1},
-			{"實驗體首領二號", 50002, 1},
-			{"實驗體首領三號", 50003, 1},
-			{"實驗體首領四號", 50004, 1},
-			{"實驗體首領五號", 50005, 1},
-			{"實驗體首領六號", 50006, 1},
-			{"實驗體首領七號", 50007, 1},
-			{"實驗體首領八號", 50008, 1},
-			{"實驗體首領九號", 50009, 1},
-			{"實驗體首領十號", 50010, 1},
-			{"實驗體首領十一號", 50011, 1},
-			{"實驗體首領十二號", 50012, 1},
-			{"實驗體首領十三號", 50013, 1},
-			{"實驗體首領十四號", 50014, 1},
-			{"實驗體首領十五號", 50015, 1},
-			{"實驗體首領十六號", 50016, 1},
-			{"實驗體首領十七號", 50017, 1},
-			{"實驗體首領十八號", 50018, 1},
-			{"實驗體首領十九號", 50019, 1},
-			{"實驗體首領二十號", 50020, 1},
-			{"實驗體首領二十一號", 50021, 1},
-			{"實驗體首領二十二號", 50022, 1},
-			{"實驗體首領二十三號", 50023, 1},
-			{"實驗體首領二十四號", 50024, 1},
-			{"實驗體首領二十五號", 50025, 1},
-			{"實驗體首領二十六號", 50026, 1},
-			{"實驗體首領二十七號", 50027, 1},
-			{"實驗體首領二十八號", 50028, 1},
-			{"實驗體首領二十九號", 50029, 1},
-			{"實驗體首領三十號", 50030, 1},
-			{"實驗體首領三十一號", 50031, 1},
-			{"實驗體首領三十二號", 50032, 1},
-			{"實驗體首領三十三號", 50033, 1},
-			{"實驗體首領三十四號", 50034, 1},
-			{"實驗體首領三十五號", 50035, 1}
+			// { 名稱, npcId, 票數, 分組 }
+			{"初階女王芙蕾雅",       18933, 100, "特殊"},
+			{"中階女王芙蕾雅",       18934, 150, "特殊"},
+			{"高階女王芙蕾雅",       18935, 200, "特殊"},
+			{"火龍巴拉卡斯",       29191, 100, "特殊"},
+			{"蕾歐娜-一號",          50041,  10, "蕾歐娜"},
+			{"蕾歐娜-二號",          50042,  10, "蕾歐娜"},
+			{"蕾歐娜-三號",          50043,  10, "蕾歐娜"},
+			{"蕾歐娜-四號",          50044,  10, "蕾歐娜"},
+			{"冰凍君主-初級",        29136,   2, "冰凍君主"},
+			{"冰凍君主-中級",        29137,   3, "冰凍君主"},
+			{"冰凍君主-高級",        29138,  36, "冰凍君主"},
+			{"冰凍君主-頂級",        29139,  54, "冰凍君主"},
+			{"實驗體一號",        50001,   1, "實驗體"},
+			{"實驗體二號",        50002,   1, "實驗體"},
+			{"實驗體三號",        50003,   1, "實驗體"},
+			{"實驗體四號",        50004,   1, "實驗體"},
+			{"實驗體五號",        50005,   1, "實驗體"},
+			{"實驗體六號",        50006,   1, "實驗體"},
+			{"實驗體七號",        50007,   1, "實驗體"},
+			{"實驗體八號",        50008,   1, "實驗體"},
+			{"實驗體九號",        50009,   1, "實驗體"},
+			{"實驗體十號",        50010,   1, "實驗體"},
+			{"實驗體十一號",      50011,   1, "實驗體"},
+			{"實驗體十二號",      50012,   1, "實驗體"},
+			{"實驗體十三號",      50013,   1, "實驗體"},
+			{"實驗體十四號",      50014,   1, "實驗體"},
+			{"實驗體十五號",      50015,   1, "實驗體"},
+			{"實驗體十六號",      50016,   1, "實驗體"},
+			{"實驗體十七號",      50017,   1, "實驗體"},
+			{"實驗體十八號",      50018,   1, "實驗體"},
+			{"實驗體十九號",      50019,   1, "實驗體"},
+			{"實驗體二十號",      50020,   1, "實驗體"},
+			{"實驗體二十一號",    50021,   1, "實驗體"},
+			{"實驗體二十二號",    50022,   1, "實驗體"},
+			{"實驗體二十三號",    50023,   1, "實驗體"},
+			{"實驗體二十四號",    50024,   1, "實驗體"},
+			{"實驗體二十五號",    50025,   1, "實驗體"},
+			{"實驗體二十六號",    50026,   1, "實驗體"},
+			{"實驗體二十七號",    50027,   1, "實驗體"},
+			{"實驗體二十八號",    50028,   1, "實驗體"},
+			{"實驗體二十九號",    50029,   1, "實驗體"},
+			{"實驗體三十號",      50030,   1, "實驗體"},
+			{"實驗體三十一號",    50031,   1, "實驗體"},
+			{"實驗體三十二號",    50032,   1, "實驗體"},
+			{"實驗體三十三號",    50033,   1, "實驗體"},
+			{"實驗體三十四號",    50034,   1, "實驗體"},
+			{"實驗體三十五號",    50035,   1, "實驗體"},
 	};
 
 
@@ -99,7 +104,20 @@ public class BaseBossNpc extends Script
 			return showLockedPage(player);
 		}
 
-		if (event.startsWith("craft_ticket_confirm "))
+		if (event.equals("main_page"))
+		{
+			return showMainPage(player);
+		}
+		else if (event.equals("show_boss_list"))
+		{
+			// Open boss page on the first category
+			return showBossPage(player, (String) BOSS_LIST[0][3]);
+		}
+		else if (event.startsWith("boss_cat_"))
+		{
+			return showBossPage(player, event.substring("boss_cat_".length()));
+		}
+		else if (event.startsWith("craft_ticket_confirm "))
 		{
 			try
 			{
@@ -114,8 +132,20 @@ public class BaseBossNpc extends Script
 		}
 		else if (event.startsWith("summon_boss "))
 		{
-			int bossIndex = Integer.parseInt(event.substring(12));
-			return handleSummonBoss(player, bossIndex);
+			// format: "summon_boss <category> <index>"
+			final String[] parts = event.substring("summon_boss ".length()).split(" ", 2);
+			if (parts.length == 2)
+			{
+				try
+				{
+					final String retCat = parts[0];
+					final int bossIndex = Integer.parseInt(parts[1]);
+					return handleSummonBoss(player, bossIndex, retCat);
+				}
+				catch (NumberFormatException ignored)
+				{
+				}
+			}
 		}
 
 		return null;
@@ -216,7 +246,7 @@ public class BaseBossNpc extends Script
 		return showMainPage(player);
 	}
 
-	private String handleSummonBoss(Player player, int bossIndex)
+	private String handleSummonBoss(Player player, int bossIndex, String retCategory)
 	{
 		// 再次確認權限（雙重保險）
 		if (!isBaseOwner(player))
@@ -274,7 +304,7 @@ public class BaseBossNpc extends Script
 		player.sendMessage("BOSS已出現在您的前方！");
 		player.sendMessage("========================================");
 
-		return showMainPage(player);
+		return showBossPage(player, retCategory);
 	}
 
 	/**
@@ -309,23 +339,6 @@ public class BaseBossNpc extends Script
 		html.replace("%ticket_count%", String.valueOf(ticketCount));
 		html.replace("%max_craft%", String.valueOf(calcMaxCraft(player)));
 
-		StringBuilder bossList = new StringBuilder();
-		for (int i = 0; i < BOSS_LIST.length; i++)
-		{
-			Object[] bossInfo = BOSS_LIST[i];
-			String name = (String) bossInfo[0];
-			int cost = (int) bossInfo[2];
-
-			bossList.append("<tr bgcolor=\"222222\">");
-			bossList.append("<td width=150 align=center><font color=\"FFCC33\">").append(name).append("</font></td>");
-			bossList.append("<td width=60 align=center>").append(cost).append(" 張</td>");
-			bossList.append("<td width=70 align=center>");
-			bossList.append("<button value=\"召喚\" action=\"bypass -h Quest BaseBossNpc summon_boss ").append(i);
-			bossList.append("\" width=60 height=22 back=\"L2UI_CT1.Button_DF\" fore=\"L2UI_CT1.Button_DF\">");
-			bossList.append("</td></tr>");
-		}
-		html.replace("%boss_list%", bossList.toString());
-
 		StringBuilder materialList = new StringBuilder();
 		for (int[] material : CRAFT_MATERIALS)
 		{
@@ -334,6 +347,125 @@ public class BaseBossNpc extends Script
 		}
 		html.replace("%material_list%", materialList.toString());
 
+		player.sendPacket(html);
+		return null;
+	}
+
+	private String showBossPage(Player player, String activeCategory)
+	{
+		if (!isBaseOwner(player))
+		{
+			return showLockedPage(player);
+		}
+		if (!hasBossPermission(player))
+		{
+			return showLockedPage(player);
+		}
+
+		NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
+		html.setFile(player, "data/scripts/custom/PlayerBase/boss_summon.htm");
+
+		long ticketCount = player.getInventory().getInventoryItemCount(SUMMON_TICKET_ID, 0);
+		html.replace("%ticket_count%", String.valueOf(ticketCount));
+
+		// ── Collect ordered unique categories ──────────────────────────────────
+		final java.util.List<String> categories = new java.util.ArrayList<>();
+		for (Object[] boss : BOSS_LIST)
+		{
+			final String cat = (String) boss[3];
+			if (!categories.contains(cat))
+			{
+				categories.add(cat);
+			}
+		}
+
+		// Validate activeCategory falls back to first if unknown
+		if (!categories.contains(activeCategory))
+		{
+			activeCategory = categories.get(0);
+		}
+
+		final StringBuilder content = new StringBuilder();
+
+		// ── Tab row (same pattern as AttributeEnhance slot tabs) ───────────────
+		content.append("<table width=280 cellpadding=2 cellspacing=0><tr>");
+		for (String cat : categories)
+		{
+			if (cat.equals(activeCategory))
+			{
+				content.append("<td align=center><font color=\"LEVEL\">").append(cat).append("</font></td>");
+			}
+			else
+			{
+				content.append("<td align=center><a action=\"bypass -h Quest BaseBossNpc boss_cat_")
+				       .append(cat).append("\">").append(cat).append("</a></td>");
+			}
+		}
+		content.append("</tr></table>");
+
+		content.append("<table border=0><tr><td height=4></td></tr></table>");
+
+		// ── Boss buttons for active category ───────────────────────────────────
+		final boolean twoCol = activeCategory.equals("實驗體");
+
+		if (twoCol)
+		{
+			// 2-column layout: button text = "召喚 NAME"
+			content.append("<table width=280 border=0 cellpadding=2 cellspacing=1>");
+			int col = 0;
+			for (int i = 0; i < BOSS_LIST.length; i++)
+			{
+				final Object[] boss = BOSS_LIST[i];
+				if (!boss[3].equals(activeCategory))
+				{
+					continue;
+				}
+				final String name = (String) boss[0];
+				if (col == 0)
+				{
+					content.append("<tr>");
+				}
+				content.append("<td width=138 align=center>")
+				       .append("<button value=\"").append(name)
+				       .append("\" action=\"bypass -h Quest BaseBossNpc summon_boss ").append(activeCategory).append(" ").append(i)
+				       .append("\" width=128 height=22 back=L2UI_CT1.Button_DF fore=L2UI_CT1.Button_DF>")
+				       .append("</td>");
+				col++;
+				if (col == 2)
+				{
+					content.append("</tr>");
+					col = 0;
+				}
+			}
+			if (col == 1)
+			{
+				content.append("<td width=138></td></tr>");
+			}
+			content.append("</table>");
+		}
+		else
+		{
+			// Single-column layout: button text = "召喚 NAME (X張)"
+			content.append("<table width=280 border=0 cellpadding=2 cellspacing=1>");
+			for (int i = 0; i < BOSS_LIST.length; i++)
+			{
+				final Object[] boss = BOSS_LIST[i];
+				if (!boss[3].equals(activeCategory))
+				{
+					continue;
+				}
+				final String name = (String) boss[0];
+				final int cost = (int) boss[2];
+				content.append("<tr><td align=center>")
+				       .append("<button value=\"").append(name).append("（").append(cost).append("張）")
+				       .append("\" action=\"bypass -h Quest BaseBossNpc summon_boss ").append(activeCategory).append(" ").append(i)
+				       .append("\" width=260 height=22 back=L2UI_CT1.Button_DF fore=L2UI_CT1.Button_DF>")
+				       .append("</td></tr>");
+			}
+			content.append("</table>");
+		}
+
+		html.replace("%boss_content%", content.toString());
 		player.sendPacket(html);
 		return null;
 	}
