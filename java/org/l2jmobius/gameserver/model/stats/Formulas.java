@@ -188,7 +188,7 @@ public class Formulas
 		// 新公式:   77 * ((mAtk * levelMod) + power) * MAGIC_DAMAGE_RATIO / mDef
 		// MAGIC_DAMAGE_RATIO 用來控制魔法相對物理的傷害比例，0.75 = 魔法為物理的75%（少25%）
 		// 可調整: 0.75=少25% / 0.85=少15% / 1.0=完全相同
-		final double MAGIC_DAMAGE_RATIO = 2.2;
+		final double MAGIC_DAMAGE_RATIO = 2.7;
 		final double skillPowerAdd = attacker.getStat().getValue(Stat.SKILL_POWER_ADD, 0);
 		double damage = ((77 * ((mAtk * attacker.getLevelMod()) + power + skillPowerAdd)) / mDef) * MAGIC_DAMAGE_RATIO * shotsBonus;
 		
@@ -1723,7 +1723,7 @@ public class Formulas
 	public static double calculatePvpPveBonus(Creature attacker, Creature target, Skill skill, boolean crit)
 	{
 		final Player attackerPlayer = attacker.asPlayer();
-		final Player targetPlayer = attacker.asPlayer();
+		final Player targetPlayer = target.asPlayer();
 		
 		// PvP bonus
 		if (attacker.isPlayable() && target.isPlayable())
@@ -1785,7 +1785,7 @@ public class Formulas
 					pveAttack = attacker.getStat().getMul(Stat.PVE_MAGICAL_SKILL_DAMAGE, 1) * (attackerPlayer == null ? 1 : ClassBalanceConfig.PVE_MAGICAL_SKILL_DAMAGE_MULTIPLIERS[attackerPlayer.getPlayerClass().getId()]) * getSoulRingBonus(attackerPlayer, "SoulRing_PveMagicSkill");
 					pveDefense = target.getStat().getMul(Stat.PVE_MAGICAL_SKILL_DEFENCE, 1) * (targetPlayer == null ? 1 : ClassBalanceConfig.PVE_MAGICAL_SKILL_DEFENCE_MULTIPLIERS[targetPlayer.getPlayerClass().getId()])  * getSoulRingBonus(targetPlayer, "SoulRing_PveMagicDef");
 					pveRaidAttack = attacker.isRaid() ? attacker.getStat().getMul(Stat.PVE_RAID_MAGICAL_SKILL_DAMAGE, 1) * getSoulRingBonus(attackerPlayer, "SoulRing_RaidMagicSkill") : 1;
-					pveRaidDefense = attacker.isRaid() ? attacker.getStat().getMul(Stat.PVE_RAID_MAGICAL_SKILL_DEFENCE, 1) * getSoulRingBonus(targetPlayer, "SoulRing_RaidMagicDef") : 1;
+					pveRaidDefense = attacker.isRaid() ? target.getStat().getMul(Stat.PVE_RAID_MAGICAL_SKILL_DEFENCE, 1) * getSoulRingBonus(targetPlayer, "SoulRing_RaidMagicDef") : 1;
 				}
 				else
 				{
@@ -1793,7 +1793,7 @@ public class Formulas
 					pveAttack = attacker.getStat().getMul(Stat.PVE_PHYSICAL_SKILL_DAMAGE, 1) * (attackerPlayer == null ? 1 : ClassBalanceConfig.PVE_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS[attackerPlayer.getPlayerClass().getId()])  * getSoulRingBonus(attackerPlayer, "SoulRing_PvePhysSkill");
 					pveDefense = target.getStat().getMul(Stat.PVE_PHYSICAL_SKILL_DEFENCE, 1) * (targetPlayer == null ? 1 : ClassBalanceConfig.PVE_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS[targetPlayer.getPlayerClass().getId()])  * getSoulRingBonus(targetPlayer, "SoulRing_PvePhysSkillDef");
 					pveRaidAttack = attacker.isRaid() ? attacker.getStat().getMul(Stat.PVE_RAID_PHYSICAL_SKILL_DAMAGE, 1) * getSoulRingBonus(attackerPlayer, "SoulRing_RaidPhysSkill") : 1;
-					pveRaidDefense = attacker.isRaid() ? attacker.getStat().getMul(Stat.PVE_RAID_PHYSICAL_SKILL_DEFENCE, 1) * getSoulRingBonus(targetPlayer, "SoulRing_RaidPhysSkillDef") : 1;
+					pveRaidDefense = attacker.isRaid() ? target.getStat().getMul(Stat.PVE_RAID_PHYSICAL_SKILL_DEFENCE, 1) * getSoulRingBonus(targetPlayer, "SoulRing_RaidPhysSkillDef") : 1;
 				}
 			}
 			else
@@ -1802,7 +1802,7 @@ public class Formulas
 				pveAttack = attacker.getStat().getMul(Stat.PVE_PHYSICAL_ATTACK_DAMAGE, 1) * (attackerPlayer == null ? 1 : ClassBalanceConfig.PVE_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS[attackerPlayer.getPlayerClass().getId()])  * getSoulRingBonus(attackerPlayer, "SoulRing_PvePhysAtk");
 				pveDefense = target.getStat().getMul(Stat.PVE_PHYSICAL_ATTACK_DEFENCE, 1) * (targetPlayer == null ? 1 : ClassBalanceConfig.PVE_PHYSICAL_ATTACK_DEFENCE_MULTIPLIERS[targetPlayer.getPlayerClass().getId()])  * getSoulRingBonus(targetPlayer, "SoulRing_PvePhysDef");
 				pveRaidAttack = attacker.isRaid() ? attacker.getStat().getMul(Stat.PVE_RAID_PHYSICAL_ATTACK_DAMAGE, 1) * getSoulRingBonus(attackerPlayer, "SoulRing_RaidPhysAtk") : 1;
-				pveRaidDefense = attacker.isRaid() ? attacker.getStat().getMul(Stat.PVE_RAID_PHYSICAL_ATTACK_DEFENCE, 1) * getSoulRingBonus(targetPlayer, "SoulRing_RaidPhysDef") : 1;
+				pveRaidDefense = attacker.isRaid() ? target.getStat().getMul(Stat.PVE_RAID_PHYSICAL_ATTACK_DEFENCE, 1) * getSoulRingBonus(targetPlayer, "SoulRing_RaidPhysDef") : 1;
 			}
 			
 			return Math.max(0.05, (1 + ((pveAttack * pveRaidAttack) - (pveDefense * pveRaidDefense))) * pvePenalty); // Bonus should not be negative.

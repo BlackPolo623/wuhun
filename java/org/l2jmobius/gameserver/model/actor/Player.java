@@ -9935,23 +9935,22 @@ public class Player extends Playable
 				return false;
 			}
 			
-			// Check if the Player is in an arena, but NOT siege zone. NOTE: This check comes before clan/ally checks, but after party checks.
-			// This is done because in arenas, clan/ally members can autoattack if they are not in party.
-			if ((isInsideZone(ZoneId.PVP) && attackerPlayer.isInsideZone(ZoneId.PVP)) && !(isInsideZone(ZoneId.SIEGE) && attackerPlayer.isInsideZone(ZoneId.SIEGE)))
-			{
-				return true;
-			}
-			
 			// Check if the attacker is not in the same clan
 			if ((clan != null) && clan.isMember(attacker.getObjectId()))
 			{
 				return false;
 			}
-			
+
 			// Check if the attacker is not in the same ally
 			if (attacker.isPlayer() && (getAllyId() != 0) && (getAllyId() == attackerPlayer.getAllyId()))
 			{
 				return false;
+			}
+
+			// Check if the Player is in an arena, but NOT siege zone. Clan/ally checks above take priority.
+			if ((isInsideZone(ZoneId.PVP) && attackerPlayer.isInsideZone(ZoneId.PVP)) && !(isInsideZone(ZoneId.SIEGE) && attackerPlayer.isInsideZone(ZoneId.SIEGE)))
+			{
+				return true;
 			}
 			
 			// Now check again if the Player is in pvp zone, but this time at siege PvP zone, applying clan/ally checks

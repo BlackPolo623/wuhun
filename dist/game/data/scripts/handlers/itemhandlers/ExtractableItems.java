@@ -21,6 +21,7 @@
 package handlers.itemhandlers;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -66,12 +67,13 @@ public class ExtractableItems implements IItemHandler
 		
 		final Player player = playable.asPlayer();
 		final EtcItem etcitem = (EtcItem) item.getTemplate();
-		final List<ExtractableProduct> exitems = etcitem.getExtractableItems();
+		final List<ExtractableProduct> exitems = new ArrayList<>(etcitem.getExtractableItems());
 		if (exitems == null)
 		{
 			LOGGER.info("No extractable data defined for " + etcitem);
 			return false;
 		}
+		Collections.shuffle(exitems);
 		
 		if (!player.isInventoryUnder80(false))
 		{

@@ -1,105 +1,111 @@
-<html><head><title>屬性加成</title></head>
+<html><head><title>提升屬性</title></head>
 <body scroll="no">
-<table border=0 cellpadding=0 cellspacing=0 width=292 height=358 >
-    <tr>
-        <td valign="top" align="center">
-            <table border=0 cellpadding=0 cellspacing=0>
-                <tr>
-                    <td align=center width=280 height=40 background="L2UI_CT1.Windows_DF_TooltipBG">
-                        <font color="LEVEL" size="5"><b>屬性加成系統</b></font>
-                    </td>
-                </tr>
-            </table>
-
-            <table border=0 cellpadding=0 cellspacing=0>
-                <tr>
-                    <td align=center><font color="00FF66">選擇要提升的屬性</font></td>
-                </tr>
-                <tr>
-                    <td height=10></td>
-                </tr>
-
-                <!-- 屬性升級按鈕 -->
-                <tr>
-                    <td align=center>
-                        <table width="270" cellspacing="3">
-                            <tr>
-                                <td align="center">
-                                    <button value="物理攻擊" action="bypass -h Quest wxcz upgrade_patk" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
-                                        <font color="FFFF00" size="1">擁有：%patk_count%個</font><font color="FF6600" size="1"> 消耗：%patk_cost%個</font>
-                                </td>
-                                <td align="center">
-                                    <button value="魔法攻擊" action="bypass -h Quest wxcz upgrade_matk" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
-                                        <font color="FFFF00" size="1">擁有：%matk_count%個</font><font color="FF6600" size="1"> 消耗：%matk_cost%個</font>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td height=5></td>
-                            </tr>
-                            <tr>
-                                <td align="center">
-                                    <button value="物理防禦" action="bypass -h Quest wxcz upgrade_pdef" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
-                                        <font color="FFFF00" size="1">擁有：%pdef_count%個</font><font color="FF6600" size="1"> 消耗：%pdef_cost%個</font>
-                                </td>
-                                <td align="center">
-                                    <button value="魔法防禦" action="bypass -h Quest wxcz upgrade_mdef" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
-                                        <font color="FFFF00" size="1">擁有：%mdef_count%個</font><font color="FF6600" size="1"> 消耗：%mdef_cost%個</font>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td height=5></td>
-                            </tr>
-                            <tr>
-                                <td align="center">
-                                    <button value="最大HP值" action="bypass -h Quest wxcz upgrade_maxhp" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
-                                        <font color="FFFF00" size="1">擁有：%maxhp_count%個</font><font color="FF6600" size="1"> 消耗：%maxhp_cost%個</font>
-                                </td>
-                                <td align="center">
-                                    <button value="最大MP值" action="bypass -h Quest wxcz upgrade_maxmp" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
-                                        <font color="FFFF00" size="1">擁有：%maxmp_count%個</font><font color="FF6600" size="1"> 消耗：%maxmp_cost%個</font>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td height=5></td>
-                            </tr>
-                            <tr>
-                                <td align="center">
-                                    <button value="魔法致命傷害" action="bypass -h Quest wxcz upgrade_mcatk" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
-                                        <font color="FFFF00" size="1">擁有：%mcatk_count%個</font><font color="FF6600" size="1"> 消耗：%mcatk_cost%個</font>
-                                </td>
-                                <td align="center">
-                                    <button value="物理致命傷害" action="bypass -h Quest wxcz upgrade_catk" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
-                                        <font color="FFFF00" size="1">擁有：%catk_count%個</font><font color="FF6600" size="1"> 消耗：%catk_cost%個</font>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td height=5></td>
-                            </tr>
-                            <tr>
-                                <td align="center">
-                                    <button value="物理技能致命傷害" action="bypass -h Quest wxcz upgrade_skillcatk" width="125" height="25" back="L2UI_CT1.ListCTRL_DF_Title" fore="L2UI_CT1.ListCTRL_DF_Title">
-                                        <font color="FFFF00" size="1">擁有：%skillcatk_count%個</font><font color="FF6600" size="1"> 消耗：%skillcatk_cost%個</font>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td height=15></td>
-                </tr>
-
-                <!-- 功能按鈕 -->
-                <tr>
-                    <td align=center>
-                        <button action="bypass -h Quest wxcz upgrade_all" value="一鍵全部加成" width="120" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
-                        <button action="bypass -h Quest wxcz view_stats" value="查看屬性" width="120" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
-                            <button action="bypass -h Quest wxcz main" value="返回主頁" width="120" height="25" back="L2UI_CT1.Button_DF" fore="L2UI_CT1.Button_DF">
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td height=8></td></tr>
+  <tr bgcolor="1A2A00">
+    <td align=center colspan=5><font color="FFCC33">選擇要提升的屬性</font></td>
+  </tr>
 </table>
+
+<table border=0 cellpadding=3 cellspacing=1 width=270 bgcolor="111111">
+  <tr bgcolor="222222">
+    <td width=83 ><font color="AAAAAA" size="1">屬性</font></td>
+    <td width=38 ><font color="AAAAAA" size="1">全加</font></td>
+    <td width=46 ><font color="AAAAAA" size="1">擁有</font></td>
+    <td width=38 ><font color="AAAAAA" size="1">消耗</font></td>
+    <td width=65 ><font color="AAAAAA" size="1">當前</font></td>
+  </tr>
+
+  <tr bgcolor="1A1A1A">
+    <td >%patk_btn%</td>
+    <td >%patk_allbtn%</td>
+    <td ><font color="%patk_count_color%" size="1">%patk_count%</font></td>
+    <td ><font color="FF8800" size="1">%patk_cost%</font></td>
+    <td ><font color="00FF66" size="1">%patk_current%%</font></td>
+  </tr>
+  <tr bgcolor="1A1A1A">
+    <td >%matk_btn%</td>
+    <td >%matk_allbtn%</td>
+    <td ><font color="%matk_count_color%" size="1">%matk_count%</font></td>
+    <td ><font color="FF8800" size="1">%matk_cost%</font></td>
+    <td ><font color="00FF66" size="1">%matk_current%%</font></td>
+  </tr>
+  <tr bgcolor="1A1A1A">
+    <td >%pdef_btn%</td>
+    <td >%pdef_allbtn%</td>
+    <td ><font color="%pdef_count_color%" size="1">%pdef_count%</font></td>
+    <td ><font color="FF8800" size="1">%pdef_cost%</font></td>
+    <td ><font color="00FF66" size="1">%pdef_current%%</font></td>
+  </tr>
+  <tr bgcolor="1A1A1A">
+    <td >%mdef_btn%</td>
+    <td >%mdef_allbtn%</td>
+    <td ><font color="%mdef_count_color%" size="1">%mdef_count%</font></td>
+    <td ><font color="FF8800" size="1">%mdef_cost%</font></td>
+    <td ><font color="00FF66" size="1">%mdef_current%%</font></td>
+  </tr>
+  <tr bgcolor="1A1A1A">
+    <td >%maxhp_btn%</td>
+    <td >%maxhp_allbtn%</td>
+    <td ><font color="%maxhp_count_color%" size="1">%maxhp_count%</font></td>
+    <td ><font color="FF8800" size="1">%maxhp_cost%</font></td>
+    <td ><font color="00FF66" size="1">%maxhp_current%%</font></td>
+  </tr>
+  <tr bgcolor="1A1A1A">
+    <td >%maxmp_btn%</td>
+    <td >%maxmp_allbtn%</td>
+    <td ><font color="%maxmp_count_color%" size="1">%maxmp_count%</font></td>
+    <td ><font color="FF8800" size="1">%maxmp_cost%</font></td>
+    <td ><font color="00FF66" size="1">%maxmp_current%%</font></td>
+  </tr>
+  <tr bgcolor="1A1A1A">
+    <td >%mcatk_btn%</td>
+    <td >%mcatk_allbtn%</td>
+    <td ><font color="%mcatk_count_color%" size="1">%mcatk_count%</font></td>
+    <td ><font color="FF8800" size="1">%mcatk_cost%</font></td>
+    <td ><font color="00FF66" size="1">%mcatk_current%%</font></td>
+  </tr>
+  <tr bgcolor="1A1A1A">
+    <td >%catk_btn%</td>
+    <td >%catk_allbtn%</td>
+    <td ><font color="%catk_count_color%" size="1">%catk_count%</font></td>
+    <td ><font color="FF8800" size="1">%catk_cost%</font></td>
+    <td ><font color="00FF66" size="1">%catk_current%%</font></td>
+  </tr>
+  <tr bgcolor="1A1A1A">
+    <td >%skillcatk_btn%</td>
+    <td >%skillcatk_allbtn%</td>
+    <td ><font color="%skillcatk_count_color%" size="1">%skillcatk_count%</font></td>
+    <td ><font color="FF8800" size="1">%skillcatk_cost%</font></td>
+    <td ><font color="00FF66" size="1">%skillcatk_current%%</font></td>
+  </tr>
+</table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td height=8></td></tr>
+</table>
+
+<img src="L2UI.SquareGray" width="270" height="1">
+
+<table border=0 cellpadding=3 cellspacing=1 width=270>
+  <tr><td height=4></td></tr>
+  <tr>
+    <td align=center>
+      <button action="bypass -h Quest wxcz upgrade_all" value="一鍵全部加成" width=200 height=26 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+    </td>
+  </tr>
+  <tr><td height=4></td></tr>
+  <tr>
+    <td align=center>
+      <button action="bypass -h Quest wxcz view_stats" value="查看屬性加成" width=130 height=26 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+      <button action="bypass -h Quest wxcz main" value="返回主頁" width=120 height=26 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+    </td>
+  </tr>
+</table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=292>
+<tr><td height=6></td></tr>
+</table>
+
 </body>
 </html>

@@ -26,12 +26,12 @@ public class SkillControllerCmd implements IVoicedCommandHandler
 	public boolean onCommand(String command, Player player, String params)
 	{
 		// 掠奪之地副本內禁止使用技能控制器指令
-		final Instance instanceWorld = player.getInstanceWorld();
-		if ((instanceWorld != null) && (instanceWorld.getTemplateId() == 1000))
-		{
-			player.sendMessage("掠奪之地內無法使用技能控制器！");
-			return false;
-		}
+//		final Instance instanceWorld = player.getInstanceWorld();
+//		if ((instanceWorld != null) && (instanceWorld.getTemplateId() == 1000))
+//		{
+//			player.sendMessage("掠奪之地內無法使用技能控制器！");
+//			return false;
+//		}
 
 		if (params == null || params.isEmpty())
 		{

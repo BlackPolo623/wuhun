@@ -97,24 +97,6 @@ public class NotFriendPc implements IAffectObjectHandler
 				return !player.isSiegeFriend(targetPlayer);
 			}
 			
-			// Arena.
-			if (creature.isInsideZone(ZoneId.PVP) && !creature.isInsideZone(ZoneId.SIEGE) && target.isInsideZone(ZoneId.PVP) && !target.isInsideZone(ZoneId.SIEGE))
-			{
-				return true;
-			}
-			
-			// Duel.
-			if (player.isInDuel() && targetPlayer.isInDuel() && (player.getDuelId() == targetPlayer.getDuelId()))
-			{
-				return true;
-			}
-			
-			// Olympiad.
-			if (player.isInOlympiadMode() && targetPlayer.isInOlympiadMode() && (player.getOlympiadGameId() == targetPlayer.getOlympiadGameId()))
-			{
-				return true;
-			}
-			
 			// Clan.
 			final Clan clan = player.getClan();
 			final Clan targetClan = targetPlayer.getClan();
@@ -124,18 +106,36 @@ public class NotFriendPc implements IAffectObjectHandler
 				{
 					return false;
 				}
-				
+
 				// War
 				if ((targetClan != null) && clan.isAtWarWith(targetClan) && targetClan.isAtWarWith(clan))
 				{
 					return true;
 				}
 			}
-			
+
 			// Alliance.
 			if ((player.getAllyId() != 0) && (player.getAllyId() == targetPlayer.getAllyId()))
 			{
 				return false;
+			}
+
+			// Arena.
+			if (creature.isInsideZone(ZoneId.PVP) && !creature.isInsideZone(ZoneId.SIEGE) && target.isInsideZone(ZoneId.PVP) && !target.isInsideZone(ZoneId.SIEGE))
+			{
+				return true;
+			}
+
+			// Duel.
+			if (player.isInDuel() && targetPlayer.isInDuel() && (player.getDuelId() == targetPlayer.getDuelId()))
+			{
+				return true;
+			}
+
+			// Olympiad.
+			if (player.isInOlympiadMode() && targetPlayer.isInOlympiadMode() && (player.getOlympiadGameId() == targetPlayer.getOlympiadGameId()))
+			{
+				return true;
 			}
 			
 			// Auto play target mode check.

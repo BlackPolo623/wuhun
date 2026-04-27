@@ -182,8 +182,8 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 				buffer.writeShort(23 + (_appearance.getVisibleName().length() * 2));
 				buffer.writeSizedString(_player.getName());
 			}
-			
-			buffer.writeByte(1);
+			//系統訊息 1為看的見 0為看不見
+			buffer.writeByte(_player.getVariables().getInt("SYSTEM_MSG_VISIBLE", 1));
 			int j = _player.getVariables().getInt("外形幻化", 0);
 			int z = 0;
 			switch (j)

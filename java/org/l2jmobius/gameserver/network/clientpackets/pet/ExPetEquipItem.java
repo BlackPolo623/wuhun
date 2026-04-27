@@ -29,6 +29,7 @@ import org.l2jmobius.gameserver.ai.NextAction;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
 import org.l2jmobius.gameserver.model.item.enums.BodyPart;
+import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.ArmorType;
@@ -172,7 +173,23 @@ public class ExPetEquipItem extends ClientPacket
 				return;
 			}
 			
-			final Item oldItem = pet.getInventory().getPaperdollItemByBodyPart(item.getTemplate().getBodyPart());
+			final BodyPart newBodyPart = item.getTemplate().getBodyPart();
+			final Item oldItem;
+			switch (newBodyPart)
+			{
+				case LR_HAND:
+					oldItem = pet.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
+					break;
+				case LR_EAR:
+					oldItem = pet.getInventory().getPaperdollItem(Inventory.PAPERDOLL_REAR);
+					break;
+				case LR_FINGER:
+					oldItem = pet.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RFINGER);
+					break;
+				default:
+					oldItem = pet.getInventory().getPaperdollItemByBodyPart(newBodyPart);
+					break;
+			}
 			if (oldItem != null)
 			{
 				pet.transferItem(ItemProcessType.TRANSFER, oldItem.getObjectId(), 1, player.getInventory(), player, null);

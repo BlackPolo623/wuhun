@@ -589,6 +589,7 @@ public class MasterHandler
 			SecretShopTicket.class,
 			BossTeleportHandler.class,
 			SkillControllerCmd.class,
+			SystemMessageToggle.class,
 		},
 		{
 			// Target Handlers

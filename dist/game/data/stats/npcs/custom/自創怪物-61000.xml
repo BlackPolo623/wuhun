@@ -23,13 +23,17 @@
 		<sex>MALE</sex>
 		<acquire exp="100000000000" sp="100000000000" />
 		<stats str="150" int="150" dex="150" wit="150" con="150" men="150">
-			<vitals hp="500000000" hpRegen="10000000" mp="18000" mpRegen="3.6"/>
+			<vitals hp="250000000" hpRegen="10000" mp="18000" mpRegen="3.6"/>
 			<speed>
 				<walk ground="40"/>
 				<run ground="180"/>
 			</speed>
-			<attack physical="2000000000" magical="2000000000" random="10" critical="50" accuracy="99" attackSpeed="800" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="800000000" magical="500000000" />
+			<attack physical="2000000000" magical="2000000000" random="10" critical="50" accuracy="99" attackSpeed="3000" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="1300000000" magical="1000000000" />
+			<attribute>
+				<attack type="DARK" value="6000"/>
+				<defence dark="6000"/>
+			</attribute>
 		</stats>
 		<collision>
 			<radius normal="46.2"/>
@@ -71,13 +75,17 @@
 		<sex>MALE</sex>
 		<acquire exp="300000000" />
 		<stats str="50" int="50" dex="50" wit="50" con="50" men="50">
-			<vitals hp="50000000" hpRegen="10000" mp="18000" mpRegen="3.6"/>
+			<vitals hp="70000000" hpRegen="10000" mp="18000" mpRegen="3.6"/>
 			<speed>
 				<walk ground="40"/>
 				<run ground="180"/>
 			</speed>
 			<attack physical="1000000000" magical="1000000000" random="10" critical="50" accuracy="99" attackSpeed="800" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="250000000" magical="200000000" />
+			<defence physical="150000000" magical="100000000" />
+			<attribute>
+				<attack type="DARK" value="1000"/>
+				<defence dark="1000"/>
+			</attribute>
 		</stats>
 		<collision>
 			<radius normal="24" />
@@ -88,7 +96,7 @@
 		</skillList>
 		<dropLists>
 			<drop>
-				<item id="57" min="10000" max="100000" chance="70"/>
+				<item id="57" min="7000" max="20000" chance="70"/>
 				<item id="103991" min="1" max="1" chance="100"/>
 				<item id="109008" min="1" max="1" chance="0.00003"/>
 				<item id="105829" min="1" max="1" chance="0.00003"/>
@@ -96,6 +104,20 @@
 				<item id="105831" min="1" max="1" chance="0.00003"/>
 				<item id="105832" min="1" max="1" chance="0.00003"/>
 				<item id="105833" min="1" max="1" chance="0.00003"/>
+
+				<item id="105811" min="1" max="1" chance="0.0001"/>
+				<item id="105812" min="1" max="1" chance="0.0001"/>
+				<item id="105813" min="1" max="1" chance="0.0001"/>
+				<item id="105814" min="1" max="1" chance="0.0001"/>
+				<item id="105815" min="1" max="1" chance="0.0001"/>
+				<item id="105816" min="1" max="1" chance="0.0001"/>
+				<item id="105817" min="1" max="1" chance="0.0001"/>
+				<item id="105818" min="1" max="1" chance="0.0001"/>
+				<item id="105819" min="1" max="1" chance="0.0001"/>
+				<item id="105820" min="1" max="1" chance="0.0001"/>
+				<item id="105821" min="1" max="1" chance="0.0001"/>
+				<item id="105822" min="1" max="1" chance="0.0001"/>
+				<item id="105823" min="1" max="1" chance="0.0001"/>
 			</drop>
 		</dropLists>
 	</npc>

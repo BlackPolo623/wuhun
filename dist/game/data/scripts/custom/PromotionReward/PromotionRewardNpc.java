@@ -43,6 +43,11 @@ public class PromotionRewardNpc extends Script
             MultisellData.getInstance().separateAndSend(9000121, player, npc, false);
             return null;
         }
+        else if (event.equals("cardshop"))
+        {
+            MultisellData.getInstance().separateAndSend(9000122, player, npc, false);
+            return null;
+        }
         return showMainHtml(player);
     }
     
