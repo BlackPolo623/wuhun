@@ -1,456 +1,456 @@
-AbnormalShield: Blocks a given amount of debuffs. (Like DOTA's Linken Sphere)
-AbnormalTimeChange: Changes the duration of the buffs/debuffs of the target.
-AbnormalTimeChangeBySkillId: Changes the effect duration of the specific skill ids. (l2jmobius)
-AbsorbDamage: Absorbs given amount of damage. Immune message is displayed when damage is blocked. Target can still be debuffed.
-AbstractConditionalHpEffect: Abstract class for managing conditional HP stats. Skills like Frenzy, Final Fortress, etc.
-AbstractStatAddEffect: Abstract class for managing stat adding.
-AbstractStatEffect: Abstract class for managing stats.
-AbstractStatPercentEffect: Abstract class for managing stat percentages. (l2jmobius)
-AccessoryMagicalDefence: Accessory magical defence stat. (l2jmobius)
-Accuracy: P. Accuracy stat.
-AccuracyBonus: Accuracy bonus stat. (l2jmobius)
-AddHate: Instant effect that increases target's hate towards you.
-AddHuntingTime: Add time for time limited hunting zones. (l2jmobius)
-AdditionalPhysicalDamage: Additional physical damage effect handler. (l2jmobius)
-AdditionalPotionCp: Increases the amount of CP heal gained from potions or elixirs. (l2jmobius)
-AdditionalPotionCpPer: Increases a percentage of CP heal gained from potions or elixirs. (l2jmobius)
-AdditionalPotionHp: Increases the amount of HP heal gained from potions or elixirs. (l2jmobius)
-AdditionalPotionHpPer: Increases a percentage of HP heal gained from potions or elixirs. (l2jmobius)
-AdditionalPotionMp: Increases the amount of MP heal gained from potions or elixirs. (l2jmobius)
-AdditionalPotionMpPer: Increases a percentage of MP heal gained from potions or elixirs. (l2jmobius)
-AddMaxMagicCriticalRate: Stat that overrides the default config MAX_MCRIT_RATE. (l2jmobius)
-AddMaxPhysicalCriticalRate: Stat that overrides the default config MAX_PCRIT_RATE. (l2jmobius)
-AddPcCafePoints: Increase PcCafe points permanently. (l2jmobius)
-AddSkillBySkill: Add skill when other skill already exists. (l2jmobius)
-AddTeleportBookmarkSlot: Instant effect that increases the amount of My Teleport slots.
-AgathionSlot: Agathion slot modifier. (l2jmobius)
-AreaDamage: Topography (Danger Zone) resistance stat.
-AreaOfEffectDamageDefence: Area of effect damage defence stat. (l2jmobius)
-AreaOfEffectDamageModify: Area of effect damage modifier. (l2jmobius)
-ArmorPhysicalDefence: Armor physical defence stat. (l2jmobius)
-ArtifactSlot: Artifact slot modifier. (l2jmobius)
-AssistOwnerAttack: Make summon assist owner attacking. (l2jmobius)
-AssistOwnerCast: Make summon cast a skill when owner cast another one. (l2jmobius)
-AttackAttribute: Stat that increases specific attack attribute.
-AttackAttributeAdd: Stat that increases all attack attribute.
-AttackBehind: Enables all attacks regardless of position to land towards the back.
-AttackTrait: Stat that manages all attack traits.
-AutoAttackDamageBonus: Auto attack damage modifier. (l2jmobius)
-Backstab: Inflicts physical damage according to the backstab formula.
-Betray: Causes the target summon to attack its owner.
-Blink: Teleport to location effect.
-BlinkSwap: You teleport to target's location and target teleports to your location.
-BlockAbnormalSlot: Blocks any AbnormalType from receiving its skill effects. Horn, Drum, Pipe Organ Melody etc are using this.
-BlockAction: Blocks basic gameplay actions (Bot Report button stuff)
-BlockActions: Prevents target from doing any actions. Stun, paralyze etc.
-BlockChat: Chat ban effect (Bot Report button stuff)
-BlockControl: Blocks target's control over itself. Fear.
-BlockEscape: Blocks teleportation
-ExceedingMagicalAttackSpeed: Give magical attack when casting speed exceeding limits by %. (l2jmobius)
-ExceedingPhysicalAttackSpeed: Give physical attack when attack speed exceeding limits by %. (l2jmobius)
-BlockFrontalRangedDamage: Blocks frontal ranged damage. (l2jmobius)
-BlockMove: Blocks movement. Root.
-BlockParty: Party ban effect (Bot Report button stuff)
-BlockResurrection: Blocked target from getting ressurected.
-BlockRush: Blocks rush skills. (l2jmobius)
-BlockSkill: Blocks usage of given skill magic types or specific skill ids. (l2jmobius)
-BlockTarget: Causes the target to become untargetable.
-Bluff: Rotates the target so you face its back.
-BonusDropAdena: Bonus amount for dropped adena. (l2jmobius)
-BonusDropAmount: Bonus amount for dropped items. (l2jmobius)
-BonusDropRate: Bonus chance for dropping items. (l2jmobius)
-BonusDropRateLCoin: Bonus chance for LCoins. (l2jmobius)
-BonusRaidPoints: Bonus amount for raid points. (l2jmobius)
-BonusSpoilRate: Bonus chance for acquiring spoil items. (l2jmobius)
-Breath: Underwater breathing stat.
-BuffBlock: Blocks target from receiving buffs.
-CallLearnedSkill: Calls existing learned skill. (l2jmobius)
-CallParty: Recalls whole party.
-CallPc: Recalls a Player.
-CallRandomSkill: Triggers a random skill. (l2jmobius)
-CallSkill: Triggers a specified skill.
-CallSkillByEnemyRace: Triggers a specified skill based on enemy race. (l2jmobius)
-CallSkillByKill: Triggers a specified skill upon killing a creature. (l2jmobius)
-CallSkillOnActionTime: Triggers a specified skill every given amount of time.
-CallSkillOnEnemyDeath: Call skill on enemy death. (l2jmobius)
-CallTargetParty: Recalls the whole party of the target.
-ChameleonRest: Relax and Silent Move-like effect.
-ChangeBody: Transforms the target, but its unable to use the transformation template's skills.
-ChangeFace: Changes the Player's face. Facelifting Potion.
-ChangeFishingMastery: Empty effect.
-ChangeHairColor: Changes the Player's hair color.
-ChangeHairStyle: Changes the Player's Hair style.
-CheapShot: Oldschool cheap shot SA effect. Has a chance to consume less soulshots during attack.
-CheatDeath: Trigger this effect instead of player dying. (l2jmobius)
-ClassChange: Switch to the given subclass index. Main class, Dual class, Sub-class 1, Sub-Class 2.
-CombatPower: Combat Power stat effect. (l2jmobius)
-ComboSkill: Combo skill effect handler. (l2jmobius)
-Compelling: Force target to move at caster. (l2jmobius)
-Confuse: Causes the target to attack random target.
-ConsumeBody: Removes target NPC's corpse.
-ConvertItem: Kamael's Change Weapon skill effect.
-CounterPhysicalSkill: Counters a physical skill.
-Cp: Increases current CP by a static amount.
-CpHeal: Increases current CP by a given amount.
-CpHealOverTime: Increases current CP by a given amount over time.
-CpHealPercent: Increases current CP by a given percentage amount.
-CpRegen: CP Regeneration stat.
-CraftingCritical: Crafting critical stat.
-CraftRate: Craft success rate bonus. (l2jmobius)
-CriticalDamage: Critical Damage stat.
-CriticalDamagePosition: Critical Damage depending on position stat.
-CriticalRate: Critical Rate stat.
-CriticalRatePositionBonus: Critical Rate depending on position stat. Ignores the critical rate cap of 500.
-CubicMastery: Max cubics stat.
-DamageBlock: Blocks Hp or Mp damage/heal.
-DamageByAttack: An effect that changes damage taken from an attack.
-DamageShield: Reflect damage percentage stat.
-DamageShieldResist: Reflect damage percentage resist.
-DamOverTime: Damage over time effect. Magic Critical results in 10 times amount to me instantly inflicted before the effect is started.
-DamOverTimePercent: Damage percentage of HP over time.
-DeathLink: Inflicts magical damage proportional to your current HP.
-DebuffBlock: Blocks target being affected from debuffs.
-DefenceAttribute: Stat that increases specific defence attribute.
-DefenceCriticalDamage: Critical Damage resist stat.
-DefenceCriticalRate: Critical Rate resist stat.
-DefenceIgnoreRemoval: Defence ignore removal stat. (l2jmobius)
-DefenceMagicCriticalDamage: Magic Critical Damage resist stat.
-DefenceMagicCriticalRate: Magic Critical Rate resist stat.
-DefencePhysicalSkillCriticalDamage: Physical skill Critical Damage resist stat. (l2jmobius)
-DefencePhysicalSkillCriticalRate: Physical skill Rate resist stat. (l2jmobius)
-DefenceTrait: Stat that manages all defence traits.
-DeleteHate: Has a chance to delete target's hate towards everyone.
-DeleteHateOfMe: Has a chance to delete target's hate towards you.
-DeleteTopAgro: Has a chance to delete target's most hated from the list.
-DetectHiddenObjects: Finds hidden doors
-Detection: Detects hidden creatures.
-DisableSkill: Disables effectors known skills specified by skill ID. (l2jmobius)
-DisableTargeting: Disables your target's ability to target.
-Disarm: Removes the weapon of target player.
-Disarmor: Removes the armor of target player.
-DisarmShield: Removes the shield of target player. (l2jmobius)
-DispelAll: Stops all effects of the target.
-DispelByCategory: Removes given amount of target's effects from a BUFF/DEBUFF category.
-DispelBySkillId: Dispels a specific skill by it's id. (l2jmobius)
-DispelBySlot: Removes given amount of target's effects by specified AbnormalType and maximum abnormal level.
-DispelBySlotMyself: Removes given amount of effects by specified AbnormalType
-DispelBySlotProbability: Removes given amount of effects by specified AbnormalType at a given rate.
-Distrust: Make the monsters attack each other. (l2jmobius)
-DoubleCast: Triggers Fire, Water, Wind, Earth stance and enables the ability to cast two skills at once.
-DuelistFury: Synergy effect for Faceoff effect. (l2jmobius)
-ElementalSpiritAttack: Elemental spirit attack stat effect. (JoeAlisson)
-ElementalSpiritDefense: Elemental spirit defense stat effect. (JoeAlisson)
-ElixirUsageLimit: Elixir usage limit modifier. (l2jmobius)
-EnableCloak: See/unsee cloaks.
-EnchantRate: Enchant rate modifier, does not work for non grade items. (l2jmobius)
-EnemyCharge: Charges towards the enemy. Rush Impact.
-EnergyDamage: Physical damage based on Momentum formula. Triple Sonic Slash, Double Sonic Slash etc.
-EnlargeAbnormalSlot: Increase the amount of buff slots.
-EnlargeSlot: Increases the amount of inventory, warehouse, recipe or trade slots.
-Escape: Teleport to Town, Castle, Clanhall etc effect. Scroll of Escape effects.
-ExpModify: Bonus EXP stat.
-ExpModifyPet: Bonus EXP stat for pets. (l2jmobius)
-Faceoff: Focuses attacking a given target with all other damage blocked.
-FakeDeath: Plays dead to avoid enemy NPC aggression.
-FatalBlow: Physical attack based on blow formula. Deadly Blow, Lethal Blow etc.
-FatalBlowRate: Blow land rate stat.
-FatalBlowRateDefence: Blow land rate defence stat. (l2jmobius)
-Fear: Causes the target to run away. Does not block it though.
-Feed: Gives food to pet.
-FishingExpSpBonus: Bonus Exp and SP from fishing. (l2jmobius)
-Flag: Starts pvpflag.
-FlyMove: Moves towards target location.
-FocusEnergy: Max momentum stat.
-FocusMaxMomentum: Increases momentum to its maximum.
-FocusMomentum: Increases momentum by a given value.
-FocusSouls: Increases souls by a given value.
-GetAgro: Causes enemy NPC to attack you.
-GetDamageLimit: Sets the maximum amount of damage you can receive.
-GetMomentum: Increases momentum by a given value at fixed rate.
-GiveClanReputation: Gives clan reputation points to a players clan. (l2jmobius)
-GiveExpAndSp: Gives a given amount of XP and SP. (l2jmobius)
-GiveFame: Gives a given amount of Fame. (l2jmobius)
-GiveHonorCoins: Gives a given amount of Honor Coins. (l2jmobius)
-GiveItemByExp: Gives an item when a certain amount of EXP is gathered. (l2jmobius)
-GivePetXp: Gives a given amount of XP to a pet. (l2jmobius)
-GiveRecommendation: Gives recommendations to a player. Blue name.
-GiveSp: Gives a given amount of SP.
-GiveXp: Gives a given amount of XP. (l2jmobius)
-Grow: Sets NPC collision to its growth collision.
-HairAccessorySet: See/Unsee hair accessory.
-Harvesting: Manor's harvesting seed.
-HateAttack: Attacks with increased hate value
-HeadquarterCreate: Creates a siege flag
-Heal: Increases current HP by a given amount.
-HealEffect: Increases the amount of HP received.
-HealOverTime: Increases current HP by a given amount over time.
-HealPercent: Increases current HP by a given percentage amount.
-Hide: Hide effect.
-HitNumber: Polearm attack max hit creatures.
-Hp: Increases current HP by a static value.
-HpByLevel: recovers certain amount of HP, but current implementation is wrong... final amount should be computed from skill power and character level difference
-HpCpHeal: Increases current HP by a given amount. If the given amount exceeds maximum HP, it increases current CP with the rest value as well.
-HpCpHealCritical: HpCp heal effects always trigger Magic Critical Hit.
-HpDrain: Magical attack that absorbs given percentage of the damage inflicted as HP.
-HpLimit: Increase a character's max hp limit. (l2jmobius)
-HpRegen: HP Regeneration stat.
-HpToOwner: DOT effect that absorbs HP over time.
-IgnoreDeath: Become undying. Hp cannot decrease below 1.
-IgnoreReduceDamage: Ignore ReduceDamage effect implementation. (l2jmobius)
-ImmobileDamageBonus: Bonus damage to immobile targets. (l2jmobius)
-ImmobileDamageResist: Resist damage while immobile. (l2jmobius)
-ImmobilePetBuff: Causes your pet to become immobilized.
-InstantKillResist: Resist against Lethal strike.
-KarmaCount: Sets current Karma.
-KnockBack: Knocks back or knocks down target.
-Lethal: Upon success sets enemy Player's CP to 1 and enemy NPC's HP to 50%.
-LimitCp: Sets maximum recoverable CP through heals.
-LimitHp: Sets maximum recoverable HP through heals.
-LimitMp: Sets maximum recoverable MP through heals.
-Lucky: dummy effect since behavior is hardcoded
-MagicAccuracy: M. Accuracy stat.
-MagicalAbnormalDispelDamage: Magical attack that does damage only if it manages to dispel the given AbnormalType
-MagicalAbnormalResist: Magical mesmerizing resist.
-MagicalAttack: Magical attack stat.
-MagicalAttackByPhysicalAttack: Magical attack bonus from physical attack stat. (l2jmobius)
-MagicalAttackSpeed: Casting Spd. stat
-MagicalDamage: Magical damage effect.
-MagicalDamageByAbnormal: Curse of divinity effect.
-MagicalDamageByAbnormalSlot: Magical attack that does damage only if given AbnormalType is present.
-MagicalDamageMp: Mana burn effect.
-MagicalDamageOverTime: Magical attack over time.
-MagicalDamageRange: Magical damage effect that is blocked by shield. Has percentage range of the amount of shield p.def to act as m.def
-MagicalDefence: M. Def stat.
-MagicalEvasion: M. Evasion stat.
-MagicalSkillPower: Magical Skill Power stat. (l2jmobius)
-MagicalSoulDamage: Magical damage based on souls formula.
-MagicalSuccessResistance: Magic resist stat (magic attack 50% effective or 1 damage)
-MagicCriticalDamage: Magical Critical Damage stat
-MagicCriticalRate: Magical Critical Rate stat.
-MagicCriticalRateByCriticalRate: Magical Critical Rate bonus from Critical Rate stat. (l2jmobius)
-MagicLampExpRate: Sets the magic lamp exp rate. (l2jmobius)
-MagicMpCost: Sets mana cost per magic type. Clarity.
-ManaCharge: Mana Recharge stat.
-ManaDamOverTime: Mana damage over time.
-ManaHeal: Increases current MP.
-ManaHealByLevel: Increases current MP depending on the level diff of the effector and effected.
-ManaHealOverTime: Increases current MP over time.
-ManaHealPercent: Increases current MP by a given percentage.
-MaxCp: Max. CP stat.
-MaxHp: Max. HP stat.
-MaxMp: Max. MP stat.
-ModifyAssassinationPoints: Modifies player Assassination Point count. (l2jmobius)
-ModifyAssassinationPointsMax: Modifies player maximum Assassination Point count. (l2jmobius)
-ModifyBeastPoints: Modifies player Beast Point count. (l2jmobius)
-ModifyBeastPointsMax: Modifies player maximum Beast Point count. (l2jmobius)
-ModifyCraftPoints: Modifies player Craft Point count. (l2jmobius)
-ModifyDeathPoints: Modifies player Death Point count. (l2jmobius)
-ModifyLightPoints: Modifies player Light Point count. (l2jmobius)
-ModifyLightPointsMax: Modifies player maximum Light Point count. (l2jmobius)
-ModifyMagicLampPoints: Modifies player MagicLamp point count. (l2jmobius)
-ModifyVital: Modifies current HP/MP/CP
-ModifyWolfPoints: Modifies player Wolf Point count. (l2jmobius)
-ModifyWolfPointsMax: Modifies player maximum Wolf Point count. (l2jmobius)
-Mp: Increases current MP by a given static amount.
-MpConsumePerLevel: Consumes mana over time depending on your level.
-MpRegen: MP Regeneration stat.
-MpShield: Transfers given percentage of damage as mana damage. Mana Shield.
-MpVampiricAttack: Absorbs given percentage of mana during attack.
-Mute: Prevents target from using magical skills. Silence.
-NewHennaSlot: New henna slot modifier. (l2jmobius)
-NightStatModify: Modify a specific stat at night time. (l2jmobius)
-NoblesseBless: Does not remove buffs upon death except itself.
-OpenChest: Opens a treasure chest.
-OpenCommonRecipeBook: Shows the common recipe book window.
-OpenDoor: Unlocks doors at a given chance.
-OpenDwarfRecipeBook: Shows the dwarven craft recipe book window.
-Passive: Disables skills and movement of npc.
-PhysicalAbnormalResist: Physical mesmerizing stat.
-PhysicalAttack: Physical attack stat.
-PhysicalAttackRange: Autoattack range.
-PhysicalAttackSpeed: Atk. Spd. stat.
-PhysicalDamage: Physical damage effect.
-PhysicalDamageByTargets: Physical damage by targets. (l2jmobius)
-PhysicalDamageHpLink: Physical damage proportional to your current HP.
-PhysicalDamageMute: Prevents autoattack.
-PhysicalDamageSaveHp: Physical damage that does not recude HP more than the given percentage value.
-PhysicalDamageWeaponBonus: Physical damage depending on WeaponType. Erruption.
-PhysicalDefence: P. Def stat.
-PhysicalEvasion: P. Evasion stat.
-PhysicalMute: Prevents the usage of physical skills. Shield Slam.
-PhysicalShieldAngleAll: Causes the shield to block at 360 degree angle.
-PhysicalSkillCriticalDamage: Physical skill critical damage stat.
-PhysicalSkillCriticalRate: Physical skill critical rate stat. (l2jmobius)
-PhysicalSkillPower: Physical Skill Power stat.
-PhysicalSoulDamage: Physical damage depending on souls.
-PkCount: Increases PK kills.
-Plunder: Takes bonus item from monster. Sweep effect.
-PolearmSingleTarget: Effect used by Focus Attack (317) skill.
-ProtectDeathPenalty: Unable to acquire death penalty.
-ProtectionBlessing: Keeps you safe from a PK if he is 10 levels or higher.
-PullBack: Pulls the target towards you.
-PveMagicalSkillDamageBonus: Magical skill damage stat against NPCs.
-PveMagicalSkillDefenceBonus: Magical skill defence stat when taking damage from NPCs.
-PvePhysicalAttackDamageBonus: Autoattack damage stat against NPCs.
-PvePhysicalAttackDefenceBonus: Autoattack defence stat when taking damage from NPCs.
-PvePhysicalSkillDamageBonus: Physical skill damage stat against NPCs.
-PvePhysicalSkillDefenceBonus: Physical skill defence stat when taking damage from NPCs.
-PveRaidMagicalSkillDamageBonus: Magical skill damage stat against Raidbosses. (l2jmobius)
-PveRaidMagicalSkillDefenceBonus: Magical skill defence stat when taking damage from Raidboss NPCs.
-PveRaidPhysicalAttackDamageBonus: Autoattack damage stat against Raidbosses. (l2jmobius)
-PveRaidPhysicalAttackDefenceBonus: Autoattack defence stat when taking damage from Raidboss NPCs.
-PveRaidPhysicalSkillDamageBonus: Physical skill damage stat against Raidbosses. (l2jmobius)
-PveRaidPhysicalSkillDefenceBonus: Physical skill defence stat when taking damage from Raidboss NPCs.
-PvpMagicalSkillDamageBonus: Magical skill damage stat against Players and Summons.
-PvpMagicalSkillDefenceBonus: Magical skill defence stat when taking damage from Players and Summons.
-PvpPhysicalAttackDamageBonus: Autoattack damage stat against Players and Summons.
-PvpPhysicalAttackDefenceBonus: Autoattack defence stat when taking damage from Players and Summons.
-PvpPhysicalSkillDamageBonus: Physical skill damage stat against Players and Summons.
-PvpPhysicalSkillDefenceBonus: Physical skill defence stat when taking damage from Players and Summons.
-RandomizeHate: Target NPC stops hating you and starts hating random target with your hate.
-RealDamage: Static damage.
-RealDamageResist: Resist modifier for RealDamage effect. (l2jmobius)
-RearDamage: Multiplier for damage done from behind the target. (l2jmobius)
-RebalanceHP: Balances targets' current HP.
-RebalanceHPSummon: Balances targets' current HP for summons.
-RecoverVitalityInPeaceZone: Recover periodically vitality when player is in a peace zone. (l2jmobius)
-ReduceCancel: Magic skill casting interruption stat.
-ReduceDamage: Reduce damage effect implementation.
-ReduceDropPenalty: Reduces EXP lost and death penalty chance.
-ReflectMagic: Deflects magical damage back to the attacker.
-ReflectSkill: Deflects physical/magical debuffs back to the attacker.
-RefuelAirship: Increases Airship's fuel.
-Relax: Sits down and increases HP regeneration until full.
-ReplaceSkillBySkill: While active replaces a skill with an alternative skill. (l2jmobius)
-ResetInstanceEntry: Resets instance re-entry time. (l2jmobius)
-ResistAbnormalByCategory: Buff/debuff resist stat.
-ResistDispelByCategory: Buff/Debuff cancellation resist.
-ResistSkill: Become invulnerable against given skills.
-Restoration: Creates specified item id and count.
-RestorationRandom: Creates items randomly from a specified list. Its multiplied by extractable rate from config.
-Resurrection: Resurrects target Player or Summon.
-ResurrectionFeeModifier: Resurrection fee modifier. (l2jmobius)
-ResurrectionSpecial: Resurrects target Player or Summon only in specified instance IDs.
-Reuse: Decreases skill reuse time based on its magic type.
-ReuseSkillById: Resets reuse time for the skill with the specific id. (l2jmobius)
-ReuseSkillIdByDamage: Resets reuse time for the skill with the specific id when damage is taken. (l2jmobius)
-Ride: Ride NPC effect. (l2jmobius)
-Root: Stops movement.
-SacrificeSummon: Sacrifices the players summon. (l2jmobius)
-SafeFallHeight: Minimum falling height for taking damage stat.
-SayhaGraceSupport: Set Sayha Grace support end time. (l2jmobius)
-SendSystemMessageToClan: Sends the specified SystemMessageId to the clan.
-ServitorShare: Servitor share effect.
-ServitorShareSkills: Servitor share skill calculation effect. (l2jmobius)
-SetCp: Sets current CP to the given amount. (l2jmobius)
-SetHp: Sets current HP to the given amount.
-SetSkill: Adds a skill to the Player and saves it in the database.
-ShadowBlast: Shadow Blast effect handler. (l2jmobius)
-ShieldDefence: Shield P. Def stat.
-ShieldDefenceIgnoreRemoval: Shield defence ignore removal stat. (l2jmobius)
-ShieldDefenceRate: Shield block success rate stat.
-ShotsBonus: Additional shot damage bonus. (l2jmobius)
-SilentMove: Prevents aggressive mobs from attacking you when entering aggression range.
-SkillBonusRange: Additional cast range for skills. (l2jmobius)
-SkillEvasion: Skill evasion stat.
-SkillMastery: Activates double debuff or cooldown reset critical based on the specified stat.
-SkillMasteryRate: Bonus chance for skill mastery stat.
-SkillPowerAdd: Adds set ammount of power to skills. (l2jmobius)
-SkillTurning: Stops target's casting.
-SkillTurningOverTime: Stops target's casting at a fixed rate.
-SoulBlow: Physical attack based on blow formula with bonus damage from souls.
-SoulEating: Absorbs souls when taking exp from mobs and sets max soul count.
-SoulshotResistance: Soulshot damage resistance effect. (l2jmobius)
-Sow: Planting a seed into NPC target. Manor stuff.
-Speed: Speed stat.
-SpeedLimit: Increase a character's max Speed limit. (l2jmobius)
-SphericBarrier: Blocks damage and buff/debuff incoming from outside the specified range.
-SpiritExpModify: Spirit EXP modify stat effect. (JoeAlisson)
-SpiritshotResistance: Spiritshot damage resistance effect. (l2jmobius)
-SpModify: Bonus SP stat.
-Spoil: Spoils a mob activating its extra sweep drop.
-StatAddForLevel: Adds a fixed amount of a Stat for a specific player level. (l2jmobius)
-StatAddForMp: Adds a fixed amount of a Stat for when player max MP is over a value. (l2jmobius)
-StatAddForStat: Adds a fixed amount of a Stat based on player current value. (l2jmobius)
-StatBonusSkillCritical: Changes skill critical rate to depend on the specified base stat.
-StatBonusSpeed: Changes Speed stat to depend on the specified base stat.
-StatByMoveType: Adds stat based on your movement type (standing, running, walking).
-StaticMagicalAttackSpeed: Sets magical attack speed to a set value. (l2jmobius)
-StaticPhysicalAttackSpeed: Sets physical attack speed to a set value. (l2jmobius)
-StaticSpeed: Sets speed to a set value. (l2jmobius)
-StatMulForLevel: Multiplies a fixed amount of a Stat for a specific player level. (l2jmobius)
-StatUp: Increases the specified base stat.
-StealAbnormal: Steals enemy's buffs.
-Summon: Summons a servitor.
-SummonAgathion: Summons the specified agathion Npc Id.
-SummonCubic: Summons the specified Cubic ID.
-SummonGuardian: Summons the specified guardian Npc Id. (l2jmobius)
-SummonHallucination: Creates a doppelganger. Clone Attack skill.
-SummonMulti: Summons a servitor without unsummoning previous servitors.
-SummonNpc: Summons a specified Npc Id.
-SummonPet: Summons a specified pet.
-SummonPoints: Maximum summon points stat.
-SummonShadow: Summons the specified shadow Npc Id. (l2jmobius)
-SummonTrap: Summons a trap.
-Sweeper: Takes extra items from a spoiled mob's corpse.
-Synergy: Gives a buff at fixed rate based on current AbnormalType. Party Solidarity.
-TakeCastle: Engraves a castle.
-TakeCastleStart: Starts engraving a castle.
-TakeFort: Engraves a fortress.
-TakeFortStart: Starts engraving a fortress.
-TalismanSlot: Maximum talisman slots stat.
-TargetCancel: Cancels enemy's target.
-TargetMe: Changes your enemy's target to you.
-TargetMeProbability: Changes your enemy's target to you with a given probability.
-Teleport: Teleports to a specified XYZ location.
-TeleportToNpc: Teleports to a specified Npc Id.
-TeleportToPlayer: Teleports to targeted player. (l2jmobius)
-TeleportToSummon: Teleports to your summon.
-TeleportToTarget: Teleports to your target.
-TeleportToTeleportLocation: Teleport to previously set Player teleport location. (l2jmobius)
-TransferDamageToPlayer: Transfers portion of incoming damage from target to you.
-TransferDamageToSummon: Transfers portion of incoming damage towards your summon.
-TransferHate: Transfers Npc's hate from you to your target.
-Transformation: Transforms into the specified transformation id and gives its template skills.
-TrapDetect: Detects a hidden trap.
-TrapRemove: Removes a trap.
-TriggerHealPercentBySkill: Trigger heal percent by skill. (l2jmobius)
-TriggerSkill: Triggers a specified skill. (l2jmobius)
-TriggerSkillByAvoid: Triggers a specified skill when you avoid autoattack damage.
-TriggerSkillByCombatPower: Triggers a specified skill based on player Combat Power. (l2jmobius)
-TriggerSkillByDamageDealt: Triggers a specified skill when you deal damage.
-TriggerSkillByDamageReceived: Triggers a specified skill when you receive damage.
-TriggerSkillByDeathBlow: Triggers a specified skill when you land a death blow (killing a creature).
-TriggerSkillByDualRange: Triggers a specified skill based on close or ranged distance. (l2jmobius)
-TriggerSkillByHpPercent: Triggers a specified skill based on effected HP percent. (l2jmobius)
-TriggerSkillByKill: Triggers a specified skill when you kill a creature.
-TriggerSkillByMagicType: Triggers skill when you finish casting a skill with a specified magic type.
-TriggerSkillByMaxHp: Triggers a specified skill based on effected max HP value. (l2jmobius)
-TriggerSkillBySkill: Triggers skill when you finish casting a specified skill.
-TriggerSkillBySkillDamage: Triggers skill when you finish casting a skill that does damage.
-TriggerSkillByStat: Triggers a specified skill based on a stat value. (l2jmobius)
-TriggerSkillByTargetType: Triggers a specified skill based on target type. (l2jmobius)
-TriggerSkillByTripleRange: Triggers a specified skill based close, mid and range distance. (l2jmobius)
-TriggerSkillWithDelay: Triggers specified skills with specified delay. (l2jmobius)
-TwoHandedBluntBonus: P. Atk and accuracy bonus while using Two Handed Blunt weapon.
-TwoHandedStance: Two handed stance effect implementation. (l2jmobius)
-TwoHandedSwordBonus: P. Atk and accuracy bonus while using Two Handed Sword weapon.
-Unsummon: Unsummons a target summon.
-UnsummonAgathion: Unsummons current summoned agathion.
-UnsummonCubic: Unsummons a cubic. (l2jmobius)
-UnsummonGuardiansOnExit: Unsummon Guardian summons on effect exit. (l2jmobius)
-UnsummonServitors: Unsummons target servitors.
-Untargetable: Becomes untargetable.
-VampiricAttack: Increases current HP when dealing damage.
-VampiricDefence: Resist stat towards VampiricAttack
-VitalityExpRate: Sets the vitality exp rate. (l2jmobius)
-VitalityPointsRate: Vitality points consume rate.
-VitalityPointUp: Increases vitality points.
-WeaponAttackAngleBonus: Additional range for weapon attack angle. (l2jmobius)
-WeaponBonusMagicalAttack: Additional magical attack for weapons. (l2jmobius)
-WeaponBonusMagicalAttackMultiplier: Multiplier for weapon magical attack. (l2jmobius)
-WeaponBonusPhysicalAttack: Additional physical attack for weapons. (l2jmobius)
-WeaponBonusPhysicalAttackMultiplier: Multiplier for weapon physical attack. (l2jmobius)
-WeightLimit: Maximum weight stat.
-WeightPenalty: Weight penalty level stat.
-WorldChatPoints: Modify world chat points to use per day.
+AbnormalShield: 阻擋指定數量的負面效果。（類似 DOTA 的靈魂戒指）
+AbnormalTimeChange: 變更目標身上增益/負面效果的持續時間。
+AbnormalTimeChangeBySkillId: 變更指定技能ID的效果持續時間。(l2jmobius)
+AbsorbDamage: 吸收指定數量的傷害。當傷害被阻擋時顯示免疫訊息，目標仍可被施加負面效果。
+AbstractConditionalHpEffect: 用於管理條件式HP屬性的抽象類別。狂暴、最後要塞等技能。
+AbstractStatAddEffect: 用於管理屬性加成的抽象類別。
+AbstractStatEffect: 用於管理屬性的抽象類別。
+AbstractStatPercentEffect: 用於管理屬性百分比的抽象類別。(l2jmobius)
+AccessoryMagicalDefence: 飾品魔法防禦屬性。(l2jmobius)
+Accuracy: 物理命中屬性。
+AccuracyBonus: 命中加成屬性。(l2jmobius)
+AddHate: 即時效果，增加目標對你的仇恨值。
+AddHuntingTime: 為限時狩獵區域增加時間。(l2jmobius)
+AdditionalPhysicalDamage: 額外物理傷害效果處理器。(l2jmobius)
+AdditionalPotionCp: 增加從藥水或萬能藥恢復的CP數量。(l2jmobius)
+AdditionalPotionCpPer: 增加從藥水或萬能藥恢復的CP百分比。(l2jmobius)
+AdditionalPotionHp: 增加從藥水或萬能藥恢復的HP數量。(l2jmobius)
+AdditionalPotionHpPer: 增加從藥水或萬能藥恢復的HP百分比。(l2jmobius)
+AdditionalPotionMp: 增加從藥水或萬能藥恢復的MP數量。(l2jmobius)
+AdditionalPotionMpPer: 增加從藥水或萬能藥恢復的MP百分比。(l2jmobius)
+AddMaxMagicCriticalRate: 覆寫預設設定 MAX_MCRIT_RATE 的屬性。(l2jmobius)
+AddMaxPhysicalCriticalRate: 覆寫預設設定 MAX_PCRIT_RATE 的屬性。(l2jmobius)
+AddPcCafePoints: 永久增加電競點數。(l2jmobius)
+AddSkillBySkill: 當另一個技能已存在時新增技能。(l2jmobius)
+AddTeleportBookmarkSlot: 即時效果，增加我的傳送書籤槽位數量。
+AgathionSlot: 阿卡神的槽位修正值。(l2jmobius)
+AreaDamage: 地形（危險區域）抵抗屬性。
+AreaOfEffectDamageDefence: 範圍傷害防禦屬性。(l2jmobius)
+AreaOfEffectDamageModify: 範圍傷害修正值。(l2jmobius)
+ArmorPhysicalDefence: 護甲物理防禦屬性。(l2jmobius)
+ArtifactSlot: 神器槽位修正值。(l2jmobius)
+AssistOwnerAttack: 使召喚獸協助主人攻擊。(l2jmobius)
+AssistOwnerCast: 使召喚獸在主人施放技能時施放指定技能。(l2jmobius)
+AttackAttribute: 增加特定攻擊屬性的屬性值。
+AttackAttributeAdd: 增加所有攻擊屬性的屬性值。
+AttackBehind: 無論位置為何，所有攻擊均視為從背後發動。
+AttackTrait: 管理所有攻擊特性的屬性。
+AutoAttackDamageBonus: 一般攻擊傷害修正值。(l2jmobius)
+Backstab: 依照背刺公式造成物理傷害。
+Betray: 使目標召喚獸攻擊其主人。
+Blink: 傳送至指定位置效果。
+BlinkSwap: 你傳送至目標位置，目標傳送至你的位置。
+BlockAbnormalSlot: 阻擋任何異常類型接受其技能效果。角、鼓、管風琴旋律等使用此效果。
+BlockAction: 阻擋基本遊戲操作（機器人舉報按鈕相關功能）。
+BlockActions: 阻止目標執行任何動作。暈眩、麻痺等。
+BlockChat: 聊天封禁效果（機器人舉報按鈕相關功能）。
+BlockControl: 阻擋目標對自身的控制。恐懼。
+BlockEscape: 阻擋傳送。
+ExceedingMagicalAttackSpeed: 當施法速度超過上限時，給予魔法攻擊（%）加成。(l2jmobius)
+ExceedingPhysicalAttackSpeed: 當攻擊速度超過上限時，給予物理攻擊（%）加成。(l2jmobius)
+BlockFrontalRangedDamage: 阻擋來自正面的遠程傷害。(l2jmobius)
+BlockMove: 阻擋移動。定根。
+BlockParty: 組隊封禁效果（機器人舉報按鈕相關功能）。
+BlockResurrection: 阻擋目標被復活。
+BlockRush: 阻擋衝刺技能。(l2jmobius)
+BlockSkill: 阻擋使用指定魔法類型或特定技能ID的技能。(l2jmobius)
+BlockTarget: 使目標無法被選取。
+Bluff: 旋轉目標使其背對你。
+BonusDropAdena: 掉落亞幣的額外數量加成。(l2jmobius)
+BonusDropAmount: 掉落物品的額外數量加成。(l2jmobius)
+BonusDropRate: 掉落物品的額外機率加成。(l2jmobius)
+BonusDropRateLCoin: L幣的額外掉落機率加成。(l2jmobius)
+BonusRaidPoints: 首領討伐點數的額外數量加成。(l2jmobius)
+BonusSpoilRate: 採集物品的額外機率加成。(l2jmobius)
+Breath: 水中呼吸屬性。
+BuffBlock: 阻擋目標接受增益效果。
+CallLearnedSkill: 呼叫已學習的技能。(l2jmobius)
+CallParty: 召回整個隊伍。
+CallPc: 召回指定玩家。
+CallRandomSkill: 觸發隨機技能。(l2jmobius)
+CallSkill: 觸發指定技能。
+CallSkillByEnemyRace: 根據敵人種族觸發指定技能。(l2jmobius)
+CallSkillByKill: 殺死生物時觸發指定技能。(l2jmobius)
+CallSkillOnActionTime: 每隔指定時間觸發指定技能。
+CallSkillOnEnemyDeath: 在敵人死亡時呼叫技能。(l2jmobius)
+CallTargetParty: 召回目標的整個隊伍。
+ChameleonRest: 放鬆並靜默移動般的效果。
+ChangeBody: 變身目標，但無法使用變身範本的技能。
+ChangeFace: 改變玩家的臉型。整形藥水。
+ChangeFishingMastery: 空效果。
+ChangeHairColor: 改變玩家的髮色。
+ChangeHairStyle: 改變玩家的髮型。
+CheapShot: 老式廉價攻擊SA效果。有機率在攻擊時消耗較少魂石。
+CheatDeath: 在玩家死亡時觸發此效果代替死亡。(l2jmobius)
+ClassChange: 切換至指定的副職業索引。主職業、雙職業、副職業1、副職業2。
+CombatPower: 戰鬥力屬性效果。(l2jmobius)
+ComboSkill: 連擊技能效果處理器。(l2jmobius)
+Compelling: 強制目標向施法者移動。(l2jmobius)
+Confuse: 使目標攻擊隨機目標。
+ConsumeBody: 移除目標NPC的屍體。
+ConvertItem: 卡摩爾族換武技能效果。
+CounterPhysicalSkill: 反制物理技能。
+Cp: 以固定數值增加當前CP。
+CpHeal: 以指定數量增加當前CP。
+CpHealOverTime: 持續以指定數量增加當前CP。
+CpHealPercent: 以指定百分比增加當前CP。
+CpRegen: CP 自然回復屬性。
+CraftingCritical: 製作致命一擊屬性。
+CraftRate: 製作成功率加成。(l2jmobius)
+CriticalDamage: 致命一擊傷害屬性。
+CriticalDamagePosition: 依位置決定的致命一擊傷害屬性。
+CriticalRate: 致命一擊機率屬性。
+CriticalRatePositionBonus: 依位置決定的致命一擊機率屬性，忽略500的致命一擊機率上限。
+CubicMastery: 最大魔法魚叉數量屬性。
+DamageBlock: 阻擋HP或MP的傷害/回復。
+DamageByAttack: 改變受到攻擊傷害的效果。
+DamageShield: 反彈傷害百分比屬性。
+DamageShieldResist: 反彈傷害百分比抵抗。
+DamOverTime: 持續傷害效果。魔法致命一擊會在效果開始前立即對自身造成10倍傷害。
+DamOverTimePercent: HP百分比的持續傷害。
+DeathLink: 造成與當前HP成比例的魔法傷害。
+DebuffBlock: 阻擋目標受到負面效果影響。
+DefenceAttribute: 增加特定防禦屬性的屬性值。
+DefenceCriticalDamage: 致命一擊傷害抵抗屬性。 ★★★★★★★★★★★★★★★★★★★
+DefenceCriticalRate: 致命一擊機率抵抗屬性。
+DefenceIgnoreRemoval: 防禦忽略移除屬性。(l2jmobius)
+DefenceMagicCriticalDamage: 魔法致命傷害抵抗屬性。★★★★★★★★★★★★★★★★★★★★
+DefenceMagicCriticalRate: 魔法致命機率抵抗屬性。
+DefencePhysicalSkillCriticalDamage: 物理技能致命傷害抵抗屬性。(l2jmobius)★★★★★★★★★★★★★★★★★★
+DefencePhysicalSkillCriticalRate: 物理技能致命機率抵抗屬性。(l2jmobius)
+DefenceTrait: 管理所有防禦特性的屬性。
+DeleteHate: 有機率清除目標對所有人的仇恨。
+DeleteHateOfMe: 有機率清除目標對你的仇恨。
+DeleteTopAgro: 有機率從仇恨列表中刪除目標最仇恨的對象。
+DetectHiddenObjects: 發現隱藏門。
+Detection: 偵測隱藏的生物。
+DisableSkill: 停用施法者已知的指定技能ID技能。(l2jmobius)
+DisableTargeting: 停用目標的選取能力。
+Disarm: 移除目標玩家的武器。
+Disarmor: 移除目標玩家的護甲。
+DisarmShield: 移除目標玩家的盾牌。(l2jmobius)
+DispelAll: 停止目標的所有效果。
+DispelByCategory: 移除指定數量的目標增益/負面效果類別。
+DispelBySkillId: 依技能ID驅散特定技能。(l2jmobius)
+DispelBySlot: 依指定異常類型和最大異常等級移除指定數量的目標效果。
+DispelBySlotMyself: 依指定異常類型移除指定數量的自身效果。
+DispelBySlotProbability: 以指定機率依指定異常類型移除指定數量的效果。
+Distrust: 使怪物互相攻擊。(l2jmobius)
+DoubleCast: 觸發火、水、風、土姿態，並啟用同時施放兩個技能的能力。
+DuelistFury: 面對面效果的協同效果。(l2jmobius)
+ElementalSpiritAttack: 元素精靈攻擊屬性效果。(JoeAlisson)
+ElementalSpiritDefense: 元素精靈防禦屬性效果。(JoeAlisson)
+ElixirUsageLimit: 萬能藥使用次數限制修正值。(l2jmobius)
+EnableCloak: 顯示/隱藏斗篷。
+EnchantRate: 強化機率修正值，對無等級道具無效。(l2jmobius)
+EnemyCharge: 向敵人衝刺。衝擊衝鋒。
+EnergyDamage: 基於動能公式的物理傷害。三重音波斬、雙重音波斬等。
+EnlargeAbnormalSlot: 增加增益槽位數量。
+EnlargeSlot: 增加背包、倉庫、配方或交易槽位數量。
+Escape: 傳送至城鎮、城堡、氏族大廳等效果。逃脫卷軸效果。
+ExpModify: 額外經驗值屬性。
+ExpModifyPet: 寵物的額外經驗值屬性。(l2jmobius)
+Faceoff: 集中攻擊指定目標，同時阻擋其他所有傷害。
+FakeDeath: 裝死以避免敵對NPC的攻擊。
+FatalBlow: 基於爆擊公式的物理攻擊。必殺突擊、致命突擊等。
+FatalBlowRate: 爆擊命中率屬性。
+FatalBlowRateDefence: 爆擊命中率防禦屬性。(l2jmobius)
+Fear: 使目標逃跑，但不阻擋其行動。
+Feed: 餵食寵物。
+FishingExpSpBonus: 釣魚獲得的額外經驗值與SP。(l2jmobius)
+Flag: 開始PVP旗幟。
+FlyMove: 向目標位置移動。
+FocusEnergy: 最大動能屬性。
+FocusMaxMomentum: 將動能增至最大值。
+FocusMomentum: 以指定數值增加動能。
+FocusSouls: 以指定數值增加靈魂。
+GetAgro: 使敵對NPC攻擊你。
+GetDamageLimit: 設定你可受到的最大傷害量。
+GetMomentum: 以固定機率增加指定數值的動能。
+GiveClanReputation: 給予玩家氏族聲望點數。(l2jmobius)
+GiveExpAndSp: 給予指定數量的經驗值和SP。(l2jmobius)
+GiveFame: 給予指定數量的名聲。(l2jmobius)
+GiveHonorCoins: 給予指定數量的榮譽幣。(l2jmobius)
+GiveItemByExp: 累積指定數量的經驗值後給予道具。(l2jmobius)
+GivePetXp: 給予寵物指定數量的經驗值。(l2jmobius)
+GiveRecommendation: 給予玩家推薦。藍色名字。
+GiveSp: 給予指定數量的SP。
+GiveXp: 給予指定數量的經驗值。(l2jmobius)
+Grow: 將NPC碰撞體積設定為其成長後的碰撞體積。
+HairAccessorySet: 顯示/隱藏頭髮飾品。
+Harvesting: 莊園的採收種子。
+HateAttack: 以增加仇恨值進行攻擊。
+HeadquarterCreate: 創建攻城旗幟。
+Heal: 以指定數量增加當前HP。
+HealEffect: 增加接受到的HP回復量。
+HealOverTime: 持續以指定數量增加當前HP。
+HealPercent: 以指定百分比增加當前HP。
+Hide: 隱身效果。
+HitNumber: 長槍攻擊最大命中生物數量。
+Hp: 以固定數值增加當前HP。
+HpByLevel: 回復指定數量的HP，但當前實作有誤…最終數量應從技能威力與角色等級差計算。
+HpCpHeal: 以指定數量增加當前HP。若數量超過最大HP，則將剩餘數值增加至當前CP。
+HpCpHealCritical: HP/CP 回復效果必定觸發魔法致命一擊。
+HpDrain: 魔法攻擊，吸收造成傷害的指定百分比作為HP。
+HpLimit: 增加角色最大HP上限。(l2jmobius)
+HpRegen: HP 自然回復屬性。
+HpToOwner: 持續吸收HP的DOT效果。
+IgnoreDeath: 變為不死狀態，HP不可降至1以下。
+IgnoreReduceDamage: 忽略減少傷害效果的實作。(l2jmobius)
+ImmobileDamageBonus: 對靜止目標的額外傷害加成。(l2jmobius)
+ImmobileDamageResist: 靜止時的傷害抵抗。(l2jmobius)
+ImmobilePetBuff: 使你的寵物無法移動。
+InstantKillResist: 對致命一擊的抵抗。
+KarmaCount: 設定當前業力值。
+KnockBack: 擊退或擊倒目標。
+Lethal: 成功時將敵方玩家CP設為1，敵方NPC的HP設為50%。
+LimitCp: 設定可透過治療回復的最大CP上限。
+LimitHp: 設定可透過治療回復的最大HP上限。
+LimitMp: 設定可透過治療回復的最大MP上限。
+Lucky: 虛效果，實際行為已寫死於程式中。
+MagicAccuracy: 魔法命中屬性。
+MagicalAbnormalDispelDamage: 魔法攻擊，只有在成功驅散指定異常類型時才造成傷害。
+MagicalAbnormalResist: 魔法迷惑抵抗。
+MagicalAttack: 魔法攻擊屬性。
+MagicalAttackByPhysicalAttack: 來自物理攻擊的魔法攻擊加成屬性。(l2jmobius)
+MagicalAttackSpeed: 施法速度屬性。
+MagicalDamage: 魔法傷害效果。
+MagicalDamageByAbnormal: 神明詛咒效果。
+MagicalDamageByAbnormalSlot: 在指定異常類型存在時才造成傷害的魔法攻擊。
+MagicalDamageMp: 燃燒法力效果。
+MagicalDamageOverTime: 持續魔法攻擊。
+MagicalDamageRange: 可被盾牌阻擋的魔法傷害效果，以盾牌物理防禦的百分比範圍作為魔法防禦。
+MagicalDefence: 魔法防禦屬性。
+MagicalEvasion: 魔法迴避屬性。
+MagicalSkillPower: 魔法技能威力屬性。(l2jmobius)
+MagicalSoulDamage: 基於靈魂公式的魔法傷害。
+MagicalSuccessResistance: 魔法抵抗屬性（魔法攻擊效果減半或造成1點傷害）。
+MagicCriticalDamage: 魔法致命傷害屬性。
+MagicCriticalRate: 魔法致命機率屬性。
+MagicCriticalRateByCriticalRate: 來自致命機率屬性的魔法致命機率加成。(l2jmobius)
+MagicLampExpRate: 設定魔法燈的經驗值倍率。(l2jmobius)
+MagicMpCost: 依魔法類型設定法力消耗。清晰。
+ManaCharge: 法力充能屬性。
+ManaDamOverTime: 持續法力傷害。
+ManaHeal: 增加當前MP。
+ManaHealByLevel: 根據施法者與受術者的等級差增加當前MP。
+ManaHealOverTime: 持續增加當前MP。
+ManaHealPercent: 以指定百分比增加當前MP。
+MaxCp: 最大CP屬性。
+MaxHp: 最大HP屬性。
+MaxMp: 最大MP屬性。
+ModifyAssassinationPoints: 修改玩家的暗殺點數。(l2jmobius)
+ModifyAssassinationPointsMax: 修改玩家的最大暗殺點數。(l2jmobius)
+ModifyBeastPoints: 修改玩家的野獸點數。(l2jmobius)
+ModifyBeastPointsMax: 修改玩家的最大野獸點數。(l2jmobius)
+ModifyCraftPoints: 修改玩家的製作點數。(l2jmobius)
+ModifyDeathPoints: 修改玩家的死亡點數。(l2jmobius)
+ModifyLightPoints: 修改玩家的光明點數。(l2jmobius)
+ModifyLightPointsMax: 修改玩家的最大光明點數。(l2jmobius)
+ModifyMagicLampPoints: 修改玩家的魔法燈點數。(l2jmobius)
+ModifyVital: 修改當前HP/MP/CP。
+ModifyWolfPoints: 修改玩家的狼人點數。(l2jmobius)
+ModifyWolfPointsMax: 修改玩家的最大狼人點數。(l2jmobius)
+Mp: 以指定固定數值增加當前MP。
+MpConsumePerLevel: 根據等級持續消耗法力。
+MpRegen: MP 自然回復屬性。
+MpShield: 將指定百分比的傷害轉換為法力傷害。法力護盾。
+MpVampiricAttack: 攻擊時吸收指定百分比的法力。
+Mute: 阻止目標使用魔法技能。沉默。
+NewHennaSlot: 新紋身槽位修正值。(l2jmobius)
+NightStatModify: 夜間修改特定屬性。(l2jmobius)
+NoblesseBless: 死亡時不移除增益效果（自身除外）。
+OpenChest: 開啟寶箱。
+OpenCommonRecipeBook: 顯示通用配方書視窗。
+OpenDoor: 以指定機率解鎖門。
+OpenDwarfRecipeBook: 顯示矮人製作配方書視窗。
+Passive: 停用NPC的技能和移動。
+PhysicalAbnormalResist: 物理迷惑屬性。
+PhysicalAttack: 物理攻擊屬性。
+PhysicalAttackRange: 一般攻擊範圍。
+PhysicalAttackSpeed: 攻擊速度屬性。
+PhysicalDamage: 物理傷害效果。
+PhysicalDamageByTargets: 依目標數量的物理傷害。(l2jmobius)
+PhysicalDamageHpLink: 與當前HP成比例的物理傷害。
+PhysicalDamageMute: 阻止一般攻擊。
+PhysicalDamageSaveHp: 物理傷害，不使HP降低超過指定百分比。
+PhysicalDamageWeaponBonus: 依武器類型決定的物理傷害。噴發。
+PhysicalDefence: 物理防禦屬性。
+PhysicalEvasion: 物理迴避屬性。
+PhysicalMute: 阻止使用物理技能。盾擊。
+PhysicalShieldAngleAll: 使盾牌可以360度全方位格擋。
+PhysicalSkillCriticalDamage: 物理技能致命傷害屬性。
+PhysicalSkillCriticalRate: 物理技能致命機率屬性。(l2jmobius)
+PhysicalSkillPower: 物理技能威力屬性。
+PhysicalSoulDamage: 依靈魂數量決定的物理傷害。
+PkCount: 增加PK殺人次數。
+Plunder: 從怪物身上獲取額外道具。採集效果。
+PolearmSingleTarget: 集中攻擊技能（317）所使用的效果。
+ProtectDeathPenalty: 無法獲得死亡懲罰。
+ProtectionBlessing: 當PK玩家等級高出你10級以上時保護你。
+PullBack: 將目標拉向你。
+PveMagicalSkillDamageBonus: 對NPC的魔法技能傷害屬性。
+PveMagicalSkillDefenceBonus: 受到NPC魔法技能傷害時的防禦屬性。
+PvePhysicalAttackDamageBonus: 對NPC的一般攻擊傷害屬性。
+PvePhysicalAttackDefenceBonus: 受到NPC一般攻擊傷害時的防禦屬性。
+PvePhysicalSkillDamageBonus: 對NPC的物理技能傷害屬性。
+PvePhysicalSkillDefenceBonus: 受到NPC物理技能傷害時的防禦屬性。
+PveRaidMagicalSkillDamageBonus: 對首領BOSS的魔法技能傷害屬性。(l2jmobius)
+PveRaidMagicalSkillDefenceBonus: 受到首領BOSS NPC魔法技能傷害時的防禦屬性。
+PveRaidPhysicalAttackDamageBonus: 對首領BOSS的一般攻擊傷害屬性。(l2jmobius)
+PveRaidPhysicalAttackDefenceBonus: 受到首領BOSS NPC一般攻擊傷害時的防禦屬性。
+PveRaidPhysicalSkillDamageBonus: 對首領BOSS的物理技能傷害屬性。(l2jmobius)
+PveRaidPhysicalSkillDefenceBonus: 受到首領BOSS NPC物理技能傷害時的防禦屬性。
+PvpMagicalSkillDamageBonus: 對玩家和召喚獸的魔法技能傷害屬性。
+PvpMagicalSkillDefenceBonus: 受到玩家和召喚獸魔法技能傷害時的防禦屬性。
+PvpPhysicalAttackDamageBonus: 對玩家和召喚獸的一般攻擊傷害屬性。
+PvpPhysicalAttackDefenceBonus: 受到玩家和召喚獸一般攻擊傷害時的防禦屬性。
+PvpPhysicalSkillDamageBonus: 對玩家和召喚獸的物理技能傷害屬性。
+PvpPhysicalSkillDefenceBonus: 受到玩家和召喚獸物理技能傷害時的防禦屬性。
+RandomizeHate: 目標NPC停止對你的仇恨，轉而以你的仇恨值對隨機目標產生仇恨。
+RealDamage: 固定傷害。
+RealDamageResist: RealDamage效果的抵抗修正值。(l2jmobius)
+RearDamage: 從目標背後攻擊的傷害倍率。(l2jmobius)
+RebalanceHP: 平衡目標的當前HP。
+RebalanceHPSummon: 平衡召喚獸目標的當前HP。
+RecoverVitalityInPeaceZone: 玩家在和平區域時定期回復活力。(l2jmobius)
+ReduceCancel: 魔法技能施放中斷屬性。
+ReduceDamage: 減少傷害效果實作。
+ReduceDropPenalty: 減少失去的經驗值和死亡懲罰機率。
+ReflectMagic: 將魔法傷害反彈回攻擊者。
+ReflectSkill: 將物理/魔法負面技能反彈回攻擊者。
+RefuelAirship: 增加飛船燃料。
+Relax: 坐下並增加HP回復直到滿血。
+ReplaceSkillBySkill: 啟用時用替代技能取代指定技能。(l2jmobius)
+ResetInstanceEntry: 重置副本重入時間。(l2jmobius)
+ResistAbnormalByCategory: 增益/負面效果抵抗屬性。
+ResistDispelByCategory: 增益/負面效果驅散抵抗。
+ResistSkill: 對指定技能免疫。
+Restoration: 創建指定道具ID和數量。
+RestorationRandom: 從指定列表中隨機創建道具，數量乘以設定中的萃取倍率。
+Resurrection: 復活目標玩家或召喚獸。
+ResurrectionFeeModifier: 復活費用修正值。(l2jmobius)
+ResurrectionSpecial: 僅在指定副本ID中復活目標玩家或召喚獸。
+Reuse: 根據魔法類型減少技能冷卻時間。
+ReuseSkillById: 重置指定ID技能的冷卻時間。(l2jmobius)
+ReuseSkillIdByDamage: 受到傷害時重置指定ID技能的冷卻時間。(l2jmobius)
+Ride: 騎乘NPC效果。(l2jmobius)
+Root: 停止移動。
+SacrificeSummon: 犧牲玩家的召喚獸。(l2jmobius)
+SafeFallHeight: 受到傷害的最小墜落高度屬性。
+SayhaGraceSupport: 設定薩伊哈恩典支援結束時間。(l2jmobius)
+SendSystemMessageToClan: 向氏族發送指定系統訊息ID。
+ServitorShare: 侍者共享效果。
+ServitorShareSkills: 侍者共享技能計算效果。(l2jmobius)
+SetCp: 將當前CP設定為指定數量。(l2jmobius)
+SetHp: 將當前HP設定為指定數量。
+SetSkill: 為玩家新增技能並儲存至資料庫。
+ShadowBlast: 暗影衝擊效果處理器。(l2jmobius)
+ShieldDefence: 盾牌物理防禦屬性。
+ShieldDefenceIgnoreRemoval: 盾牌防禦忽略移除屬性。(l2jmobius)
+ShieldDefenceRate: 盾牌格擋成功率屬性。
+ShotsBonus: 額���魂石傷害加成。(l2jmobius)
+SilentMove: 進入攻擊範圍時阻止積極怪物攻擊你。
+SkillBonusRange: 技能的額外施放距離。(l2jmobius)
+SkillEvasion: 技能迴避屬性。
+SkillMastery: 根據指定屬性啟動雙重負面效果或冷卻時間重置致命一擊。
+SkillMasteryRate: 技能精通屬性的額外機率加成。
+SkillPowerAdd: 為技能增加固定威力值。(l2jmobius)
+SkillTurning: 停止目標的施法。
+SkillTurningOverTime: 以固定機率持續停止目標的施法。
+SoulBlow: 基於爆擊公式並帶有靈魂額外傷害的物理攻擊。
+SoulEating: 從怪物獲取經驗時吸收靈魂並設定最大靈魂數量。
+SoulshotResistance: 魂石傷害抵抗效果。(l2jmobius)
+Sow: 將種子種植至NPC目標。莊園相關。
+Speed: 速度屬性。
+SpeedLimit: 增加角色最大速度上限。(l2jmobius)
+SphericBarrier: 阻擋來自指定範圍外的傷害和增益/負面效果。
+SpiritExpModify: 精靈經驗值修改屬性效果。(JoeAlisson)
+SpiritshotResistance: 靈魂石傷害抵抗效果。(l2jmobius)
+SpModify: 額外SP屬性。
+Spoil: 採集怪物，啟用其額外採集掉落。
+StatAddForLevel: 為特定玩家等級增加固定屬性值。(l2jmobius)
+StatAddForMp: 當玩家最大MP超過指定值時增加固定屬性值。(l2jmobius)
+StatAddForStat: 根據玩家當前數值增加固定屬性值。(l2jmobius)
+StatBonusSkillCritical: 將技能致命機率改為依賴指定基礎屬性。
+StatBonusSpeed: 將速度屬性改為依賴指定基礎屬性。
+StatByMoveType: 根據移動類型（站立、奔跑、步行）增加屬性。
+StaticMagicalAttackSpeed: 將施法速度設定為固定數值。(l2jmobius)
+StaticPhysicalAttackSpeed: 將物理攻擊速度設定為固定數值。(l2jmobius)
+StaticSpeed: 將速度設定為固定數值。(l2jmobius)
+StatMulForLevel: 為特定玩家等級乘以固定屬性值。(l2jmobius)
+StatUp: 增加指定的基礎屬性。
+StealAbnormal: 竊取敵人的增益效果。
+Summon: 召喚一隻侍者。
+SummonAgathion: 召喚指定阿卡神NPC ID。
+SummonCubic: 召喚指定魔法魚叉ID。
+SummonGuardian: 召喚指定守衛NPC ID。(l2jmobius)
+SummonHallucination: 創建分身。影分身攻擊技能。
+SummonMulti: 召喚侍者而不召回之前的侍者。
+SummonNpc: 召喚指定NPC ID。
+SummonPet: 召喚指定寵物。
+SummonPoints: 最大召喚點數屬性。
+SummonShadow: 召喚指定暗影NPC ID。(l2jmobius)
+SummonTrap: 召喚陷阱。
+Sweeper: 從已採集怪物的屍體上獲取額外道具。
+Synergy: 基於當前異常類型以固定機率給予增益效果。隊伍凝聚力。
+TakeCastle: 刻印城堡。
+TakeCastleStart: 開始刻印城堡。
+TakeFort: 刻印要塞。
+TakeFortStart: 開始刻印要塞。
+TalismanSlot: 最大護符槽位屬性。
+TargetCancel: 取消敵人的目標。
+TargetMe: 將你的敵人目標改為你。
+TargetMeProbability: 以指定機率將你的敵人目標改為你。
+Teleport: 傳送至指定XYZ位置。
+TeleportToNpc: 傳送至指定NPC ID。
+TeleportToPlayer: 傳送至目標玩家。(l2jmobius)
+TeleportToSummon: 傳送至你的召喚獸。
+TeleportToTarget: 傳送至你的目標。
+TeleportToTeleportLocation: 傳送至之前設定的玩家傳送位置。(l2jmobius)
+TransferDamageToPlayer: 將目標承受傷害的一部分轉移至你。
+TransferDamageToSummon: 將你承受的部分傷害轉移至你的召喚獸。
+TransferHate: 將NPC對你的仇恨轉移至你的目標。
+Transformation: 變身為指定變身ID並獲得其範本技能。
+TrapDetect: 偵測隱藏陷阱。
+TrapRemove: 移除陷阱。
+TriggerHealPercentBySkill: 依技能觸發HP百分比回復。(l2jmobius)
+TriggerSkill: 觸發指定技能。(l2jmobius)
+TriggerSkillByAvoid: 閃避一般攻擊傷害時觸發指定技能。
+TriggerSkillByCombatPower: 根據玩家戰鬥力觸發指定技能。(l2jmobius)
+TriggerSkillByDamageDealt: 造成傷害時觸發指定技能。
+TriggerSkillByDamageReceived: 受到傷害時觸發指定技能。
+TriggerSkillByDeathBlow: 給予致命一擊（殺死生物）時觸發指定技能。
+TriggerSkillByDualRange: 根據近距離或遠距離觸發指定技能。(l2jmobius)
+TriggerSkillByHpPercent: 根據受術者HP百分比觸發指定技能。(l2jmobius)
+TriggerSkillByKill: 殺死生物時觸發指定技能。
+TriggerSkillByMagicType: 完成施放指定魔法類型技能時觸發技能。
+TriggerSkillByMaxHp: 根據受術者最大HP值觸發指定技能。(l2jmobius)
+TriggerSkillBySkill: 完成施放指定技能時觸發技能。
+TriggerSkillBySkillDamage: 完成施放造成傷害的技能時觸發技能。
+TriggerSkillByStat: 根據屬性值觸發指定技能。(l2jmobius)
+TriggerSkillByTargetType: 根據目標類型觸發指定技能。(l2jmobius)
+TriggerSkillByTripleRange: 根據近、中、遠距離觸發指定技能。(l2jmobius)
+TriggerSkillWithDelay: 以指定延遲觸發指定技能。(l2jmobius)
+TwoHandedBluntBonus: 使用雙手鈍器時的物攻和命中加成。
+TwoHandedStance: 雙手武器姿態效果實作。(l2jmobius)
+TwoHandedSwordBonus: 使用雙手劍時的物攻和命中加成。
+Unsummon: 召回目標召喚獸。
+UnsummonAgathion: 召回當前已召喚的阿卡神。
+UnsummonCubic: 召回魔法魚叉。(l2jmobius)
+UnsummonGuardiansOnExit: 效果結束時召回守衛召喚獸。(l2jmobius)
+UnsummonServitors: 召回目標侍者。
+Untargetable: 變為無法被選取。
+VampiricAttack: 造成傷害時增加當前HP。
+VampiricDefence: 對吸血攻擊的抵抗屬性。
+VitalityExpRate: 設定活力經驗值倍率。(l2jmobius)
+VitalityPointsRate: 活力點數消耗倍率。
+VitalityPointUp: 增加活力點數。
+WeaponAttackAngleBonus: 武器攻擊角度的額外範圍。(l2jmobius)
+WeaponBonusMagicalAttack: 武器的額外魔法攻擊加成。(l2jmobius)
+WeaponBonusMagicalAttackMultiplier: 武器魔法攻擊的倍率。(l2jmobius)
+WeaponBonusPhysicalAttack: 武器的額外物理攻擊加成。(l2jmobius)
+WeaponBonusPhysicalAttackMultiplier: 武器物理攻擊的倍率。(l2jmobius)
+WeightLimit: 最大負重屬性。
+WeightPenalty: 負重懲罰等級屬性。
+WorldChatPoints: 修改每日可使用的世界頻道聊天點數。

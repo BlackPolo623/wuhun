@@ -9,8 +9,8 @@
 					<value level="1">5</value>
 					<value level="2">10</value>
 					<value level="3">15</value>
-					<value level="3">20</value>
-					<value level="3">25</value>
+					<value level="4">20</value>
+					<value level="5">25</value>
 				</amount>
 			</effect>
 			<effect name="PhysicalSkillCriticalDamage">
@@ -18,8 +18,8 @@
 					<value level="1">5</value>
 					<value level="2">10</value>
 					<value level="3">15</value>
-					<value level="3">20</value>
-					<value level="3">25</value>
+					<value level="4">20</value>
+					<value level="5">25</value>
 				</amount>
 			</effect>
 			<effect name="MagicCriticalDamage">
@@ -27,8 +27,8 @@
 					<value level="1">5</value>
 					<value level="2">10</value>
 					<value level="3">15</value>
-					<value level="3">20</value>
-					<value level="3">25</value>
+					<value level="4">20</value>
+					<value level="5">25</value>
 				</amount>
 			</effect>
 			<effect name="FinalDamage">
@@ -36,8 +36,8 @@
 					<value level="1">5</value>
 					<value level="2">10</value>
 					<value level="3">15</value>
-					<value level="3">20</value>
-					<value level="3">25</value>
+					<value level="4">20</value>
+					<value level="5">25</value>
 				</amount>
 			</effect>
 			<effect name="IgnoreFinalDamageReduce">
@@ -45,8 +45,8 @@
 					<value level="1">1</value>
 					<value level="2">2</value>
 					<value level="3">3</value>
-					<value level="3">4</value>
-					<value level="3">5</value>
+					<value level="4">4</value>
+					<value level="5">5</value>
 				</amount>
 			</effect>
 			<effect name="VampiricChanceAdd">
@@ -54,8 +54,8 @@
 					<value level="1">0.5</value>
 					<value level="2">1.0</value>
 					<value level="3">1.5</value>
-					<value level="3">2.0</value>
-					<value level="3">2.5</value>
+					<value level="4">2.0</value>
+					<value level="5">2.5</value>
 				</amount>
 			</effect>
 		</effects>
@@ -83,6 +83,27 @@
 					<value level="15">300000</value>
 				</amount>
 				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="140002" toLevel="10" name="莉莉恩之契約">
+		<icon>icon.skill0032</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="DropAmountAdd" level="1">
+				<drops>
+					<item id="97145" minAdd="5" maxAdd="10"/>
+				</drops>
+			</effect>
+			<effect name="DropAmountAdd" fromLevel="2" toLevel="5">
+				<drops>
+					<item id="97145" minAdd="10" maxAdd="20"/>
+				</drops>
+			</effect>
+			<effect name="DropAmountAdd" fromLevel="6" toLevel="10">
+				<drops>
+					<item id="97145" minAdd="15" maxAdd="30"/>
+				</drops>
 			</effect>
 		</effects>
 	</skill>

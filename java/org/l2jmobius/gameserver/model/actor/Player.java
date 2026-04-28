@@ -1143,7 +1143,8 @@ public class Player extends Playable
 	private final Map<Byte, AtomicInteger> _adenLabNormalGameOpenedCardsCount = new ConcurrentHashMap<>();
 	private final Map<Byte, Map<Byte, Map<Byte, Integer>>> _adenLabSpecialStagesDrawnOptions = new HashMap<>();
 	private final Map<Byte, Map<Byte, Map<Byte, Integer>>> _adenLabSpecialStagesConfirmedOptions = new HashMap<>();
-	
+	private final Map<Integer, int[]> _dropAmountBonuses = new ConcurrentHashMap<>();
+
 	public boolean isSellingBuffs()
 	{
 		return _isSellingBuffs;
@@ -19018,6 +19019,38 @@ public class Player extends Playable
 			default:
 				return 0;
 		}
+	}
+
+	public void addDropAmountBonus(int itemId, int minAdd, int maxAdd)
+	{
+		_dropAmountBonuses.merge(itemId, new int[]
+		{
+			minAdd,
+			maxAdd
+		}, (a, b) -> new int[]
+		{
+			a[0] + b[0],
+			a[1] + b[1]
+		});
+	}
+
+	public void removeDropAmountBonus(int itemId, int minAdd, int maxAdd)
+	{
+		_dropAmountBonuses.computeIfPresent(itemId, (k, a) ->
+		{
+			final int newMin = a[0] - minAdd;
+			final int newMax = a[1] - maxAdd;
+			return (newMin <= 0 && newMax <= 0) ? null : new int[]
+			{
+				Math.max(0, newMin),
+				Math.max(0, newMax)
+			};
+		});
+	}
+
+	public int[] getDropAmountBonus(int itemId)
+	{
+		return _dropAmountBonuses.get(itemId);
 	}
 
 	// ==================== 寶玉系統緩存 ====================

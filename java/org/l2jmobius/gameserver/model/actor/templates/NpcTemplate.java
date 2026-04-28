@@ -1302,7 +1302,22 @@ public class NpcTemplate extends CreatureTemplate
 					}
 					
 					// finally
-					return new ItemHolder(itemId, (long) (Rnd.get(dropItem.getMin(), dropItem.getMax()) * rateAmount));
+					long effectiveMin = (long) (dropItem.getMin() * rateAmount);
+					long effectiveMax = (long) (dropItem.getMax() * rateAmount);
+					if (player != null)
+					{
+						final int[] bonus = player.getDropAmountBonus(itemId);
+						if (bonus != null)
+						{
+							effectiveMin += Math.max(0, bonus[0]);
+							effectiveMax += Math.max(0, bonus[1]);
+							if (effectiveMax < effectiveMin)
+							{
+								effectiveMax = effectiveMin;
+							}
+						}
+					}
+					return new ItemHolder(itemId, Rnd.get(effectiveMin, effectiveMax));
 				}
 				break;
 			}

@@ -2365,6 +2365,19 @@
 																	</xs:sequence>
 																</xs:complexType>
 															</xs:element>
+															<xs:element name="drops" minOccurs="0">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element maxOccurs="unbounded" name="item">
+																			<xs:complexType>
+																				<xs:attribute name="id"     type="xs:unsignedInt" use="required" />
+																				<xs:attribute name="minAdd" type="xs:unsignedInt" use="required" />
+																				<xs:attribute name="maxAdd" type="xs:unsignedInt" use="required" />
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
 															<xs:element name="damage">
 																<xs:complexType mixed="true">
 																	<xs:sequence minOccurs="0">

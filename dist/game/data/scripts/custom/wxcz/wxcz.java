@@ -11,6 +11,7 @@ import java.util.Map;
 import org.l2jmobius.gameserver.config.custom.Custom;
 import org.l2jmobius.gameserver.data.holders.WuxianDataHolder;
 import org.l2jmobius.gameserver.data.xml.WuxianData;
+import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.script.Script;
@@ -104,6 +105,21 @@ public class wxcz extends Script
 		else if (event.equals("view_stats"))
 		{
 			return showStatsPage(npc, player);
+		}
+		else if (event.equals("reload_wuxian"))
+		{
+			if (!player.isGM())
+			{
+				return null;
+			}
+			WuxianData.getInstance().load();
+			for (Player online : World.getInstance().getPlayers())
+			{
+				online.updateWuxianCache();
+				online.broadcastUserInfo();
+			}
+			player.sendPacket(new ExShowScreenMessage("無限成長數據已重新載入完畢", 3000));
+			return onFirstTalk(npc, player);
 		}
 		else if (event.equals("upgrade_stats"))
 		{
@@ -421,6 +437,14 @@ public class wxcz extends Script
 	{
 		NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(player, "data/scripts/custom/wxcz/wxcz.htm");
+		if (player.isGM())
+		{
+			html.replace("%gm_btn%", "<tr><td height=4></td></tr><tr><td align=center><button action=\"bypass -h Quest wxcz reload_wuxian\" value=\"[GM] 重載資料庫數值\" width=200 height=26 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td></tr>");
+		}
+		else
+		{
+			html.replace("%gm_btn%", "");
+		}
 		player.sendPacket(html);
 		return null;
 	}
