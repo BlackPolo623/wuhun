@@ -30,7 +30,6 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.util.Rnd;
-import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.data.xml.SpawnData;
 import org.l2jmobius.gameserver.managers.BattleWithBalokManager;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
@@ -122,9 +121,7 @@ public class Balok extends Script
 	// Misc
 	private static final AtomicReference<SpawnTemplate> NORMAL_BATTLE_MOBS = new AtomicReference<>();
 	private static final Set<Npc> BOSS_SPAWNED = ConcurrentHashMap.newKeySet();
-	private static final int BATTLE_TIME = 1800000; // 30 min
-	private static final int PREPARATION_TIME = 1200000; // 20 min
-	private static final int REWARD_TIME = 2400000; // 40 min
+	private static final int PREPARATION_TIME = 1200000; // 20 min (fixed: announcement at 10-min and 1-min marks)
 	
 	private int _status = 0;
 	private int _stage = 0;
@@ -156,8 +153,8 @@ public class Balok extends Script
 		
 		final long currentTime = System.currentTimeMillis();
 		final Calendar startTime = Calendar.getInstance();
-		startTime.set(Calendar.HOUR_OF_DAY, GrandBossConfig.BALOK_HOUR);
-		startTime.set(Calendar.MINUTE, GrandBossConfig.BALOK_MINUTE);
+		startTime.set(Calendar.HOUR_OF_DAY, BalokConfig.BALOK_HOUR);
+		startTime.set(Calendar.MINUTE, BalokConfig.BALOK_MINUTE);
 		startTime.set(Calendar.SECOND, 0);
 		if (startTime.getTimeInMillis() < currentTime)
 		{
@@ -175,7 +172,7 @@ public class Balok extends Script
 		setInProgress(true);
 		inPreparation();
 	}
-	
+
 	private void inPreparation()
 	{
 		setStatus(1);
@@ -183,7 +180,7 @@ public class Balok extends Script
 		Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.THE_BOSS_EXTERMINATION_STARTS_IN_20_MIN));
 		ThreadPool.schedule(this::inPreparation10, 600000); // 10 minutes
 	}
-	
+
 	private void inPreparation10()
 	{
 		Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.THE_BOSS_EXTERMINATION_STARTS_IN_10_MIN));
@@ -203,11 +200,11 @@ public class Balok extends Script
 		_stage = 1;
 		setStatus(2);
 		BattleWithBalokManager.getInstance().setInBattle(true);
-		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.BALOK_REMAIN_TIME, System.currentTimeMillis() + BATTLE_TIME);
+		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.BALOK_REMAIN_TIME, System.currentTimeMillis() + BalokConfig.BATTLE_TIME);
 		Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.MONSTERS_ARE_SPAWNING_ON_THE_BOSS_EXTERMINATION_BATTLEFIELD));
 		Broadcast.toAllOnlinePlayers(new BalrogWarHud(_status, _stage));
 		NORMAL_BATTLE_MOBS.get().getGroups().forEach(SpawnGroup::spawnAll);
-		_rewardTask = ThreadPool.schedule(this::finishAndReward, BATTLE_TIME); // 30 minutes
+		_rewardTask = ThreadPool.schedule(this::finishAndReward, BalokConfig.BATTLE_TIME);
 	}
 	
 	private void spawnInterBossesFirstWave()
@@ -303,7 +300,7 @@ public class Balok extends Script
 	
 	private void finalBoss()
 	{
-		if (((_stage == 4) && (getMidbossDefeatCount() == 5) && (_firstKillBalokId == KESMA)) || (_globalPoints > 1500000))
+		if (((_stage == 4) && (getMidbossDefeatCount() == 5) && (_firstKillBalokId == KESMA)) || (_globalPoints > BalokConfig.LORD_BALOK_THRESHOLD))
 		{
 			finalBossPlus();
 		}
@@ -465,8 +462,9 @@ public class Balok extends Script
 	{
 		if (NORMAL_MOBS.contains(npc.getId()))
 		{
-			BattleWithBalokManager.getInstance().addPointsForPlayer(player, npc.getId() == SCORPION);
-			addGlobalPoints(npc.getId() == SCORPION ? GrandBossConfig.BALOK_POINTS_PER_MONSTER * 10 : GrandBossConfig.BALOK_POINTS_PER_MONSTER);
+			final int points = npc.getId() == SCORPION ? BalokConfig.POINTS_PER_MONSTER * BalokConfig.SCORPION_MULTIPLIER : BalokConfig.POINTS_PER_MONSTER;
+			BattleWithBalokManager.getInstance().addPointsForPlayer(player, points);
+			addGlobalPoints(points);
 			BattleWithBalokManager.getInstance().setGlobalPoints(_globalPoints);
 		}
 		
@@ -532,7 +530,7 @@ public class Balok extends Script
 			lastHitRewardMonsters(player);
 		}
 		
-		if ((_stage == 1) && (_globalPoints >= 250000))
+		if ((_stage == 1) && (_globalPoints >= BalokConfig.STAGE2_POINT_THRESHOLD))
 		{
 			_stage = 2;
 			BattleWithBalokManager.getInstance().setGlobalStage(_stage);
@@ -540,7 +538,7 @@ public class Balok extends Script
 			Broadcast.toAllOnlinePlayers(new BalrogWarBossInfo(_finalBalokType, _finalBalokStatus, _kesmaStatus, _praisStatus, _viraStatus, _hearakStatus, _heederStatus));
 		}
 		
-		if ((_stage == 2) && (_globalPoints >= 320000) && !_firstWaveKilled && !_midBossFirstSpawn)
+		if ((_stage == 2) && (_globalPoints >= BalokConfig.WAVE1_SPAWN_THRESHOLD) && !_firstWaveKilled && !_midBossFirstSpawn)
 		{
 			spawnInterBossesFirstWave();
 		}
@@ -554,7 +552,7 @@ public class Balok extends Script
 			Broadcast.toAllOnlinePlayers(new BalrogWarBossInfo(_finalBalokType, _finalBalokStatus, _kesmaStatus, _praisStatus, _viraStatus, _hearakStatus, _heederStatus));
 		}
 		
-		if ((_stage == 3) && (_globalPoints >= 800000) && !_secondWaveKilled && !_midBossSecondSpawn)
+		if ((_stage == 3) && (_globalPoints >= BalokConfig.WAVE2_SPAWN_THRESHOLD) && !_secondWaveKilled && !_midBossSecondSpawn)
 		{
 			spawnInterBossesSecondWave();
 			BattleWithBalokManager.getInstance().setGlobalStage(_stage);
@@ -573,7 +571,7 @@ public class Balok extends Script
 			Broadcast.toAllOnlinePlayers(new BalrogWarBossInfo(_finalBalokType, _finalBalokStatus, _kesmaStatus, _praisStatus, _viraStatus, _hearakStatus, _heederStatus));
 		}
 		
-		if ((_stage == 1) && (_globalPoints < 3000) && (getRandom(5000) < 10))
+		if ((_stage == 1) && (_globalPoints < BalokConfig.BYPASS_POINT_THRESHOLD) && (getRandom(5000) < BalokConfig.BYPASS_RANDOM_CHANCE))
 		{
 			bypassRandomStage();
 		}
@@ -583,7 +581,7 @@ public class Balok extends Script
 	{
 		_status = 3;
 		rewardType();
-		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.BALOK_REMAIN_TIME, System.currentTimeMillis() + REWARD_TIME);
+		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.BALOK_REMAIN_TIME, System.currentTimeMillis() + BalokConfig.REWARD_TIME);
 		NORMAL_BATTLE_MOBS.get().getGroups().forEach(SpawnGroup::despawnAll);
 		BOSS_SPAWNED.forEach(Npc::deleteMe);
 		BOSS_SPAWNED.clear();
@@ -615,12 +613,12 @@ public class Balok extends Script
 			_viraStatus = 3;
 		}
 		
-		if ((_heederStatus != 2) && (_stage >= 3) && (_globalPoints >= 800000))
+		if ((_heederStatus != 2) && (_stage >= 3) && (_globalPoints >= BalokConfig.WAVE2_SPAWN_THRESHOLD))
 		{
 			_heederStatus = 3;
 		}
-		
-		if ((_hearakStatus != 2) && (_stage >= 3) && (_globalPoints >= 800000))
+
+		if ((_hearakStatus != 2) && (_stage >= 3) && (_globalPoints >= BalokConfig.WAVE2_SPAWN_THRESHOLD))
 		{
 			_hearakStatus = 3;
 		}
@@ -629,7 +627,7 @@ public class Balok extends Script
 		Broadcast.toAllOnlinePlayers(new BalrogWarBossInfo(_finalBalokType, _finalBalokStatus, _kesmaStatus, _praisStatus, _viraStatus, _hearakStatus, _heederStatus));
 		for (Player player : World.getInstance().getPlayers())
 		{
-			if (BattleWithBalokManager.getInstance().getMonsterPoints(player) < 1000)
+			if (BattleWithBalokManager.getInstance().getMonsterPoints(player) < BalokConfig.MIN_POINTS_FOR_REWARD)
 			{
 				return;
 			}
@@ -642,12 +640,12 @@ public class Balok extends Script
 			_rewardTask.cancel(true);
 		}
 		
-		ThreadPool.schedule(this::topRankingRewardFinish, 2400000); // 40 minutes
+		ThreadPool.schedule(this::topRankingRewardFinish, BalokConfig.REWARD_TIME);
 	}
 	
 	public void sendRankingReward()
 	{
-		for (Entry<Integer, Integer> ranker : BattleWithBalokManager.getInstance().getTopPlayers(30).entrySet())
+		for (Entry<Integer, Integer> ranker : BattleWithBalokManager.getInstance().getTopPlayers(BalokConfig.TOP_RANKER_COUNT).entrySet())
 		{
 			if (ranker == null)
 			{

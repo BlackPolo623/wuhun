@@ -190,6 +190,8 @@ public class Say2 extends ClientPacket
 			chatType = ChatType.PETITION_GM;
 		}
 		
+		//System.out.println("[CHAT][" + chatType.name() + "] " + player.getName() + (chatType == ChatType.WHISPER ? " -> " + _target : "") + ": " + _text);
+
 		if (GeneralConfig.LOG_CHAT)
 		{
 			final StringBuilder sb = new StringBuilder();

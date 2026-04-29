@@ -19053,6 +19053,11 @@ public class Player extends Playable
 		return _dropAmountBonuses.get(itemId);
 	}
 
+	public void clearDropAmountBonuses()
+	{
+		_dropAmountBonuses.clear();
+	}
+
 	// ==================== 寶玉系統緩存 ====================
 	private volatile long _jewelBonus = 0;
 	// ==========================================================

@@ -9,18 +9,15 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
 import org.l2jmobius.commons.threads.ThreadPool;
-import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.handler.BossDropHandler;
 import org.l2jmobius.gameserver.handler.IBossDropHandler;
 import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.script.Script;
 import org.l2jmobius.gameserver.model.skill.Skill;
 
-import custom.BossAuctionSystem.BossAuctionManager.DamageInfo;
 import custom.BossAuctionSystem.BossAuctionManager.DropItem;
 
 /**
@@ -45,27 +42,19 @@ public class BossKillListener extends Script implements IBossDropHandler
 
 	public BossKillListener()
 	{
-		// ========== 【重要修復】註冊要監聽的BOSS ID ==========
-		// 方案1: 註冊特定的BOSS ID（從配置讀取）
-		// 如果配置中有啟用的BOSS ID，則註冊它們
-		if (BossAuctionManager.getInstance() != null)
+		// 從 WorldBoss.ini 的 BossNpcIds 讀取，新增BOSS只需改INI
+		for (int bossId : WorldBossConfig.getBossNpcIds())
 		{
-			// 這裡暫時使用通用方式：註冊所有可能的BOSS ID
-			// 你可以根據實際需要修改為只註冊特定的BOSS
-			addAttackId(70000); // 戈爾
-			addKillId(70000);
-
-			// 如果有更多BOSS，繼續添加
-			// addAttackId(70001, 70002, 70003...);
-			// addKillId(70001, 70002, 70003...);
+			addAttackId(bossId);
+			addKillId(bossId);
 		}
 
 		// ========== 【重要】註冊掉落攔截處理器 ==========
 		BossDropHandler.registerHandler(this);
 
 		LOGGER.info("========================================");
-		LOGGER.info("【競標系統】BOSS擊殺監聽器已載入（使用傳統事件系統）");
-		LOGGER.info("【競標系統】已註冊監聽 BOSS ID: 70000");
+		LOGGER.info("【競標系統】BOSS擊殺監聽器已載入");
+		LOGGER.info("【競標系統】已註冊監聽 BOSS ID: " + WorldBossConfig.getBossNpcIds());
 		LOGGER.info("【競標系統】已註冊掉落攔截處理器");
 		LOGGER.info("========================================");
 	}
@@ -77,35 +66,20 @@ public class BossKillListener extends Script implements IBossDropHandler
 	@Override
 	public void onAttack(Npc npc, Player attacker, int damage, boolean isSummon, Skill skill)
 	{
-		// 檢查目標是否為GrandBoss
-		if (!(npc instanceof GrandBoss))
-		{
-			return;
-		}
-
-		GrandBoss boss = (GrandBoss) npc;
-
 		// 檢查此BOSS是否啟用競標系統
-		if (!BossAuctionManager.getInstance().isBossEnabled(boss.getId()))
+		if (!BossAuctionManager.getInstance().isBossEnabled(npc.getId()))
 		{
 			return;
 		}
 
-		// 處理召喚獸的情況
-		Player player = attacker;
-		if (isSummon && attacker.hasSummon())
-		{
-			player = attacker;
-		}
-
-		if (player == null || damage <= 0)
+		if (attacker == null || damage <= 0)
 		{
 			return;
 		}
 
 		// 【優化】累積到本地緩存，而不是直接寫入主 Map
-		int bossObjectId = boss.getObjectId();
-		int playerId = player.getObjectId();
+		int bossObjectId = npc.getObjectId();
+		int playerId = attacker.getObjectId();
 
 		// 獲取或創建此 BOSS 的本地緩存
 		Map<Integer, AtomicLong> bossCache = _localDamageCache.computeIfAbsent(bossObjectId, k -> new ConcurrentHashMap<>());

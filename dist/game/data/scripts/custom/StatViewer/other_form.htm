@@ -1,0 +1,55 @@
+<html><head><title>查詢其他玩家</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+<tr><td valign="top" align="center">
+
+  <table border=0><tr><td height=15></td></tr></table>
+
+  <table border=0 cellpadding=0 cellspacing=0>
+    <tr><td align=center><font color="LEVEL" size="4"><b>查詢其他玩家</b></font></td></tr>
+    <tr><td height=5></td></tr>
+    <tr><td align=center><font color="AAAAAA">輸入玩家名稱（須在線上）</font></td></tr>
+    <tr><td height=8></td></tr>
+  </table>
+
+  <img src="L2UI.SquareGray" width="270" height="1"><br>
+
+  <table border=0><tr><td height=20></td></tr></table>
+
+  <table width=270 bgcolor=111111 border=0 cellspacing=1 cellpadding=6>
+    <tr bgcolor=222222>
+      <td align=center>
+        <font color="FFCC33">玩家名稱</font><br>
+        <table border=0><tr><td height=5></td></tr></table>
+        <edit var="pname" width=180 height=15>
+      </td>
+    </tr>
+  </table>
+
+  <table border=0><tr><td height=12></td></tr></table>
+
+  <table width=270 border=0>
+    <tr>
+      <td align=center>
+        <button action="bypass -h Quest StatViewer search $pname" value="開始查詢"
+          width="200" height="31" back="BranchSys3.icon2.ArmyTrainingInfo_down" fore="BranchSys3.icon2.ArmyTrainingInfo">
+      </td>
+    </tr>
+  </table>
+
+  <table border=0><tr><td height=15></td></tr></table>
+  <img src="L2UI.SquareGray" width="270" height="1"><br>
+
+  <table width=270 cellpadding=3 cellspacing=1>
+    <tr>
+      <td align=center>
+        <button value="返回主選單" action="bypass -h Quest StatViewer main"
+          width=130 height=22 back="L2UI_CT1.Button_DF_Small_Down" fore="L2UI_CT1.Button_DF_Small"/>
+      </td>
+    </tr>
+  </table>
+
+</td></tr>
+</table>
+</body>
+</html>

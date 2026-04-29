@@ -46,10 +46,7 @@ public class GrandBossConfig
 	public static int QUEEN_ANT_SPAWN_RANDOM;
 	public static int ZAKEN_SPAWN_INTERVAL;
 	public static int ZAKEN_SPAWN_RANDOM;
-	public static int BALOK_HOUR;
-	public static int BALOK_MINUTE;
-	public static int BALOK_POINTS_PER_MONSTER;
-	
+
 	public static void load()
 	{
 		final ConfigReader config = new ConfigReader(GRANDBOSS_CONFIG_FILE);
@@ -67,9 +64,5 @@ public class GrandBossConfig
 		QUEEN_ANT_SPAWN_RANDOM = config.getInt("RandomOfQueenAntSpawn", 17);
 		ZAKEN_SPAWN_INTERVAL = config.getInt("IntervalOfZakenSpawn", 168);
 		ZAKEN_SPAWN_RANDOM = config.getInt("RandomOfZakenSpawn", 48);
-		final String[] balokTime = config.getString("BalokTime", "20:30").trim().split(":");
-		BALOK_HOUR = Integer.parseInt(balokTime[0]);
-		BALOK_MINUTE = Integer.parseInt(balokTime[1]);
-		BALOK_POINTS_PER_MONSTER = config.getInt("BalokPointsPerMonster", 10);
 	}
 }

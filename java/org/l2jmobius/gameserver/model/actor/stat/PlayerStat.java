@@ -1042,6 +1042,7 @@ public class PlayerStat extends PlayableStat
 	protected void resetStats()
 	{
 		super.resetStats();
+		getActiveChar().clearDropAmountBonuses();
 		// 注入变身屬性加成（在屬性重算寫鎖內執行，直接 mergeAdd/mergeMul）
 		MorphManager.getInstance().pumpMorphStats(getActiveChar(), this);
 		// 注入祭祀屬性加成

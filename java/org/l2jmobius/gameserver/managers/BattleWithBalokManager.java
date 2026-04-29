@@ -27,7 +27,6 @@ import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
-import org.l2jmobius.gameserver.config.GrandBossConfig;
 import org.l2jmobius.gameserver.model.actor.Player;
 
 /**
@@ -46,12 +45,10 @@ public class BattleWithBalokManager
 	{
 	}
 	
-	public void addPointsForPlayer(Player player, boolean isScorpion)
+	public void addPointsForPlayer(Player player, int points)
 	{
-		final int pointsToAdd = isScorpion ? GrandBossConfig.BALOK_POINTS_PER_MONSTER * 10 : GrandBossConfig.BALOK_POINTS_PER_MONSTER;
 		final int currentPoints = _playerPoints.computeIfAbsent(player.getObjectId(), _ -> 0);
-		int sum = pointsToAdd + currentPoints;
-		_playerPoints.put(player.getObjectId(), sum);
+		_playerPoints.put(player.getObjectId(), currentPoints + points);
 	}
 	
 	public Map<Integer, Integer> getTopPlayers(int count)
