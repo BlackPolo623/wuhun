@@ -34,21 +34,66 @@ public class VariationInstance
 	private final Options _option1;
 	private final Options _option2;
 	private final Options _option3;
-	
-	public VariationInstance(int mineralId, int option1Id, int option2Id, int option3Id)
+	private final Options _option4;
+	// raw IDs for custom augmentations that bypass OptionData
+	private final int _rawOption1Id;
+	private final int _rawOption2Id;
+	private final int _rawOption3Id;
+	private final int _rawOption4Id;
+
+	public VariationInstance(int mineralId, int option1Id, int option2Id, int option3Id, int option4Id)
 	{
 		_mineralId = mineralId;
 		_option1 = OptionData.getInstance().getOptions(option1Id);
 		_option2 = OptionData.getInstance().getOptions(option2Id);
 		_option3 = OptionData.getInstance().getOptions(option3Id);
+		_option4 = OptionData.getInstance().getOptions(option4Id);
+		_rawOption1Id = option1Id;
+		_rawOption2Id = option2Id;
+		_rawOption3Id = option3Id;
+		_rawOption4Id = option4Id;
 	}
-	
-	public VariationInstance(int mineralId, Options op1, Options op2, Options op3)
+
+	/** 直接存 raw ID，不查 OptionData，供精煉系統使用。 */
+	public static VariationInstance ofRaw(int mineralId, int op1, int op2, int op3, int op4)
+	{
+		return new VariationInstance(mineralId, op1, op2, op3, op4, true);
+	}
+
+	private VariationInstance(int mineralId, int op1, int op2, int op3, int op4, boolean raw)
+	{
+		_mineralId = mineralId;
+		_option1 = null;
+		_option2 = null;
+		_option3 = null;
+		_option4 = null;
+		_rawOption1Id = op1;
+		_rawOption2Id = op2;
+		_rawOption3Id = op3;
+		_rawOption4Id = op4;
+	}
+
+	public VariationInstance(int mineralId, int option1Id, int option2Id, int option3Id)
+	{
+		this(mineralId, option1Id, option2Id, option3Id, 0);
+	}
+
+	public VariationInstance(int mineralId, Options op1, Options op2, Options op3, Options op4)
 	{
 		_mineralId = mineralId;
 		_option1 = op1;
 		_option2 = op2;
 		_option3 = op3;
+		_option4 = op4;
+		_rawOption1Id = op1 != null ? op1.getId() : 0;
+		_rawOption2Id = op2 != null ? op2.getId() : 0;
+		_rawOption3Id = op3 != null ? op3.getId() : 0;
+		_rawOption4Id = op4 != null ? op4.getId() : 0;
+	}
+
+	public VariationInstance(int mineralId, Options op1, Options op2, Options op3)
+	{
+		this(mineralId, op1, op2, op3, null);
 	}
 	
 	public int getMineralId()
@@ -58,52 +103,61 @@ public class VariationInstance
 	
 	public int getOption1Id()
 	{
-		return _option1 == null ? 0 : _option1.getId();
+		return _option1 != null ? _option1.getId() : _rawOption1Id;
 	}
-	
+
 	public int getOption2Id()
 	{
-		return _option2 == null ? 0 : _option2.getId();
+		return _option2 != null ? _option2.getId() : _rawOption2Id;
 	}
-	
+
 	public int getOption3Id()
 	{
-		return _option3 == null ? 0 : _option3.getId();
+		return _option3 != null ? _option3.getId() : _rawOption3Id;
 	}
-	
+
+	public int getOption4Id()
+	{
+		return _option4 != null ? _option4.getId() : _rawOption4Id;
+	}
+
 	public void applyBonus(Playable playable)
 	{
 		if (_option1 != null)
 		{
 			_option1.apply(playable);
 		}
-		
 		if (_option2 != null)
 		{
 			_option2.apply(playable);
 		}
-		
 		if (_option3 != null)
 		{
 			_option3.apply(playable);
 		}
+		if (_option4 != null)
+		{
+			_option4.apply(playable);
+		}
 	}
-	
+
 	public void removeBonus(Playable playable)
 	{
 		if (_option1 != null)
 		{
 			_option1.remove(playable);
 		}
-		
 		if (_option2 != null)
 		{
 			_option2.remove(playable);
 		}
-		
 		if (_option3 != null)
 		{
 			_option3.remove(playable);
+		}
+		if (_option4 != null)
+		{
+			_option4.remove(playable);
 		}
 	}
 }

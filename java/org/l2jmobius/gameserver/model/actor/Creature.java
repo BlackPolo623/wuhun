@@ -5324,6 +5324,7 @@ public abstract class Creature extends WorldObject
 							final int soulringVampiric = asPlayer().getSoulringCount() + 5000;
 							absorbDamage = Math.min(absorbDamage, soulringVampiric);
 						}
+						absorbDamage += getStat().getValue(Stat.ABSORB_DAMAGE_REGENADD,0);
 						double finalabsorbDamage = Rnd.get((absorbDamage * 0.8), (absorbDamage * 1.2));
 						setCurrentHp(_status.getCurrentHp() + finalabsorbDamage);
 					}

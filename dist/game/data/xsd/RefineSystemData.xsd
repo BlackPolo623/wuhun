@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="refineSystem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="settings" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="refineItemId"    type="xs:positiveInteger" use="required"/>
+						<xs:attribute name="refineItemCount" type="xs:positiveInteger" use="required"/>
+						<xs:attribute name="defaultCharges"  type="xs:positiveInteger" use="required"/>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="specialCharges" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="item" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="templateId" type="xs:positiveInteger" use="required"/>
+									<xs:attribute name="charges"    type="xs:positiveInteger" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="tierChances" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="tier" minOccurs="1" maxOccurs="4">
+								<xs:complexType>
+									<xs:attribute name="count"  type="xs:positiveInteger" use="required"/>
+									<xs:attribute name="chance" type="xs:nonNegativeInteger" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="series" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="range" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="from"   type="xs:nonNegativeInteger" use="required"/>
+									<xs:attribute name="to"     type="xs:nonNegativeInteger" use="required"/>
+									<xs:attribute name="weight" type="xs:positiveInteger"    use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="base"   type="xs:positiveInteger" use="required"/>
+						<xs:attribute name="name"   type="xs:string"          use="required"/>
+						<xs:attribute name="stat"   type="xs:string"          use="required"/>
+						<xs:attribute name="weight" type="xs:positiveInteger" use="required"/>
+						<xs:attribute name="valueType" use="optional" default="PERCENT">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="PERCENT"/>
+									<xs:enumeration value="FLAT"/>
+									<xs:enumeration value="MUL"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

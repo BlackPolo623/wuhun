@@ -282,6 +282,7 @@ public enum Stat
 	ABSORB_DAMAGE_PERCENT("absorbDam"),
 	ABSORB_DAMAGE_CHANCE("absorbDamChance", new VampiricChanceFinalizer()),
 	ABSORB_DAMAGE_DEFENCE("absorbDamDefence"),
+	ABSORB_DAMAGE_REGENADD("absorbDamRegenAdd"),
 	TRANSFER_DAMAGE_SUMMON_PERCENT("transDam"),
 	MANA_SHIELD_PERCENT("manaShield"),
 	TRANSFER_DAMAGE_TO_PLAYER("transDamToPlayer"),

@@ -33,6 +33,7 @@ import org.l2jmobius.gameserver.config.RatesConfig;
 import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
+import org.l2jmobius.gameserver.data.xml.RefineSystemData;
 import org.l2jmobius.gameserver.managers.MorphManager;
 import org.l2jmobius.gameserver.managers.PremiumManager;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -55,6 +56,7 @@ import org.l2jmobius.gameserver.model.item.type.WeaponType;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.stats.Formulas;
+import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.stats.Stat;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -1076,5 +1078,67 @@ public class PlayerStat extends PlayableStat
 		{
 			player.getServitors().values().forEach(servitor -> servitor.getStat().recalculateStats(broadcast));
 		}
+	}
+
+	@Override
+	public double getValue(Stat stat)
+	{
+		return super.getValue(stat) + getRefineBonus(stat);
+	}
+
+	@Override
+	public double getValue(Stat stat, double baseValue)
+	{
+		return super.getValue(stat, baseValue) + getRefineBonus(stat);
+	}
+
+	@Override
+	public double getMul(Stat stat, double defaultValue)
+	{
+		return super.getMul(stat, defaultValue) + getRefineMulBonus(stat);
+	}
+
+	private double getRefineBonus(Stat stat)
+	{
+		final Player player = getActiveChar();
+		if (player == null)
+		{
+			return 0;
+		}
+
+		final RefineSystemData data = RefineSystemData.getInstance();
+		double bonus = 0;
+		for (Item item : player.getInventory().getPaperdollItems())
+		{
+			if (item == null || !item.isAugmented())
+			{
+				continue;
+			}
+			final VariationInstance aug = item.getAugmentation();
+			bonus += data.getRefineBonus(aug, stat);
+		}
+		return bonus;
+	}
+
+	private double getRefineMulBonus(Stat stat)
+	{
+		final Player player = getActiveChar();
+		if (player == null)
+		{
+			return 0;
+		}
+
+		final RefineSystemData data = RefineSystemData.getInstance();
+		double bonus = 0;
+		for (Item item : player.getInventory().getPaperdollItems())
+		{
+			if (item == null || !item.isAugmented())
+			{
+				continue;
+			}
+			final VariationInstance aug = item.getAugmentation();
+			bonus += data.getRefineMulBonus(aug, stat);
+		}
+		return bonus;
 	}
 }

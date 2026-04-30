@@ -1178,7 +1178,7 @@ public class Item extends WorldObject
 	public void restoreAttributes()
 	{
 		try (Connection con = DatabaseFactory.getConnection();
-			PreparedStatement ps1 = con.prepareStatement("SELECT mineralId,option1,option2,option3 FROM item_variations WHERE itemId=?");
+			PreparedStatement ps1 = con.prepareStatement("SELECT mineralId,option1,option2,option3,option4 FROM item_variations WHERE itemId=?");
 			PreparedStatement ps2 = con.prepareStatement("SELECT elemType,elemValue FROM item_elementals WHERE itemId=?"))
 		{
 			ps1.setInt(1, getObjectId());
@@ -1190,9 +1190,10 @@ public class Item extends WorldObject
 					final int option1 = rs.getInt("option1");
 					final int option2 = rs.getInt("option2");
 					final int option3 = rs.getInt("option3");
-					if ((option1 > 0) || (option2 > 0) || (option3 > 0))
+					final int option4 = rs.getInt("option4");
+					if ((option1 > 0) || (option2 > 0) || (option3 > 0) || (option4 > 0))
 					{
-						_augmentation = new VariationInstance(mineralId, option1, option2, option3);
+						_augmentation = new VariationInstance(mineralId, option1, option2, option3, option4);
 					}
 				}
 			}
@@ -1231,7 +1232,7 @@ public class Item extends WorldObject
 	
 	private void updateItemOptions(Connection con)
 	{
-		try (PreparedStatement ps = con.prepareStatement("REPLACE INTO item_variations VALUES(?,?,?,?,?)"))
+		try (PreparedStatement ps = con.prepareStatement("REPLACE INTO item_variations VALUES(?,?,?,?,?,?)"))
 		{
 			ps.setInt(1, getObjectId());
 			if (_augmentation != null)
@@ -1240,6 +1241,7 @@ public class Item extends WorldObject
 				ps.setInt(3, _augmentation.getOption1Id());
 				ps.setInt(4, _augmentation.getOption2Id());
 				ps.setInt(5, _augmentation.getOption3Id());
+				ps.setInt(6, _augmentation.getOption4Id());
 			}
 			else
 			{
@@ -1247,8 +1249,8 @@ public class Item extends WorldObject
 				ps.setInt(3, 0);
 				ps.setInt(4, 0);
 				ps.setInt(5, 0);
+				ps.setInt(6, 0);
 			}
-			
 			ps.executeUpdate();
 		}
 		catch (SQLException e)

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refineSystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/RefineSystemData.xsd">
+
+	<!-- 精煉消耗道具 -->
+	<settings refineItemId="105804" refineItemCount="1" defaultCharges="20"/>
+
+	<!-- 特殊裝備精煉次數：每個裝備模板 ID 獨立設定 -->
+	<specialCharges>
+		<item templateId="120052" charges="30"/>
+		<item templateId="120053" charges="30"/>
+		<item templateId="120054" charges="30"/>
+		<item templateId="120055" charges="30"/>
+		<item templateId="120056" charges="30"/>
+		<item templateId="120057" charges="30"/>
+		<item templateId="120058" charges="30"/>
+		<item templateId="120059" charges="30"/>
+		<item templateId="120060" charges="30"/>
+		<item templateId="120061" charges="30"/>
+		<item templateId="120062" charges="30"/>
+		<item templateId="120063" charges="30"/>
+		<item templateId="120064" charges="30"/>
+	</specialCharges>
+
+	<!-- 詞條數量機率：第1條一定有，第2/3/4條各自獨立判斷 -->
+	<!-- chance = 出現機率(0~100)，若第N條未出現則後面的也不出現 -->
+	<tierChances>
+		<tier count="1" chance="100"/>
+		<tier count="2" chance="100"/>
+		<tier count="3" chance="100"/>
+		<tier count="4" chance="100"/>
+	</tierChances>
+
+	<!--
+	valueType 說明：
+	  PERCENT（預設）：raw/100.0 = % 數字，消費端用 getValue，公式含 value/100
+	  FLAT           ：raw 直接是數值，消費端用 getValue，直接加到屬性
+	  MUL            ：raw/10000.0 = 倍率增量，消費端用 getMul，公式含乘法
+
+	range weight 機率從高到低：35 / 25 / 20 / 12 / 8（總和 100）
+	  第1段（最低值區）機率最高，第5段（最高值區）機率最低
+	-->
+
+	<!-- 10000：最終傷害 PERCENT，0.00%~20.00%，每段 400 -->
+	<series base="10000" name="最終傷害" stat="FINAL_DAMAGE_RATE" weight="100" valueType="PERCENT">
+		<range from="0"    to="400"  weight="35"/>
+		<range from="401"  to="800"  weight="25"/>
+		<range from="801"  to="1200" weight="20"/>
+		<range from="1201" to="1600" weight="12"/>
+		<range from="1601" to="2000" weight="8"/>
+	</series>
+
+	<!-- 20000：最終減傷 PERCENT，0.00%~30.00%，每段 600 -->
+	<series base="20000" name="最終減傷" stat="FINAL_DAMAGE_REDUCE" weight="100" valueType="PERCENT">
+		<range from="0"    to="600"  weight="35"/>
+		<range from="601"  to="1200" weight="25"/>
+		<range from="1201" to="1800" weight="20"/>
+		<range from="1801" to="2400" weight="12"/>
+		<range from="2401" to="3000" weight="8"/>
+	</series>
+
+	<!-- 30000：無視最終減傷 PERCENT，0.00%~30.00%，每段 600 -->
+	<series base="30000" name="無視最終減傷" stat="IGNORE_FINAL_DAMAGE_REDUCE" weight="100" valueType="PERCENT">
+		<range from="0"    to="600"  weight="35"/>
+		<range from="601"  to="1200" weight="25"/>
+		<range from="1201" to="1800" weight="20"/>
+		<range from="1801" to="2400" weight="12"/>
+		<range from="2401" to="3000" weight="8"/>
+	</series>
+
+	<!-- 40000：突破限制 PERCENT，0.00%~5.00%，每段 100 -->
+	<series base="40000" name="突破限制" stat="unlock_Limit" weight="100" valueType="PERCENT">
+		<range from="0"   to="100" weight="35"/>
+		<range from="101" to="200" weight="25"/>
+		<range from="201" to="300" weight="20"/>
+		<range from="301" to="400" weight="12"/>
+		<range from="401" to="500" weight="8"/>
+	</series>
+
+	<!-- 50000：吸血機率 PERCENT，0.00%~3.00%，每段 60 -->
+	<series base="50000" name="吸血機率" stat="ABSORB_DAMAGE_CHANCE" weight="100" valueType="PERCENT">
+		<range from="0"  to="60"  weight="35"/>
+		<range from="61" to="120" weight="25"/>
+		<range from="121" to="180" weight="20"/>
+		<range from="181" to="240" weight="12"/>
+		<range from="241" to="300" weight="8"/>
+	</series>
+
+	<!-- 60000：HP突破上限 PERCENT，0.00%~10.00%，每段 200 -->
+	<series base="60000" name="HP突破上限" stat="HP_LIMIT" weight="100" valueType="PERCENT">
+		<range from="0"   to="200" weight="35"/>
+		<range from="201" to="400" weight="25"/>
+		<range from="401" to="600" weight="20"/>
+		<range from="601" to="800" weight="12"/>
+		<range from="801" to="1000" weight="8"/>
+	</series>
+
+	<!-- 70000：HP藥水恢復 FLAT，0~8000，每段 1600 -->
+	<series base="70000" name="HP藥水恢復" stat="ADDITIONAL_POTION_HP" weight="100" valueType="FLAT">
+		<range from="0"    to="1600" weight="35"/>
+		<range from="1601" to="3200" weight="25"/>
+		<range from="3201" to="4800" weight="20"/>
+		<range from="4801" to="6400" weight="12"/>
+		<range from="6401" to="8000" weight="8"/>
+	</series>
+
+	<!-- 80000：金幣掉落量 MUL，0.00%~30.00%，每段 600 -->
+	<series base="80000" name="金幣掉落量加成" stat="BONUS_DROP_ADENA" weight="100" valueType="MUL">
+		<range from="0"    to="600"  weight="35"/>
+		<range from="601"  to="1200" weight="25"/>
+		<range from="1201" to="1800" weight="20"/>
+		<range from="1801" to="2400" weight="12"/>
+		<range from="2401" to="3000" weight="8"/>
+	</series>
+
+	<!-- 90000：吸血量增幅 FLAT，0~5000，每段 1000 -->
+	<series base="90000" name="普攻吸血量增幅" stat="ABSORB_DAMAGE_REGENADD" weight="100" valueType="FLAT">
+		<range from="0"    to="1000" weight="35"/>
+		<range from="1001" to="2000" weight="25"/>
+		<range from="2001" to="3000" weight="20"/>
+		<range from="3001" to="4000" weight="12"/>
+		<range from="4001" to="5000" weight="8"/>
+	</series>
+
+	<!-- PVP/PVE 系列 MUL，0.00%~25.00%，每段 500 -->
+
+	<series base="100000" name="PVP物理攻擊傷害加成" stat="PVP_PHYSICAL_ATTACK_DAMAGE" weight="100" valueType="MUL">
+		<range from="0"    to="500"  weight="35"/>
+		<range from="501"  to="1000" weight="25"/>
+		<range from="1001" to="1500" weight="20"/>
+		<range from="1501" to="2000" weight="12"/>
+		<range from="2001" to="2500" weight="8"/>
+	</series>
+
+	<series base="110000" name="PVP魔法技能傷害加成" stat="PVP_MAGICAL_SKILL_DAMAGE" weight="100" valueType="MUL">
+		<range from="0"    to="500"  weight="35"/>
+		<range from="501"  to="1000" weight="25"/>
+		<range from="1001" to="1500" weight="20"/>
+		<range from="1501" to="2000" weight="12"/>
+		<range from="2001" to="2500" weight="8"/>
+	</series>
+
+	<series base="120000" name="PVP物理技能傷害加成" stat="PVP_PHYSICAL_SKILL_DAMAGE" weight="100" valueType="MUL">
+		<range from="0"    to="500"  weight="35"/>
+		<range from="501"  to="1000" weight="25"/>
+		<range from="1001" to="1500" weight="20"/>
+		<range from="1501" to="2000" weight="12"/>
+		<range from="2001" to="2500" weight="8"/>
+	</series>
+
+	<series base="130000" name="PVP物理防禦加成" stat="PVP_PHYSICAL_ATTACK_DEFENCE" weight="100" valueType="MUL">
+		<range from="0"    to="500"  weight="35"/>
+		<range from="501"  to="1000" weight="25"/>
+		<range from="1001" to="1500" weight="20"/>
+		<range from="1501" to="2000" weight="12"/>
+		<range from="2001" to="2500" weight="8"/>
+	</series>
+
+	<series base="140000" name="PVP魔法防禦加成" stat="PVP_MAGICAL_SKILL_DEFENCE" weight="100" valueType="MUL">
+		<range from="0"    to="500"  weight="35"/>
+		<range from="501"  to="1000" weight="25"/>
+		<range from="1001" to="1500" weight="20"/>
+		<range from="1501" to="2000" weight="12"/>
+		<range from="2001" to="2500" weight="8"/>
+	</series>
+
+	<series base="150000" name="PVP物理技能防禦加成" stat="PVP_PHYSICAL_SKILL_DEFENCE" weight="100" valueType="MUL">
+		<range from="0"    to="500"  weight="35"/>
+		<range from="501"  to="1000" weight="25"/>
+		<range from="1001" to="1500" weight="20"/>
+		<range from="1501" to="2000" weight="12"/>
+		<range from="2001" to="2500" weight="8"/>
+	</series>
+
+	<series base="160000" name="PVE物理攻擊傷害加成" stat="PVE_PHYSICAL_ATTACK_DAMAGE" weight="100" valueType="MUL">
+		<range from="0"    to="500"  weight="35"/>
+		<range from="501"  to="1000" weight="25"/>
+		<range from="1001" to="1500" weight="20"/>
+		<range from="1501" to="2000" weight="12"/>
+		<range from="2001" to="2500" weight="8"/>
+	</series>
+
+	<series base="170000" name="PVE物理技能傷害加成" stat="PVE_PHYSICAL_SKILL_DAMAGE" weight="100" valueType="MUL">
+		<range from="0"    to="500"  weight="35"/>
+		<range from="501"  to="1000" weight="25"/>
+		<range from="1001" to="1500" weight="20"/>
+		<range from="1501" to="2000" weight="12"/>
+		<range from="2001" to="2500" weight="8"/>
+	</series>
+
+	<series base="180000" name="PVE魔法技能傷害加成" stat="PVE_MAGICAL_SKILL_DAMAGE" weight="100" valueType="MUL">
+		<range from="0"    to="500"  weight="35"/>
+		<range from="501"  to="1000" weight="25"/>
+		<range from="1001" to="1500" weight="20"/>
+		<range from="1501" to="2000" weight="12"/>
+		<range from="2001" to="2500" weight="8"/>
+	</series>
+
+	<series base="190000" name="PVE物理防禦加成" stat="PVE_PHYSICAL_ATTACK_DEFENCE" weight="100" valueType="MUL">
+		<range from="0"    to="500"  weight="35"/>
+		<range from="501"  to="1000" weight="25"/>
+		<range from="1001" to="1500" weight="20"/>
+		<range from="1501" to="2000" weight="12"/>
+		<range from="2001" to="2500" weight="8"/>
+	</series>
+
+	<series base="200000" name="PVE技能防禦加成" stat="PVE_PHYSICAL_SKILL_DEFENCE" weight="100" valueType="MUL">
+		<range from="0"    to="500"  weight="35"/>
+		<range from="501"  to="1000" weight="25"/>
+		<range from="1001" to="1500" weight="20"/>
+		<range from="1501" to="2000" weight="12"/>
+		<range from="2001" to="2500" weight="8"/>
+	</series>
+
+	<series base="210000" name="PVE魔法防禦加成" stat="PVE_MAGICAL_SKILL_DEFENCE" weight="100" valueType="MUL">
+		<range from="0"    to="500"  weight="35"/>
+		<range from="501"  to="1000" weight="25"/>
+		<range from="1001" to="1500" weight="20"/>
+		<range from="1501" to="2000" weight="12"/>
+		<range from="2001" to="2500" weight="8"/>
+	</series>
+
+</refineSystem>
