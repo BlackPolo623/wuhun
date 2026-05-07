@@ -1,0 +1,533 @@
+================================================================
+  武魂天堂2 — GM Discord 獎勵發放系統 開發規劃
+  版本：v6.0（定案）   日期：2025-05-05
+================================================================
+
+【功能概述】
+  GM 在指定 Discord 頻道輸入指令，批量對所有已綁定玩家發放
+  獎勵道具。發放前顯示可視化預覽 Embed，GM 透過按鈕進行
+  二次確認後才正式發布，防止誤操作。
+  所有 GM 指令均受身分組保護。
+  玩家於遊戲內 Discord小助手 NPC 領取，固定 30 天期限。
+
+================================================================
+  一、GM 權限說明
+================================================================
+
+  本系統所有 GM 指令（!giveall、!reward cancel/list/history）
+  均套用相同的雙重驗證機制：
+
+    驗證一：頻道限制
+      指令必須在 DiscordGmChannelId 頻道內輸入才有效
+      其他頻道輸入 → 完全靜默，不做任何回應
+
+    驗證二：身分組限制
+      指令發起者必須擁有 DiscordGmRoleId 身分組
+      在 GM 頻道但無 GM 身分 → 只對該用戶私訊「⛔ 無權限執行此指令。」
+      不在頻道公開回應，避免暴露指令格式
+
+    兩項皆通過 → 執行指令
+
+================================================================
+  二、完整流程（含二次確認）
+================================================================
+
+  ── GM 發放流程 ───────────────────────────────────────────────
+
+    Step 1  GM 在 GM 專用頻道輸入 !giveall 指令
+              ↓
+    Step 2  Bot 驗證：頻道 + 身分組（雙重）
+              ↓
+    Step 3  Bot 在 GM 頻道回覆「預覽 Embed」
+            顯示活動名稱、道具清單、發放人數、到期時間
+            附帶兩顆按鈕：[✅ 確認發布]  [❌ 取消]
+            預覽有效時間：60 秒
+              ↓
+    Step 4A GM 點擊「✅ 確認發布」
+              ↓
+            寫入 discord_reward_events（每道具一列）
+            公告頻道發送 @everyone + 獎勵 Embed
+            對所有已綁定玩家逐一發送私訊通知
+            Bot 編輯原預覽訊息 → 顯示「已發布成功」訊息
+            按鈕自動停用（無法再按）
+
+    Step 4B GM 點擊「❌ 取消」
+              ↓
+            不寫入任何資料
+            Bot 編輯原預覽訊息 → 顯示「已取消」訊息
+            按鈕自動停用
+
+    Step 4C 60 秒內未操作
+              ↓
+            Bot 編輯原預覽訊息 → 顯示「操作逾時，已自動取消」
+            按鈕自動停用
+
+  ── 玩家領取流程 ──────────────────────────────────────────────
+
+    玩家進遊戲 → Discord小助手 NPC
+      ↓
+    選擇「📬 領取 Discord 獎勵 (N)」
+      ↓
+    即時 SQL 查詢資格（四項條件，見第六節）
+      ↓
+    NPC 顯示可領清單 → 玩家點擊「全部領取」
+      ↓
+    道具進背包 + 寫入 discord_reward_claimed
+
+================================================================
+  三、GM 指令設計
+================================================================
+
+  ── !giveall（發放獎勵）──────────────────────────────────────
+
+  語法：
+    !giveall <活動名稱> | <道具ID>:<數量>:<強化> [道具ID:數量:強化 ...]
+
+  強化欄位可省略（預設 +0）：
+    !giveall <活動名稱> | <道具ID>:<數量>
+
+  範例：
+    !giveall 維護補償 | 57:1000000
+    !giveall 週年慶禮包 | 57:5000000 6622:5 1835:3
+    !giveall 開服紀念禮 | 57:3000000 1403:1:10
+
+  說明：
+    - 期限固定 30 天，自動計算
+    - 活動名稱不可與進行中的活動重複
+    - 輸入後先顯示預覽，點確認才發布
+
+  ── !reward cancel（取消活動）───────────────────────────────
+
+  語法：
+    !reward cancel <活動名稱>
+
+  說明：
+    - 將活動標記 CANCELLED，玩家無法再領取
+    - 已領取者不受影響
+    - Bot 回覆確認訊息
+
+  ── !reward list（查詢進行中活動）──────────────────────────
+
+  語法：
+    !reward list
+
+  顯示格式（Embed）：
+    📋 進行中的獎勵活動
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    #1  維護補償
+        到期：2025/05/20  發放者：GM小明
+    #2  週年慶禮包
+        到期：2025/06/04  發放者：GM小明
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    共 2 筆進行中
+
+  ── !reward history（最近 10 筆紀錄）───────────────────────
+
+  語法：
+    !reward history
+
+  顯示格式（Embed）：
+    📜 獎勵發放歷史（最近 10 筆）
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    [ACTIVE]    週年慶禮包     2025/05/05  GM小明
+    [ACTIVE]    維護補償       2025/05/01  GM小明
+    [CANCELLED] 測試活動       2025/04/28  GM小明
+    [EXPIRED]   開服紀念禮     2025/04/01  GM小明
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+================================================================
+  四、可視化預覽 Embed 設計（二次確認畫面）
+================================================================
+
+  ── 預覽狀態（GM 輸入指令後顯示）────────────────────────────
+
+  📋  獎勵發放預覽
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  活動名稱    週年慶禮包
+  發放對象    所有已綁定玩家（目前 47 人）
+  領取期限    30 天（2025/06/04 到期）
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🎀 獎勵內容
+  💰 Adena              ×5,000,000
+  📜 祝福捲軸（B級）     ×5
+  💎 魔法強化石           ×3
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚠️  確認後將立即對外公告並通知所有綁定玩家
+      獎勵發布後無法撤回，請確認內容無誤！
+  ⏰  此預覽將於 60 秒後自動取消
+
+  [✅ 確認發布]  [❌ 取消]
+
+  ── 確認後（按下確認按鈕，Bot 編輯原訊息）────────────────────
+
+  ✅  獎勵已成功發布！
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  活動名稱    週年慶禮包
+  發放時間    2025/05/05 21:30
+  通知人數    47 位綁定玩家
+  公告頻道    已發送至 #公告（含 @everyone）
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  [✅ 確認發布（已執行）]  [❌ 取消（已停用）]   ← 按鈕停用
+
+  ── 取消後（按下取消按鈕，Bot 編輯原訊息）────────────────────
+
+  ❌  已取消，未執行任何發放。
+  活動「週年慶禮包」未被建立。
+
+  [✅ 確認發布（已停用）]  [❌ 取消（已執行）]   ← 按鈕停用
+
+  ── 逾時（60 秒無操作，Bot 編輯原訊息）──────────────────────
+
+  ⏱️  操作逾時，預覽已自動取消。
+  如需發放請重新輸入指令。
+
+  [✅ 確認發布（已停用）]  [❌ 取消（已停用）]   ← 按鈕停用
+
+================================================================
+  五、@everyone 公告 Embed 設計
+================================================================
+
+  @everyone
+
+  🎁  GM 獎勵發放通知
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  活動名稱    週年慶禮包
+  發放時間    2025/05/05 21:30
+  領取期限    30 天（2025/06/04 前）
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🎀 獎勵內容
+  💰 Adena              ×5,000,000
+  📜 祝福捲軸（B級）     ×5
+  💎 魔法強化石           ×3
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📌 領取方式
+  進入遊戲 → Discord小助手 NPC
+  選擇「📬 領取 Discord 獎勵」
+
+================================================================
+  六、個人私訊通知
+================================================================
+
+  🎁  你有新的 Discord 獎勵可以領取！
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  活動：週年慶禮包
+
+  🎀 獎勵內容：
+  💰 Adena ×5,000,000
+  📜 祝福捲軸（B級）×5
+  💎 魔法強化石 ×3
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📌 前往遊戲內 Discord小助手 NPC
+     選擇「📬 領取 Discord 獎勵」即可領取！
+  ⏰ 領取期限：2025/06/04（30 天）
+
+================================================================
+  七、資料庫設計（共 2 張表）
+================================================================
+
+  ── 資料表一：discord_reward_events ─────────────────────────
+  活動與道具合併，每道具一列，同活動 event_name 相同。
+
+  CREATE TABLE discord_reward_events (
+    id            INT AUTO_INCREMENT PRIMARY KEY,
+    event_name    VARCHAR(100) NOT NULL,
+    created_by    VARCHAR(30)  NOT NULL,      -- GM Discord ID
+    created_time  BIGINT       NOT NULL,      -- 發放時間（毫秒）
+    expire_time   BIGINT       NOT NULL,      -- created_time + 30 天
+    status        ENUM('ACTIVE','CANCELLED') DEFAULT 'ACTIVE',
+    item_id       INT          NOT NULL,
+    item_count    BIGINT UNSIGNED NOT NULL,
+    enchant_level INT          DEFAULT 0,
+    INDEX idx_event_name    (event_name),
+    INDEX idx_status_expire (status, expire_time)
+  );
+
+  ── 資料表二：discord_reward_claimed ────────────────────────
+  玩家實際領取後才寫入，以 event_name 整筆為單位。
+
+  CREATE TABLE discord_reward_claimed (
+    id           INT AUTO_INCREMENT PRIMARY KEY,
+    event_name   VARCHAR(100) NOT NULL,
+    char_id      INT NOT NULL,
+    claimed_time BIGINT NOT NULL,
+    UNIQUE KEY uq_event_char (event_name, char_id)
+  );
+
+  ── 資格查詢 SQL ──────────────────────────────────────────────
+
+  -- NPC 顯示可領清單
+  SELECT DISTINCT e.event_name, e.expire_time
+  FROM discord_reward_events e
+  WHERE e.status = 'ACTIVE'
+    AND e.expire_time > (UNIX_TIMESTAMP() * 1000)
+    AND EXISTS (
+      SELECT 1 FROM discord_bindings b
+      WHERE b.player_id = :charId
+        AND UNIX_TIMESTAMP(b.bound_at) * 1000 <= e.created_time
+    )
+    AND NOT EXISTS (
+      SELECT 1 FROM discord_reward_claimed c
+      WHERE c.event_name = e.event_name AND c.char_id = :charId
+    );
+
+  -- 取得特定活動的道具清單
+  SELECT item_id, item_count, enchant_level
+  FROM discord_reward_events
+  WHERE event_name = :eventName AND status = 'ACTIVE';
+
+================================================================
+  後台 Console 紀錄設計（LOGGER）
+================================================================
+
+  所有關鍵操作都會同時寫入後台 console，格式如下：
+
+  ── GM 輸入指令（預覽階段）────────────────────────────────────
+
+  [INFO]  DiscordReward: GM 指令收到
+          GM：GM小明 (Discord ID: 123456789)
+          活動：週年慶禮包
+          道具：57×5000000 / 6622×5 / 1835×3
+          → 等待 GM 確認（預覽已送出）
+
+  ── GM 確認發放 ───────────────────────────────────────────────
+
+  [INFO]  DiscordReward: ===== 獎勵發放開始 =====
+  [INFO]  DiscordReward: 活動名稱：週年慶禮包
+  [INFO]  DiscordReward: 發放 GM：GM小明 (123456789)
+  [INFO]  DiscordReward: 道具清單：Adena×5000000 / 祝福捲軸×5 / 魔法強化石×3
+  [INFO]  DiscordReward: 寫入 DB 成功
+  [INFO]  DiscordReward: 已發送公告至頻道 #公告 (含 @everyone)
+  [INFO]  DiscordReward: 已發送私訊通知：47 / 47 人成功
+  [INFO]  DiscordReward: ===== 獎勵發放完成 =====
+
+  ── GM 取消預覽 ───────────────────────────────────────────────
+
+  [INFO]  DiscordReward: 獎勵預覽已取消
+          GM：GM小明 (123456789) / 活動：週年慶禮包
+
+  ── 預覽逾時 ──────────────────────────────────────────────────
+
+  [INFO]  DiscordReward: 獎勵預覽逾時自動取消（60秒無操作）
+          GM：GM小明 (123456789) / 活動：週年慶禮包
+
+  ── 玩家領取 ──────────────────────────────────────────────────
+
+  [INFO]  DiscordReward: 玩家領取獎勵
+          角色：Warrior (ID: 268435712) / 活動：週年慶禮包
+
+  ── !reward cancel 執行 ───────────────────────────────────────
+
+  [INFO]  DiscordReward: 活動已取消
+          GM：GM小明 (123456789) / 活動：週年慶禮包
+
+  ── 私訊發送失敗（部分玩家收不到，不影響發放）─────────────────
+
+  [WARN]  DiscordReward: 私訊發送失敗（玩家可能關閉私訊）
+          Discord ID：987654321
+
+  ── 每日過期清理排程 ──────────────────────────────────────────
+
+  [INFO]  DiscordReward: 過期清理完成，共標記 3 筆活動為 EXPIRED
+
+  ── 異常 ──────────────────────────────────────────────────────
+
+  [SEVERE] DiscordReward: 寫入 DB 失敗！活動：週年慶禮包
+           例外訊息：（詳細 Exception 堆疊）
+
+  說明：
+    - INFO  → 正常操作，一律輸出
+    - WARN  → 非致命異常（如私訊被拒），可忽略但需留意
+    - SEVERE → 致命錯誤（DB 寫入失敗等），需立即處理
+
+================================================================
+  八、遊戲內 NPC 流程
+================================================================
+
+  主選單入口：
+    📬 領取 Discord 獎勵 (2)   ← 顯示可領筆數，0 筆時隱藏
+
+  領取清單頁面：
+
+    你有 2 筆可領取的獎勵：
+
+    【維護補償】 到期：2025/06/01
+      💰 Adena ×1,000,000
+
+    【週年慶禮包】 到期：2025/06/04
+      💰 Adena ×5,000,000
+      📜 祝福捲軸（B級）×5
+      💎 魔法強化石 ×3
+
+    [全部領取]  [關閉]
+
+  保護機制：
+    背包空間不足  → 「背包空間不足，請先清出 X 個位置。」
+    Adena 超上限  → 「Adena 已達上限，請先花費後再來領取。」
+    領取成功      → 「✅ 領取完成！道具已存入背包。」
+    無可領取      → 「目前沒有可領取的 Discord 獎勵。」
+
+================================================================
+  九、Discord.ini 設定項（含後台顯示說明）
+================================================================
+
+  # ============================================================
+  # GM 獎勵發放系統
+  # ============================================================
+
+  # 是否啟用 GM 獎勵發放功能
+  # 停用時 !giveall 等指令完全無效
+  DiscordRewardEnabled = True
+
+  # GM 指令專用頻道 ID
+  # 僅此頻道內的指令有效，其他頻道完全靜默
+  DiscordGmChannelId = <填入頻道ID>
+
+  # GM 身分組 ID
+  # 擁有此身分組的成員才能執行 GM 指令
+  # 未持有此身分組者在 GM 頻道輸入指令，只會收到私訊提示無權限
+  DiscordGmRoleId = <填入身分組ID>
+
+  # 獎勵公告頻道 ID
+  # 確認發放後，Bot 在此頻道發送 @everyone 公告
+  DiscordRewardAnnounceChannelId = <填入頻道ID>
+
+  # 是否在公告中加上 @everyone
+  # 需確認 Bot 在公告頻道擁有「提及所有人」的 Discord 權限
+  DiscordRewardMentionEveryone = True
+
+  ── 後台 logStatus() 顯示範例 ────────────────────────────────
+
+  伺服器啟動後，後台顯示：
+
+  DiscordManager: [獎勵系統] 啟用
+  DiscordManager: [獎勵系統] GM頻道：#gm-指令室 (1234567890)
+  DiscordManager: [獎勵系統] GM身分組：GM (9876543210)
+  DiscordManager: [獎勵系統] 公告頻道：#公告 (1122334455) | @everyone 開啟
+  DiscordManager: [獎勵系統] 警告：找不到GM頻道，請確認頻道ID正確！  ← 異常時
+
+================================================================
+  十、技術實作細節（Button 互動）
+================================================================
+
+  使用 JDA ActionRow + Button 實現二次確認：
+
+  新增 JDA imports：
+    net.dv8tion.jda.api.interactions.components.buttons.Button
+    net.dv8tion.jda.api.interactions.components.ActionRow
+    net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent
+
+  按鈕 ID 格式（含 UUID 防止衝突）：
+    reward_confirm_<uuid>   ← 確認發布按鈕
+    reward_cancel_<uuid>    ← 取消按鈕
+
+  暫存預覽資料（記憶體，非 DB）：
+    ConcurrentHashMap<String, PendingRewardData>
+    Key：uuid 字串
+    Value：PendingRewardData（活動名稱、道具清單、到期時間戳）
+
+  逾時處理：
+    預覽送出後，ThreadPool 排程 60 秒後執行：
+      若 Map 中仍有該 uuid → 移除資料 + 編輯訊息為逾時提示
+      若已被確認或取消 → 不做任何動作
+
+  按鈕點擊後立即停用（防止重複點擊）：
+    event.editComponents(ActionRow.of(
+      confirmBtn.asDisabled(),
+      cancelBtn.asDisabled()
+    )).queue()
+
+  GatewayIntent 需求：
+    JDABuilder 需加入 MESSAGE_CONTENT（已有）
+    Button 互動不需額外 Intent，JDA 預設支援
+
+================================================================
+  十一、安全性設計
+================================================================
+
+  1. 雙重 GM 驗證（頻道 + 身分組），缺一不可
+  2. 非 GM 頻道 → 靜默
+  3. GM 頻道但非 GM 身分 → 私訊警告，不公開回應
+  4. 發放紀錄含 GM Discord ID，可稽核
+  5. 道具 ID 合法性驗證（ItemData.getTemplate(id) != null）
+  6. 數量上限保護（不超過 MAX_ADENA）
+  7. 活動名稱重複保護（與進行中活動不可重名）
+  8. DB UNIQUE KEY 防止同玩家重複領取
+  9. 預覽 UUID 機制防止不同指令的按鈕互相干擾
+  10. 按鈕確認 / 取消後立即停用，防止重複觸發
+
+================================================================
+  十二、完整檔案清單
+================================================================
+
+  【新增檔案】
+
+  java/org/l2jmobius/discord/reward/
+    DiscordRewardDAO.java         DB 操作（寫入、查詢、領取）
+    DiscordRewardManager.java     業務邏輯（發放、資格判斷、過期排程）
+    model/PendingRewardData.java  預覽暫存資料模型（記憶體用）
+
+  dist/db_installer/sql/game/
+    discord_rewards.sql           建表 SQL（2 張表）
+
+  dist/game/data/scripts/custom/DiscordNpc/
+    reward_list.htm               可領獎勵清單頁面
+    reward_claim_done.htm         領取成功畫面
+    reward_empty.htm              無可領獎勵提示
+
+  【修改檔案】
+
+  dist/game/config/Custom/Discord.ini
+    → 新增第九節所列設定項
+
+  java/org/l2jmobius/gameserver/config/custom/DiscordConfig.java
+    → 新增對應設定欄位
+
+  java/org/l2jmobius/discord/listener/DiscordEventListener.java
+    → 新增 !giveall 處理（預覽 Embed + 按鈕）
+    → 新增 onButtonInteraction()（確認 / 取消 / 逾時處理）
+    → 新增 !reward cancel / list / history 處理
+
+  dist/game/data/scripts/custom/DiscordNpc/DiscordNpc.java
+    → 主選單新增「領取 Discord 獎勵」入口（動態筆數）
+    → 新增領取事件處理
+
+  java/org/l2jmobius/discord/DiscordManager.java
+    → logStatus() 新增獎勵系統詳細狀態
+    → 啟動時排程每日過期清理
+
+================================================================
+  十三、開發實作順序
+================================================================
+
+  Step 1   discord_rewards.sql — 建立 2 張 DB 資料表
+  Step 2   Discord.ini + DiscordConfig.java — 新增設定
+  Step 3   PendingRewardData.java — 預覽暫存模型
+  Step 4   DiscordRewardDAO.java — DB 存取層
+  Step 5   DiscordRewardManager.java — 業務邏輯層
+  Step 6   DiscordEventListener.java — 指令 + 按鈕互動
+  Step 7   DiscordNpc.java + HTM — 遊戲內領取介面
+  Step 8   DiscordManager.java — logStatus + 排程整合
+
+================================================================
+  技術備註
+================================================================
+
+  discord_bindings 現有欄位（無需修改）：
+    player_id   INT           玩家 ObjectId
+    player_name VARCHAR(35)   角色名稱
+    discord_id  VARCHAR(32)   Discord 用戶 ID
+    bound_at    TIMESTAMP     綁定時間 ← 資格判斷依據
+
+  bound_at 安全性：
+    解綁為 DELETE、重綁為 INSERT，不觸發 ON UPDATE，
+    bound_at 準確反映最後一次綁定時間，資格判斷安全可靠。
+
+  Discord Bot 公告頻道所需權限：
+    ✅ 傳送訊息（Send Messages）
+    ✅ 嵌入連結（Embed Links）
+    ✅ 提及所有人（Mention Everyone）
+
+================================================================
+  狀態：定案完成，待實作
+================================================================

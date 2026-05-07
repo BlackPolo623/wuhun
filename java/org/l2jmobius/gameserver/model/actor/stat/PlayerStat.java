@@ -496,7 +496,7 @@ public class PlayerStat extends PlayableStat
 			player.sendMessage("您當前的魂環等級: " + (currentRingLevel + 1));
 			player.sendMessage("========================================");
 			
-			LOGGER.info("玩家 " + player.getName() + " 自動轉生成功，魂環等級: " + (currentRingLevel + 1));
+			//LOGGER.info("玩家 " + player.getName() + " 自動轉生成功，魂環等級: " + (currentRingLevel + 1));
 		}
 		catch (Exception e)
 		{

@@ -12,6 +12,28 @@
 					</xs:complexType>
 				</xs:element>
 
+				<xs:element name="premiumSettings" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="refineItemId"    type="xs:positiveInteger" use="required"/>
+						<xs:attribute name="refineItemCount" type="xs:positiveInteger" use="required"/>
+						<xs:attribute name="minTier"         type="xs:positiveInteger" use="required"/>
+						<xs:attribute name="maxTier"         type="xs:positiveInteger" use="required"/>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="tierColors" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="tierColor" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="tier"  type="xs:positiveInteger" use="required"/>
+									<xs:attribute name="color" type="xs:string"          use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
 				<xs:element name="specialCharges" minOccurs="0" maxOccurs="1">
 					<xs:complexType>
 						<xs:sequence>
@@ -30,8 +52,21 @@
 						<xs:sequence>
 							<xs:element name="tier" minOccurs="1" maxOccurs="4">
 								<xs:complexType>
-									<xs:attribute name="count"  type="xs:positiveInteger" use="required"/>
+									<xs:attribute name="count"  type="xs:positiveInteger"    use="required"/>
 									<xs:attribute name="chance" type="xs:nonNegativeInteger" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="chargeResetCost" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="item" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="itemId" type="xs:positiveInteger" use="required"/>
+									<xs:attribute name="count"  type="xs:positiveInteger" use="required"/>
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
@@ -46,6 +81,7 @@
 									<xs:attribute name="from"   type="xs:nonNegativeInteger" use="required"/>
 									<xs:attribute name="to"     type="xs:nonNegativeInteger" use="required"/>
 									<xs:attribute name="weight" type="xs:positiveInteger"    use="required"/>
+									<xs:attribute name="tier"   type="xs:nonNegativeInteger" use="optional"/>
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>

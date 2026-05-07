@@ -85,6 +85,9 @@ import org.l2jmobius.gameserver.config.custom.OfflinePlayConfig;
 import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
 import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
 import org.l2jmobius.gameserver.config.custom.PrivateStoreRangeConfig;
+import org.l2jmobius.discord.DiscordDAO;
+import org.l2jmobius.discord.DiscordManager;
+import org.l2jmobius.gameserver.config.custom.DiscordConfig;
 import org.l2jmobius.gameserver.config.custom.PvpAnnounceConfig;
 import org.l2jmobius.gameserver.config.custom.PvpRewardItemConfig;
 import org.l2jmobius.gameserver.config.custom.PvpTitleColorConfig;
@@ -5730,6 +5733,46 @@ public class Player extends Playable
 					}
 				}
 				
+				// ── Discord 頻道公告（PVP / PK）────────────────────────────────────
+				if (DiscordConfig.DISCORD_PVP_ANNOUNCE_ENABLED
+					&& DiscordManager.getInstance().isRunning()
+					&& !DiscordConfig.DISCORD_PVP_CHANNEL_ID.isEmpty()
+					&& !fpcKill) // 假玩家擊殺不公告
+				{
+					if ((_pvpFlag == 0) && (pk != null) && !pk.isGM())
+					{
+						// ── PK 公告 ───────────────────────────────────────────────────
+						final String killerDiscordId = DiscordDAO.getDiscordId(pk.getObjectId());
+						final String killerMention = killerDiscordId != null ? "<@" + killerDiscordId + ">" : "**" + pk.getName() + "**";
+						final String targetDiscordId = DiscordDAO.getDiscordId(getObjectId());
+						final String targetMention = targetDiscordId != null ? "<@" + targetDiscordId + ">" : "**" + _name + "**";
+
+						final String discordMsg =
+							"☠️  **━━ PK 血案 ━━**\n" +
+							"🔪  " + killerMention + " 冷血地殺害了無辜的 " + targetMention + "！\n" +
+							"📊  殺手目前 PK 值：**" + pk.getPkKills() + "**\n" +
+							"⚠️  *黑暗的靈魂，終將受到正義的審判...*";
+
+						DiscordManager.getInstance().sendChannelMessage(DiscordConfig.DISCORD_PVP_CHANNEL_ID, discordMsg);
+					}
+					else if ((_pvpFlag != 0) && (killer instanceof Player))
+					{
+						// ── PVP 公告 ──────────────────────────────────────────────────
+						final Player killerPlayer = (Player) killer;
+						final String killerDiscordId = DiscordDAO.getDiscordId(killerPlayer.getObjectId());
+						final String killerMention = killerDiscordId != null ? "<@" + killerDiscordId + ">" : "**" + killerPlayer.getName() + "**";
+						final String targetDiscordId = DiscordDAO.getDiscordId(getObjectId());
+						final String targetMention = targetDiscordId != null ? "<@" + targetDiscordId + ">" : "**" + _name + "**";
+
+						final String discordMsg =
+							"⚔️  **━━ PVP 對決 ━━**\n" +
+							"🏆  " + killerMention + " 在激烈的廝殺中將 " + targetMention + " 斬落於劍下！\n" +
+							"✨  *勝者的名聲將響徹整個伺服器...*";
+
+						DiscordManager.getInstance().sendChannelMessage(DiscordConfig.DISCORD_PVP_CHANNEL_ID, discordMsg);
+					}
+				}
+
 				if (fpcKill && FakePlayersConfig.FAKE_PLAYER_KILL_KARMA && (_pvpFlag == 0) && (getReputation() >= 0))
 				{
 					killer.setReputation(killer.getReputation() - 150);

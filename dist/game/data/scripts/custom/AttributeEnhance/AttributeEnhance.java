@@ -99,6 +99,26 @@ public class AttributeEnhance extends Script
 	private static final String[] WEAPON_SLOTS  = { "weapon" };
 	private static final String[] JEWELRY_SLOTS = { "neck", "rear", "lear", "rfinger", "lfinger" };
 
+	// ── 屬性石兌換 ─────────────────────────────────────────
+	private static final String STONE_QUOTA_VAR = "attr_stone_quota";
+	private static final String EXCHANGE_HTM    = HTM_PATH + "exchange.htm";
+	private static final String[][] STONE_LIST =
+	{
+		{ "105811", "火屬性武器石" },
+		{ "105812", "水屬性武器石" },
+		{ "105813", "地屬性武器石" },
+		{ "105814", "風屬性武器石" },
+		{ "105815", "暗屬性武器石" },
+		{ "105816", "聖屬性武器石" },
+		{ "105817", "火屬性防具石" },
+		{ "105818", "水屬性防具石" },
+		{ "105819", "地屬性防具石" },
+		{ "105820", "風屬性防具石" },
+		{ "105821", "暗屬性防具石" },
+		{ "105822", "聖屬性防具石" },
+		{ "105823", "閃耀屬性飾品石" }
+	};
+
 	// ── 設定資料 ──────────────────────────────────────────
 	/** [slot][elementOrdinal] → StoneConfig */
 	private static final Map<String, Map<Integer, StoneConfig>> ARMOR_STONES  = new HashMap<>();
@@ -322,6 +342,23 @@ public class AttributeEnhance extends Script
 				showStatus(player);
 			}
 		}
+		else if (event.equals("exchange_main"))
+		{
+			showExchange(player);
+		}
+		else if (event.startsWith("exchange_do "))
+		{
+			// exchange_do <stoneName> <qty>
+			final String[] parts = event.split(" ", 3);
+			if (parts.length == 3)
+			{
+				doExchange(player, parts[1], safeParseInt(parts[2]));
+			}
+			else
+			{
+				showExchange(player);
+			}
+		}
 
 		return null;
 	}
@@ -329,8 +366,22 @@ public class AttributeEnhance extends Script
 	// ── 頁面：主選單 ──────────────────────────────────────
 	private void showMain(Player player)
 	{
+		final long quota = player.getVariables().getLong(STONE_QUOTA_VAR, 0);
+		final String exchangeBtn;
+		if (quota > 0)
+		{
+			exchangeBtn = "<table width=270 cellpadding=3><tr><td align=center>"
+				+ "<button value=\"屬性石兌換（剩餘" + quota + "個）\" action=\"bypass -h Quest AttributeEnhance exchange_main\""
+				+ " width=200 height=28 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"/>"
+				+ "</td></tr></table>";
+		}
+		else
+		{
+			exchangeBtn = "";
+		}
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setHtml(MAIN_HTM);
+		html.replace("%exchange_button%", exchangeBtn);
 		player.sendPacket(html);
 	}
 
@@ -1059,6 +1110,69 @@ public class AttributeEnhance extends Script
 	{
 		try { return Integer.parseInt(s.trim()); }
 		catch (NumberFormatException e) { return 1; }
+	}
+
+	// ── 頁面：屬性石兌換 ──────────────────────────────────
+	private void showExchange(Player player)
+	{
+		final long quota = player.getVariables().getLong(STONE_QUOTA_VAR, 0);
+		final String quotaColor = quota > 100 ? "00FF88" : quota > 0 ? "FFFF00" : "FF4444";
+
+		final StringBuilder options = new StringBuilder();
+		for (String[] stone : STONE_LIST)
+		{
+			if (options.length() > 0) options.append(";");
+			options.append(stone[1]);
+		}
+
+		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
+		html.setFile(player, EXCHANGE_HTM);
+		html.replace("%quota%", String.valueOf(quota));
+		html.replace("%quota_color%", quotaColor);
+		html.replace("%stone_options%", options.toString());
+		player.sendPacket(html);
+	}
+
+	// ── 執行：屬性石兌換 ──────────────────────────────────
+	private void doExchange(Player player, String stoneName, int qty)
+	{
+		if (qty <= 0)
+		{
+			player.sendMessage("請輸入有效的兌換數量！");
+			showExchange(player);
+			return;
+		}
+
+		int stoneId = -1;
+		for (String[] stone : STONE_LIST)
+		{
+			if (stone[1].equals(stoneName))
+			{
+				stoneId = Integer.parseInt(stone[0]);
+				break;
+			}
+		}
+
+		if (stoneId == -1)
+		{
+			player.sendMessage("無效的石頭種類，請重新選擇。");
+			showExchange(player);
+			return;
+		}
+
+		final long quota = player.getVariables().getLong(STONE_QUOTA_VAR, 0);
+		if (quota < qty)
+		{
+			player.sendMessage("兌換額度不足！剩餘：" + quota + " 個，需要：" + qty + " 個。");
+			showExchange(player);
+			return;
+		}
+
+		player.getVariables().set(STONE_QUOTA_VAR, quota - qty);
+		player.addItem(ItemProcessType.REWARD, stoneId, qty, player, true);
+		player.sendMessage("兌換成功！獲得 " + stoneName + " ×" + qty + "，剩餘額度：" + (quota - qty) + " 個。");
+
+		showExchange(player);
 	}
 
 	/** 從設定取最大值，若無設定用預設值 */

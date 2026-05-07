@@ -1,0 +1,58 @@
+<html><head><title>屬性石兌換</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+<tr><td valign="top" align="center">
+
+  <table border=0 width=270><tr><td height=6></td></tr></table>
+
+  <table width=270 border=0 cellpadding=0 cellspacing=0>
+    <tr>
+      <td><font color="FFCC44"><b>屬性石兌換</b></font></td>
+      <td align=right><font color="%quota_color%">剩餘 %quota% 個</font></td>
+    </tr>
+  </table>
+
+  <table border=0 width=270><tr><td height=3></td></tr></table>
+  <table width=270 border=0 cellpadding=0 cellspacing=0><tr><td bgcolor=CC7700 height=1></td></tr></table>
+  <table border=0 width=270><tr><td height=8></td></tr></table>
+
+  <table width=270 border=0 cellpadding=3>
+    <tr>
+      <td width=70><font color="AAAAAA">選擇石頭</font></td>
+      <td><combobox width=190 var=stone list=%stone_options%></td>
+    </tr>
+  </table>
+
+  <table border=0 width=270><tr><td height=6></td></tr></table>
+
+  <table width=270 border=0 cellpadding=3>
+    <tr>
+      <td width=70><font color="AAAAAA">兌換數量</font></td>
+      <td><edit var=qty width=80 height=18></td>
+    </tr>
+  </table>
+
+  <table border=0 width=270><tr><td height=8></td></tr></table>
+  <table width=270 border=0 cellpadding=0 cellspacing=0><tr><td bgcolor=CC7700 height=1></td></tr></table>
+  <table border=0 width=270><tr><td height=6></td></tr></table>
+
+  <table width=270 border=0>
+    <tr><td align=center>
+      <button value="確認兌換" action="bypass -h Quest AttributeEnhance exchange_do $stone $qty"
+        width=200 height=28 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"/>
+    </td></tr>
+  </table>
+
+  <table border=0 width=270><tr><td height=5></td></tr></table>
+
+  <table width=270 border=0>
+    <tr><td align=center>
+      <button value="返回主選單" action="bypass -h Quest AttributeEnhance main"
+        width=130 height=22 back="L2UI_CT1.Button_DF_Small_Down" fore="L2UI_CT1.Button_DF_Small"/>
+    </td></tr>
+  </table>
+
+</td></tr>
+</table>
+</body>
+</html>

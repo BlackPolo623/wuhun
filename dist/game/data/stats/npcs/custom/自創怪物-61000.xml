@@ -121,4 +121,25 @@
 			</drop>
 		</dropLists>
 	</npc>
+	<npc id="61003" displayId="22324" level="90" type="Folk" name="稻草人" usingServerSideName="true" title="傷害測試" usingServerSideTitle="true">
+		<race>ELEMENTAL</race>
+		<sex>MALE</sex>
+		<acquire exp="1" />
+		<stats str="35" int="32" dex="20" wit="20" con="150" men="0">
+			<vitals hp="1000000000" hpRegen="9999" mp="1" mpRegen="0" />
+			<attack physical="10" magical="10" random="10" critical="4" accuracy="95" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="10" magical="10" />
+			<speed>
+				<walk ground="75" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<collision>
+			<radius normal="24" />
+			<height normal="45" />
+		</collision>
+		<skillList>
+			<skill id="102012" level="1" />
+		</skillList>
+	</npc>
 </list>

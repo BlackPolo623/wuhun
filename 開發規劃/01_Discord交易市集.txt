@@ -1,0 +1,255 @@
+================================================================
+  武魂天堂2 — Discord 交易市集 開發規劃
+  版本：v1.0   建立日期：2025-05-05
+================================================================
+
+【功能概述】
+  透過 Discord Bot 實現跨平台交易市集，玩家可在遊戲內 NPC 進行
+  道具上架或建立收購需求，並在 Discord 頻道瀏覽、購買或成交。
+  市集看板由 Bot 自動維護，支援翻頁按鈕，不洗版。
+
+================================================================
+  一、系統架構
+================================================================
+
+  遊戲內（NPC）
+    玩家 → Discord小助手 NPC
+      ├── 上架道具（賣出）→ 道具移入 DISCMKT 倉庫（Escrow）
+      ├── 建立收購單      → 扣除 adena 鎖倉
+      ├── 查看 / 撤銷我的賣場清單
+      ├── 查看 / 撤銷我的收購清單
+      └── 查看交易紀錄（近 20 筆）
+
+  資料庫層
+    discord_market_sell    賣場清單
+    discord_market_buy     收購清單
+    discord_market_history 成交歷史（用於均價參考）
+
+  Discord Bot
+    #market-board 頻道
+      ├── 賣場看板 Embed（Bot 維護，自動更新）
+      └── 收購看板 Embed（Bot 維護，自動更新）
+    翻頁：JDA ActionRow + Button（點擊後直接編輯同一則訊息）
+    指令回應：全部私訊回覆，不在頻道洗版
+
+================================================================
+  二、Escrow 機制
+================================================================
+
+  賣場（道具 Escrow）
+    上架時：道具從 INVENTORY 移至 DISCMKT（ItemLocation 新增值）
+    成交時：道具從 DISCMKT 轉給買家（INVENTORY）
+    撤銷時：道具從 DISCMKT 退回賣家（INVENTORY）
+
+  收購（adena Escrow）
+    建立時：立即扣除玩家 adena，金額記錄於 adena_escrowed 欄位
+    成交時：adena 從 escrowed 轉給賣家
+    撤銷時：adena 退還給收購者
+
+  在線玩家：addItem / destroyItem → 立即生效，UI 即時更新
+  離線玩家：直接操作 items 資料表，登入時自動讀取
+
+================================================================
+  三、資料庫結構
+================================================================
+
+  -- 賣場表
+  CREATE TABLE discord_market_sell (
+    listing_id      INT AUTO_INCREMENT PRIMARY KEY,
+    seller_char_id  INT NOT NULL,
+    item_object_id  INT NOT NULL,        -- items 表實例 ID
+    item_id         INT NOT NULL,        -- 道具模板 ID
+    item_count      BIGINT UNSIGNED NOT NULL,
+    enchant_level   INT DEFAULT 0,
+    price_per_unit  BIGINT UNSIGNED NOT NULL,
+    status          ENUM('ACTIVE','SOLD','CANCELLED') DEFAULT 'ACTIVE',
+    created_time    BIGINT NOT NULL,
+    buyer_char_id   INT DEFAULT NULL,
+    sold_time       BIGINT DEFAULT NULL,
+    INDEX idx_active_item (status, item_id),
+    INDEX idx_seller (seller_char_id)
+  );
+
+  -- 收購表
+  CREATE TABLE discord_market_buy (
+    order_id        INT AUTO_INCREMENT PRIMARY KEY,
+    buyer_char_id   INT NOT NULL,
+    item_id         INT NOT NULL,
+    min_enchant     INT DEFAULT 0,       -- 0 = 任意強化等級
+    quantity        BIGINT UNSIGNED NOT NULL,
+    price_per_unit  BIGINT UNSIGNED NOT NULL,
+    adena_escrowed  BIGINT UNSIGNED NOT NULL,
+    status          ENUM('ACTIVE','FILLED','CANCELLED') DEFAULT 'ACTIVE',
+    created_time    BIGINT NOT NULL,
+    seller_char_id  INT DEFAULT NULL,
+    filled_time     BIGINT DEFAULT NULL,
+    INDEX idx_active_item (status, item_id),
+    INDEX idx_buyer (buyer_char_id)
+  );
+
+  -- 歷史紀錄表
+  CREATE TABLE discord_market_history (
+    id              INT AUTO_INCREMENT PRIMARY KEY,
+    item_id         INT NOT NULL,
+    enchant_level   INT DEFAULT 0,
+    price_per_unit  BIGINT UNSIGNED NOT NULL,
+    count           BIGINT UNSIGNED NOT NULL,
+    trade_time      BIGINT NOT NULL,
+    INDEX idx_item_time (item_id, trade_time)
+  );
+
+================================================================
+  四、自動撮合邏輯
+================================================================
+
+  當新賣場上架（道具X，售價P）：
+    → 查詢：是否有收購單 道具X，出價 >= P，狀態 ACTIVE？
+    → 有 → 立即撮合（優先選出價最高者，同價先到先得）
+    → 無 → 掛單等待
+
+  當新收購單建立（道具X，出價P）：
+    → 查詢：是否有賣場 道具X，售價 <= P，狀態 ACTIVE？
+    → 有 → 立即撮合（優先選售價最低者，同價先到先得）
+    → 無 → 掛單等待
+
+================================================================
+  五、Discord 看板展示格式
+================================================================
+
+  ── 賣場看板 ──────────────────────────────────────
+
+  🛒 武魂天堂2 交易市集 — 賣場
+  更新時間：2025/05/05 21:30
+
+  #001  ⚔️ 暗影之劍 +10
+        賣家：ShadowBlade　數量：1
+        💰 5,000,000 adena　　→ !buy 001
+
+  #002  🛡️ 惡魔鎧甲 +6
+        賣家：Warrior　　　 數量：1
+        💰 8,000,000 adena　　→ !buy 002
+
+  📊 共 24 件上架中　頁 1 / 5
+  [◀ 上一頁]  [下一頁 ▶]
+
+  ── 收購看板 ──────────────────────────────────────
+
+  📥 武魂天堂2 交易市集 — 收購
+  更新時間：2025/05/05 21:30
+
+  #B01  ⚔️ 求購：暗影之劍（任意強化）
+        收購者：Luna　　　數量：1
+        💰 出價 4,500,000 adena　→ !fill B01
+
+  #B02  💎 求購：A級魔法石 ×50
+        收購者：MageKing  數量：50
+        💰 出價 100,000 / 個　  → !fill B02
+
+  📊 共 11 筆收購需求　頁 1 / 3
+  [◀ 上一頁]  [下一頁 ▶]
+
+================================================================
+  六、Discord 指令清單
+================================================================
+
+  !market                   市集概覽（上架數、收購數、最新成交）
+  !market sell <道具名>     搜尋特定道具的賣場
+  !market buy  <道具名>     搜尋特定道具的收購
+  !market price <道具名>    查詢近期成交均價
+  !buy   <編號>             購買賣場道具（需綁定）
+  !fill  <編號>             接受收購單（需綁定且在線）
+  !mymarket                 查看自己的上架 & 收購清單
+  !cancel sell <編號>       撤銷賣場上架
+  !cancel buy  <編號>       撤銷收購單（退還 adena）
+
+================================================================
+  七、遊戲內 NPC 選單（Discord小助手 新增頁面）
+================================================================
+
+  📦 上架道具（賣出）
+      選道具 → 輸入數量 → 輸入單價 → 確認 → 完成上架
+
+  📋 建立收購需求
+      輸入道具ID → 輸入數量 → 輸入出價 → 確認 → 建立收購單
+
+  📂 我的賣場清單
+      顯示目前上架中的道具，可選擇撤銷並取回
+
+  📂 我的收購清單
+      顯示目前收購中的訂單，可選擇撤銷並退回 adena
+
+  🧾 交易紀錄
+      近 20 筆個人成交歷史
+
+================================================================
+  八、通知設計
+================================================================
+
+  道具售出    → 賣家私訊：✅ [暗影之劍+10] 已售出！獲得 5,000,000 A
+  收購成交    → 收購者私訊：✅ [暗影之劍] 收購需求已成交！
+  新上架符合  → 通知已有收購單的玩家（可選功能）
+  撤銷完成    → 私訊告知道具 / adena 已退回
+
+================================================================
+  九、完整檔案清單
+================================================================
+
+  【新增檔案】
+
+  java/org/l2jmobius/discord/market/
+    DiscordMarketDAO.java              全部 DB 操作（CRUD）
+    DiscordMarketManager.java          業務邏輯（上架、購買、撮合）
+    DiscordMarketChannelManager.java   維護頻道看板及翻頁按鈕
+    model/SellListing.java             賣場資料模型
+    model/BuyOrder.java                收購資料模型
+
+  dist/db_installer/sql/game/
+    discord_market.sql                 建表 SQL
+
+  dist/game/data/scripts/custom/DiscordNpc/
+    market_main.htm                    市集主選單
+    market_sell_select.htm             選擇上架道具
+    market_sell_confirm.htm            確認上架
+    market_buy_create.htm              建立收購單
+    market_buy_confirm.htm             確認收購
+    market_mylist.htm                  我的清單
+    market_history.htm                 交易紀錄
+
+  【修改檔案】
+
+  java/org/l2jmobius/gameserver/model/item/enums/ItemLocation.java
+    → 新增 DISCMKT 值（道具 Escrow 用）
+
+  dist/game/config/Custom/Discord.ini
+    → 新增 DiscordMarketEnabled、DiscordMarketChannelId
+
+  java/org/l2jmobius/gameserver/config/custom/DiscordConfig.java
+    → 新增對應設定欄位
+
+  java/org/l2jmobius/discord/listener/DiscordEventListener.java
+    → 新增 !buy / !fill / !market / !mymarket / !cancel 處理
+
+  dist/game/data/scripts/custom/DiscordNpc/DiscordNpc.java
+    → 新增市集相關 NPC 對話流程
+
+  java/org/l2jmobius/discord/DiscordManager.java
+    → 啟動時初始化 DiscordMarketChannelManager
+
+================================================================
+  十、開發實作順序（建議）
+================================================================
+
+  Step 1  建立 DB 資料表（discord_market.sql）
+  Step 2  ItemLocation.java 新增 DISCMKT
+  Step 3  Discord.ini + DiscordConfig.java 新增設定
+  Step 4  SellListing.java + BuyOrder.java 資料模型
+  Step 5  DiscordMarketDAO.java（DB 存取）
+  Step 6  DiscordMarketManager.java（業務邏輯 + 撮合）
+  Step 7  DiscordMarketChannelManager.java（看板更新）
+  Step 8  DiscordEventListener.java（Discord 指令）
+  Step 9  DiscordNpc.java + HTM 檔案（遊戲內 NPC）
+  Step 10 DiscordManager.java 整合啟動
+
+================================================================
+  狀態：規劃完成，待實作
+================================================================

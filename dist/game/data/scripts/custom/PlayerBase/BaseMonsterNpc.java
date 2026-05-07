@@ -22,238 +22,32 @@ public class BaseMonsterNpc extends Script
 	private static final int RESPAWN_TIME = 10; // 重生時間（秒）
 	private static final int RESPAWN_RANDOM_TIME = 0; // 隨機重生時間範圍（秒）
 
-	// 怪物生成座標（100個）
-	private static final Location[] SPAWN_LOCATIONS = {
-			// Row 1
+	// ==================== 生成座標（動態產生，20行×20列=400點）====================
+	private static final Location[] SPAWN_LOCATIONS;
+	static
+	{
+		final int cols   = 20;
+		final int rows   = 20;
+		final int startX = 57148;
+		final int stepX  = 68;
+		final int startY = -93780;
+		final int stepY  = 67;  // 原矩形高度 1279 / 19 ≈ 67，保持在原範圍內
+		final int z      = -1388;
 
-			new Location(57148, -93780, -1388),
-			new Location(57216, -93780, -1388),
-			new Location(57284, -93780, -1388),
-			new Location(57352, -93780, -1388),
-			new Location(57420, -93780, -1388),
-			new Location(57488, -93780, -1388),
-			new Location(57556, -93780, -1388),
-			new Location(57624, -93780, -1388),
-			new Location(57692, -93780, -1388),
-			new Location(57760, -93780, -1388),
-			new Location(57828, -93780, -1388),
-			new Location(57896, -93780, -1388),
-			new Location(57964, -93780, -1388),
-			new Location(58032, -93780, -1388),
-			new Location(58100, -93780, -1388),
-			new Location(58168, -93780, -1388),
-			new Location(58236, -93780, -1388),
-			new Location(58304, -93780, -1388),
-			new Location(58372, -93780, -1388),
-			new Location(58441, -93780, -1388),
+		SPAWN_LOCATIONS = new Location[rows * cols];
+		for (int row = 0; row < rows; row++)
+		{
+			for (int col = 0; col < cols; col++)
+			{
+				SPAWN_LOCATIONS[row * cols + col] = new Location(
+					startX + col * stepX,
+					startY + row * stepY,
+					z
+				);
+			}
+		}
+	}
 
-// Row 2
-
-			new Location(57148, -93637, -1388),
-			new Location(57216, -93637, -1388),
-			new Location(57284, -93637, -1388),
-			new Location(57352, -93637, -1388),
-			new Location(57420, -93637, -1388),
-			new Location(57488, -93637, -1388),
-			new Location(57556, -93637, -1388),
-			new Location(57624, -93637, -1388),
-			new Location(57692, -93637, -1388),
-			new Location(57760, -93637, -1388),
-			new Location(57828, -93637, -1388),
-			new Location(57896, -93637, -1388),
-			new Location(57964, -93637, -1388),
-			new Location(58032, -93637, -1388),
-			new Location(58100, -93637, -1388),
-			new Location(58168, -93637, -1388),
-			new Location(58236, -93637, -1388),
-			new Location(58304, -93637, -1388),
-			new Location(58372, -93637, -1388),
-			new Location(58441, -93637, -1388),
-
-// Row 3
-
-			new Location(57148, -93495, -1388),
-			new Location(57216, -93495, -1388),
-			new Location(57284, -93495, -1388),
-			new Location(57352, -93495, -1388),
-			new Location(57420, -93495, -1388),
-			new Location(57488, -93495, -1388),
-			new Location(57556, -93495, -1388),
-			new Location(57624, -93495, -1388),
-			new Location(57692, -93495, -1388),
-			new Location(57760, -93495, -1388),
-			new Location(57828, -93495, -1388),
-			new Location(57896, -93495, -1388),
-			new Location(57964, -93495, -1388),
-			new Location(58032, -93495, -1388),
-			new Location(58100, -93495, -1388),
-			new Location(58168, -93495, -1388),
-			new Location(58236, -93495, -1388),
-			new Location(58304, -93495, -1388),
-			new Location(58372, -93495, -1388),
-			new Location(58441, -93495, -1388),
-
-// Row 4
-
-			new Location(57148, -93353, -1388),
-			new Location(57216, -93353, -1388),
-			new Location(57284, -93353, -1388),
-			new Location(57352, -93353, -1388),
-			new Location(57420, -93353, -1388),
-			new Location(57488, -93353, -1388),
-			new Location(57556, -93353, -1388),
-			new Location(57624, -93353, -1388),
-			new Location(57692, -93353, -1388),
-			new Location(57760, -93353, -1388),
-			new Location(57828, -93353, -1388),
-			new Location(57896, -93353, -1388),
-			new Location(57964, -93353, -1388),
-			new Location(58032, -93353, -1388),
-			new Location(58100, -93353, -1388),
-			new Location(58168, -93353, -1388),
-			new Location(58236, -93353, -1388),
-			new Location(58304, -93353, -1388),
-			new Location(58372, -93353, -1388),
-			new Location(58441, -93353, -1388),
-
-// Row 5
-
-			new Location(57148, -93211, -1388),
-			new Location(57216, -93211, -1388),
-			new Location(57284, -93211, -1388),
-			new Location(57352, -93211, -1388),
-			new Location(57420, -93211, -1388),
-			new Location(57488, -93211, -1388),
-			new Location(57556, -93211, -1388),
-			new Location(57624, -93211, -1388),
-			new Location(57692, -93211, -1388),
-			new Location(57760, -93211, -1388),
-			new Location(57828, -93211, -1388),
-			new Location(57896, -93211, -1388),
-			new Location(57964, -93211, -1388),
-			new Location(58032, -93211, -1388),
-			new Location(58100, -93211, -1388),
-			new Location(58168, -93211, -1388),
-			new Location(58236, -93211, -1388),
-			new Location(58304, -93211, -1388),
-			new Location(58372, -93211, -1388),
-			new Location(58441, -93211, -1388),
-
-// Row 6
-
-			new Location(57148, -93069, -1388),
-			new Location(57216, -93069, -1388),
-			new Location(57284, -93069, -1388),
-			new Location(57352, -93069, -1388),
-			new Location(57420, -93069, -1388),
-			new Location(57488, -93069, -1388),
-			new Location(57556, -93069, -1388),
-			new Location(57624, -93069, -1388),
-			new Location(57692, -93069, -1388),
-			new Location(57760, -93069, -1388),
-			new Location(57828, -93069, -1388),
-			new Location(57896, -93069, -1388),
-			new Location(57964, -93069, -1388),
-			new Location(58032, -93069, -1388),
-			new Location(58100, -93069, -1388),
-			new Location(58168, -93069, -1388),
-			new Location(58236, -93069, -1388),
-			new Location(58304, -93069, -1388),
-			new Location(58372, -93069, -1388),
-			new Location(58441, -93069, -1388),
-
-// Row 7
-
-			new Location(57148, -92927, -1388),
-			new Location(57216, -92927, -1388),
-			new Location(57284, -92927, -1388),
-			new Location(57352, -92927, -1388),
-			new Location(57420, -92927, -1388),
-			new Location(57488, -92927, -1388),
-			new Location(57556, -92927, -1388),
-			new Location(57624, -92927, -1388),
-			new Location(57692, -92927, -1388),
-			new Location(57760, -92927, -1388),
-			new Location(57828, -92927, -1388),
-			new Location(57896, -92927, -1388),
-			new Location(57964, -92927, -1388),
-			new Location(58032, -92927, -1388),
-			new Location(58100, -92927, -1388),
-			new Location(58168, -92927, -1388),
-			new Location(58236, -92927, -1388),
-			new Location(58304, -92927, -1388),
-			new Location(58372, -92927, -1388),
-			new Location(58441, -92927, -1388),
-
-// Row 8
-
-			new Location(57148, -92785, -1388),
-			new Location(57216, -92785, -1388),
-			new Location(57284, -92785, -1388),
-			new Location(57352, -92785, -1388),
-			new Location(57420, -92785, -1388),
-			new Location(57488, -92785, -1388),
-			new Location(57556, -92785, -1388),
-			new Location(57624, -92785, -1388),
-			new Location(57692, -92785, -1388),
-			new Location(57760, -92785, -1388),
-			new Location(57828, -92785, -1388),
-			new Location(57896, -92785, -1388),
-			new Location(57964, -92785, -1388),
-			new Location(58032, -92785, -1388),
-			new Location(58100, -92785, -1388),
-			new Location(58168, -92785, -1388),
-			new Location(58236, -92785, -1388),
-			new Location(58304, -92785, -1388),
-			new Location(58372, -92785, -1388),
-			new Location(58441, -92785, -1388),
-
-// Row 9
-
-			new Location(57148, -92643, -1388),
-			new Location(57216, -92643, -1388),
-			new Location(57284, -92643, -1388),
-			new Location(57352, -92643, -1388),
-			new Location(57420, -92643, -1388),
-			new Location(57488, -92643, -1388),
-			new Location(57556, -92643, -1388),
-			new Location(57624, -92643, -1388),
-			new Location(57692, -92643, -1388),
-			new Location(57760, -92643, -1388),
-			new Location(57828, -92643, -1388),
-			new Location(57896, -92643, -1388),
-			new Location(57964, -92643, -1388),
-			new Location(58032, -92643, -1388),
-			new Location(58100, -92643, -1388),
-			new Location(58168, -92643, -1388),
-			new Location(58236, -92643, -1388),
-			new Location(58304, -92643, -1388),
-			new Location(58372, -92643, -1388),
-			new Location(58441, -92643, -1388),
-
-// Row 10
-
-			new Location(57148, -92501, -1388),
-			new Location(57216, -92501, -1388),
-			new Location(57284, -92501, -1388),
-			new Location(57352, -92501, -1388),
-			new Location(57420, -92501, -1388),
-			new Location(57488, -92501, -1388),
-			new Location(57556, -92501, -1388),
-			new Location(57624, -92501, -1388),
-			new Location(57692, -92501, -1388),
-			new Location(57760, -92501, -1388),
-			new Location(57828, -92501, -1388),
-			new Location(57896, -92501, -1388),
-			new Location(57964, -92501, -1388),
-			new Location(58032, -92501, -1388),
-			new Location(58100, -92501, -1388),
-			new Location(58168, -92501, -1388),
-			new Location(58236, -92501, -1388),
-			new Location(58304, -92501, -1388),
-			new Location(58372, -92501, -1388),
-			new Location(58441, -92501, -1388)
-	};
 
 	// 可選怪物列表 {顯示名稱, NPC_ID}
 	private static final Object[][] AVAILABLE_MONSTERS = {

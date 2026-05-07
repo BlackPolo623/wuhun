@@ -1,0 +1,71 @@
+<html><head><title>設定門檻值</title></head>
+<body scroll="no">
+<table border=0 cellpadding=0 cellspacing=0 width=292 height=358>
+<tr><td valign="top" align="center">
+
+  <table border=0 width=270><tr><td height=6></td></tr></table>
+
+  <table width=270 border=0><tr>
+    <td><font color="FFCC44">%slot_name%</font></td>
+  </tr></table>
+
+  <table border=0 width=270><tr><td height=3></td></tr></table>
+  <table width=270 border=0 cellpadding=0 cellspacing=0><tr><td bgcolor=CC7700 height=1></td></tr></table>
+  <table border=0 width=270><tr><td height=10></td></tr></table>
+
+  <table width=270 border=0><tr><td align=center>
+    <font color="AAAAAA">已選詞條</font>
+  </td></tr></table>
+
+  <table border=0 width=270><tr><td height=4></td></tr></table>
+
+  <table width=270 border=0><tr><td align=center>
+    <font color="FFE066" size="4"><b>%series_name%</b></font>
+  </td></tr></table>
+
+  <table border=0 width=270><tr><td height=2></td></tr></table>
+
+  <table width=270 border=0><tr><td align=center>
+    <font color="888888" size="1">%range_hint%</font>
+  </td></tr></table>
+
+  <table border=0 width=270><tr><td height=10></td></tr></table>
+  <table width=270 border=0 cellpadding=0 cellspacing=0><tr><td bgcolor=444444 height=1></td></tr></table>
+  <table border=0 width=270><tr><td height=10></td></tr></table>
+
+  <table width=270 border=0><tr><td align=center>
+    <font color="AAAAAA">輸入門檻值（整數）</font>
+  </td></tr></table>
+
+  <table border=0 width=270><tr><td height=4></td></tr></table>
+
+  <table width=270 border=0><tr><td align=center>
+    <edit var=minval width=180 height=18>
+  </td></tr></table>
+
+  <table border=0 width=270><tr><td height=4></td></tr></table>
+
+  <table width=270 border=0><tr><td align=center>
+    <font color="666666" size="1">%input_hint%</font>
+  </td></tr></table>
+
+  <table border=0 width=270><tr><td height=10></td></tr></table>
+  <table width=270 border=0 cellpadding=0 cellspacing=0><tr><td bgcolor=CC7700 height=1></td></tr></table>
+  <table border=0 width=270><tr><td height=8></td></tr></table>
+
+  <table width=270 border=0><tr><td align=center>
+    <button value="確認新增" action="bypass -h Quest RefineSystem adv_add_%slot% %series_name% $minval"
+      width=150 height=26 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"/>
+  </td></tr></table>
+
+  <table border=0 width=270><tr><td height=4></td></tr></table>
+
+  <table width=270 border=0><tr><td align=center>
+    <button value="返回選詞" action="bypass -h Quest RefineSystem adv_pick_%slot%_0"
+      width=120 height=22 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"/>
+  </td></tr></table>
+
+</td></tr>
+</table>
+</body>
+</html>

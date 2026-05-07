@@ -77,12 +77,26 @@ public class RefineSystemData implements IXmlReader
 		public final int from;
 		public final int to;
 		public final int weight;
+		public final int tier; // 0 = 未設定
 
-		public RangeEntry(int from, int to, int weight)
+		public RangeEntry(int from, int to, int weight, int tier)
 		{
 			this.from = from;
 			this.to = to;
 			this.weight = weight;
+			this.tier = tier;
+		}
+	}
+
+	public static class ResetCostEntry
+	{
+		public final int itemId;
+		public final int count;
+
+		public ResetCostEntry(int itemId, int count)
+		{
+			this.itemId = itemId;
+			this.count = count;
 		}
 	}
 
@@ -92,8 +106,18 @@ public class RefineSystemData implements IXmlReader
 	private int _refineItemCount = 1;
 	private int _defaultCharges = 10;
 
+	// 高級精煉道具設定
+	private int _premiumItemId = 0;
+	private int _premiumItemCount = 1;
+	private int _premiumMinTier = 1;
+	private int _premiumMaxTier = 5;
+
+	// T 數顏色 (tier -> hex color)
+	private final Map<Integer, String> _tierColors = new HashMap<>();
+
 	private final Map<Integer, Integer> _specialCharges = new HashMap<>();
 	private final int[] _tierChances = new int[4];
+	private final List<ResetCostEntry> _resetCostList = new ArrayList<>();
 
 	private final Map<Integer, SeriesEntry> _series = new LinkedHashMap<>();
 	private final List<SeriesEntry> _seriesList = new ArrayList<>();
@@ -112,6 +136,8 @@ public class RefineSystemData implements IXmlReader
 		_series.clear();
 		_seriesList.clear();
 		_specialCharges.clear();
+		_tierColors.clear();
+		_resetCostList.clear();
 		_totalSeriesWeight = 0;
 
 		parseDatapackFile("data/scripts/custom/RefineSystem/RefineSystemData.xml");
@@ -135,11 +161,20 @@ public class RefineSystemData implements IXmlReader
 					case "settings":
 						parseSettings(child);
 						break;
+					case "premiumSettings":
+						parsePremiumSettings(child);
+						break;
+					case "tierColors":
+						parseTierColors(child);
+						break;
 					case "specialCharges":
 						parseSpecialCharges(child);
 						break;
 					case "tierChances":
 						parseTierChances(child);
+						break;
+					case "chargeResetCost":
+						parseChargeResetCost(child);
 						break;
 					case "series":
 						parseSeries(child);
@@ -163,6 +198,33 @@ public class RefineSystemData implements IXmlReader
 		_refineItemId = parseInteger(attrs, "refineItemId", 99001);
 		_refineItemCount = parseInteger(attrs, "refineItemCount", 1);
 		_defaultCharges = parseInteger(attrs, "defaultCharges", 10);
+	}
+
+	private void parsePremiumSettings(Node node)
+	{
+		final NamedNodeMap attrs = node.getAttributes();
+		_premiumItemId = parseInteger(attrs, "refineItemId", 0);
+		_premiumItemCount = parseInteger(attrs, "refineItemCount", 1);
+		_premiumMinTier = parseInteger(attrs, "minTier", 1);
+		_premiumMaxTier = parseInteger(attrs, "maxTier", 5);
+	}
+
+	private void parseTierColors(Node node)
+	{
+		for (Node item = node.getFirstChild(); item != null; item = item.getNextSibling())
+		{
+			if (!"tierColor".equals(item.getNodeName()))
+			{
+				continue;
+			}
+			final NamedNodeMap attrs = item.getAttributes();
+			final int tier = parseInteger(attrs, "tier", 0);
+			final String color = parseString(attrs, "color");
+			if (tier > 0 && color != null)
+			{
+				_tierColors.put(tier, color);
+			}
+		}
 	}
 
 	private void parseSpecialCharges(Node node)
@@ -197,6 +259,24 @@ public class RefineSystemData implements IXmlReader
 			if (count >= 1 && count <= 4)
 			{
 				_tierChances[count - 1] = chance;
+			}
+		}
+	}
+
+	private void parseChargeResetCost(Node node)
+	{
+		for (Node item = node.getFirstChild(); item != null; item = item.getNextSibling())
+		{
+			if (!"item".equals(item.getNodeName()))
+			{
+				continue;
+			}
+			final NamedNodeMap attrs = item.getAttributes();
+			final int itemId = parseInteger(attrs, "itemId", 0);
+			final int count = parseInteger(attrs, "count", 0);
+			if (itemId > 0 && count > 0)
+			{
+				_resetCostList.add(new ResetCostEntry(itemId, count));
 			}
 		}
 	}
@@ -248,7 +328,8 @@ public class RefineSystemData implements IXmlReader
 			final int from = parseInteger(ra, "from", 0);
 			final int to = parseInteger(ra, "to", 0);
 			final int rw = parseInteger(ra, "weight", 1);
-			entry.ranges.add(new RangeEntry(from, to, rw));
+			final int tier = parseInteger(ra, "tier", 0);
+			entry.ranges.add(new RangeEntry(from, to, rw, tier));
 		}
 
 		_series.put(base, entry);
@@ -298,6 +379,59 @@ public class RefineSystemData implements IXmlReader
 		}
 
 		return series.base + range.from + Rnd.get(range.to - range.from + 1);
+	}
+
+	/**
+	 * 高級精煉專用：只從 tier 在 [minTier, maxTier] 的 range 中抽取。
+	 * series 的 weight 照舊，range 只考慮符合 tier 的。
+	 */
+	public int rollRefineIdForTier(int minTier, int maxTier)
+	{
+		if (_seriesList.isEmpty())
+		{
+			return 0;
+		}
+
+		// 建立符合 tier 的 (series, range) 候選清單，以 seriesWeight * rangeWeight 加權
+		final List<int[]> candidates = new ArrayList<>(); // [seriesIndex, rangeIndex, effectiveWeight]
+		int totalWeight = 0;
+
+		for (int si = 0; si < _seriesList.size(); si++)
+		{
+			final SeriesEntry se = _seriesList.get(si);
+			for (int ri = 0; ri < se.ranges.size(); ri++)
+			{
+				final RangeEntry re = se.ranges.get(ri);
+				if (re.tier == 0 || (re.tier >= minTier && re.tier <= maxTier))
+				{
+					final int w = se.weight * re.weight;
+					candidates.add(new int[]{ si, ri, w });
+					totalWeight += w;
+				}
+			}
+		}
+
+		if (candidates.isEmpty() || totalWeight <= 0)
+		{
+			return 0;
+		}
+
+		int roll = Rnd.get(totalWeight);
+		int cumulative = 0;
+		int[] chosen = candidates.get(candidates.size() - 1);
+		for (int[] c : candidates)
+		{
+			cumulative += c[2];
+			if (roll < cumulative)
+			{
+				chosen = c;
+				break;
+			}
+		}
+
+		final SeriesEntry se = _seriesList.get(chosen[0]);
+		final RangeEntry re = se.ranges.get(chosen[1]);
+		return se.base + re.from + Rnd.get(re.to - re.from + 1);
 	}
 
 	private <T> T weightedRandom(List<T> list, int totalWeight)
@@ -399,6 +533,42 @@ public class RefineSystemData implements IXmlReader
 	public int getRefineItemCount() { return _refineItemCount; }
 	public int getDefaultCharges()  { return _defaultCharges; }
 
+	public int getPremiumItemId()    { return _premiumItemId; }
+	public int getPremiumItemCount() { return _premiumItemCount; }
+	public int getPremiumMinTier()   { return _premiumMinTier; }
+	public int getPremiumMaxTier()   { return _premiumMaxTier; }
+	public boolean hasPremiumItem()  { return _premiumItemId > 0; }
+
+	/** 取得 optionId 對應的 tier（0 = 未設定） */
+	public int getTier(int optionId)
+	{
+		if (optionId <= 0)
+		{
+			return 0;
+		}
+		final int base = (optionId / 10000) * 10000;
+		final SeriesEntry se = _series.get(base);
+		if (se == null)
+		{
+			return 0;
+		}
+		final int raw = optionId % 10000;
+		for (RangeEntry re : se.ranges)
+		{
+			if (raw >= re.from && raw <= re.to)
+			{
+				return re.tier;
+			}
+		}
+		return 0;
+	}
+
+	/** 取得 tier 對應的顏色 hex（未設定回傳 "FFFFFF"） */
+	public String getTierColor(int tier)
+	{
+		return _tierColors.getOrDefault(tier, "FFFFFF");
+	}
+
 	public int getSpecialCharges(int templateId)
 	{
 		final Integer v = _specialCharges.get(templateId);
@@ -408,6 +578,16 @@ public class RefineSystemData implements IXmlReader
 	public boolean hasSpecialCharges(int templateId)
 	{
 		return _specialCharges.containsKey(templateId);
+	}
+
+	public List<ResetCostEntry> getResetCostList()
+	{
+		return _resetCostList;
+	}
+
+	public boolean hasResetCost()
+	{
+		return !_resetCostList.isEmpty();
 	}
 
 	public SeriesEntry getSeriesByBase(int base)

@@ -42,8 +42,13 @@ public class BossKillListener extends Script implements IBossDropHandler
 
 	public BossKillListener()
 	{
-		// 從 WorldBoss.ini 的 BossNpcIds 讀取，新增BOSS只需改INI
-		for (int bossId : WorldBossConfig.getBossNpcIds())
+		// 優先從 BossAuction.ini 的 EnabledBossIds 讀取（BossAuctionManager 在此之前已初始化）
+		// 同時也合併 WorldBoss.ini 的 BossNpcIds，確保兩邊設定的 ID 都能被監聽
+		java.util.Set<Integer> monitorIds = new java.util.HashSet<>();
+		monitorIds.addAll(BossAuctionConfig.getEnabledBossIds());
+		monitorIds.addAll(WorldBossConfig.getBossNpcIds());
+
+		for (int bossId : monitorIds)
 		{
 			addAttackId(bossId);
 			addKillId(bossId);
@@ -54,7 +59,7 @@ public class BossKillListener extends Script implements IBossDropHandler
 
 		LOGGER.info("========================================");
 		LOGGER.info("【競標系統】BOSS擊殺監聽器已載入");
-		LOGGER.info("【競標系統】已註冊監聽 BOSS ID: " + WorldBossConfig.getBossNpcIds());
+		LOGGER.info("【競標系統】已註冊監聽 BOSS ID: " + monitorIds);
 		LOGGER.info("【競標系統】已註冊掉落攔截處理器");
 		LOGGER.info("========================================");
 	}

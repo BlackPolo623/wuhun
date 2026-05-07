@@ -435,6 +435,16 @@ public class Shutdown extends Thread
 		saveData();
 		tc.restartCounter();
 		
+		// 關閉 Discord Bot
+		try
+		{
+			org.l2jmobius.discord.DiscordManager.getInstance().shutdown();
+		}
+		catch (Throwable t)
+		{
+			// ignore
+		}
+
 		// commit data, last chance
 		try
 		{

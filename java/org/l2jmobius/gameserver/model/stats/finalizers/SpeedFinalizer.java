@@ -63,7 +63,7 @@ public class SpeedFinalizer implements IStatFunction
 		}
 		
 		final double maxSpeed;
-		double limit = 1.0 + creature.getStat().getAdd(Stat.unlock_Limit) / 100.0;
+		double limit = 1.0 + creature.getStat().getValue(Stat.unlock_Limit) / 100.0;
 		if (creature.isPlayer())
 		{
 			maxSpeed = creature.isGM() ? 10000 : (PlayerConfig.MAX_RUN_SPEED * limit);

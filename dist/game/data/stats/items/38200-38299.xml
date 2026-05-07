@@ -68,6 +68,7 @@
 		<set name="icon" val="icon.wp_fishing4" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lrhand" />
+		<set name="crystal_type" val="D" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="0" />
@@ -75,7 +76,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="true" />
+		<set name="is_tradable" val="false" />
 		<set name="damage_range" val="0;0;66;120" />
+		<set name="enchant_enabled" val="true" />
 		<set name="weapon_type" val="POLE" />
 		<stats>
 			<stat type="pAtk">79</stat>
@@ -86,9 +89,6 @@
 			<stat type="pAtkRange">80</stat>
 			<stat type="randomDamage">10</stat>
 		</stats>
-		<skills>
-			<skill id="3599" level="1" /> 
-		</skills>
 	</item>
 	<item id="38215" name="海馬-雙手魔法鈍器" type="Weapon">
 		<set name="icon" val="icon.wp_fishing5" />

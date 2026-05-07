@@ -67,20 +67,20 @@ public class StatViewer extends Script
 		if (StatViewerConfig.REQUIRE_GM_FOR_OTHERS && !player.isGM())
 		{
 			sendMsg(npc, player, "<font color=\"FF0000\">您沒有權限查詢其他玩家的屬性。</font>",
-				"bypass -h Quest StatViewer main", "返回主選單");
+					"bypass -h Quest StatViewer main", "返回主選單");
 			return null;
 		}
 		if (targetName.isEmpty())
 		{
 			sendMsg(npc, player, "<font color=\"FF0000\">請輸入玩家名稱。</font>",
-				"bypass -h Quest StatViewer other_form", "返回");
+					"bypass -h Quest StatViewer other_form", "返回");
 			return null;
 		}
 		final Player target = World.getInstance().getPlayer(targetName);
 		if (target == null)
 		{
 			sendMsg(npc, player, "<font color=\"FF0000\">找不到玩家「" + targetName + "」，或該玩家目前不在線上。</font>",
-				"bypass -h Quest StatViewer other_form", "重新查詢");
+					"bypass -h Quest StatViewer other_form", "重新查詢");
 			return null;
 		}
 		showStat(npc, player, target, false);
@@ -94,7 +94,7 @@ public class StatViewer extends Script
 		if (target == null)
 		{
 			sendMsg(npc, player, "<font color=\"FF0000\">玩家已離線，無法繼續查詢。</font>",
-				"bypass -h Quest StatViewer other_form", "重新查詢");
+					"bypass -h Quest StatViewer other_form", "重新查詢");
 			return null;
 		}
 		if ("soul".equals(tab))
@@ -142,7 +142,7 @@ public class StatViewer extends Script
 
 		// %target_name_row%
 		final String nameRow = isSelf ? "" :
-			"<tr><td height=3></td></tr><tr><td align=center><font color=\"AAAAAA\">" + target.getName() + "</font></td></tr>";
+				"<tr><td height=3></td></tr><tr><td align=center><font color=\"AAAAAA\">" + target.getName() + "</font></td></tr>";
 
 		// %data_table%
 		final StringBuilder tbl = new StringBuilder();
@@ -214,7 +214,7 @@ public class StatViewer extends Script
 		final String targetKey = isSelf ? SELF : target.getName();
 
 		final String nameRow = isSelf ? "" :
-			"<tr><td height=3></td></tr><tr><td align=center><font color=\"AAAAAA\">" + target.getName() + "</font></td></tr>";
+				"<tr><td height=3></td></tr><tr><td align=center><font color=\"AAAAAA\">" + target.getName() + "</font></td></tr>";
 
 		final StringBuilder tables = new StringBuilder();
 		for (CategoryConfig cat : SoulRingAbilityData.getInstance().getCategories())

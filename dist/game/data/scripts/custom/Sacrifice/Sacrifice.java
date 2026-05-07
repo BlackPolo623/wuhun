@@ -19,9 +19,12 @@ import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 public class Sacrifice extends Script
 {
 	private static final int NPC_ID = 900050;
-	
+
 	private static final String PATH_LIST = "data/scripts/custom/Sacrifice/sacrifice_list.htm";
 	private static final String PATH_VIEW = "data/scripts/custom/Sacrifice/sacrifice_view.htm";
+	private static final String PATH_GIFT = "data/scripts/custom/Sacrifice/sacrifice_gift.htm";
+
+	private static final String SACRIFICE_QUOTA_VAR = "sacrifice_lv_quota";
 	
 	// ── 構造器 ───────────────────────────────────────────────────────────
 	
@@ -82,9 +85,36 @@ public class Sacrifice extends Script
 		}
 		else if (event.startsWith("back"))
 		{
-			onFirstTalk(npc,player);
+			onFirstTalk(npc, player);
 		}
-		
+		else if (event.startsWith("gift_input_"))
+		{
+			try
+			{
+				final int altarId = Integer.parseInt(event.substring("gift_input_".length()).trim());
+				showGiftPage(player, altarId);
+			}
+			catch (NumberFormatException e)
+			{
+				player.sendMessage("命令參數格式錯誤。");
+			}
+		}
+		else if (event.startsWith("gift_do_"))
+		{
+			// gift_do_<altarId> <levels>
+			final String[] parts = event.split(" ", 2);
+			try
+			{
+				final int altarId = Integer.parseInt(parts[0].substring("gift_do_".length()).trim());
+				final int levels = (parts.length >= 2) ? safeParseInt(parts[1].trim()) : 0;
+				doGiftUpgrade(player, npc, altarId, levels);
+			}
+			catch (NumberFormatException e)
+			{
+				player.sendMessage("命令參數格式錯誤。");
+			}
+		}
+
 		return null;
 	}
 	
@@ -323,6 +353,8 @@ public class Sacrifice extends Script
 		}
 		
 		// ── %actionButtons% ──────────────────────────────────────────────
+		final long sacrificeQuota = player.getVariables().getLong(SACRIFICE_QUOTA_VAR, 0);
+
 		final StringBuilder buttons = new StringBuilder();
 
 		buttons.append("<table width=290><tr>");
@@ -336,8 +368,16 @@ public class Sacrifice extends Script
 		buttons.append("<td width=135 align=center>");
 		buttons.append("<button value=\"返 回\" action=\"bypass -h Quest Sacrifice sacrifice_list\" width=135 height=22 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">");
 		buttons.append("</td>");
-
 		buttons.append("</tr></table>");
+
+		if (sacrificeQuota > 0 && !maxed)
+		{
+			buttons.append("<table width=290><tr><td height=3></td></tr></table>");
+			buttons.append("<table width=290><tr><td align=center>");
+			buttons.append("<button value=\"贊助強化（剩餘").append(sacrificeQuota).append("級）\" action=\"bypass -h Quest Sacrifice gift_input_").append(altarId).append("\"");
+			buttons.append(" width=240 height=26 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">");
+			buttons.append("</td></tr></table>");
+		}
 		
 		// ── 組裝並發送 ───────────────────────────────────────────────────
 		final NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
@@ -352,8 +392,94 @@ public class Sacrifice extends Script
 		player.sendPacket(msg);
 	}
 	
+	// ── 贊助強化頁 ───────────────────────────────────────────────────────
+
+	private void showGiftPage(Player player, int altarId)
+	{
+		final SacrificeAltarEntry altar = SacrificeData.getInstance().getAltar(altarId);
+		if (altar == null)
+		{
+			player.sendMessage("找不到祭壇（id=" + altarId + "）。");
+			return;
+		}
+
+		final int currentLevel = SacrificeManager.getInstance().getPlayerLevel(player, altarId);
+		final long quota = player.getVariables().getLong(SACRIFICE_QUOTA_VAR, 0);
+		final boolean maxed = currentLevel >= altar.getMaxLevel();
+
+		final String maxedNotice = maxed
+			? "<table width=290 bgcolor=332200><tr><td height=18 align=center><font color=\"FFAA00\">此祭壇已達最高等級，無法繼續強化！</font></td></tr></table>"
+			: "";
+
+		final NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
+		msg.setFile(player, PATH_GIFT);
+		msg.replace("%altar_name%", altar.getName());
+		msg.replace("%current_level%", String.valueOf(currentLevel));
+		msg.replace("%max_level%", String.valueOf(altar.getMaxLevel()));
+		msg.replace("%quota%", String.valueOf(quota));
+		msg.replace("%altar_id%", String.valueOf(altarId));
+		msg.replace("%maxed_notice%", maxedNotice);
+		player.sendPacket(msg);
+	}
+
+	private void doGiftUpgrade(Player player, Npc npc, int altarId, int levels)
+	{
+		if (levels <= 0)
+		{
+			player.sendMessage("請輸入有效的升等級數！");
+			showGiftPage(player, altarId);
+			return;
+		}
+
+		final long quota = player.getVariables().getLong(SACRIFICE_QUOTA_VAR, 0);
+		if (quota <= 0)
+		{
+			player.sendMessage("您目前沒有贊助強化額度！");
+			showView(player, altarId);
+			return;
+		}
+
+		if (levels > quota)
+		{
+			player.sendMessage("輸入的級數（" + levels + "）超過剩餘額度（" + quota + "）！");
+			showGiftPage(player, altarId);
+			return;
+		}
+
+		final int added = SacrificeManager.getInstance().grantLevels(player, altarId, levels);
+
+		if (added > 0)
+		{
+			player.getVariables().set(SACRIFICE_QUOTA_VAR, quota - added);
+			final int newLevel = SacrificeManager.getInstance().getPlayerLevel(player, altarId);
+			final SacrificeAltarEntry altar = SacrificeData.getInstance().getAltar(altarId);
+			final String altarName = altar != null ? altar.getName() : "祭壇";
+			player.sendMessage("========================================");
+			player.sendMessage("【贊助強化】" + altarName + " 升級成功！");
+			player.sendMessage("升了 " + added + " 級，目前等級：Lv." + newLevel);
+			player.sendMessage("剩餘贊助額度：" + (quota - added) + " 級");
+			player.sendMessage("========================================");
+		}
+		else
+		{
+			final SacrificeAltarEntry altar = SacrificeData.getInstance().getAltar(altarId);
+			if (altar != null && SacrificeManager.getInstance().getPlayerLevel(player, altarId) >= altar.getMaxLevel())
+			{
+				player.sendMessage("祭壇已達最高等級，無法繼續強化！");
+			}
+		}
+
+		showView(player, altarId);
+	}
+
 	// ── 工具 ────────────────────────────────────────────────────────────
-	
+
+	private static int safeParseInt(String s)
+	{
+		try { return Integer.parseInt(s.trim()); }
+		catch (NumberFormatException e) { return 0; }
+	}
+
 	private static void appendStatValue(StringBuilder sb, MorphStatEntry stat, double value, String color)
 	{
 		sb.append("<font color=\"").append(color).append("\">");

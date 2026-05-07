@@ -112,6 +112,25 @@ public class RefineSystemManager
 		_cache.remove(itemObjectId);
 	}
 
+	public void resetCharges(Item item)
+	{
+		final int objectId = item.getObjectId();
+		final int max = getDefaultCharges(item);
+		_cache.put(objectId, max);
+
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement(REPLACE_SQL))
+		{
+			ps.setInt(1, objectId);
+			ps.setInt(2, max);
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning("[RefineSystem] 重置精煉次數失敗 itemId=" + objectId + ": " + e.getMessage());
+		}
+	}
+
 	private int getDefaultCharges(Item item)
 	{
 		final RefineSystemData data = RefineSystemData.getInstance();

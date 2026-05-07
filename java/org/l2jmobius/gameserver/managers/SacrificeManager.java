@@ -200,6 +200,38 @@ public class SacrificeManager
 		return false;
 	}
 	
+	// ── 贊助升等（不消耗材料、不骰子，直接加等）────────────────────────
+
+	/**
+	 * 直接給予玩家指定祭壇等級（贊助強化用）。
+	 * @param player 玩家
+	 * @param altarId 祭壇 ID
+	 * @param levels 要增加的等級數
+	 * @return 實際增加的等級數（受 maxLevel 截斷）
+	 */
+	public int grantLevels(Player player, int altarId, int levels)
+	{
+		final SacrificeAltarEntry altar = SacrificeData.getInstance().getAltar(altarId);
+		if (altar == null || levels <= 0)
+		{
+			return 0;
+		}
+
+		final int currentLevel = getPlayerLevel(player, altarId);
+		final int newLevel = Math.min(currentLevel + levels, altar.getMaxLevel());
+		final int added = newLevel - currentLevel;
+		if (added <= 0)
+		{
+			return 0;
+		}
+
+		getOrCreateCache(player).put(altarId, newLevel);
+		saveLevel(player.getObjectId(), altarId, newLevel);
+		player.getStat().recalculateStats(true);
+
+		return added;
+	}
+
 	// ── 屬性注入（在 PlayerStat.resetStats 中調用）────────────────────────
 	
 	/**

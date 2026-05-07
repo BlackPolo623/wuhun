@@ -40,6 +40,7 @@ import org.l2jmobius.gameserver.config.AdenLaboratoryConfig;
 import org.l2jmobius.gameserver.config.ConfigLoader;
 import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.config.ServerConfig;
+import org.l2jmobius.discord.DiscordManager;
 import org.l2jmobius.gameserver.config.custom.CustomMailManagerConfig;
 import org.l2jmobius.gameserver.config.custom.MultilingualSupportConfig;
 import org.l2jmobius.gameserver.config.custom.OfflinePlayConfig;
@@ -545,6 +546,9 @@ public class GameServer
 		MorphData.getInstance();
 		SacrificeData.getInstance();
 		
+		// 啟動 Discord Bot（在 shutdown hook 之前，確保 shutdown 時 Bot 也會被關閉）
+		DiscordManager.getInstance().start();
+
 		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
 		LOGGER.info("IdManager: Free ObjectID's remaining: " + IdManager.getInstance().getAvailableIdCount());
 		

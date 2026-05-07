@@ -329,6 +329,18 @@
         <current enchant="8" chance="1.5"/>
         <current enchant="9" chance="0.75"/>
     </enchantRateGroup>
+    <enchantRateGroup name="EVENT">
+        <current enchant="0-99"   chance="80"/>
+        <current enchant="100-199" chance="70"/>
+        <current enchant="200-299" chance="60"/>
+        <current enchant="300-399" chance="50"/>
+        <current enchant="400-499" chance="40"/>
+        <current enchant="500-599" chance="30"/>
+        <current enchant="600-699" chance="20"/>
+        <current enchant="700-799" chance="15"/>
+        <current enchant="800-899" chance="10"/>
+        <current enchant="900-999" chance="7"/>
+    </enchantRateGroup>
     <!-- Default scrolls enchanting route line -->
     <enchantScrollGroup id="0">
         <!-- Weapon -->
@@ -454,6 +466,9 @@
             <item itemId="97259"/> <!-- Piercing Mask - Sealed -->
             <item itemId="100545"/> <!-- Phantom Mask - Sealed -->
             <item itemId="100547"/> <!-- Heavenly Talisman - Sealed -->
+        </enchantRate>
+        <enchantRate group="EVENT">
+            <item itemId="38214"/>
         </enchantRate>
     </enchantScrollGroup>
     <!-- Aden weapons scrolls enchanting route line -->

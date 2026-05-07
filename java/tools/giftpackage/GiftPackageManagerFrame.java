@@ -34,6 +34,7 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.Mail;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.enums.MailType;
 
 public class GiftPackageManagerFrame extends JFrame
@@ -62,40 +63,59 @@ public class GiftPackageManagerFrame extends JFrame
         private final String packageName;
         private final String description;
         private final List<RewardItem> rewards;
-        
+        private final long stoneQuota;
+        private final int  sacrificeQuota;
+
         public GiftPackage(String packageId, String packageName, String description)
         {
-            this.packageId = packageId;
-            this.packageName = packageName;
-            this.description = description;
-            this.rewards = new ArrayList<>();
+            this(packageId, packageName, description, 0L, 0);
         }
-        
+
+        public GiftPackage(String packageId, String packageName, String description, long stoneQuota, int sacrificeQuota)
+        {
+            this.packageId      = packageId;
+            this.packageName    = packageName;
+            this.description    = description;
+            this.rewards        = new ArrayList<>();
+            this.stoneQuota     = stoneQuota;
+            this.sacrificeQuota = sacrificeQuota;
+        }
+
         public void addReward(int itemId, long count)
         {
             rewards.add(new RewardItem(itemId, count));
         }
-        
+
         public String getPackageId()
         {
             return packageId;
         }
-        
+
         public String getPackageName()
         {
             return packageName;
         }
-        
+
         public String getDescription()
         {
             return description;
         }
-        
+
         public List<RewardItem> getRewards()
         {
             return rewards;
         }
-        
+
+        public long getStoneQuota()
+        {
+            return stoneQuota;
+        }
+
+        public int getSacrificeQuota()
+        {
+            return sacrificeQuota;
+        }
+
         @Override
         public String toString()
         {
@@ -133,71 +153,8 @@ public class GiftPackageManagerFrame extends JFrame
     {
         Map<String, GiftPackage> packages = new LinkedHashMap<>();
 
-        // ========== 武魂古文升級禮包系列 ==========
-
-        GiftPackage Rune_1000 = new GiftPackage(
-            "Donate_202604_Rune_1000",
-            "初級古文升級禮包",
-            "NT.1000 | 古文升級禮包無法補差額購買"
-        );
-        Rune_1000.addReward(102337, 1);   // 武魂古文Lv1
-        Rune_1000.addReward(102352, 10);  // 武魂古文鑄幣 x10
-        packages.put(Rune_1000.getPackageId(), Rune_1000);
-
-        GiftPackage Rune_2500 = new GiftPackage(
-            "Donate_202604_Rune_2500",
-            "中級古文升級禮包",
-            "NT.2500 | 古文升級禮包無法補差額購買"
-        );
-        Rune_2500.addReward(102337, 1);   // 武魂古文Lv1
-        Rune_2500.addReward(102352, 25);  // 武魂古文鑄幣 x25
-        packages.put(Rune_2500.getPackageId(), Rune_2500);
-
-        GiftPackage Rune_5000 = new GiftPackage(
-            "Donate_202604_Rune_5000",
-            "高級古文升級禮包",
-            "NT.5000 | 古文升級禮包無法補差額購買"
-        );
-        Rune_5000.addReward(102337, 1);   // 武魂古文Lv1
-        Rune_5000.addReward(102352, 50);  // 武魂古文鑄幣 x50
-        packages.put(Rune_5000.getPackageId(), Rune_5000);
-
-        GiftPackage Rune_10000 = new GiftPackage(
-            "Donate_202604_Rune_10000",
-            "頂級古文升級禮包",
-            "NT.10000 | 古文升級禮包無法補差額購買"
-        );
-        Rune_10000.addReward(102337, 1);   // 武魂古文Lv1
-        Rune_10000.addReward(102352, 100); // 武魂古文鑄幣 x100
-        packages.put(Rune_10000.getPackageId(), Rune_10000);
-
-        GiftPackage Rune_15000 = new GiftPackage(
-            "Donate_202604_Rune_15000",
-            "終極古文升級禮包",
-            "NT.15000 | 古文升級禮包無法補差額購買"
-        );
-        Rune_15000.addReward(102337, 1);   // 武魂古文Lv1
-        Rune_15000.addReward(102352, 150); // 武魂古文鑄幣 x150
-        packages.put(Rune_15000.getPackageId(), Rune_15000);
-
-        GiftPackage RuneCoin_S = new GiftPackage(
-            "Donate_202604_RuneCoin_1200",
-            "武魂古文鑄幣補充小包",
-            "NT.1200 | 須購買過任一古文升級禮包才有購買資格"
-        );
-        RuneCoin_S.addReward(102352, 10); // 武魂古文鑄幣 x10
-        packages.put(RuneCoin_S.getPackageId(), RuneCoin_S);
-
-        GiftPackage RuneCoin_L = new GiftPackage(
-            "Donate_202604_RuneCoin_2400",
-            "武魂古文鑄幣補充大包",
-            "NT.2400 | 須購買過任一古文升級禮包才有購買資格"
-        );
-        RuneCoin_L.addReward(102352, 20); // 武魂古文鑄幣 x20
-        packages.put(RuneCoin_L.getPackageId(), RuneCoin_L);
 
         // ========== 2025年2月禮包 ==========
-
         // 基礎禮包
         GiftPackage Donate_202602_2000 = new GiftPackage(
                 "Donate_202602_2000",
@@ -244,6 +201,81 @@ public class GiftPackageManagerFrame extends JFrame
         Donate_202603_1000.addReward(112999, 2);
         packages.put(Donate_202603_1000.getPackageId(), Donate_202603_1000);
 
+        // ========== 2026年5月屬性禮包系列 ==========
+
+        GiftPackage Attr_1000 = new GiftPackage(
+            "Donate_202605_Attr_1000",
+            "初級屬性禮包",
+            "NT.1000 | 屬性石兌換額度 500個 + 祭壇升等額度 3級",
+            500L, 3
+        );
+        packages.put(Attr_1000.getPackageId(), Attr_1000);
+
+        GiftPackage Attr_2000 = new GiftPackage(
+            "Donate_202605_Attr_2000",
+            "中級屬性禮包",
+            "NT.2000 | 屬性石兌換額度 1200個 + 祭壇升等額度 6級",
+            1200L, 6
+        );
+        packages.put(Attr_2000.getPackageId(), Attr_2000);
+
+        GiftPackage Attr_5000 = new GiftPackage(
+            "Donate_202605_Attr_5000",
+            "高級屬性禮包",
+            "NT.5000 | 屬性石兌換額度 3500個 + 祭壇升等額度 9級",
+            3500L, 9
+        );
+        packages.put(Attr_5000.getPackageId(), Attr_5000);
+
+        GiftPackage Attr_10000 = new GiftPackage(
+            "Donate_202605_Attr_10000",
+            "頂級屬性禮包",
+            "NT.10000 | 屬性石兌換額度 8000個 + 祭壇升等額度 12級",
+            8000L, 12
+        );
+        packages.put(Attr_10000.getPackageId(), Attr_10000);
+
+        GiftPackage Attr_20000 = new GiftPackage(
+            "Donate_202605_Attr_20000",
+            "極品屬性禮包",
+            "NT.20000 | 屬性石兌換額度 18000個 + 祭壇升等額度 15級",
+            18000L, 15
+        );
+        packages.put(Attr_20000.getPackageId(), Attr_20000);
+
+        // ========== 2026年5月基地禮包系列 ==========
+
+        GiftPackage Base_21000 = new GiftPackage(
+            "Donate_202605_Base_21000",
+            "鎳基超合金基地禮包",
+            "NT.21000 | 祭壇升等額度 5級",
+            0L, 5
+        );
+        packages.put(Base_21000.getPackageId(), Base_21000);
+
+        GiftPackage Base_24000 = new GiftPackage(
+            "Donate_202605_Base_24000",
+            "鈷基合金基地禮包",
+            "NT.24000 | 祭壇升等額度 10級",
+            0L, 10
+        );
+        packages.put(Base_24000.getPackageId(), Base_24000);
+
+        GiftPackage Base_27000 = new GiftPackage(
+            "Donate_202605_Base_27000",
+            "鉭合金基地禮包",
+            "NT.27000 | 祭壇升等額度 15級",
+            0L, 15
+        );
+        packages.put(Base_27000.getPackageId(), Base_27000);
+
+        GiftPackage Base_30000 = new GiftPackage(
+            "Donate_202605_Base_30000",
+            "鈮合金基地禮包",
+            "NT.30000 | 祭壇升等額度 20級",
+            0L, 20
+        );
+        packages.put(Base_30000.getPackageId(), Base_30000);
 
         // TODO: 新月份禮包在這裡添加
         // 例如：2025年2月禮包
@@ -523,12 +555,21 @@ public class GiftPackageManagerFrame extends JFrame
             return;
         }
 
-        // 發送郵件
+        // 發送禮包
         try
         {
             for (int i = 0; i < quantity; i++)
             {
-                sendRewardMailToCharacter(charObjectId, charName, selectedPackage, i + 1, quantity);
+                // 有實體道具獎勵 → 走郵件附件
+                if (!selectedPackage.getRewards().isEmpty())
+                {
+                    sendRewardMailToCharacter(charObjectId, charName, selectedPackage, i + 1, quantity);
+                }
+                // 有屬性石/祭壇額度 → 寫入角色變數並發通知信
+                if (selectedPackage.getStoneQuota() > 0 || selectedPackage.getSacrificeQuota() > 0)
+                {
+                    sendAttributeGift(charObjectId, charName, selectedPackage);
+                }
             }
 
             // 記錄到資料庫
@@ -669,6 +710,62 @@ public class GiftPackageManagerFrame extends JFrame
         }
     }
     
+    // ==================== 發送屬性禮包額度 ====================
+    private void sendAttributeGift(int charObjectId, String charName, GiftPackage pkg)
+    {
+        Player onlinePlayer = World.getInstance().getPlayer(charName);
+        if (onlinePlayer != null)
+        {
+            // 在線玩家：直接操作記憶體中的 PlayerVariables
+            if (pkg.getStoneQuota() > 0)
+            {
+                long cur = onlinePlayer.getVariables().getLong("attr_stone_quota", 0);
+                onlinePlayer.getVariables().set("attr_stone_quota", cur + pkg.getStoneQuota());
+            }
+            if (pkg.getSacrificeQuota() > 0)
+            {
+                long cur = onlinePlayer.getVariables().getLong("sacrifice_lv_quota", 0);
+                onlinePlayer.getVariables().set("sacrifice_lv_quota", cur + pkg.getSacrificeQuota());
+            }
+        }
+        else
+        {
+            // 離線玩家：用 PlayerVariables 讀取 → 修改 → 立即寫入資料庫
+            PlayerVariables vars = new PlayerVariables(charObjectId);
+            if (pkg.getStoneQuota() > 0)
+            {
+                vars.set("attr_stone_quota", vars.getLong("attr_stone_quota", 0) + pkg.getStoneQuota());
+            }
+            if (pkg.getSacrificeQuota() > 0)
+            {
+                vars.set("sacrifice_lv_quota", vars.getLong("sacrifice_lv_quota", 0) + pkg.getSacrificeQuota());
+            }
+            vars.saveNow();
+        }
+
+        // 發通知郵件
+        final StringBuilder content = new StringBuilder();
+        content.append("親愛的玩家您好：\n\n");
+        content.append("感謝您購買 ").append(pkg.getPackageName()).append("！\n\n");
+        if (pkg.getStoneQuota() > 0)
+        {
+            content.append("・ 屬性石兌換額度：+").append(pkg.getStoneQuota()).append(" 個\n");
+            content.append("  → 請前往【屬性強化師（NPC）】→【屬性石兌換】領取\n\n");
+        }
+        if (pkg.getSacrificeQuota() > 0)
+        {
+            content.append("・ 祭壇贊助強化額度：+").append(pkg.getSacrificeQuota()).append(" 級\n");
+            content.append("  → 請前往【祭祀系統（NPC）】→ 選擇祭壇 →【贊助強化】使用\n\n");
+        }
+        content.append("祝您遊戲愉快！\n武魂天堂2 營運團隊");
+
+        Message msg = new Message(charObjectId, pkg.getPackageName() + "（額度通知）", content.toString(), MailType.NEWS_INFORMER);
+        MailManager.getInstance().sendMessage(msg);
+
+        System.out.println(String.format("[禮包發送系統] 屬性禮包額度已發送給 %s — 石頭:%d 祭壇:%d",
+            charName, pkg.getStoneQuota(), pkg.getSacrificeQuota()));
+    }
+
     // ==================== 發送獎勵郵件 ====================
     private void sendRewardMail(Player player, GiftPackage giftPackage, int currentNum, int totalNum)
     {

@@ -590,6 +590,7 @@ public class MasterHandler
 			BossTeleportHandler.class,
 			SkillControllerCmd.class,
 			SystemMessageToggle.class,
+			DamageAnalyzer.class,
 		},
 		{
 			// Target Handlers

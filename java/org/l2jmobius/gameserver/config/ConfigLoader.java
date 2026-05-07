@@ -31,6 +31,7 @@ import org.l2jmobius.gameserver.config.custom.ClassBalanceConfig;
 import org.l2jmobius.gameserver.config.custom.CommunityBoardConfig;
 import org.l2jmobius.gameserver.config.custom.Custom;
 import org.l2jmobius.gameserver.config.custom.CustomDepositableItemsConfig;
+import org.l2jmobius.gameserver.config.custom.DiscordConfig;
 import org.l2jmobius.gameserver.config.custom.CustomMailManagerConfig;
 import org.l2jmobius.gameserver.config.custom.DelevelManagerConfig;
 import org.l2jmobius.gameserver.config.custom.DualboxCheckConfig;
@@ -149,6 +150,7 @@ public class ConfigLoader
 		TransmogConfig.load();
 		WalkerBotProtectionConfig.load();
 		WeddingConfig.load();
+		DiscordConfig.load();
 		Custom.load();
 	}
 }

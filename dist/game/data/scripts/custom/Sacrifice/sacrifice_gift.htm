@@ -1,0 +1,56 @@
+<html><title>贊助強化</title><body>
+<table width=290 bgcolor=003322><tr><td height=3></td></tr></table>
+<table width=290 bgcolor=1A2A1A><tr><td height=22 align=center>
+  <font color="00FF88"><b>贊助強化祭壇</b></font>
+</td></tr></table>
+<table width=290 bgcolor=003322><tr><td height=1></td></tr></table>
+
+<table width=290 bgcolor=1A1A1A><tr>
+  <td width=10></td>
+  <td width=120><font color="AAAAAA">祭壇名稱</font></td>
+  <td><font color="FFCC33">%altar_name%</font></td>
+  <td width=10></td>
+</tr></table>
+<table width=290 bgcolor=141414><tr>
+  <td width=10></td>
+  <td width=120><font color="AAAAAA">當前等級</font></td>
+  <td><font color="00FFFF">Lv.%current_level% / %max_level%</font></td>
+  <td width=10></td>
+</tr></table>
+<table width=290 bgcolor=1A1A1A><tr>
+  <td width=10></td>
+  <td width=120><font color="AAAAAA">贊助強化額度</font></td>
+  <td><font color="FFFF00">%quota% 級</font></td>
+  <td width=10></td>
+</tr></table>
+
+%maxed_notice%
+
+<table width=290 bgcolor=555555><tr><td height=1></td></tr></table>
+<table width=290 bgcolor=221A00><tr><td height=14 align=center>
+  <font color="AAAAAA" size=1>※ 直接升級，不消耗材料，不受成功率影響</font>
+</td></tr></table>
+<table width=290 bgcolor=555555><tr><td height=1></td></tr></table>
+
+<table width=290><tr><td height=6></td></tr></table>
+
+<table width=290 cellpadding=0 cellspacing=0><tr>
+  <td width=145 align=center><font color="AAAAAA">升等級數：</font></td>
+  <td width=145 align=center><edit var="glvl" width=80 height=18></td>
+</tr></table>
+
+<table width=290><tr><td height=8></td></tr></table>
+
+<table width=290><tr><td align=center>
+  <button value="確認升等" action="bypass -h Quest Sacrifice gift_do_%altar_id% $glvl"
+    width=200 height=28 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"/>
+</td></tr></table>
+
+<table width=290><tr><td height=4></td></tr></table>
+
+<table width=290><tr><td align=center>
+  <button value="返回祭壇詳情" action="bypass -h Quest Sacrifice sacrifice_view_%altar_id%"
+    width=140 height=22 back="L2UI_CT1.Button_DF_Small_Down" fore="L2UI_CT1.Button_DF_Small"/>
+</td></tr></table>
+
+</body></html>
