@@ -102,6 +102,7 @@ public class SkillCaster implements Runnable
 	private final Skill _skill;
 	private final Item _item;
 	private final SkillCastingType _castingType;
+	private final boolean _ctrlPressed;
 	private final boolean _shiftPressed;
 	private int _hitTime;
 	private int _cancelTime;
@@ -121,6 +122,7 @@ public class SkillCaster implements Runnable
 		_skill = skill;
 		_item = item;
 		_castingType = castingType;
+		_ctrlPressed = ctrlPressed;
 		_shiftPressed = shiftPressed;
 		
 		calcSkillTiming(caster, skill, castTime);
@@ -488,7 +490,16 @@ public class SkillCaster implements Runnable
 		}
 		
 		// Gather list of affected targets by this skill.
+		final Player casterPlayer = caster.asPlayer();
+		if (_ctrlPressed && (casterPlayer != null))
+		{
+			casterPlayer.setAoEForceUse(true);
+		}
 		_targets = _skill.getTargetsAffected(caster, target);
+		if (casterPlayer != null)
+		{
+			casterPlayer.setAoEForceUse(false);
+		}
 		
 		// Finish flying by setting the target location after picking targets. Packet is sent before MagicSkillLaunched.
 		if (_skill.isFlyType())

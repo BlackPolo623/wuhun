@@ -372,25 +372,26 @@ public class PlayerStatus extends PlayableStatus
 	@Override
 	public void setCurrentCp(double value, boolean broadcastPacket)
 	{
-		// Get the Max CP of the Creature
 		final int currentCp = (int) _currentCp;
 		final Player player = getActiveChar();
-		final int maxCp = player.getStat().getMaxCp();
-		
+
 		synchronized (this)
 		{
 			if (player.isDead())
 			{
 				return;
 			}
-			
+
+			// Read maxCp inside the synchronized block to avoid race condition
+			// during recalculateStats where _statsAdd is momentarily cleared.
+			final int maxCp = player.getStat().getMaxCp();
 			final double newCp = Math.max(0, value);
 			if (newCp >= maxCp)
 			{
 				// Set the RegenActive flag to false
 				_currentCp = maxCp;
 				_flagsRegenActive &= ~REGEN_FLAG_CP;
-				
+
 				// Stop the HP/MP/CP Regeneration task
 				if (_flagsRegenActive == 0)
 				{
@@ -402,7 +403,7 @@ public class PlayerStatus extends PlayableStatus
 				// Set the RegenActive flag to true
 				_currentCp = newCp;
 				_flagsRegenActive |= REGEN_FLAG_CP;
-				
+
 				// Start the HP/MP/CP Regeneration task with Medium priority
 				startHpMpRegeneration();
 			}

@@ -136,9 +136,21 @@ public class BossAuctionManager
 		{
 			return;
 		}
+		recordDamage(sessionId, player.getObjectId(), player.getName(), damage);
+	}
+
+	/**
+	 * 記錄對BOSS造成的傷害（支援離線玩家）
+	 */
+	public void recordDamage(int sessionId, int playerId, String playerName, long damage)
+	{
+		if (playerId <= 0 || playerName == null || damage <= 0)
+		{
+			return;
+		}
 
 		Map<Integer, DamageInfo> sessionDamage = _damageTracker.computeIfAbsent(sessionId, k -> new ConcurrentHashMap<>());
-		DamageInfo info = sessionDamage.computeIfAbsent(player.getObjectId(), k -> new DamageInfo(player.getObjectId(), player.getName()));
+		DamageInfo info = sessionDamage.computeIfAbsent(playerId, k -> new DamageInfo(playerId, playerName));
 		info.addDamage(damage);
 	}
 
@@ -369,18 +381,7 @@ public class BossAuctionManager
 	 */
 	private AuctionItem getAuctionItem(int auctionItemId)
 	{
-		for (AuctionSession session : _activeSessions.values())
-		{
-			List<AuctionItem> items = BossAuctionDAO.getSessionItems(session.sessionId);
-			for (AuctionItem item : items)
-			{
-				if (item.auctionItemId == auctionItemId)
-				{
-					return item;
-				}
-			}
-		}
-		return null;
+		return BossAuctionDAO.getAuctionItem(auctionItemId);
 	}
 
 	/**
@@ -438,6 +439,9 @@ public class BossAuctionManager
 		}
 	}
 
+	// 【Bug2修復】PROCESSING 超時重試閾值：超過此時間仍在 PROCESSING 視為卡死
+	private static final long PROCESSING_TIMEOUT_MS = 10 * 60 * 1000L; // 10分鐘
+
 	/**
 	 * 定時檢查並處理過期的競標
 	 */
@@ -447,9 +451,19 @@ public class BossAuctionManager
 		{
 			try
 			{
+				// 處理正常到期的 ACTIVE 會話
 				List<Integer> expiredSessions = BossAuctionDAO.getExpiredSessions();
 				for (int sessionId : expiredSessions)
 				{
+					processExpiredAuction(sessionId);
+				}
+
+				// 【Bug2修復】重試卡死在 PROCESSING 超過 10 分鐘的會話
+				List<Integer> stuckSessions = BossAuctionDAO.getStuckProcessingSessions(PROCESSING_TIMEOUT_MS);
+				for (int sessionId : stuckSessions)
+				{
+					LOGGER.warning("【競標系統】會話 " + sessionId + " 卡在 PROCESSING 超過 10 分鐘，強制重置並重試");
+					BossAuctionDAO.resetStuckSession(sessionId);
 					processExpiredAuction(sessionId);
 				}
 			}
@@ -477,73 +491,88 @@ public class BossAuctionManager
 
 		LOGGER.info("【競標系統】處理過期會話: " + sessionId);
 
-		// 獲取會話信息
-		AuctionSession session = BossAuctionDAO.getSession(sessionId);
-		if (session == null)
+		try
 		{
-			LOGGER.warning("【競標系統】會話 " + sessionId + " 不存在");
-			return;
-		}
-
-		// 獲取所有物品
-		List<AuctionItem> items = BossAuctionDAO.getSessionItems(sessionId);
-		long totalRevenue = 0;
-
-		for (AuctionItem item : items)
-		{
-			if (item.currentBidderId > 0 && item.currentBid > 0)
+			// 獲取會話信息
+			AuctionSession session = BossAuctionDAO.getSession(sessionId);
+			if (session == null)
 			{
-				// 創建待領取獎勵 (得標物品)
-				int rewardId = BossAuctionDAO.addPendingReward(
-					item.currentBidderId,
-					item.currentBidderName,
-					sessionId,
-					session.bossNpcId,
-					session.bossName,
-					"BID_WIN",
-					item.itemId,
-					item.itemCount,
-					item.itemData,
-					item.currentBid,
-					0 // 得標者沒有傷害記錄
-				);
+				LOGGER.warning("【競標系統】會話 " + sessionId + " 不存在，標記為 ENDED");
+				BossAuctionDAO.updateSessionStatus(sessionId, "ENDED");
+				return;
+			}
 
-				if (rewardId > 0)
+			// 獲取所有物品
+			List<AuctionItem> items = BossAuctionDAO.getSessionItems(sessionId);
+			long totalRevenue = 0;
+
+			for (AuctionItem item : items)
+			{
+				if (item.currentBidderId > 0 && item.currentBid > 0)
 				{
-					// 發送通知郵件（不附帶物品）
-					sendNotificationMail(
+					// 創建待領取獎勵 (得標物品)
+					int rewardId = BossAuctionDAO.addPendingReward(
 						item.currentBidderId,
-						"【BOSS競標】得標通知",
-						String.format("恭喜您以 %d L Coin 成功得標 %s 掉落的物品！\n\n請前往世界BOSS管理員處領取您的獎勵。",
-							item.currentBid, session.bossName)
+						item.currentBidderName,
+						sessionId,
+						session.bossNpcId,
+						session.bossName,
+						"BID_WIN",
+						item.itemId,
+						item.itemCount,
+						item.itemData,
+						item.currentBid,
+						0
 					);
 
-					totalRevenue += item.currentBid;
-					BossAuctionDAO.updateItemStatus(item.auctionItemId, "SOLD");
+					if (rewardId > 0)
+					{
+						sendNotificationMail(
+							item.currentBidderId,
+							"【BOSS競標】得標通知",
+							String.format("恭喜您以 %d L Coin 成功得標 %s 掉落的物品！\n\n請前往世界BOSS管理員處領取您的獎勵。",
+								item.currentBid, session.bossName)
+						);
 
-					LOGGER.info("【競標系統】物品 " + item.itemId + " 由 " + item.currentBidderName + " 得標，價格: " + item.currentBid + "，待領取ID: " + rewardId);
+						totalRevenue += item.currentBid;
+						BossAuctionDAO.updateItemStatus(item.auctionItemId, "SOLD");
+
+						LOGGER.info("【競標系統】物品 " + item.itemId + " 由 " + item.currentBidderName + " 得標，價格: " + item.currentBid + "，待領取ID: " + rewardId);
+					}
 				}
+				else
+				{
+					BossAuctionDAO.updateItemStatus(item.auctionItemId, "CANCELLED");
+					LOGGER.info("【競標系統】物品 " + item.itemId + " 流標");
+				}
+			}
+
+			// 分配收益給參與者
+			if (totalRevenue > 0)
+			{
+				distributeRevenue(sessionId, session, totalRevenue);
 			}
 			else
 			{
-				// 流標，可以選擇銷毀或發給GM
-				BossAuctionDAO.updateItemStatus(item.auctionItemId, "CANCELLED");
-				LOGGER.info("【競標系統】物品 " + item.itemId + " 流標");
+				LOGGER.info("【競標系統】會話 " + sessionId + " 無收益（無人出價或物品全數流標），跳過分紅");
 			}
-		}
 
-		// 分配收益給參與者
-		if (totalRevenue > 0)
+			// 正常結束：更新會話狀態
+			BossAuctionDAO.updateSessionStatus(sessionId, "ENDED");
+			_activeSessions.remove(sessionId);
+			_damageTracker.remove(sessionId);
+
+			LOGGER.info("【競標系統】會話 " + sessionId + " 處理完成，總收益: " + totalRevenue);
+		}
+		catch (Exception e)
 		{
-			distributeRevenue(sessionId, session, totalRevenue);
+			// 【Bug2修復】任何例外都標記為 ENDED 而非讓 session 卡在 PROCESSING
+			LOGGER.severe("【競標系統】處理會話 " + sessionId + " 時發生嚴重錯誤，標記為 ENDED: " + e.getMessage());
+			e.printStackTrace();
+			BossAuctionDAO.updateSessionStatus(sessionId, "ENDED");
+			_activeSessions.remove(sessionId);
+			_damageTracker.remove(sessionId);
 		}
-
-		// 更新會話狀態
-		BossAuctionDAO.updateSessionStatus(sessionId, "ENDED");
-		_activeSessions.remove(sessionId);
-		_damageTracker.remove(sessionId);
-
-		LOGGER.info("【競標系統】會話 " + sessionId + " 處理完成，總收益: " + totalRevenue);
 	}
 
 	/**
@@ -600,15 +629,18 @@ public class BossAuctionManager
 	 */
 	public List<AuctionSession> getActiveSessions()
 	{
-		// 每次都從資料庫讀取最新數據,避免緩存問題
+		// 從資料庫讀取最新數據
 		List<AuctionSession> sessions = BossAuctionDAO.getActiveSessions();
 
-		// 同步更新內存中的 Map
-		_activeSessions.clear();
+		// 【Bug4修復】改為 merge 更新，不清空整個 Map 以免干擾 processExpiredAuction
+		Set<Integer> dbSessionIds = new HashSet<>();
 		for (AuctionSession session : sessions)
 		{
 			_activeSessions.put(session.sessionId, session);
+			dbSessionIds.add(session.sessionId);
 		}
+		// 移除 DB 中已不存在的 session（已 ENDED 的）
+		_activeSessions.keySet().removeIf(id -> !dbSessionIds.contains(id));
 
 		return sessions;
 	}

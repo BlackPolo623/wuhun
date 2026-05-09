@@ -775,7 +775,8 @@ public class Player extends Playable
 	private boolean _noble = false;
 	private boolean _hero = false;
 	private boolean _trueHero = false;
-	
+	private boolean _aoeForceUse = false;
+
 	/** Premium System */
 	private boolean _premiumStatus = false;
 	
@@ -11211,7 +11212,17 @@ public class Player extends Playable
 	{
 		return _hero;
 	}
-	
+
+	public void setAoEForceUse(boolean value)
+	{
+		_aoeForceUse = value;
+	}
+
+	public boolean isAoEForceUse()
+	{
+		return _aoeForceUse;
+	}
+
 	public boolean isInOlympiadMode()
 	{
 		return _inOlympiadMode;

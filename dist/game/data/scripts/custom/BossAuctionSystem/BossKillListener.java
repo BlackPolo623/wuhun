@@ -34,16 +34,22 @@ public class BossKillListener extends Script implements IBossDropHandler
 	private static final long BATCH_UPDATE_INTERVAL = 5000;
 
 	// 【優化】本地傷害緩存 - 每個 BOSS 的傷害暫存
-	// Key: BOSS ObjectId, Value: Map<PlayerId, AtomicLong(damage)>
+	// Key: BOSS ObjectId, Value: Map<PlayerId, long[]{damage, playerName_hashRef}>
+	// 使用 PlayerCache 記錄 playerId -> playerName，避免玩家離線後丟失名稱
 	private final Map<Integer, Map<Integer, AtomicLong>> _localDamageCache = new ConcurrentHashMap<>();
+	// 【Bug3修復】緩存玩家名稱，離線後仍可查詢
+	private final Map<Integer, String> _playerNameCache = new ConcurrentHashMap<>();
 
 	// 【優化】追蹤每個 BOSS 的批次更新任務
 	private final Map<Integer, java.util.concurrent.ScheduledFuture<?>> _batchUpdateTasks = new ConcurrentHashMap<>();
 
 	public BossKillListener()
 	{
-		// 優先從 BossAuction.ini 的 EnabledBossIds 讀取（BossAuctionManager 在此之前已初始化）
-		// 同時也合併 WorldBoss.ini 的 BossNpcIds，確保兩邊設定的 ID 都能被監聽
+		// 【修復：載入順序問題】BossAuctionSystem 腳本比 WorldBossNpc 先載入（字母順序），
+		// 所以 WorldBossConfig 此時可能尚未初始化，getBossNpcIds() 可能回傳空列表。
+		// 改為使用兩個來源取聯集，確保所有 BOSS 都被監聽：
+		// 1. BossAuctionConfig（由 BossAuctionManager.getInstance() 在此之前已載入）
+		// 2. WorldBossConfig（若已載入則一併加入，否則為空）
 		java.util.Set<Integer> monitorIds = new java.util.HashSet<>();
 		monitorIds.addAll(BossAuctionConfig.getEnabledBossIds());
 		monitorIds.addAll(WorldBossConfig.getBossNpcIds());
@@ -85,6 +91,9 @@ public class BossKillListener extends Script implements IBossDropHandler
 		// 【優化】累積到本地緩存，而不是直接寫入主 Map
 		int bossObjectId = npc.getObjectId();
 		int playerId = attacker.getObjectId();
+
+		// 【Bug3修復】緩存玩家名稱，確保離線後仍可查詢
+		_playerNameCache.put(playerId, attacker.getName());
 
 		// 獲取或創建此 BOSS 的本地緩存
 		Map<Integer, AtomicLong> bossCache = _localDamageCache.computeIfAbsent(bossObjectId, k -> new ConcurrentHashMap<>());
@@ -141,13 +150,25 @@ public class BossKillListener extends Script implements IBossDropHandler
 
 			if (damage > 0)
 			{
-				// 獲取玩家名稱（從 World 查找）
-				Player player = org.l2jmobius.gameserver.model.World.getInstance().getPlayer(playerId);
-				if (player != null)
+				// 【Bug3修復】從名稱緩存取得玩家名稱，不需要玩家在線
+				String playerName = _playerNameCache.get(playerId);
+				if (playerName == null)
 				{
-					BossAuctionManager.getInstance().recordDamage(bossObjectId, player, damage);
-					updateCount++;
+					// 理論上不應發生（名稱在 onAttack 時緩存），保留安全回退
+					Player player = org.l2jmobius.gameserver.model.World.getInstance().getPlayer(playerId);
+					if (player != null)
+					{
+						playerName = player.getName();
+					}
+					else
+					{
+						LOGGER.warning("【競標系統】找不到玩家名稱 ID: " + playerId + "，跳過此筆傷害記錄");
+						continue;
+					}
 				}
+
+				BossAuctionManager.getInstance().recordDamage(bossObjectId, playerId, playerName, damage);
+				updateCount++;
 			}
 		}
 
@@ -172,8 +193,16 @@ public class BossKillListener extends Script implements IBossDropHandler
 		// 立即同步所有傷害
 		syncDamageToMainMap(bossObjectId);
 
-		// 清除本地緩存
-		_localDamageCache.remove(bossObjectId);
+		// 清除本地緩存（包含名稱緩存中屬於此 BOSS 戰鬥的玩家）
+		Map<Integer, AtomicLong> bossCache = _localDamageCache.remove(bossObjectId);
+		if (bossCache != null)
+		{
+			// 清除這場戰鬥的玩家名稱緩存
+			for (int playerId : bossCache.keySet())
+			{
+				_playerNameCache.remove(playerId);
+			}
+		}
 
 		LOGGER.info("【競標系統】已停止 BOSS " + bossObjectId + " 的批次更新任務並同步所有傷害");
 	}

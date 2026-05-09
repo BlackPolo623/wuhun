@@ -167,6 +167,58 @@ public class BossAuctionDAO
 	}
 
 	/**
+	 * 【Bug2修復】查詢卡死在 PROCESSING 狀態超過指定時間的會話
+	 *
+	 * @param timeoutMs 超時閾值（毫秒）。如果 PROCESSING 狀態的會話 end_time 已過期超過此時長，視為卡死
+	 */
+	public static List<Integer> getStuckProcessingSessions(long timeoutMs)
+	{
+		List<Integer> stuckIds = new ArrayList<>();
+		// 計算 cutoff 時間：當前時間 - timeoutMs
+		// 例如現在是 12:00，timeoutMs=10分鐘，cutoffTime=11:50
+		// 如果 end_time=11:40（競標應在11:40結束），而現在狀態仍是PROCESSING，說明已卡住 20 分鐘
+		long cutoffTime = System.currentTimeMillis() - timeoutMs;
+
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement(
+				"SELECT session_id FROM boss_auction_sessions WHERE status = 'PROCESSING' AND end_time <= ?"))
+		{
+			ps.setLong(1, cutoffTime);
+			try (ResultSet rs = ps.executeQuery())
+			{
+				while (rs.next())
+				{
+					stuckIds.add(rs.getInt("session_id"));
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			LOGGER.log(Level.SEVERE, "查詢卡死 PROCESSING 會話失敗", e);
+		}
+		return stuckIds;
+	}
+
+	/**
+	 * 【Bug2修復】將卡死的 PROCESSING 會話重置回 ACTIVE 狀態以便重試
+	 */
+	public static boolean resetStuckSession(int sessionId)
+	{
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement(
+				"UPDATE boss_auction_sessions SET status = 'ACTIVE' WHERE session_id = ? AND status = 'PROCESSING'"))
+		{
+			ps.setInt(1, sessionId);
+			return ps.executeUpdate() > 0;
+		}
+		catch (Exception e)
+		{
+			LOGGER.log(Level.SEVERE, "重置卡死會話失敗", e);
+		}
+		return false;
+	}
+
+	/**
 	 * 獲取指定會話
 	 */
 	public static AuctionSession getSession(int sessionId)

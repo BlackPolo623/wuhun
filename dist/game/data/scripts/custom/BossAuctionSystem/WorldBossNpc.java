@@ -101,13 +101,20 @@ public class WorldBossNpc extends Script
 		if (manager.hasBoss())
 		{
 			Monster boss = manager.getCurrentBoss();
-			double currentHp = boss.getStatus().getCurrentHp();
-			double maxHp = boss.getMaxHp();
-			int hpPercent = (int) ((currentHp * 100) / maxHp);
+			if (boss != null && !boss.isDead())
+			{
+				double currentHp = boss.getStatus().getCurrentHp();
+				double maxHp = boss.getMaxHp();
+				int hpPercent = maxHp > 0 ? (int) ((currentHp * 100) / maxHp) : 0;
 
-			bossStatus = "<font color=\"00FF00\">存活中</font><br>" +
-				"<font color=\"FFFF00\">" + boss.getName() + "</font><br>" +
-				"<font color=\"FF6B6B\">HP: " + hpPercent + "%</font>";
+				bossStatus = "<font color=\"00FF00\">存活中</font><br>" +
+					"<font color=\"FFFF00\">" + boss.getName() + "</font><br>" +
+					"<font color=\"FF6B6B\">HP: " + hpPercent + "%</font>";
+			}
+			else
+			{
+				bossStatus = "<font color=\"808080\">尚未出現</font>";
+			}
 		}
 		else
 		{

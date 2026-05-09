@@ -177,12 +177,9 @@ public class BossAuctionSystem extends Script
 	 */
 	private void showSessionItems(Player player, int sessionId)
 	{
-		AuctionSession session = BossAuctionManager.getInstance().getActiveSessions().stream()
-			.filter(s -> s.sessionId == sessionId)
-			.findFirst()
-			.orElse(null);
+		AuctionSession session = BossAuctionDAO.getSession(sessionId);
 
-		if (session == null)
+		if (session == null || !"ACTIVE".equals(session.status))
 		{
 			player.sendMessage("競標會話不存在或已結束");
 			showMainPage(player);

@@ -1,16 +1,16 @@
 /*
  * This file is part of the L2J Mobius project.
- *
+ * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- *
+ * 
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -43,7 +43,7 @@ public class NotFriend implements IAffectObjectHandler
 		{
 			return false;
 		}
-
+		
 		final Player player = creature.asPlayer();
 		final Player targetPlayer = target.asPlayer();
 		if ((player != null) && (targetPlayer != null))
@@ -53,7 +53,7 @@ public class NotFriend implements IAffectObjectHandler
 			{
 				return false;
 			}
-
+			
 			// Auto play.
 			if (player.isAutoPlaying())
 			{
@@ -63,13 +63,13 @@ public class NotFriend implements IAffectObjectHandler
 					return false;
 				}
 			}
-
+			
 			// Peace Zone.
 			if (target.isInsidePeaceZone(player) && !player.getAccessLevel().allowPeaceAttack())
 			{
 				return false;
 			}
-
+			
 			if (PlayerConfig.ALT_COMMAND_CHANNEL_FRIENDS)
 			{
 				final CommandChannel playerCC = player.getCommandChannel();
@@ -79,7 +79,7 @@ public class NotFriend implements IAffectObjectHandler
 					return false;
 				}
 			}
-
+			
 			// Party (command channel doesn't make you friends).
 			final Party party = player.getParty();
 			final Party targetParty = targetPlayer.getParty();
@@ -87,13 +87,13 @@ public class NotFriend implements IAffectObjectHandler
 			{
 				return false;
 			}
-
+			
 			// Events.
 			if (player.isOnEvent() && !player.isOnSoloEvent() && (player.getTeam() == target.getTeam()))
 			{
 				return false;
 			}
-
+			
 			// Olympiad observer.
 			if (targetPlayer.inObserverMode())
 			{
@@ -105,6 +105,12 @@ public class NotFriend implements IAffectObjectHandler
 			{
 				// Players in the same siege side at the same castle are considered friends.
 				return !player.isSiegeFriend(targetPlayer);
+			}
+
+			// Ctrl force-use in PvP zone: hit all non-party players.
+			if (player.isAoEForceUse() && creature.isInsideZone(ZoneId.PVP) && target.isInsideZone(ZoneId.PVP))
+			{
+				return true;
 			}
 
 			// Clan.
@@ -158,20 +164,20 @@ public class NotFriend implements IAffectObjectHandler
 					return false;
 				}
 			}
-
+			
 			// At this point summon should be prevented from attacking friendly targets.
 			if (creature.isSummon() && (target == creature.getTarget()))
 			{
 				return true;
 			}
-
+			
 			// By default any flagged/PK player is considered enemy.
 			return (targetPlayer.getPvpFlag() > 0) || (targetPlayer.getReputation() < 0);
 		}
-
+		
 		return target.isAutoAttackable(creature);
 	}
-
+	
 	@Override
 	public Enum<AffectObject> getAffectObjectType()
 	{
