@@ -43,6 +43,13 @@ public class SkillController implements IItemHandler
 			return false;
 		}
 
+		// 每次開啟控制器時檢查：同時擁有多組的話只保留最高等級，其餘移除
+		final String removedTiers = SkillPermission.enforceHighestTierOnly(player);
+		if (removedTiers != null)
+		{
+			player.sendMessage("偵測到多組技能，已自動移除：" + removedTiers + "（僅保留最高等級）");
+		}
+
 		showHtml(player);
 		return true;
 	}

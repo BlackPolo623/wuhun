@@ -261,6 +261,44 @@ public class DiscordManager
 		);
 	}
 
+	/**
+	 * 向指定的 Discord 文字頻道發送 Embed 訊息（可附帶純文字，例如 @everyone）。
+	 * 若 textContent 為 null 或空字串，則只發送 Embed 不附加文字。
+	 *
+	 * @param channelId   Discord 文字頻道 ID
+	 * @param textContent 純文字部分（可為 null 或空字串）；@everyone 需放於此處才能觸發提及
+	 * @param embed       MessageEmbed 物件
+	 */
+	public void sendChannelEmbed(String channelId, String textContent, MessageEmbed embed)
+	{
+		if (!isRunning() || (channelId == null) || channelId.isEmpty() || (embed == null))
+		{
+			return;
+		}
+
+		final TextChannel channel = _jda.getTextChannelById(channelId);
+		if (channel == null)
+		{
+			LOGGER.warning("DiscordManager: 找不到文字頻道（ID：" + channelId + "），請確認 Bot 已加入該伺服器且頻道 ID 正確。");
+			return;
+		}
+
+		if ((textContent != null) && !textContent.isEmpty())
+		{
+			channel.sendMessage(textContent).setEmbeds(embed).queue(
+				success -> {},
+				error -> LOGGER.warning("DiscordManager: 頻道 Embed 發送失敗（" + channelId + "）：" + error.getMessage())
+			);
+		}
+		else
+		{
+			channel.sendMessageEmbeds(embed).queue(
+				success -> {},
+				error -> LOGGER.warning("DiscordManager: 頻道 Embed 發送失敗（" + channelId + "）：" + error.getMessage())
+			);
+		}
+	}
+
 	// ── 啟動狀態摘要 ──────────────────────────────────────────────────────────
 
 	private void logStatus()
@@ -311,6 +349,36 @@ public class DiscordManager
 		else
 		{
 			LOGGER.info("DiscordManager: [歡迎訊息] 停用");
+		}
+
+		// Boss 競標通知系統
+		if (DiscordConfig.DISCORD_BOSS_NOTIFY_ENABLED)
+		{
+			final String bossChannelId = DiscordConfig.DISCORD_BOSS_NOTIFY_CHANNEL_ID;
+			if ((bossChannelId == null) || bossChannelId.isEmpty())
+			{
+				LOGGER.warning("DiscordManager: [Boss通知] 警告：已啟用但未設定 DiscordBossNotifyChannelId，通知將無法發送！");
+			}
+			else
+			{
+				final net.dv8tion.jda.api.entities.channel.concrete.TextChannel bossChannel = _jda.getTextChannelById(bossChannelId);
+				final String bossChannelDesc = (bossChannel != null) ? "#" + bossChannel.getName() : "⚠️ 頻道不可訪問，請確認 Bot 已加入伺服器";
+				LOGGER.info("DiscordManager: [Boss通知] 啟用 | 頻道：" + bossChannelDesc + " (" + bossChannelId + ")");
+				if (bossChannel == null)
+				{
+					LOGGER.warning("DiscordManager: [Boss通知] 警告：找不到通知頻道，Boss 通知將無法發送！");
+				}
+			}
+			LOGGER.info("DiscordManager: [Boss通知] @everyone：" + (DiscordConfig.DISCORD_BOSS_NOTIFY_MENTION_EVERYONE ? "開啟" : "關閉"));
+			LOGGER.info("DiscordManager: [Boss通知] 重生預警：" +
+				(DiscordConfig.DISCORD_BOSS_SPAWN_WARNING_MINUTES > 0 ? DiscordConfig.DISCORD_BOSS_SPAWN_WARNING_MINUTES + " 分鐘前" : "停用"));
+			LOGGER.info("DiscordManager: [Boss通知] 競標倒數：" +
+				(DiscordConfig.DISCORD_BOSS_AUCTION_END_WARNING_MINUTES > 0 ? DiscordConfig.DISCORD_BOSS_AUCTION_END_WARNING_MINUTES + " 分鐘前" : "停用"));
+			LOGGER.info("DiscordManager: [Boss通知] 傷害數字顯示：" + (DiscordConfig.DISCORD_BOSS_SHOW_DAMAGE_IN_REPORT ? "開啟" : "關閉"));
+		}
+		else
+		{
+			LOGGER.info("DiscordManager: [Boss通知] 停用");
 		}
 
 		LOGGER.info("DiscordManager: ----------------------------------------");

@@ -250,9 +250,8 @@ public class BaseMonsterNpc extends Script
 					spawn.setRandomWalking(false);
 					spawn.setDisableAI(true);
 
-					// 開始生成並啟用自動重生
+					// 開始生成（init() 內部已啟動重生計時器，不需再呼叫 startRespawn()）
 					spawn.init();
-					spawn.startRespawn();
 
 					spawnList.add(spawn);
 					totalSpawned++;

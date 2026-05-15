@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <refineSystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/RefineSystemData.xsd">
 
-	<!-- 精煉消耗道具 -->
-	<settings refineItemId="57" refineItemCount="1" defaultCharges="35"/>
+	<!-- 精煉消耗道具（可設定多種，每次精煉全部消耗） -->
+	<settings defaultCharges="35">
+		<item itemId="57" count="1"/>
+	</settings>
 
-	<!-- 高級精煉道具：只能洗出 minTier ~ maxTier 的詞，不可用進階自動精煉 -->
-	<premiumSettings refineItemId="105804" refineItemCount="1" minTier="1" maxTier="3"/>
+	<!-- 高級精煉道具：只能洗出 minTier ~ maxTier 的詞（可設定多種，每次精煉全部消耗） -->
+	<premiumSettings minTier="1" maxTier="3">
+		<item itemId="105804" count="1"/>
+	</premiumSettings>
+
+	<!-- 禁忌精煉設定：每日 1 次（可由 maxDailyCount 設定）+ 道具補充次數（永久累積） -->
+	<!-- destroyChance：精煉時裝備消失的機率（0~100） -->
+	<!-- minTier/maxTier：禁忌精煉只會洗出此區間的詞條 -->
+	<forbiddenSettings destroyChance="50" maxDailyCount="1" minTier="1" maxTier="2">
+		<!-- 每次禁忌精煉消耗的道具（可多種，全部消耗） -->
+		<costItems>
+			<item itemId="57"     count="100000000"/>
+			<item itemId="105804" count="10"/>
+		</costItems>
+
+		<!-- 禁忌精煉專屬：1/2/3/4 條詞條的出現機率（與普通/高級分開設定） -->
+		<forbiddenTierChances>
+			<tier count="1" chance="100"/>
+			<tier count="2" chance="90"/>
+			<tier count="3" chance="80"/>
+			<tier count="4" chance="70"/>
+		</forbiddenTierChances>
+
+		<!-- 禁忌精煉次數補充道具（永久累積，與每日次數分開計算） -->
+		<restoreCost>
+			<item itemId="105805" count="1"/>
+		</restoreCost>
+	</forbiddenSettings>
 
 	<!-- T 數顏色設定（不設定則預設白色 FFFFFF） -->
 	<tierColors>

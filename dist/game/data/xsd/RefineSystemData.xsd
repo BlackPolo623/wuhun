@@ -6,18 +6,77 @@
 			<xs:sequence>
 				<xs:element name="settings" minOccurs="1" maxOccurs="1">
 					<xs:complexType>
-						<xs:attribute name="refineItemId"    type="xs:positiveInteger" use="required"/>
-						<xs:attribute name="refineItemCount" type="xs:positiveInteger" use="required"/>
-						<xs:attribute name="defaultCharges"  type="xs:positiveInteger" use="required"/>
+						<xs:sequence>
+							<xs:element name="item" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="itemId" type="xs:positiveInteger" use="required"/>
+									<xs:attribute name="count"  type="xs:positiveInteger" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="defaultCharges" type="xs:positiveInteger" use="required"/>
 					</xs:complexType>
 				</xs:element>
 
 				<xs:element name="premiumSettings" minOccurs="0" maxOccurs="1">
 					<xs:complexType>
-						<xs:attribute name="refineItemId"    type="xs:positiveInteger" use="required"/>
-						<xs:attribute name="refineItemCount" type="xs:positiveInteger" use="required"/>
-						<xs:attribute name="minTier"         type="xs:positiveInteger" use="required"/>
-						<xs:attribute name="maxTier"         type="xs:positiveInteger" use="required"/>
+						<xs:sequence>
+							<xs:element name="item" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="itemId" type="xs:positiveInteger" use="required"/>
+									<xs:attribute name="count"  type="xs:positiveInteger" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="minTier" type="xs:positiveInteger" use="required"/>
+						<xs:attribute name="maxTier" type="xs:positiveInteger" use="required"/>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="forbiddenSettings" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="costItems">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="item" minOccurs="1" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="itemId" type="xs:positiveInteger" use="required"/>
+												<xs:attribute name="count"  type="xs:positiveInteger" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="forbiddenTierChances">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="tier" minOccurs="1" maxOccurs="4">
+											<xs:complexType>
+												<xs:attribute name="count"  type="xs:positiveInteger"    use="required"/>
+												<xs:attribute name="chance" type="xs:nonNegativeInteger" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="restoreCost" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="item" minOccurs="1" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="itemId" type="xs:positiveInteger" use="required"/>
+												<xs:attribute name="count"  type="xs:positiveInteger" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="destroyChance" type="xs:nonNegativeInteger" use="required"/>
+						<xs:attribute name="maxDailyCount" type="xs:positiveInteger"    use="required"/>
+						<xs:attribute name="minTier"       type="xs:positiveInteger"    use="required"/>
+						<xs:attribute name="maxTier"       type="xs:positiveInteger"    use="required"/>
 					</xs:complexType>
 				</xs:element>
 

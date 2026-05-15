@@ -46,10 +46,11 @@ public class BossKillListener extends Script implements IBossDropHandler
 	public BossKillListener()
 	{
 		// 【修復：載入順序問題】BossAuctionSystem 腳本比 WorldBossNpc 先載入（字母順序），
-		// 所以 WorldBossConfig 此時可能尚未初始化，getBossNpcIds() 可能回傳空列表。
-		// 改為使用兩個來源取聯集，確保所有 BOSS 都被監聽：
-		// 1. BossAuctionConfig（由 BossAuctionManager.getInstance() 在此之前已載入）
-		// 2. WorldBossConfig（若已載入則一併加入，否則為空）
+		// 若不主動呼叫 WorldBossConfig.load()，getBossNpcIds() 會回傳空列表，
+		// 導致世界首領 NPC ID 未被 addAttackId() 註冊，攻擊事件永遠不觸發。
+		// 解法：在此強制載入，WorldBossConfig.load() 可安全重複呼叫（冪等）。
+		WorldBossConfig.load();
+
 		java.util.Set<Integer> monitorIds = new java.util.HashSet<>();
 		monitorIds.addAll(BossAuctionConfig.getEnabledBossIds());
 		monitorIds.addAll(WorldBossConfig.getBossNpcIds());

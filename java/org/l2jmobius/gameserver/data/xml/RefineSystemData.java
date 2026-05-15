@@ -102,15 +102,25 @@ public class RefineSystemData implements IXmlReader
 
 	// ── 設定欄位 ──────────────────────────────────────────────────────────────
 
-	private int _refineItemId = 99001;
-	private int _refineItemCount = 1;
 	private int _defaultCharges = 10;
 
+	// 普通精煉消耗道具列表（支援多種）
+	private final List<ResetCostEntry> _refineItemList = new ArrayList<>();
+
 	// 高級精煉道具設定
-	private int _premiumItemId = 0;
-	private int _premiumItemCount = 1;
+	private final List<ResetCostEntry> _premiumItemList = new ArrayList<>();
 	private int _premiumMinTier = 1;
 	private int _premiumMaxTier = 5;
+
+	// 禁忌精煉設定
+	private boolean _forbiddenEnabled = false;
+	private int _forbiddenDestroyChance = 50;
+	private int _forbiddenMaxDailyCount = 1;
+	private int _forbiddenMinTier = 1;
+	private int _forbiddenMaxTier = 5;
+	private final List<ResetCostEntry> _forbiddenCostItems = new ArrayList<>();
+	private final int[] _forbiddenTierChances = new int[4];
+	private final List<ResetCostEntry> _forbiddenRestoreCost = new ArrayList<>();
 
 	// T 數顏色 (tier -> hex color)
 	private final Map<Integer, String> _tierColors = new HashMap<>();
@@ -138,6 +148,12 @@ public class RefineSystemData implements IXmlReader
 		_specialCharges.clear();
 		_tierColors.clear();
 		_resetCostList.clear();
+		_refineItemList.clear();
+		_premiumItemList.clear();
+		_forbiddenCostItems.clear();
+		_forbiddenRestoreCost.clear();
+		java.util.Arrays.fill(_forbiddenTierChances, 0);
+		_forbiddenEnabled = false;
 		_totalSeriesWeight = 0;
 
 		parseDatapackFile("data/scripts/custom/RefineSystem/RefineSystemData.xml");
@@ -163,6 +179,9 @@ public class RefineSystemData implements IXmlReader
 						break;
 					case "premiumSettings":
 						parsePremiumSettings(child);
+						break;
+					case "forbiddenSettings":
+						parseForbiddenSettings(child);
 						break;
 					case "tierColors":
 						parseTierColors(child);
@@ -195,18 +214,99 @@ public class RefineSystemData implements IXmlReader
 	private void parseSettings(Node node)
 	{
 		final NamedNodeMap attrs = node.getAttributes();
-		_refineItemId = parseInteger(attrs, "refineItemId", 99001);
-		_refineItemCount = parseInteger(attrs, "refineItemCount", 1);
 		_defaultCharges = parseInteger(attrs, "defaultCharges", 10);
+		for (Node item = node.getFirstChild(); item != null; item = item.getNextSibling())
+		{
+			if (!"item".equals(item.getNodeName()))
+			{
+				continue;
+			}
+			final NamedNodeMap ia = item.getAttributes();
+			final int itemId = parseInteger(ia, "itemId", 0);
+			final int count = parseInteger(ia, "count", 1);
+			if (itemId > 0)
+			{
+				_refineItemList.add(new ResetCostEntry(itemId, count));
+			}
+		}
 	}
 
 	private void parsePremiumSettings(Node node)
 	{
 		final NamedNodeMap attrs = node.getAttributes();
-		_premiumItemId = parseInteger(attrs, "refineItemId", 0);
-		_premiumItemCount = parseInteger(attrs, "refineItemCount", 1);
 		_premiumMinTier = parseInteger(attrs, "minTier", 1);
 		_premiumMaxTier = parseInteger(attrs, "maxTier", 5);
+		for (Node item = node.getFirstChild(); item != null; item = item.getNextSibling())
+		{
+			if (!"item".equals(item.getNodeName()))
+			{
+				continue;
+			}
+			final NamedNodeMap ia = item.getAttributes();
+			final int itemId = parseInteger(ia, "itemId", 0);
+			final int count = parseInteger(ia, "count", 1);
+			if (itemId > 0)
+			{
+				_premiumItemList.add(new ResetCostEntry(itemId, count));
+			}
+		}
+	}
+
+	private void parseForbiddenSettings(Node node)
+	{
+		final NamedNodeMap attrs = node.getAttributes();
+		_forbiddenDestroyChance = parseInteger(attrs, "destroyChance", 50);
+		_forbiddenMaxDailyCount = parseInteger(attrs, "maxDailyCount", 1);
+		_forbiddenMinTier = parseInteger(attrs, "minTier", 1);
+		_forbiddenMaxTier = parseInteger(attrs, "maxTier", 5);
+		_forbiddenEnabled = true;
+
+		for (Node child = node.getFirstChild(); child != null; child = child.getNextSibling())
+		{
+			final String nname = child.getNodeName();
+			if ("costItems".equals(nname))
+			{
+				for (Node item = child.getFirstChild(); item != null; item = item.getNextSibling())
+				{
+					if (!"item".equals(item.getNodeName())) continue;
+					final NamedNodeMap ia = item.getAttributes();
+					final int itemId = parseInteger(ia, "itemId", 0);
+					final int count = parseInteger(ia, "count", 1);
+					if (itemId > 0)
+					{
+						_forbiddenCostItems.add(new ResetCostEntry(itemId, count));
+					}
+				}
+			}
+			else if ("forbiddenTierChances".equals(nname))
+			{
+				for (Node tier = child.getFirstChild(); tier != null; tier = tier.getNextSibling())
+				{
+					if (!"tier".equals(tier.getNodeName())) continue;
+					final NamedNodeMap ta = tier.getAttributes();
+					final int count = parseInteger(ta, "count", 1);
+					final int chance = parseInteger(ta, "chance", 0);
+					if (count >= 1 && count <= 4)
+					{
+						_forbiddenTierChances[count - 1] = chance;
+					}
+				}
+			}
+			else if ("restoreCost".equals(nname))
+			{
+				for (Node item = child.getFirstChild(); item != null; item = item.getNextSibling())
+				{
+					if (!"item".equals(item.getNodeName())) continue;
+					final NamedNodeMap ia = item.getAttributes();
+					final int itemId = parseInteger(ia, "itemId", 0);
+					final int count = parseInteger(ia, "count", 1);
+					if (itemId > 0)
+					{
+						_forbiddenRestoreCost.add(new ResetCostEntry(itemId, count));
+					}
+				}
+			}
+		}
 	}
 
 	private void parseTierColors(Node node)
@@ -529,15 +629,76 @@ public class RefineSystemData implements IXmlReader
 
 	// ── 查詢方法 ──────────────────────────────────────────────────────────────
 
-	public int getRefineItemId()    { return _refineItemId; }
-	public int getRefineItemCount() { return _refineItemCount; }
-	public int getDefaultCharges()  { return _defaultCharges; }
+	/** 普通精煉消耗道具列表（可多種） */
+	public List<ResetCostEntry> getRefineItemList() { return _refineItemList; }
 
-	public int getPremiumItemId()    { return _premiumItemId; }
-	public int getPremiumItemCount() { return _premiumItemCount; }
+	/** 取第一個普通精煉道具 ID，供 VariationInstance.ofRaw() 標記用 */
+	public int getRefineItemId()
+	{
+		return _refineItemList.isEmpty() ? 0 : _refineItemList.get(0).itemId;
+	}
+
+	/** @deprecated 僅為相容舊呼叫，請改用 getRefineItemList() */
+	public int getRefineItemCount()
+	{
+		return _refineItemList.isEmpty() ? 1 : _refineItemList.get(0).count;
+	}
+
+	public int getDefaultCharges()   { return _defaultCharges; }
+
+	/** 高級精煉消耗道具列表（可多種） */
+	public List<ResetCostEntry> getPremiumItemList() { return _premiumItemList; }
+
+	/** 取第一個高級精煉道具 ID，供 VariationInstance.ofRaw() 標記用 */
+	public int getPremiumItemId()
+	{
+		return _premiumItemList.isEmpty() ? 0 : _premiumItemList.get(0).itemId;
+	}
+
+	/** @deprecated 僅為相容舊呼叫，請改用 getPremiumItemList() */
+	public int getPremiumItemCount()
+	{
+		return _premiumItemList.isEmpty() ? 1 : _premiumItemList.get(0).count;
+	}
+
 	public int getPremiumMinTier()   { return _premiumMinTier; }
 	public int getPremiumMaxTier()   { return _premiumMaxTier; }
-	public boolean hasPremiumItem()  { return _premiumItemId > 0; }
+	public boolean hasPremiumItem()  { return !_premiumItemList.isEmpty(); }
+
+	// ── 禁忌精煉 ──────────────────────────────────────────────────────────────
+
+	public boolean isForbiddenEnabled()      { return _forbiddenEnabled && !_forbiddenCostItems.isEmpty(); }
+	public int getForbiddenDestroyChance()   { return _forbiddenDestroyChance; }
+	public int getForbiddenMaxDailyCount()   { return _forbiddenMaxDailyCount; }
+	public int getForbiddenMinTier()         { return _forbiddenMinTier; }
+	public int getForbiddenMaxTier()         { return _forbiddenMaxTier; }
+	public List<ResetCostEntry> getForbiddenCostItems()    { return _forbiddenCostItems; }
+	public List<ResetCostEntry> getForbiddenRestoreCost()  { return _forbiddenRestoreCost; }
+	public boolean hasForbiddenRestoreCost() { return !_forbiddenRestoreCost.isEmpty(); }
+
+	/** 禁忌精煉專屬：獨立判斷詞條數量 */
+	public int rollForbiddenTierCount()
+	{
+		int count = 1; // 第1條一定有
+		for (int i = 1; i < _forbiddenTierChances.length; i++)
+		{
+			if (Rnd.get(100) < _forbiddenTierChances[i])
+			{
+				count++;
+			}
+			else
+			{
+				break;
+			}
+		}
+		return count;
+	}
+
+	/** 禁忌精煉專屬：在 [minTier, maxTier] 範圍內抽詞條 */
+	public int rollForbiddenRefineId()
+	{
+		return rollRefineIdForTier(_forbiddenMinTier, _forbiddenMaxTier);
+	}
 
 	/** 取得 optionId 對應的 tier（0 = 未設定） */
 	public int getTier(int optionId)

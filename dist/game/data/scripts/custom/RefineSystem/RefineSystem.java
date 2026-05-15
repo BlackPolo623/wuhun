@@ -1,6 +1,7 @@
 package custom.RefineSystem;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.cache.HtmCache;
 import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.data.xml.RefineSystemData;
@@ -36,6 +38,11 @@ public class RefineSystem extends Script
 	private static final String FILTER_VAR_PREFIX = "refine_filter_";
 	private static final int MAX_FILTERS = 8;
 	private static final int AUTO_REFINE_DELAY_MS = 500;
+
+	// 禁忌精煉的玩家變數 key
+	private static final String FORBIDDEN_DAILY_USED   = "forbidden_daily_used";   // 今日已用的「每日次數」
+	private static final String FORBIDDEN_BONUS_COUNT  = "forbidden_bonus_count";  // 道具補充次數（永久累積）
+	private static final String FORBIDDEN_LAST_USE_AT  = "forbidden_last_use_at";  // 上次使用 timestamp（用於跨日判定）
 
 	// 正在自動精煉的玩家 objectId → 排程任務（用於防止重複啟動）
 	private static final Map<Integer, ScheduledFuture<?>> _autoRefineTask = new ConcurrentHashMap<>();
@@ -89,6 +96,8 @@ public class RefineSystem extends Script
 	@Override
 	public String onFirstTalk(Npc npc, Player player)
 	{
+		// 對話時檢查禁忌精煉跨日重置
+		checkForbiddenDailyReset(player);
 		return "main.htm";
 	}
 
@@ -97,6 +106,7 @@ public class RefineSystem extends Script
 	{
 		if ("main".equals(event))
 		{
+			checkForbiddenDailyReset(player);
 			return "main.htm";
 		}
 
@@ -264,6 +274,28 @@ public class RefineSystem extends Script
 		if (event.startsWith("adv_premium_refine_"))
 		{
 			doAdvancedPremiumRefine(npc, player, event.substring(19));
+			return null;
+		}
+
+		// ── 禁忌精煉路由 ───────────────────────────────
+		if ("forbidden_main".equals(event))
+		{
+			showForbiddenMain(npc, player);
+			return null;
+		}
+		if (event.startsWith("forbidden_confirm_"))
+		{
+			showForbiddenConfirm(npc, player, event.substring(18));
+			return null;
+		}
+		if (event.startsWith("forbidden_execute_"))
+		{
+			doForbiddenRefine(npc, player, event.substring(18));
+			return null;
+		}
+		if ("forbidden_restore".equals(event))
+		{
+			doForbiddenRestore(npc, player);
 			return null;
 		}
 
@@ -494,7 +526,7 @@ public class RefineSystem extends Script
 		if (charges > 0)
 		{
 			sb.append("<table width=270 border=0><tr><td align=center>");
-			sb.append("<font color=\"888888\" size=\"1\">消耗 ").append(RefineSystemData.getInstance().getRefineItemCount()).append(" 個精煉石</font>");
+			sb.append("<font color=\"888888\" size=\"1\">消耗 ").append(buildItemsCostDesc(RefineSystemData.getInstance().getRefineItemList())).append("</font>");
 			sb.append("</td></tr></table>");
 			sb.append("<table width=270 border=0><tr><td align=center>");
 			sb.append("<button value=\"精煉 ").append(SLOT_ZH.get(curSlot)).append("\" action=\"bypass -h Quest RefineSystem do_refine_").append(curSlot).append("\"");
@@ -506,7 +538,7 @@ public class RefineSystem extends Script
 			{
 				sb.append("<table border=0 width=270><tr><td height=3></td></tr></table>");
 				sb.append("<table width=270 border=0><tr><td align=center>");
-				sb.append("<font color=\"888888\" size=\"1\">消耗 ").append(RefineSystemData.getInstance().getPremiumItemCount()).append(" 個高級精煉石　只出 T").append(RefineSystemData.getInstance().getPremiumMinTier()).append("~T").append(RefineSystemData.getInstance().getPremiumMaxTier()).append("</font>");
+				sb.append("<font color=\"888888\" size=\"1\">消耗 ").append(buildItemsCostDesc(RefineSystemData.getInstance().getPremiumItemList())).append("　只出 T").append(RefineSystemData.getInstance().getPremiumMinTier()).append("~T").append(RefineSystemData.getInstance().getPremiumMaxTier()).append("</font>");
 				sb.append("</td></tr></table>");
 				sb.append("<table width=270 border=0><tr><td align=center>");
 				sb.append("<button value=\"高級精煉 ").append(SLOT_ZH.get(curSlot)).append("\" action=\"bypass -h Quest RefineSystem do_premium_refine_").append(curSlot).append("\"");
@@ -738,7 +770,7 @@ public class RefineSystem extends Script
 			pb.append("<font color=\"888888\" size=\"1\">高級自動精煉：只出 T")
 				.append(RefineSystemData.getInstance().getPremiumMinTier())
 				.append("~T").append(RefineSystemData.getInstance().getPremiumMaxTier())
-				.append("，消耗高級精煉石</font>");
+				.append("，消耗 ").append(buildItemsCostDesc(data.getPremiumItemList())).append("</font>");
 			pb.append("</td></tr></table>");
 			pb.append("<table width=270 border=0><tr><td align=center>");
 			pb.append("<button value=\"開始自動高級精煉\" action=\"bypass -h Quest RefineSystem adv_premium_refine_").append(slot).append("\"");
@@ -1588,6 +1620,51 @@ public class RefineSystem extends Script
 
 	// ── 工具方法 ─────────────────────────────────────────────────────────────
 
+	/**
+	 * 檢查玩家是否擁有列表中所有道具的足夠數量。
+	 * @return null 表示全部足夠；否則回傳缺少的道具描述字串
+	 */
+	private String getMissingItemsMsg(Player player, List<RefineSystemData.ResetCostEntry> items)
+	{
+		final StringBuilder sb = new StringBuilder();
+		for (RefineSystemData.ResetCostEntry cost : items)
+		{
+			final long owned = player.getInventory().getInventoryItemCount(cost.itemId, -1);
+			if (owned < cost.count)
+			{
+				final ItemTemplate tpl = ItemData.getInstance().getTemplate(cost.itemId);
+				final String name = tpl != null ? tpl.getName() : "ID:" + cost.itemId;
+				final long need = cost.count - owned;
+				if (sb.length() > 0) sb.append("、");
+				sb.append(name).append(" 缺少 ").append(need).append(" 個");
+			}
+		}
+		return sb.length() > 0 ? sb.toString() : null;
+	}
+
+	/** 消耗列表中所有道具 */
+	private void consumeAllItems(Player player, List<RefineSystemData.ResetCostEntry> items)
+	{
+		for (RefineSystemData.ResetCostEntry cost : items)
+		{
+			player.destroyItemByItemId(ItemProcessType.NONE, cost.itemId, cost.count, player, true);
+		}
+	}
+
+	/** 建立道具消耗的顯示字串，例如「精煉石 ×1 + 靈魂石 ×3」 */
+	private String buildItemsCostDesc(List<RefineSystemData.ResetCostEntry> items)
+	{
+		final StringBuilder sb = new StringBuilder();
+		for (RefineSystemData.ResetCostEntry cost : items)
+		{
+			if (sb.length() > 0) sb.append(" + ");
+			final ItemTemplate tpl = ItemData.getInstance().getTemplate(cost.itemId);
+			final String name = tpl != null ? tpl.getName() : "ID:" + cost.itemId;
+			sb.append(name).append(" ×").append(cost.count);
+		}
+		return sb.toString();
+	}
+
 	private Item getEquipped(Player player, String slot)
 	{
 		final Integer paperdoll = SLOT_MAP.get(slot);
@@ -1628,6 +1705,403 @@ public class RefineSystem extends Script
 		if (isArmorSlot(slot))   return "armor_";
 		if (isJewelrySlot(slot)) return "jewelry_";
 		return "weapon_";
+	}
+
+	// ══ 禁忌精煉 ═══════════════════════════════════════════════════════════════
+
+	/**
+	 * 跨日重置檢查：若上次使用早於今日 00:00，把每日次數歸 0 並通知玩家。
+	 */
+	private void checkForbiddenDailyReset(Player player)
+	{
+		if (!RefineSystemData.getInstance().isForbiddenEnabled()) return;
+
+		final long lastUseAt = player.getVariables().getLong(FORBIDDEN_LAST_USE_AT, 0L);
+		if (lastUseAt <= 0) return;
+
+		final Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.HOUR_OF_DAY, 0);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.SECOND, 0);
+		cal.set(Calendar.MILLISECOND, 0);
+		final long todayMidnight = cal.getTimeInMillis();
+
+		if (lastUseAt < todayMidnight)
+		{
+			final int oldUsed = player.getVariables().getInt(FORBIDDEN_DAILY_USED, 0);
+			if (oldUsed > 0)
+			{
+				player.getVariables().set(FORBIDDEN_DAILY_USED, 0);
+				player.sendMessage("[禁忌精煉] 已跨日，每日次數已自動恢復。");
+			}
+		}
+	}
+
+	/** 取得目前可用次數（每日剩餘 + 補充次數） */
+	private int getForbiddenAvailableTotal(Player player)
+	{
+		final int max = RefineSystemData.getInstance().getForbiddenMaxDailyCount();
+		final int used = player.getVariables().getInt(FORBIDDEN_DAILY_USED, 0);
+		final int dailyRemain = Math.max(0, max - used);
+		final int bonus = player.getVariables().getInt(FORBIDDEN_BONUS_COUNT, 0);
+		return dailyRemain + bonus;
+	}
+
+	/**
+	 * 消耗一次禁忌次數：優先扣每日，再扣補充。
+	 * 呼叫前必須確認 getForbiddenAvailableTotal > 0。
+	 */
+	private void consumeForbiddenCount(Player player)
+	{
+		final int max = RefineSystemData.getInstance().getForbiddenMaxDailyCount();
+		final int used = player.getVariables().getInt(FORBIDDEN_DAILY_USED, 0);
+		if (used < max)
+		{
+			player.getVariables().set(FORBIDDEN_DAILY_USED, used + 1);
+		}
+		else
+		{
+			final int bonus = player.getVariables().getInt(FORBIDDEN_BONUS_COUNT, 0);
+			player.getVariables().set(FORBIDDEN_BONUS_COUNT, Math.max(0, bonus - 1));
+		}
+		player.getVariables().set(FORBIDDEN_LAST_USE_AT, System.currentTimeMillis());
+	}
+
+	private void showForbiddenMain(Npc npc, Player player)
+	{
+		checkForbiddenDailyReset(player);
+		final RefineSystemData data = RefineSystemData.getInstance();
+
+		if (!data.isForbiddenEnabled())
+		{
+			sendMsg(npc, player, "<font color=\"FF0000\">禁忌精煉尚未啟用。</font>", "weapon");
+			return;
+		}
+
+		final int max = data.getForbiddenMaxDailyCount();
+		final int used = player.getVariables().getInt(FORBIDDEN_DAILY_USED, 0);
+		final int dailyRemain = Math.max(0, max - used);
+		final int bonus = player.getVariables().getInt(FORBIDDEN_BONUS_COUNT, 0);
+
+		// 消耗道具列表
+		final StringBuilder costRows = new StringBuilder();
+		for (RefineSystemData.ResetCostEntry cost : data.getForbiddenCostItems())
+		{
+			final ItemTemplate tpl = ItemData.getInstance().getTemplate(cost.itemId);
+			final String iname = tpl != null ? tpl.getName() : "ID:" + cost.itemId;
+			final long owned = player.getInventory().getInventoryItemCount(cost.itemId, -1);
+			final boolean enough = owned >= cost.count;
+			final String color = enough ? "88FF88" : "FF6060";
+
+			costRows.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr>");
+			costRows.append("<td width=8></td>");
+			costRows.append("<td><font color=\"").append(color).append("\">").append(iname).append("</font></td>");
+			costRows.append("<td align=right><font color=\"").append(color).append("\">× ").append(cost.count);
+			costRows.append("　(持有 ").append(owned).append(")</font></td>");
+			costRows.append("<td width=8></td>");
+			costRows.append("</tr></table>");
+			costRows.append("<table border=0 width=270><tr><td height=2></td></tr></table>");
+		}
+
+		// 部位按鈕（武器 / 5 防具 / 5 飾品）
+		final StringBuilder slotButtons = new StringBuilder();
+		final String[][] groups = { WEAPON_SLOTS, ARMOR_SLOTS, JEWELRY_SLOTS };
+		for (String[] grp : groups)
+		{
+			for (int i = 0; i < grp.length; i += 2)
+			{
+				slotButtons.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr>");
+				slotButtons.append("<td width=2></td>");
+				slotButtons.append("<td width=130 align=center>").append(makeForbiddenSlotButton(player, grp[i])).append("</td>");
+				slotButtons.append("<td width=6></td>");
+				if (i + 1 < grp.length)
+				{
+					slotButtons.append("<td width=130 align=center>").append(makeForbiddenSlotButton(player, grp[i + 1])).append("</td>");
+				}
+				else
+				{
+					slotButtons.append("<td width=130></td>");
+				}
+				slotButtons.append("<td width=2></td>");
+				slotButtons.append("</tr></table>");
+				slotButtons.append("<table border=0 width=270><tr><td height=2></td></tr></table>");
+			}
+		}
+
+		// 補充道具區塊
+		final String restoreBlock;
+		if (data.hasForbiddenRestoreCost())
+		{
+			final StringBuilder rb = new StringBuilder();
+			rb.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr><td bgcolor=444444 height=1></td></tr></table>");
+			rb.append("<table border=0 width=270><tr><td height=4></td></tr></table>");
+			rb.append("<table width=270 border=0><tr><td><font color=\"CC7700\">每點補充次數消耗</font></td></tr></table>");
+			rb.append("<table border=0 width=270><tr><td height=2></td></tr></table>");
+			for (RefineSystemData.ResetCostEntry cost : data.getForbiddenRestoreCost())
+			{
+				final ItemTemplate tpl = ItemData.getInstance().getTemplate(cost.itemId);
+				final String iname = tpl != null ? tpl.getName() : "ID:" + cost.itemId;
+				final long owned = player.getInventory().getInventoryItemCount(cost.itemId, -1);
+				final boolean enough = owned >= cost.count;
+				final String color = enough ? "88FF88" : "FF6060";
+
+				rb.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr>");
+				rb.append("<td width=8></td>");
+				rb.append("<td><font color=\"").append(color).append("\">").append(iname).append("</font></td>");
+				rb.append("<td align=right><font color=\"").append(color).append("\">× ").append(cost.count);
+				rb.append("　(持有 ").append(owned).append(")</font></td>");
+				rb.append("<td width=8></td>");
+				rb.append("</tr></table>");
+				rb.append("<table border=0 width=270><tr><td height=2></td></tr></table>");
+			}
+			rb.append("<table border=0 width=270><tr><td height=4></td></tr></table>");
+			rb.append("<table width=270 border=0><tr><td align=center>");
+			rb.append("<button value=\"使用道具補充 1 次\" action=\"bypass -h Quest RefineSystem forbidden_restore\"");
+			rb.append(" width=200 height=24 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"/>");
+			rb.append("</td></tr></table>");
+			restoreBlock = rb.toString();
+		}
+		else
+		{
+			restoreBlock = "";
+		}
+
+		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
+		html.setHtml(HtmCache.getInstance().getHtm(player, HTM_PATH + "forbidden_main.htm"));
+		html.replace("%daily_remain%", String.valueOf(dailyRemain));
+		html.replace("%daily_max%", String.valueOf(max));
+		html.replace("%daily_color%", dailyRemain > 0 ? "88FF88" : "FF6060");
+		html.replace("%bonus_count%", String.valueOf(bonus));
+		html.replace("%destroy_chance%", String.valueOf(data.getForbiddenDestroyChance()));
+		html.replace("%cost_rows%", costRows.toString());
+		html.replace("%slot_buttons%", slotButtons.toString());
+		html.replace("%restore_block%", restoreBlock);
+		player.sendPacket(html);
+	}
+
+	private String makeForbiddenSlotButton(Player player, String slot)
+	{
+		final Item equipped = getEquipped(player, slot);
+		final String label;
+		final String action;
+		if (equipped == null)
+		{
+			label = SLOT_ZH.getOrDefault(slot, slot) + "(空)";
+			action = "";
+		}
+		else
+		{
+			label = SLOT_ZH.getOrDefault(slot, slot);
+			action = "bypass -h Quest RefineSystem forbidden_confirm_" + slot;
+		}
+		return "<button value=\"" + label + "\" action=\"" + action + "\""
+			+ " width=126 height=22 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"/>";
+	}
+
+	private void showForbiddenConfirm(Npc npc, Player player, String slot)
+	{
+		checkForbiddenDailyReset(player);
+		final RefineSystemData data = RefineSystemData.getInstance();
+
+		if (!data.isForbiddenEnabled())
+		{
+			showForbiddenMain(npc, player);
+			return;
+		}
+
+		final Item item = getEquipped(player, slot);
+		if (item == null)
+		{
+			player.sendMessage("[禁忌精煉] 該部位尚未裝備。");
+			showForbiddenMain(npc, player);
+			return;
+		}
+
+		// 次數檢查
+		if (getForbiddenAvailableTotal(player) <= 0)
+		{
+			player.sendMessage("[禁忌精煉] 次數已耗盡，請等待跨日或使用道具補充。");
+			showForbiddenMain(npc, player);
+			return;
+		}
+
+		// 道具檢查
+		final String missing = getMissingItemsMsg(player, data.getForbiddenCostItems());
+		if (missing != null)
+		{
+			player.sendMessage("[禁忌精煉] 道具不足：" + missing);
+			showForbiddenMain(npc, player);
+			return;
+		}
+
+		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
+		html.setHtml(HtmCache.getInstance().getHtm(player, HTM_PATH + "forbidden_confirm.htm"));
+		html.replace("%slot_name%", SLOT_ZH.getOrDefault(slot, slot));
+		html.replace("%item_name%", item.getName());
+		html.replace("%destroy_chance%", String.valueOf(data.getForbiddenDestroyChance()));
+		html.replace("%slot%", slot);
+		player.sendPacket(html);
+	}
+
+	private void doForbiddenRefine(Npc npc, Player player, String slot)
+	{
+		checkForbiddenDailyReset(player);
+		final RefineSystemData data = RefineSystemData.getInstance();
+
+		if (!data.isForbiddenEnabled())
+		{
+			showForbiddenMain(npc, player);
+			return;
+		}
+
+		final Item item = getEquipped(player, slot);
+		if (item == null)
+		{
+			player.sendMessage("[禁忌精煉] 該部位尚未裝備。");
+			showForbiddenMain(npc, player);
+			return;
+		}
+
+		// 再次檢查次數與道具（防止使用者繞過確認頁）
+		if (getForbiddenAvailableTotal(player) <= 0)
+		{
+			player.sendMessage("[禁忌精煉] 次數已耗盡。");
+			showForbiddenMain(npc, player);
+			return;
+		}
+		final String missing = getMissingItemsMsg(player, data.getForbiddenCostItems());
+		if (missing != null)
+		{
+			player.sendMessage("[禁忌精煉] 道具不足：" + missing);
+			showForbiddenMain(npc, player);
+			return;
+		}
+
+		// 1. 扣道具
+		consumeAllItems(player, data.getForbiddenCostItems());
+
+		// 2. 扣次數
+		consumeForbiddenCount(player);
+
+		// 3. 隨機判定：消失 vs 成功
+		final int destroyChance = data.getForbiddenDestroyChance();
+		if (Rnd.get(100) < destroyChance)
+		{
+			// 裝備消失
+			final String destroyedName = item.getName();
+			final int itemObjId = item.getObjectId();
+			player.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
+			player.destroyItem(ItemProcessType.NONE, item, 1, player, true);
+			RefineSystemManager.getInstance().invalidate(itemObjId);
+
+			final InventoryUpdate iu = new InventoryUpdate();
+			iu.addRemovedItem(item);
+			player.sendInventoryUpdate(iu);
+			player.broadcastUserInfo();
+
+			showForbiddenResult(npc, player, "destroy", destroyedName, null);
+			return;
+		}
+
+		// 4. 成功：抽詞條（用禁忌專屬機率與 tier 範圍）
+		final int tierCount = data.rollForbiddenTierCount();
+		final int op1 = data.rollForbiddenRefineId();
+		final int op2 = tierCount >= 2 ? data.rollForbiddenRefineId() : 0;
+		final int op3 = tierCount >= 3 ? data.rollForbiddenRefineId() : 0;
+		final int op4 = tierCount >= 4 ? data.rollForbiddenRefineId() : 0;
+
+		// 用普通精煉道具 ID 做為標記（VariationInstance 必須有一個 mineral id）
+		final int markId = data.getRefineItemId();
+		item.setAugmentation(VariationInstance.ofRaw(markId, op1, op2, op3, op4), true);
+
+		// 5. 清空此裝備所有剩餘精煉次數
+		RefineSystemManager.getInstance().exhaustCharges(item);
+
+		final InventoryUpdate iu = new InventoryUpdate();
+		iu.addModifiedItem(item);
+		player.sendInventoryUpdate(iu);
+
+		showForbiddenResult(npc, player, "success", item.getName(), new int[]{ op1, op2, op3, op4 });
+	}
+
+	private void doForbiddenRestore(Npc npc, Player player)
+	{
+		final RefineSystemData data = RefineSystemData.getInstance();
+		if (!data.hasForbiddenRestoreCost())
+		{
+			player.sendMessage("[禁忌精煉] 未設定補充道具。");
+			showForbiddenMain(npc, player);
+			return;
+		}
+
+		final String missing = getMissingItemsMsg(player, data.getForbiddenRestoreCost());
+		if (missing != null)
+		{
+			player.sendMessage("[禁忌精煉] 道具不足：" + missing);
+			showForbiddenMain(npc, player);
+			return;
+		}
+
+		consumeAllItems(player, data.getForbiddenRestoreCost());
+		final int bonus = player.getVariables().getInt(FORBIDDEN_BONUS_COUNT, 0) + 1;
+		player.getVariables().set(FORBIDDEN_BONUS_COUNT, bonus);
+
+		player.sendMessage("[禁忌精煉] 補充次數 +1（目前補充次數：" + bonus + "）");
+		showForbiddenMain(npc, player);
+	}
+
+	private void showForbiddenResult(Npc npc, Player player, String reason, String itemName, int[] opts)
+	{
+		final String resultColor;
+		final String resultTitle;
+		final String resultDesc;
+
+		if ("success".equals(reason))
+		{
+			resultColor = "88FF88";
+			resultTitle = "禁忌精煉成功！";
+			resultDesc = itemName + " 獲得新詞條，剩餘精煉次數已歸零。";
+		}
+		else
+		{
+			resultColor = "FF3333";
+			resultTitle = "裝備已消失！";
+			resultDesc = itemName + " 在禁忌之力中崩解了。";
+		}
+
+		final StringBuilder resultRows = new StringBuilder();
+		if (opts != null)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				resultRows.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr>");
+				if (opts[i] > 0)
+				{
+					final int tier = RefineSystemData.getInstance().getTier(opts[i]);
+					final String tierColor = RefineSystemData.getInstance().getTierColor(tier);
+					final String tierLabel = tier > 0 ? "T" + tier : "T?";
+					resultRows.append("<td width=28 align=center><font color=\"").append(tierColor).append("\"><b>").append(tierLabel).append("</b></font></td>");
+					resultRows.append("<td width=4></td>");
+					resultRows.append("<td width=136><font color=\"").append(tierColor).append("\">").append(RefineSystemData.getInstance().getSeriesName(opts[i])).append("</font></td>");
+					resultRows.append("<td align=right><font color=\"88FF88\">+").append(RefineSystemData.getInstance().getValueDisplay(opts[i])).append("</font></td>");
+				}
+				else
+				{
+					resultRows.append("<td width=28 align=center><font color=\"444444\">—</font></td>");
+					resultRows.append("<td width=4></td>");
+					resultRows.append("<td colspan=2><font color=\"666666\">—</font></td>");
+				}
+				resultRows.append("</tr></table>");
+			}
+		}
+
+		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
+		html.setHtml(HtmCache.getInstance().getHtm(player, HTM_PATH + "forbidden_result.htm"));
+		html.replace("%result_color%", resultColor);
+		html.replace("%result_title%", resultTitle);
+		html.replace("%result_desc%", resultDesc);
+		html.replace("%result_rows%", resultRows.toString());
+		player.sendPacket(html);
 	}
 
 	public static void main(String[] args)

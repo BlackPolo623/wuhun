@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.custom.DiscordConfig;
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
@@ -44,6 +45,7 @@ public class WorldBossManager extends Script
 	private long _nextSpawnTime = 0;
 	private ScheduledFuture<?> _spawnTask = null;
 	private ScheduledFuture<?> _despawnTask = null;
+	private ScheduledFuture<?> _warningTask = null; // 事件① Discord 重生預警任務
 	private final Random _random = new Random();
 
 	public WorldBossManager()
@@ -89,6 +91,35 @@ public class WorldBossManager extends Script
 		}, delay);
 
 		LOGGER.info("【世界首領】下次召喚時間: " + nextSpawn + " (距離現在 " + (delay / 1000 / 60) + " 分鐘)");
+
+		// ── 事件① Discord 重生預警排程 ──────────────────────────────────────
+		// 取消舊的預警任務（防止重複）
+		if (_warningTask != null)
+		{
+			_warningTask.cancel(false);
+			_warningTask = null;
+		}
+
+		final int warnMinutes = DiscordConfig.DISCORD_BOSS_SPAWN_WARNING_MINUTES;
+		if (warnMinutes > 0)
+		{
+			final long warningDelay = delay - (warnMinutes * 60000L);
+			if (warningDelay > 0)
+			{
+				final long spawnTimeMs = _nextSpawnTime;
+				_warningTask = ThreadPool.schedule(() ->
+				{
+					// 重生前尚未確定哪隻 Boss（隨機選），故使用通用名稱
+					BossAuctionDiscordNotifier.sendSpawnWarning("世界首領", spawnTimeMs);
+					LOGGER.info("【世界首領】Discord 重生預警已發送（距離重生還有 " + warnMinutes + " 分鐘）");
+				}, warningDelay);
+			}
+			else
+			{
+				// 重生時間太近，來不及發預警，直接跳過
+				LOGGER.info("【世界首領】距離重生不足 " + warnMinutes + " 分鐘，跳過 Discord 預警");
+			}
+		}
 	}
 
 	/**
@@ -187,6 +218,9 @@ public class WorldBossManager extends Script
 			}
 
 			LOGGER.info("【世界首領】已召喚: " + template.getName() + " 於 " + loc);
+
+			// ── 事件② Discord 首領降臨通知 ──────────────────────────────────
+			BossAuctionDiscordNotifier.sendBossSpawned(template.getName(), WorldBossConfig.getBossLifetime());
 
 			// 設定自動消失時間
 			int lifetime = WorldBossConfig.getBossLifetime();

@@ -9,6 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.config.custom.DiscordConfig;
 import org.l2jmobius.gameserver.managers.MailManager;
 import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.World;
@@ -59,6 +60,9 @@ public class BossAuctionManager
 
 	// 【新增】追蹤玩家最後出價時間 (playerId -> lastBidTime)
 	private final Map<Integer, Long> _playerLastBidTime = new ConcurrentHashMap<>();
+
+	// 已發送競標結束倒數警告的 SessionId 集合（防止重複發送）
+	private final Set<Integer> _endWarningSentSessions = ConcurrentHashMap.newKeySet();
 
 	private BossAuctionManager()
 	{
@@ -120,11 +124,23 @@ public class BossAuctionManager
 	}
 
 	/**
-	 * 檢查BOSS是否啟用競標
+	 * 檢查BOSS是否啟用競標。
+	 * 優先檢查 BossAuction.ini 的 EnabledBossIds；
+	 * 若不在其中，亦檢查 WorldBoss.ini 的 BossNpcIds（世界首領必然參與競標）。
+	 * EnabledBossIds 為空時，視為全部啟用（相容舊行為）。
 	 */
 	public boolean isBossEnabled(int npcId)
 	{
-		return _enabledBossIds.isEmpty() || _enabledBossIds.contains(npcId);
+		if (_enabledBossIds.isEmpty())
+		{
+			return true;
+		}
+		if (_enabledBossIds.contains(npcId))
+		{
+			return true;
+		}
+		// 兜底：世界首領 NPC ID 一律允許參與競標分紅
+		return WorldBossConfig.getBossNpcIds().contains(npcId);
 	}
 
 	/**
@@ -204,29 +220,36 @@ public class BossAuctionManager
 		}
 
 		// ========== 【修復】使用 tempSessionId 查找傷害數據 ==========
-		// 因為傷害數據是用 BOSS 的 ObjectId 作為 key 記錄的
-		// 所以要用 tempSessionId 來查找，而不是用新創建的 sessionId
-		// tempSessionId == -1 表示沒有傷害數據（例如從掉落攔截器調用）
+		// 傷害數據以 BOSS ObjectId 作為 key 存入 _damageTracker
+		// tempSessionId == -1 表示沒有傷害數據
 		if (tempSessionId > 0)
 		{
 			Map<Integer, DamageInfo> sessionDamage = _damageTracker.get(tempSessionId);
+			LOGGER.info("【競標系統】查詢傷害資料 - tempSessionId(bossObjectId)=" + tempSessionId +
+				"，_damageTracker 中的記錄數：" + (sessionDamage != null ? sessionDamage.size() : "null（無資料！）"));
+
 			if (sessionDamage != null && !sessionDamage.isEmpty())
 			{
+				int totalPlayers = sessionDamage.size();
 				int savedCount = 0;
 				for (DamageInfo info : sessionDamage.values())
 				{
+					LOGGER.info("【競標系統】玩家傷害記錄 - " + info.playerName +
+						"：" + info.totalDamage + "（門檻 " + _minDamageRequired + "，" +
+						(info.totalDamage >= _minDamageRequired ? "✓ 達標" : "✗ 未達標") + "）");
 					if (info.totalDamage >= _minDamageRequired)
 					{
 						BossAuctionDAO.recordParticipant(sessionId, info.playerId, info.playerName, info.totalDamage);
 						savedCount++;
 					}
 				}
-
-				LOGGER.info("【競標系統】已保存 " + savedCount + "/" + sessionDamage.size() + " 個合格參與者");
+				LOGGER.info("【競標系統】已保存 " + savedCount + "/" + totalPlayers + " 個合格參與者");
 			}
 			else
 			{
-				LOGGER.warning("【競標系統】找不到傷害數據，可能沒有玩家對BOSS造成傷害");
+				LOGGER.warning("【競標系統】⚠ 找不到傷害數據！tempSessionId=" + tempSessionId +
+					"，_damageTracker keys=" + _damageTracker.keySet() +
+					"。可能原因：addAttackId 未對此 NPC 生效，或世界首領 NPC ID 未在任何設定檔中登記。");
 			}
 		}
 
@@ -241,6 +264,9 @@ public class BossAuctionManager
 		_activeSessions.put(sessionId, newSession);
 
 		LOGGER.info("【競標系統】會話已添加到活躍列表 - SessionID: " + sessionId);
+
+		// ── 事件③ Discord 競標開始通知（含道具清單）────────────────────────
+		BossAuctionDiscordNotifier.sendAuctionStarted(sessionId, bossName, drops, (int) (_auctionDurationMs / 60000L));
 
 		// 全服公告
 		if (_announcementEnabled)
@@ -451,6 +477,28 @@ public class BossAuctionManager
 		{
 			try
 			{
+				// ── 事件④ Discord 競標結束倒數警告偵測 ──────────────────────
+				// 每分鐘檢查一次，在剩餘時間 <= warnMs 且尚未發送過警告時觸發
+				final int endWarnMinutes = DiscordConfig.DISCORD_BOSS_AUCTION_END_WARNING_MINUTES;
+				if (endWarnMinutes > 0)
+				{
+					final long warnMs = endWarnMinutes * 60000L;
+					final long now = System.currentTimeMillis();
+					for (AuctionSession session : _activeSessions.values())
+					{
+						if (!"ACTIVE".equals(session.status))
+						{
+							continue;
+						}
+						final long remaining = session.endTime - now;
+						if ((remaining > 0) && (remaining <= warnMs) && !_endWarningSentSessions.contains(session.sessionId))
+						{
+							BossAuctionDiscordNotifier.sendAuctionEndWarning(session.bossName, session.endTime);
+							_endWarningSentSessions.add(session.sessionId);
+						}
+					}
+				}
+
 				// 處理正常到期的 ACTIVE 會話
 				List<Integer> expiredSessions = BossAuctionDAO.getExpiredSessions();
 				for (int sessionId : expiredSessions)
@@ -506,6 +554,10 @@ public class BossAuctionManager
 			List<AuctionItem> items = BossAuctionDAO.getSessionItems(sessionId);
 			long totalRevenue = 0;
 
+			// ── 事件⑤ 結算資料收集（供 Discord 結算通知使用）──────────────
+			final List<BossAuctionDiscordNotifier.ItemResult> soldItemResults = new ArrayList<>();
+			final List<BossAuctionDiscordNotifier.ItemResult> unsoldItemResults = new ArrayList<>();
+
 			for (AuctionItem item : items)
 			{
 				if (item.currentBidderId > 0 && item.currentBid > 0)
@@ -537,15 +589,34 @@ public class BossAuctionManager
 						totalRevenue += item.currentBid;
 						BossAuctionDAO.updateItemStatus(item.auctionItemId, "SOLD");
 
+						// 收集已成交道具資料
+						soldItemResults.add(new BossAuctionDiscordNotifier.ItemResult(
+							item.itemId, item.enchantLevel, item.itemCount,
+							item.currentBidderName, item.currentBid));
+
 						LOGGER.info("【競標系統】物品 " + item.itemId + " 由 " + item.currentBidderName + " 得標，價格: " + item.currentBid + "，待領取ID: " + rewardId);
 					}
 				}
 				else
 				{
 					BossAuctionDAO.updateItemStatus(item.auctionItemId, "CANCELLED");
+
+					// 收集流標道具資料
+					unsoldItemResults.add(new BossAuctionDiscordNotifier.ItemResult(
+						item.itemId, item.enchantLevel, item.itemCount, null, 0));
+
 					LOGGER.info("【競標系統】物品 " + item.itemId + " 流標");
 				}
 			}
+
+			// ── 事件⑤ 預先抓取參與者（必須在 distributeRevenue 之前！）────────
+			// distributeRevenue() 內部會呼叫 markParticipantRewarded()，
+			// 將 reward_received 設為 1；之後再查 getQualifiedParticipants() 會回傳空列表。
+			// 因此必須在 distributeRevenue 之前取得資料，供 Discord 結算通知使用。
+			final List<BossAuctionDAO.Participant> discordParticipants =
+				BossAuctionDAO.getQualifiedParticipants(sessionId, _minDamageRequired);
+
+			LOGGER.info("【競標系統】達標參與者人數：" + discordParticipants.size() + "（傷害門檻 " + _minDamageRequired + "）");
 
 			// 分配收益給參與者
 			if (totalRevenue > 0)
@@ -557,10 +628,42 @@ public class BossAuctionManager
 				LOGGER.info("【競標系統】會話 " + sessionId + " 無收益（無人出價或物品全數流標），跳過分紅");
 			}
 
+			// ── 事件⑤ Discord 競標結算彙整報告（使用已預先抓取的參與者資料）──
+			try
+			{
+				final List<BossAuctionDiscordNotifier.ParticipantInfo> participantInfos = new ArrayList<>();
+				for (BossAuctionDAO.Participant p : discordParticipants)
+				{
+					participantInfos.add(new BossAuctionDiscordNotifier.ParticipantInfo(p.playerName, p.damageDealt));
+				}
+
+				final int qualifiedCount = discordParticipants.size();
+				// distributeRevenue() 實際分配 100% 收益（totalRevenue / participants.size()）
+				// Discord 通知顯示需與 distributeRevenue() 內部邏輯一致
+				final long rewardPerPlayer = (qualifiedCount > 0) ? (totalRevenue / qualifiedCount) : 0L;
+
+				BossAuctionDiscordNotifier.sendAuctionSettlement(
+					session.bossName,
+					soldItemResults,
+					unsoldItemResults,
+					totalRevenue,
+					totalRevenue,  // distributedRevenue == totalRevenue（100% 分配）
+					qualifiedCount,
+					rewardPerPlayer,
+					_minDamageRequired,
+					participantInfos);
+			}
+			catch (Exception discordEx)
+			{
+				// Discord 通知失敗不影響主流程
+				LOGGER.warning("【競標系統】發送 Discord 結算通知時發生錯誤（不影響結算）：" + discordEx.getMessage());
+			}
+
 			// 正常結束：更新會話狀態
 			BossAuctionDAO.updateSessionStatus(sessionId, "ENDED");
 			_activeSessions.remove(sessionId);
 			_damageTracker.remove(sessionId);
+			_endWarningSentSessions.remove(sessionId); // 清理倒數警告記錄
 
 			LOGGER.info("【競標系統】會話 " + sessionId + " 處理完成，總收益: " + totalRevenue);
 		}
@@ -572,6 +675,7 @@ public class BossAuctionManager
 			BossAuctionDAO.updateSessionStatus(sessionId, "ENDED");
 			_activeSessions.remove(sessionId);
 			_damageTracker.remove(sessionId);
+			_endWarningSentSessions.remove(sessionId); // 清理倒數警告記錄
 		}
 	}
 

@@ -11,6 +11,7 @@ import org.l2jmobius.gameserver.model.Message;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogout;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.Mail;
@@ -56,6 +57,7 @@ public class PlayerBase extends Script
 		addTalkId(BASE_MANAGER_NPC);
 		addFirstTalkId(BASE_MANAGER_NPC);
 		addInstanceLeaveId(BASE_TEMPLATE_ID);
+		setPlayerLogoutId(event -> BaseMonsterNpc.despawnForPlayer(event.getPlayer().getObjectId()));
 	}
 
 	@Override

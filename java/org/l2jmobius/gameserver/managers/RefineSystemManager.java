@@ -131,6 +131,27 @@ public class RefineSystemManager
 		}
 	}
 
+	/**
+	 * 將指定裝備的精煉次數設為 0（用於禁忌精煉等特殊邏輯）。
+	 */
+	public void exhaustCharges(Item item)
+	{
+		final int objectId = item.getObjectId();
+		_cache.put(objectId, 0);
+
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement(REPLACE_SQL))
+		{
+			ps.setInt(1, objectId);
+			ps.setInt(2, 0);
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning("[RefineSystem] 清空精煉次數失敗 itemId=" + objectId + ": " + e.getMessage());
+		}
+	}
+
 	private int getDefaultCharges(Item item)
 	{
 		final RefineSystemData data = RefineSystemData.getInstance();

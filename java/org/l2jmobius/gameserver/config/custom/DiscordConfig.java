@@ -64,6 +64,26 @@ public class DiscordConfig
 	/** 新成員加入 Discord 伺服器時發送的歡迎訊息（從 DiscordWelcome.txt 載入） */
 	public static String DISCORD_WELCOME_MESSAGE;
 
+	// ── Boss 競標通知系統 ────────────────────────────────────────────────────
+
+	/** 是否啟用 Boss 競標 Discord 通知 */
+	public static boolean DISCORD_BOSS_NOTIFY_ENABLED;
+
+	/** Boss 通知目標頻道 ID（所有 Boss 相關通知統一發至此頻道） */
+	public static String DISCORD_BOSS_NOTIFY_CHANNEL_ID;
+
+	/** 預警 / 首領降臨 / 競標倒數通知是否附加 @everyone */
+	public static boolean DISCORD_BOSS_NOTIFY_MENTION_EVERYONE;
+
+	/** 世界首領重生前幾分鐘發送預警通知，0 = 停用 */
+	public static int DISCORD_BOSS_SPAWN_WARNING_MINUTES;
+
+	/** 競標結束前幾分鐘發送倒數警告，0 = 停用 */
+	public static int DISCORD_BOSS_AUCTION_END_WARNING_MINUTES;
+
+	/** 結算報告中是否顯示各玩家詳細傷害數字 */
+	public static boolean DISCORD_BOSS_SHOW_DAMAGE_IN_REPORT;
+
 	// ── 讀取方法 ─────────────────────────────────────────────────────────────
 
 	public static void load()
@@ -76,6 +96,14 @@ public class DiscordConfig
 		DISCORD_PVP_ANNOUNCE_ENABLED = config.getBoolean("DiscordPvpAnnounceEnabled", false);
 		DISCORD_PVP_CHANNEL_ID = config.getString("DiscordPvpChannelId", "").trim();
 		DISCORD_WELCOME_ENABLED = config.getBoolean("DiscordWelcomeEnabled", false);
+
+		// Boss 競標通知系統
+		DISCORD_BOSS_NOTIFY_ENABLED = config.getBoolean("DiscordBossNotifyEnabled", false);
+		DISCORD_BOSS_NOTIFY_CHANNEL_ID = config.getString("DiscordBossNotifyChannelId", "").trim();
+		DISCORD_BOSS_NOTIFY_MENTION_EVERYONE = config.getBoolean("DiscordBossNotifyMentionEveryone", true);
+		DISCORD_BOSS_SPAWN_WARNING_MINUTES = config.getInt("DiscordBossSpawnWarningMinutes", 5);
+		DISCORD_BOSS_AUCTION_END_WARNING_MINUTES = config.getInt("DiscordBossAuctionEndWarningMinutes", 5);
+		DISCORD_BOSS_SHOW_DAMAGE_IN_REPORT = config.getBoolean("DiscordBossShowDamageInReport", true);
 
 		// 載入歡迎訊息
 		try
