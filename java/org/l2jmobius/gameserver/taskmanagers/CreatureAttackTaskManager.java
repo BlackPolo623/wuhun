@@ -25,6 +25,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Logger;
 
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.model.actor.Creature;
@@ -37,13 +38,65 @@ import org.l2jmobius.gameserver.network.serverpackets.Attack;
  */
 public class CreatureAttackTaskManager
 {
+	private static final Logger LOGGER = Logger.getLogger(CreatureAttackTaskManager.class.getName());
+
 	private static final Set<Map<Creature, ScheduledAttack>> ATTACK_POOLS = ConcurrentHashMap.newKeySet();
 	private static final Set<Map<Creature, ScheduledFinish>> FINISH_POOLS = ConcurrentHashMap.newKeySet();
 	private static final int POOL_SIZE = 300;
 	private static final int TASK_DELAY = 10;
-	
+
+	// 【武魂伺服器診斷】每 30 秒輸出一次 pool 統計，用於確認 ATTACK_POOLS / FINISH_POOLS 是否隨時間累積
+	private static final long STATS_LOG_INTERVAL_MS = 30_000L;
+
 	protected CreatureAttackTaskManager()
 	{
+		ThreadPool.scheduleAtFixedRate(CreatureAttackTaskManager::logPoolStats, STATS_LOG_INTERVAL_MS, STATS_LOG_INTERVAL_MS);
+	}
+
+	/**
+	 * 【武魂伺服器診斷】輸出 ATTACK_POOLS / FINISH_POOLS 的目前狀態。<br>
+	 * 觀察重點：<br>
+	 * - <b>pools=</b> 數值若隨時間單調上升、不會下降，就是 pool 永不回收的徵兆<br>
+	 * - <b>entries=</b> 全部 pool 內的攻擊結算總數，反映即時負載<br>
+	 * - <b>each=</b> 每個 pool 的個別大小，可看分布
+	 */
+	private static void logPoolStats()
+	{
+		final int attackPools = ATTACK_POOLS.size();
+		final int finishPools = FINISH_POOLS.size();
+		int attackTotal = 0;
+		int finishTotal = 0;
+		final StringBuilder attackDetail = new StringBuilder();
+		final StringBuilder finishDetail = new StringBuilder();
+
+		int idx = 0;
+		for (Map<Creature, ScheduledAttack> pool : ATTACK_POOLS)
+		{
+			final int size = pool.size();
+			attackTotal += size;
+			if (idx > 0)
+			{
+				attackDetail.append(",");
+			}
+			attackDetail.append(size);
+			idx++;
+		}
+
+		idx = 0;
+		for (Map<Creature, ScheduledFinish> pool : FINISH_POOLS)
+		{
+			final int size = pool.size();
+			finishTotal += size;
+			if (idx > 0)
+			{
+				finishDetail.append(",");
+			}
+			finishDetail.append(size);
+			idx++;
+		}
+
+		LOGGER.info("【攻擊任務管理】攻擊池數=" + attackPools + "  待處理=" + attackTotal + "  各池=[" + attackDetail + "]"
+			+ "  |  結算池數=" + finishPools + "  待處理=" + finishTotal + "  各池=[" + finishDetail + "]");
 	}
 	
 	private class ScheduleAttackTask implements Runnable

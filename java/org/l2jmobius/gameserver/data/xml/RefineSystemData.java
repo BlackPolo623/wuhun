@@ -36,6 +36,7 @@ import org.w3c.dom.Node;
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.model.VariationInstance;
+import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.stats.Stat;
 
 /**
@@ -100,6 +101,24 @@ public class RefineSystemData implements IXmlReader
 		}
 	}
 
+	/**
+	 * 突破配方：一份配方包含 ID、顯示名稱、成功機率、與多種材料。
+	 */
+	public static class BreakthroughRecipe
+	{
+		public final int id;
+		public final String name;
+		public final int chance;
+		public final List<ResetCostEntry> materials = new ArrayList<>();
+
+		public BreakthroughRecipe(int id, String name, int chance)
+		{
+			this.id = id;
+			this.name = name;
+			this.chance = chance;
+		}
+	}
+
 	// ── 設定欄位 ──────────────────────────────────────────────────────────────
 
 	private int _defaultCharges = 10;
@@ -112,6 +131,9 @@ public class RefineSystemData implements IXmlReader
 	private int _premiumMinTier = 1;
 	private int _premiumMaxTier = 5;
 
+	// 突破設定
+	private final List<BreakthroughRecipe> _breakthroughRecipes = new ArrayList<>();
+
 	// 禁忌精煉設定
 	private boolean _forbiddenEnabled = false;
 	private int _forbiddenDestroyChance = 50;
@@ -120,7 +142,10 @@ public class RefineSystemData implements IXmlReader
 	private int _forbiddenMaxTier = 5;
 	private final List<ResetCostEntry> _forbiddenCostItems = new ArrayList<>();
 	private final int[] _forbiddenTierChances = new int[4];
-	private final List<ResetCostEntry> _forbiddenRestoreCost = new ArrayList<>();
+
+	// 防爆道具設定（失敗時消耗 1 個抵銷裝備消失）
+	private int _forbiddenProtectionItemId = 0;
+	private int _forbiddenProtectionCount = 1;
 
 	// T 數顏色 (tier -> hex color)
 	private final Map<Integer, String> _tierColors = new HashMap<>();
@@ -151,9 +176,11 @@ public class RefineSystemData implements IXmlReader
 		_refineItemList.clear();
 		_premiumItemList.clear();
 		_forbiddenCostItems.clear();
-		_forbiddenRestoreCost.clear();
 		java.util.Arrays.fill(_forbiddenTierChances, 0);
+		_forbiddenProtectionItemId = 0;
+		_forbiddenProtectionCount = 1;
 		_forbiddenEnabled = false;
+		_breakthroughRecipes.clear();
 		_totalSeriesWeight = 0;
 
 		parseDatapackFile("data/scripts/custom/RefineSystem/RefineSystemData.xml");
@@ -182,6 +209,9 @@ public class RefineSystemData implements IXmlReader
 						break;
 					case "forbiddenSettings":
 						parseForbiddenSettings(child);
+						break;
+					case "breakthroughSettings":
+						parseBreakthroughSettings(child);
 						break;
 					case "tierColors":
 						parseTierColors(child);
@@ -292,19 +322,49 @@ public class RefineSystemData implements IXmlReader
 					}
 				}
 			}
-			else if ("restoreCost".equals(nname))
+			else if ("protection".equals(nname))
 			{
-				for (Node item = child.getFirstChild(); item != null; item = item.getNextSibling())
+				final NamedNodeMap pa = child.getAttributes();
+				_forbiddenProtectionItemId = parseInteger(pa, "itemId", 0);
+				_forbiddenProtectionCount = parseInteger(pa, "count", 1);
+			}
+		}
+	}
+
+	private void parseBreakthroughSettings(Node node)
+	{
+		for (Node child = node.getFirstChild(); child != null; child = child.getNextSibling())
+		{
+			if (!"recipe".equals(child.getNodeName()))
+			{
+				continue;
+			}
+			final NamedNodeMap attrs = child.getAttributes();
+			final int id = parseInteger(attrs, "id", 0);
+			final String name = parseString(attrs, "name");
+			final int chance = parseInteger(attrs, "chance", 0);
+			if (id <= 0 || name == null)
+			{
+				continue;
+			}
+			final BreakthroughRecipe recipe = new BreakthroughRecipe(id, name, chance);
+			for (Node mat = child.getFirstChild(); mat != null; mat = mat.getNextSibling())
+			{
+				if (!"material".equals(mat.getNodeName()))
 				{
-					if (!"item".equals(item.getNodeName())) continue;
-					final NamedNodeMap ia = item.getAttributes();
-					final int itemId = parseInteger(ia, "itemId", 0);
-					final int count = parseInteger(ia, "count", 1);
-					if (itemId > 0)
-					{
-						_forbiddenRestoreCost.add(new ResetCostEntry(itemId, count));
-					}
+					continue;
 				}
+				final NamedNodeMap ma = mat.getAttributes();
+				final int itemId = parseInteger(ma, "itemId", 0);
+				final int count = parseInteger(ma, "count", 1);
+				if (itemId > 0)
+				{
+					recipe.materials.add(new ResetCostEntry(itemId, count));
+				}
+			}
+			if (!recipe.materials.isEmpty())
+			{
+				_breakthroughRecipes.add(recipe);
 			}
 		}
 	}
@@ -590,6 +650,53 @@ public class RefineSystemData implements IXmlReader
 		return bonus;
 	}
 
+	/**
+	 * Item 版本：包含 4 條普通詞條 + 突破第五條詞條的加成（PERCENT/FLAT 類型）。
+	 * 套用裝備加成時應使用此方法以包含突破效果。
+	 */
+	public double getRefineBonus(Item item, Stat stat)
+	{
+		if (item == null || stat == null)
+		{
+			return 0;
+		}
+		final VariationInstance aug = item.getAugmentation();
+		if (aug == null)
+		{
+			return 0;
+		}
+		double bonus = 0;
+		bonus += calcOption(aug.getOption1Id(), stat, false);
+		bonus += calcOption(aug.getOption2Id(), stat, false);
+		bonus += calcOption(aug.getOption3Id(), stat, false);
+		bonus += calcOption(aug.getOption4Id(), stat, false);
+		bonus += calcOption(aug.getOption5Id(), stat, false);
+		return bonus;
+	}
+
+	/**
+	 * Item 版本：包含 4 條普通詞條 + 突破第五條詞條的加成（MUL 類型）。
+	 */
+	public double getRefineMulBonus(Item item, Stat stat)
+	{
+		if (item == null || stat == null)
+		{
+			return 0;
+		}
+		final VariationInstance aug = item.getAugmentation();
+		if (aug == null)
+		{
+			return 0;
+		}
+		double bonus = 0;
+		bonus += calcOption(aug.getOption1Id(), stat, true);
+		bonus += calcOption(aug.getOption2Id(), stat, true);
+		bonus += calcOption(aug.getOption3Id(), stat, true);
+		bonus += calcOption(aug.getOption4Id(), stat, true);
+		bonus += calcOption(aug.getOption5Id(), stat, true);
+		return bonus;
+	}
+
 	private double calcOption(int optionId, Stat stat, boolean mulMode)
 	{
 		if (optionId <= 0)
@@ -673,8 +780,13 @@ public class RefineSystemData implements IXmlReader
 	public int getForbiddenMinTier()         { return _forbiddenMinTier; }
 	public int getForbiddenMaxTier()         { return _forbiddenMaxTier; }
 	public List<ResetCostEntry> getForbiddenCostItems()    { return _forbiddenCostItems; }
-	public List<ResetCostEntry> getForbiddenRestoreCost()  { return _forbiddenRestoreCost; }
-	public boolean hasForbiddenRestoreCost() { return !_forbiddenRestoreCost.isEmpty(); }
+
+	/** 防爆道具 ID（0 表示未設定） */
+	public int getForbiddenProtectionItemId() { return _forbiddenProtectionItemId; }
+	/** 觸發防爆時消耗的數量 */
+	public int getForbiddenProtectionCount() { return _forbiddenProtectionCount; }
+	/** 是否已設定防爆道具 */
+	public boolean hasForbiddenProtection() { return _forbiddenProtectionItemId > 0; }
 
 	/** 禁忌精煉專屬：獨立判斷詞條數量 */
 	public int rollForbiddenTierCount()
@@ -698,6 +810,30 @@ public class RefineSystemData implements IXmlReader
 	public int rollForbiddenRefineId()
 	{
 		return rollRefineIdForTier(_forbiddenMinTier, _forbiddenMaxTier);
+	}
+
+	// ── 突破系統 ──────────────────────────────────────────────────────────────
+
+	public List<BreakthroughRecipe> getBreakthroughRecipes()
+	{
+		return _breakthroughRecipes;
+	}
+
+	public boolean isBreakthroughEnabled()
+	{
+		return !_breakthroughRecipes.isEmpty();
+	}
+
+	public BreakthroughRecipe getBreakthroughRecipeById(int id)
+	{
+		for (BreakthroughRecipe r : _breakthroughRecipes)
+		{
+			if (r.id == id)
+			{
+				return r;
+			}
+		}
+		return null;
 	}
 
 	/** 取得 optionId 對應的 tier（0 = 未設定） */

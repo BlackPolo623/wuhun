@@ -60,16 +60,10 @@
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="restoreCost" minOccurs="0" maxOccurs="1">
+							<xs:element name="protection" minOccurs="0" maxOccurs="1">
 								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="item" minOccurs="1" maxOccurs="unbounded">
-											<xs:complexType>
-												<xs:attribute name="itemId" type="xs:positiveInteger" use="required"/>
-												<xs:attribute name="count"  type="xs:positiveInteger" use="required"/>
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
+									<xs:attribute name="itemId" type="xs:positiveInteger" use="required"/>
+									<xs:attribute name="count"  type="xs:positiveInteger" use="required"/>
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
@@ -77,6 +71,28 @@
 						<xs:attribute name="maxDailyCount" type="xs:positiveInteger"    use="required"/>
 						<xs:attribute name="minTier"       type="xs:positiveInteger"    use="required"/>
 						<xs:attribute name="maxTier"       type="xs:positiveInteger"    use="required"/>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="breakthroughSettings" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="recipe" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="material" minOccurs="1" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="itemId" type="xs:positiveInteger" use="required"/>
+												<xs:attribute name="count"  type="xs:positiveInteger" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="id"     type="xs:positiveInteger"    use="required"/>
+									<xs:attribute name="name"   type="xs:string"             use="required"/>
+									<xs:attribute name="chance" type="xs:nonNegativeInteger" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
 

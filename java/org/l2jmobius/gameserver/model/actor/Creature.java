@@ -5524,6 +5524,7 @@ public abstract class Creature extends WorldObject
 						{
 							case 61000: damagePerSoulRing = 500.0; break;
 							case 51000: damagePerSoulRing =   5.0; break;
+							case 70000: damagePerSoulRing = 20.0; break;
 							// ★ 新增怪物範例（取消註解並填入 ID 與加成）：
 							// case 99999: damagePerSoulRing = 100.0; break;
 						}

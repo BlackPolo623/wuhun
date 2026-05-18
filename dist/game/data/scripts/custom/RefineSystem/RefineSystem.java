@@ -293,9 +293,43 @@ public class RefineSystem extends Script
 			doForbiddenRefine(npc, player, event.substring(18));
 			return null;
 		}
-		if ("forbidden_restore".equals(event))
+
+		// ── 突破系統路由 ──────────────────────────────
+		if ("breakthrough_main".equals(event))
 		{
-			doForbiddenRestore(npc, player);
+			showBreakthroughMain(npc, player);
+			return null;
+		}
+		if (event.startsWith("breakthrough_confirm_"))
+		{
+			// format: breakthrough_confirm_<slot>_<recipeId>
+			final String rest = event.substring(21);
+			final int lastUs = rest.lastIndexOf('_');
+			if (lastUs < 0) return null;
+			final String slot = rest.substring(0, lastUs);
+			final int recipeId;
+			try { recipeId = Integer.parseInt(rest.substring(lastUs + 1)); }
+			catch (NumberFormatException e) { return null; }
+			showBreakthroughConfirm(npc, player, slot, recipeId);
+			return null;
+		}
+		if (event.startsWith("breakthrough_execute_"))
+		{
+			// format: breakthrough_execute_<slot>_<recipeId>
+			final String rest = event.substring(21);
+			final int lastUs = rest.lastIndexOf('_');
+			if (lastUs < 0) return null;
+			final String slot = rest.substring(0, lastUs);
+			final int recipeId;
+			try { recipeId = Integer.parseInt(rest.substring(lastUs + 1)); }
+			catch (NumberFormatException e) { return null; }
+			doBreakthrough(npc, player, slot, recipeId);
+			return null;
+		}
+		if (event.startsWith("breakthrough_select_"))
+		{
+			// format: breakthrough_select_<slot>
+			showBreakthroughSelect(npc, player, event.substring(20));
 			return null;
 		}
 
@@ -348,17 +382,21 @@ public class RefineSystem extends Script
 		{
 			final Item item = player.getInventory().getPaperdollItem(slot);
 			if (item == null) continue;
+
+			// 4 條普通精煉詞條 + 第 5 條突破詞條（皆位於 VariationInstance 中）
 			final VariationInstance aug = item.getAugmentation();
-			if (aug == null) continue;
-			final int[] opts = { aug.getOption1Id(), aug.getOption2Id(), aug.getOption3Id(), aug.getOption4Id() };
-			for (int optionId : opts)
+			if (aug != null)
 			{
-				if (optionId <= 0) continue;
-				final int base = (optionId / 10000) * 10000;
-				final RefineSystemData.SeriesEntry se = data.getSeriesByBase(base);
-				if (se == null) continue;
-				sumMap.merge(se.name, optionId % 10000, Integer::sum);
-				typeMap.putIfAbsent(se.name, se.valueType);
+				final int[] opts = { aug.getOption1Id(), aug.getOption2Id(), aug.getOption3Id(), aug.getOption4Id(), aug.getOption5Id() };
+				for (int optionId : opts)
+				{
+					if (optionId <= 0) continue;
+					final int base = (optionId / 10000) * 10000;
+					final RefineSystemData.SeriesEntry se = data.getSeriesByBase(base);
+					if (se == null) continue;
+					sumMap.merge(se.name, optionId % 10000, Integer::sum);
+					typeMap.putIfAbsent(se.name, se.valueType);
+				}
 			}
 		}
 
@@ -488,7 +526,7 @@ public class RefineSystem extends Script
 
 		sb.append("<table border=0 width=270><tr><td height=3></td></tr></table>");
 
-		// 詞條列表
+		// 詞條列表（第 1~4 條：普通精煉）
 		final VariationInstance aug = item.getAugmentation();
 		final int[] opts = aug != null
 			? new int[]{ aug.getOption1Id(), aug.getOption2Id(), aug.getOption3Id(), aug.getOption4Id() }
@@ -514,6 +552,27 @@ public class RefineSystem extends Script
 			}
 			sb.append("</tr></table>");
 		}
+
+		// 第 5 條：突破詞條（直接從 VariationInstance.option5 讀取）
+		final int option5 = aug != null ? aug.getOption5Id() : 0;
+		sb.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr>");
+		if (option5 > 0)
+		{
+			final int tier5 = RefineSystemData.getInstance().getTier(option5);
+			final String tierColor5 = RefineSystemData.getInstance().getTierColor(tier5);
+			final String tierLabel5 = tier5 > 0 ? "T" + tier5 : "T?";
+			sb.append("<td width=28 align=center><font color=\"").append(tierColor5).append("\"><b>").append(tierLabel5).append("</b></font></td>");
+			sb.append("<td width=4></td>");
+			sb.append("<td width=136><font color=\"FFAA33\">★").append(RefineSystemData.getInstance().getSeriesName(option5)).append("</font></td>");
+			sb.append("<td align=right><font color=\"FFAA33\">+").append(RefineSystemData.getInstance().getValueDisplay(option5)).append("</font></td>");
+		}
+		else
+		{
+			sb.append("<td width=28 align=center><font color=\"444444\">★</font></td>");
+			sb.append("<td width=4></td>");
+			sb.append("<td colspan=2><font color=\"888888\">尚未突破獲得第五條精煉</font></td>");
+		}
+		sb.append("</tr></table>");
 
 		sb.append("<table border=0 width=270><tr><td height=4></td></tr></table>");
 
@@ -1071,7 +1130,11 @@ public class RefineSystem extends Script
 			final int op3 = tierCount >= 3 ? RefineSystemData.getInstance().rollRefineId() : 0;
 			final int op4 = tierCount >= 4 ? RefineSystemData.getInstance().rollRefineId() : 0;
 
-			item.setAugmentation(VariationInstance.ofRaw(RefineSystemData.getInstance().getRefineItemId(), op1, op2, op3, op4), true);
+			// 保留原本的第五條突破詞條
+			final VariationInstance prevAug = item.getAugmentation();
+			final int op5 = prevAug != null ? prevAug.getOption5Id() : 0;
+
+			item.setAugmentation(VariationInstance.ofRaw(RefineSystemData.getInstance().getRefineItemId(), op1, op2, op3, op4, op5), true);
 			player.destroyItemByItemId(ItemProcessType.NONE, RefineSystemData.getInstance().getRefineItemId(), RefineSystemData.getInstance().getRefineItemCount(), player, true);
 			RefineSystemManager.getInstance().consumeCharge(item);
 
@@ -1137,7 +1200,11 @@ public class RefineSystem extends Script
 			final int op3 = tierCount >= 3 ? data.rollRefineIdForTier(minTier, maxTier) : 0;
 			final int op4 = tierCount >= 4 ? data.rollRefineIdForTier(minTier, maxTier) : 0;
 
-			item.setAugmentation(VariationInstance.ofRaw(data.getPremiumItemId(), op1, op2, op3, op4), true);
+			// 保留原本的第五條突破詞條
+			final VariationInstance prevAug = item.getAugmentation();
+			final int op5 = prevAug != null ? prevAug.getOption5Id() : 0;
+
+			item.setAugmentation(VariationInstance.ofRaw(data.getPremiumItemId(), op1, op2, op3, op4, op5), true);
 			player.destroyItemByItemId(ItemProcessType.NONE, data.getPremiumItemId(), data.getPremiumItemCount(), player, true);
 			RefineSystemManager.getInstance().consumeCharge(item);
 
@@ -1384,8 +1451,12 @@ public class RefineSystem extends Script
 		final int op3 = tierCount >= 3 ? RefineSystemData.getInstance().rollRefineId() : 0;
 		final int op4 = tierCount >= 4 ? RefineSystemData.getInstance().rollRefineId() : 0;
 
+		// 保留原本的第五條突破詞條
+		final VariationInstance prevAug = item.getAugmentation();
+		final int op5 = prevAug != null ? prevAug.getOption5Id() : 0;
+
 		// 套用精煉（存入 item_variations，繞過 OptionData）
-		item.setAugmentation(VariationInstance.ofRaw(RefineSystemData.getInstance().getRefineItemId(), op1, op2, op3, op4), true);
+		item.setAugmentation(VariationInstance.ofRaw(RefineSystemData.getInstance().getRefineItemId(), op1, op2, op3, op4, op5), true);
 
 		// 扣除道具
 		player.destroyItemByItemId(ItemProcessType.NONE, RefineSystemData.getInstance().getRefineItemId(), RefineSystemData.getInstance().getRefineItemCount(), player, true);
@@ -1442,7 +1513,11 @@ public class RefineSystem extends Script
 		final int op3 = tierCount >= 3 ? data.rollRefineIdForTier(minTier, maxTier) : 0;
 		final int op4 = tierCount >= 4 ? data.rollRefineIdForTier(minTier, maxTier) : 0;
 
-		item.setAugmentation(VariationInstance.ofRaw(data.getPremiumItemId(), op1, op2, op3, op4), true);
+		// 保留原本的第五條突破詞條
+		final VariationInstance prevAug = item.getAugmentation();
+		final int op5 = prevAug != null ? prevAug.getOption5Id() : 0;
+
+		item.setAugmentation(VariationInstance.ofRaw(data.getPremiumItemId(), op1, op2, op3, op4, op5), true);
 
 		player.destroyItemByItemId(ItemProcessType.NONE, data.getPremiumItemId(), data.getPremiumItemCount(), player, true);
 
@@ -1828,44 +1903,6 @@ public class RefineSystem extends Script
 			}
 		}
 
-		// 補充道具區塊
-		final String restoreBlock;
-		if (data.hasForbiddenRestoreCost())
-		{
-			final StringBuilder rb = new StringBuilder();
-			rb.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr><td bgcolor=444444 height=1></td></tr></table>");
-			rb.append("<table border=0 width=270><tr><td height=4></td></tr></table>");
-			rb.append("<table width=270 border=0><tr><td><font color=\"CC7700\">每點補充次數消耗</font></td></tr></table>");
-			rb.append("<table border=0 width=270><tr><td height=2></td></tr></table>");
-			for (RefineSystemData.ResetCostEntry cost : data.getForbiddenRestoreCost())
-			{
-				final ItemTemplate tpl = ItemData.getInstance().getTemplate(cost.itemId);
-				final String iname = tpl != null ? tpl.getName() : "ID:" + cost.itemId;
-				final long owned = player.getInventory().getInventoryItemCount(cost.itemId, -1);
-				final boolean enough = owned >= cost.count;
-				final String color = enough ? "88FF88" : "FF6060";
-
-				rb.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr>");
-				rb.append("<td width=8></td>");
-				rb.append("<td><font color=\"").append(color).append("\">").append(iname).append("</font></td>");
-				rb.append("<td align=right><font color=\"").append(color).append("\">× ").append(cost.count);
-				rb.append("　(持有 ").append(owned).append(")</font></td>");
-				rb.append("<td width=8></td>");
-				rb.append("</tr></table>");
-				rb.append("<table border=0 width=270><tr><td height=2></td></tr></table>");
-			}
-			rb.append("<table border=0 width=270><tr><td height=4></td></tr></table>");
-			rb.append("<table width=270 border=0><tr><td align=center>");
-			rb.append("<button value=\"使用道具補充 1 次\" action=\"bypass -h Quest RefineSystem forbidden_restore\"");
-			rb.append(" width=200 height=24 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"/>");
-			rb.append("</td></tr></table>");
-			restoreBlock = rb.toString();
-		}
-		else
-		{
-			restoreBlock = "";
-		}
-
 		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 		html.setHtml(HtmCache.getInstance().getHtm(player, HTM_PATH + "forbidden_main.htm"));
 		html.replace("%daily_remain%", String.valueOf(dailyRemain));
@@ -1873,10 +1910,53 @@ public class RefineSystem extends Script
 		html.replace("%daily_color%", dailyRemain > 0 ? "88FF88" : "FF6060");
 		html.replace("%bonus_count%", String.valueOf(bonus));
 		html.replace("%destroy_chance%", String.valueOf(data.getForbiddenDestroyChance()));
+		html.replace("%protection_block%", buildProtectionBlock(player, false));
 		html.replace("%cost_rows%", costRows.toString());
 		html.replace("%slot_buttons%", slotButtons.toString());
-		html.replace("%restore_block%", restoreBlock);
 		player.sendPacket(html);
+	}
+
+	/** 建立防爆道具狀態區塊。confirm=true 用於確認頁（更醒目），false 用於主頁 */
+	private String buildProtectionBlock(Player player, boolean confirm)
+	{
+		final RefineSystemData data = RefineSystemData.getInstance();
+		if (!data.hasForbiddenProtection())
+		{
+			return "";
+		}
+		final int protectId = data.getForbiddenProtectionItemId();
+		final int protectCount = data.getForbiddenProtectionCount();
+		final ItemTemplate tpl = ItemData.getInstance().getTemplate(protectId);
+		final String pname = tpl != null ? tpl.getName() : "ID:" + protectId;
+		final long owned = player.getInventory().getInventoryItemCount(protectId, -1);
+		final boolean has = owned >= protectCount;
+
+		final StringBuilder sb = new StringBuilder();
+		sb.append("<table border=0 width=270><tr><td height=4></td></tr></table>");
+		if (has)
+		{
+			sb.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr><td bgcolor=2A6E2A height=2></td></tr></table>");
+			sb.append("<table width=270 border=0><tr><td align=center>");
+			sb.append("<font color=\"66FF66\"><b>身上有防爆道具：").append(pname).append(" ×").append(owned).append("</b></font>");
+			sb.append("</td></tr></table>");
+			sb.append("<table width=270 border=0><tr><td align=center>");
+			sb.append("<font color=\"AAFFAA\">失敗時裝備不會消失（消耗 ").append(protectCount).append(" 個）</font>");
+			sb.append("</td></tr></table>");
+			sb.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr><td bgcolor=2A6E2A height=2></td></tr></table>");
+		}
+		else
+		{
+			sb.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr><td bgcolor=AA0000 height=2></td></tr></table>");
+			sb.append("<table width=270 border=0><tr><td align=center>");
+			sb.append("<font color=\"FF6060\"><b>身上沒有防爆道具：").append(pname).append("</b></font>");
+			sb.append("</td></tr></table>");
+			sb.append("<table width=270 border=0><tr><td align=center>");
+			sb.append("<font color=\"FF3030\">失敗時裝備會消失！</font>");
+			sb.append("</td></tr></table>");
+			sb.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr><td bgcolor=AA0000 height=2></td></tr></table>");
+		}
+		sb.append("<table border=0 width=270><tr><td height=4></td></tr></table>");
+		return sb.toString();
 	}
 
 	private String makeForbiddenSlotButton(Player player, String slot)
@@ -1939,6 +2019,7 @@ public class RefineSystem extends Script
 		html.replace("%slot_name%", SLOT_ZH.getOrDefault(slot, slot));
 		html.replace("%item_name%", item.getName());
 		html.replace("%destroy_chance%", String.valueOf(data.getForbiddenDestroyChance()));
+		html.replace("%protection_block%", buildProtectionBlock(player, true));
 		html.replace("%slot%", slot);
 		player.sendPacket(html);
 	}
@@ -1987,7 +2068,25 @@ public class RefineSystem extends Script
 		final int destroyChance = data.getForbiddenDestroyChance();
 		if (Rnd.get(100) < destroyChance)
 		{
-			// 裝備消失
+			// 失敗：先檢查是否有防爆道具
+			if (data.hasForbiddenProtection())
+			{
+				final int protectId = data.getForbiddenProtectionItemId();
+				final int protectCount = data.getForbiddenProtectionCount();
+				final long owned = player.getInventory().getInventoryItemCount(protectId, -1);
+				if (owned >= protectCount)
+				{
+					// 觸發防爆：消耗防爆道具，裝備保留
+					player.destroyItemByItemId(ItemProcessType.NONE, protectId, protectCount, player, true);
+					final ItemTemplate protectTpl = ItemData.getInstance().getTemplate(protectId);
+					final String protectName = protectTpl != null ? protectTpl.getName() : "ID:" + protectId;
+					player.sendMessage("防爆觸發！" + protectName + " ×" + protectCount + " 已消耗，裝備保護成功！");
+					showForbiddenResult(npc, player, "protected", item.getName(), null);
+					return;
+				}
+			}
+
+			// 沒有防爆道具或不足：裝備消失
 			final String destroyedName = item.getName();
 			final int itemObjId = item.getObjectId();
 			player.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
@@ -2010,9 +2109,13 @@ public class RefineSystem extends Script
 		final int op3 = tierCount >= 3 ? data.rollForbiddenRefineId() : 0;
 		final int op4 = tierCount >= 4 ? data.rollForbiddenRefineId() : 0;
 
+		// 保留原本的第五條突破詞條
+		final VariationInstance prevAug = item.getAugmentation();
+		final int op5 = prevAug != null ? prevAug.getOption5Id() : 0;
+
 		// 用普通精煉道具 ID 做為標記（VariationInstance 必須有一個 mineral id）
 		final int markId = data.getRefineItemId();
-		item.setAugmentation(VariationInstance.ofRaw(markId, op1, op2, op3, op4), true);
+		item.setAugmentation(VariationInstance.ofRaw(markId, op1, op2, op3, op4, op5), true);
 
 		// 5. 清空此裝備所有剩餘精煉次數
 		RefineSystemManager.getInstance().exhaustCharges(item);
@@ -2024,31 +2127,298 @@ public class RefineSystem extends Script
 		showForbiddenResult(npc, player, "success", item.getName(), new int[]{ op1, op2, op3, op4 });
 	}
 
-	private void doForbiddenRestore(Npc npc, Player player)
+	// ══ 突破系統 ═══════════════════════════════════════════════════════════════
+
+	/** 突破主頁：顯示部位選擇 */
+	private void showBreakthroughMain(Npc npc, Player player)
 	{
 		final RefineSystemData data = RefineSystemData.getInstance();
-		if (!data.hasForbiddenRestoreCost())
+
+		if (!data.isBreakthroughEnabled())
 		{
-			player.sendMessage("[禁忌精煉] 未設定補充道具。");
-			showForbiddenMain(npc, player);
+			sendMsg(npc, player, "<font color=\"FF0000\">突破系統尚未啟用。</font>", "weapon");
 			return;
 		}
 
-		final String missing = getMissingItemsMsg(player, data.getForbiddenRestoreCost());
+		// 部位按鈕（武器 / 5 防具 / 5 飾品）
+		final StringBuilder slotButtons = new StringBuilder();
+		final String[][] groups = { WEAPON_SLOTS, ARMOR_SLOTS, JEWELRY_SLOTS };
+		for (String[] grp : groups)
+		{
+			for (int i = 0; i < grp.length; i += 2)
+			{
+				slotButtons.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr>");
+				slotButtons.append("<td width=2></td>");
+				slotButtons.append("<td width=130 align=center>").append(makeBreakthroughSlotButton(player, grp[i])).append("</td>");
+				slotButtons.append("<td width=6></td>");
+				if (i + 1 < grp.length)
+				{
+					slotButtons.append("<td width=130 align=center>").append(makeBreakthroughSlotButton(player, grp[i + 1])).append("</td>");
+				}
+				else
+				{
+					slotButtons.append("<td width=130></td>");
+				}
+				slotButtons.append("<td width=2></td>");
+				slotButtons.append("</tr></table>");
+				slotButtons.append("<table border=0 width=270><tr><td height=2></td></tr></table>");
+			}
+		}
+
+		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
+		html.setHtml(HtmCache.getInstance().getHtm(player, HTM_PATH + "breakthrough_main.htm"));
+		html.replace("%slot_buttons%", slotButtons.toString());
+		player.sendPacket(html);
+	}
+
+	/** 主頁部位按鈕：根據裝備穿戴狀態與突破狀態顯示不同標籤 */
+	private String makeBreakthroughSlotButton(Player player, String slot)
+	{
+		final Item equipped = getEquipped(player, slot);
+		final String label;
+		final String action;
+		if (equipped == null)
+		{
+			label = SLOT_ZH.getOrDefault(slot, slot) + "(空)";
+			action = "";
+		}
+		else
+		{
+			final VariationInstance aug = equipped.getAugmentation();
+			final boolean broken = (aug != null) && (aug.getOption5Id() > 0);
+			label = SLOT_ZH.getOrDefault(slot, slot) + (broken ? "[已突破]" : "");
+			action = "bypass -h Quest RefineSystem breakthrough_confirm_" + slot + "_1";
+		}
+		return "<button value=\"" + label + "\" action=\"" + action + "\""
+			+ " width=126 height=22 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"/>";
+	}
+
+	/** 部位選擇後：顯示可選配方列表 */
+	private void showBreakthroughSelect(Npc npc, Player player, String slot)
+	{
+		final RefineSystemData data = RefineSystemData.getInstance();
+		if (!data.isBreakthroughEnabled())
+		{
+			showBreakthroughMain(npc, player);
+			return;
+		}
+
+		final Item item = getEquipped(player, slot);
+		if (item == null)
+		{
+			player.sendMessage("[突破] 該部位尚未裝備。");
+			showBreakthroughMain(npc, player);
+			return;
+		}
+
+		final VariationInstance currentAug = item.getAugmentation();
+		final int currentOption5 = currentAug != null ? currentAug.getOption5Id() : 0;
+		final boolean alreadyBroken = currentOption5 > 0;
+
+		// 已突破時，顯示目前的第五條詞條資訊
+		final StringBuilder currentInfo = new StringBuilder();
+		if (alreadyBroken)
+		{
+			final int option5 = currentOption5;
+			final int tier = data.getTier(option5);
+			final String tierColor = data.getTierColor(tier);
+			final String tierLabel = tier > 0 ? "T" + tier : "T?";
+			currentInfo.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr>");
+			currentInfo.append("<td width=4></td>");
+			currentInfo.append("<td><font color=\"FFAA33\">目前第五條：</font></td>");
+			currentInfo.append("</tr></table>");
+			currentInfo.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr>");
+			currentInfo.append("<td width=28 align=center><font color=\"").append(tierColor).append("\"><b>").append(tierLabel).append("</b></font></td>");
+			currentInfo.append("<td width=4></td>");
+			currentInfo.append("<td width=136><font color=\"FFAA33\">").append(data.getSeriesName(option5)).append("</font></td>");
+			currentInfo.append("<td align=right><font color=\"FFAA33\">+").append(data.getValueDisplay(option5)).append("</font></td>");
+			currentInfo.append("</tr></table>");
+			currentInfo.append("<table border=0 width=270><tr><td height=4></td></tr></table>");
+			currentInfo.append("<table width=270 border=0><tr><td align=center>");
+			currentInfo.append("<font color=\"AAAAAA\" size=\"1\">再次突破會覆蓋目前的第五條詞條</font>");
+			currentInfo.append("</td></tr></table>");
+		}
+
+		// 配方列表
+		final StringBuilder recipeBlock = new StringBuilder();
+		for (RefineSystemData.BreakthroughRecipe recipe : data.getBreakthroughRecipes())
+		{
+			// 配方名稱 + 機率
+			recipeBlock.append("<table border=0 width=270><tr><td height=6></td></tr></table>");
+			recipeBlock.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr><td bgcolor=444444 height=1></td></tr></table>");
+			recipeBlock.append("<table border=0 width=270><tr><td height=4></td></tr></table>");
+
+			recipeBlock.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr>");
+			recipeBlock.append("<td width=4></td>");
+			recipeBlock.append("<td><font color=\"FFCC44\"><b>").append(recipe.name).append("</b></font></td>");
+			recipeBlock.append("<td align=right><font color=\"88FF88\">成功 ").append(recipe.chance).append("%</font></td>");
+			recipeBlock.append("<td width=4></td>");
+			recipeBlock.append("</tr></table>");
+			recipeBlock.append("<table border=0 width=270><tr><td height=2></td></tr></table>");
+
+			// 材料列表
+			for (RefineSystemData.ResetCostEntry mat : recipe.materials)
+			{
+				final ItemTemplate tpl = ItemData.getInstance().getTemplate(mat.itemId);
+				final String iname = tpl != null ? tpl.getName() : "ID:" + mat.itemId;
+				final long owned = player.getInventory().getInventoryItemCount(mat.itemId, -1);
+				final boolean enough = owned >= mat.count;
+				final String color = enough ? "AAAAAA" : "FF6060";
+				recipeBlock.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr>");
+				recipeBlock.append("<td width=12></td>");
+				recipeBlock.append("<td><font color=\"").append(color).append("\">").append(iname).append("</font></td>");
+				recipeBlock.append("<td align=right><font color=\"").append(color).append("\">× ").append(mat.count);
+				recipeBlock.append("　(持有 ").append(owned).append(")</font></td>");
+				recipeBlock.append("<td width=4></td>");
+				recipeBlock.append("</tr></table>");
+				recipeBlock.append("<table border=0 width=270><tr><td height=2></td></tr></table>");
+			}
+
+			// 確認按鈕
+			recipeBlock.append("<table border=0 width=270><tr><td height=2></td></tr></table>");
+			recipeBlock.append("<table width=270 border=0><tr><td align=center>");
+			recipeBlock.append("<button value=\"使用此配方突破\" action=\"bypass -h Quest RefineSystem breakthrough_confirm_").append(slot).append("_").append(recipe.id).append("\"");
+			recipeBlock.append(" width=200 height=24 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"/>");
+			recipeBlock.append("</td></tr></table>");
+		}
+
+		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
+		html.setHtml(HtmCache.getInstance().getHtm(player, HTM_PATH + "breakthrough_confirm.htm"));
+		html.replace("%slot_name%", SLOT_ZH.getOrDefault(slot, slot));
+		html.replace("%item_name%", item.getName());
+		html.replace("%current_info%", currentInfo.toString());
+		html.replace("%recipe_block%", recipeBlock.toString());
+		html.replace("%slot%", slot);
+		player.sendPacket(html);
+	}
+
+	/** 第二層確認頁（直接複用 showBreakthroughSelect 的版面，但這層才會真的進入扣道具流程） */
+	private void showBreakthroughConfirm(Npc npc, Player player, String slot, int recipeId)
+	{
+		// 為簡化流程，confirm 直接執行（先檢查再扣道具）。
+		// 若需要二次確認，可在此插入一個確認頁，但目前架構先採直接執行。
+		doBreakthrough(npc, player, slot, recipeId);
+	}
+
+	/** 執行突破：扣道具、判定機率、寫入 option5 */
+	private void doBreakthrough(Npc npc, Player player, String slot, int recipeId)
+	{
+		final RefineSystemData data = RefineSystemData.getInstance();
+		if (!data.isBreakthroughEnabled())
+		{
+			showBreakthroughMain(npc, player);
+			return;
+		}
+
+		final RefineSystemData.BreakthroughRecipe recipe = data.getBreakthroughRecipeById(recipeId);
+		if (recipe == null)
+		{
+			player.sendMessage("[突破] 配方不存在。");
+			showBreakthroughMain(npc, player);
+			return;
+		}
+
+		final Item item = getEquipped(player, slot);
+		if (item == null)
+		{
+			player.sendMessage("[突破] 該部位尚未裝備。");
+			showBreakthroughMain(npc, player);
+			return;
+		}
+
+		// 材料檢查
+		final String missing = getMissingItemsMsg(player, recipe.materials);
 		if (missing != null)
 		{
-			player.sendMessage("[禁忌精煉] 道具不足：" + missing);
-			showForbiddenMain(npc, player);
+			player.sendMessage("[突破] 道具不足：" + missing);
+			showBreakthroughSelect(npc, player, slot);
 			return;
 		}
 
-		consumeAllItems(player, data.getForbiddenRestoreCost());
-		final int bonus = player.getVariables().getInt(FORBIDDEN_BONUS_COUNT, 0) + 1;
-		player.getVariables().set(FORBIDDEN_BONUS_COUNT, bonus);
+		// 1. 扣材料
+		consumeAllItems(player, recipe.materials);
 
-		player.sendMessage("[禁忌精煉] 補充次數 +1（目前補充次數：" + bonus + "）");
-		showForbiddenMain(npc, player);
+		// 2. 機率判定
+		final boolean success = Rnd.get(100) < recipe.chance;
+
+		if (success)
+		{
+			// 3a. 從共享池抽 1 條詞條
+			final int option5 = data.rollRefineId();
+
+			// 保留原本 1~4 條詞條，僅更新第五條（option5 存在 item_variations 表中）
+			final VariationInstance currentAug = item.getAugmentation();
+			final int mineralId = currentAug != null ? currentAug.getMineralId() : data.getRefineItemId();
+			final int op1 = currentAug != null ? currentAug.getOption1Id() : 0;
+			final int op2 = currentAug != null ? currentAug.getOption2Id() : 0;
+			final int op3 = currentAug != null ? currentAug.getOption3Id() : 0;
+			final int op4 = currentAug != null ? currentAug.getOption4Id() : 0;
+			item.setAugmentation(VariationInstance.ofRaw(mineralId, op1, op2, op3, op4, option5), true);
+
+			// 觸發 stat 重算（突破詞條會影響玩家屬性）
+			player.getStat().recalculateStats(true);
+
+			final InventoryUpdate iu = new InventoryUpdate();
+			iu.addModifiedItem(item);
+			player.sendInventoryUpdate(iu);
+
+			showBreakthroughResult(npc, player, slot, true, recipe, option5);
+		}
+		else
+		{
+			// 3b. 失敗：道具已扣，但裝備無變化
+			showBreakthroughResult(npc, player, slot, false, recipe, 0);
+		}
 	}
+
+	/** 突破結果頁 */
+	private void showBreakthroughResult(Npc npc, Player player, String slot, boolean success, RefineSystemData.BreakthroughRecipe recipe, int option5)
+	{
+		final RefineSystemData data = RefineSystemData.getInstance();
+		final String resultColor;
+		final String resultTitle;
+		final String resultDesc;
+
+		if (success)
+		{
+			resultColor = "FFAA33";
+			resultTitle = "突破成功！";
+			resultDesc = "獲得第五條精煉詞條！";
+		}
+		else
+		{
+			resultColor = "FF6060";
+			resultTitle = "突破失敗";
+			resultDesc = "材料已消耗，但裝備未獲得新詞條。";
+		}
+
+		// 詞條顯示（失敗時不顯示）
+		final StringBuilder resultRow = new StringBuilder();
+		if (success && option5 > 0)
+		{
+			final int tier = data.getTier(option5);
+			final String tierColor = data.getTierColor(tier);
+			final String tierLabel = tier > 0 ? "T" + tier : "T?";
+			resultRow.append("<table width=270 border=0 cellpadding=0 cellspacing=0><tr>");
+			resultRow.append("<td width=28 align=center><font color=\"").append(tierColor).append("\"><b>").append(tierLabel).append("</b></font></td>");
+			resultRow.append("<td width=4></td>");
+			resultRow.append("<td width=136><font color=\"FFAA33\">★").append(data.getSeriesName(option5)).append("</font></td>");
+			resultRow.append("<td align=right><font color=\"FFAA33\">+").append(data.getValueDisplay(option5)).append("</font></td>");
+			resultRow.append("</tr></table>");
+		}
+
+		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
+		html.setHtml(HtmCache.getInstance().getHtm(player, HTM_PATH + "breakthrough_result.htm"));
+		html.replace("%result_color%", resultColor);
+		html.replace("%result_title%", resultTitle);
+		html.replace("%result_desc%", resultDesc);
+		html.replace("%result_row%", resultRow.toString());
+		html.replace("%slot%", slot);
+		html.replace("%recipe_name%", recipe != null ? recipe.name : "");
+		player.sendPacket(html);
+	}
+
+	// ══ /突破系統 ══════════════════════════════════════════════════════════════
 
 	private void showForbiddenResult(Npc npc, Player player, String reason, String itemName, int[] opts)
 	{
@@ -2062,11 +2432,17 @@ public class RefineSystem extends Script
 			resultTitle = "禁忌精煉成功！";
 			resultDesc = itemName + " 獲得新詞條，剩餘精煉次數已歸零。";
 		}
+		else if ("protected".equals(reason))
+		{
+			resultColor = "33AAFF";
+			resultTitle = "防爆觸發！";
+			resultDesc = itemName + " 險些崩解，被防爆道具救下，裝備保留！";
+		}
 		else
 		{
 			resultColor = "FF3333";
-			resultTitle = "裝備已消失！";
-			resultDesc = itemName + " 在禁忌之力中崩解了。";
+			resultTitle = "裝備已消失";
+			resultDesc = itemName + " 在禁忌之力中崩解殆盡，已永久消失！";
 		}
 
 		final StringBuilder resultRows = new StringBuilder();

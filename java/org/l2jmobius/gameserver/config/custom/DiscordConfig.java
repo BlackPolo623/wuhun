@@ -84,6 +84,20 @@ public class DiscordConfig
 	/** 結算報告中是否顯示各玩家詳細傷害數字 */
 	public static boolean DISCORD_BOSS_SHOW_DAMAGE_IN_REPORT;
 
+	// ── 系統介紹面板 ─────────────────────────────────────────────────────────
+
+	/** 是否啟用系統介紹面板 */
+	public static boolean SYSTEM_GUIDE_ENABLED;
+
+	/** 發送面板訊息的頻道 ID */
+	public static String SYSTEM_GUIDE_CHANNEL_ID;
+
+	/** 面板 Embed 標題文字 */
+	public static String SYSTEM_GUIDE_PANEL_TITLE;
+
+	/** 面板 Embed 說明文字 */
+	public static String SYSTEM_GUIDE_PANEL_DESC;
+
 	// ── 讀取方法 ─────────────────────────────────────────────────────────────
 
 	public static void load()
@@ -104,6 +118,12 @@ public class DiscordConfig
 		DISCORD_BOSS_SPAWN_WARNING_MINUTES = config.getInt("DiscordBossSpawnWarningMinutes", 5);
 		DISCORD_BOSS_AUCTION_END_WARNING_MINUTES = config.getInt("DiscordBossAuctionEndWarningMinutes", 5);
 		DISCORD_BOSS_SHOW_DAMAGE_IN_REPORT = config.getBoolean("DiscordBossShowDamageInReport", true);
+
+		// 系統介紹面板
+		SYSTEM_GUIDE_ENABLED = config.getBoolean("SystemGuideEnabled", false);
+		SYSTEM_GUIDE_CHANNEL_ID = config.getString("SystemGuideChannelId", "").trim();
+		SYSTEM_GUIDE_PANEL_TITLE = config.getString("SystemGuidePanelTitle", "📖 系統介紹").trim();
+		SYSTEM_GUIDE_PANEL_DESC = config.getString("SystemGuidePanelDesc", "點擊想了解的系統，Bot 將私訊傳送詳細玩法說明。").trim();
 
 		// 載入歡迎訊息
 		try

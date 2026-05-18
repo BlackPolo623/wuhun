@@ -30,11 +30,13 @@ import java.util.logging.Logger;
 
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.data.xml.RefineSystemData;
+import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 
 /**
  * 精煉系統次數管理器。
  * 負責讀取/寫入 item_refine_charges 表，並維護記憶體快取。
+ * 突破第五條精煉詞條儲存在 item_variations 的 option5 欄位中（由 VariationInstance 統一處理）。
  */
 public class RefineSystemManager
 {
@@ -110,6 +112,53 @@ public class RefineSystemManager
 	public void invalidate(int itemObjectId)
 	{
 		_cache.remove(itemObjectId);
+	}
+
+	// ── 突破系統 ──────���───────────────────────────────────────────────────────
+	// 突破第五條詞條儲存在 item_variations 的 option5 欄位，
+	// 透過 Item.getAugmentation().getOption5Id() 讀取，透過 Item.setAugmentation() 寫入。
+	// 以下方法為使用便利性而提供的薄包裝。
+
+	/**
+	 * 取得指定裝備的突破第五條詞條 optionId。
+	 * @return optionId（>0 表示已突破）；0 表示尚未突破
+	 */
+	public int getBreakthroughOption5(Item item)
+	{
+		if (item == null)
+		{
+			return 0;
+		}
+		final VariationInstance aug = item.getAugmentation();
+		return aug != null ? aug.getOption5Id() : 0;
+	}
+
+	/**
+	 * 設定指定裝備的突破第五條詞條，保留原本 1~4 條詞條。
+	 * 若裝備尚無 VariationInstance，會建立新的（4 條為 0、僅有第五條）。
+	 * @param item 裝備
+	 * @param option5 詞條 optionId（>0），會持久化
+	 */
+	public void setBreakthroughOption5(Item item, int option5)
+	{
+		if (item == null || option5 <= 0)
+		{
+			return;
+		}
+		final VariationInstance current = item.getAugmentation();
+		final int mineralId = current != null ? current.getMineralId() : RefineSystemData.getInstance().getRefineItemId();
+		final int op1 = current != null ? current.getOption1Id() : 0;
+		final int op2 = current != null ? current.getOption2Id() : 0;
+		final int op3 = current != null ? current.getOption3Id() : 0;
+		final int op4 = current != null ? current.getOption4Id() : 0;
+
+		item.setAugmentation(VariationInstance.ofRaw(mineralId, op1, op2, op3, op4, option5), true);
+	}
+
+	/** 是否已突破 */
+	public boolean hasBreakthrough(Item item)
+	{
+		return getBreakthroughOption5(item) > 0;
 	}
 
 	public void resetCharges(Item item)

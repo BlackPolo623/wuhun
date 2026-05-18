@@ -631,4 +631,16 @@
 			<skill id="140001" level="15" />
 		</skills>
 	</item>
+
+	<item id="105859" name="禁忌精煉補充卷" type="EtcItem">
+		<set name="icon" val="icon.ench_challnege_point_rare_acc_i00" />
+		<set name="material" val="PAPER" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="true" />
+		<set name="is_stackable" val="true" />
+		<set name="is_tradable" val="true" />
+		<set name="is_sellable" val="true" />
+		<set name="handler" val="ForbiddenRefineCharge" />
+	</item>
 </list>

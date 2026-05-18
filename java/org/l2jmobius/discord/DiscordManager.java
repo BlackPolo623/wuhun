@@ -58,6 +58,9 @@ public class DiscordManager
 	/** 標記是否已成功啟動 */
 	private volatile boolean _running = false;
 
+	/** 系統介紹面板管理器（功能停用時為 null） */
+	private SystemGuideManager _systemGuideManager = null;
+
 	// ── 生命週期 ─────────────────────────────────────────────────────────────
 
 	/**
@@ -87,6 +90,14 @@ public class DiscordManager
 			// 等待 Bot 準備就緒（最多 30 秒）
 			_jda.awaitReady();
 			_running = true;
+
+			// ── 系統介紹面板（在 logStatus() 之前初始化，讓狀態日誌能顯示正確資訊）
+			if (DiscordConfig.SYSTEM_GUIDE_ENABLED)
+			{
+				_systemGuideManager = new SystemGuideManager();
+				_jda.addEventListener(_systemGuideManager);
+				_systemGuideManager.initialize(_jda);
+			}
 
 			LOGGER.info("DiscordManager: Discord Bot 連線成功！Bot 名稱：" + _jda.getSelfUser().getName());
 			logStatus();
@@ -379,6 +390,25 @@ public class DiscordManager
 		else
 		{
 			LOGGER.info("DiscordManager: [Boss通知] 停用");
+		}
+
+		// 系統介紹面板
+		if (DiscordConfig.SYSTEM_GUIDE_ENABLED)
+		{
+			if ((DiscordConfig.SYSTEM_GUIDE_CHANNEL_ID == null) || DiscordConfig.SYSTEM_GUIDE_CHANNEL_ID.isEmpty())
+			{
+				LOGGER.warning("DiscordManager: [系統介紹] 警告：已啟用但未設定 SystemGuideChannelId，面板無法發送！");
+			}
+			else
+			{
+				final net.dv8tion.jda.api.entities.channel.concrete.TextChannel guideChannel = _jda.getTextChannelById(DiscordConfig.SYSTEM_GUIDE_CHANNEL_ID);
+				final String guideChannelDesc = (guideChannel != null) ? "#" + guideChannel.getName() : "⚠️ 頻道不可訪問，請確認 Bot 已加入伺服器";
+				LOGGER.info("DiscordManager: [系統介紹] 啟用 | 頻道：" + guideChannelDesc + " (" + DiscordConfig.SYSTEM_GUIDE_CHANNEL_ID + ")");
+			}
+		}
+		else
+		{
+			LOGGER.info("DiscordManager: [系統介紹] 停用");
 		}
 
 		LOGGER.info("DiscordManager: ----------------------------------------");

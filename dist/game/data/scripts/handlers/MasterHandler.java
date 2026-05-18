@@ -524,6 +524,7 @@ public class MasterHandler
 			MercTicket.class,
 			NicknameColor.class,
 			PermanentHpPotion.class,
+			ForbiddenRefineCharge.class,
 			PetExpBook.class,
 			PetFood.class,
 			Recipes.class,

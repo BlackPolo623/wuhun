@@ -56,7 +56,6 @@ import org.l2jmobius.gameserver.model.item.type.WeaponType;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.stats.Formulas;
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.stats.Stat;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -1110,12 +1109,12 @@ public class PlayerStat extends PlayableStat
 		double bonus = 0;
 		for (Item item : player.getInventory().getPaperdollItems())
 		{
-			if (item == null || !item.isAugmented())
+			if (item == null)
 			{
 				continue;
 			}
-			final VariationInstance aug = item.getAugmentation();
-			bonus += data.getRefineBonus(aug, stat);
+			// 改用 Item 版本：自動包含 4 條普通詞條 + 突破第五條
+			bonus += data.getRefineBonus(item, stat);
 		}
 		return bonus;
 	}
@@ -1132,12 +1131,12 @@ public class PlayerStat extends PlayableStat
 		double bonus = 0;
 		for (Item item : player.getInventory().getPaperdollItems())
 		{
-			if (item == null || !item.isAugmented())
+			if (item == null)
 			{
 				continue;
 			}
-			final VariationInstance aug = item.getAugmentation();
-			bonus += data.getRefineMulBonus(aug, stat);
+			// 改用 Item 版本：自動包含 4 條普通詞條 + 突破第五條
+			bonus += data.getRefineMulBonus(item, stat);
 		}
 		return bonus;
 	}

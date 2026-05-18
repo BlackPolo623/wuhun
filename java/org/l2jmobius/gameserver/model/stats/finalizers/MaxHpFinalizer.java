@@ -21,7 +21,6 @@ import java.util.OptionalDouble;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.data.xml.EnchantItemHPBonusData;
 import org.l2jmobius.gameserver.data.xml.RefineSystemData;
-import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
@@ -122,11 +121,12 @@ public class MaxHpFinalizer implements IStatFunction
 			double refineHpLimitPct = 0;
 			for (Item item : inv.getPaperdollItems())
 			{
-				final VariationInstance aug = item.getAugmentation();
-				if (aug != null)
+				if (item == null)
 				{
-					refineHpLimitPct += RefineSystemData.getInstance().getRefineBonus(aug, Stat.HP_LIMIT);
+					continue;
 				}
+				// 改用 Item 版本：自動包含 4 條普通詞條 + 突破第五條的 HP_LIMIT 加成
+				refineHpLimitPct += RefineSystemData.getInstance().getRefineBonus(item, Stat.HP_LIMIT);
 			}
 			mul += refineHpLimitPct / 100.0;
 			hpLimit = (PlayerConfig.MAX_HP * mul) + add;
